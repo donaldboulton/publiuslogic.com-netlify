@@ -1,3 +1,5 @@
+// src/api/get-github-user.js
+
 import { Octokit } from '@octokit/rest'
 
 const octokit = new Octokit({
@@ -9,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     const { data } = await octokit.request('GET /users/{username}', {
-      username: donaldboulton,
+      username: 'donaldboulton',
     })
 
     res.status(200).json({

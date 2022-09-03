@@ -26,13 +26,13 @@ Upgrade as of Aug 31st, 2022 to Gatsby 4.22.0
   <br />
 </p>
 
-- 🚋Serverless Functions
-- 🔏Authentication (with Netlify Identity)
-- 🔐Authenticated Serverless Functions
-- 😻External Provider login with GitHub, Bitbucket, Google, etc.
-- 🏠Protected Routes
-- 👋🏼Dynamic Clientside Pages in Gatsby (enabling all the above)
-- 🕵🏼‍♂️Hide API Secrets from being exposed to Frontend
+- 🚋 Serverless Functions
+- 🔏 Authentication (with Netlify Identity)
+- 🔐 Authenticated Serverless Functions
+- 😻 External Provider login with GitHub, Bitbucket, Google, etc.
+- 🏠 Protected Routes
+- 👋🏼 Dynamic Client side Pages in Gatsby (enabling all the above)
+- 🕵🏼‍♂️ Hide API Secrets from being exposed to Frontend
 
 This is starter template for a full featured marketing and blog website based on the following:
 
@@ -47,7 +47,6 @@ This is starter template for a full featured marketing and blog website based on
 - [unDraw](https://undraw.co/) for illustrations
 - [MDX](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
 - [ESLint](https://eslint.org)for type-checking
-- [SendGrid](https://sendgrid.com/) email delivery
 - [Schema.org](https://schema.org/) and [JSON for Linking Data](https://json-ld.org/)
 - [Open Graph](https://ogp.me/) used by [Facebook](https://developers.facebook.com/docs/sharing/webmasters/#markup)
 - [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
@@ -63,7 +62,7 @@ This is starter template for a full featured marketing and blog website based on
 - Support for code syntax highlighting
 - Manifest and offline support
 - Contact form using sendgrid email and Gatsby functions
-- Full SEO support (via Gatsby v4.20.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
+- Full SEO support (via Gatsby v4.22.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
 - Tailwind Css v3.0.7, for super styling
 
 ## How to use the starter
@@ -78,13 +77,6 @@ This is starter template for a full featured marketing and blog website based on
 8. If you create a new tag (eg. `newtag`) a new tag page will be created ie. `/tags/newtag`. The `/tags` page will enumerate all tags.
 9. If you want to change the navigation menu, edit `src/components/header.tsx`. Similarly, edit `src/components/footer.tsx` to customise the footer.
 10. If you make a lot of changes, use `yarn lint` and `yarn type-check` to check everything is okay.
-
-## SendGrid configuration (for contact form)
-
-Insert the following environment variables (either in .env or on deployment host):
-
-- `SENDGRID_API_KEY`
-- `SENDGRID_AUTHORIZED_EMAIL`
 
 ### React Spring Animations
 
