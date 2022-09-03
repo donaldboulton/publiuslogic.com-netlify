@@ -31,7 +31,10 @@ interface ImageGalleryProps {
   }
 }
 const CustomWrapper = ({ children, onClick }) => (
-  <div className="h-32 w-32 p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-lg" onClick={onClick}>
+  <div
+    className="h-32 w-32 p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-lg"
+    onClick={onClick}
+  >
     {children}
   </div>
 )

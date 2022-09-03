@@ -6,10 +6,9 @@ import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
+import Confetti from '@/components/Confetti'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
-import { navigate } from '@gatsbyjs/reach-router'
 
 const ogimage = {
   src: OGImage,
@@ -17,10 +16,11 @@ const ogimage = {
   height: 450,
 }
 
-const ThankYou = () => {
+function Thanks() {
   return (
     <>
       <Header />
+      <Confetti />
       <Layout>
         <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
         <div className="mt-10">
@@ -50,7 +50,7 @@ const ThankYou = () => {
   )
 }
 
-export default ThankYou
+export default Thanks
 
 export function Head(props: HeadProps) {
   return (

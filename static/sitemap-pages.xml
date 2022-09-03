@@ -49,4 +49,11 @@
   <image:image><image:loc>https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png</image:loc><image:caption>aundraw_Super_thank_you_re_f8bo.png</image:caption></image:image>a
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://publiuslogic.com/thanks</loc>
+  <lastmod>2022-08-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png</image:loc><image:caption>aundraw_Super_thank_you_re_f8bo.png</image:caption></image:image>a
+  <priority>0.80</priority>
+</url>
 </urlset>

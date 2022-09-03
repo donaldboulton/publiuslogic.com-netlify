@@ -66,7 +66,7 @@ const Gallery: FC<GalleryProps> = ({
               }}
             >
               <GatsbyImage image={thumbImage} className={imgClass} alt={img.thumbAlt || ''} />
-              <div className='bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-300'>{img.thumbAlt}</div>
+              <div className="bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-300">{img.thumbAlt}</div>
             </ImgColWrapper>
           )
         })}

@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  repo: donaldboulton/publiuslogic-netlify
+media_folder: static/assets
+public_folder: /assets
+branch: master
+identity_url: "https://publiuslogic.com/.netlify/identity"
+gateway_url: "https://publiuslogic.com/.netlify/git"
+site_domain:  "https://publiuslogic.com/"
+squash_merges: true
+
+display_url: https://publiuslogic.com
+logo_url: https://publiuslogic.com/img/apple-touch-icon-180x180.png
+
+publish_mode: editorial_workflow
+collections:
+  - name: blog
+    label: Blog
+    folder: mdx
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
