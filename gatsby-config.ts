@@ -220,39 +220,22 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-gatsby-cloud',
-      options: {
-        headers: {
-          '/*': ['Cache-Control: public, max-age=604800, immutable'],
-          '/static/*': ['Cache-Control: public, max-age=604800, immutable'],
-        },
-        allPageHeaders: [
-          'Referrer-Policy: strict-origin-when-cross-origin',
-          'Strict-Transport-Security: max-age=63072000; preload',
-          'X-Robots-Tag: index',
-          'X-Frame-Options: DENY',
-          'X-XSS-Protection: 1; mode=block',
-          'X-Content-Type-Options: nosniff',
-          'Vary: Accept-Encoding',
-          'Set-Cookie: HttpOnly; Secure',
-          'Access-Control-Allow-Credentials: true',
-          'Access-Control-Allow-Origin: https://publiuslogic.com/, https://unpkg.com/leaflet@1.8.0/dist/leaflet.css, https://getform.io/f/3b075a47-6772-4658-adfd-2b5f2f7d2355, https://www.youtube.com, https://www.youtube.de, https://github.com, https://storage.googleapis.com, https://api.github.com, https://res.cloudinary.com, https://www.google.com/recaptcha/api.js, https://api.applause-button.com',
-          'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
-        ],
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
-        generateMatchPathRewrites: true,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-offline',
       options: {
         precachePages: ['/', '/about', '/contact', '/blog/*'],
         workboxConfig: {
           importWorkboxFrom: 'cdn',
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        allPageHeaders: [],
+        mergeSecurityHeaders: true,
+        mergeCachingHeaders: true,
+        transformHeaders: (headers, path) => headers,
+        generateMatchPathRewrites: true,
       },
     },
   ],
