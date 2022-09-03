@@ -1,0 +1,174 @@
+---
+published: true
+featuredpost: false
+author: Donald Boulton
+title: Netlify CMS
+path: /blog/netlify-cms
+date: 2019-03-22
+imageLink: https://publiuslogic.com/assets/netlify-cms.jpg
+category: Tech
+tags: [Netlify, CMS, Identity]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+description: Netlify CMS backend for editing data and site pages
+---
+
+## Netlify CMS
+
+🔥 Static + content management = ❤️
+
+🔗 [CMS Site](https://www.netlifycms.org/)
+
+### Netlify Cms App
+
+Netlify CMS adding to Gatsby with netlify-cms-app, is the best way to do it in 2020 as Netlify Cms App Netlify CMS app always creates its own DOM element for mounting the application.
+
+Best advice if you want to use Netlify CMS with Gatsby is to follow the Code in [Gatsby Starter Netlify Cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms).
+
+Added presentation slides from [Netlify Cms Presentations](https://github.com/Benaiah/netlify-cms-presentations-example)
+
+Or check out how I did it in this website in my [PubliusLogic Github Repo](https://github.com/donaldboulton/publiuslogic).
+
+There is lots of documentation on Netlify CMS so I do not have to rewrite that here.
+
+Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.
+
+An integrated part of your Git workflow
+Content is stored in your Git repository along side your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.
+
+### An extensible CMS
+
+Netlify CMS is built as a single-page React app. Create custom-styled previews, UI widgets, and editor plugins or add a backend to support different Git platform APIs.
+My Netlify CMS backend will build and add Pages, Posts, My layout components with Event data for GCal fullCalendar localized events, Notifications, Authors, Products, Site Updates and charts data using charts.js displaying build, sales and analytics charts data on individual pages and posts. All edited from a CMS Backend on a Static Website!
+
+## Installation
+
+yarn add gatsby-plugin-netlify-cms netlify-cms-app
+
+### gatsby.config file add
+
+```js:title=gatsby-config.js {2,4}
+{
+  resolve: 'gatsby-plugin-netlify-cms',
+  options: {
+    modulePath: `${__dirname}/src/cms/cms.js`,
+  },
+},
+```
+
+### CMS file in src
+
+Add to folder under src/cms/cms.js
+
+```jsx:title=src/cms/cms.js {3-5}
+import CMS from "netlify-cms-app"
+
+export default {
+  CMS,
+}
+```
+
+### The Configuration file
+
+Change this config.yml file to your site needs.
+
+```yaml:title=static/admin/config.yml
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  repo: donaldboulton/publiuslogic
+  branch: master
+  identity_url: "https://publiuslogic.com/.netlify/identity"
+  gateway_url: "https://publiuslogic.com/.netlify/git"
+  site_domain:  "https://publiuslogic.com/"
+  squash_merges: true
+
+display_url: https://publiuslogic.com
+logo_url: https://publiuslogic.com/img/apple-touch-icon-180x180.png
+
+publish_mode: editorial_workflow
+media_library:
+ name: uploadcare
+ config:
+   publicKey: <'YOUR KEY'>
+media_folder: static/img
+public_folder: img
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "template", widget: "hidden", default: "home-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Offerings, name: offerings, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "template", widget: "hidden", default: "pages"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/pricing/index.md"
+        label: "Pricing Page"
+        name: "pricing"
+        fields:
+          - {label: "Template Key", name: "template", widget: "hidden", default: "pricing-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/contact/index.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {label: "Template Key", name: "template", widget: "hidden", default: "contact-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Contacts, name: contacts, widget: list, fields: [{label: Email, name: email, widget: string}, {label: Description, name: description, widget: string}]}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/privacy/index.md"
+        label: "Privacy Page"
+        name: "privacy"
+        fields:
+          - {label: "Template Key", name: "template", widget: "hidden", default: "privacy-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "template", widget: "hidden", default: "posts"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Meta Title", name: "meta_title", widget: "string"}
+      - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - {label: "Tweet Id", name: "tweet_id", widget: "text"}
+
+```
+
+`youtube: https://youtu.be/_CNZJLYvINc`
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

@@ -1,0 +1,135 @@
+---
+published: true
+featuredpost: false
+author: Donald Boulton
+title: React Hook Form
+path: /blog/react-hook-form
+date: 2019-04-23
+category: Tech
+imageLink: https://publiuslogic.com/assets/react-hook-form.jpg
+tags: [React, Hooks, Validation]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+description: I chose this module to validate my forms, its lightweight and integrates with yup schemas
+---
+
+## React Hook Forms
+
+↩️ I chose this module to validate my forms, its lightweight and integrates with yup schemas. Plus a nice online form builder and right on point instructions.
+
+You can see this form validation in action on my contact page and on my email form in a modali window, the button for the popup email form is in the email section at the lower part of every PubliusLogic page.
+
+🔗 [简体中文](https://github.com/bluebill1049/react-hook-form/blob/master/docs/README.zh-CN.md")
+
+![Logo](../../../static/img/react-hook-form.png 'React Hook Form')
+
+🔗 [React Hooks Form](https://react-hook-form.com/get-started)
+
+> React hook form validation without the hassle
+
+- Super easy to integrate and create forms
+- Built with React Hooks with performance and developer experience in mind
+- Follows HTML standard for validation
+- Tiny size without other any dependency
+- Build forms quickly with the 🔗 [form builder](https://react-hook-form.com/form-builder)
+
+## Install
+
+```bash:title=install
+    $ npm install react-hook-form
+
+    $ yarn add react-hook-form
+
+    For validation schemas use yup
+
+    $ npm install yup
+
+    $ yarn add yup
+```
+
+### Yup at [code sandbox](https://codesandbox.io/s/yyyqp7y8x)
+
+## [Docs](https://react-hook-form.com/)
+
+- [Resources](https://react-hook-form.com/resources)
+- [Get started](https://react-hook-form.com/)
+- [API](https://react-hook-form.com/api)
+- [FAQ's](https://react-hook-form.com/faqs)
+- [Blog Post Validation Examples](https://jasonwatmore.com/blog/2021/04/21/react-hook-form-7-form-validation-example)
+- [Advance Usage](https://react-hook-form.com/advanced-usage)
+- [Dev Tools](DevTools)
+- [Form Builder](https://react-hook-form.com/form-builder)
+
+## Quickstart
+
+```tsx:title=src/components/comments.jsx {2,5,12,14,17,19}
+import React from "react";
+import { useForm } from "react-hook-form";
+
+export default function App() {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
+  console.log(watch("example")); // watch input value by passing the name of it
+
+  return (
+    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {/* register your input into the hook by invoking the "register" function */}
+      <input defaultValue="test" {...register("example")} />
+
+      {/* include validation with required or other standard HTML validation rules */}
+      <input {...register("exampleRequired", { required: true })} />
+      {/* errors will return when field validation fails  */}
+      {errors.exampleRequired && <span>This field is required</span>}
+
+      <input type="submit" />
+    </form>
+  );
+}
+```
+
+### validationSchema
+
+If you would like to centralize your validation rules or external validation schema, you can apply validationSchema when you invoke useForm. we use Yup for object schema validation and the example below demonstrate the usage.
+
+```tsx:title=src/components/yup.jsx {3-10,12-14,19-23}
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  firstName: yup.string().required(),
+  age: yup.number().positive().integer().required(),
+});
+
+export default function App() {
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+  const onSubmit = data => console.log(data);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("firstName")} />
+      <p>{errors.firstName?.message}</p>
+
+      <input {...register("age")} />
+      <p>{errors.age?.message}</p>
+
+      <input type="submit" />
+    </form>
+  );
+}
+```
+
+## Contributors
+
+Thanks goes to these wonderful people:
+
+🔗 [AyumiKai](https://github.com/AyumiKai)
+🔗 [garthmcrae](https://github.com/garthmcrae)
+🔗 [erikras](https://github.com/erikras)
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

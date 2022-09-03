@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://publiuslogic.com/blog</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/blog.jpg</image:loc><image:caption>blog.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/about</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/about.jpg</image:loc><image:caption>about.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/privacy</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/about.jpg</image:loc><image:caption>about.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/andrea-bocelli</loc>
+  <lastmod>2022-04-24T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/andrea-bocelli.jpg</image:loc><image:caption>andrea-bocelli.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/trinity-of-angels</loc>
+  <lastmod>2021-04-11T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/trinity-of-angels.png</image:loc><image:caption>trinity-of-angels.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/trinity-of-man</loc>
+  <lastmod>2022-04-17T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/trinity-of-man.png</image:loc><image:caption>trinity-of-man.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/baby-formula</loc>
+  <lastmod>2022-05-14T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/baby-formula.jpg</image:loc><image:caption>baby-formula.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/bullshit</loc>
+  <lastmod>2022-04-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/bullshit.jpg</image:loc><image:caption>bullshit.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/the-day-the-i</loc>
+  <lastmod>2022-06-04T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/the-day.jpg</image:loc><image:caption>the-day.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/experiments</loc>
+  <lastmod>2021-04-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/experiments.jpg</image:loc><image:caption>experiments.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/applause-use-sound-confetti</loc>
+  <lastmod>2020-10-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/applause.jpg</image:loc><image:caption>applause.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/json-ld-mdx</loc>
+  <lastmod>2020-10-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/json-ld-mdx.jpg</image:loc><image:caption>json-ld-mdx.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/commandments</loc>
+  <lastmod>2021-06-18T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/commandments.png</image:loc><image:caption>commandments.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/creation-of-all</loc>
+  <lastmod>2021-04-02T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/creaton.jpg</image:loc><image:caption>creation.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/cookies</loc>
+  <lastmod>2021-04-02T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/cookies.jpg</image:loc><image:caption>creation.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/cyber-attack</loc>
+  <lastmod>2021-05-24T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/cyber-attackers.jpg</image:loc><image:caption>cyber-attackers.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/earths-magnetic-flux</loc>
+  <lastmod>2020-09-22T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/earths-magnetic-flux.jpg</image:loc><image:caption>earths-magnetic-flux.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/emf-emp</loc>
+  <lastmod>2021-06-06T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/5G-Radiation-.jpg</image:loc><image:caption>5G-Radiation-.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/google-maps+react-hooks</loc>
+  <lastmod>2019-03-25T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/maps.jpg</image:loc><image:caption>maps.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/gatsby-version-four</loc>
+  <lastmod>2019-03-25T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/gatsby-starter-rendering-modes-thumbnail-wide.jpg</image:loc><image:caption>maps.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/immorality-abortion</loc>
+  <lastmod>2021-10-13T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/abortion-immorality.jpg</image:loc><image:caption>applause.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/government</loc>
+  <lastmod>2021-04-20T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/government.jpg</image:loc><image:caption>government.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/group-sports</loc>
+  <lastmod>2020-08-15T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/sports.jpg</image:loc><image:caption>sports.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/jew-who</loc>
+  <lastmod>2021-04-28T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/jew-who.jpg</image:loc><image:caption>jew-who.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/war-machine</loc>
+  <lastmod>2019-04-20T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/war-machine.jpg</image:loc><image:caption>war-machine.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/netlify-cms</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/netlify-cms.jpg</image:loc><image:caption>netlify-cms.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/philosophy</loc>
+  <lastmod>2021-04-25T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/philosophy.jpg</image:loc><image:caption>philosophy.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/gatsby-party-town</loc>
+  <lastmod>2022-08-06T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/partytown.jpg</image:loc><image:caption>partytown.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/playtime</loc>
+  <lastmod>2020-04-07T22:27:18+00:00</lastmod>
+   <changefreq>daily</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/playtime.jpg</image:loc><image:caption>playtime.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/ou-scum</loc>
+  <lastmod>2022-07-08T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/ou-scum.jpg</image:loc><image:caption>ou-scum.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/mrna-reprogramming</loc>
+  <lastmod>2022-07-08T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/mrna-reprogramming.jpg</image:loc><image:caption>mrna-reprogramming.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/mother-russia</loc>
+  <lastmod>2022-07-08T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/mother-russia.jpg</image:loc><image:caption>mother-russia.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/aborted-fetuses</loc>
+  <lastmod>2022-07-08T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/aborted-fetuses.jpg</image:loc><image:caption>aborted-fetuses.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/protesting</loc>
+  <lastmod>2019-03-22T22:27:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/protests.jpg</image:loc><image:caption>protests.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-github-comments-utterances</loc>
+  <lastmod>2019-04-16T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/utterances.jpg</image:loc><image:caption>utterances.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-netlify-forms</loc>
+  <lastmod>2021-08-12T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/react-netlify-forms.png</image:loc><image:caption>react-netlify-forms.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-crud-netlify-fauna</loc>
+  <lastmod>2019-11-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/react-netlify-fauna.jpg</image:loc><image:caption>react-netlify-fauna.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-hook-form</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/react-hook-form.jpg</image:loc><image:caption>react-hook-form.jpg</image:caption></image:image>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-hooks-masonry</loc>
+  <lastmod>2019-02-05T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/masonry.jpg</image:loc><image:caption>masonary.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-hooks-modal</loc>
+  <lastmod>2019-03-25T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/react-hooks-modal.jpg</image:loc><image:caption>react-hooks-modal.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-netlify-no-plugins</loc>
+  <lastmod>2020-07-06T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/hero-no-plugins.jpg</image:loc><image:caption>hero-no-plugins.jpg</image:caption></image:image>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-scroll-to-top</loc>
+  <lastmod>2019-04-22T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/top.jpg</image:loc><image:caption>top.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/react-seo/</loc>
+  <lastmod>2019-07-30T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/json-ld.jpg</image:loc><image:caption>json-ld.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/song</loc>
+  <lastmod>2021-04-17T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/song.jpg</image:loc><image:caption>song.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/taiwan</loc>
+  <lastmod>2021-04-17T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/taiwan-china.jpg</image:loc><image:caption>taiwan-china.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/utility</loc>
+  <lastmod>2021-04-28T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/utility.jpg</image:loc><image:caption>utility.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/usa-election</loc>
+  <lastmod>2020-11-21T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/blue-river.jpg</image:loc><image:caption>blue-river.jpg</image:caption></image:image>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/vaccination</loc>
+  <lastmod>2021-05-04T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/vaccination.jpg</image:loc><image:caption>vaccination.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/virtue</loc>
+  <lastmod>2021-04-22T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/virtue.png</image:loc><image:caption>virtue.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/blog/works-of-flesh</loc>
+  <lastmod>2021-04-23T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/works.jpg</image:loc><image:caption>works.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+</urlset>

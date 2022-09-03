@@ -1,0 +1,174 @@
+---
+published: true
+featuredpost: false
+author: Donald Boulton
+title: Applause useSound Confetti
+path: /blog/applause-use-sound-confetti
+date: 2020-10-10
+category: Tech
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+imageLink: https://publiuslogic.com/assets/applause.jpg
+tags: [React, Applause, useSound, Confetti]
+description: Applause Api with useSound Hook and React Dom Confetti
+---
+
+## Applause Button
+
+Click the flowers 🎉 for claps in the Bio Section above and see an hear the Magic. 🤟🎉
+
+I wanted a Applause button with sound and Confetti of my own design and below is what I came up with.
+I will be adding a version for FaunaDB using my own API with Netlify functions💯
+
+### Applause api
+
+🖧 Utilizing the free api from 🔗 [Applause Button](https://applause-button.com/) to CRUD the data.
+If you use this API allot, you should donate for its server time or to 🔗 [Open Collective](https://opencollective.com/).
+
+## useSound
+
+### A React Hook for Sound Effects
+
+🚀 Repo 🔗 [useSound by Josh W Comeau](https://github.com/joshwcomeau/use-sound)
+
+### The web needs more (tasteful) sounds!
+
+- 👂 Lets your website communicate using 2 human senses instead of 1
+- 🔥 Declarative Hooks API
+- ⚡️ <1kb bytes (gzip) in your bundle! ~10kb loaded async.
+- ✨ Built with Typescript
+- 🗣 Uses a powerful, battle-tested audio utility: [**Howler.js**](https://howlerjs.com/)
+
+This library only works with React DOM, but @remigallego created an alternative for React Native! Check out [react-native-use-sound](https://github.com/remigallego/react-native-use-sound).
+
+## Confetti Cannon
+
+💣 I am using 🔗 [react-dom-confetti](https://github.com/daniel-lundin/react-dom-confetti) for the Confetti Cannon that is positioned over the Applause button as so the explosion will come from the button count on the API response.
+
+### Install Modules
+
+🤟 You will have to add sound.mp3 and modules. I got my clapping.mp3 from 🔗 [FreeSound.org](https://freesound.org/)
+
+> Your own clapping sound
+
+And then install...
+
+```bash:title=install
+yarn add use-sound react-dom-confetti
+```
+
+If you are using the below code give a Applause or use any social link or github star or add a Comment in the FaunaDB Comments Form to display your comments on this page.
+
+## Applause Code
+
+```tsx:title=src/components/applause.tsx {4-6,22-26,96-98}
+import * as React from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import useSound from 'use-sound'
+import Confetti from 'react-dom-confetti'
+import clapping from '../../../static/audio/clapping.mp3'
+
+const confettiConfig = {
+  angle: 90,
+  spread: 360,
+  startVelocity: 40,
+  elementCount: 70,
+  dragFriction: 0.12,
+  duration: 3000,
+  stagger: 3,
+  width: '10px',
+  height: '10px',
+  perspective: '500px',
+  colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+}
+
+const Wrapper = props => <span style={{ position: 'relative' }} {...props} />
+
+const ConfettiWrapper = props => (
+  <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
+)
+const API = 'https://api.applause-button.com'
+const VERSION = '3.0.0'
+const mainUrl = typeof window !== 'undefined' ? window.location.href : ''
+
+const HEADERS = {
+  'Content-Type': 'text/plain',
+}
+
+const getClaps = async url => {
+  const query = url ? `?url=${url}` : ''
+  // eslint-disable-next-line no-return-await
+  return await axios.get(`${API}/get-claps${query}`, {
+    headers: HEADERS,
+  })
+}
+
+const updateClaps = async (url, claps = 1) => {
+  console.log(claps)
+  const query = url ? `?url=${url}` : ''
+  // eslint-disable-next-line no-return-await
+  return await axios.post(
+    `${API}/update-claps${query}`,
+    JSON.stringify(`${claps},${VERSION}`),
+    {
+      headers: HEADERS,
+    }
+  )
+}
+
+const ApplauseButton = ({ url = mainUrl, props }) => {
+  const [count, setCount] = useState(0)
+  const [isClapped, setIsClapped] = useState(false)
+  const [play] = useSound(clapping)
+  const doApplause = () => {
+    if (!isClapped) {
+      console.log('do clapping')
+      const callBackend = async () => {
+        const result = await updateClaps(url, 1)
+        setCount(result.data)
+        setIsClapped(true)
+      }
+      callBackend()
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getClaps(url)
+      console.log(result)
+      setCount(result.data)
+    }
+    fetchData()
+  }, [])
+
+  return (
+    <Wrapper>
+      <span
+        style={{
+          cursor: 'pointer',
+          padding: '1em',
+        }}
+        onClick={() => {
+          doApplause()
+          play()
+        }}
+      >
+        {isClapped ? '🤟🎉' : '👋'}
+        {` ${count}`}
+      </span>
+      <ConfettiWrapper>
+        <Confetti active={isClapped} config={confettiConfig} {...props} />
+      </ConfettiWrapper>
+    </Wrapper>
+  )
+}
+
+export default ApplauseButton
+```
+
+## Copy Code Button
+
+You can see confetti and hear the applause by clicking the copy icon in any codeblock.
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

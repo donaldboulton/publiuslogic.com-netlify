@@ -1,0 +1,31 @@
+{
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "public", ".cache"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    // "allowJs": true,
+    // "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "plugins": [
+      {
+        "name": "ts-graphql-plugin",
+        "tag": "gql" /* Template tag function name */
+      }
+    ]
+  }
+}

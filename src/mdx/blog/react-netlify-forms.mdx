@@ -1,0 +1,537 @@
+---
+published: true
+featuredpost: false
+author: Donald Boulton
+title: React Netlify Forms
+path: /blog/react-netlify-forms
+date: 2021-08-12
+category: Tech
+imageLink: https://publiuslogic.com/assets/netlify-forms.jpg
+tags: [React, Netlify, Forms]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+description: React Netlify Forms, is easy with Bot fields and invisible reCaptcha including dropZone for image upload.
+---
+
+## React Netlify Forms
+
+> React components and hooks giving you the power of Netlify Forms. Start building serverless forms on Netlify with React. Honeypot fields and reCAPTCHA are included as ready-to-use components.
+
+[Go to documentation with live demo.](https://pyrax.github.io/react-netlify-forms)
+
+## Features
+
+It gives you all the features of Netlify Forms as simple and **reusable** React components which have been tested on Netlify.
+
+- Default form handlers with support for file uploads.
+- Spam prevention through included honeypot and reCAPTCHA components.
+- Can be used alone or together with form libraries such as Formik or react-hook-form.
+
+## Before using
+
+This component must be used with Server-Side Rendering (SSR) because Netlify
+searches for a `data-netlify` attribute on HTML `form` tags to setup their
+Forms backend for you.
+
+## Install
+
+Either install with NPM via:
+
+```bash:title=node
+npm install --save react-netlify-forms
+```
+
+### Yarn Install
+
+```bash:title=node
+yarn add react-netlify-forms
+```
+
+## Usage
+
+In the following example a contact form with two inputs, a form hidden input for Netlify form handling reCaptcha v2 invisible and a honeypot for extra spam prevention is shown. It also works without JavaScript by falling back to a serverside-rendered form which just submits data with an usual POST request:
+
+## My Form
+
+I am using [react-dropZone](https://react-dropzone.js.org/) for image uploads to Netlify Forms.
+
+Adding to the form for image upload
+
+```tsx:title=src/page/page.tsx
+enctype='multipart/form-data'
+```
+
+## Basic Form
+
+```tsx:title=src/components/comments.tsx {3,6-13,32-33}
+import React, { Component } from 'react'
+
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+
+export default ContactForm = () => (
+  <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
+    {({ handleChange, success, error }) => (
+      <>
+        <Honeypot />
+        {success && <p>Thanks for contacting us!</p>}
+        {error && (
+          <p>Sorry, we could not reach our servers. Please try again later.</p>
+        )}
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input type='text' name='name' id='name' onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor='message'>Message:</label>
+          <textarea
+            type='text'
+            name='message'
+            id='message'
+            rows='4'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button type='submit'>Submit</button>
+        </div>
+      </>
+    )}
+  </NetlifyForm>
+)
+```
+
+## Form with React dropZone
+
+```tsx:title=src/components/comments.tsx {5,28-33,140-147}
+import * as React from 'react'
+import { useState, useCallback } from 'react'
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import styled from 'styled-components'
+import {useDropzone} from 'react-dropzone'
+
+
+const FormInput = styled.input`
+  font-family: Kaushan Script,cursive;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-size-adjust: 100%;
+  width: 45%;
+`
+const FormTextarea = styled.textarea`
+  font-family: Kaushan Script,cursive;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-size-adjust: 100%;
+  width: 95%;
+`
+
+const Title = styled.div`
+  font-family: Kaushan Script,cursive;
+`;
+
+function Contact() {
+  const [file, setFile] = useState({});
+  const onDrop = useCallback(acceptedFiles => {
+    console.log(acceptedFiles)
+    setFile(acceptedFiles[0])
+  }, [])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
+  return (
+    <NetlifyForm
+      name='contact'
+      honeypotName='bot-field'
+      enableRecaptcha
+      onSuccess={(response, context) => {
+        console.log('Successfully sent form data to Netlify Server')
+        context.formRef.current.reset()
+      }}
+    >
+      {({ handleChange, success, error }) => (
+        <>
+          <div
+            className='box'
+          >
+            <Honeypot />
+
+            {success && (
+              <p
+                style={{
+                  color: '#00FF00',
+                  marginLeft: '2em'
+                }}
+              >
+                Thanks for contacting us!
+              </p>
+            )}
+            {error && (
+              <p
+                style={{
+                  color: '#0000FF',
+                  marginLeft: '2em'
+                }}
+              >
+                Sorry, we could not reach servers.
+              </p>
+            )}
+            <div
+              style={{
+                display: 'inline',
+                marginTop: '2em',
+                verticalAlign: 'middle',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <FormInput
+                type='text'
+                name='name'
+                id='name'
+                onChange={handleChange}
+                placeholder='Your Name'
+                className='input'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+              <FormInput
+                type='email'
+                name='email'
+                onChange={handleChange}
+                className='input'
+                placeholder='Email Address'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+            </div>
+            <div
+              style={{
+                marginTop: '2em',
+                marginRight: '2em',
+                marginLeft: '1.6em',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '98%'
+              }}
+            >
+              <FormTextarea
+                type='text'
+                name='message'
+                id='message'
+                placeholder='Message'
+                onChange={handleChange}
+                className='textarea'
+                style={{
+                  height: '200px',
+                  padding: '0.9em',
+                  marginBottom: '1.5em'
+                }}
+                required
+              />
+            </div>
+            <div
+              style={{
+                width: '90%',
+                padding: '0.9em',
+                marginLeft: '2em',
+                marginBottom: '1.5em'
+              }}
+            >
+              <div {...getRootProps()} className='box'>
+                <input {...getInputProps()} name='file' />
+                {
+                  isDragActive ?
+                    <p>Drop the files here ...</p> :
+                    <p>Drag 'n' drop some files here, or click to select files</p>
+                }
+              </div>
+            </div>
+            <div
+              style={{
+                marginBottom: '1em'
+              }}
+            >
+              <Recaptcha siteKey={ process.env.GATSBY_SITE_RECAPTCHA_KEY } invisible />
+              <div
+                style={{
+                  marginRight: '1em',
+                  marginLeft: '2em'
+                }}
+              >
+                <button type='submit' className='button'>
+                  Submit
+                </button>
+                <button type='reset' className='button'>
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </NetlifyForm>
+  )
+}
+
+export default Contact
+```
+
+### React dropZone Previews
+
+```tsx:title=src/components/previews.tsx {5,132}
+import * as React from 'react'
+import { useState, useCallback } from 'react'
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import styled from 'styled-components'
+import Previews from './Previews'
+
+const FormInput = styled.input`
+  font-family: Kaushan Script,cursive;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-size-adjust: 100%;
+  width: 45%;
+`
+const FormTextarea = styled.textarea`
+  font-family: Kaushan Script,cursive;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-size-adjust: 100%;
+  width: 95%;
+`
+
+function Contact() {
+
+  return (
+    <NetlifyForm
+      name='contact'
+      honeypotName='bot-field'
+      enableRecaptcha
+      enctype="multipart/form-data"
+      onSuccess={(response, context) => {
+        console.log('Successfully sent form data to Netlify Server')
+        context.formRef.current.reset()
+      }}
+    >
+      {({ handleChange, success, error }) => (
+        <>
+          <div
+            className='box'
+          >
+            <Honeypot />
+
+            {success && (
+              <p
+                style={{
+                  color: '#00FF00',
+                  marginLeft: '2em'
+                }}
+              >
+                Thanks for contacting us!
+              </p>
+            )}
+            {error && (
+              <p
+                style={{
+                  color: '#0000FF',
+                  marginLeft: '2em'
+                }}
+              >
+                Sorry, we could not reach servers.
+              </p>
+            )}
+            <input type="hidden" name="form-name" value="contact" />
+            <div
+              style={{
+                display: 'inline',
+                marginTop: '2em',
+                verticalAlign: 'middle',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <FormInput
+                type='text'
+                name='name'
+                id='name'
+                onChange={handleChange}
+                placeholder='Your Name'
+                className='input'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+              <FormInput
+                type='email'
+                name='email'
+                onChange={handleChange}
+                className='input'
+                placeholder='Email Address'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+            </div>
+            <div
+              style={{
+                marginTop: '2em',
+                marginRight: '2em',
+                marginLeft: '1.6em',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '98%'
+              }}
+            >
+              <FormTextarea
+                type='text'
+                name='message'
+                id='message'
+                placeholder='Message'
+                enctype='multipart/form-data'
+                onChange={handleChange}
+                className='textarea'
+                style={{
+                  height: '200px',
+                  padding: '0.9em',
+                  marginBottom: '1.5em'
+                }}
+                required
+              />
+            </div>
+            <div
+              style={{
+                width: '90%',
+                padding: '0.9em',
+                marginLeft: '2em',
+                marginBottom: '1.5em'
+              }}
+            >
+              <Previews />
+            </div>
+            <div
+              style={{
+                marginBottom: '1em'
+              }}
+            >
+              <Recaptcha siteKey={ process.env.GATSBY_SITE_RECAPTCHA_KEY } invisible />
+              <div
+                style={{
+                  marginRight: '1em',
+                  marginLeft: '2em'
+                }}
+              >
+                <button type='submit' className='button'>
+                  Submit
+                </button>
+                <button type='reset' className='button'>
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </NetlifyForm>
+  )
+}
+
+export default Contact
+```
+
+### React dropZone Previews Component
+
+```tsx:title=src/components/previews.tsx
+import React, {useEffect, useState} from 'react';
+import {useDropzone} from 'react-dropzone';
+
+const thumbsContainer = {
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  marginTop: '1em'
+};
+
+const thumb = {
+  display: 'inline-flex',
+  borderRadius: '4px',
+  border: 'thin solid #939799',
+  marginBottom: '2em',
+  marginRight: '1em',
+  width: 'auto',
+  height: '100px',
+  padding: '1em',
+  boxSizing: 'border-box'
+};
+
+const thumbInner = {
+  display: 'flex',
+  minWidth: '0px',
+  overflow: 'hidden'
+};
+
+const img = {
+  display: 'block',
+  width: 'auto',
+  height: '100%'
+};
+
+
+export default function Previews(props) {
+  const [files, setFiles] = useState([]);
+  const {getRootProps, getInputProps} = useDropzone({
+    accept: 'image/*',
+    onDrop: acceptedFiles => {
+      setFiles(acceptedFiles.map(file => Object.assign(file, {
+        preview: URL.createObjectURL(file)
+      })));
+    }
+  });
+
+  const thumbs = files.map(file => (
+    <div style={thumb} key={file.name}>
+      <div style={thumbInner}>
+        <img
+          src={file.preview}
+          style={img}
+        />
+      </div>
+    </div>
+  ));
+
+  useEffect(() => () => {
+    // Make sure to revoke the data uris to avoid memory leaks
+    files.forEach(file => URL.revokeObjectURL(file.preview));
+  }, [files]);
+
+  return (
+    <section className="container box">
+      <div {...getRootProps({className: 'dropzone'})}>
+        <input {...getInputProps()} type='file' name='file' />
+        <p>Drag 'n' drop some files here, or click to select files</p>
+      </div>
+      <aside style={thumbsContainer}>
+        {thumbs}
+      </aside>
+    </section>
+  );
+}
+```
+
+For more examples please browse the below website.
+
+[Björn Clees](https://github.com/Pyrax)
+
+---
+
+Thanks to [create-react-library](https://www.npmjs.com/package/create-react-library) for providing quick setup for NPM packages.
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

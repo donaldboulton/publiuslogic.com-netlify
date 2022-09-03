@@ -1,0 +1,10 @@
+/* TEAM */
+
+Creator: Donald Boulton
+URL: https://publiuslogic.com
+Description: Hi! I'm Donald and I'm a self-taught and passionate graphic designer & Full Stack Developer
+
+/* SITE */
+
+Standards: HTML5, CSS3
+Components: Gatsby, React, Typescript, MDX, Tailwind Css, Framer Motion
