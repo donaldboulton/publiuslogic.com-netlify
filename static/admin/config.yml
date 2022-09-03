@@ -1,9 +1,10 @@
 backend:
   name: git-gateway
+  branch: master
   repo: donaldboulton/publiuslogic-netlify
-media_folder: static/assets
-public_folder: /assets
-branch: master
+  
+media_folder: static/img
+public_folder: /img
 identity_url: "https://publiuslogic.com/.netlify/identity"
 gateway_url: "https://publiuslogic.com/.netlify/git"
 site_domain:  "https://publiuslogic.com/"
@@ -16,11 +17,22 @@ publish_mode: editorial_workflow
 collections:
   - name: blog
     label: Blog
-    folder: mdx
+    folder: 'mdx'
     create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
+      - name: tags
+        label: Tags
+        widget: tags
+        separator: ","
+        required: false

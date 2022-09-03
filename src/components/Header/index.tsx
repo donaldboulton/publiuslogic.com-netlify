@@ -164,8 +164,8 @@ export default function Navigation() {
                               to="/admin"
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
-                                <span>Administration</span>
+                                <LoginIcon className="block h-9 w-9 pr-2 text-yellow-500" aria-hidden="true" />
+                                <span>Content Admin</span>
                               </span>
                             </Link>
                           )}
