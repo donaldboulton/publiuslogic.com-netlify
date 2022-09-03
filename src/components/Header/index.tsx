@@ -157,6 +157,22 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
+                              className={classNames(
+                                active ? 'bg-slate-700' : '',
+                                'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                              )}
+                              to="/admin"
+                            >
+                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                                <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
+                                <span>Administration</span>
+                              </span>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',

@@ -2,18 +2,10 @@ import * as React from 'react'
 import { useState } from 'react'
 import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 import { LoginIcon, LogoutIcon } from '@heroicons/react/outline'
-import IdentityModal, { useIdentityContext } from 'react-netlify-identity-widget'
-import 'react-netlify-identity-widget/styles.css'
 
 const Login = () => {
   const { isSignedIn, googleUser, signIn, signOut } = useGoogleAuth()
-  const identity = useIdentityContext()
-  const [dialog, setDialog] = useState(false)
-  const name =
-    (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || 'NoName'
 
-  console.log(JSON.stringify(identity))
-  const isLoggedIn = identity && identity.isLoggedIn
   return (
     <>
       <div className="flex items-center flex-shrink-0 text-lg">
@@ -64,17 +56,7 @@ const Login = () => {
             </div>
           )}
         </div>
-        <div className="flex items-center flex-shrink-0 text-lg pr-2">
-          <h3>Netlify sign On</h3>
-          <button
-            className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white"
-            onClick={() => setDialog(true)}
-          >
-            {isLoggedIn ? `Hello ${name}, Log out here!` : 'LOG IN'}
-          </button>
-        </div>
       </div>
-      <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
     </>
   )
 }
