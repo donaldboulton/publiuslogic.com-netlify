@@ -143,7 +143,7 @@ export default function Navigation() {
                             <Link
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block x-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                               to="/login"
                             >
@@ -159,14 +159,14 @@ export default function Navigation() {
                             <Link
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                               to="/admin"
                               target="_blank"
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <LoginIcon className="block h-9 w-9 pr-2 text-yellow-500" aria-hidden="true" />
-                                <span>Content Admin</span>
+                                <span>Admin</span>
                               </span>
                             </Link>
                           )}
@@ -177,12 +177,12 @@ export default function Navigation() {
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block x-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <UserGroupIcon className="block h-8 w-8 pr-2 text-purple-500" aria-hidden="true" />
-                                <span>Github Profile</span>
+                                <span>Profile</span>
                               </span>
                             </Link>
                           )}
@@ -214,7 +214,7 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                <MapIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
+                                <MapIcon className="block h-9 w-9 pr-2 text-green-600" aria-hidden="true" />
                                 <span>Sitemap</span>
                               </span>
                             </Link>

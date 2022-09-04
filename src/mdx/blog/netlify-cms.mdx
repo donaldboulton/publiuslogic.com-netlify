@@ -21,6 +21,8 @@ description: Netlify CMS backend for editing data and site pages
 
 ### Netlify Cms App
 
+Republished and edited 9/3/2022
+
 Netlify CMS adding to Gatsby with netlify-cms-app, is the best way to do it in 2020 as Netlify Cms App Netlify CMS app always creates its own DOM element for mounting the application.
 
 Best advice if you want to use Netlify CMS with Gatsby is to follow the Code in [Gatsby Starter Netlify Cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms).
@@ -43,11 +45,13 @@ My Netlify CMS backend will build and add Pages, Posts, My layout components wit
 
 ## Installation
 
+```node
 yarn add gatsby-plugin-netlify-cms netlify-cms-app
+```
 
 ### gatsby.config file add
 
-```js:title=gatsby-config.js {2,4}
+```js:title=gatsby-config.js {1-6}
 {
   resolve: 'gatsby-plugin-netlify-cms',
   options: {
@@ -56,11 +60,11 @@ yarn add gatsby-plugin-netlify-cms netlify-cms-app
 },
 ```
 
-### CMS file in src
+### CMS Folder file in src
 
 Add to folder under src/cms/cms.js
 
-```jsx:title=src/cms/cms.js {3-5}
+```jsx:title=src/cms/cms.js {1,3-5}
 import CMS from "netlify-cms-app"
 
 export default {
@@ -68,105 +72,112 @@ export default {
 }
 ```
 
-### The Configuration file
+### The Configuration File
 
 Change this config.yml file to your site needs.
 
 ```yaml:title=static/admin/config.yml
 backend:
   name: git-gateway
-  accept_roles:
-    - admin
-    - editor
-  repo: donaldboulton/publiuslogic
   branch: master
-  identity_url: "https://publiuslogic.com/.netlify/identity"
-  gateway_url: "https://publiuslogic.com/.netlify/git"
-  site_domain:  "https://publiuslogic.com/"
-  squash_merges: true
+  repo: donaldboulton/publiuslogic-netlify
+  
+media_folder: static/img
+public_folder: /img
+identity_url: "https://publiuslogic.com/.netlify/identity"
+gateway_url: "https://publiuslogic.com/.netlify/git"
+site_domain:  "https://publiuslogic.com/"
+squash_merges: true
 
 display_url: https://publiuslogic.com
 logo_url: https://publiuslogic.com/img/apple-touch-icon-180x180.png
 
 publish_mode: editorial_workflow
-media_library:
- name: uploadcare
- config:
-   publicKey: <'YOUR KEY'>
-media_folder: static/img
-public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pages/index.md"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - {label: "Template Key", name: "template", widget: "hidden", default: "home-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Offerings, name: offerings, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: "Meta Title", name: "meta_title", widget: "string"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {label: "Template Key", name: "template", widget: "hidden", default: "pages"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Meta Title", name: "meta_title", widget: "string"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/pricing/index.md"
-        label: "Pricing Page"
-        name: "pricing"
-        fields:
-          - {label: "Template Key", name: "template", widget: "hidden", default: "pricing-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-          - {label: "Meta Title", name: "meta_title", widget: "string"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/contact/index.md"
-        label: "Contact Page"
-        name: "contact"
-        fields:
-          - {label: "Template Key", name: "template", widget: "hidden", default: "contact-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Contacts, name: contacts, widget: list, fields: [{label: Email, name: email, widget: string}, {label: Description, name: description, widget: string}]}
-          - {label: "Meta Title", name: "meta_title", widget: "string"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/privacy/index.md"
-        label: "Privacy Page"
-        name: "privacy"
-        fields:
-          - {label: "Template Key", name: "template", widget: "hidden", default: "privacy-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
-          - {label: "Meta Title", name: "meta_title", widget: "string"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: blog
+    label: Blog
+    folder: 'mdx'
     create: true
-    slug: "{{slug}}"
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: true
     fields:
-      - {label: "Template Key", name: "template", widget: "hidden", default: "posts"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Meta Title", name: "meta_title", widget: "string"}
-      - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - {label: "Tweet Id", name: "tweet_id", widget: "text"}
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+      - name: tags
+        label: Tags
+        widget: tags
+        separator: ","
+        required: false
 ```
+
+## Post Build
+
+After a successful build, look in your build public folder you have a folder called admin,
+You can copy this to your desktop and use in to replace you /static/admin folder and remove everything you added to gatsby above as you do not need the `gatsby-plugin-netlify-cms` plugin nor it in your `gatsby-config.ts`, and remove the cms folder from src. Now you need just some link to /admin in your site to access your Content Manager.
+
+```diff
+  cms.js
+  cms.js.map
+  cms.css
+  config.yml
+  index.html
+  netlify-cms-app.js.LICENSE.txt
+  netlify-cms-app.js
+  netlify-cms-app.js.map
+  netlify-identity.js
+  netlify-identity.js.map
+  react.production.min.js
+  react-dom.production.min.js
+  netlify-cms-app.js
+```
+
+## Build Time Saving
+
+Save 25mb of stuff off of your build. On my site about a minute of build time. I edited the index.html file with a header and footer and my own background color.
+
+```html
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Content Manager</title>
+        <meta name="robots" content="none">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script defer="defer" src="netlify-identity.js"></script>
+        <script defer="defer" src="react.production.min.js"></script>
+        <script defer="defer" src="react-dom.production.min.js"></script>
+        <script defer="defer" src="netlify-cms-app.js"></script>
+        <script defer="defer" src="cms.js"></script>
+        <link rel="stylesheet" href="cms.css" crossorigin="anonymous"></link>
+    </head>
+    <body class="body nav-scroll">
+        <header class="header">
+            <div class="span">
+              <span class="title"><h3>PubliusLogic</h3</span>
+              <span class="copyright"><a href="/">Home</a></span>
+              <span class="name"><a href="/blog/">Blog</a></span>
+            </div>
+        </header>
+        <footer class="footer">
+            <div class="span">
+                <span class="title"><h3>PubliusLogic</h3</span>
+                <span class="copyright">@ Copyright 2022</span>
+                <span class="name"><a target="_blank" href="https://donboulton.com">By Donald Boulton</a></span>
+              </div>
+        </footer>
+    </body>
+</html>
+```
+
+
+
 
 `youtube: https://youtu.be/_CNZJLYvINc`
 
