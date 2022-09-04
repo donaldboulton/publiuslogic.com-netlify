@@ -143,7 +143,7 @@ export default function Navigation() {
                             <Link
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'block x-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                               to="/login"
                             >
@@ -162,6 +162,7 @@ export default function Navigation() {
                                 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                               to="/admin"
+                              target="_blank"
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <LoginIcon className="block h-9 w-9 pr-2 text-yellow-500" aria-hidden="true" />
@@ -176,7 +177,7 @@ export default function Navigation() {
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 mr-1 ml-1 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'block x-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
@@ -192,7 +193,7 @@ export default function Navigation() {
                               to="/gallery"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-0 mr-1 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
@@ -209,7 +210,7 @@ export default function Navigation() {
                               to="https://publiuslogic.com/sitemap.xml"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
@@ -225,7 +226,7 @@ export default function Navigation() {
                               to="/search"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-1 mr-1 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
