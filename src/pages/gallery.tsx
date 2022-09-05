@@ -12,7 +12,6 @@ import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WavyHr from '@/components/WavyHr'
 
 interface ImageSharpEdge {
   node: {
@@ -31,6 +30,7 @@ interface ImageGalleryProps {
     }
   }
 }
+
 const CustomWrapper = ({ children, onClick }) => (
   <div
     className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200"
@@ -80,7 +80,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
               <div class="flex flex-wrap w-2/3">
                 <div class="w-full p-1 md:p-2">
                   <Gallery
-                    imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-purple-600"
+                    imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-fuchsia-800"
                     images={images}
                     lightboxOptions={lightboxOptions}
                     customWrapper={CustomWrapper}
