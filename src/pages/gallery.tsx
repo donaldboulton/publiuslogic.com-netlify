@@ -12,6 +12,7 @@ import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import WavyHr from '@/components/WavyHr'
 
 interface ImageSharpEdge {
   node: {
@@ -32,7 +33,7 @@ interface ImageGalleryProps {
 }
 const CustomWrapper = ({ children, onClick }) => (
   <div
-    className="h-32 w-32 p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-lg"
+    className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200"
     onClick={onClick}
   >
     {children}
@@ -73,21 +74,23 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
       <Stars />
       <Layout>
         <PageHero title="Gallery: Images" description="My Kitty Cats Old and New!" image={Image} />
-        <div className="mt-10">
-          <div className="max-w-7xl mt-16 mb-32 mx-auto text-slate-900 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
-            <div className="flex justify-center md:flex">
-              <div className="container mx-auto my-auto py-10 px-10">
-                <Gallery
-                  imgClass="rounded-lg h-40 w-40 py-2 px-2 border-double border-4 border-sky-500"
-                  images={images}
-                  lightboxOptions={lightboxOptions}
-                  customWrapper={CustomWrapper}
-                  onClose={onClose}
-                />
+        <section class="mb-32 overflow-hidden">
+          <div class="container center px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+            <div class="flex justify-center flex-wrap -m-1 md:-m-2">
+              <div class="flex flex-wrap w-2/3">
+                <div class="w-full p-1 md:p-2">
+                  <Gallery
+                    imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-purple-600"
+                    images={images}
+                    lightboxOptions={lightboxOptions}
+                    customWrapper={CustomWrapper}
+                    onClose={onClose}
+                  />
+                </div>
               </div>
-            </div>
+            </div>         
           </div>
-        </div>
+        </section>        
       </Layout>
       <Footer />
     </>

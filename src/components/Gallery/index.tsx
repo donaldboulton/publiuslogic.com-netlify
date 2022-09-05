@@ -51,7 +51,7 @@ const Gallery: FC<GalleryProps> = ({
 
   return (
     <Fragment>
-      <div className="grid grid-rows-4 grid-flow-col grid-flow-row auto-rows-max gap-y-24">
+      <div className="grid grid-rows-4 grid-flow-col grid-flow-row auto-rows-max gap-y-2">
         {images.map((img, imgIndex) => {
           const thumbImage = getImage(img.thumb)
           if (!thumbImage) {

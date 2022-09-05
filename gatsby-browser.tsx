@@ -17,14 +17,6 @@ export function wrapPageElement({ element }) {
 
 export const wrapRootElement = wrap
 
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm('This application has been updated. ' + 'Reload to display the latest version?')
-
-  if (answer === true) {
-    window.location.reload()
-  }
-}
-
 if (
   localStorage.theme === 'dark' ||
   (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)

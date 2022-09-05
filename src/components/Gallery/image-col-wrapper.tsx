@@ -9,7 +9,7 @@ interface ImageColWrapperProps {
 const ImageColWrapper = ({ children, onClick }: ImageColWrapperProps) => {
   return (
     <div onClick={onClick}>
-      <div className="min-h-screen flex items-center justify-center">{children}</div>
+      <div className="min-h-screen flex justify-center">{children}</div>
     </div>
   )
 }
