@@ -65,7 +65,7 @@ const Gallery: FC<GalleryProps> = ({
                 setIndex(imgIndex)
               }}
             >
-              <GatsbyImage image={thumbImage} className={imgClass} alt={img.thumbAlt || ''} />
+              <GatsbyImage image={thumbImage} className={imgClass} title={img.title} alt={img.thumbAlt || ''} />
             </ImgColWrapper>
           )
         })}
