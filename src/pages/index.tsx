@@ -388,10 +388,12 @@ const Home = ({ image }: HomeProps) => {
                       <h3 className="text-3xl text-slate-200 mb-2 font-semibold leading-normal">
                         Coming Out of Retirement
                       </h3>
-                      <p className="first-line:uppercase first-line:tracking-widest
+                      <p
+                        className="first-line:uppercase first-line:tracking-widest
   first-letter:text-7xl first-letter:font-bold first-letter:text-white
   first-letter:mr-3 first-letter:float-left
-">
+"
+                      >
                         Don has been Retired from birth until I become 65, then I am getting to work, start singing,
                         finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Trinity's
                         church on Earth.

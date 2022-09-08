@@ -32,10 +32,7 @@ interface ImageGalleryProps {
 }
 
 const CustomWrapper = ({ children, onClick }) => (
-  <div
-    className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200"
-    onClick={onClick}
-  >
+  <div className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200" onClick={onClick}>
     {children}
   </div>
 )
@@ -88,9 +85,9 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
                   />
                 </div>
               </div>
-            </div>         
+            </div>
           </div>
-        </section>        
+        </section>
       </Layout>
       <Footer />
     </>
