@@ -8,7 +8,7 @@ function GithubRepos() {
 
   useEffect(() => {
     const getGitHubRepo = async () => {
-      const response = await fetch('/api/repo.js', {
+      const response = await fetch('https://publiuslogic.com/api/repo.js', {
         method: 'GET',
       })
 
@@ -28,8 +28,8 @@ function GithubRepos() {
       ) : (
         <>
           <div className="py-6 mb-4 w-full">
-            <h2 className="font-bold text-2xl">{user.name}</h2>
-            <a className="text-rose-400 hover:text-rose-500" href={user.blog_url} target="_blank" rel="noreferrer">
+            <div className="font-bold text-2xl">{repo.branches_url}</div>
+            <a className="text-rose-400 hover:text-rose-500" href={repo.html_url} target="_blank" rel="noreferrer">
               {repo.owner}
             </a>
             <p className="flex justify-center max-w-md m-auto text-slate-900 hover:text-slate-700 dark:text-slate-200 dark:hover:text-slate-200 my-2 mb-6">

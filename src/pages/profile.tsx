@@ -13,6 +13,7 @@ import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
+import GithubRepos from '@/components/GithubRepos'
 
 const ogimage = {
   src: OGImage,
@@ -133,6 +134,9 @@ function Profile() {
                 ></path>
               </svg>
             </div>
+          </div>
+          <div className="mt-6 mb-6 text-center">
+            <GithubRepos />
           </div>
           <div className="mb-20">
             <WavyHr className="text-indigo-600" />
