@@ -98,9 +98,9 @@ A [Gatsby v4](https://www.gatsbyjs.org/) 🗸 and [Netlify CMS](https://www.netl
 
 ### Server-less
 
-🔥 No run time dependency or vulnerable server stack required Pre-built pages served over a CDN for fastest time to first byte Fast and cheap CDN scaling results in ultra-high availability worldwide Server-side processes abstracted into microservice APIs for reduced attack surface areas Modern Continuous Deployment (CD) Git workflows with instant rollbacks Headless CMS for complete separation from your app/site and with full version control Modern authentication methods such as OAuth 2 for ultimate security.
+🔥 No run time dependency or vulnerable server stack required Pre-built pages served over a CDN for fastest time to first byte Fast and cheap CDN scaling results in ultra-high availability worldwide Server-side processes abstracted into microservice APIs for reduced attack surface areas Modern Continuous Deployment (CD) Git workflows with instant rollbacks Headless CMS for complete separation from your app / site and with full version control Modern authentication methods such as OAuth 2 for ultimate security.
 
-## Authenticati
+## Authentication
 
 #### What is Netlify Identity
 
