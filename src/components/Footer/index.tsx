@@ -23,7 +23,7 @@ export default function IndexFooter() {
 
   return (
     <>
-      <footer className="relative bg-gray-600 pt-8 pb-6">
+      <footer className="relative bg-gray-900 pt-8 pb-6">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
           style={{ height: '80px' }}
@@ -37,7 +37,7 @@ export default function IndexFooter() {
             x="0"
             y="0"
           >
-            <polygon className="text-gray-600 fill-current" points="2560 0 2560 100 0 100"></polygon>
+            <polygon className="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
           </svg>
         </div>
         <div className="container mx-auto px-4">

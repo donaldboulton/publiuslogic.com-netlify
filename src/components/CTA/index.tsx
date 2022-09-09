@@ -1,8 +1,9 @@
 import * as React from 'react'
+import Section from '@/components/Section'
 
 export default function CTA() {
   return (
-    <div>
+    <Section>
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-4 lg:py-6 lg:px-6 lg:flex lg:items-center lg:justify-between">
         <h2 className="text-2xl font-extrabold tracking-tight sm:text-2xl">
           <span className="block text-slate-900 dark:text-slate-200">Ready to give it a try?</span>
@@ -27,6 +28,6 @@ export default function CTA() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   )
 }

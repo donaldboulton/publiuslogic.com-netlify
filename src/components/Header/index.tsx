@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import {
@@ -12,6 +11,7 @@ import {
   PhotographIcon,
   CloudIcon,
   MapIcon,
+  HomeIcon,
 } from '@heroicons/react/outline'
 import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
@@ -30,7 +30,7 @@ function classNames(...classes) {
 export default function Navigation() {
   return (
     <>
-      <Disclosure as="nav" className="bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-40">
+      <Disclosure as="nav" className="bg-gradient-to-r from-gray-900 via-transparent to-gray-900 sticky top-0 z-40">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -50,36 +50,20 @@ export default function Navigation() {
                   <div className="flex-shrink-0 flex items-center">
                     <Link to="/">
                       <Tooltip id="logoTooltipSmall" tooltipText="Home Page">
-                        <StaticImage
-                          layout="fixed"
-                          width={24}
-                          height={24}
-                          className="block md:hidden h-6 h-6"
-                          src="../../../static/images/gatsby/publiuslogic-logo.png"
-                          alt="Logo Mobile"
-                          aria-label="Logo Mobile"
-                          aria-describedby="logoTooltipSmall"
-                          formats={['auto', 'webp']}
-                          quality={95}
-                          loading="eager"
-                        />
+                        <div className="block md:hidden">
+                          <HomeIcon
+                            className="block h-8 w-8 pr-2 text-sky-500 hover:text-sky-400/20"
+                            aria-label="Logo Mobile"
+                            aria-describedby="logoTooltipSmall"
+                          />
+                        </div>
                       </Tooltip>
                     </Link>
                     <Link to="/">
                       <Tooltip id="logoTooltip" tooltipText="Home Page">
-                        <StaticImage
-                          layout="fixed"
-                          width={182}
-                          height={32}
-                          className="hidden md:block h-8 w-[182px]"
-                          src="../../../static/images/gatsby/publiuslogic-monogram-182-32.png"
-                          alt="Logo Desktop"
-                          aria-label="Logo Desktop"
-                          aria-describedby="logoTooltip"
-                          formats={['auto', 'webp']}
-                          quality={95}
-                          loading="eager"
-                        />
+                        <div className="hidden md:block flex items-center">
+                          <span className="text-2xl text-gray-400">PubliusLogic</span>
+                        </div>
                       </Tooltip>
                     </Link>
                   </div>

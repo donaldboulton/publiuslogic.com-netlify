@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import Section from '@/components/Section'
 import GatsbyImage from '../../../static/svg/undraw/undraw_gatsbyjs_st4g.svg'
 import TailwindImage from '../../../static/svg/undraw/undraw_tailwind_css_1egw.svg'
 import ReactImage from '../../../static/svg/undraw/undraw_react_y-7-wq.svg'
@@ -31,7 +31,7 @@ const callouts = [
 
 export default function FindOutMore() {
   return (
-    <div>
+    <Section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto py-8 sm:py-10 lg:py-12 lg:max-w-none">
           <h2 className="text-lg mb-2 font-extrabold">Technology and Design</h2>
@@ -64,6 +64,6 @@ export default function FindOutMore() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   )
 }

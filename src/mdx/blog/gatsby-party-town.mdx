@@ -19,6 +19,8 @@ description: Partytown is a lazy-loaded library to help relocate resource intens
 
 ## Partytown
 
+<Section>
+
 🔗 [Partytown By builder.io](https://partytown.builder.io/) is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread.
 
 Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
@@ -27,7 +29,11 @@ Its goal is to help speed up sites by dedicating the main thread to your code, a
 
 🔗 [Repo for the changes](https://github.com/PaulieScanlon/gatsby-gtag-partytown/pull/1/files)
 
+</Section>
+
 ## Why is it important
+
+<Section>
 
 It’s important because third-party scripts have a habit of slowing down the time it takes for your website to load, and a slow-to-load website isn’t good for users, or performance metrics…. or $business!
 
@@ -35,9 +41,17 @@ What we know: Loading third-party scripts on the main thread impacts performance
 
 You can see from the below that amongst that mess on the Performance tab is the gtag script which is getting in the way of the application JavaScript – Blurg 🤢
 
+</Section>
+
+<Section>
+
 ![Parytown Gtag scaled](../../../static/img/party-town-gtag-scaled.jpg)
 
 You’ll also notice on the Network tab that js?id=G-ABC123 is actually loaded before some of the more essential application JavaScript – Yikes! 😲
+
+</Section>
+
+<Section>
 
 ![Partytown Network Scaled](../../../static/img/party-town-network-scaled.jpg)
 
@@ -45,7 +59,11 @@ But with Partytown, third-party scripts are offloaded to a web worker (which run
 
 Your users thank you, your business thanks you, and we thank you for making a faster web!
 
+</Section>
+
 ## Warning
+
+<Section>
 
 ⚠️ A word of warning
 
@@ -55,11 +73,17 @@ I should point out that Partytown is currently in BETA and the method I’m abou
 
 Oh also, before I forget, we’ve added some of the methods used in this post to the official Partytown docs, these can be found on the following links.
 
+</Section>
+
 ## Partytown Builder.io
+
+<Section>
 
 🔗 [Integrations](https://partytown.builder.io/gatsby)
 
 🔗 [Proxying Requests](https://partytown.builder.io/proxying-requests)
+
+</Section>
 
 ## My Implementation
 
@@ -157,11 +181,14 @@ There’s quite a lot going on here, so let me talk you through it.
 
 ## onRenderBody
 
-onRenderBody is one of gatsby-ssr’s extension points and runs after each page is created by Gatsby. It can be used to set HTML <head /> or <body /> elements.
+<Section>
+  onRenderBody is one of gatsby-ssr’s extension points and runs after each page is created by Gatsby. It can be used to
+  set HTML <head /> or <body /> elements.
+</Section>
 
 ## gatsby-browser.tsx
 
-````tsx:title=gatsby-browser.tsx {1-4,5-11}
+```tsx:title=gatsby-browser.tsx {1-4,5-11}
 export const onRouteUpdate = ({ location }) => {
   if (process.env.NODE_ENV !== 'production') {
     return null
@@ -174,7 +201,9 @@ export const onRouteUpdate = ({ location }) => {
     }
   }, 100)
 }
-``
+```
+
+<Section>
 
 To set `<script />` tags in the HTML `<head />` you can use the setHeadComponents function.
 
@@ -187,6 +216,10 @@ This is so later on, when Partytown does its thing it’s able to locate the <sc
 
 It’s also worth pointing out that the actual gtag script is ever so slightly different to the example given on the Google docs: Install the global site tag, i’ll explain why in a moment. – Read on 💅
 
+</Section>
+
+<Section>
+
 `<Partytown />`
 
 The `<Partytown />` React component can be configured using regular React Jsx props. You can read more about the Partytown React component in the docs, but I will explain the forward prop as this is where things can get a little complicated.
@@ -197,11 +230,14 @@ If you have a look at Google’s recommended approach you might notice some diff
 
 There’s a small but important difference shown here in the diff.
 
+</Section>
+
 ```diff:title=gtag function diff {2}
 - function gtag(){window.dataLayer.push(arguments);}
 + window.gtag = function gtag(){ window.dataLayer.push(arguments);}
-````
+```
 
+<Section>
 When Partytown moves scripts into a web worker it creates a kind of clone of the window object, and when it does, function gtag() isn’t hoisted onto the cloned window object.
 
 By defining window.gtag = function gtag() we can ensure that the gtag function as referenced by the forward prop will exist on the Partytown cloned window object.
@@ -210,14 +246,19 @@ Hat tip to Ward Peeters (Gatsby’s Principal Engineer, Tech Lead Open-Source) f
 
 There’s one other small difference in the code snippet. Here’s the diff.
 
+</Section>
+
 ```diff:title=send_page_view {2}
 - gtag('config', '${GATSBY_GA_MEASUREMENT_ID}')
 + gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })
 ```
 
+<Section>
 To ensure that a page view isn’t sent once the script is loaded you can set send_page_view to false.
 
 In the next section I’ll explain how you can fire off events containing location data. For reference here’s the Google docs for: Measure Google Analytics Events.
+
+</Section>
 
 ## Sending events gatsby-browser.tsx
 
@@ -238,13 +279,20 @@ export const onRouteUpdate = ({ location }) => {
 
 ## onRouteUpdate
 
+<Section>
 The onRouteUpdate function is called when the user changes routes, including on the initial load of the page. You can access the current location from the destructured props.
 
 As with onRenderBody there’s an if condition right at the beginning to ensure the gtag event isn’t called while in development, and then inside a 100ms setTimeout is where you can fire off any event you like. I’ve called this one page_view and passed in a pagePath which can be constructed from properties contained within the location prop. The 100ms delay is required to ensure all side-effects such as React Helmet setting titles etc are complete before the gtag event is fired.
 
 Once deployed you can see on the Performance tab in Chrome Dev Tools that Partytown is now taking charge of loading the Google Analytics script and waits until the main thread has finished loading / parsing all of your important application JavaScript (indicated by the red line in the image below) – Lovely stuff! 🥳
 
+</Section>
+
+<Section>
+
 ![Performance Scaled](../../../static/img/party-town-performance-scaled.jpg)
+
+</Section>
 
 ## gatsby-node.ts
 
@@ -253,12 +301,13 @@ const path = require('path');
 const { copyLibFiles } = require('@builder.io/partytown/utils');
 
 exports.onPreBuild = async () => {
-  await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
+await copyLibFiles(path.join(\_\_dirname, 'static', '~partytown'));
 };
 ```
 
 ## onPreBuild
 
+<Section>
 The onPreBuild extension point is used to copy the ~partytown files into Gatsby’s static directory, this happens quite early on in the build process.
 
 Once Gatsby’s build steps are finished Gatsby copies the files from the static directory into the public directory, ready for when Partytown needs them and when your site is served from your CDN.
@@ -266,6 +315,10 @@ Once Gatsby’s build steps are finished Gatsby copies the files from the static
 It’s worth noting onPreBuild is only called during the build process.
 
 If you need to use copyLibFiles while in development you can use onPreBootstrap which is called when running both gatsby build or gatsby develop.
+
+</Section>
+
+<Section>
 
 Partytime!
 
@@ -276,6 +329,8 @@ What’s next?
 This is a bit manual for now, but manual optimizations and those small efforts that can land in a big way. So rest assured, we’ll plan to make this even more seamless in the future!
 
 Give 🔗 [@GatsbyJs](https://twitter.com/gatsbyjs), 🔗 [@GatsbyChangelog](https://twitter.com/GatsbyChangelog) or Paul Scanlon, 🔗 [@PaulieScanlon](https://twitter.com/PaulieScanlon) A follow on Twitter, and keep an eye out for updates.
+
+</Section>
 
 You choose Gatsby because of your need for speed, and we want to make the fast thing, the easiest thing.
 

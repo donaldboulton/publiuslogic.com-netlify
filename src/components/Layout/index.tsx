@@ -23,6 +23,7 @@ import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Accordion from '@/components/Accordion'
 import Table from '@/components/Table'
 import Modal from '@/components/Modal'
+import Section from '@/components/Section'
 
 interface LayoutProps {
   children: ReactNode
@@ -49,6 +50,7 @@ const shortcodes = {
   Accordion,
   Table,
   Modal,
+  Section,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
