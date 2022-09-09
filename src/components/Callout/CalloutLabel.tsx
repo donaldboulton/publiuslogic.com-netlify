@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode, FC, useEffect, ref } from 'react'
 import * as CSS from 'csstype'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode, FC, useEffect, ref } from 'react'
 import * as CSS from 'csstype'
 import Alert from '@/components/icons/alert'
 import { useInView } from 'react-intersection-observer'

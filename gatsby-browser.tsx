@@ -12,7 +12,7 @@ const onClientEntry = () => {
 }
 
 export function wrapPageElement({ element }) {
-  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+  return <AnimatePresence wait>{element}</AnimatePresence>
 }
 
 export const wrapRootElement = wrap

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useEffect, ref } from 'react'
 import { Link } from 'gatsby'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
@@ -39,12 +39,12 @@ const Table = () => {
     return { ref }
   }
 
-  const [ref2, isVisible2] = useInView({
+  const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
 
-  const variants2 = {
+  const variants = {
     visible: {
       opacity: 1,
       x: 0,
@@ -60,9 +60,9 @@ const Table = () => {
       <m.section className="font-sans" variants={tableContainer}>
         <div className="w-full px-4 mr-auto ml-auto">
           <m.div
-            ref={ref2}
-            variants={variants2}
-            animate={isVisible2 ? 'visible' : 'hidden'}
+            ref={ref}
+            variants={variants}
+            animate={isVisible ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">

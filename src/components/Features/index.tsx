@@ -1,5 +1,10 @@
 import * as React from 'react'
+import { ref, useEffect } from 'react'
+import { LazyMotion, m } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import { ClockIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon } from '@heroicons/react/outline'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const features = [
   {
@@ -29,38 +34,92 @@ const features = [
 ]
 
 export default function Features() {
-  return (
-    <div className="pt-8 pb-8 text-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-2xl">Topics and Discussions</p>
-          <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
-            PubliusLogic has Topics on God / Creation, Law, USA and World Governments, Life Matters.
-          </p>
-          <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
-            Focusing on the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in
-            the Flesh.
-          </p>
-          <p className="mt-2 max-w-2xl text-xl lg:mx-auto">Your Soul and Spirit your deny!</p>
-        </div>
+  const useAnimateOnInView = () => {
+    const controls = useAnimation()
+    const { ref, inView } = useInView()
 
-        <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            {features.map(feature => (
-              <div key={feature.name} className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md text-gray-200 bg-fuchsia-600 hover:bg-fuchsia-700">
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium">{feature.name}</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base">{feature.description}</dd>
+    useEffect(() => {
+      if (inView) {
+        controls.start('visible')
+      }
+      if (!inView) {
+        controls.start('hidden')
+      }
+    }, [controls, inView])
+
+    return { ref }
+  }
+  const featuresContainer = {
+    enter: {
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+  }
+  const [ref, isVisible] = useInView({
+    triggerOnce: true,
+    rootMargin: '-100px 0px',
+  })
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: -5,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.4,
+      },
+    },
+  }
+  return (
+    <LazyMotion features={loadFeatures}>
+      <div variants={featuresContainer}>
+        <m.section
+          ref={ref}
+          variants={variants}
+          animate={isVisible ? 'visible' : 'hidden'}
+          transition={{ duration: 0.8, ease: 'easeIn' }}
+        >
+          <div className="pt-8 pb-8 text-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="lg:text-center">
+                <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
+                <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-2xl">
+                  Topics and Discussions
+                </p>
+                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
+                  PubliusLogic has Topics on God / Creation, Law, USA and World Governments, Life Matters.
+                </p>
+                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
+                  Focusing on the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only
+                  live in the Flesh.
+                </p>
+                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">Your Soul and Spirit your deny!</p>
               </div>
-            ))}
-          </dl>
-        </div>
+
+              <div className="mt-10">
+                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                  {features.map(feature => (
+                    <div key={feature.name} className="relative">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md text-gray-200 bg-fuchsia-600 hover:bg-fuchsia-700">
+                          <feature.icon className="h-6 w-6" aria-hidden="true" />
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium">{feature.name}</p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
+        </m.section>
       </div>
-    </div>
+    </LazyMotion>
   )
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useEffect, ref } from 'react'
 import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
@@ -42,11 +42,11 @@ const Accordion = () => {
 
     return { ref }
   }
-  const [ref4, isVisible4] = useInView({
+  const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const variants4 = {
+  const variants = {
     visible: {
       opacity: 1,
       x: 0,
@@ -61,9 +61,9 @@ const Accordion = () => {
       <m.section className="font-sans" variants={accordionContainer}>
         <div className="w-full px-4 mr-auto ml-auto">
           <m.div
-            ref={ref4}
-            variants={variants4}
-            animate={isVisible4 ? 'visible' : 'hidden'}
+            ref={ref}
+            variants={variants}
+            animate={isVisible ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="flex w-full pt-2">

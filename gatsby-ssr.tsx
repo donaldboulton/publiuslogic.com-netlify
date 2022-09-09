@@ -3,7 +3,7 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 
 export function wrapPageElement({ element }) {
-  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+  return <AnimatePresence wait>{element}</AnimatePresence>
 }
 export const wrapRootElement = wrap
 

@@ -66,7 +66,7 @@ ul.tags {
 }
 
 .header {
-  background: rgb(37, 42, 42);
+  background: rgb(21, 24, 24);
   color: #ffffff;
   top: 0;
   left: 0;
@@ -76,7 +76,7 @@ ul.tags {
 }
 
 .footer {
-  background: rgb(37, 42, 42);
+  background: rgb(21, 24, 24);
   color: #ffffff;
   bottom: 0;
   left: 0;
@@ -101,7 +101,7 @@ ul.tags {
   padding: 0 3px;
 }
 .name {
-  color: crimson;
+  color: #ffffff;
 }
 .title {
   color: #cccccc;
