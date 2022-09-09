@@ -182,8 +182,10 @@ There’s quite a lot going on here, so let me talk you through it.
 ## onRenderBody
 
 <Section>
+
   onRenderBody is one of gatsby-ssr’s extension points and runs after each page is created by Gatsby. It can be used to
   set HTML <head /> or <body /> elements.
+  
 </Section>
 
 ## gatsby-browser.tsx
@@ -238,6 +240,7 @@ There’s a small but important difference shown here in the diff.
 ```
 
 <Section>
+
 When Partytown moves scripts into a web worker it creates a kind of clone of the window object, and when it does, function gtag() isn’t hoisted onto the cloned window object.
 
 By defining window.gtag = function gtag() we can ensure that the gtag function as referenced by the forward prop will exist on the Partytown cloned window object.
@@ -254,6 +257,7 @@ There’s one other small difference in the code snippet. Here’s the diff.
 ```
 
 <Section>
+
 To ensure that a page view isn’t sent once the script is loaded you can set send_page_view to false.
 
 In the next section I’ll explain how you can fire off events containing location data. For reference here’s the Google docs for: Measure Google Analytics Events.
@@ -280,6 +284,7 @@ export const onRouteUpdate = ({ location }) => {
 ## onRouteUpdate
 
 <Section>
+
 The onRouteUpdate function is called when the user changes routes, including on the initial load of the page. You can access the current location from the destructured props.
 
 As with onRenderBody there’s an if condition right at the beginning to ensure the gtag event isn’t called while in development, and then inside a 100ms setTimeout is where you can fire off any event you like. I’ve called this one page_view and passed in a pagePath which can be constructed from properties contained within the location prop. The 100ms delay is required to ensure all side-effects such as React Helmet setting titles etc are complete before the gtag event is fired.
