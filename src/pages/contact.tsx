@@ -21,13 +21,13 @@ import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
-function ContactUs() {
-  const ogimage = {
-    src: OGImage,
-    width: 1400,
-    height: 450,
-  }
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
 
+function ContactUs() {
   const metadata = SiteMetadata().siteMetadata
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -43,15 +43,9 @@ function ContactUs() {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
-        <SEO
-          type="page"
-          title="Contact Us"
-          description="Our presence is real and digital. Contact us through the following ways."
-          image={ogimage}
-          pathname="/contact"
-        />
-        <ScrollIndicator />
         <main className="mt-10">
           <article className="post">
             <header>
@@ -64,7 +58,6 @@ function ContactUs() {
           </article>
           <Map />
           <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
-            <Stars />
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">
@@ -89,7 +82,6 @@ function ContactUs() {
                   )}
                 </div>
               </div>
-
               <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
                 <NetlifyForm
                   method="POST"
@@ -197,7 +189,7 @@ function ContactUs() {
                             </div>
                           </div>
                         </div>
-                        <div className="px-4 py-3 text-right sm:px-6 bg-slate-300 dark:bg-slate-900">
+                        <div className="px-4 py-3 text-left sm:px-6 bg-slate-300 dark:bg-slate-900">
                           {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                           {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                           <button
@@ -225,11 +217,19 @@ export default ContactUs
 
 export function Head(props: HeadProps) {
   return (
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin="anonymous"
-    />
+    <>
+      <SEO type="page" title="Contact" description="Contact" image={ogimage} pathname="/contact">
+        <title>Contact</title>
+        <meta name="description" content="PubliusLogic Contact Page." />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="anonymous"
+      />
+    </>
   )
 }

@@ -79,7 +79,7 @@ function Subscriptions() {
                     <button
                       type="button"
                       aria-label="Submit Button"
-                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-slate-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-slate-200 bg-fuchsia-700 hover:bg-fuchsia-600 shadow-lg shadow-fuchsia-700/50"
                       type="submit"
                     >
                       Subscribe
