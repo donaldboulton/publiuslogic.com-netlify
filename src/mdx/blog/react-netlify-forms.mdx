@@ -21,21 +21,33 @@ description: React Netlify Forms, is easy with Bot fields and invisible reCaptch
 
 ## Features
 
+<Section>
+
 It gives you all the features of Netlify Forms as simple and **reusable** React components which have been tested on Netlify.
 
 - Default form handlers with support for file uploads.
 - Spam prevention through included honeypot and reCAPTCHA components.
 - Can be used alone or together with form libraries such as Formik or react-hook-form.
 
+</Section>
+
 ## Before using
+
+<Section>
 
 This component must be used with Server-Side Rendering (SSR) because Netlify
 searches for a `data-netlify` attribute on HTML `form` tags to setup their
 Forms backend for you.
 
+</Section>
+
 ## Install
 
+<Section>
+
 Either install with NPM via:
+
+</Section>
 
 ```bash:title=node
 npm install --save react-netlify-forms
@@ -49,13 +61,20 @@ yarn add react-netlify-forms
 
 ## Usage
 
+<Section>
+
 In the following example a contact form with two inputs, a form hidden input for Netlify form handling reCaptcha v2 invisible and a honeypot for extra spam prevention is shown. It also works without JavaScript by falling back to a serverside-rendered form which just submits data with an usual POST request:
+
+</Section>
 
 ## My Form
 
-I am using [react-dropZone](https://react-dropzone.js.org/) for image uploads to Netlify Forms.
+<Section>
+I am using 🔗 [react-dropZone](https://react-dropzone.js.org/) for image uploads to Netlify Forms.
 
 Adding to the form for image upload
+
+</Section>
 
 ```tsx:title=src/page/page.tsx
 enctype='multipart/form-data'
@@ -526,12 +545,16 @@ export default function Previews(props) {
 }
 ```
 
+<Section>
+
 For more examples please browse the below website.
 
-[Björn Clees](https://github.com/Pyrax)
+🔗 [Björn Clees](https://github.com/Pyrax)
+
+</Section>
 
 ---
 
-Thanks to [create-react-library](https://www.npmjs.com/package/create-react-library) for providing quick setup for NPM packages.
+Thanks to 🔗 [create-react-library](https://www.npmjs.com/package/create-react-library) for providing quick setup for NPM packages.
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />

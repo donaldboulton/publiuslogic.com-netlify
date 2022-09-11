@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useRef } from 'react'
 import { Link } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import A from '@/components/A'
@@ -9,10 +10,35 @@ import Instagram from '../../../static/svg/icons/instagram.inline.svg'
 import Twitter from '../../../static/svg/icons/twitter.inline.svg'
 import Github from '../../../static/svg/icons/github.inline.svg'
 import WavyHr from '../WavyHr'
+import { LazyMotion, m, useInView } from "framer-motion"
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.8,
+      staggerChildren: 0.6
+    }
+  }
+}
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
 
 export default function IndexFooter() {
   const metadata = SiteMetadata().siteMetadata
   const social = metadata.social
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
   const socialLinks = [
     { name: 'LinkedIn', link: 'linkedin' in social ? social.linkedin : null, image: LinkedIn },
@@ -68,73 +94,96 @@ export default function IndexFooter() {
                 <Subscriptions />
               </div>
             </div>
-            <div className="w-full lg:w-6/12 px-4">
-              <div className="flex flex-wrap items-top -mb-2">
+            <LazyMotion features={loadFeatures}>
+              
+            <div className="w-full lg:w-6/12 px-4" ref={ref}>              
+              <div 
+                className="flex flex-wrap items-top -mb-2"
+                style={{
+                  transform: isInView ? 'none' : 'translateX(-200px)',
+                  opacity: isInView ? 1 : 0,
+                  transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+                >
                 <div className="w-full lg:w-4/12 px-4 ml-auto">
-                  <span className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">Useful Links</span>
-                  <ul className="list-unstyled">
-                    <li>
+                  <span 
+                    className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600"
+                  >
+                    Useful Links
+                  </span>
+                  <m.ul
+                    className="list-unstyled"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/blog/about"
                       >
                         About Us
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/blog"
                       >
                         Blog
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/contact"
                       >
                         Contact Us
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/profile"
                       >
                         Profile
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/search"
                       >
                         Search Page
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/sitemap.xml"
                       >
                         Sitemap XML
                       </Link>
-                    </li>
-                  </ul>
+                    </m.li>
+                  </m.ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
                   <span className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">Other Resources</span>
-                  <ul className="list-unstyled">
-                    <li>
+                  <m.ul
+                    className="container list-unstyled"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/blog/0bsd-licence"
                       >
                         BSD License
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <a
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         rel="noopener noreferrer"
@@ -144,8 +193,8 @@ export default function IndexFooter() {
                       >
                         Github
                       </a>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <a
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         rel="noopener noreferrer"
@@ -155,35 +204,36 @@ export default function IndexFooter() {
                       >
                         Free Starters
                       </a>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/blog/privacy"
                       >
                         Terms
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/blog/privacy"
                       >
                         Privacy Policy
                       </Link>
-                    </li>
-                    <li>
+                    </m.li>
+                    <m.li variants={item}>
                       <Link
                         className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                         to="/rss.xml"
                       >
                         Site Rss
                       </Link>
-                    </li>
-                  </ul>
+                    </m.li>
+                  </m.ul>
                 </div>
               </div>
             </div>
+            </LazyMotion>
           </div>
           <hr className="my-6 border-gray-400" />
           <div className="flex flex-wrap items-center md:justify-between justify-center">

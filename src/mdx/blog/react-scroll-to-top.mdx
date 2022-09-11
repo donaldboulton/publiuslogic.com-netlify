@@ -31,9 +31,13 @@ if (typeof window !== undefined) {
 }
 ```
 
+<Section>
+
 Such as the errors I got from react-scroll, and the workaround I used, "Which Works", but I did not like the implementation
 
 So I came up with my own digging through React Repos. With React we can use handleScroll and window.pageYOffset to go to top or bottom of the page or anything.
+
+</Section>
 
 ```jsx:title=src/components/scroll.js {1,9,15,19}
 import React, { useState, useEffect } from "react"
@@ -232,7 +236,11 @@ export const Arrow = styled(Up).attrs(({ direction, size }) => ({
 
 ### Post Template
 
-Only my post's are long enough to need scroll down
+<Section>
+
+Only my post's are long enough for a need to scroll down
+
+</Section>
 
 ```jsx:title=src/components/ScrollDown.jsx {3,11,24}
   <ScrollDown

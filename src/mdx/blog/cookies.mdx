@@ -23,19 +23,29 @@ Load Google Tag Manager (GTM), Analytics, GTM Version 4, in a Web Worker off the
 
 ## Change Cookie Consent
 
+<Section>
+
 Remove `gatsby-plugin-gdpr-cookies` and any Analytics plugins or scripts.
 
 Change Cookie Consent from `cookieName="gatsby-gdpr-google-analytics"` to `cookieName="gtag"`
 
 Dated: January 26, 2020
 
-[By Bojan Bedrac](https://www.improvebadcode.com/gatsby-gdpr-cookie-consent/)
+</Section>
+
+<Section>
+
+🔗 [By Bojan Bedrac](https://www.improvebadcode.com/gatsby-gdpr-cookie-consent/)
 
 General Data Protection Regulation (GDPR) imposes a couple of requirements on websites in regard to collecting and processing user data.
 
-[Stackoverflow Explanation](https://stackoverflow.com/questions/59860068/how-set-up-a-gatsby-cookie-consent-banner-with-gatsby-plugin-gdpr-cookies/59922277#59922277)
+🔗 [Stackoverflow Explanation](https://stackoverflow.com/questions/59860068/how-set-up-a-gatsby-cookie-consent-banner-with-gatsby-plugin-gdpr-cookies/59922277#59922277)
 
 Simple tracking solutions like Google Analytics or Facebook Pixel can only be used in compliance when the users agree with their visits and actions being tracked.
+
+</Section>
+
+<Section>
 
 To make your Gatsby site compliant there are two parts you need to implement.
 
@@ -43,7 +53,11 @@ Allow or prevent user data to be collected based on user choice.
 
 Give the user a choice to opt-in or opt-out to have their data collected.
 
+</Section>
+
 ### Control When Users Data Is Collected
+
+<Section>
 
 To be compliant with GDPR, no user data can be collected unless the user gave an explicit consent. When it comes to tracking scripts that means the scripts can’t be activated before the user gives the consent.
 
@@ -51,13 +65,19 @@ A convenient Gatsby plugin takes care of this part. The gatsby-plugin-gdpr-cooki
 
 The cookies are named after the scripts gatsby-gdpr-google-analytics and gatsby-gdpr-facebook-pixel. When these cookies value is true the scripts are activated.
 
-You can install the plugin using npm:
+You can install the plugin using npm
+
+</Section>
 
 ```bash:title=node
 npm install --save gatsby-plugin-gdpr-cookies
 ```
 
+<Section>
+
 To configure the plugin put the configuration in your gatsby-config.js:
+
+</Section>
 
 ```tsx:title=gatsby-config.js
 
@@ -100,19 +120,27 @@ module.exports = {
 
 ### Collect User Consent
 
+<Section>
+
 Giving the user a way to give consent for their data to be collected can be done by building your own form and setting the cookies (gatsby-gdpr-google-analytics and gatsby-gdpr-facebook-pixel).
 
 If you’re using React in your Gatsby site, you can opt for a ready made solution react-cookie-consent.
 
 The React component comes packaged in an npm module, so you can add it to your project by running:
 
+</Section>
+
 ```bash:title=node
 npm install --save react-cookie-consent
 ```
 
-[Cookie Consent Configuration](https://github.com/Mastermindzh/react-cookie-consent)
+<Section>
+
+🔗 [Cookie Consent Configuration](https://github.com/Mastermindzh/react-cookie-consent)
 
 After that add the component in your layout.js file or wherever you define your layout. It’s important that the component is loaded on any page so the consent can be collected regardless of the entry page.
+
+</Section>
 
 ```tsx:title=src/components/CookieConsent.tsx {1,2-9}
 import CookieConsent from 'react-cookie-consent'
@@ -161,9 +189,13 @@ Or Taylor it to you needs
 </CookieConsent>
 ```
 
+<Section>
+
 The important part is to set the cookieName prop to the value of the cookie you want to set (e.g.: gatsby-gdpr-google-analytics).
 
 There are many props to configure the components behavior and appearance.
+
+</Section>
 
 <Callout>
 
@@ -175,10 +207,14 @@ Quick tip When you want to set both cookies with one action, you can hook into t
 import CookieConsent, { Cookies } from 'react-cookie-consent'
 ```
 
+<Section>
+
 Hopefully this helped you making your Gatsby site GDPR compliant.
 
 > Without external scripts or API Calls
 
-Cookie's Explained In [Privacy Page](http://publiuslogic.com/privacy#cookies-beacons)
+</Section>
+
+🔗 Cookie's Explained In [Privacy Page](http://publiuslogic.com/privacy#cookies-beacons)
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />
