@@ -86,8 +86,11 @@ export function useEventListener (eventNames, handler, element) {
 }
 
 ```
+</Section>
 
 The styled components `MasonryDiv` and `Col` each create a CSS grid to space out child items according a default gap `1em` or whatever distance in CSS units you pass as a string to `<Masonry gap="calc(1vw + 20px)" />`.
+
+</Section>
 
 ```jsx:title=src/styled/styled.jsx {17-26,32,33,49-52}
 import styled from 'styled-components'
@@ -106,7 +109,11 @@ export const Col = styled.div`
 
 ## Examples
 
+<Section>
+
 Using `Masonry` is as simple as wrapping it around an array of child elements. For example, here's how you'd use it to display a 🔗 [list of image thumbnails](https://janosh.io/nature) in a masonry layout.
+
+</Section>
 
 ```jsx:title=src/components/masonry.jsx {3,11,24}
 import React, { useState, Fragment } from 'react'
@@ -139,7 +146,11 @@ export default function Photos({ photos }) {
 
 ### ColorBox
 
+<Section>
+
 More concretely, the above colored tiles are rendered by the this component.
+
+</Section>
 
 ```jsx:title=src/components/colorbox.jsx {20-30,32,33,49-52}
 import React, { useState } from 'react'
@@ -190,7 +201,9 @@ export default function MasonryExample() {
   )
 }
 ```
-
+<Section>
 Thats it folks!
+
+</Section>
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />
