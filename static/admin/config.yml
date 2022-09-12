@@ -6,7 +6,6 @@ backend:
 media_folder: static/img
 public_folder: /img
 identity_url: "https://publiuslogic.com/.netlify/identity"
-gateway_url: "https://publiuslogic.com/.netlify/git"
 site_domain:  "https://publiuslogic.com/"
 squash_merges: true
 
