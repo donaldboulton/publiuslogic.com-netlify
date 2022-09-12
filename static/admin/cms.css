@@ -71,17 +71,7 @@ ul.tags {
   top: 0;
   left: 0;
   position: fixed;
-  height: 150px;
-  width: 100%;
-}
-
-.footer {
-  background: rgb(21, 24, 24);
-  color: #ffffff;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  height: 150px;
+  height: 150px !important;
   width: 100%;
 }
 
@@ -104,7 +94,7 @@ ul.tags {
   color: #ffffff;
 }
 .title {
-  color: #cccccc;
+  color: #ffffff;
 }
 .copyright {
   color: #ffffff;
