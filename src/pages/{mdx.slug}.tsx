@@ -90,11 +90,16 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
         <TableOfContent headings={data.mdx.headings} />
         <div className="mb-10 mt-10">
           <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
+            <div className="py-4">
+              <h1 className="text-lg text-slate-200 mb-2 font-semibold leading-normal">
+                {frontmatter.title}
+              </h1>
+              <p
+                className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white first-letter:mr-3 first-letter:float-left">
+                  {frontmatter.description}
+              </p>
+            </div>
             <div>
-              <h1 className="text-lg font-bold text-white leading-tight l-2 text-center">{frontmatter.title}</h1>
-              <h2 className="text-md font-medium italic text-black dark:text-white text-center">
-                {frontmatter.description}
-              </h2>
               <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">
                 <div className="text-black dark:text-white mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
                   <TagIcon className="w-6 h-6 mr-1" />
