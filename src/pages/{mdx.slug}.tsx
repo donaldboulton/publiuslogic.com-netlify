@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql, Link, HeadProps, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '@/components/Layout'
 import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
@@ -89,15 +90,31 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
       <Layout>
         <TableOfContent headings={data.mdx.headings} />
         <div className="mb-10 mt-10">
-          <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
+          <section className="px-4 lg:px-0 mt-8 mb-10 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div className="py-4">
               <h1 className="text-lg text-slate-200 mb-2 font-semibold leading-normal">
                 {frontmatter.title}
               </h1>
-              <p
-                className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white first-letter:mr-3 first-letter:float-left">
-                  {frontmatter.description}
-              </p>
+              <div className='flex items-center'>
+                <StaticImage
+                  className="head-img mr-2 ring-2 ring-slate-900 ring-inset float-left"
+                  layout="fixed"
+                  formats={['auto', 'webp']}
+                  src="../../static/assets/creation-cut.jpg"
+                  width={60}
+                  height={60}
+                  quality={95}
+                  alt="Creation Picture"
+                  loading="eager"
+                />
+                <p
+                  className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white first-letter:mr-3 first-letter:float-left">
+                    {frontmatter.description}
+                </p>
+              </div>
+            </div>
+            <div className="mb-4 ml-2">
+              <Bio />
             </div>
             <div>
               <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">
@@ -117,9 +134,6 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
                   <NowPlaying />
                 </div>
               </div>
-            </div>
-            <div className="mb-2">
-              <Bio />
             </div>
             <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
             <GiscusComments mapping={pathname} />

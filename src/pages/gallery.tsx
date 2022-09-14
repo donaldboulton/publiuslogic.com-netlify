@@ -74,7 +74,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
         <section class="mb-32 overflow-hidden">
           <div class="container center px-5 py-2 mx-auto lg:pt-12 lg:px-32">
             <div class="flex justify-center flex-wrap -m-1 md:-m-2">
-              <div class="flex flex-wrap w-2/3">
+              <div class="flex flex-wrap">
                 <div class="w-full p-1 md:p-2">
                   <Gallery
                     imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-fuchsia-800"

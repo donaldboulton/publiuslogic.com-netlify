@@ -327,6 +327,10 @@ figure {
   border-radius: 100%;
 }
 
+.head-img {
+  min-width: 60px;
+  border-radius: 100%;
+}
 .nav-scroll-div {
   max-height: '70vh';
   background: '#111';
