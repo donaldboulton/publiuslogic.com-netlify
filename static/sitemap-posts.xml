@@ -151,7 +151,6 @@
   <loc>https://publiuslogic.com/blog/government</loc>
   <lastmod>2021-04-20T22:27:18+00:00</lastmod>
   <changefreq>daily</changefreq>
-  <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/government.jpg</image:loc><image:caption>government.jpg</image:caption></image:image>
   <priority>0.80</priority>
 </url>
@@ -200,14 +199,13 @@
 <url>
   <loc>https://publiuslogic.com/blog/playtime</loc>
   <lastmod>2020-04-07T22:27:18+00:00</lastmod>
-   <changefreq>daily</changefreq>
+  <<changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/playtime.jpg</image:loc><image:caption>playtime.jpg</image:caption></image:image>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://publiuslogic.com/blog/ou-scum</loc>
   <lastmod>2022-07-08T22:27:18+00:00</lastmod>
-  <changefreq>daily</changefreq>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/ou-scum.jpg</image:loc><image:caption>ou-scum.jpg</image:caption></image:image>
   <priority>0.80</priority>
@@ -215,7 +213,6 @@
 <url>
   <loc>https://publiuslogic.com/blog/mrna-reprogramming</loc>
   <lastmod>2022-07-08T22:27:18+00:00</lastmod>
-  <changefreq>daily</changefreq>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/mrna-reprogramming.jpg</image:loc><image:caption>mrna-reprogramming.jpg</image:caption></image:image>
   <priority>0.80</priority>
@@ -223,7 +220,6 @@
 <url>
   <loc>https://publiuslogic.com/blog/mother-russia</loc>
   <lastmod>2022-07-08T22:27:18+00:00</lastmod>
-  <changefreq>daily</changefreq>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/mother-russia.jpg</image:loc><image:caption>mother-russia.jpg</image:caption></image:image>
   <priority>0.80</priority>
@@ -231,7 +227,6 @@
 <url>
   <loc>https://publiuslogic.com/blog/aborted-fetuses</loc>
   <lastmod>2022-07-08T22:27:18+00:00</lastmod>
-  <changefreq>daily</changefreq>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/aborted-fetuses.jpg</image:loc><image:caption>aborted-fetuses.jpg</image:caption></image:image>
   <priority>0.80</priority>
@@ -239,7 +234,6 @@
 <url>
   <loc>https://publiuslogic.com/blog/protesting</loc>
   <lastmod>2019-03-22T22:27:18+00:00</lastmod>
-  <changefreq>daily</changefreq>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/assets/protests.jpg</image:loc><image:caption>protests.jpg</image:caption></image:image>
   <priority>0.80</priority>

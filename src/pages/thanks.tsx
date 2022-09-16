@@ -6,7 +6,7 @@ import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Confetti from '@/components/Confetti'
+import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 
@@ -16,11 +16,11 @@ const ogimage = {
   height: 450,
 }
 
-function Thanks() {
+const Thanks = () => {
   return (
     <>
       <Header />
-      <Confetti />
+      <Stars />
       <Layout>
         <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
         <div className="mt-10">
@@ -30,7 +30,7 @@ function Thanks() {
                 to="/"
                 className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
               >
-                To Home Page
+                Home Page
               </Link>
               <Link
                 to="/contact"
@@ -57,12 +57,12 @@ export function Head(props: HeadProps) {
     <>
       <SEO
         type="page"
-        title="Thank You"
+        title="Thanks"
         description="Thank You for your submission"
         image={ogimage}
-        pathname="/thank-you"
+        pathname="/thanks"
       >
-        <title>Thank You</title>
+        <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
@@ -90,7 +90,7 @@ export function Head(props: HeadProps) {
           description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/dbbg-f0aac717a5df40ba3d25dc948d4f25ae.jpg',
+            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
             width: '1400',
             height: '450',
           },
@@ -107,7 +107,7 @@ export function Head(props: HeadProps) {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Thank You',
-          url: 'https://publiuslogic.com/thank-you',
+          url: 'https://publiuslogic.com/thanks',
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
@@ -138,8 +138,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/thank-you',
-                name: 'thank-you',
+                '@id': 'https://publiuslogic.com/thanks',
+                name: 'Thanks',
               },
               position: '2',
             },

@@ -2,7 +2,7 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { Code } from './src/components/Code'
 import { preToCodeBlock } from 'mdx-utils'
-import { GoogleAuthProvider } from '@/components/GoogleAuthProvider'
+import { GoogleAuthProvider } from './src/components/GoogleAuthProvider'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 

@@ -4,6 +4,12 @@ import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 
+const isBrowser = typeof window !== 'undefined'
+  let leaflet
+  if (isBrowser) {
+    leaflet = require('leaflet')
+}
+
 function Map() {
   const center = [35.590607, -97.43913]
   const rectangle = [
