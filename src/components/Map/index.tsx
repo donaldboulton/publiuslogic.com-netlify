@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, M
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
+import useConfigureLeaflet from '@/hooks/useConfigureLeaflet'
 
 const isBrowser = typeof window !== 'undefined'
   let leaflet
@@ -11,6 +12,7 @@ const isBrowser = typeof window !== 'undefined'
 }
 
 function Map() {
+  useConfigureLeaflet()
   const center = [35.590607, -97.43913]
   const rectangle = [
     [35.507745, -97.58331],

@@ -3,8 +3,10 @@ import { useEffect } from 'react'
 import L from 'leaflet'
 
 /* eslint-disable-next-line valid-typeof */
-if (typeof window !== undefined) {
-  require('leaflet')
+const isBrowser = typeof window !== 'undefined'
+  let leaflet
+  if (isBrowser) {
+    leaflet = require('leaflet')
 }
 
 export default function useConfigureLeaflet() {
