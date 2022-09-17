@@ -19,6 +19,7 @@ import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
 import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
+import VideoThree from '@/components/CloudinaryVideo/videoThree'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Accordion from '@/components/Accordion'
 import Table from '@/components/Table'
@@ -45,8 +46,9 @@ const shortcodes = {
   ListGrid,
   Tooltip,
   CloudinaryVideo,
-  VideoTwo,
   VideoOne,
+  VideoTwo,
+  VideoThree,
   Accordion,
   Table,
   Modal,
