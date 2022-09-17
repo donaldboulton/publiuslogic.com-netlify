@@ -1,279 +1,282 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>https://publiuslogic.com/tags/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/about/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/sophistry/</loc>
-  <lastmod>2021-08-22T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/answers/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/applause/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/bullshit/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/fetuses/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/cms/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/ukraine/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/coaches/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/comments/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/confetti/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/contact/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/creation/</loc>
-  <lastmod>2020-11-15T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/devil-time/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/earth/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/election/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/entertainment/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/reprogramming/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/god/</loc>
-  <lastmod>2020-11-15T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/holy-spirit/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/hooks/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/identity/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/ipsum/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/json-ld/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/jesus/</loc>
-  <lastmod>2020-11-15T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/cyber-attack/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/bullshit/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/magnetic-flux/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/maps/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/masonry/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/modal/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/obsd/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/license/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/roadmap/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/netlify/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/oil/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/play/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/privacy/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/protest/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/immorality/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/racketeering/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/react/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/scroll/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/show-me/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/sitemap/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/sports/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/to-top/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/abortion/</loc>
-  <lastmod>2021-08-22T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/truth/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/usa/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/useSound/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/utterances/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/validation/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/tags/animals/</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<url>
+		<loc>https://publiuslogic.com/tags/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/about/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/sophistry/</loc>
+		<lastmod>2021-08-22T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/answers/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/applause/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/bullshit/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/fetuses/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/cms/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/ukraine/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/coaches/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/comments/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/confetti/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/contact/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/creation/</loc>
+		<lastmod>2020-11-15T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/devil-time/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/earth/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/election/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/entertainment/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/reprogramming/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/god/</loc>
+		<lastmod>2020-11-15T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/holy-spirit/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/hooks/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/identity/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/ipsum/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/json-ld/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/jesus/</loc>
+		<lastmod>2020-11-15T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/cyber-attack/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/bullshit/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/magnetic-flux/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/maps/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/masonry/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/modal/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/obsd/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/license/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/roadmap/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/netlify/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/oil/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/play/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/privacy/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/protest/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/immorality/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/racketeering/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/react/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/scroll/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/show-me/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/sitemap/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/sports/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/to-top/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/abortion/</loc>
+		<lastmod>2021-08-22T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/truth/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/usa/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/useSound/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/utterances/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/validation/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/tags/animals/</loc>
+		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
 </urlset>
   

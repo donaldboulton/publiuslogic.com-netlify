@@ -93,7 +93,9 @@ export default function LatestArticles() {
                         <Tags tags={post.frontmatter.tags} />
                       </div>
                       <Link to={`/${post.slug}`}>
-                        <h2 className="text-2xl md:text-2xl font-extrabold font-bold mt-2 mb-2 leading-tight underline underline-offset-8 decoration-wavy decoration-fuchsia-600">{post.frontmatter.title}</h2>
+                        <h2 className="text-2xl md:text-2xl font-extrabold font-bold mt-2 mb-2 leading-tight underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                          {post.frontmatter.title}
+                        </h2>
                       </Link>
                       <div>{post.frontmatter.description}</div>
                       <Link

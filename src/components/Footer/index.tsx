@@ -10,7 +10,7 @@ import Instagram from '../../../static/svg/icons/instagram.inline.svg'
 import Twitter from '../../../static/svg/icons/twitter.inline.svg'
 import Github from '../../../static/svg/icons/github.inline.svg'
 import WavyHr from '../WavyHr'
-import { LazyMotion, m, useInView } from "framer-motion"
+import { LazyMotion, m, useInView } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -21,17 +21,17 @@ const container = {
     scale: 1,
     transition: {
       delayChildren: 0.8,
-      staggerChildren: 0.6
-    }
-  }
+      staggerChildren: 0.6,
+    },
+  },
 }
 
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
-    opacity: 1
-  }
+    opacity: 1,
+  },
 }
 
 export default function IndexFooter() {
@@ -95,144 +95,133 @@ export default function IndexFooter() {
               </div>
             </div>
             <LazyMotion features={loadFeatures}>
-              
-            <div className="w-full lg:w-6/12 px-4" ref={ref}>              
-              <div 
-                className="flex flex-wrap items-top -mb-2"
-                style={{
-                  transform: isInView ? 'none' : 'translateX(-200px)',
-                  opacity: isInView ? 1 : 0,
-                  transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-                }}
+              <div className="w-full lg:w-6/12 px-4" ref={ref}>
+                <div
+                  className="flex flex-wrap items-top -mb-2"
+                  style={{
+                    transform: isInView ? 'none' : 'translateX(-200px)',
+                    opacity: isInView ? 1 : 0,
+                    transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                  }}
                 >
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
-                  <span 
-                    className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600"
-                  >
-                    Useful Links
-                  </span>
-                  <m.ul
-                    className="list-unstyled"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/blog/about"
-                      >
-                        About Us
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/blog"
-                      >
-                        Blog
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/contact"
-                      >
-                        Contact Us
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/profile"
-                      >
-                        Profile
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/search"
-                      >
-                        Search Page
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/sitemap.xml"
-                      >
-                        Sitemap XML
-                      </Link>
-                    </m.li>
-                  </m.ul>
-                </div>
-                <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">Other Resources</span>
-                  <m.ul
-                    className="container list-unstyled"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/blog/0bsd-licence"
-                      >
-                        BSD License
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <a
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        area-label="Github"
-                        href="https://www.github.com/donaldboulton"
-                      >
-                        Github
-                      </a>
-                    </m.li>
-                    <m.li variants={item}>
-                      <a
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        area-label="Gatsby Starter Basic Instructions"
-                        href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
-                      >
-                        Free Starters
-                      </a>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/blog/privacy"
-                      >
-                        Terms
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/blog/privacy"
-                      >
-                        Privacy Policy
-                      </Link>
-                    </m.li>
-                    <m.li variants={item}>
-                      <Link
-                        className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                        to="/rss.xml"
-                      >
-                        Site Rss
-                      </Link>
-                    </m.li>
-                  </m.ul>
+                  <div className="w-full lg:w-4/12 px-4 ml-auto">
+                    <span className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
+                      Useful Links
+                    </span>
+                    <m.ul className="list-unstyled" variants={container} initial="hidden" animate="visible">
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/blog/about"
+                        >
+                          About Us
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/blog"
+                        >
+                          Blog
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/contact"
+                        >
+                          Contact Us
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/profile"
+                        >
+                          Profile
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/search"
+                        >
+                          Search Page
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/sitemap.xml"
+                        >
+                          Sitemap XML
+                        </Link>
+                      </m.li>
+                    </m.ul>
+                  </div>
+                  <div className="w-full lg:w-4/12 px-4">
+                    <span className="block uppercase text-slate-400 text-sm font-semibold mb-2 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
+                      Other Resources
+                    </span>
+                    <m.ul className="container list-unstyled" variants={container} initial="hidden" animate="visible">
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/blog/0bsd-licence"
+                        >
+                          BSD License
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <a
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          area-label="Github"
+                          href="https://www.github.com/donaldboulton"
+                        >
+                          Github
+                        </a>
+                      </m.li>
+                      <m.li variants={item}>
+                        <a
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          area-label="Gatsby Starter Basic Instructions"
+                          href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
+                        >
+                          Free Starters
+                        </a>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/blog/privacy"
+                        >
+                          Terms
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/blog/privacy"
+                        >
+                          Privacy Policy
+                        </Link>
+                      </m.li>
+                      <m.li variants={item}>
+                        <Link
+                          className="text-slate-300 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                          to="/rss.xml"
+                        >
+                          Site Rss
+                        </Link>
+                      </m.li>
+                    </m.ul>
+                  </div>
                 </div>
               </div>
-            </div>
             </LazyMotion>
           </div>
           <hr className="my-6 border-gray-400" />

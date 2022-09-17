@@ -55,13 +55,7 @@ export default Thanks
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO
-        type="page"
-        title="Thanks"
-        description="Thank You for your submission"
-        image={ogimage}
-        pathname="/thanks"
-      >
+      <SEO type="page" title="Thanks" description="Thank You for your submission" image={ogimage} pathname="/thanks">
         <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
