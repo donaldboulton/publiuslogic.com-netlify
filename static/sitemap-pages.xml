@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
-<urlset
-	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
-	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://publiuslogic.com</loc>
 		<lastmod>2020-11-26T22:27:18+00:00</lastmod>
@@ -71,18 +67,18 @@
 		<changefreq>weekly</changefreq>
 		<image:image>
 			<image:loc>https://publiuslogic.com/static/images/undraw/undraw_Location_search_re_ttoj.png</image:loc>
-			</image:caption>undraw_Location_search_re_ttoj</image:caption>
+			<image:caption>undraw_Location_search_re_ttoj</image:caption>
 	    </image:image>
 	    <priority>0.80</priority>
     </url>
     <url>
-	    <loc>https://publiuslogic.com/thanks</loc>
-	    <lastmod>2022-11-26T22:27:18+00:00</lastmod>
-	    <changefreq>weekly</changefreq>
-	    <image:image>
-		    <image:loc>https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png</image:loc>
-		    <image:caption>aundraw_Super_thank_you_re_f8bo</image:caption>
-	    </image:image>
-	    <priority>0.80</priority>
-    </url>
+		<loc>https://publiuslogic.com/thanks</loc>
+		<lastmod>2022-11-26T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/SSR_for_blog_article_and_G4_overview_page.jpg</image:loc>
+			<image:caption>SSR_for_blog_article_and_G4_overview_page</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
 </urlset>
