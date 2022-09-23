@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <>
       <div className="flex items-center flex-shrink-0 text-lg">
-        <div className="flex items-center flex-shrink-0 text-lg pr-2">
+        <section className="flex items-center flex-shrink-0 my-4 pr-2">
           <button
             className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white"
             onClick={() => signIn()}
@@ -20,6 +20,7 @@ const Login = () => {
             </span>
           </button>
           <span className="ml-4">
+          {isSignedIn && (
             <button
               className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white"
               onClick={signOut}
@@ -29,9 +30,10 @@ const Login = () => {
                 <LogoutIcon className="block h-9 w-9 pl-2 text-red-500" aria-hidden="true" />
               </span>
             </button>
+             )}
           </span>
-        </div>
-        <div className="flex items-center flex-shrink-0">
+        </section>
+        <section className="flex items-center flex-shrink-0 my-8">
           {isSignedIn && (
             <div>
               <div className="mb-4 mt-4">
@@ -55,7 +57,7 @@ const Login = () => {
               </div>
             </div>
           )}
-        </div>
+        </section>
       </div>
     </>
   )
