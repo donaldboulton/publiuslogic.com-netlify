@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Component, createElement } from 'react'
 
 export class TagControl extends Component {

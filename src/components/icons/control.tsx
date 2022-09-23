@@ -10,7 +10,8 @@ interface ControlProps {
 }
 
 const Control: FC = (props: ControlProps) => {
-  const { open, onClick } = props
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+  const { onClick } = props
   const duration = 0.7
 
   const commandCenterVariants = {

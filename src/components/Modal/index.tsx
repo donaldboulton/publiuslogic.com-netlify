@@ -15,6 +15,7 @@ export const Modal: FC<ModalProps> = props => {
   const { dialogTitle, dialogContent, children, ...rest } = props
   const [isOpen, setIsOpen] = useState(true)
 
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   function closeModal() {
     setIsOpen(false)
   }

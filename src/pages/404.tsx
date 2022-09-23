@@ -54,6 +54,7 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>

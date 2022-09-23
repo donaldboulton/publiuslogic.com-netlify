@@ -15,7 +15,7 @@ interface BlogRollProps {
 }
 const POSTS_PER_PAGE = 12
 
-const BlogRoll = ({ tag, excerpt }: BlogRollProps) => {
+const BlogRoll = ({ tag }: BlogRollProps) => {
   const posts = GetPosts(tag)
   const [offset, setOffset] = useState(0)
 

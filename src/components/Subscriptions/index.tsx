@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useState } from 'react'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 
 function Subscriptions() {

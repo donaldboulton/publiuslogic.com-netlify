@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { ref } from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'gatsby'
 import Tags from '@/components/Tags'
 import List from '@/components/List'
-import ListItem from '@/components/List'
 import GetPosts from '@/utils/getposts'
 import WavyHr from '@/components/WavyHr'
 

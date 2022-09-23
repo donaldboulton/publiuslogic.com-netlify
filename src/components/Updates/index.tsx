@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { ref, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
@@ -15,30 +14,6 @@ export default function Updates() {
       },
     },
   }
-  const item = {
-    initial: { y: 20, opacity: 0 },
-    enter: {
-      y: 0,
-      opacity: 1,
-    },
-  }
-
-  const useAnimateOnInView = () => {
-    const controls = useAnimation()
-    const { ref, inView } = useInView()
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible')
-      }
-      if (!inView) {
-        controls.start('hidden')
-      }
-    }, [controls, inView])
-
-    return { ref }
-  }
-
   const [ref6, isVisible6] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',

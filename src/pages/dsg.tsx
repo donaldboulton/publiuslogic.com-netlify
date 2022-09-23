@@ -38,6 +38,7 @@ export default function DSG() {
   )
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>

@@ -229,7 +229,7 @@ const config: GatsbyConfig = {
         allPageHeaders: [],
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
+        transformHeaders: headers => headers,
         generateMatchPathRewrites: true,
       },
     },

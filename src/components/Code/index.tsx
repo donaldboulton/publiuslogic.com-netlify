@@ -100,7 +100,7 @@ const highlightClassName = 'highlight-line'
 
 const highlightLine = (lineArray, lineProps) => {
   let shouldExclude = false
-
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   lineArray.forEach((line, i) => {
     const content = line.content
 
@@ -154,17 +154,6 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
     },
   }
 
-  const variants = {
-    checked: {
-      true: {
-        cursor: 'default',
-      },
-      false: {
-        cursor: 'pointer',
-      },
-    },
-  }
-
   const clipboardIconVariants = {
     clicked: { opacity: 0 },
     unclicked: { opacity: 1 },
@@ -206,12 +195,13 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
   }, [isClicked])
 
   const buttonRef = useRef(null)
-
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const handleClick = event => {
     buttonRef.current.disabled = true
 
     console.log('button clicked')
   }
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const handleCopy = event => {
     buttonRef.current.disabled = false
   }

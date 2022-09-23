@@ -12,6 +12,7 @@ interface IndexHeroProps {
 import defaultImage from '../../../static/images/jpg/dbbg.jpg'
 
 const IndexHero = ({ image }: IndexHeroProps) => {
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [
     { type: 'heading1', text: 'PubliusLogic' },

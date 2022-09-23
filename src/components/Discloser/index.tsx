@@ -2,9 +2,8 @@ import * as React from 'react'
 import { ReactNode, FC } from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/solid'
-import { StreamingProfileTypes, stringOrNumber } from '@cloudinary/url-gen/types/types'
 
-interface CalloutLabelProps {
+interface DiscloserModuleProps {
   children: ReactNode
   title: string
   title1: string
@@ -12,8 +11,8 @@ interface CalloutLabelProps {
   body1: string
 }
 
-const DiscloserModule: FC<CalloutDangerProps> = props => {
-  const { children, body, body1, title, title1 } = props
+const DiscloserModule: FC<DiscloserModuleProps> = props => {
+  const { body, body1, title, title1 } = props
   return (
     <div className="w-full px-4 pt-16">
       <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">

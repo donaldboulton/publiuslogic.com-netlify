@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 
 interface SeoProps {
   children: ReactNode
 }
 
-const Seo = ({ children }: SeoBlogProps) => {
+const Seo = ({ children }: SeoProps) => {
   return (
     <>
       <meta name="robots" content="index" />
