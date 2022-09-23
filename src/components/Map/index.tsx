@@ -6,9 +6,9 @@ import MarkerClusterGroup from 'react-leaflet-markercluster'
 import useConfigureLeaflet from '@/hooks/useConfigureLeaflet'
 
 const isBrowser = typeof window !== 'undefined'
-  let leaflet
-  if (isBrowser) {
-    leaflet = require('leaflet')
+let leaflet
+if (isBrowser) {
+  leaflet = require('leaflet')
 }
 
 function Map() {

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC, useEffect, ref } from 'react'
+import { ReactNode, FC } from 'react'
 import * as CSS from 'csstype'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
@@ -46,29 +46,7 @@ const calloutLabel: CSS.Properties = {
 
 const CalloutLabel: FC<CalloutLabelProps> = props => {
   const { children, label, ...rest } = props
-  const item = {
-    initial: { y: 20, opacity: 0 },
-    enter: {
-      y: 0,
-      opacity: 1,
-    },
-  }
 
-  const useAnimateOnInView = () => {
-    const controls = useAnimation()
-    const { ref, inView } = useInView()
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible')
-      }
-      if (!inView) {
-        controls.start('hidden')
-      }
-    }, [controls, inView])
-
-    return { ref }
-  }
   const [ref8, isVisible8] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',

@@ -27,7 +27,7 @@ const Gallery: FC<GalleryProps> = ({
   images = [],
   imgClass = '',
   lightboxOptions = {},
-  onClose = () => {},
+  onClose = {},
   customWrapper = ImageColWrapper,
 }) => {
   const [index, setIndex] = useState(0)

@@ -1,13 +1,17 @@
 import * as React from 'react'
+import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 
-export function wrapPageElement({ element }) {
-  return <AnimatePresence wait>{element}</AnimatePresence>
+export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({ element }) => {
+  return (
+    <AnimatePresence wait>{element}</AnimatePresence>
+  )
 }
+
 export const wrapRootElement = wrap
 
-export function onRenderBody({ setHtmlAttributes, setHeadComponents, setPreBodyComponents }) {
+export function onRenderBody({ setHtmlAttributes, setPreBodyComponents }) {
   setHtmlAttributes({ lang: 'en' })
   setPreBodyComponents([
     React.createElement('script', {

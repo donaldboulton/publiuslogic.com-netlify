@@ -80,7 +80,7 @@ const Image = {
 }
 
 const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataProps>) => {
-  const { frontmatter, timeToRead, excerpt } = data.mdx
+  const { frontmatter, timeToRead } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>
@@ -379,7 +379,6 @@ export const query = graphql`
         path
         publicId
         imageLink
-        videoTitle
         date(formatString: "YYYY-MM-DD")
         tags
       }

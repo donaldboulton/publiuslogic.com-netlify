@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -8,9 +8,6 @@ import Header from '@/components/Header'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
 import Footer from '@/components/Footer'
-import IndexHero from '@/components/IndexHero'
-import List from '@/components/List'
-import ListItem from '@/components/List'
 import { LazyMotion, motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
@@ -33,7 +30,6 @@ const ogimage = {
 
 const Home = ({ image }: HomeProps) => {
   const [replay, setReplay] = useState(true)
-
   const placeholderText = [
     { type: 'heading1', text: 'PubliusLogic' },
     {

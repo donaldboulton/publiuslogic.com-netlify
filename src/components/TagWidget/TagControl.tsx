@@ -9,7 +9,7 @@ export class TagControl extends Component {
 
   render() {
     const separator = this.props.field.get('separator', ', ')
-    var value = this.props.value
+    const value = this.props.value
     return createElement('input', {
       id: this.props.forID,
       className: this.props.classNameWrapper,

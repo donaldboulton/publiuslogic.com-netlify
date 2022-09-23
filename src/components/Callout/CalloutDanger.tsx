@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC, useEffect, ref } from 'react'
+import { ReactNode, FC } from 'react'
 import * as CSS from 'csstype'
 import Alert from '@/components/icons/alert'
 import { useInView } from 'react-intersection-observer'
@@ -42,29 +42,7 @@ const calloutDanger: CSS.Properties = {
 
 const CalloutDanger: FC<CalloutDangerProps> = props => {
   const { children, ...rest } = props
-  const item = {
-    initial: { y: 20, opacity: 0 },
-    enter: {
-      y: 0,
-      opacity: 1,
-    },
-  }
 
-  const useAnimateOnInView = () => {
-    const controls = useAnimation()
-    const { ref, inView } = useInView()
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible')
-      }
-      if (!inView) {
-        controls.start('hidden')
-      }
-    }, [controls, inView])
-
-    return { ref }
-  }
   const [ref7, isVisible7] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',

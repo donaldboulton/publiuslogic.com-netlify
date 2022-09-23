@@ -86,7 +86,7 @@ function ContactUs() {
                 <NetlifyForm
                   method="POST"
                   name="contact"
-                  action='/thanks'
+                  action="/thanks"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   formProps={{ id: 'contact' }}

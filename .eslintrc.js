@@ -6,11 +6,11 @@ module.exports = {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
   },
-  "settings": {
-    "mdx/code-blocks": false,
+  settings: {
+    'mdx/code-blocks': false,
     // optional, if you want to disable language mapper, set it to `false`
     // if you want to override the default language mapper inside, you can provide your own
-    "mdx/language-mapper": false,
+    'mdx/language-mapper': false,
   },
   env: {
     browser: true,

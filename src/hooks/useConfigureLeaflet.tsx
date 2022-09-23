@@ -4,9 +4,9 @@ import L from 'leaflet'
 
 /* eslint-disable-next-line valid-typeof */
 const isBrowser = typeof window !== 'undefined'
-  let leaflet
-  if (isBrowser) {
-    leaflet = require('leaflet')
+let leaflet
+if (isBrowser) {
+  leaflet = require('leaflet')
 }
 
 export default function useConfigureLeaflet() {
