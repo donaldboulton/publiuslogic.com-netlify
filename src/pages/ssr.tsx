@@ -20,7 +20,7 @@ function refreshPage() {
   }
 }
 
-const SSRPage = ({ serverData }) => {
+const SsrPage = () => {
   return (
     <>
       <Header />
@@ -67,7 +67,7 @@ const SSRPage = ({ serverData }) => {
   )
 }
 
-export default SSRPage
+export default SsrPage
 
 export async function getServerData() {
   try {

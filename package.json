@@ -100,7 +100,7 @@
   },
   "devDependencies": {
     "@netlify/functions": "^1.2.0",
-    "@netlify/plugin-gatsby": "^3.4.6",
+    "@netlify/plugin-gatsby": "^3.4.7",
     "@octokit/types": "^7.5.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "^12.1.4",

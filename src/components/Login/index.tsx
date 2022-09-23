@@ -2,16 +2,16 @@ import * as React from 'react'
 import { useState } from 'react'
 import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 import { LoginIcon, LogoutIcon } from '@heroicons/react/outline'
+import WavyHr from '@/components/WavyHr'
 
 const Login = () => {
   const { isSignedIn, googleUser, signIn, signOut } = useGoogleAuth()
 
   return (
     <>
-      <div className="flex items-center flex-shrink-0 text-lg">
         <section className="flex items-center flex-shrink-0 my-4 pr-2">
           <button
-            className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white"
+            className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white"
             onClick={() => signIn()}
           >
             <span className="flex items-center flex-shrink-0 text-lg pr-2">
@@ -22,7 +22,7 @@ const Login = () => {
           <span className="ml-4">
           {isSignedIn && (
             <button
-              className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white"
+              className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white"
               onClick={signOut}
             >
               <span className="flex items-center flex-shrink-0 text-lg">
@@ -33,6 +33,7 @@ const Login = () => {
              )}
           </span>
         </section>
+        <WavyHr />
         <section className="flex items-center flex-shrink-0 my-8">
           {isSignedIn && (
             <div>
@@ -58,7 +59,6 @@ const Login = () => {
             </div>
           )}
         </section>
-      </div>
     </>
   )
 }
