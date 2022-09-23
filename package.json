@@ -42,7 +42,7 @@
     "babel-loader": "^8.2.5",
     "clsx": "^1.2.1",
     "csstype": "^3.1.1",
-    "framer-motion": "^7.3.6",
+    "framer-motion": "^6.5.1",
     "gatsby": "^4.23.1",
     "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-manifest": "^4.23.1",
