@@ -1,10 +1,9 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
-import GithubProfile from '@/components/GithubProfile'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/ScrollIndicator'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import { StaticImage } from 'gatsby-plugin-image'
 import Stars from '@/components/Stars'
 import Header from '@/components/Header'
@@ -146,15 +145,16 @@ function Profile() {
 
 export default Profile
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
+      <Seo type="page" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
         <title>Profile Page</title>
         <meta name="description" content="PubliusLogic Profile Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

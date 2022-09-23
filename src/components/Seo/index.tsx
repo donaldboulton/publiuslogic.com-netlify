@@ -1,14 +1,11 @@
 import * as React from 'react'
 import { ReactNode, FC } from 'react'
 
-type SEOProps = {
-  title?: string
-  description?: string
-  pathname?: string
+interface SeoProps {
   children: ReactNode
 }
 
-const SEO: FC<React.PropsWithChildren<SEOProps>> = ({ title, description, image, pathname, children }) => {
+const Seo = ({ children }: SeoBlogProps) => {
   return (
     <>
       <meta name="robots" content="index" />
@@ -26,4 +23,4 @@ const SEO: FC<React.PropsWithChildren<SEOProps>> = ({ title, description, image,
   )
 }
 
-export default SEO
+export default Seo

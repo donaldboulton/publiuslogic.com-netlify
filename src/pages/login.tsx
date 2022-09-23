@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -49,12 +49,12 @@ export default LoginPage
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Login to Profile" description="Google Profile" image={image} pathname="/login">
+      <Seo type="page" title="Login to Profile" description="Google Profile" image={image} pathname="/login">
         <title>Login Page</title>
         <meta name="description" content="PubliusLogic Login Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

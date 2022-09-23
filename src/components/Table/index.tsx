@@ -15,29 +15,6 @@ const Table = () => {
       },
     },
   }
-  const item = {
-    initial: { y: 20, opacity: 0 },
-    enter: {
-      y: 0,
-      opacity: 1,
-    },
-  }
-
-  const useAnimateOnInView = () => {
-    const controls = useAnimation()
-    const { ref, inView } = useInView()
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible')
-      }
-      if (!inView) {
-        controls.start('hidden')
-      }
-    }, [controls, inView])
-
-    return { ref }
-  }
 
   const [ref, isVisible] = useInView({
     triggerOnce: true,

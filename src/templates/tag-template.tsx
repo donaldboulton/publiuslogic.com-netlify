@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
 import Stars from '@/components/Stars'
@@ -33,7 +33,7 @@ const TagPage = ({ pageContext }: TagProps) => {
       <Layout>
         <Stars />
         <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
-        <SEO
+        <Seo
           type="tags"
           title={title}
           description={`Posts with tag [${tag}]`}
@@ -62,6 +62,7 @@ const TagPage = ({ pageContext }: TagProps) => {
 
 export default TagPage
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>

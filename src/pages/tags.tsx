@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
 import Stars from '@/components/Stars'
@@ -152,12 +152,12 @@ export default Tags
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search">
+      <Seo type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search">
         <title>Tags</title>
         <meta name="description" content="PubliusLogic Tags Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

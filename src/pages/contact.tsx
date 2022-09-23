@@ -3,7 +3,7 @@ import type { HeadProps } from 'gatsby'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Map from '@/components/Map'
@@ -216,15 +216,16 @@ function ContactUs() {
 
 export default ContactUs
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Contact" description="Contact" image={ogimage} pathname="/contact">
+      <Seo type="page" title="Contact" description="Contact" image={ogimage} pathname="/contact">
         <title>Contact</title>
         <meta name="description" content="PubliusLogic Contact Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

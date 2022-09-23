@@ -3,7 +3,7 @@ import { useState } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import Header from '@/components/Header'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
@@ -29,6 +29,7 @@ const ogimage = {
 }
 
 const Home = ({ image }: HomeProps) => {
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [
     { type: 'heading1', text: 'PubliusLogic' },
@@ -409,10 +410,11 @@ const Home = ({ image }: HomeProps) => {
 
 export default Home
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO
+      <Seo
         type="homepage"
         title="Home"
         description="PubliusLogic topics on Law Congress Programing and Human Anything."

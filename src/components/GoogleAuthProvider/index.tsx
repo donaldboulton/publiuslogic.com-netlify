@@ -21,15 +21,8 @@ export const GoogleAuthProvider = ({ children }) => {
     clientId: '146139913792.apps.googleusercontent.com',
   })
 
-  /**
-   * A wrapper function around `fetch` that handles automatically refreshing
-   * our `accessToken` if it is within 5 minutes of expiring.
-   *
-   * Behaves identically to `fetch` otherwise.
-   */
   const fetchWithRefresh = async (input, init) => {
     let accessToken = googleUser.accessToken
-    // The token is within 5 minutes of expiring
     const shouldRefreshToken = googleUser.expiresAt - 300 * 1000 - Date.now() <= 0
 
     if (shouldRefreshToken) {

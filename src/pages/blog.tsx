@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
 import Header from '@/components/Header'
@@ -46,7 +46,7 @@ export default BlogPage
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO
+      <Seo
         type="page"
         title="Blog Posts"
         description="Articles published from time to time"
@@ -57,7 +57,7 @@ export function Head(props: HeadProps) {
         <meta name="description" content="PubliusLogic Home Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

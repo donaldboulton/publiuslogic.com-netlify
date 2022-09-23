@@ -3,64 +3,17 @@ import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
-import FindOutMore from '@/components/FindOutMore'
-import Features from '@/components/Features'
-import Cta from '@/components/CTA'
-import Callout from '@/components/Callout'
-import CalloutDanger from '@/components/Callout/CalloutDanger'
-import CalloutLabel from '@/components/Callout/CalloutLabel'
-import WavyHr from '@/components/WavyHr'
-import A from '@/components/A'
-import Center from '@/components/Center'
-import CenterItem from '@/components/CenterItem'
-import List from '@/components/List'
-import ListItem from '@/components/List/ListItem'
-import ListGrid from '@/components/ListGrid'
-import Tooltip from '@/components/Tooltip'
-import VideoOne from '@/components/CloudinaryVideo/videoOne'
-import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
-import VideoThree from '@/components/CloudinaryVideo/videoThree'
-import CloudinaryVideo from '@/components/CloudinaryVideo'
-import Accordion from '@/components/Accordion'
-import Table from '@/components/Table'
-import Modal from '@/components/Modal'
-import Section from '@/components/Section'
 
 interface LayoutProps {
   children: ReactNode
 }
 
-const shortcodes = {
-  A,
-  FindOutMore,
-  Center,
-  CenterItem,
-  Cta,
-  Features,
-  WavyHr,
-  Callout,
-  CalloutDanger,
-  CalloutLabel,
-  List,
-  ListItem,
-  ListGrid,
-  Tooltip,
-  CloudinaryVideo,
-  VideoOne,
-  VideoTwo,
-  VideoThree,
-  Accordion,
-  Table,
-  Modal,
-  Section,
-}
-
-const Layout = ({ children, path }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
         <main>
-          <MDXProvider components={shortcodes}>{children}</MDXProvider>
+          <MDXProvider>{children}</MDXProvider>
         </main>
       </div>
       <CookieConsent

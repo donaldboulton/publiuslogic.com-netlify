@@ -3,13 +3,13 @@ module.exports = {
   extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'plugin:mdx/recommended'],
   plugins: ['@typescript-eslint', 'prettier'],
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 2022,
+    sourceType: 'module',
   },
   settings: {
     'mdx/code-blocks': false,
-    // optional, if you want to disable language mapper, set it to `false`
-    // if you want to override the default language mapper inside, you can provide your own
+    /* optional, if you want to disable language mapper, set it to false */
+    /* if you want to override the default language mapper inside, you can provide your own */
     'mdx/language-mapper': false,
   },
   env: {

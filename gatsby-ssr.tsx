@@ -3,10 +3,8 @@ import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 
-export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({ element }) => {
-  return (
-    <AnimatePresence wait>{element}</AnimatePresence>
-  )
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
+  return <AnimatePresence wait>{element}</AnimatePresence>
 }
 
 export const wrapRootElement = wrap

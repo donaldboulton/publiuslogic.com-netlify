@@ -17,7 +17,6 @@ import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import Stars from '@/components/Stars'
 import SeoBlog from '@/components/Seo/SeoBlog'
-import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
 
 const components = { Link }
 
@@ -73,13 +72,7 @@ interface PageProps {
   }
 }
 
-const Image = {
-  src: OGImage,
-  width: 1400,
-  height: 450,
-}
-
-const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataProps>) => {
+const BlogPost = ({ data }: PageProps<DataProps>) => {
   const { frontmatter, timeToRead } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
@@ -156,6 +149,7 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
 
 export default BlogPost
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps<DataProps>) {
   const siteUrl = 'https://publiuslogic.com'
   const pathname = '/' + props.data.mdx.slug

@@ -4,12 +4,8 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import './src/styles/global.css'
 
-export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
-  element,
-}) => {
-  return (
-    <AnimatePresence wait>{element}</AnimatePresence>
-  )
+export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
+  return <AnimatePresence wait>{element}</AnimatePresence>
 }
 
 export const wrapRootElement = wrap

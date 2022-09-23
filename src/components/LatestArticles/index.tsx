@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ref, useEffect } from 'react'
+import { ref } from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'gatsby'
@@ -15,21 +15,6 @@ export default function LatestArticles() {
   const posts = GetPosts()
   const post = posts[0]
   const otherPosts = posts.slice(1, 6)
-  const useAnimateOnInView = () => {
-    const controls = useAnimation()
-    const { ref, inView } = useInView()
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible')
-      }
-      if (!inView) {
-        controls.start('hidden')
-      }
-    }, [controls, inView])
-
-    return { ref }
-  }
   const latestArticlesContainer = {
     enter: {
       transition: {

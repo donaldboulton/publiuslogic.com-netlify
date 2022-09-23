@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
 
-type SeoBlogProps = {
+interface SeoBlogProps {
   children?: ReactNode
 }
 
-const SeoBlog: React.FC<React.PropsWithChildren<SEOBlogProps>> = ({ children }) => {
+const SeoBlog = ({ children }: SeoBlogProps) => {
   return (
     <>
       <meta name="og:type" content="webpage" />

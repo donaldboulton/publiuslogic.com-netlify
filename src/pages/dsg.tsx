@@ -5,7 +5,7 @@ import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Callout from '@/components/Callout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
@@ -41,12 +41,12 @@ export default function DSG() {
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="DSG" description="Deferred Static Generation" image={ogimage} pathname="/dsg">
+      <Seo type="page" title="DSG" description="Deferred Static Generation" image={ogimage} pathname="/dsg">
         <title>DSG</title>
         <meta name="description" content="PubliusLogic DSG Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

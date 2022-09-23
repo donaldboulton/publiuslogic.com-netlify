@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -52,15 +52,16 @@ const Thanks = () => {
 
 export default Thanks
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Thanks" description="Thank You for your submission" image={ogimage} pathname="/thanks">
+      <Seo type="page" title="Thanks" description="Thank You for your submission" image={ogimage} pathname="/thanks">
         <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

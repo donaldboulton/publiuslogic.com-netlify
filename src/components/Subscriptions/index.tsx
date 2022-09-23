@@ -1,29 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
-
-function Input(props) {
-  // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
-  const [invalid, setInvalid] = useState(false)
-
-  const handleInvalid = event => {
-    event.preventDefault()
-    console.log('Invalid')
-    setInvalid(true)
-  }
-
-  const handleChange = () => setInvalid(false)
-
-  const className = invalid ? 'invalid' : ''
-
-  return (
-    <div className={className}>
-      <input {...props} onInvalid={handleInvalid} onChange={handleChange} />
-      {props.type === 'checkbox' && <label htmlFor={props.id}>{props.label}</label>}
-    </div>
-  )
-}
 
 function Subscriptions() {
   const handleSubmit = event => {

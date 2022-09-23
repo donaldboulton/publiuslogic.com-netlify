@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useState } from 'react'
 import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 import { LoginIcon, LogoutIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'

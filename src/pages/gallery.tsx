@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@/components/Gallery'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import Seo from '@/components/Seo'
 import Stars from '@/components/Stars'
 import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
@@ -45,11 +45,9 @@ const ogimage = {
 const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
   const images = data.images.edges.map(({ node }, index) => ({
     ...node.childImageSharp,
-    // Generate name based on the index as caption.
     caption: `Image ${index}`,
   }))
 
-  // Override some of Lightbox options to localise labels in French
   const lightboxOptions = {
     imageLoadErrorMessage: 'Cannot Load image',
     nextLabel: 'Next',
@@ -59,7 +57,6 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
     closeLabel: 'Close',
   }
 
-  //Add callback to Lightbox onCloseRequest
   const onClose = () => {
     console.log('Lightbox was closed')
   }
@@ -112,15 +109,16 @@ export const pageQuery = graphql`
 
 export default ImageGallery
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Gallery" description="Kitty Pictures" image={ogimage} pathname="/dsg">
+      <Seo type="page" title="Gallery" description="Kitty Pictures" image={ogimage} pathname="/dsg">
         <title>Gallery</title>
         <meta name="description" content="PubliusLogic Gallery Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

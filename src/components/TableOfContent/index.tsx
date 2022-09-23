@@ -6,18 +6,6 @@ import { usePopper } from 'react-popper'
 import { ViewListIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
 
-// https://haseebmajid.dev/blog/toc-in-gatsby#toc
-const headings = [
-  {
-    value: 'h2',
-    depth: 1,
-  },
-  {
-    value: 'h3',
-    depth: 2,
-  },
-]
-
 interface TableOfContentProps {
   headings: Array<{ heading: string; title: string; depth: number; activeId: string }>
 }
@@ -27,19 +15,9 @@ export type HeadingType = {
   depth: number
 }
 
-type HeadingQueryType = {
-  allMdx: {
-    headings: {
-      value: string
-      depth: number
-    }[]
-  }
-}
-
 function getIds(headings) {
   return headings.reduce((acc, heading) => {
     if (heading.url) {
-      // url has a # as first character, remove it to get the raw CSS-id
       acc.push(heading.url.slice(1))
     }
     if (heading.headings) {
@@ -87,7 +65,6 @@ const virtualReference = {
 const TableOfContent = ({ headings }: TableOfContentProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
-  // https://headlessui.dev/react/popover#positioning-the-panel
   const [referenceElement, setReferenceElement] = useState()
   const [popperElement, setPopperElement] = useState()
   const { styles, attributes } = usePopper(virtualReference, referenceElement, popperElement)

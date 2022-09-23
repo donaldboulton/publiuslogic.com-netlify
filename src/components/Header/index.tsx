@@ -9,7 +9,6 @@ import {
   XIcon,
   UserGroupIcon,
   PhotographIcon,
-  CloudIcon,
   MapIcon,
   HomeIcon,
 } from '@heroicons/react/outline'
