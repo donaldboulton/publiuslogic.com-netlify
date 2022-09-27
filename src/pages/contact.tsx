@@ -265,7 +265,7 @@ export function Head(props: HeadProps) {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Thank You',
+          name: 'Contact',
           url: 'https://publiuslogic.com/contact',
           image: {
             '@type': 'ImageObject',

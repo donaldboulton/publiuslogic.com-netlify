@@ -1,5 +1,4 @@
 import path from 'path'
-import _ from 'lodash'
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {

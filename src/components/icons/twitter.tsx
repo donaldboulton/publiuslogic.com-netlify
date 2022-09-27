@@ -1,7 +1,7 @@
-import { SVGAttributes } from 'react'
+import * as React from 'react'
 
-export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
-  <svg
+const Twitter: React.FC = () => {
+  ;<svg
     width="22"
     height="22"
     viewBox="0 0 25 24"
@@ -10,7 +10,6 @@ export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
     stroke="currentColor"
     role="img"
     aria-labelledby="title  desc"
-    {...props}
   >
     <title id="title">Twitter</title>
     <desc id="desc">The outline of a blue bird, the logo of twitter.com</desc>
@@ -22,4 +21,6 @@ export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+}
+
+export default Twitter

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const Info: React.FC = props => {
+const Info: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,6 @@ const Info: React.FC = props => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
     >
       <circle cx="12" cy="12" r="10"></circle>
       <line x1="12" y1="16" x2="12" y2="12"></line>

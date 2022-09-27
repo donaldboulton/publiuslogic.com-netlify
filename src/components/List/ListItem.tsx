@@ -1,29 +1,6 @@
 import * as React from 'react'
 import { FC, ReactNode } from 'react'
 import * as CSS from 'csstype'
-import { LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.8,
-      staggerChildren: 0.6,
-    },
-  },
-}
-
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-}
 
 interface ListItemProps {
   children: ReactNode
@@ -61,12 +38,11 @@ const listItem: CSS.Properties = {
 
 const ListItem: FC<ListItemProps> = props => {
   const { children, ...rest } = props
-
   return (
     <>
-      <LazyMotion features={loadFeatures}>
-        <m.ul className="list-unstyled" variants={container} initial="hidden" animate="visible">
-          <m.li style={listItem} variants={item} {...rest}>
+      <div>
+        <ul className="list-unstyled">
+          <li style={listItem} {...rest}>
             <span dataListItem>
               <svg
                 className="w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400"
@@ -85,10 +61,10 @@ const ListItem: FC<ListItemProps> = props => {
                 />
               </svg>
             </span>
-            <m.div>{children}</m.div>
-          </m.li>
-        </m.ul>
-      </LazyMotion>
+            <div>{children}</div>
+          </li>
+        </ul>
+      </div>
     </>
   )
 }

@@ -8,6 +8,7 @@ interface AProps {
   className?: string
   children: ReactNode
 }
+
 export default function A({ href, external = false, className, children }: AProps) {
   if (external) {
     return (
@@ -25,6 +26,7 @@ export default function A({ href, external = false, className, children }: AProp
   } else {
     return (
       <Link
+        key={href}
         to={href}
         rel="me"
         target="_blank"

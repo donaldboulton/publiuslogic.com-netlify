@@ -51,7 +51,7 @@ export default function IndexFooter() {
                 <span className="inline-flex md:ml-auto md:mt-0 mt-4 justify-center md:justify-start">
                   {socialLinks.map(s =>
                     s.link ? (
-                      <A href={s.link} className="ml-3" external>
+                      <A href={s.link} key={s.link} className="ml-3" external>
                         <s.image className=" h-6 w-6" />
                         <span className="sr-only">{s.name}</span>
                       </A>
