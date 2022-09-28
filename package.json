@@ -37,6 +37,8 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.7",
+    "@types/react-netlify-form": "^2.1.2",
+    "@types/react-google-recaptcha": "^2.1.5",
     "algoliasearch": "^4.14.2",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",

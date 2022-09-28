@@ -42,7 +42,6 @@ const ChartPage: FC<ChartPageProps> = props => {
     setRowState(updatedRows)
   }
 
-
   return (
     <>
       <Header />
@@ -107,30 +106,27 @@ const ChartPage: FC<ChartPageProps> = props => {
                     </li>
                   </ul>
                 </div>
-            </div>
-          <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
-            <form
-              action="/api/sheets"
-              method="POST"
-            >
-              <input type="button" value="Add Rows" onClick={addRow} />
-              <div className="row-container">
-                {rowState.map((val, idx) => (
-                  <SpreadsheetsRow key={`row-${idx}`} idx={idx} state={rowState[idx]} handleChange={handleChange} />
-                ))}
               </div>
-              <button
-                type="submit"
-                name="chart"
-                placeholder="Submit"
-                value="Submit"
-                className="p-2 mt-4 mb-4 border border-transparent text-sm font-medium rounded-md text-slate-200 bg-fuchsia-700 hover:bg-fuchsia-600 shadow-lg shadow-fuchsia-700/50"
-                aria-label="Submit"
-              >
-                Submit
-              </button>
-            </form>
-            </div>
+              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
+                <form action="/api/sheets" method="POST">
+                  <input type="button" value="Add Rows" onClick={addRow} />
+                  <div className="row-container">
+                    {rowState.map((val, idx) => (
+                      <SpreadsheetsRow key={`row-${idx}`} idx={idx} state={rowState[idx]} handleChange={handleChange} />
+                    ))}
+                  </div>
+                  <button
+                    type="submit"
+                    name="chart"
+                    placeholder="Submit"
+                    value="Submit"
+                    className="p-2 mt-4 mb-4 border border-transparent text-sm font-medium rounded-md text-slate-200 bg-fuchsia-700 hover:bg-fuchsia-600 shadow-lg shadow-fuchsia-700/50"
+                    aria-label="Submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
