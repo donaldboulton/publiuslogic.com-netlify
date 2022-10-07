@@ -85,7 +85,7 @@ const config: GatsbyConfig = {
             options: {
               maxWidth: 2048,
               showCaptions: true,
-              linkImagesToOriginal: false,
+              linkImagesToOriginal: true,
               backgroundColor: 'none',
               disableBgImage: true,
               withWebp: true,
