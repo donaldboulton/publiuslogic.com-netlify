@@ -1,13 +1,9 @@
 import * as React from 'react'
 import { ReactNode, FC } from 'react'
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
-import Recaptcha, { ReCAPTCHAProps } from 'react-google-recaptcha'
-
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 interface ContactFormProps {
-  loading: boolean
-  error: boolean
-  success: boolean
   name: string
   action?: string | undefined
   honeypotName?: string | undefined
