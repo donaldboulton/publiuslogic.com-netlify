@@ -1,7 +1,33 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ReactNode, FC } from 'react'
-import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { ReCAPTCHAProps } from 'react-google-recaptcha'
+import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot, Recaptcha } from 'react-netlify-forms'
+import { useForm, Resolver } from 'react-hook-form'
+
+type FormValues = {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  userName: string
+  subject: string
+  message: string
+}
+
+const resolver: Resolver<FormValues> = async values => {
+  return {
+    values: values.firstName ? values : {},
+    errors: !values.firstName
+      ? {
+          firstName: {
+            type: 'required',
+            message: 'This is required.',
+          },
+        }
+      : {},
+  }
+}
 
 interface ContactFormProps {
   name: string
@@ -14,24 +40,36 @@ interface ContactFormProps {
 const ContactForm: FC<ContactFormProps> = props => {
   const { name, action, honeypotName, recaptcha, children } = props
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver })
+  const netlify = useNetlifyForm({
+    name: 'contact',
+    action: '/thanks',
+    onSuccess: (response, context) => {
+      console.log('Successfully sent form data to Netlify Server')
+    },
+  })
+  const onSubmit = data => netlify.handleSubmit(null, data)
+
+  const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
+
   return (
     <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
-      <NetlifyForm
-        method="POST"
-        name="contact"
-        action="/thanks"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        formProps={{ id: 'contact' }}
-        enableRecaptcha
-        onSuccess={(response, context) => {
-          console.log('Successfully sent form data to Netlify Server')
-          context.formRef.current.reset()
-        }}
-      >
-        {({ handleChange, success, error }) => (
+      <NetlifyFormProvider {...netlify}>
+        <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
           <>
             <Honeypot />
+            {netlify.success && <p className="text-yellow-500">Thanks for contacting us!</p>}
+            {netlify.error && (
+              <p className="text-red-500 ml-6 mt-6 container">
+                Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide a
+                response.
+              </p>
+            )}
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
             <p className="hidden">
               <label>
@@ -44,7 +82,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
                       className="block uppercase tracking-wide text-slate-700 text-xs font-bold mb-2"
-                      htmlFor="grid-first-name"
+                      htmlFor="firstName"
                     >
                       First Name
                     </label>
@@ -67,17 +105,19 @@ const ContactForm: FC<ContactFormProps> = props => {
                       </div>
                       <input
                         className="pl-14 p-2.5 appearance-none block w-full bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:ring-slate-500 border-slate-800 focus:border-fuchsia-500"
-                        id="grid-first-name"
+                        id="firstName"
+                        name="firstName"
                         type="text"
-                        placeholder="First Name"
-                        onChange={handleChange}
+                        placeholder="First name"
+                        {...register('firstName', { required: true, maxLength: 80 })}
                       />
                     </div>
+                    {errors?.firstName && <p>{errors.firstName.message}</p>}
                   </div>
                   <div className="w-full md:w-1/2 px-3">
                     <label
                       className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
-                      htmlFor="grid-last-name"
+                      htmlFor="lastName"
                     >
                       Last Name
                     </label>
@@ -100,10 +140,11 @@ const ContactForm: FC<ContactFormProps> = props => {
                       </div>
                       <input
                         className="appearance-none block pl-14 p-2.5 w-full bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded py-3 px-4 leading-tight focus:outline-none focus:ring-slate-500 border-slate-800 focus:border-fuchsia-500"
-                        id="grid-last-name"
+                        id="lastName"
+                        name="lastName"
                         type="text"
-                        placeholder="Last Name"
-                        onChange={handleChange}
+                        placeholder="Last name"
+                        {...register('lastName', { required: true, maxLength: 100 })}
                       />
                     </div>
                   </div>
@@ -139,9 +180,9 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="userName"
                         autoComplete="off"
                         required
-                        placeholder="User Name."
+                        placeholder="User Name"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
-                        onChange={handleChange}
+                        {...register('userName', { required: true })}
                       />
                     </div>
                   </div>
@@ -166,17 +207,22 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        type="email"
+                        type="text"
                         name="email"
                         id="email"
-                        autoComplete="off"
-                        required
-                        placeholder="Email."
+                        autoComplete="on"
+                        placeholder="Email"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
-                        onChange={handleChange}
+                        {...register('email', {
+                          required: 'Email is required',
+                          pattern: {
+                            value: EMAIL_REGEX,
+                            message: 'Invalid email address',
+                          },
+                        })}
                       />
                     </div>
-                    <p className="text-red-500 text-xs italic">Please fill out this field.</p>
+                    {errors.email && <div className="text-red-500">{errors.email.message}</div>}
                   </div>
                   <div className="col-span-6">
                     <label
@@ -206,13 +252,20 @@ const ContactForm: FC<ContactFormProps> = props => {
                         type="tel"
                         name="phone"
                         id="phone"
-                        autoComplete="off"
-                        required
-                        placeholder="Phone Number."
+                        autoComplete="on"
+                        placeholder="Phone Number"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
-                        onChange={handleChange}
+                        {...register('phone', {
+                          required: 'Phone Number is required',
+                          pattern: {
+                            message: 'Invalid Phone Number',
+                          },
+                          minLength: 6,
+                          maxLength: 12,
+                        })}
                       />
                     </div>
+                    {errors.phone && <div className="text-red-500">{errors.phone.message}</div>}
                   </div>
 
                   <div className="col-span-6">
@@ -243,11 +296,9 @@ const ContactForm: FC<ContactFormProps> = props => {
                         type="text"
                         name="subject"
                         id="subject"
-                        autoComplete="on"
-                        required
-                        placeholder="Subject."
+                        placeholder="Subject"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
-                        onChange={handleChange}
+                        {...register('subject', { required: true })}
                       />
                     </div>
                   </div>
@@ -277,31 +328,52 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <textarea
+                        id="message"
+                        name="message"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md caret-blue-500 focus:caret-indigo-500"
                         rows={5}
                         name="text"
-                        required
-                        placeholder="Message."
-                        onChange={handleChange}
+                        {...register('message', { required: true })}
                       />
                     </div>
+                    <p className="ml-12 text-red-500 text-xs italic">Message Is Required.</p>
                   </div>
                 </div>
               </div>
-              <div className="px-4 py-3 text-left sm:px-6 bg-slate-300 dark:bg-slate-900">
-                {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
-                {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
-                <button
-                  type="submit"
-                  className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
-                >
-                  Send
-                </button>
+              <div className="px-4 py-3 inline-flex sm:px-6 bg-slate-300 dark:bg-slate-900">
+                <div class="rounded-md shadow-sm" role="group">
+                  <button
+                    type="submit"
+                    className="py-2 px-4 text-slate-200 rounded-l-md bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50"
+                  >
+                    Send
+                  </button>
+                  <button
+                    type="reset"
+                    className="py-2 px-4 text-slate-200 rounded-r-md bg-red-500 hover:bg-red-600 shadow-lg hover:shadow-red-700/50"
+                  >
+                    Reset
+                  </button>
+                </div>                
               </div>
+              <div className="mr-8 mt-4 md:ml-10 float-right">
+                  <a href="https://react-hook-form.com/" className="inline-flex" target="_blank" rel="noopener noreferrer" aria-describedby="hookForm">
+                  <StaticImage
+                    layout="fixed"
+                    formats={['auto', 'webp']}
+                    src="../../../static/img/react-hook-form-48.png"
+                    width={40}
+                    height={40}
+                    quality={95}
+                    alt="Profile picture"
+                    loading="eager"
+                  /><span className='ml-1 mt-2'>Netlify / React Hook Forms</span>
+                  </a>                  
+                </div>
             </div>
           </>
-        )}
-      </NetlifyForm>
+        </NetlifyFormComponent>
+      </NetlifyFormProvider>
     </div>
   )
 }

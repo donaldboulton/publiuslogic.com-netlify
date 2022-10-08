@@ -29,7 +29,7 @@ const tooltip: CSS.Properties = {
   fontSize: 'inherit',
   display: 'flex',
   padding: '4px 10px',
-  zIndex: 5,
+  zIndex: 10,
   whiteSpace: 'nowrap',
   pointerEvents: 'none',
   userSelect: 'none',
