@@ -57,13 +57,15 @@ const ContactForm: FC<ContactFormProps> = props => {
 
   const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
 
+  const PHONE_REGEX = /^[0-9+-]+$/
+
   return (
     <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
       <NetlifyFormProvider {...netlify}>
         <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
           <>
             <Honeypot />
-            
+
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
             <p className="hidden">
               <label>
@@ -138,7 +140,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         name="lastName"
                         type="text"
                         placeholder="Last name"
-                        {...register('lastName', { required: true, maxLength: 100 })}
+                        {...register('lastName', { required: true, pattern: /^[a-zA-Z]+$/, maxLength: 100 })}
                       />
                     </div>
                   </div>
@@ -173,10 +175,9 @@ const ContactForm: FC<ContactFormProps> = props => {
                         name="userName"
                         id="userName"
                         autoComplete="off"
-                        required
                         placeholder="User Name"
                         className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
-                        {...register('userName', { required: true })}
+                        {...register('userName', { required: true, pattern: /^[a-zA-Z]+$/, maxLength: 100 })}
                       />
                     </div>
                   </div>
@@ -252,6 +253,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         {...register('phone', {
                           required: 'Phone Number is required',
                           pattern: {
+                            value: PHONE_REGEX,
                             message: 'Invalid Phone Number',
                           },
                           minLength: 6,
@@ -337,15 +339,15 @@ const ContactForm: FC<ContactFormProps> = props => {
               {netlify.success && <p className="text-yellow-500 ml-6 mt-6 container">Thanks for contacting us!</p>}
               {netlify.error && (
                 <p className="text-red-500 ml-6 mt-6 container">
-                  Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide a
-                  response.
+                  Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide
+                  a response.
                 </p>
               )}
-              <div className="px-4 py-3 inline-flex sm:px-6 bg-slate-300 dark:bg-slate-900">
+              <div className="px-4 py-3 inline-flex sm:px-6">
                 <div class="rounded-md shadow-sm" role="group">
                   <button
                     type="submit"
-                    className="py-2 px-4 text-slate-200 rounded-l-md bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50"
+                    className="py-2 px-4 text-slate-200 rounded-l-md bg-gray-800 hover:bg-gray-900 shadow-lg hover:shadow-slate-800/50"
                   >
                     Send
                   </button>
@@ -355,10 +357,16 @@ const ContactForm: FC<ContactFormProps> = props => {
                   >
                     Reset
                   </button>
-                </div>                
+                </div>
               </div>
               <div className="mr-8 mt-4 md:ml-10 float-right">
-                  <a href="https://react-hook-form.com/" className="inline-flex" target="_blank" rel="noopener noreferrer" aria-describedby="hookForm">
+                <a
+                  href="https://react-hook-form.com/"
+                  className="inline-flex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="hookForm"
+                >
                   <StaticImage
                     layout="fixed"
                     formats={['auto', 'webp']}
@@ -368,9 +376,10 @@ const ContactForm: FC<ContactFormProps> = props => {
                     quality={95}
                     alt="Profile picture"
                     loading="eager"
-                  /><span className='ml-1 mt-2'>React Hook Forms</span>
-                  </a>                  
-                </div>
+                  />
+                  <span className="ml-1 mt-2">React Hook Forms</span>
+                </a>
+              </div>
             </div>
           </>
         </NetlifyFormComponent>
