@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { ReactNode, FC } from 'react'
-import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
-import { ReCAPTCHAProps } from 'react-google-recaptcha'
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import Recaptcha, { ReCAPTCHAProps } from 'react-google-recaptcha'
+
 
 interface ContactFormProps {
+  loading: boolean
+  error: boolean
+  success: boolean
   name: string
   action?: string | undefined
   honeypotName?: string | undefined
@@ -40,86 +44,251 @@ const ContactForm: FC<ContactFormProps> = props => {
             </p>
             <div className="shadow overflow-hidden sm:rounded-md">
               <div className="px-4 py-5 text-black dark:text-white sm:p-6">
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-slate-700 text-xs font-bold mb-2"
+                      htmlFor="grid-first-name"
+                    >
+                      First Name
+                    </label>
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-red-500"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        className="pl-14 p-2.5 appearance-none block w-full bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:ring-slate-500 border-slate-800 focus:border-fuchsia-500"
+                        id="grid-first-name"
+                        type="text"
+                        placeholder="First Name"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/2 px-3">
+                    <label
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                      htmlFor="grid-last-name"
+                    >
+                      Last Name
+                    </label>
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-red-500"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        className="appearance-none block pl-14 p-2.5 w-full bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded py-3 px-4 leading-tight focus:outline-none focus:ring-slate-500 border-slate-800 focus:border-fuchsia-500"
+                        id="grid-last-name"
+                        type="text"
+                        placeholder="Last Name"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-6">
-                    <label htmlFor="name" className="block text-sm font-medium">
-                      Name
+                    <label
+                      htmlFor="userName"
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                    >
+                      User Name
                     </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      autoComplete="off"
-                      required
-                      placeholder="Enter your Name here."
-                      className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
-                      onChange={handleChange}
-                    />
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        name="userName"
+                        id="userName"
+                        autoComplete="off"
+                        required
+                        placeholder="User Name."
+                        className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
-
                   <div className="col-span-6">
-                    <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white">
+                    <label
+                      htmlFor="email"
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                    >
                       Email address
                     </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      autoComplete="off"
-                      required
-                      placeholder="Enter your Email here."
-                      className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md peer ..."
-                      onChange={handleChange}
-                    />
-                    <p class="invisible peer-invalid:visible text-pink-600 text-sm">
-                      Please provide a valid email address.
-                    </p>
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          aria-hidden="true"
+                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                      </div>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="off"
+                        required
+                        placeholder="Email."
+                        className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <p className="text-red-500 text-xs italic">Please fill out this field.</p>
                   </div>
-
                   <div className="col-span-6">
-                    <label htmlFor="phone" className="block text-sm font-medium text-black dark:text-white">
+                    <label
+                      htmlFor="phone"
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                    >
                       Phone
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      autoComplete="off"
-                      required
-                      placeholder="Enter Phone Number here."
-                      className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
-                      onChange={handleChange}
-                    />
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        autoComplete="off"
+                        required
+                        placeholder="Phone Number."
+                        className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
 
                   <div className="col-span-6">
-                    <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white">
+                    <label
+                      htmlFor="subject"
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                    >
                       Subject
                     </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      id="subject"
-                      autoComplete="on"
-                      required
-                      placeholder="Enter your Subject here."
-                      className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
-                      onChange={handleChange}
-                    />
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        autoComplete="on"
+                        required
+                        placeholder="Subject."
+                        className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md py-3 px-4 leading-tight"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
 
                   <div className="col-span-6">
-                    <label htmlFor="text" className="block text-sm font-medium text-black dark:text-white">
+                    <label
+                      htmlFor="text"
+                      className="block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold mb-2"
+                    >
                       Message
                     </label>
-                    <textarea
-                      className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md caret-blue-500 focus:caret-indigo-500"
-                      rows={5}
-                      name="text"
-                      required
-                      placeholder="Enter your message here."
-                      onChange={handleChange}
-                    />
+                    <div className="relative">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pr-3 pointer-events-none text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-400 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M7.875 14.25l1.214 1.942a2.25 2.25 0 001.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 011.872 1.002l.164.246a2.25 2.25 0 001.872 1.002h2.092a2.25 2.25 0 001.872-1.002l.164-.246A2.25 2.25 0 0116.954 9h4.636M2.41 9a2.25 2.25 0 00-.16.832V12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 01.382-.632l3.285-3.832a2.25 2.25 0 011.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0021.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 002.25 2.25z"
+                          />
+                        </svg>
+                      </div>
+                      <textarea
+                        className="mt-1 pl-14 p-2.5 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md caret-blue-500 focus:caret-indigo-500"
+                        rows={5}
+                        name="text"
+                        required
+                        placeholder="Message."
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
