@@ -63,13 +63,7 @@ const ContactForm: FC<ContactFormProps> = props => {
         <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
           <>
             <Honeypot />
-            {netlify.success && <p className="text-yellow-500">Thanks for contacting us!</p>}
-            {netlify.error && (
-              <p className="text-red-500 ml-6 mt-6 container">
-                Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide a
-                response.
-              </p>
-            )}
+            
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
             <p className="hidden">
               <label>
@@ -340,6 +334,13 @@ const ContactForm: FC<ContactFormProps> = props => {
                   </div>
                 </div>
               </div>
+              {netlify.success && <p className="text-yellow-500 ml-6 mt-6 container">Thanks for contacting us!</p>}
+              {netlify.error && (
+                <p className="text-red-500 ml-6 mt-6 container">
+                  Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide a
+                  response.
+                </p>
+              )}
               <div className="px-4 py-3 inline-flex sm:px-6 bg-slate-300 dark:bg-slate-900">
                 <div class="rounded-md shadow-sm" role="group">
                   <button
@@ -367,7 +368,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                     quality={95}
                     alt="Profile picture"
                     loading="eager"
-                  /><span className='ml-1 mt-2'>Netlify / React Hook Forms</span>
+                  /><span className='ml-1 mt-2'>React Hook Forms</span>
                   </a>                  
                 </div>
             </div>
