@@ -67,7 +67,6 @@ function Subscriptions() {
                       className="ml-2 w-6 h-6 bg-slate-700 rounded border-fuchsia-700 focus:ring-fuchsia-600 ring-offset-fuchsia-800 focus:ring-2"
                       name="accept"
                       aria-label="Terms Checkbox"
-                      id="accept"
                       required
                     />
                   </div>
