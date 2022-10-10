@@ -346,48 +346,48 @@ const ContactForm: FC<ContactFormProps> = props => {
                 </p>
               )}
               <div className="px-4 py-3 inline-flex sm:px-6">
-              <div className="p-1 mx-auto overflow-hidden space-x-1">
-                <span className="group relative flex items-center text-slate-200">
-                  <button
-                    type="submit"
-                    className="py-2 px-4 text-slate-200 rounded-md bg-gray-800 hover:bg-gray-900 shadow-lg hover:shadow-slate-800/50"
-                  >
-                    Send
-                  </button>
-                  <button
-                    type="reset"
-                    className="ml-2 py-2 px-4 text-slate-200 rounded-md bg-red-500 hover:bg-red-600 shadow-lg hover:shadow-red-700/50"
-                  >
-                    Reset
-                  </button>
-                  <div className="ml-2 block flex items-center">
-                    <input
-                      id="acceptTerms"
-                      type="checkbox"
-                      name="acceptTerms"
-                      aria-label="Terms Checkbox"
-                      {...register('acceptTerms')}
-                      className={`ml-1 w-6 h-6 bg-slate-700 rounded border-red-700 focus:ring-red-600 ring-offset-red-800 focus:ring-2 ${
-                        errors.acceptTerms ? 'is-invalid' : ''
-                      }`}
-                    />                   
-                    <label
-                      htmlFor="acceptTerms"
-                      className="ml-3 block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold"
-                    > 
-                    <Link
-                      to="/blog/privacy/"
-                      className="inline-flex"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-describedby="hookForm"
+                <div className="p-1 mx-auto overflow-hidden space-x-1">
+                  <span className="group relative flex items-center text-slate-200">
+                    <button
+                      type="submit"
+                      className="py-2 px-4 text-slate-200 rounded-md bg-gray-800 hover:bg-gray-900 shadow-lg hover:shadow-slate-800/50"
                     >
-                      Agree to Terms
-                      </Link>
-                    </label>                    
-                    <div className="test-red-500">{errors.acceptTerms?.message}</div>
-                  </div>
-                </span>
+                      Send
+                    </button>
+                    <button
+                      type="reset"
+                      className="ml-2 py-2 px-4 text-slate-200 rounded-md bg-red-500 hover:bg-red-600 shadow-lg hover:shadow-red-700/50"
+                    >
+                      Reset
+                    </button>
+                    <div className="ml-2 block flex items-center">
+                      <input
+                        id="acceptTerms"
+                        type="checkbox"
+                        name="acceptTerms"
+                        aria-label="Terms Checkbox"
+                        {...register('acceptTerms')}
+                        className={`ml-1 w-6 h-6 bg-slate-700 rounded border-red-700 focus:ring-red-600 ring-offset-red-800 focus:ring-2 ${
+                          errors.acceptTerms ? 'is-invalid' : ''
+                        }`}
+                      />
+                      <label
+                        htmlFor="acceptTerms"
+                        className="ml-3 block uppercase tracking-wide bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-700 text-xs font-bold"
+                      >
+                        <Link
+                          to="/blog/privacy/"
+                          className="inline-flex"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-describedby="hookForm"
+                        >
+                          Agree to Terms
+                        </Link>
+                      </label>
+                      <div className="test-red-500">{errors.acceptTerms?.message}</div>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div className="mr-8 mt-4 md:ml-10 float-right">
