@@ -334,7 +334,6 @@ const ContactForm: FC<ContactFormProps> = props => {
                         {...register('message', { required: true })}
                       />
                     </div>
-                    <p className="ml-12 text-red-500 text-xs italic">Message Is Required.</p>
                   </div>
                 </div>
               </div>

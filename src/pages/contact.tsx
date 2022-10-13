@@ -44,15 +44,11 @@ function ContactUs() {
       <Stars />
       <Layout>
         <main className="mt-10">
-          <article className="post">
-            <header>
-              <PageHero
-                title="Contact Us"
-                description="Our presence is real and digital. Contact us through the following ways."
-                image={Image}
-              />
-            </header>
-          </article>
+          <PageHero
+            title="Contact Us"
+            description="Our presence is real and digital. Contact us through the following ways."
+            image={Image}
+          />
           <Map />
           <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
@@ -100,6 +96,12 @@ export function Head(props: HeadProps) {
         <meta name="description" content="PubliusLogic Contact Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA=="
+          crossorigin="anonymous"
+        />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
@@ -235,12 +237,6 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-        integrity="sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA=="
-        crossorigin="anonymous"
-      />
     </>
   )
 }

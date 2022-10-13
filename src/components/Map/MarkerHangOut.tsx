@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import { Marker, useMap, Tooltip } from 'react-leaflet'
+import { Marker, Tooltip } from 'react-leaflet'
+import { useMap } from 'react-leaflet/hooks'
 
 export default function MarkerHangOut(props) {
   const map = useMap()
