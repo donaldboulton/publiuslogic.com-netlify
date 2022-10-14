@@ -7,7 +7,7 @@ import WavyHr from '@/components/WavyHr'
 
 const callouts = [
   {
-    name: 'Gatsby v4.24.3',
+    name: 'Gatsby v4.24.4',
     description: 'Gatsby is a React-based open-source framework for creating websites and apps.',
     imageSrc: GatsbyImage,
     imageAlt: 'Gatsby drawing',
