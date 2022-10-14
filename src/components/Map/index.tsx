@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
+import AddLocate from "@/lib/addLocate"
 import useConfigureLeaflet from '@/hooks/useConfigureLeaflet'
 import useHasMounted from '@/hooks/useHasMounted'
 import MarkerHome from './MarkerHome'
@@ -62,6 +63,7 @@ function Map() {
             <MarkerHome />
             <MarkerWork />
             <MarkerHangOut />
+            <AddLocate />
           </MapContainer>
         )}
       </div>
