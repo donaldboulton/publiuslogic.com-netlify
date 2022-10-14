@@ -4,7 +4,7 @@ import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch } from 'react-instantsearch-dom'
 import SearchBox from './search-box'
 import SearchResult from './search-result'
-import useClickOutside from 'use-click-outside'
+import useClickOutside from '@/hooks/useClickOutside'
 
 function Search({ indices }) {
   const rootRef = createRef()

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import { Marker, Tooltip } from 'react-leaflet'
-import { useMap } from 'react-leaflet/hooks'
+import { useMap, Marker, Tooltip, Popup } from 'react-leaflet'
 
 export default function MarkerHangOut(props) {
   const map = useMap()
@@ -10,6 +9,7 @@ export default function MarkerHangOut(props) {
   return (
     <div>
       <Marker ref={markerRefHangOut} position={[35.501429, -97.581642]}>
+        <Popup>My HangOut!</Popup>
         <Tooltip>Will Rodgers Park / Disk Golf</Tooltip>
       </Marker>
     </div>

@@ -25,6 +25,7 @@ import Accordion from './src/components/Accordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
+import Typing from './src/components/Typing'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -52,6 +53,7 @@ const components = {
   Table: Table,
   Modal: Modal,
   Section: Section,
+  Typing: Typing,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
