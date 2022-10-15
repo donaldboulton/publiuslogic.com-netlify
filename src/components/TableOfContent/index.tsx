@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
-import { usePopper } from 'react-popper'
 import { ViewListIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
 
@@ -65,18 +64,12 @@ const virtualReference = {
 const TableOfContent = ({ headings }: TableOfContentProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
-  const [referenceElement, setReferenceElement] = useState()
-  const [popperElement, setPopperElement] = useState()
-  const { styles, attributes } = usePopper(virtualReference, referenceElement, popperElement)
   return (
-    <div className="fixed left-1 mb-4 pb-4 md:left-1 z-10 top-3/4 w-32">
+    <div className="fixed left-1 mb-4 pb-4 md:left-1 z-10 top-1/4 w-32">
       <Popover as="div">
         {({ open }) => (
           <>
-            <Popover.Button
-              ref={setReferenceElement}
-              className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-slate-200"
-            >
+            <Popover.Button className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-slate-200">
               <span className="inline-flex headings-center">
                 <ViewListIcon className="w-8 h-8 ml-2 text-slate-200" />
               </span>
@@ -91,12 +84,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Popover.Panel
-                className="relative w-64 h-64"
-                ref={setPopperElement}
-                style={styles.popper}
-                {...attributes.popper}
-              >
+              <Popover.Panel className="relative w-64 h-64">
                 <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-slate-800 ring-black ring-opacity-5 opacity-75">
                   Table Of Contents
                   <div className="text-slate-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600"></div>

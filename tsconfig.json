@@ -20,12 +20,6 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]
-    },
-    "plugins": [
-      {
-        "name": "ts-graphql-plugin",
-        "tag": "gql" /* Template tag function name */
-      }
-    ]
+    }
   }
 }

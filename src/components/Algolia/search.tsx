@@ -1,13 +1,11 @@
 import * as React from 'react'
-import { createRef, useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch } from 'react-instantsearch-dom'
 import SearchBox from './search-box'
 import SearchResult from './search-result'
-import useClickOutside from '@/hooks/useClickOutside'
 
 function Search({ indices }) {
-  const rootRef = createRef()
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
   const searchClient = useMemo(
@@ -15,11 +13,9 @@ function Search({ indices }) {
     []
   )
 
-  useClickOutside(rootRef, () => setFocus(false))
-
   return (
     <div>
-      <div ref={rootRef}>
+      <div>
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}

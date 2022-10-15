@@ -50,15 +50,15 @@ function Map() {
           <Circle center={[35.501429, -97.581642]} radius={100} />
           <Rectangle bounds={rectangle} />
         </FeatureGroup>
-          <Marker position={blueMarkerPosition}>
-            <Popup>My Home!</Popup>
-          </Marker>
-          <Marker position={greenMarkerPosition}>
-            <Popup>My Work Place!</Popup>
-          </Marker>
-          <Marker position={redMarkerPosition}>
-            <Popup>My Hang out!</Popup>
-          </Marker>
+        <Marker position={blueMarkerPosition}>
+          <Popup>My Home!</Popup>
+        </Marker>
+        <Marker position={greenMarkerPosition}>
+          <Popup>My Work Place!</Popup>
+        </Marker>
+        <Marker position={redMarkerPosition}>
+          <Popup>My Hang out!</Popup>
+        </Marker>
       </MapContainer>
     )
   } else {

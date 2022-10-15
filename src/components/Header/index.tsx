@@ -90,6 +90,14 @@ export default function Navigation() {
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <div className="p-1">
+                    <span className="sr-only">Search</span>
+                    <Link to="/search">
+                      <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                        <SearchIcon className="h-7 w-8 text-sky-400" aria-hidden="true" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="p-1">
                     <span className="sr-only">Dark Light Modes</span>
                     <ThemeToggle panelClassName="mt-8" aria-hidden="true" />
                   </div>
@@ -140,23 +148,6 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
-                              )}
-                              to="/admin"
-                              target="_blank"
-                            >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                <LoginIcon className="block h-9 w-9 pr-2 text-yellow-500" aria-hidden="true" />
-                                <span>Admin</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
@@ -199,22 +190,6 @@ export default function Navigation() {
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <MapIcon className="block h-9 w-9 pr-2 text-green-600" aria-hidden="true" />
                                 <span>Sitemap</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/search"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
-                              )}
-                            >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                <SearchIcon className="block h-8 w-9 pr-2 text-indigo-500" aria-hidden="true" />
-                                <span>Search</span>
                               </span>
                             </Link>
                           )}

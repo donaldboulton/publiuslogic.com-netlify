@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { ReactNode, FC } from 'react'
+import GraphemeSplitter from 'grapheme-splitter'
 import Typist from 'react-typist-component'
 
 export type Delay = number | (() => number)
 export type Splitter = (str: string) => string[]
+
 interface TypistProps {
   children: ReactNode
   typingDelay?: Delay
@@ -13,17 +15,21 @@ interface TypistProps {
   startDelay?: number
   finishDelay?: number
   onTypingDone?: () => void
-  splitter?: Splitter;
+  splitter?: Splitter
   cursor?: string | React.ReactElement
   disabled?: boolean
   restartKey?: any
 }
 
+const splitter = (str: string) => {
+  return new GraphemeSplitter().splitGraphemes(str)
+}
+
 const Typing: FC<TypistProps> = props => {
-    const { children } = props
+  const { children } = props
   return (
-    <Typist typingDelay={100} cursor={<span className='cursor'>|</span>}>
-      This is a typo
+    <Typist typingDelay={100} splitter={splitter} cursor={<span className="cursor">|</span>}>
+      This is 😎🗑🥵⚠😀👍✌👨‍👨‍👧‍👦📏💡🚀🎂😓🎈💕😘 a typo!
       <br />
       <Typist.Backspace count={5} />
       <Typist.Delay ms={1500} />

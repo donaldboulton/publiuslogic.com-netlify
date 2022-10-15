@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import { useMap } from "react-leaflet"
-import Locate from "leaflet.locatecontrol"
-import "leaflet.locatecontrol/dist/L.Control.Locate.min.css"
+import { useEffect } from 'react'
+import { useMap } from 'react-leaflet'
+import Locate from 'leaflet.locatecontrol'
+import 'leaflet.locatecontrol/dist/L.Control.Locate.min.css'
 
 const AddLocateLogic = () => {
   /* Access the map context with the useMap hook */
@@ -10,7 +10,7 @@ const AddLocateLogic = () => {
   /* Add locate control once the map loads */
   useEffect(() => {
     const locateOptions = {
-      position: "bottomright",
+      position: 'bottomright',
       /* Set other options in here for locate control */
       /* flyTo: true, */
       /* drawCircle: false, */
