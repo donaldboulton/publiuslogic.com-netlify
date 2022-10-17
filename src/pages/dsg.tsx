@@ -27,7 +27,7 @@ export default function DSG() {
             <div className="text-black dark:text-white">
               <Link to="/blog/gatsby-version-four">Back to Post</Link>
               <br />
-              <h1 className="text-lg font-bold mt-2 mb-2 leading-tight">DSG: Deferred Static Generation</h1>
+              <h1 className="mt-2 mb-2 text-lg font-bold leading-tight">DSG: Deferred Static Generation</h1>
               <Callout>This page was generated At Runtime!</Callout>
             </div>
           </div>

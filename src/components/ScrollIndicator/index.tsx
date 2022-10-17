@@ -13,9 +13,9 @@ const ScrollIndicator = () => {
   useEffect(() => yRange.onChange(v => setIsComplete(v >= 1)), [yRange])
 
   return (
-    <div className="fixed -right-1 md:-right-1 z-10 top-2/4 w-20 h-20 opacity-50">
+    <div className="fixed -right-1 top-2/4 z-10 h-20 w-20 opacity-50 md:-right-1">
       <LazyMotion features={loadFeatures}>
-        <svg className="z-30 top-2 left-1 w-20 h-20 text-purple-500 opacity-100" viewBox="0 0 60 60">
+        <svg className="top-2 left-1 z-30 h-20 w-20 text-purple-500 opacity-100" viewBox="0 0 60 60">
           <m.path
             fill="none"
             strokeWidth="5"

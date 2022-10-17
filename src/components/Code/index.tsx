@@ -226,12 +226,12 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                   <>
                     <ButtonWrapper className="flex place-content-between">
                       <div>
-                        <Disclosure.Button ref={buttonRef} className="h-10 w-10 ml-3" aria-label="Show Code">
+                        <Disclosure.Button ref={buttonRef} className="ml-3 h-10 w-10" aria-label="Show Code">
                           <m.svg
                             baseProfile="tiny"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 307.8 230.9"
-                            className="h-10 w-10 m-2 active:stroke-0"
+                            className="m-2 h-10 w-10 active:stroke-0"
                           >
                             <m.path
                               fill="#FFF"
@@ -296,7 +296,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                             transition={{ duration }}
                             variants={svgVariants}
                             custom={isClicked}
-                            className="w-10 h-10"
+                            className="h-10 w-10"
                             viewBox="0 0 25 25"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"

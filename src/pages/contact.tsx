@@ -50,7 +50,7 @@ function ContactUs() {
             image={Image}
           />
           <Map />
-          <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
+          <div className="mt-10 p-8 text-black dark:text-white sm:mt-0">
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">

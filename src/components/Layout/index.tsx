@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
+      <div className="mx-auto max-w-screen-xl text-slate-900 antialiased dark:text-slate-200">
         <main>
           <MDXProvider>{children}</MDXProvider>
         </main>

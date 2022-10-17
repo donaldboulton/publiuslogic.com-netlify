@@ -8,12 +8,12 @@ const Login = () => {
 
   return (
     <>
-      <section className="flex items-center flex-shrink-0 my-4 pr-2">
+      <section className="my-4 flex flex-shrink-0 items-center pr-2">
         <button
-          className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white"
+          className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white"
           onClick={() => signIn()}
         >
-          <span className="flex items-center flex-shrink-0 text-lg pr-2">
+          <span className="flex flex-shrink-0 items-center pr-2 text-lg">
             <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
             <span>Login</span>
           </span>
@@ -21,10 +21,10 @@ const Login = () => {
         <span className="ml-4">
           {isSignedIn && (
             <button
-              className="bg-slate-700 block px-3 py-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white"
+              className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white"
               onClick={signOut}
             >
-              <span className="flex items-center flex-shrink-0 text-lg">
+              <span className="flex flex-shrink-0 items-center text-lg">
                 <span>Logout</span>
                 <LogoutIcon className="block h-9 w-9 pl-2 text-red-500" aria-hidden="true" />
               </span>
@@ -33,15 +33,15 @@ const Login = () => {
         </span>
       </section>
       <WavyHr />
-      <section className="flex items-center flex-shrink-0 my-8">
+      <section className="my-8 flex flex-shrink-0 items-center">
         {isSignedIn && (
           <div>
             <div className="mb-4 mt-4">
               <h3>Sign In / Out, "Anything Associated with your Google Account".</h3>
               <p>A Complete Backend with no Gatsby routing, just components as variations in views.</p>
             </div>
-            <div className="sm:flex sm:items-start mt-10">
-              <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
+            <div className="mt-10 sm:flex sm:items-start">
+              <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10">
                 <img
                   className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"
                   src={googleUser.profileObj.imageUrl}

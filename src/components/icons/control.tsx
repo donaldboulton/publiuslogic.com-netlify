@@ -25,7 +25,7 @@ const Control: FC = (props: ControlProps) => {
     <LazyMotion features={loadFeatures}>
       <m.svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-7 w-7 stroke-slate-300 stroke:hover:text-slate-100"
+        className="stroke:hover:text-slate-100 h-7 w-7 stroke-slate-300"
         viewBox="0 0 25 25"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

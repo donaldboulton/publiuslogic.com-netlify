@@ -45,7 +45,7 @@ const ListItem: FC<ListItemProps> = props => {
           <li style={listItem} {...rest}>
             <span dataListItem>
               <svg
-                className="w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400"
+                className="mr-2 ml-1 inline-block h-6 w-6 items-center text-indigo-400"
                 viewBox="0 0 25 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

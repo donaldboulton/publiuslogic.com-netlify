@@ -116,19 +116,19 @@ const posts = [
 
 function HeaderPopover() {
   return (
-    <div className="w-full max-w-sm px-2 z-20">
+    <div className="z-20 w-full max-w-sm px-2">
       <Popover className="relative">
         {({ open }) => (
           <>
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                text-white group px-3 py-2 inline-flex items-center text-lg hover:text-opacity-100 hover:bg-gray-800 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
+                group inline-flex items-center rounded-md px-3 py-2 text-lg text-white hover:bg-gray-800 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
             >
               <span>Featured</span>
               <ChevronDownIcon
-                className={`${open ? 'transform rotate-180 text-red-600' : 'text-opacity-75'}
-                  ml-1 h-5 w-5 text-gray-200 group-hover:text-opacity-75 transition ease-in-out duration-150`}
+                className={`${open ? 'rotate-180 transform text-red-600' : 'text-opacity-75'}
+                  ml-1 h-5 w-5 text-gray-200 transition duration-150 ease-in-out group-hover:text-opacity-75`}
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -140,17 +140,17 @@ function HeaderPopover() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">
-                <div className="overflow-hidden rounded-lg shadow-lg ring-1 bg-slate-800 ring-black ring-opacity-5">
+              <Popover.Panel className="absolute left-1/2 z-10 mt-2 w-screen max-w-md -translate-x-1/2 transform px-4 sm:px-0 lg:ml-20 lg:max-w-4xl">
+                <div className="overflow-hidden rounded-lg bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5">
                   <nav className="nav-scroll">
-                    <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-slate-800 p-7 lg:grid-cols-3">
+                    <div className="relative grid h-96 max-h-full gap-8 bg-slate-800 p-7 md:max-h-screen lg:grid-cols-3">
                       {posts.map(item => (
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
+                          className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
                         >
-                          <div className="flex items-center p-2 rounded-md bg-purple-800 hover:bg-purple-900 justify-center flex-shrink-0 w-10 h-10 text-slate-200 hover:text-rose-600 sm:h-12 sm:w-12">
+                          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-purple-800 p-2 text-slate-200 hover:bg-purple-900 hover:text-rose-600 sm:h-12 sm:w-12">
                             <item.icon aria-hidden="true" />
                           </div>
                           <div className="ml-4">
@@ -161,17 +161,17 @@ function HeaderPopover() {
                       ))}
                     </div>
                   </nav>
-                  <div className="p-4 bg-purple-800 hover:bg-purple-900">
+                  <div className="bg-purple-800 p-4 hover:bg-purple-900">
                     <a
                       href="https://bibwoe.com/posts/enoch-preface"
                       rel="noopener noreferrer"
                       target="_blank"
-                      className="flow-root px-2 py-2 transition duration-150 ease-in-out rounded-md hover:bg-fuchsia-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
+                      className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-fuchsia-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
                     >
                       <span className="flex items-center">
                         <span className="text-lg font-medium text-gray-200">
                           <span className="flex items-center">
-                            <LinkIcon className="w-6 h-6 text-fuchsia-400 hover:text-fuchsia-500" />
+                            <LinkIcon className="h-6 w-6 text-fuchsia-400 hover:text-fuchsia-500" />
                             &nbsp; Books Of Enoch and The Last Testament
                           </span>
                         </span>

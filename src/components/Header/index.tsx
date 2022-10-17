@@ -29,14 +29,14 @@ function classNames(...classes) {
 export default function Navigation() {
   return (
     <>
-      <Disclosure as="nav" className="bg-gradient-to-r from-gray-900 via-transparent to-gray-900 sticky top-0 z-40">
+      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-gray-900 via-transparent to-gray-900">
         {({ open }) => (
           <>
-            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-              <div className="relative flex items-center justify-between h-16">
+            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple">
+                  <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -45,8 +45,8 @@ export default function Navigation() {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="flex-1 flex items-center text-lg justify-center sm:items-stretch sm:justify-start">
-                  <div className="flex-shrink-0 flex items-center">
+                <div className="flex flex-1 items-center justify-center text-lg sm:items-stretch sm:justify-start">
+                  <div className="flex flex-shrink-0 items-center">
                     <Link to="/">
                       <Tooltip id="logoTooltipSmall" tooltipText="Home Page">
                         <div className="block md:hidden">
@@ -60,13 +60,13 @@ export default function Navigation() {
                     </Link>
                     <Link to="/">
                       <Tooltip id="logoTooltip" tooltipText="Home Page">
-                        <div className="hidden md:block flex items-center">
+                        <div className="flex hidden items-center md:block">
                           <span className="text-2xl text-gray-400">PubliusLogic</span>
                         </div>
                       </Tooltip>
                     </Link>
                   </div>
-                  <div className="hidden sm:block sm:ml-6">
+                  <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
                       <>
                         {navigation.map(item => (
@@ -76,7 +76,7 @@ export default function Navigation() {
                             activeClassName="active"
                             className={classNames(
                               item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-white',
-                              'px-3 py-2 rounded-md text-lg font-medium'
+                              'rounded-md px-3 py-2 text-lg font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
@@ -92,7 +92,7 @@ export default function Navigation() {
                   <div className="p-1">
                     <span className="sr-only">Search</span>
                     <Link to="/search">
-                      <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                      <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                         <SearchIcon className="h-7 w-8 text-sky-400" aria-hidden="true" />
                       </span>
                     </Link>
@@ -103,19 +103,19 @@ export default function Navigation() {
                   </div>
 
                   {/* Profile dropdown */}
-                  <Menu as="div" className="ml-3 relative">
+                  <Menu as="div" className="relative ml-3">
                     <div>
-                      <Menu.Button className="flex text-sm rounded-full focus:outline-none">
+                      <Menu.Button className="flex rounded-full text-sm focus:outline-none">
                         <span className="sr-only">Open Control Menu</span>
                         <Control
-                          className="text-slate-900 hover:text-slate-700 dark:text-slate-200 text-opacity-75"
+                          className="text-slate-900 text-opacity-75 hover:text-slate-700 dark:text-slate-200"
                           aria-hidden="true"
                           aria-label="DarkMode"
                         />
                         <span className="sr-only">Open Control Menu</span>
                         <ChevronDownIcon
-                          className={`${open ? 'text-slate-200 transform rotate-180' : 'text-opacity-75'}
-                          first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-75 transition ease-in-out duration-150`}
+                          className={`${open ? 'rotate-180 transform text-slate-200' : 'text-opacity-75'}
+                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out first-letter:w-5 hover:text-gray-200 group-hover:text-opacity-75`}
                           aria-hidden="true"
                         />
                       </Menu.Button>
@@ -128,17 +128,17 @@ export default function Navigation() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-3 w-48 rounded-md shadow-lg py-1 bg-slate-900 text-slate-200 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-75 hover:opacity-100">
+                      <Menu.Items className="absolute right-0 mt-3 w-48 origin-top-right rounded-md bg-slate-900 py-1 text-slate-200 opacity-75 shadow-lg ring-1 ring-black ring-opacity-5 hover:opacity-100 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
                             <Link
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                               to="/login"
                             >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                                 <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
                                 <span>Login</span>
                               </span>
@@ -151,10 +151,10 @@ export default function Navigation() {
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                                 <UserGroupIcon className="block h-8 w-8 pr-2 text-purple-500" aria-hidden="true" />
                                 <span>Profile</span>
                               </span>
@@ -167,10 +167,10 @@ export default function Navigation() {
                               to="/gallery"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                                 <PhotographIcon className="block h-8 w-9 pr-2 text-fuchsia-500" aria-hidden="true" />
                                 <span>Gallery</span>
                               </span>
@@ -184,10 +184,10 @@ export default function Navigation() {
                               to="https://publiuslogic.com/sitemap.xml"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'block px-3 py-2 ml-2 mr-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
-                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                                 <MapIcon className="block h-9 w-9 pr-2 text-green-600" aria-hidden="true" />
                                 <span>Sitemap</span>
                               </span>
@@ -202,7 +202,7 @@ export default function Navigation() {
             </div>
 
             <Disclosure.Panel className="lg:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="space-y-1 px-2 pt-2 pb-3">
                 {navigation.map(item => (
                   <Link
                     key={item.name}
@@ -211,7 +211,7 @@ export default function Navigation() {
                       item.current
                         ? 'bg-gray-200 text-slate-200'
                         : 'text-slate-200 hover:bg-slate-600/30 hover:text-slate-200',
-                      'block px-3 py-2 rounded-md text-base font-medium'
+                      'block rounded-md px-3 py-2 text-base font-medium'
                     )}
                     aria-current={item.current ? 'page' : undefined}
                   >

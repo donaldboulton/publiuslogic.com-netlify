@@ -69,10 +69,10 @@ export default function Features() {
           transition={{ duration: 0.8, ease: 'easeIn' }}
         >
           <div className="pt-8 pb-8 text-slate-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="lg:text-center">
-                <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
-                <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-2xl">
+                <h2 className="text-base font-semibold uppercase tracking-wide">PubliusLogic</h2>
+                <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight sm:text-2xl">
                   Topics and Discussions
                 </p>
                 <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
@@ -86,14 +86,14 @@ export default function Features() {
               </div>
 
               <div className="mt-10">
-                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
                   {features.map(feature => (
                     <div key={feature.name} className="relative">
                       <dt>
-                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md text-gray-200 bg-fuchsia-600 hover:bg-fuchsia-700">
+                        <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-fuchsia-600 text-gray-200 hover:bg-fuchsia-700">
                           <feature.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
-                        <p className="ml-16 text-lg leading-6 font-medium">{feature.name}</p>
+                        <p className="ml-16 text-lg font-medium leading-6">{feature.name}</p>
                       </dt>
                       <dd className="mt-2 ml-16 text-base">{feature.description}</dd>
                     </div>

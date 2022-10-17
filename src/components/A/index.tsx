@@ -15,7 +15,7 @@ export default function A({ href, external = false, className, children }: AProp
       <a
         key={href}
         href={href}
-        className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`}
+        className={`text-slate-200 hover:text-fuchsia-600 dark:text-slate-200 ${className}`}
         rel="me"
         target="_blank"
         area-label="Social Link"
@@ -30,7 +30,7 @@ export default function A({ href, external = false, className, children }: AProp
         to={href}
         rel="me"
         target="_blank"
-        className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`}
+        className={`text-slate-200 hover:text-fuchsia-600 dark:text-slate-200 ${className}`}
         activeClassName="active"
       >
         {children}

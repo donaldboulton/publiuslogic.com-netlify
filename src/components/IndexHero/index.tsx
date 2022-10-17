@@ -29,16 +29,16 @@ const IndexHero = ({ image }: IndexHeroProps) => {
     },
   }
   return (
-    <div className="mb-4 md:mb-0 w-full max-w-screen-xl mx-auto relative h-96 text-white">
-      <div className="absolute left-0 bottom-0 w-full h-full z-10 bg-gradient-to-b from-slate-700"></div>
+    <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-white md:mb-0">
+      <div className="absolute left-0 bottom-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
       <img
         src={image ? image : defaultImage}
         alt="featured image"
-        className="absolute left-0 top-0 w-full h-full z-0"
+        className="absolute left-0 top-0 z-0 h-full w-full"
       />
       <LazyMotion features={loadFeatures}>
         <m.div
-          className="p-4 absolute top-16 left-3 z-20"
+          className="absolute top-16 left-3 z-20 p-4"
           initial="hidden"
           animate={replay ? 'visible' : 'hidden'}
           variants={headingContainer}

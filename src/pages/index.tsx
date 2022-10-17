@@ -53,16 +53,16 @@ const Home = ({ image }: HomeProps) => {
       <Layout>
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
-            <div className="mb-4 md:mb-0 w-full max-w-screen-xl mx-auto relative h-96 text-white">
-              <div className="absolute left-0 bottom-0 w-full h-full z-10 bg-gradient-to-b from-slate-700"></div>
+            <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-white md:mb-0">
+              <div className="absolute left-0 bottom-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
               <img
                 src={image ? image : defaultImage}
                 alt="featured image"
-                className="absolute left-0 top-0 w-full h-full z-0"
+                className="absolute left-0 top-0 z-0 h-full w-full"
               />
               <LazyMotion features={loadFeatures}>
                 <motion.div
-                  className="p-4 absolute top-16 left-3 z-30"
+                  className="absolute top-16 left-3 z-30 p-4"
                   initial="hidden"
                   animate={replay ? 'visible' : 'hidden'}
                   variants={headingContainer}
@@ -76,13 +76,13 @@ const Home = ({ image }: HomeProps) => {
               </LazyMotion>
             </div>
           </div>
-          <section className="pb-10 bg-slate-700 text-slate-200 transition-all duration-200 -mt-10">
+          <section className="-mt-10 bg-slate-700 pb-10 text-slate-200 transition-all duration-200">
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap">
-                <div className="lg:pt-10 pt-4 w-full md:w-4/12 px-4 text-center">
-                  <div className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg">
-                    <div className="px-4 py-5 flex-auto">
-                      <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
+                <div className="w-full px-4 pt-4 text-center md:w-4/12 lg:pt-10">
+                  <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-fuchsia-700 text-slate-200 shadow-lg shadow-fuchsia-700/50 transition-all duration-200">
+                    <div className="flex-auto px-4 py-5">
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 p-3 text-center shadow-lg shadow-blue-700/50">
                         <StaticImage
                           layout="fixed"
                           width={24}
@@ -108,10 +108,10 @@ const Home = ({ image }: HomeProps) => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full md:w-4/12 px-4 text-center">
-                  <div className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-slate-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg">
-                    <div className="px-4 py-4 flex-auto">
-                      <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
+                <div className="w-full px-4 text-center md:w-4/12">
+                  <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-indigo-700 text-slate-200 shadow-lg shadow-indigo-700/50">
+                    <div className="flex-auto px-4 py-4">
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 p-3 text-center shadow-lg shadow-purple-500/50">
                         <StaticImage
                           layout="fixed"
                           width={24}
@@ -141,10 +141,10 @@ const Home = ({ image }: HomeProps) => {
                     </div>
                   </div>
                 </div>
-                <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                  <div className="relative flex flex-col min-w-0 break-words bg-purple-600 text-slate-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg">
-                    <div className="px-4 py-5 flex-auto">
-                      <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
+                <div className="w-full px-4 pt-6 text-center md:w-4/12">
+                  <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-purple-600 text-slate-200 shadow-lg shadow-purple-600/50">
+                    <div className="flex-auto px-4 py-5">
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-600 p-3 text-center shadow-lg shadow-fuchsia-600/50">
                         <StaticImage
                           layout="fixed"
                           width={24}
@@ -177,21 +177,21 @@ const Home = ({ image }: HomeProps) => {
                   </div>
                 </div>
               </div>
-              <div className="text-slate-200 mb-10">
+              <div className="mb-10 text-slate-200">
                 <div className="flex justify-center">
                   <StaticImage
-                    className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
+                    className="m-auto mx-auto mb-3 h-20 w-20 max-w-xs rounded-full ring ring-indigo-500 ring-offset-4"
                     formats={['auto', 'webp']}
-                    src="../../static/assets/donald-boulton.jpg"
+                    src="../../static/img/donald-boulton.jpg"
                     quality={95}
                     alt="Profile picture"
                     area-label="My Picture"
                     loading="eager"
                   />
                 </div>
-                <h2 className="font-bold text-2xl flex justify-center max-w-xs m-auto">Donald W. Boulton</h2>
+                <h2 className="m-auto flex max-w-xs justify-center text-2xl font-bold">Donald W. Boulton</h2>
                 <a
-                  className="text-rose-500 hover:text-rose-400 flex justify-center max-w-xs m-auto"
+                  className="m-auto flex max-w-xs justify-center text-rose-500 hover:text-rose-400"
                   href="https://donboulton.com"
                   target="_blank"
                   rel="noreferrer"
@@ -199,16 +199,16 @@ const Home = ({ image }: HomeProps) => {
                 >
                   https://donboulton.com
                 </a>
-                <div className="justify-center max-w-xl m-auto text-slate-200  hover:text-slate-300 my-2 mb-6">
-                  <div className="text-center justify-items-center">
+                <div className="m-auto my-2 mb-6 max-w-xl  justify-center text-slate-200 hover:text-slate-300">
+                  <div className="justify-items-center text-center">
                     Left Hand of Father God since the beginning of time!{' '}
                   </div>
-                  <p className="text-center justify-items-center">
+                  <p className="justify-items-center text-center">
                     Self Taught Full Stack Developer. Gatsby, MDX, TypeScript Tailwind CSS.
                   </p>
                 </div>
-                <div className="flex justify-center max-w-xs m-auto">
-                  <div className="grid grid-flow-col auto-cols-min gap-4">
+                <div className="m-auto flex max-w-xs justify-center">
+                  <div className="grid auto-cols-min grid-flow-col gap-4">
                     <a
                       className="flex items-center text-blue-400 hover:text-blue-500"
                       href="https://twitter.com/donboulton"
@@ -217,7 +217,7 @@ const Home = ({ image }: HomeProps) => {
                       area-label="Don Boulton Twitter"
                     >
                       <svg
-                        className="flex-initial mr-0.5 mt-0.5"
+                        className="mr-0.5 mt-0.5 flex-initial"
                         role="img"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +238,7 @@ const Home = ({ image }: HomeProps) => {
                       area-label="Don Boulton Github"
                     >
                       <svg
-                        className="flex-initial mr-0.5 mt-0.5"
+                        className="mr-0.5 mt-0.5 flex-initial"
                         role="img"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -256,9 +256,9 @@ const Home = ({ image }: HomeProps) => {
               </div>
             </div>
           </section>
-          <section className="relative py-20 bg-slate-900">
+          <section className="relative bg-slate-900 py-20">
             <div
-              className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+              className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 w-full overflow-hidden"
               style={{ height: '80px' }}
             >
               <svg
@@ -270,30 +270,31 @@ const Home = ({ image }: HomeProps) => {
                 x="0"
                 y="0"
               >
-                <polygon className="text-slate-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                <polygon className="fill-current text-slate-900" points="2560 0 2560 100 0 100"></polygon>
               </svg>
             </div>
 
             <div className="container mx-auto px-4">
-              <div className="items-center flex flex-wrap bg-slate-900 text-slate-200">
-                <div className="flex flex-wrap items-center mt-8">
-                  <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
-                    <h3 className="text-3xl text-slate-200 mb-2 font-semibold leading-normal">
+              <div className="flex flex-wrap items-center bg-slate-900 text-slate-200">
+                <div className="mt-8 flex flex-wrap items-center">
+                  <div className="mr-auto ml-auto mb-6 w-full px-4 md:w-5/12">
+                    <h3 className="mb-2 text-3xl font-semibold leading-normal text-slate-200">
                       Coming Out of Retirement
                     </h3>
                     <p
-                      className="first-line:uppercase first-line:tracking-widest
+                      className="first-letter:float-left first-letter:mr-3
   first-letter:text-7xl first-letter:font-bold first-letter:text-white
-  first-letter:mr-3 first-letter:float-left
+  first-line:uppercase first-line:tracking-widest
 "
                     >
-                      Don has been Retired from birth until I become 65, then I am getting to work, start singing,
+                      I have been Retired from birth until I become 65, then I am getting to work, start singing,
                       finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Trinity's
-                      church on Earth.
+                      church on Earth. Hand to Walk this Earth twice as long as my Son Jesus. "To Know All before
+                      Action"!
                     </p>
-                    <div className="text-lg font-light leading-relaxed mt-4 mb-4 text-white">
+                    <div className="mt-4 mb-4 text-lg font-light leading-relaxed text-white">
                       <div>
-                        <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
+                        <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
                           {' '}
                           Mans Books Of Life
                         </span>
@@ -303,14 +304,14 @@ const Home = ({ image }: HomeProps) => {
                       </div>
                       <a
                         href="https://mansbooks.com"
-                        className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
+                        className="mt-4 font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50"
                       >
                         https://mansbooks.com
                       </a>
                     </div>
-                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-slate-200">
+                    <p className="mt-0 mb-4 text-lg font-light leading-relaxed text-slate-200">
                       <div>
-                        <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
+                        <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
                           {' '}
                           Basic Instructions Books While On Earth
                         </span>
@@ -318,18 +319,18 @@ const Home = ({ image }: HomeProps) => {
                       </div>
                       <a
                         href="https://bibwoe.com"
-                        className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
+                        className="mt-4 font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50"
                       >
                         https://bibwoe.com.
                       </a>
                     </p>
                   </div>
-                  <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                  <div className="mr-auto ml-auto w-full px-4 md:w-4/12">
                     <Fruition />
                   </div>
                 </div>
                 <div
-                  className="top-auto mt-4 bottom-0 left-0 bg-slate-900 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                  className="pointer-events-none absolute top-auto bottom-0 left-0 right-0 mt-4 w-full overflow-hidden bg-slate-900 bg-transparent transition-all duration-200"
                   style={{ height: '70px' }}
                 >
                   <svg
@@ -341,23 +342,23 @@ const Home = ({ image }: HomeProps) => {
                     x="0"
                     y="0"
                   >
-                    <polygon className="text-slate-700 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    <polygon className="fill-current text-slate-700" points="2560 0 2560 100 0 100"></polygon>
                   </svg>
                 </div>
               </div>
             </div>
           </section>
-          <section className="py-20 relative block bg-slate-700">
-            <div className="container mx-auto pb-24 px-4">
+          <section className="relative block bg-slate-700 py-20">
+            <div className="container mx-auto px-4 pb-24">
               <Features />
             </div>
-            <div className="mt-24 mb:mt-24 pt-24 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+            <div className="mb:mt-24 pointer-events-none absolute bottom-0 right-0 left-1/2 mt-24 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-24 transition-all duration-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2560"
                 height="200"
                 viewBox="0 0 2560 200"
-                className="stroke-blue-500 fill-slate-900"
+                className="fill-slate-900 stroke-blue-500"
               >
                 <path
                   strokeWidth="2"
@@ -366,17 +367,17 @@ const Home = ({ image }: HomeProps) => {
               </svg>
             </div>
           </section>
-          <section className="pt-10 pb-20 relative block bg-primary-dark">
+          <section className="bg-primary-dark relative block pt-10 pb-20">
             <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
               <LatestArticles />
-              <div className="mt-10 md:mt-20 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+              <div className="pointer-events-none absolute bottom-0 right-0 left-1/2 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent transition-all duration-200 md:mt-20">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xlink="http://www.w3.org/1999/xlink"
                   width="2560"
                   height="200"
                   viewBox="0 0 2560 200"
-                  className="stroke-red-600 fill-slate-800"
+                  className="fill-slate-800 stroke-red-600"
                 >
                   <path
                     stroke-width="2"
@@ -388,11 +389,11 @@ const Home = ({ image }: HomeProps) => {
           </section>
           <section className="relative block pt-24 pb-20 lg:pt-0">
             <div className="container mx-auto px-4">
-              <div className="flex flex-wrap justify-center lg:-mt-48 -mt-40">
+              <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                 <div className="w-full px-4">
                   <Updates />
-                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-gray-200 light:text-gray-800">
-                    <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                  <div className="light:bg-gray-200 light:text-gray-800 mt-10 mb-4 rounded-lg bg-gray-800 text-gray-200 lg:mt-6">
+                    <h4 className="mb-2 text-center text-2xl font-semibold text-gray-200 underline decoration-fuchsia-600 decoration-wavy underline-offset-8">
                       Ordered Spiritual Reading List!
                     </h4>
                     <Table />

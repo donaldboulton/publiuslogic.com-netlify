@@ -32,18 +32,18 @@ const callouts = [
 export default function FindOutMore() {
   return (
     <Section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto py-8 sm:py-10 lg:py-12 lg:max-w-none">
-          <h2 className="text-lg mb-2 font-extrabold">Technology and Design</h2>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl py-8 sm:py-10 lg:max-w-none lg:py-12">
+          <h2 className="mb-2 text-lg font-extrabold">Technology and Design</h2>
           <WavyHr />
-          <div className="mt-4 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
+          <div className="mt-4 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {callouts.map(callout => (
               <div key={callout.name} className="group relative">
-                <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                <div className="sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1 lg:aspect-h-1 relative h-80 w-full overflow-hidden rounded-lg group-hover:opacity-75 sm:h-64">
                   <img
                     src={callout.imageSrc}
                     alt={callout.imageAlt}
-                    className="w-full h-full object-center object-contain"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <h3 className="mt-6 text-2xl">

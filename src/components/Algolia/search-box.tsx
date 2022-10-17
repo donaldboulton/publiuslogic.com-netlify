@@ -7,7 +7,7 @@ export default connectSearchBox(({ refine, currentRefinement, onFocus, ...rest }
       width="20"
       height="20"
       fill="currentColor"
-      className="absolute left-3 top-1/2 -mt-2.5 text-gray-400 pointer-events-none group-focus-within:text-purple-500"
+      className="pointer-events-none absolute left-3 top-1/2 -mt-2.5 text-gray-400 group-focus-within:text-purple-500"
       aria-hidden="true"
     >
       <path
@@ -17,7 +17,7 @@ export default connectSearchBox(({ refine, currentRefinement, onFocus, ...rest }
       />
     </svg>
     <input
-      className="focus:ring-2 focus:ring-purple-500 focus:outline-none w-full text-sm leading-6 bg-slate-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 placeholder-gray-400 rounded-md py-2 pl-10 ring-1 ring-purple-500 shadow-sm"
+      className="w-full rounded-md bg-slate-300 py-2 pl-10 text-sm leading-6 text-slate-900 placeholder-gray-400 shadow-sm ring-1 ring-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-slate-800 dark:text-slate-200"
       type="text"
       aria-label="Search Posts"
       placeholder="Search posts..."

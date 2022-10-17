@@ -32,7 +32,7 @@ const Popper: FC<PopperProps> = props => {
 
   return (
     <>
-      <span className='text-slate-400' ref={setTriggerRef}>
+      <span className="text-slate-400" ref={setTriggerRef}>
         {children}
       </span>
       {visible && (

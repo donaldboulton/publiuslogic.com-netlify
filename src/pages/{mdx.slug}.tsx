@@ -83,12 +83,14 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
       <Layout>
         <TableOfContent headings={data.mdx.headings} />
         <div className="mb-10 mt-10">
-          <section className="px-4 lg:px-0 mt-8 mb-10 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
+          <section className="prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-8 mb-10 max-w-screen-lg px-4 text-black dark:text-white lg:px-0">
             <div className="py-4">
-              <h1 className="text-lg text-slate-900 darK:text-slate-200 mb-2 font-semibold leading-normal">{frontmatter.title}</h1>
+              <h1 className="darK:text-slate-200 mb-2 text-lg font-semibold leading-normal text-slate-900">
+                {frontmatter.title}
+              </h1>
               <div className="flex items-center">
                 <StaticImage
-                  className="head-img mr-2 ring-2 ring-slate-900 ring-inset float-left"
+                  className="head-img float-left mr-2 ring-2 ring-inset ring-slate-900"
                   layout="fixed"
                   formats={['auto', 'webp']}
                   src="../../static/assets/creation-cut.jpg"
@@ -98,7 +100,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                   alt="Creation Picture"
                   loading="eager"
                 />
-                <p className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 dark:first-letter:text-slate-200 first-letter:mr-3 first-letter:float-left">
+                <p className="first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
                   {frontmatter.description}
                 </p>
               </div>
@@ -107,20 +109,20 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
               <Bio />
             </div>
             <div>
-              <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">
-                <div className="mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
-                  <TagIcon className="w-6 h-6 mr-1" />
+              <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
+                <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none">
+                  <TagIcon className="mr-1 h-6 w-6" />
                   <Tags className="py-1 px-2" tags={frontmatter.tags} />
                 </div>
-                <div className="text-black dark:text-white mr-2 inline-flex items-center leading-none text-base py-1">
-                  <CalendarIcon className="w-6 h-6 mr-1" />
+                <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-black dark:text-white">
+                  <CalendarIcon className="mr-1 h-6 w-6" />
                   {frontmatter.date}
                 </div>
-                <div className="text-black dark:text-white mr-3 inline-flex items-center leading-none text-base">
-                  <ClockIcon className="w-6 h-6 mr-1" />
+                <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
+                  <ClockIcon className="mr-1 h-6 w-6" />
                   {timeToRead} min read
                 </div>
-                <div className="text-black dark:text-white mr-3 inline-flex items-center leading-none text-base">
+                <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
                   <NowPlaying />
                 </div>
               </div>
@@ -130,12 +132,12 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
             <WavyHr />
           </section>
           <ScrollDown
-            className="scroll z-20 right-4 md:right-3 top-20"
+            className="scroll right-4 top-20 z-20 md:right-3"
             size={40}
             css="position: fixed; color: gray; width: 40px; height: 40px;"
           />
           <Scroll
-            className="scroll z-20 right-4 md:right-3 bottom-4"
+            className="scroll right-4 bottom-4 z-20 md:right-3"
             showBelow={1500}
             size={40}
             css="position: fixed; color: gray; width: 40px; height: 40px;"

@@ -46,7 +46,7 @@ const TagPage = ({ pageContext }: TagProps) => {
             <div className="rounded-md shadow">
               <Link
                 to="/tags"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-fuchsia-600 hover:bg-fuchsia-700 md:py-4 md:text-lg md:px-10"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-fuchsia-600 px-8 py-3 text-base font-medium text-white hover:bg-fuchsia-700 md:py-4 md:px-10 md:text-lg"
               >
                 View All Tags
               </Link>

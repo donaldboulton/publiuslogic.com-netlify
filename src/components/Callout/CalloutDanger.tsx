@@ -70,7 +70,7 @@ const CalloutDanger: FC<CalloutDangerProps> = props => {
         {...rest}
       >
         <aside style={callOutDangerWrapper}>
-          <Alert className="text-red-600 w-6 h-6" />
+          <Alert className="h-6 w-6 text-red-600" />
         </aside>
         {children}
       </m.div>

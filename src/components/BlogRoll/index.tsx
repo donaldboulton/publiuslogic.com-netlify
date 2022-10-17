@@ -36,14 +36,14 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <div className="mt-6 flex flex-col items-center mb-10">
-        <div className="space-y-12 lg:space-y-0 flex flex-wrap mb-4">
+      <div className="mt-6 mb-10 flex flex-col items-center">
+        <div className="mb-4 flex flex-wrap space-y-12 lg:space-y-0">
           {posts.slice(offset, offset + POSTS_PER_PAGE).map(post => (
             <section className="p-4 md:w-1/2 lg:w-1/3">
               <m.div className="relative opacity-75" initial="initial" whileHover="hover">
                 <div>
                   <m.div
-                    className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
+                    className="border-1 h-full overflow-hidden rounded-lg border-slate-800 bg-slate-200 p-2 text-slate-900 opacity-75 shadow-xl dark:border-slate-300 dark:bg-slate-900 dark:text-slate-200"
                     variants={cardVariants}
                     transition={{
                       ease: 'easeOut',
@@ -57,21 +57,21 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                     <div className="p-6">
                       {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
                       <Link to={`/${post.slug}`}>
-                        <h2 className="title-font text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400 mt-2">
+                        <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400">
                           {post.frontmatter.title}
                         </h2>
                       </Link>
-                      <div className="flex items-center flex-wrap ">
-                        <span className="text-black dark:text-white mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-fuchsia-200">
-                          <CalendarIcon className="w-4 h-4 mr-1" />
+                      <div className="flex flex-wrap items-center ">
+                        <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-white">
+                          <CalendarIcon className="mr-1 h-4 w-4" />
                           {post.frontmatter.date}
                         </span>
-                        <span className="text-black dark:text-white inline-flex items-center leading-none text-xs">
-                          <UserCircleIcon className="w-4 h-4 mr-1" />
+                        <span className="inline-flex items-center text-xs leading-none text-black dark:text-white">
+                          <UserCircleIcon className="mr-1 h-4 w-4" />
                           {post.frontmatter.author}
                         </span>
                       </div>
-                      <p className="mt-3 italic text-sm text-black dark:text-white">{post.excerpt}</p>
+                      <p className="mt-3 text-sm italic text-black dark:text-white">{post.excerpt}</p>
                     </div>
                   </m.div>
                 </div>

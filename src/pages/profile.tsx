@@ -34,11 +34,11 @@ function Profile() {
         <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
         <section className="mb-11">
           <div className="mt-6 mb-6 text-center">
-            <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
-            <div className="text-slate-200 mb-10">
+            <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Github Profile</h2>
+            <div className="mb-10 text-slate-200">
               <div className="flex justify-center">
                 <StaticImage
-                  className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
+                  className="m-auto mx-auto mb-3 h-20 w-20 max-w-xs rounded-full ring ring-indigo-500 ring-offset-4"
                   formats={['auto', 'webp']}
                   src="../../static/assets/donald-boulton.jpg"
                   quality={95}
@@ -47,9 +47,9 @@ function Profile() {
                   loading="eager"
                 />
               </div>
-              <h2 className="font-bold text-2xl flex justify-center max-w-xs m-auto">Donald W. Boulton</h2>
+              <h2 className="m-auto flex max-w-xs justify-center text-2xl font-bold">Donald W. Boulton</h2>
               <a
-                className="text-rose-500 hover:text-rose-400 flex justify-center max-w-xs m-auto"
+                className="m-auto flex max-w-xs justify-center text-rose-500 hover:text-rose-400"
                 href="https://donboulton.com"
                 target="_blank"
                 rel="noreferrer"
@@ -57,16 +57,16 @@ function Profile() {
               >
                 https://donboulton.com
               </a>
-              <div className="justify-center max-w-xl m-auto text-slate-200  hover:text-slate-300 my-2 mb-6">
-                <div className="text-center justify-items-center">
+              <div className="m-auto my-2 mb-6 max-w-xl  justify-center text-slate-200 hover:text-slate-300">
+                <div className="justify-items-center text-center">
                   Left Hand of Father God since the beginning of time!{' '}
                 </div>
-                <p className="text-center justify-items-center">
+                <p className="justify-items-center text-center">
                   Self Taught Full Stack Developer. Gatsby, MDX, TypeScript Tailwind CSS.
                 </p>
               </div>
-              <div className="flex justify-center max-w-xs m-auto">
-                <div className="grid grid-flow-col auto-cols-min gap-4">
+              <div className="m-auto flex max-w-xs justify-center">
+                <div className="grid auto-cols-min grid-flow-col gap-4">
                   <a
                     className="flex items-center text-blue-400 hover:text-blue-500"
                     href="https://twitter.com/donboulton"
@@ -75,7 +75,7 @@ function Profile() {
                     area-label="Don Boulton Twitter"
                   >
                     <svg
-                      className="flex-initial mr-0.5 mt-0.5"
+                      className="mr-0.5 mt-0.5 flex-initial"
                       role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ function Profile() {
                     area-label="Don Boulton Github"
                   >
                     <svg
-                      className="flex-initial mr-0.5 mt-0.5"
+                      className="mr-0.5 mt-0.5 flex-initial"
                       role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,10 +115,10 @@ function Profile() {
           </div>
           <div
             image={spacer200}
-            className="mb-10 mt-20 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"
+            className="absolute right-0 mb-10 mt-20 w-full overflow-hidden bg-transparent pt-10"
           ></div>
           <div className="mt-2">
-            <div className="mt-10 pt-10 top-96 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+            <div className="pointer-events-none absolute top-96 right-0 left-1/2 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-10 transition-all duration-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2560"

@@ -189,7 +189,7 @@ ul {
 }
 
 html {
-  @apply transition-all duration-200 ease-linear antialiased overflow-x-hidden;
+  @apply overflow-x-hidden antialiased transition-all duration-200 ease-linear;
 
   background: var(--bg);
   font-family: 'DM Sans', sans-serif;

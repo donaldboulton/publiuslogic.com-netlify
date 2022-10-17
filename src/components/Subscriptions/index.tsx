@@ -8,7 +8,7 @@ function Subscriptions() {
   }
   return (
     <>
-      <div className="p-2 mx-auto flex items-center space-x-2">
+      <div className="mx-auto flex items-center space-x-2 p-2">
         <NetlifyForm
           method="POST"
           name="subscriptions"
@@ -30,13 +30,13 @@ function Subscriptions() {
                   Don not fill this out if you are human: <input name="bot-field" />
                 </label>
               </p>
-              <div className="p-1 mx-auto overflow-hidden space-x-1">
+              <div className="mx-auto space-x-1 overflow-hidden p-1">
                 <span className="group relative flex items-center text-slate-200">
                   <svg
                     width="20"
                     height="20"
                     fill="currentColor"
-                    className="absolute left-3 top-1/2 -mt-2.5 text-slate-200 pointer-events-none group-focus-within:text-fuchsia-600"
+                    className="pointer-events-none absolute left-3 top-1/2 -mt-2.5 text-slate-200 group-focus-within:text-fuchsia-600"
                     aria-hidden="true"
                     viewBox="0 0 512 512"
                   >
@@ -48,13 +48,13 @@ function Subscriptions() {
                     onChange={handleChange}
                     placeholder="Email"
                     required
-                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-slate-800 text-slate-200 placeholder-slate-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
+                    className="w-40 rounded-md bg-slate-800 py-2 pl-10 text-sm leading-6 text-slate-200 placeholder-slate-100 shadow-sm ring-1 ring-fuchsia-600 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
                     aria-label="Enter Email"
                   />
                   <span className="block space-x-2">
                     <button
                       aria-label="Submit Button"
-                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-slate-200 bg-fuchsia-700 hover:bg-fuchsia-600 shadow-lg shadow-fuchsia-700/50"
+                      className="ml-2 rounded-md border border-transparent bg-fuchsia-700 p-2 text-sm font-medium text-slate-200 shadow-lg shadow-fuchsia-700/50 hover:bg-fuchsia-600"
                       type="submit"
                     >
                       Subscribe
@@ -64,7 +64,7 @@ function Subscriptions() {
                     <input
                       id="accept"
                       type="checkbox"
-                      className="ml-2 w-6 h-6 bg-slate-700 rounded border-fuchsia-700 focus:ring-fuchsia-600 ring-offset-fuchsia-800 focus:ring-2"
+                      className="ml-2 h-6 w-6 rounded border-fuchsia-700 bg-slate-700 ring-offset-fuchsia-800 focus:ring-2 focus:ring-fuchsia-600"
                       name="accept"
                       aria-label="Terms Checkbox"
                       required

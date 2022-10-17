@@ -8,7 +8,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
 
   return hitCount > 0 ? (
     <div className="HitCount ml-3">
-      <div className="text-slate-900 dark:text-slate-200 mt-3 mb-2">Search Posts Listed Below</div>
+      <div className="mt-3 mb-2 text-slate-900 dark:text-slate-200">Search Posts Listed Below</div>
       {hitCount} result{hitCount !== 1 ? 's' : ''}
     </div>
   ) : null
@@ -37,7 +37,7 @@ const SearchResult = ({ indices, className }) => (
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
-    <PoweredBy className="text-slate-200 rounded-md mr-5 p-2 bg-purple-600" />
+    <PoweredBy className="mr-5 rounded-md bg-purple-600 p-2 text-slate-200" />
   </div>
 )
 

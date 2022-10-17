@@ -28,18 +28,18 @@ const Thanks = () => {
             <div className="text-black dark:text-white">
               <Link
                 to="/"
-                className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
               >
                 Home Page
               </Link>
               <Link
                 to="/contact"
                 replace
-                className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
               >
                 Return to Previous Page!
               </Link>
-              <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">Your Content Has Been Added.</h2>
+              <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
               <div>Thank You for your Submission!</div>
             </div>
           </div>

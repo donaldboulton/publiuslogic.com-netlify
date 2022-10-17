@@ -70,7 +70,7 @@ const Callout: FC<CalloutProps> = props => {
         {...rest}
       >
         <aside style={callOutWrapper}>
-          <Info className="w-6 h-6" />
+          <Info className="h-6 w-6" />
         </aside>
         {children}
       </m.div>

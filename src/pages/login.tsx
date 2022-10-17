@@ -31,7 +31,7 @@ const LoginPage = () => {
       <Layout>
         <PageHero title="Login" description="Login to PubliusLogic through Google" image={Image} />
         <div className="mt-10">
-          <h2 className="text-lg font-medium ml-4 flex flex-col items-center">
+          <h2 className="ml-4 flex flex-col items-center text-lg font-medium">
             Login to see your PubliusLogic / Google Profile
           </h2>
           <div className="mt-6 mb-16 flex flex-col items-center">

@@ -31,7 +31,7 @@ const BlogPage = () => {
           <BlogRoll />
         </div>
         <ScrollDown
-          className="scroll z-20 right-4 md:right-3 top-20"
+          className="scroll right-4 top-20 z-20 md:right-3"
           size={40}
           css="position: fixed; color: gray; width: 40px; height: 40px;"
         />

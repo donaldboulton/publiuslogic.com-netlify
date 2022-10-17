@@ -34,18 +34,18 @@ const Table = () => {
   return (
     <LazyMotion features={loadFeatures}>
       <m.section className="font-sans" variants={tableContainer}>
-        <div className="w-full px-4 mr-auto ml-auto">
+        <div className="mr-auto ml-auto w-full px-4">
           <m.div
             ref={ref}
             variants={variants}
             animate={isVisible ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-900 dark:text-slate-200">
-                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200">
+            <div className="nav-scroll relative overflow-x-auto opacity-75 shadow-md">
+              <table className="text-md w-full rounded-t-lg text-left text-slate-900 dark:text-slate-200 sm:rounded-md">
+                <thead className="text-md rounded-t-lg bg-slate-200 uppercase text-slate-900 dark:bg-slate-800 dark:text-slate-200">
                   <tr>
-                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200 ml-2">
+                    <th scope="col" className="ml-2 py-3 px-6 text-slate-900 dark:text-slate-200">
                       Article Name
                     </th>
                     <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200">
@@ -60,16 +60,16 @@ const Table = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="bg-slate-900 border-b border-slate-500 dark:bg-slate-900 border-slate-700">
+                  <tr className="border-b border-slate-500 border-slate-700 bg-slate-900 dark:bg-slate-900">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium whitespace-nowrap text-slate-900 dark:text-slate-200"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-200"
                     >
                       <Link
                         to="/blog/playtime"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Playtime
                       </Link>
@@ -78,16 +78,16 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Logic</td>
                     <td className="py-4 px-6 text-slate-200">God</td>
                   </tr>
-                  <tr className="dark:bg-slate-700 border-b bg-slate-300 border-slate-700">
+                  <tr className="border-b border-slate-700 bg-slate-300 dark:bg-slate-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium darK:text-slate-100 whitespace-nowrap text-slate-900"
+                      className="darK:text-slate-100 whitespace-nowrap py-4 px-6 font-medium text-slate-900"
                     >
                       <Link
                         to="/blog/creation-of-all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Creation Of All
                       </Link>
@@ -96,15 +96,15 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Creation</td>
                     <td className="py-4 px-6 text-slate-200">Trinity</td>
                   </tr>
-                  <tr className="bg-slate-900 border-b dark:bg-slate-900 border-slate-700">
+                  <tr className="border-b border-slate-700 bg-slate-900 dark:bg-slate-900">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900 border-slate-900"
+                      className="whitespace-nowrap border-slate-900 py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
                         to="/blog/trinity-of-angels"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Trinity of Angels
                       </Link>
@@ -113,15 +113,15 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Creation</td>
                     <td className="py-4 px-6 text-slate-200">Holy Spirit</td>
                   </tr>
-                  <tr className="dark:bg-slate-700 border-b bg-slate-300 border-slate-700">
+                  <tr className="border-b border-slate-700 bg-slate-300 dark:bg-slate-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
                         to="/blog/works-of-flesh"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Works Of Flesh
                       </Link>
@@ -130,15 +130,15 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Creation</td>
                     <td className="py-4 px-6 text-slate-200">God</td>
                   </tr>
-                  <tr className="dark:bg-slate-900 border-b dark:border-slate-800 bg-slate-400 border-slate-400">
+                  <tr className="border-b border-slate-400 bg-slate-400 dark:border-slate-800 dark:bg-slate-900">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
                         to="/blog/virtue"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Virtue
                       </Link>
@@ -147,15 +147,15 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Creation</td>
                     <td className="py-4 px-6 text-slate-200">Truth</td>
                   </tr>
-                  <tr className="dark:bg-slate-700 border-b bg-slate-300 border-slate-700">
+                  <tr className="border-b border-slate-700 bg-slate-300 dark:bg-slate-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
                         to="/blog/immorality-abortion"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Immorality Abortion
                       </Link>
@@ -167,12 +167,12 @@ const Table = () => {
                   <tr>
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
                         to="/blog/trinity-of-man"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
                         Trinity of Man
                       </Link>

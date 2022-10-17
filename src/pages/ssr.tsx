@@ -19,19 +19,19 @@ const SsrPage = () => {
       <Layout>
         <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
         <div className="mt-10">
-          <div className="max-w-md mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+          <div className="mx-auto mt-16 mb-32 max-w-md overflow-hidden rounded-xl bg-slate-300 text-slate-900 shadow-md dark:bg-slate-900 dark:text-slate-200 md:max-w-2xl">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={serverData.message} />
               </div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                <div className="text-sm font-semibold uppercase tracking-wide text-indigo-500">
                   SSR: Server Side Rendering
                 </div>
                 <div>
                   <Link
                     to="/blog/gatsby-version-four/#ssr-example"
-                    className="text-fuchsia-600 hover:text-fuchsia-700 block mt-2 text-lg leading-tight font-medium hover:underline"
+                    className="mt-2 block text-lg font-medium leading-tight text-fuchsia-600 hover:text-fuchsia-700 hover:underline"
                   >
                     Back to Post
                   </Link>
@@ -43,7 +43,7 @@ const SsrPage = () => {
                 <div>
                   <button
                     type="button"
-                    className="p-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                    className="rounded-md border border-transparent bg-fuchsia-500 p-2 text-sm font-medium text-gray-200 shadow-lg shadow-fuchsia-700/50 hover:bg-fuchsia-700"
                     onClick={refreshPage}
                   >
                     Refresh Component

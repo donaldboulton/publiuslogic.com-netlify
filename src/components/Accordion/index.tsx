@@ -34,7 +34,7 @@ const Accordion = () => {
   return (
     <LazyMotion features={loadFeatures}>
       <m.section className="font-sans" variants={accordionContainer}>
-        <div className="w-full px-4 mr-auto ml-auto">
+        <div className="mr-auto ml-auto w-full px-4">
           <m.div
             ref={ref}
             variants={variants}
@@ -46,11 +46,11 @@ const Accordion = () => {
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 dark:bg-slate-900 px-4 py-2 text-left text-sm font-medium text-slate-200 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 px-4 py-2 text-left text-sm font-medium text-slate-200 hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
                         <span className="text-lg">Lyrics Suspicious Minds</span>
                         <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-slate-200">
+                      <Disclosure.Panel className="text-md px-4 pt-4 pb-2 text-slate-200">
                         <div className="text-md">
                           Only change in song is verse 1, to, "Heart of a Child", from, "We're are caught in a trap
                         </div>
@@ -108,11 +108,11 @@ const Accordion = () => {
                 <Disclosure as="div" className="mt-2">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 dark:bg-slate-900 px-4 py-2 text-left text-sm font-medium text-slate-200 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 px-4 py-2 text-left text-sm font-medium text-slate-200 hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
                         <span className="text-lg">Credits</span>
                         <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-slate-200">
+                      <Disclosure.Panel className="text-md px-4 pt-4 pb-2 text-slate-200">
                         <List>
                           <List.Item>
                             <span className="mb-1" variant="secondary">

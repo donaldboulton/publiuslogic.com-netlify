@@ -95,7 +95,7 @@ function PcIcon({ selected, ...props }) {
         d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
         strokeWidth="2"
         strokeLinejoin="round"
-        className={selected ? 'stroke-sky-500 fill-sky-400/20' : 'stroke-slate-400 dark:stroke-slate-500'}
+        className={selected ? 'fill-sky-400/20 stroke-sky-500' : 'stroke-slate-400 dark:stroke-slate-500'}
       />
       <path
         d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
@@ -173,15 +173,15 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
     <Listbox value={setting} onChange={setSetting}>
       <Listbox.Button name="themes" type="button" className="mt-1">
         <span className="dark:hidden">
-          <SunIcon className="w-8 h-8" selected={setting !== 'system'} />
+          <SunIcon className="h-8 w-8" selected={setting !== 'system'} />
         </span>
         <span className="hidden dark:inline">
-          <MoonIcon className="w-8 h-8" selected={setting !== 'system'} />
+          <MoonIcon className="h-8 w-8" selected={setting !== 'system'} />
         </span>
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
-          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-200',
+          'dark:highlight-white/5 absolute top-full right-0 z-50 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold text-slate-700 shadow-lg ring-1 ring-slate-900/10 dark:bg-slate-800 dark:text-slate-200 dark:ring-0',
           panelClassName
         )}
       >
@@ -190,12 +190,12 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
             {({ active, selected }) => (
               <li
                 className={clsx(
-                  'py-1 px-2 flex items-center cursor-pointer',
+                  'flex cursor-pointer items-center py-1 px-2',
                   selected && 'text-sky-500',
                   active && 'bg-slate-50 dark:bg-slate-600/30'
                 )}
               >
-                <Icon selected={selected} className="w-6 h-6 mr-2" />
+                <Icon selected={selected} className="mr-2 h-6 w-6" />
                 {label}
               </li>
             )}
@@ -213,12 +213,12 @@ export function ThemeSelect() {
 
   return (
     <div className="flex items-center justify-between">
-      <label htmlFor="theme" className="text-slate-700 font-normal dark:text-slate-400">
+      <label htmlFor="theme" className="font-normal text-slate-700 dark:text-slate-400">
         Switch theme
       </label>
-      <div className="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200">
-        <SunIcon className="w-6 h-6 mr-2 dark:hidden" />
-        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mr-2 hidden dark:block">
+      <div className="dark:highlight-white/5 relative flex items-center rounded-lg p-2 font-semibold text-slate-700 shadow-sm ring-1 ring-slate-900/10 dark:bg-slate-600 dark:text-slate-200 dark:ring-0">
+        <SunIcon className="mr-2 h-6 w-6 dark:hidden" />
+        <svg viewBox="0 0 24 24" fill="none" className="mr-2 hidden h-6 w-6 dark:block">
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -237,14 +237,14 @@ export function ThemeSelect() {
           />
         </svg>
         {label}
-        <svg className="w-6 h-6 ml-2 text-slate-400" fill="none">
+        <svg className="ml-2 h-6 w-6 text-slate-400" fill="none">
           <path d="m15 11-3 3-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <select
           id="theme"
           value={setting}
           onChange={e => setSetting(e.target.value)}
-          className="absolute appearance-none inset-0 w-full h-full opacity-0"
+          className="absolute inset-0 h-full w-full appearance-none opacity-0"
         >
           {settings.map(({ value, label }) => (
             <option key={value} value={value}>

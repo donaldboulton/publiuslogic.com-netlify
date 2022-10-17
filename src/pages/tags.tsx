@@ -116,25 +116,25 @@ const Tags = () => {
       <Layout>
         <PageHero title="Blog Tags" description="Click on each tag to view blog posts containing tag." image={Image} />
         <div className="mt-10">
-          <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
+          <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 gap-x-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
             {tags
               .sort((a, b) => b.count - a.count)
               .map((tag, i) => (
                 <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
                   <section
-                    className="relative w-full h-24 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+                    className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition  duration-300 ease-in-out hover:shadow-2xl"
                     style={{
                       backgroundColor: '#dfdbe5',
                       backgroundImage: patterns[i % patterns.length],
                     }}
                   >
-                    <div className="absolute inset-0 bg-gray-900 bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-                    <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-                      <h3 className="text-center text-white text-2xl font-bold">
+                    <div className="absolute inset-0 bg-gray-900 bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-75"></div>
+                    <div className="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
+                      <h3 className="text-center text-2xl font-bold text-white">
                         <span className="absolute inset-0"></span>
                         {tag.tag}
                       </h3>
-                      <p className="text-center text-gray-200 text-sm font-medium">&nbsp;({tag.count})</p>
+                      <p className="text-center text-sm font-medium text-gray-200">&nbsp;({tag.count})</p>
                     </div>
                   </section>
                 </Link>

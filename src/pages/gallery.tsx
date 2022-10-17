@@ -32,7 +32,7 @@ interface ImageGalleryProps {
 }
 
 const CustomWrapper = ({ children, onClick }) => (
-  <div className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200" onClick={onClick}>
+  <div className="bg-gray-300 p-1 text-slate-900 dark:bg-slate-800 dark:text-slate-200" onClick={onClick}>
     {children}
   </div>
 )
@@ -69,8 +69,8 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
       <Layout>
         <PageHero title="Gallery: Images" description="My Kitty Cats Old and New!" image={Image} />
         <section class="mb-32 overflow-hidden">
-          <div class="container center px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-            <div class="flex justify-center flex-wrap -m-1 md:-m-2">
+          <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+            <div class="-m-1 flex flex-wrap justify-center md:-m-2">
               <div class="flex flex-wrap">
                 <div class="w-full p-1 md:p-2">
                   <Gallery
