@@ -108,9 +108,9 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
             </div>
             <div>
               <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">
-                <div className="text-black dark:text-white mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
+                <div className="mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
                   <TagIcon className="w-6 h-6 mr-1" />
-                  <Tags className="py-1 px-2 text-gray-200" tags={frontmatter.tags} />
+                  <Tags className="py-1 px-2" tags={frontmatter.tags} />
                 </div>
                 <div className="text-black dark:text-white mr-2 inline-flex items-center leading-none text-base py-1">
                   <CalendarIcon className="w-6 h-6 mr-1" />

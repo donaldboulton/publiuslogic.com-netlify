@@ -21,9 +21,9 @@ const Popper: FC<PopperProps> = props => {
     visible,
     ...popperProps
   } = usePopperTooltip({
-    closeOnOutsideClick: true,
+    closeOnOutsideClick: false,
     delayShow: '1',
-    followCursor: true,
+    followCursor: false,
     trigger: 'hover',
     placement: 'top',
     visible: isVisible,

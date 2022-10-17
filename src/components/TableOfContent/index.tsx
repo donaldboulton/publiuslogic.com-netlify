@@ -69,9 +69,9 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
       <Popover as="div">
         {({ open }) => (
           <>
-            <Popover.Button className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-slate-200">
+            <Popover.Button className="bg-text-slate-400 dark:bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-slate-900 dark:text-slate-200">
               <span className="inline-flex headings-center">
-                <ViewListIcon className="w-8 h-8 ml-2 text-slate-200" />
+                <ViewListIcon className="w-8 h-8 ml-2 text-slate-900 dark:text-slate-200" />
               </span>
             </Popover.Button>
             <Popover.Overlay className={`${open ? 'opacity-30 fixed inset-0' : 'opacity-0'} bg-black`} />
@@ -85,9 +85,9 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               <Popover.Panel className="relative w-64 h-64">
-                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-slate-800 ring-black ring-opacity-5 opacity-75">
+                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-slate-300 dark:bg-slate-800 ring-black ring-opacity-5 opacity-75">
                   Table Of Contents
-                  <div className="text-slate-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600"></div>
+                  <div className="text-slate-900 dark:text-slate-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600"></div>
                   <WavyHr className="mt-1 mb-1" />
                   <nav className="overflow-y-auto overflow-x-hidden nav-scroll h-96 w-auto">
                     <ul className="flex flex-col">
@@ -99,7 +99,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         return (
                           <li className="p-1 ml-1 mb-2 mt-2 mr-1 list-none" key={heading.value}>
                             <Link
-                              className="hover:text-slate-300 transition duration-300 underline underline-offset-8 decoration-wavy decoration-fuchsia-600"
+                              className="hover:text-slate-800 darK:hover:text-slate-300 transition duration-300 underline underline-offset-8 decoration-wavy decoration-fuchsia-600"
                               rel="noopener noreferrer"
                               to={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
                             >
