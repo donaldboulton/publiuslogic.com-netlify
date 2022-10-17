@@ -85,7 +85,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
         <div className="mb-10 mt-10">
           <section className="px-4 lg:px-0 mt-8 mb-10 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div className="py-4">
-              <h1 className="text-lg text-slate-200 mb-2 font-semibold leading-normal">{frontmatter.title}</h1>
+              <h1 className="text-lg text-slate-900 darK:text-slate-200 mb-2 font-semibold leading-normal">{frontmatter.title}</h1>
               <div className="flex items-center">
                 <StaticImage
                   className="head-img mr-2 ring-2 ring-slate-900 ring-inset float-left"
@@ -98,7 +98,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                   alt="Creation Picture"
                   loading="eager"
                 />
-                <p className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white first-letter:mr-3 first-letter:float-left">
+                <p className="first-letter:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 dark:first-letter:text-slate-200 first-letter:mr-3 first-letter:float-left">
                   {frontmatter.description}
                 </p>
               </div>
