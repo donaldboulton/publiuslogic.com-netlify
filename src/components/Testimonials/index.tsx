@@ -210,7 +210,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
           !expanded && 'max-h-[35rem] overflow-hidden'
         )}
       >
-        <ul className={clsx('space-y-8 mb-40')}>
+        <ul className={clsx('mb-40 space-y-8')}>
           <Testimonial key={post.frontmatter.title} expanded={expanded} />
         </ul>
       </div>

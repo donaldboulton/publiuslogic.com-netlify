@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { graphql, Link, HeadProps, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '@/components/Layout'
 import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
@@ -89,18 +88,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                 {frontmatter.title}
               </h1>
               <div className="flex items-center">
-                <StaticImage
-                  className="head-img float-left mr-2 ring-2 ring-inset ring-slate-900"
-                  layout="fixed"
-                  formats={['auto', 'webp']}
-                  src="../../static/assets/creation-cut.jpg"
-                  width={60}
-                  height={60}
-                  quality={95}
-                  alt="Creation Picture"
-                  loading="eager"
-                />
-                <p className="first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
+                <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
                   {frontmatter.description}
                 </p>
               </div>
@@ -111,7 +99,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
             <div>
               <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
                 <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none">
-                  <TagIcon className="mr-1 h-6 w-6" />
+                  <TagIcon className="mr-2 h-6 w-6" />
                   <Tags className="py-1 px-2" tags={frontmatter.tags} />
                 </div>
                 <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-black dark:text-white">

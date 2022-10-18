@@ -25,7 +25,7 @@ interface BlogRollProps {
 
 const BlogRoll = ({ tag }: BlogRollProps) => {
   const posts = GetPosts(tag)
-  
+
   const cardVariants = {
     hover: {
       scale: 1.05,
@@ -82,12 +82,16 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <section ref={ref} tabIndex="-1" className="relative mb-40 mx-auto max-w-7xl px-4 focus:outline-none sm:px-3 md:px-5">
+      <section
+        ref={ref}
+        tabIndex="-1"
+        className="relative mx-auto max-w-7xl px-4 pb-10 focus:outline-none sm:px-3 md:px-5"
+      >
         <ul
           ref={inViewRef}
           className={clsx(
             'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8',
-            !expanded && 'max-h-[33rem] overflow-hidden'
+            !expanded && 'max-h-[35rem] overflow-hidden'
           )}
         >
           {posts.map(post => (
@@ -130,10 +134,10 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
           ))}
         </ul>
       </section>
-      <section className='mb-64'>
+      <section className="mb-64">
         <div
           className={clsx(
-            'pointer-events-none -mb-[32rem] inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white pt-32 pb-8 dark:from-slate-900',
+            'pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pt-4 pb-8 dark:from-slate-900',
             expanded ? 'sticky -mb-48' : 'absolute',
             transition && 'transition-opacity duration-300',
             expanded && (showCollapseButton ? 'opacity-100' : 'opacity-0')
@@ -149,10 +153,10 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             )}
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? 'Okay, I get the point' : 'Show more...'}
+            {expanded ? 'Show Less...' : 'Show more...'}
           </button>
         </div>
-      </section>      
+      </section>
     </LazyMotion>
   )
 }
