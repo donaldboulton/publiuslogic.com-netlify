@@ -312,16 +312,6 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://publiuslogic.com/blog/ou-scum</loc>
-		<lastmod>2022-07-08T22:27:18+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<image:image>
-			<image:loc>https://publiuslogic.com/static/assets/ou-scum.jpg</image:loc>
-			<image:caption>ou-scum.jpg</image:caption>
-		</image:image>
-		<priority>0.80</priority>
-	</url>
-	<url>
 		<loc>https://publiuslogic.com/blog/mrna-reprogramming</loc>
 		<lastmod>2022-07-08T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>

@@ -1,30 +1,31 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
-import ReactPaginate from 'react-paginate'
 import { LazyMotion, m } from 'framer-motion'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
+import clsx from 'clsx'
+import { useInView } from 'react-intersection-observer'
 import Tags from '@/components/Tags'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface BlogRollProps {
   tag?: string
+  title: string
+  description: string
+  path: string
+  author: string
+  date: string
+  imageLink: string
+  tags: string[]
   excerpt: string
 }
-const POSTS_PER_PAGE = 12
 
 const BlogRoll = ({ tag }: BlogRollProps) => {
   const posts = GetPosts(tag)
-  const [offset, setOffset] = useState(0)
-
-  const handlePageClick = (selectedItem: { selected: number }) => {
-    const selected = selectedItem.selected
-    const offset = Math.ceil(selected * POSTS_PER_PAGE)
-    setOffset(offset)
-  }
-
+  
   const cardVariants = {
     hover: {
       scale: 1.05,
@@ -33,107 +34,127 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       scale: 1,
     },
   }
+  const ref = useRef()
+  const [expanded, setExpanded] = useState(false)
+  const [showCollapseButton, setShowCollapseButton] = useState(false)
+  const [transition, setTransition] = useState(false)
+  const { ref: inViewRef, inView } = useInView({ threshold: 0 })
+  const initial = useRef(true)
+
+  useIsomorphicLayoutEffect(() => {
+    if (initial.current) {
+      initial.current = false
+      return
+    }
+    if (expanded) {
+      ref.current.focus({ preventScroll: expanded })
+    } else {
+      ref.current.focus()
+      ref.current.scrollIntoView()
+    }
+    if (expanded) {
+      setShowCollapseButton(false)
+    }
+  }, [expanded])
+
+  useEffect(() => {
+    setTimeout(() => setTransition(expanded), 0)
+  }, [expanded])
+
+  useEffect(() => {
+    if (!expanded || !inView) return
+    function onScroll() {
+      const bodyRect = document.body.getBoundingClientRect()
+      const rect = ref.current.getBoundingClientRect()
+      const middle = rect.top + rect.height / 4 - bodyRect.top - window.innerHeight / 2
+      const isHalfWay = window.scrollY > middle
+      if (showCollapseButton && !isHalfWay) {
+        setShowCollapseButton(false)
+      } else if (!showCollapseButton && isHalfWay) {
+        setShowCollapseButton(true)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll, { passive: true })
+    }
+  }, [expanded, showCollapseButton, inView])
 
   return (
     <LazyMotion features={loadFeatures}>
-      <div className="mt-6 mb-10 flex flex-col items-center">
-        <div className="mb-4 flex flex-wrap space-y-12 lg:space-y-0">
-          {posts.slice(offset, offset + POSTS_PER_PAGE).map(post => (
-            <section className="p-4 md:w-1/2 lg:w-1/3">
-              <m.div className="relative opacity-75" initial="initial" whileHover="hover">
-                <div>
-                  <m.div
-                    className="border-1 h-full overflow-hidden rounded-lg border-slate-800 bg-slate-200 p-2 text-slate-900 opacity-75 shadow-xl dark:border-slate-300 dark:bg-slate-900 dark:text-slate-200"
-                    variants={cardVariants}
-                    transition={{
-                      ease: 'easeOut',
-                      delay: 0.15,
-                      duration: 0.5,
-                    }}
-                  >
+      <section ref={ref} tabIndex="-1" className="relative mb-40 mx-auto max-w-7xl px-4 focus:outline-none sm:px-3 md:px-5">
+        <ul
+          ref={inViewRef}
+          className={clsx(
+            'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8',
+            !expanded && 'max-h-[33rem] overflow-hidden'
+          )}
+        >
+          {posts.map(post => (
+            <li ref={ref} className={clsx('space-y-8 leading-6')}>
+              <m.div className="relative flex flex-col-reverse opacity-75" initial="initial" whileHover="hover">
+                <m.div
+                  className="border-1 h-full overflow-hidden rounded-lg border-slate-800 bg-slate-200 p-2 text-slate-900 opacity-75 shadow-xl dark:border-slate-300 dark:bg-slate-900 dark:text-slate-200"
+                  variants={cardVariants}
+                  transition={{
+                    ease: 'easeOut',
+                    delay: 0.15,
+                    duration: 0.5,
+                  }}
+                >
+                  <Link to={`/${post.slug}`}>
+                    <p className="sr-only">{post.frontmatter.title}</p>
+                  </Link>
+                  <div className="p-6">
+                    {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
                     <Link to={`/${post.slug}`}>
-                      <p className="sr-only">{post.frontmatter.title}</p>
+                      <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400">
+                        {post.frontmatter.title}
+                      </h2>
                     </Link>
-                    <div className="p-6">
-                      {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
-                      <Link to={`/${post.slug}`}>
-                        <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400">
-                          {post.frontmatter.title}
-                        </h2>
-                      </Link>
-                      <div className="flex flex-wrap items-center ">
-                        <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-white">
-                          <CalendarIcon className="mr-1 h-4 w-4" />
-                          {post.frontmatter.date}
-                        </span>
-                        <span className="inline-flex items-center text-xs leading-none text-black dark:text-white">
-                          <UserCircleIcon className="mr-1 h-4 w-4" />
-                          {post.frontmatter.author}
-                        </span>
-                      </div>
-                      <p className="mt-3 text-sm italic text-black dark:text-white">{post.excerpt}</p>
+                    <div className="flex flex-wrap items-center ">
+                      <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-white">
+                        <CalendarIcon className="mr-1 h-4 w-4" />
+                        {post.frontmatter.date}
+                      </span>
+                      <span className="inline-flex items-center text-xs leading-none text-black dark:text-white">
+                        <UserCircleIcon className="mr-1 h-4 w-4" />
+                        {post.frontmatter.author}
+                      </span>
                     </div>
-                  </m.div>
-                </div>
+                    <p className="mt-3 text-sm italic text-black dark:text-white">{post.excerpt}</p>
+                  </div>
+                </m.div>
               </m.div>
-            </section>
+            </li>
           ))}
+        </ul>
+      </section>
+      <section className='mb-64'>
+        <div
+          className={clsx(
+            'pointer-events-none -mb-[32rem] inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white pt-32 pb-8 dark:from-slate-900',
+            expanded ? 'sticky -mb-48' : 'absolute',
+            transition && 'transition-opacity duration-300',
+            expanded && (showCollapseButton ? 'opacity-100' : 'opacity-0')
+          )}
+        >
+          <button
+            type="button"
+            className={clsx(
+              'relative flex h-12 items-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-600',
+              transition && 'transition-transform',
+              expanded && !showCollapseButton && 'translate-y-4',
+              (!expanded || showCollapseButton) && 'pointer-events-auto'
+            )}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? 'Okay, I get the point' : 'Show more...'}
+          </button>
         </div>
-        {posts.length > POSTS_PER_PAGE ? (
-          <ReactPaginate
-            previousLinkClassName="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 dark:border-gray-900 bg-fuchsia-700 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-fuchsia-800"
-            previousLabel={
-              <>
-                <span className="sr-only">Previous</span>
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </>
-            }
-            nextLinkClassName="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-800 text-gray-200 bg-fuchsia-700 hover:bg-fuchsia-800 text-sm font-medium"
-            nextLabel={
-              <>
-                <span className="sr-only">Next</span>
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </>
-            }
-            pageLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 bg-slate-300 dark:bg-slate-800 text-sm font-medium hover:bg-fuchsia-700 text-sm font-medium"
-            breakLabel={'...'}
-            breakLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-sm font-medium"
-            pageCount={Math.ceil(posts.length / POSTS_PER_PAGE)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
-            onPageChange={handlePageClick}
-            containerClassName="relative z-0 inline-flex shadow-sm -space-x-px border-gray-300 dark:border-gray-900"
-            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-200 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
-          />
-        ) : (
-          ''
-        )}
-      </div>
+      </section>      
     </LazyMotion>
   )
 }
+
 export default BlogRoll

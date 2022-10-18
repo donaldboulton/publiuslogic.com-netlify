@@ -101,7 +101,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         return (
                           <li className="ml-1 mb-2 mt-2 mr-1 list-none p-1" key={heading.value}>
                             <Link
-                              className="dark:hover:text-slate-300 underline decoration-fuchsia-600 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800"
+                              className="underline decoration-fuchsia-600 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
                               rel="noopener noreferrer"
                               to={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
                             >
