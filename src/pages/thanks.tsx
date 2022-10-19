@@ -22,25 +22,27 @@ const Thanks = () => {
       <Header />
       <Stars />
       <Layout>
-        <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
-        <div className="mt-10">
-          <div className="mt-6 mb-16 flex flex-col items-center">
-            <div className="text-black dark:text-white">
-              <Link
-                to="/"
-                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
-              >
-                Home Page
-              </Link>
-              <Link
-                to="/contact"
-                replace
-                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
-              >
-                Return to Previous Page!
-              </Link>
-              <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
-              <div>Thank You for your Submission!</div>
+        <div className="search-beams z-30 -mt-4">
+          <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
+          <div className="mt-10">
+            <div className="mt-6 mb-16 flex flex-col items-center">
+              <div className="text-black dark:text-white">
+                <Link
+                  to="/"
+                  className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
+                >
+                  Home Page
+                </Link>
+                <Link
+                  to="/contact"
+                  replace
+                  className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
+                >
+                  Return to Previous Page!
+                </Link>
+                <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
+                <div>Thank You for your Submission!</div>
+              </div>
             </div>
           </div>
         </div>

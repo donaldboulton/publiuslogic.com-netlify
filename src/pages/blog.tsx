@@ -26,15 +26,17 @@ const BlogPage = () => {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-        <div className="mt-10">
-          <BlogRoll />
+        <div className="search-beams z-30 -mt-4">
+          <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
+          <div className="mt-10">
+            <BlogRoll />
+          </div>
+          <ScrollDown
+            className="scroll right-4 top-20 z-20 md:right-3"
+            size={40}
+            css="position: fixed; color: gray; width: 40px; height: 40px;"
+          />
         </div>
-        <ScrollDown
-          className="scroll right-4 top-20 z-20 md:right-3"
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
-        />
       </Layout>
       <Footer />
     </>

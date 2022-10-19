@@ -43,7 +43,7 @@ function ContactUs() {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <main className="mt-10">
+        <div className="search-beams z-30 -mt-4">
           <PageHero
             title="Contact Us"
             description="Our presence is real and digital. Contact us through the following ways."
@@ -78,7 +78,7 @@ function ContactUs() {
               <ContactForm />
             </div>
           </div>
-        </main>
+        </div>
       </Layout>
       <Footer />
     </>

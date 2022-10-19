@@ -604,3 +604,22 @@ giscus-widget {
   background: rgb(21 21 21) !important;
   color: #ddd !important;
 }
+
+.search-beams {
+  background-image: url(../../static/beams/7-dark@tinypng.png);
+  background-size: 86.125rem;
+  background-repeat: no-repeat;
+  z-index: 30;
+}
+
+.form-beams {
+  background-image: url(../../static/beams/7-dark@tinypng.png);
+  z-index: 30;
+}
+
+.blog-beams {
+  background-image: url(../../static/beams/7-dark@tinypng.png);
+  background-size: 86.125rem;
+  background-repeat: no-repeat;
+  z-index: 30;
+}

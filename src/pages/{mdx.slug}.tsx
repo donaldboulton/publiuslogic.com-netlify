@@ -80,56 +80,58 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <TableOfContent headings={data.mdx.headings} />
-        <div className="mb-10 mt-10">
-          <section className="prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-8 mb-10 max-w-screen-lg px-4 text-black dark:text-white lg:px-0">
-            <div className="py-4">
-              <h1 className="darK:text-slate-200 mb-2 text-lg font-semibold leading-normal text-slate-900">
-                {frontmatter.title}
-              </h1>
-              <div className="flex items-center">
-                <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
-                  {frontmatter.description}
-                </p>
-              </div>
-            </div>
-            <div className="mb-4 ml-2">
-              <Bio />
-            </div>
-            <div>
-              <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
-                <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none">
-                  <TagIcon className="mr-2 h-6 w-6" />
-                  <Tags className="py-1 px-2" tags={frontmatter.tags} />
-                </div>
-                <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-black dark:text-white">
-                  <CalendarIcon className="mr-1 h-6 w-6" />
-                  {frontmatter.date}
-                </div>
-                <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
-                  <ClockIcon className="mr-1 h-6 w-6" />
-                  {timeToRead} min read
-                </div>
-                <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
-                  <NowPlaying />
+        <div className="blog-beams object-cover z-30 -mt-4">
+          <TableOfContent headings={data.mdx.headings} />
+          <div className="mb-10 mt-10">
+            <section className="prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 text-black dark:text-white lg:px-0">
+              <div className="mt-4 py-4">
+                <h1 className="mb-2 text-lg font-semibold leading-normal text-slate-900 dark:text-slate-200">
+                  {frontmatter.title}
+                </h1>
+                <div className="flex items-center">
+                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
+                    {frontmatter.description}
+                  </p>
                 </div>
               </div>
-            </div>
-            <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-            <GiscusComments mapping={pathname} />
-            <WavyHr />
-          </section>
-          <ScrollDown
-            className="scroll right-4 top-20 z-20 md:right-3"
-            size={40}
-            css="position: fixed; color: gray; width: 40px; height: 40px;"
-          />
-          <Scroll
-            className="scroll right-4 bottom-4 z-20 md:right-3"
-            showBelow={1500}
-            size={40}
-            css="position: fixed; color: gray; width: 40px; height: 40px;"
-          />
+              <div className="mb-4 ml-2">
+                <Bio />
+              </div>
+              <div>
+                <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
+                  <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none">
+                    <TagIcon className="mr-2 h-6 w-6" />
+                    <Tags className="py-1 px-2" tags={frontmatter.tags} />
+                  </div>
+                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-black dark:text-white">
+                    <CalendarIcon className="mr-1 h-6 w-6" />
+                    {frontmatter.date}
+                  </div>
+                  <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
+                    <ClockIcon className="mr-1 h-6 w-6" />
+                    {timeToRead} min read
+                  </div>
+                  <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
+                    <NowPlaying />
+                  </div>
+                </div>
+              </div>
+              <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+              <GiscusComments mapping={pathname} />
+              <WavyHr />
+            </section>
+            <ScrollDown
+              className="scroll right-4 top-20 z-20 md:right-3"
+              size={40}
+              css="position: fixed; color: gray; width: 40px; height: 40px;"
+            />
+            <Scroll
+              className="scroll right-4 bottom-4 z-20 md:right-3"
+              showBelow={1500}
+              size={40}
+              css="position: fixed; color: gray; width: 40px; height: 40px;"
+            />
+          </div>
         </div>
       </Layout>
       <Footer />

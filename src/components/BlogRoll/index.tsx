@@ -85,7 +85,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <section
         ref={ref}
         tabIndex="-1"
-        className="relative mx-auto max-w-7xl px-4 pb-10 focus:outline-none sm:px-3 md:px-5"
+        className="relative mx-auto max-w-7xl px-4 pb-4 focus:outline-none sm:px-3 md:px-5"
       >
         <ul
           ref={inViewRef}
@@ -137,7 +137,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <section className="mb-64">
         <div
           className={clsx(
-            'pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pt-4 pb-8 dark:from-slate-900',
+            '-pt-8 pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pb-8 dark:from-slate-900',
             expanded ? 'sticky -mb-48' : 'absolute',
             transition && 'transition-opacity duration-300',
             expanded && (showCollapseButton ? 'opacity-100' : 'opacity-0')
