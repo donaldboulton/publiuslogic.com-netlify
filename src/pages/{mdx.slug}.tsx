@@ -80,7 +80,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <div className="blog-beams object-cover z-30 -mt-4">
+        <div className="blog-beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10">
             <section className="prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 text-black dark:text-white lg:px-0">

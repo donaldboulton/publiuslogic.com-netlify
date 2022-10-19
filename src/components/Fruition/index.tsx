@@ -45,7 +45,7 @@ export default function Fruition() {
                 className="w-full rounded-t-lg align-middle"
                 formats={['auto', 'webp']}
                 quality={95}
-                src="../../../static/img/jesus.jpg"
+                src="../../../static/img/become.jpg"
                 alt="PubliusLogic"
                 loading="eager"
               />
