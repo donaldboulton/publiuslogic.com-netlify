@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { ReactNode, FC } from 'react'
-import { ReCAPTCHAProps } from 'react-google-recaptcha'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
 
@@ -35,7 +34,6 @@ interface ContactFormProps {
   name: string
   action?: string | undefined
   honeypotName?: string | undefined
-  recaptcha?: ReCAPTCHAProps | undefined
   children: ReactNode
 }
 
@@ -67,14 +65,13 @@ const ContactForm: FC<ContactFormProps> = props => {
         <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
           <>
             <Honeypot />
-
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
             <p className="hidden">
               <label>
                 Don not fill this out if you are human: <input name="bot-field" />
               </label>
             </p>
-            
+
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="px-4 py-5 text-black dark:text-white sm:p-6">
                 <div className="-mx-3 mb-6 flex flex-wrap">
@@ -373,7 +370,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                       />
                       <label
                         htmlFor="acceptTerms"
-                        className="ml-3 block bg-slate-300 text-xs font-bold uppercase tracking-wide text-slate-900 dark:bg-slate-900 dark:text-slate-700"
+                        className="ml-3 block text-xs font-bold uppercase tracking-wide text-slate-900 dark:text-slate-700"
                       >
                         <Link
                           to="/blog/privacy/"

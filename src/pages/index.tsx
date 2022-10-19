@@ -16,6 +16,8 @@ import defaultImage from '../../static/images/jpg/dbbg.jpg'
 import Table from '@/components/Table'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
+import Stars from '@/components/Stars'
+import ScrollIndicator from '@/components/ScrollIndicator'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -49,6 +51,8 @@ const Home = ({ image }: HomeProps) => {
 
   return (
     <>
+      <Stars />
+      <ScrollIndicator />
       <Header />
       <Layout>
         <main className="font-sans">
