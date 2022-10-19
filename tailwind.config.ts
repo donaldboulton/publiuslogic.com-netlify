@@ -56,7 +56,21 @@ module.exports = {
         offwhite: '#fcfcfc',
         green: '#56d187',
         orange: '#ff9938',
+        black: {
+          100: '#f7fafc',
+          200: '#0f172a',
+          300: '#0f172a',
+          400: '#0f172a',
+          500: '#100c09',
+          600: '#282C35',
+          700: '#1B1B1B',
+          800: '#100c08',
+          900: '#0d1014',
+        },
       },
+      fill: ({ theme }) => ({
+        black: theme('colors.black'),
+      }),
       fontFamily: {
         sans: 'DM Sans',
         serif: 'Lora',

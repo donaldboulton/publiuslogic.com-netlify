@@ -4,16 +4,16 @@
 
 html.light {
   --bg: #fcfcfc;
-  --textNormal: #4a5568;
+  --textNormal: #929aa8;
   --textLink: #1a202c;
   --project-card: #bdbdbd;
 }
 
 html.dark {
-  --bg: #141936;
+  --bg: rgb(13, 16, 20);
   --textNormal: #fff;
-  --textLink: #fff;
-  --project-card: #3546a8;
+  --textLink: #ccc;
+  --project-card: rgb(16 14 23);
 }
 
 .background {
@@ -119,12 +119,6 @@ h2 {
 
 .custom-block-heading {
   color: #a855f7;
-}
-
-.dark {
-  background: rgb(31 41 55);
-  border: 2px solid rgb(53, 59, 69, 0.25);
-  color: rgb(214, 222, 235);
 }
 
 .code {

@@ -377,7 +377,7 @@ const Home = ({ image }: HomeProps) => {
                   width="2560"
                   height="200"
                   viewBox="0 0 2560 200"
-                  className="fill-slate-800 stroke-red-600"
+                  className="fill-black-900 stroke-red-600"
                 >
                   <path
                     stroke-width="2"
