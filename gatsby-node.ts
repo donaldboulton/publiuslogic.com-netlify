@@ -1,4 +1,9 @@
-import path from 'path'
+const path = require('path')
+const { copyLibFiles } = require('@builder.io/partytown/utils')
+
+exports.onPreBuild = async () => {
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
+}
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {

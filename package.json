@@ -22,6 +22,7 @@
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.1",
     "@cloudinary/react": "^1.5.0",
     "@cloudinary/url-gen": "^1.8.6",
     "@fontsource/kaushan-script": "^4.5.10",
@@ -112,7 +113,6 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/react-leaflet": "^2.8.2",
-    "@types/react-paginate": "^7.1.1",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "autoprefixer": "^10.4.12",
