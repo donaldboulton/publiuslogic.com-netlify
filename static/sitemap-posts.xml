@@ -162,6 +162,16 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
+		<loc>https://publiuslogic.com/blog/animated-sections</loc>
+		<lastmod>2022-10-20T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/img/animated.jpg</image:loc>
+			<image:caption>animated.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://publiuslogic.com/blog/stranger-fiction</loc>
 		<lastmod>2022-10-15T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>

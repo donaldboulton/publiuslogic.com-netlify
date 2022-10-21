@@ -1,0 +1,82 @@
+---
+published: true
+title: Animated Sections
+path: /blog/animated-sections
+description: Animated Sections with Framer Motion for Gatsby Animated Sections.
+author: Donald Boulton
+date: 2022-10-20
+featuredpost: false
+category: Tech
+imageLink: https://publiuslogic.com/static/img/animated.jpg
+tags: [0bsd, License]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+---
+
+## Sectionize Content
+
+Animated Sections with Framer Motion for Gatsby Animated Sections.
+
+<Modal>
+
+Fade in Animation for Gatby AST, or MDX Markdown pages. For an Example this page or any page on this website is Sectionized.
+</Modal>
+
+## Animated Section Below
+
+<Section>
+
+When adding an animated section to AST or MDX markdown I like to break the sections up into 4 to 5 sentinces.
+
+You cannot wrap ## Titles if you use headings TOC, Gatbsy will not link the title to a heading.
+
+When wrapping images or video.
+
+```mdx:tile=Proper Wrapping
+## Whatever Image
+
+</Section>
+/* space */
+![Whatever Image](../../../static/img/whatever-img.jpg)
+/* space */
+</Section>
+```
+
+</Section>
+
+## Install Framer Motion
+
+```bash:title=Install Framer Motion
+yarn add framer-motion
+```
+
+## Animated Sections Code
+
+```git:title=Animated Sections
+import * as React from 'react'
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
+
+function Section({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  return (
+    <section ref={ref}>
+      <span
+        style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
+export default Section
+```
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

@@ -22,6 +22,7 @@ import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
 import VideoThree from './src/components/CloudinaryVideo/videoThree'
 import CloudinaryVideo from './src/components/CloudinaryVideo'
 import Accordion from './src/components/Accordion'
+import SingleAccordion from './src/components/SingleAccordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
@@ -51,6 +52,7 @@ const components = {
   VideoTwo: VideoTwo,
   VideoThree: VideoThree,
   Accordion: Accordion,
+  SingleAccordion: SingleAccordion,
   Table: Table,
   Modal: Modal,
   Section: Section,

@@ -31,6 +31,15 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlA
     />,
   ])
   setPreBodyComponents([
+    <noscript
+      key="gtm"
+      dangerouslySetInnerHTML={{
+        __html: `
+                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCMLLP" height="0" width="0"
+                      style="display:none;visibility:hidden"></iframe>
+                `,
+      }}
+    />,
     React.createElement('script', {
       key: 'gatsby-dark-mode',
       dangerouslySetInnerHTML: {
