@@ -12,7 +12,7 @@ function refreshPage() {
   }
 }
 
-const SsrPage = () => {
+const SsrPage = ({ serverData }) => {
   return (
     <>
       <Header />

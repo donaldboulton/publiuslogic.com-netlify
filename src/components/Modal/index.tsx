@@ -31,10 +31,10 @@ export const Modal: FC<ModalProps> = props => {
         <button
           type="button"
           onClick={openModal}
-          className="-ml-1 h-auto w-auto rounded-r-md bg-slate-700 pr-2 pl-3 pt-2 pb-0 text-slate-200"
+          className="bg-text-slate-300 -ml-1 h-auto w-auto rounded-r-md pr-2 pl-3 pt-2 pb-0 text-slate-900 dark:bg-slate-700 dark:text-slate-200"
         >
           <span className="headings-center inline-flex">
-            <Help className="mt-2 h-8 w-8 px-2 text-slate-200" />
+            <Help className="mt-2 h-8 w-8 px-2 text-slate-900 dark:text-slate-200" />
           </span>
         </button>
       </div>
@@ -63,7 +63,10 @@ export const Modal: FC<ModalProps> = props => {
           <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               {/* This element is to trick the browser into centering the modal contents. */}
-              <span className="hidden text-slate-200 sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
+              <span
+                className="hidden text-slate-900 dark:text-slate-200 sm:inline-block sm:h-screen sm:align-middle"
+                aria-hidden="true"
+              >
                 &#8203;
               </span>
               <Transition.Child
@@ -86,13 +89,13 @@ export const Modal: FC<ModalProps> = props => {
                           <Dialog.Title
                             key={dialogTitle}
                             as="h3"
-                            className="text-lg font-medium leading-6 text-slate-200"
+                            className="text-lg font-medium leading-6 text-slate-300 dark:text-slate-200"
                           >
                             {dialogTitle}
                           </Dialog.Title>
                         </div>
                         <div className="mt-2">
-                          <p key={dialogContent} className="mt-4 text-sm text-slate-200">
+                          <p key={dialogContent} className="mt-4 text-sm text-slate-900 dark:text-slate-200">
                             {dialogContent}
                           </p>
                         </div>
@@ -100,12 +103,12 @@ export const Modal: FC<ModalProps> = props => {
                       <WavyHr />
                     </div>
                   </div>
-                  <div className="mx-4 mt-2 py-2 leading-6">{children}</div>
+                  <div className="mx-4 mt-2 py-2 leading-6 text-slate-900 dark:text-slate-200">{children}</div>
                   <div className="mt-4 py-4">
                     <button
                       ref={closeButtonRef}
                       type="button"
-                      className="float-right mb-4 mr-4 rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-slate-200 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                      className="float-right mb-4 mr-4 rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-slate-200 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:text-slate-200"
                       onClick={() => setIsOpen(false)}
                     >
                       Close
