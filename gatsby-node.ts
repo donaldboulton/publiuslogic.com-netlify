@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 const { copyLibFiles } = require('@builder.io/partytown/utils')
 
 exports.onPreBuild = async () => {

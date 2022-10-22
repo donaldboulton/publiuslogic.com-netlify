@@ -93,7 +93,7 @@ export default function Navigation() {
                     <span className="sr-only">Search</span>
                     <Link to="/search">
                       <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                        <SearchIcon className="h-7 w-8 text-sky-400" aria-hidden="true" />
+                        <SearchIcon className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600" aria-hidden="true" />
                       </span>
                     </Link>
                   </div>

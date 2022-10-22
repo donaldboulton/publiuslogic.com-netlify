@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
         declineButtonText="Decline"
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
-        cookieName="gatsby-gdpr-google-analytics"
+        cookieName="gtm"
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',
