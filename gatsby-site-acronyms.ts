@@ -45,6 +45,7 @@ module.exports = {
   L2TP: 'Layer two Tunneling Protocol',
   MAD: 'Mutually Assured Destruction',
   MCP: 'Microsoft Certified Professional',
+  MDX: 'Markdown JSX Compoment JavaScript expressions',
   MS: 'Microsoft',
   MSDN: 'Microsoft Developer Network',
   MUR: 'Poppy Derivatives for Pain',

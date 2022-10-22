@@ -583,8 +583,7 @@ giscus-widget {
   background-color: #a21caf;
 }
 
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
+.leaflet-popup-content-wrapper .leaflet-popup-tip {
   background: rgb(21 21 21) !important;
   color: #ddd !important;
   box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
