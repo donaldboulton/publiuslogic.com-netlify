@@ -87,6 +87,14 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            'target': {
+              '@type': 'EntryPoint',
+              'urlTemplate': 'https://query.publiuslogic.com/search?q={search_term_string}'
+            },
+            'query-input': 'required name=search_term_string'
+          },
         })}
       </script>
       <script type="application/ld+json">
@@ -188,6 +196,21 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.publiuslogic.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://query.publiuslogic.com/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+      })}
+    </script>
     </>
   )
 }
