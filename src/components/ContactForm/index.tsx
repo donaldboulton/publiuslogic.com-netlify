@@ -65,7 +65,8 @@ const ContactForm: FC<ContactFormProps> = props => {
         <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)} enableRecaptcha>
           <>
             <Honeypot />
-            <Recaptcha siteKey={SITE_RECAPTCHA_KEY} invisible />
+            <Recaptcha siteKey={SITE_RECAPTCHA_KEY} 
+            invisible />
             <p className="hidden">
               <label>
                 Don not fill this out if you are human: <input name="bot-field" />
