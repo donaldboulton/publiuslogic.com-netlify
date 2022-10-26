@@ -29,26 +29,6 @@ Or Wrap any `.tsx` or `.js` page and / or components.
 
 When adding an animated section to, AST in `.md`, or MDX in `.mdx`, markdown I like to break the sections up into 4 to 5 sentences.
 
-You cannot wrap Titles if you use headings TOC.
-
-When wrapping images or video.
-
-</Section>
-
-## Whatever Image
-
-<Section>
-
-```mdx:tile=Proper Wrapping
-</Section>
-  /* just leave a space here space */
-    ![Whatever Image](../../../static/img/whatever-img.jpg)
-  /* no comment just a space */
-</Section>
-```
-
-</Section>
-
 ## Install Framer Motion
 
 ```bash:title=Install Framer Motion
@@ -83,5 +63,23 @@ function Section({ children }) {
 
 export default Section
 ```
+
+When wrapping images or video.
+
+</Section>
+
+## Image or Video
+
+<Section>
+
+```mdx:tile=Proper Wrapping
+</Section>
+  /* just leave a space here space */
+    ![Whatever Image](../../../static/img/whatever-img.jpg)
+  /* no comment just a space */
+</Section>
+```
+
+</Section>
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />

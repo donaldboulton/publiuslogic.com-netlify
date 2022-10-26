@@ -487,11 +487,11 @@ export function Head(props: HeadProps) {
           url: 'https://publiuslogic.com',
           potentialAction: {
             '@type': 'SearchAction',
-            'target': {
+            target: {
               '@type': 'EntryPoint',
-              'urlTemplate': 'https://query.publiuslogic.com/search?q={search_term_string}'
+              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
             },
-            'query-input': 'required name=search_term_string'
+            'query-input': 'required name=search_term_string',
           },
         })}
       </script>

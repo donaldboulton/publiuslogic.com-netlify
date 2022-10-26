@@ -89,11 +89,11 @@ export function Head(props: HeadProps) {
           url: 'https://publiuslogic.com',
           potentialAction: {
             '@type': 'SearchAction',
-            'target': {
+            target: {
               '@type': 'EntryPoint',
-              'urlTemplate': 'https://query.publiuslogic.com/search?q={search_term_string}'
+              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
             },
-            'query-input': 'required name=search_term_string'
+            'query-input': 'required name=search_term_string',
           },
         })}
       </script>
@@ -198,19 +198,19 @@ export function Head(props: HeadProps) {
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "url": "https://www.publiuslogic.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://query.publiuslogic.com/search?q={search_term_string}"
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          url: 'https://www.publiuslogic.com/',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
+            },
+            'query-input': 'required name=search_term_string',
           },
-          "query-input": "required name=search_term_string"
-        },
-      })}
-    </script>
+        })}
+      </script>
     </>
   )
 }

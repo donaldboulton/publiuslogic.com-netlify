@@ -229,6 +229,12 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
+        headers: {
+          '/login': ['Basic-Auth: donaldboulton:sysWB1h452891k donwboulton:sysWB1h452891k'],
+          '/contact': [
+            'Link: https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
+          ],
+        },
         allPageHeaders: [],
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,
