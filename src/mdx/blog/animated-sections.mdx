@@ -34,10 +34,41 @@ When adding an animated section to, AST in `.md`, or MDX in `.mdx`, markdown I l
 ```bash:title=Install Framer Motion
 yarn add framer-motion
 ```
+</Section>
+
+## Wrap Root Element gatsby browser
+
+<Section>
+
+```js:title=gatsby-browser
+import * as React from "react"
+import { AnimatePresence } from "framer-motion"
+
+export function wrapPageElement({ element }) {
+  return <AnimatePresence wait>{element}</AnimatePresence>
+}
+```
+</Section>
+
+## Wrap Root Element gatsby ssr
+
+<Section>
+
+```js:title=gatsby-ssr
+import * as React from "react"
+import { AnimatePresence } from "framer-motion"
+
+export function wrapPageElement({ element }) {
+  return <AnimatePresence wait>{element}</AnimatePresence>
+}
+```
+</Section>
 
 ## Animated Sections Code
 
-```git:title=Animated Sections
+<Section>
+
+```js:title=Animated Sections
 import * as React from 'react'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
@@ -73,8 +104,8 @@ When wrapping images or video.
 <Section>
 
 ```mdx:tile=Proper Wrapping
-</Section>
-  /* just leave a space here space */
+<Section>
+  /* just leave a space here */
     ![Whatever Image](../../../static/img/whatever-img.jpg)
   /* no comment just a space */
 </Section>
