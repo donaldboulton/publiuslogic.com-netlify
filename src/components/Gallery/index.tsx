@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { FC, useState, Fragment } from 'react'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import Lightbox from 'react-image-lightbox'
+import Lightbox from 'react-18-image-lightbox'
 
 import ImageColWrapper from './image-col-wrapper'
 
-import 'react-image-lightbox/style.css'
+import './style.css'
 
 interface ImageProp {
   full: IGatsbyImageData
