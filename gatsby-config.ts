@@ -10,6 +10,7 @@ const fullConfig = resolveConfig(tailwindConfig)
 require('dotenv').config()
 
 const config: GatsbyConfig = {
+  graphqlTypegen: true,
   siteMetadata: {
     title: 'PubliusLogic',
     twitterUsername: '@donboulton',

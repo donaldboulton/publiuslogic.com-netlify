@@ -92,7 +92,7 @@ export default function Navigation() {
                   <div className="p-1">
                     <span className="sr-only">Search</span>
                     <Link to="/search">
-                      <span className="flex flex-shrink-0 items-center pr-2 text-lg">
+                      <span className="flex flex-shrink-0 items-center pr-1 text-lg">
                         <SearchIcon
                           className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
                           aria-hidden="true"
@@ -106,7 +106,7 @@ export default function Navigation() {
                   </div>
 
                   {/* Profile dropdown */}
-                  <Menu as="div" className="relative ml-3">
+                  <Menu as="div" className="relative ml-1">
                     <div>
                       <Menu.Button className="flex rounded-full text-sm focus:outline-none">
                         <span className="sr-only">Open Control Menu</span>

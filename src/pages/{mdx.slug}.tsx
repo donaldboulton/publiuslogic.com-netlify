@@ -94,20 +94,20 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                   </p>
                 </div>
               </div>
-              <div className="mb-4 ml-2">
+              <div className="mb-4 ml-2 text-slate-900 dark:text-slate-200">
                 <Bio />
               </div>
               <div>
                 <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
-                  <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none">
+                  <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                     <TagIcon className="mr-2 h-6 w-6" />
                     <Tags className="py-1 px-2" tags={frontmatter.tags} />
                   </div>
-                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none">
+                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                     <CalendarIcon className="mr-1 h-6 w-6" />
                     {frontmatter.date}
                   </div>
-                  <div className="mr-3 inline-flex items-center text-base leading-none">
+                  <div className="mr-3 inline-flex items-center text-base leading-none text-slate-900 dark:text-slate-200">
                     <ClockIcon className="mr-1 h-6 w-6" />
                     {timeToRead} min read
                   </div>

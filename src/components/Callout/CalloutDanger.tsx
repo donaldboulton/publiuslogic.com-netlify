@@ -20,7 +20,7 @@ export const callOutDangerWrapper: CSS.Properties = {
   padding: '6px',
   color: '#dc2626',
   border: '6px solid transparent',
-  background: '#1e293b',
+  background: '#0d1014',
 }
 
 const calloutDanger: CSS.Properties = {

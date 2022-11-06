@@ -20,7 +20,7 @@ export const callOutWrapper: CSS.Properties = {
   padding: '6px',
   color: '#9333ea',
   border: '6px solid transparent',
-  background: '#1e293b',
+  background: '#0d1014',
 }
 
 const callout: CSS.Properties = {

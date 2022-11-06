@@ -2,7 +2,7 @@
 
 ## Technical notes about this website
 
-Upgrade as of Sept 10th, 2022 to Gatsby 4.24.3
+Upgrade as of Sept 10th, 2022 to Gatsby 4.24.7
 
 🎁 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/donaldboulton/publiuslogic.com/master/LICENSE.txt)
 [![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/donaldboulton)
@@ -105,7 +105,7 @@ A [Gatsby v4](https://www.gatsbyjs.org/) 🗸 and [Netlify CMS](https://www.netl
 #### What is Netlify Identity
 
 ⁉️ Netlify’s Identity service is a plug-and-play microservice for handling site
-functionalities like signups, logins, password recovery, user metadata, and
+functionalities like sign ups, logins, password recovery, user metadata, and
 roles. You can use it from single page apps instead of rolling your own, and
 integrate with any service that understands JSON Web Tokens (JWTs).
 
