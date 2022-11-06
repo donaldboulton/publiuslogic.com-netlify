@@ -37,7 +37,8 @@ Its goal is to help speed up sites by dedicating the main thread to your code, a
 
 It’s important because third-party scripts have a habit of slowing down the time it takes for your website to load, and a slow-to-load website isn’t good for users, or performance metrics…. or $business!
 
-What we know: Lo ading third-party scripts on the main thread impacts performance by delaying the time it takes for your site to become available and ready to use by your end users.
+What we know: Lo adding third-party scripts on the main thread impacts performance by delaying the time it takes for your site to become available and ready to use by your end users.
+
 </Section>
 
 <Section>
@@ -47,6 +48,7 @@ What we know: Lo ading third-party scripts on the main thread impacts performanc
 </Section>
 
 <Section>
+
 You can see from the below that amongst that mess on the Performance tab is the gtag script which is getting in the way of the application JavaScript – Blurg 🤢
 
 ![Parytown Gtag scaled](../../../static/img/party-town-gtag-scaled.jpg)
@@ -317,6 +319,7 @@ await copyLibFiles(path.join(\_\_dirname, 'static', '~partytown'));
 ## onPreBuild
 
 <Section>
+
 The onPreBuild extension point is used to copy the ~partytown files into Gatsby’s static directory, this happens quite early on in the build process.
 
 Once Gatsby’s build steps are finished Gatsby copies the files from the static directory into the public directory, ready for when Partytown needs them and when your site is served from your CDN.
