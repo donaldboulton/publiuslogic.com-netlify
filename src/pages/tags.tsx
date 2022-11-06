@@ -127,7 +127,7 @@ const Tags = () => {
                 .map((tag, i) => (
                   <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
                     <section
-                      className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition  duration-300 ease-in-out hover:shadow-2xl"
+                      className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
                       style={{
                         backgroundColor: '#dfdbe5',
                         backgroundImage: patterns[i % patterns.length],
@@ -187,6 +187,7 @@ export function Head(props: HeadProps) {
           author: {
             '@type': 'Person',
             name: 'Donald W. Boulton',
+            url: 'https://donboulton.com',
           },
         })}
       </script>

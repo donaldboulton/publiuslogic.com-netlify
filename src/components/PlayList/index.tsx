@@ -16,7 +16,7 @@ const PlayList = () => {
           ></path>
         </svg>
         <div>
-          <span class="ml-2 font-medium text-gray-800 dark:text-gray-200">Spotify</span>
+          <span class="ml-2 font-medium">Spotify</span>
         </div>
       </div>
     </a>

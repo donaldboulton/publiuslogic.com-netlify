@@ -448,6 +448,7 @@ export function Head(props: HeadProps) {
           author: {
             '@type': 'Person',
             name: 'Donald W. Boulton',
+            url: 'https://donboulton.com',
           },
         })}
       </script>

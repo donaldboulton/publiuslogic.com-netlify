@@ -29,7 +29,7 @@ const SearchPage = () => {
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
           <div className="mt-10">
-            <div className="mt-16 mb-16 p-8 text-slate-900 dark:text-slate-200 sm:mt-2">
+            <div className="mt-16 mb-16 p-8 sm:mt-2">
               <div className="mb-2">
                 <Search indices={searchIndices} />
               </div>

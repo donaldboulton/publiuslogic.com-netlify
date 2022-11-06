@@ -83,13 +83,13 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
         <div className="blog-beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10">
-            <section className="prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 text-black dark:text-white lg:px-0">
+            <section className="prose prose-text:text-slate-900 prose-text:dark:text-slate-200 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 lg:px-0">
               <div className="mt-4 py-4">
-                <h1 className="mb-2 text-lg font-semibold leading-normal text-slate-900 dark:text-slate-200">
+                <h1 className="mb-2 text-lg font-semibold leading-normal">
                   {frontmatter.title}
                 </h1>
                 <div className="flex items-center">
-                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-200">
+                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-line:tracking-widest first-letter:text-slate-900 dark:first-letter:text-slate-300">
                     {frontmatter.description}
                   </p>
                 </div>
@@ -103,15 +103,15 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                     <TagIcon className="mr-2 h-6 w-6" />
                     <Tags className="py-1 px-2" tags={frontmatter.tags} />
                   </div>
-                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-black dark:text-white">
+                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none">
                     <CalendarIcon className="mr-1 h-6 w-6" />
                     {frontmatter.date}
                   </div>
-                  <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
+                  <div className="mr-3 inline-flex items-center text-base leading-none">
                     <ClockIcon className="mr-1 h-6 w-6" />
                     {timeToRead} min read
                   </div>
-                  <div className="mr-3 inline-flex items-center text-base leading-none text-black dark:text-white">
+                  <div className="mr-3 inline-flex items-center text-base leading-none">
                     <NowPlaying />
                   </div>
                 </div>

@@ -50,18 +50,18 @@ function ContactUs() {
             image={Image}
           />
           <Map />
-          <div className="mt-10 p-8 text-black dark:text-white sm:mt-0">
+          <div className="mt-10 p-8 text-slate-900 dark:text-slate-200 sm:mt-0">
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">
                   {contactMethods.map(method =>
                     method.link ? (
-                      <p key={method.name} className="mt-2 flex items-center text-sm text-black dark:text-white">
+                      <p key={method.name} className="mt-2 flex items-center text-sm text-slate-900 dark:text-slate-200">
                         <method.image className=" h-5 w-5" />
                         <span>&nbsp;{method.name}:&nbsp;</span>
                         <a
                           href={method.link}
-                          className="text-rose-600 hover:text-rose-500"
+                          className="text-rose-600 dark:text-rose-500 hover:text-rose-500 dark:hover:text-rose-400"
                           rel="noopener noreferrer"
                           target="_blank"
                           area-label="Github"
