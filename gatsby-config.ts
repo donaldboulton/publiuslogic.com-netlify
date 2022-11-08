@@ -48,6 +48,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-support-chat',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
