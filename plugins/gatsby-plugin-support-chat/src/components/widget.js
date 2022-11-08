@@ -1,10 +1,8 @@
 import * as React from "react"
 import { useState } from "react"
-import loadable from "@loadable/component"
 import Button from "./button"
 import * as styles from "./widget.module.css"
-
-const Dialog = loadable(() => import("./dialog"))
+import "./dialog"
 
 export default function Widget({ options }) {
   const [open, setOpen] = useState(false)
