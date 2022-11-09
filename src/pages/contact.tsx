@@ -42,6 +42,7 @@ function ContactUs() {
       <Header />
       <ScrollIndicator />
       <Stars />
+      <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero

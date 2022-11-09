@@ -1,6 +1,5 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
-import { Script } from 'gatsby'
 import Layout from '@/components/Layout'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/ScrollIndicator'
@@ -31,7 +30,7 @@ function Profile() {
       <Header />
       <ScrollIndicator />
       <Stars />
-      <Script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async />
+      <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
