@@ -1,5 +1,6 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
@@ -9,6 +10,7 @@ import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import WavyHr from '@/components/WavyHr'
 
 const ogimage = {
   src: OGImage,
@@ -42,6 +44,22 @@ const Thanks = () => {
                 </Link>
                 <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
                 <div>Thank You for your Submission!</div>
+              </div>
+              <div className='flex justify-center text-2xl'>
+                <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
+                  <StaticImage
+                    className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                    formats={['auto', 'webp']}
+                    src="../../static/img/buy-me-a-coffee.jpg"
+                    quality={95}
+                    alt="Buy me a coffee"
+                    area-label="Buy me a coffee"
+                    loading="Buy me a coffee"
+                  />
+                </a>
+              </div>
+              <div className="mb-20">
+                <WavyHr className="text-indigo-600" />
               </div>
             </div>
           </div>

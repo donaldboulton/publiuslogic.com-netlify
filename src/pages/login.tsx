@@ -1,5 +1,7 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
+import WavyHr from '@/components/WavyHr'
+import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login'
 import Seo from '@/components/Seo'
@@ -35,8 +37,24 @@ const LoginPage = () => {
             <h2 className="ml-4 flex flex-col items-center text-lg font-medium">
               Login to see your PubliusLogic / Google Profile
             </h2>
-            <div className="mt-6 mb-16 flex flex-col items-center">
+            <div className="mt-6 mb-6 flex flex-col items-center">
               <Login />
+            </div>
+            <div className='flex justify-center text-2xl mb-16'>
+              <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">                
+                <StaticImage
+                  className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                  formats={['auto', 'webp']}
+                  src="../../static/img/buy-me-a-coffee.jpg"
+                  quality={95}
+                  alt="Buy me a coffee"
+                  area-label="Buy me a coffee"
+                  loading="Buy me a coffee"
+                />
+              </a>
+            </div>
+            <div className="mb-20">
+              <WavyHr className="text-indigo-600" />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
+import { HeadProps, Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/ScrollIndicator'
@@ -134,6 +134,19 @@ function Profile() {
                   ></path>
                 </svg>
               </div>
+            </div>
+            <div className='flex justify-center text-2xl'>
+              <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
+                <StaticImage
+                  className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                  formats={['auto', 'webp']}
+                  src="../../static/img/buy-me-a-coffee.jpg"
+                  quality={95}
+                  alt="Buy me a coffee"
+                  area-label="Buy me a coffee"
+                  loading="Buy me a coffee"
+                />
+              </a>
             </div>
             <div className="mb-20">
               <WavyHr className="text-indigo-600" />

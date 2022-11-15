@@ -4,6 +4,7 @@ import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
+import { StaticImage } from 'gatsby-plugin-image'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Map from '@/components/Map'
 import Email from '../../static/svg/icons/email.inline.svg'
@@ -19,6 +20,7 @@ import Stars from '@/components/Stars'
 import ContactForm from '@/components/ContactForm'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
+import WavyHr from '@/components/WavyHr'
 
 const ogimage = {
   src: OGImage,
@@ -75,9 +77,25 @@ function ContactUs() {
                     )
                   )}
                 </div>
+                <div className='flex justify-center mt-4 mb-6'>
+                  <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
+                    <StaticImage
+                      className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                      formats={['auto', 'webp']}
+                      src="../../static/img/buy-me-a-coffee.jpg"
+                      quality={95}
+                      alt="Buy me a coffee"
+                      area-label="Buy me a coffee"
+                      loading="Buy me a coffee"
+                    />
+                  </a>
+                </div>
               </div>
               <ContactForm />
             </div>
+          </div>
+          <div className="mb-20">
+            <WavyHr className="text-indigo-600" />
           </div>
         </div>
       </Layout>
