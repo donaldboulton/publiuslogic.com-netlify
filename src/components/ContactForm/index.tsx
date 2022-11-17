@@ -73,7 +73,7 @@ const ContactForm: FC<ContactFormProps> = props => {
             </p>
 
             <div className="overflow-hidden shadow sm:rounded-md">
-              <div className="px-4 py-5 text-slate-900 dark-text-slate-200 sm:p-6">
+              <div className="dark:text-slate-200 px-4 py-5 text-slate-900 sm:p-6">
                 <div className="-mx-3 mb-6 flex flex-wrap">
                   <div className="mb-6 w-full px-3 md:mb-0 md:w-1/2">
                     <label
@@ -100,7 +100,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="mb-3 block w-full appearance-none rounded border-slate-300 dark:border-slate-900 bg-slate-300 dark:bg-slate-900 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 dark:text-slate-200 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 sm:text-sm"
+                        className="mb-3 block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="firstName"
                         name="firstName"
                         type="text"
@@ -135,7 +135,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="block w-full appearance-none rounded border-slate-300 dark:border-slate-900 bg-slate-300 dark:bg-slate-900 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 dark:text-slate-200 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 sm:text-sm"
+                        className="block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="lastName"
                         name="lastName"
                         type="text"
@@ -326,7 +326,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                       <textarea
                         id="message"
                         name="message"
-                        className="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-900 bg-slate-300 dark:bg-slate-900 p-2.5 pl-14 caret-blue-500 shadow-sm focus:border-fuchsia-500 focus:caret-indigo-500 focus:ring-slate-500 text-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-300 bg-slate-300 p-2.5 pl-14 text-slate-900 caret-blue-500 shadow-sm focus:border-fuchsia-500 focus:caret-indigo-500 focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         rows={5}
                         name="text"
                         {...register('message', { required: true })}
@@ -365,9 +365,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         aria-label="Terms Checkbox"
                         {...register('acceptTerms')}
                         className={`ml-1 h-6 w-6 rounded border-red-700 bg-slate-700 ring-offset-red-800 focus:ring-2 focus:ring-red-600 
-                        ${
-                          errors.acceptTerms ? 'is-invalid' : ''
-                        }`}
+                        ${errors.acceptTerms ? 'is-invalid' : ''}`}
                       />
                       <label
                         htmlFor="acceptTerms"

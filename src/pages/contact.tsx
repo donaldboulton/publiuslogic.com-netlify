@@ -59,12 +59,15 @@ function ContactUs() {
                 <div className="px-4 sm:px-0">
                   {contactMethods.map(method =>
                     method.link ? (
-                      <p key={method.name} className="mt-2 flex items-center text-sm text-slate-900 dark:text-slate-200">
+                      <p
+                        key={method.name}
+                        className="mt-2 flex items-center text-sm text-slate-900 dark:text-slate-200"
+                      >
                         <method.image className=" h-5 w-5" />
                         <span>&nbsp;{method.name}:&nbsp;</span>
                         <a
                           href={method.link}
-                          className="text-rose-600 dark:text-rose-500 hover:text-rose-500 dark:hover:text-rose-400"
+                          className="text-rose-600 hover:text-rose-500 dark:text-rose-500 dark:hover:text-rose-400"
                           rel="noopener noreferrer"
                           target="_blank"
                           area-label="Github"
@@ -77,10 +80,10 @@ function ContactUs() {
                     )
                   )}
                 </div>
-                <div className='flex justify-center mt-4 mb-6'>
+                <div className="mt-4 mb-6 flex justify-center">
                   <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                     <StaticImage
-                      className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                      className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
                       formats={['auto', 'webp']}
                       src="../../static/img/buy-me-a-coffee.jpg"
                       quality={95}

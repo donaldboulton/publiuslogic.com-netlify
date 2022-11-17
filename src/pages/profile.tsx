@@ -135,10 +135,10 @@ function Profile() {
                 </svg>
               </div>
             </div>
-            <div className='flex justify-center text-2xl'>
+            <div className="flex justify-center text-2xl">
               <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                 <StaticImage
-                  className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                  className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
                   formats={['auto', 'webp']}
                   src="../../static/img/buy-me-a-coffee.jpg"
                   quality={95}

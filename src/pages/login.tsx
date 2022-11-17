@@ -40,10 +40,10 @@ const LoginPage = () => {
             <div className="mt-6 mb-6 flex flex-col items-center">
               <Login />
             </div>
-            <div className='flex justify-center text-2xl mb-16'>
-              <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">                
+            <div className="mb-16 flex justify-center text-2xl">
+              <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                 <StaticImage
-                  className="m-auto mx-auto mb-3 rounded-md w-48 h-16"
+                  className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
                   formats={['auto', 'webp']}
                   src="../../static/img/buy-me-a-coffee.jpg"
                   quality={95}

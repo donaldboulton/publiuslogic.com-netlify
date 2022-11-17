@@ -85,11 +85,9 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
           <div className="mb-10 mt-10">
             <section className="prose prose-text:text-slate-900 prose-text:dark:text-slate-200 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 lg:px-0">
               <div className="mt-4 py-4">
-                <h1 className="mb-2 text-lg font-semibold leading-normal">
-                  {frontmatter.title}
-                </h1>
+                <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
                 <div className="flex items-center">
-                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-line:tracking-widest first-letter:text-slate-900 dark:first-letter:text-slate-300">
+                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300">
                     {frontmatter.description}
                   </p>
                 </div>
