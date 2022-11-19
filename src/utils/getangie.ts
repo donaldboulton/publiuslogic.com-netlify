@@ -12,7 +12,7 @@ export type UseAngieType = {
 const UseAngie = (): UseAngieType => {
   const data = useStaticQuery(graphql`
     query {
-      images: allFile(filter: { relativeDirectory: { eq: "angie" } }, sort: { fields: name }) {
+      images: allFile(filter: {relativeDirectory: {eq: "angie"}}, sort: {name: ASC}) {
         edges {
           node {
             childImageSharp {
