@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import Typist from 'react-typist'
+import Typist from '@/components/TypistCore/Typist'
 
 function BioTypist() {
   const [count, setCount] = useState(1)

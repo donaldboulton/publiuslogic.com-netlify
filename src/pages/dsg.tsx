@@ -24,7 +24,7 @@ export default function DSG() {
         <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
         <div className="mt-10">
           <div className="mt-6 mb-16 flex flex-col items-center">
-            <div className="dark:text-slate-200 text-slate-900">
+            <div className="text-slate-900 dark:text-slate-200">
               <Link to="/blog/gatsby-version-four">Back to Post</Link>
               <br />
               <h1 className="mt-2 mb-2 text-lg font-bold leading-tight">DSG: Deferred Static Generation</h1>

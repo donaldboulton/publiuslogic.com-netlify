@@ -27,6 +27,7 @@ interface ImageGalleryProps {
     images: {
       edges: ImageSharpEdge[]
       name: string
+      caption: string
     }
   }
 }

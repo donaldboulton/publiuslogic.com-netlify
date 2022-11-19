@@ -73,7 +73,7 @@ const ContactForm: FC<ContactFormProps> = props => {
             </p>
 
             <div className="overflow-hidden shadow sm:rounded-md">
-              <div className="dark:text-slate-200 px-4 py-5 text-slate-900 sm:p-6">
+              <div className="px-4 py-5 text-slate-900 dark:text-slate-200 sm:p-6">
                 <div className="-mx-3 mb-6 flex flex-wrap">
                   <div className="mb-6 w-full px-3 md:mb-0 md:w-1/2">
                     <label

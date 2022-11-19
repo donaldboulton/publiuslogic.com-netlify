@@ -28,7 +28,7 @@ const NotFoundPage = () => {
         />
         <div className="mt-10">
           <div className="mt-6 mb-16 flex flex-col items-center">
-            <div className="dark:text-slate-200 text-slate-900">
+            <div className="text-slate-900 dark:text-slate-200">
               <Link
                 to="/"
                 className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
