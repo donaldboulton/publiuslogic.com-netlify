@@ -32,6 +32,16 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
+		<loc>https://publiuslogic.com/blog/gatsby-version-five</loc>
+		<lastmod>2022-11-19T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/gatsby-version-five.jpg</image:loc>
+			<image:caption>gatsby-version-five.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://publiuslogic.com/blog/andrea-bocelli</loc>
 		<lastmod>2022-04-24T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>
