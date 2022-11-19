@@ -8,7 +8,7 @@ date: 2022-11-18
 featuredpost: false
 category: Tech
 imageLink: https://publiuslogic.com/assets/gatsby-version-five.jpg
-tags: [Gatsby, Hydration]
+tags: [Gatsby, Hydration, Slices]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 ---
@@ -17,13 +17,67 @@ videoTitle: Angelina Jordan Suspicious Minds
 
 ## Gatsby Version Five
 
-This Site uses Gatsby Version Five, with React 18.2.0 and Node 18.12.1
+This Site uses Gatsby Version Five, with React `18.2.0` Node `18.12.1` with NPM `8.11.0`
 
-The Gatsby 5 alpha release is here and it’s awesome! This article will teach you everything you need to know about the new Gatsby v5 and all its cool new features.
+![Node and React 18](../../../static/img/Node-and-React-18.png)
+
+Tried `"gatsby-plugin-mdx": "5.0.0"` slug errors is all I get. Tried `remark-slug`, `rehype-slug` and Gatsby’s external modules Gatsby recommends.
+
+Gatsby issue's on slug errors only response was it's unfortunate.
+
+What kind of non-sense is unfortunate. It still works just fine with `"gatsby-plugin-mdx": "3.20.0"` as long as you update your queries to where Gatsby version `5.0.1` works.
+
+GraphQL schema: Changes to sort and aggregation fields
+
+As per the RFC: Change to sort and aggregation fields API the sort argument and aggregation’s field argument were changed from enums to nested input objects. 
+
+This change enabled lower resource usage and faster “building schema” step.
+
+They provide a codemod (via gatsby-codemods) for you to easily convert your queries to the new syntax. Go to your project and run the following in your terminal:
+
+```tsx:title=Codemods
+npx gatsby-codemods@latest sort-and-aggr-graphql
+```
+
+## Conversion from v4 to v5
+
+<Section>
+
+[Query Conversions](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v4-to-v5/)
+
+That's not changing it to fields slug. Maybe it's possible when they get over unfortunate, what ever that means.
+
+Overall Gatsby’s version five is smoking fast and worth the upgrade.
+
+</Section>
+
+<Section>
+
+## The fastest Gatsby Yet
+
+The Gatsby 5 is here and it’s awesome! 
+
+This article will teach you everything you need to know about the new Gatsby v5 and all its cool new features.
+
+With Gatsby 5’s new Slice API for supercharged component builds and Partial Hydration to speed up your site performance — updating your website and content at scale has never been easier.
 
 ⚠️ This is an Alpha, we strongly recommend trying Partial Hydration on a development branch of your site (no YOLO’s yet, please!).
 
-TLDR; check out the [showcase video] (https://www.youtube.com/watch?v=C-WrnfUm33k)
+TLDR; check out the Showcase Video.
+
+</Section>
+
+<Section>
+
+`video: https://www.youtube.com/watch?v=C-WrnfUm33k`
+
+</Section>
+
+<Section>
+
+Updates to non Gatsby NPM modules, that are using old versions of React or GraphQL is a pain. I just turn them into components, update the react calls and change from prop-types, to using typescript `.tsx` adding types or interface types for my conversion's.
+
+</Section>
 
 ## Partial Hydration
 
@@ -34,6 +88,50 @@ Gatsby is unlocking more frontend performance capabilities for developers by int
 This will allow teams to ship only the necessary JavaScript to the browser in order to support interactive elements, thereby eliminating bundle bloat that has historically limited the frontend speed for modern websites.
 
 Check out the Partial Hydration [RFC](https://github.com/gatsbyjs/gatsby/discussions/36608) with the instruction on how to play around with the feature today
+
+Using Partial Hydration flags in gatsby-config.ts
+
+```ts:title=Flags-for-gatsby-config.ts
+import type { GatsbyConfig } from 'gatsby'
+ .....
+const config: GatsbyConfig = {
+  flags: {
+    PARTIAL_HYDRATION: true
+  },
+  siteMetadata: {
+    ....
+```
+
+WOW this cut the size of my build output in about half from, Gzipped All `(645.3 KB)` to All `(387.3 KB)`.
+
+Maybe it was not building the components without "use client", well see.
+
+So adding the hydration flag is really cool but you have to refactor you components to accept this change.
+
+```ts:title=Use-Client
+/**
+ * To mark a component as client side, you add the "use client" directive.
+ * @see {@link https://github.com/reactjs/rfcs/blob/serverconventions-rfc2/text/0000-server-module-conventions.md}
+ */
+"use client"
+```
+Without `"use client"` you get the below error so its worth the add work.
+
+ `ERROR #80000` 
+
+Building partial HTML failed for path "/offline-plugin-app-shell-fallback/"
+
+This can happen if interactive elements like "useEffect", "useState", "createContext" or event handlers are used in a component  
+without declaring the "use client" directive at the top of the file.
+
+Consider adding "use client" to the top of your file if your component is interactive, otherwise refactor your component so it   
+can be statically rendered with React Server Components (RSC).
+
+See our docs page for more info on this error: https://gatsby.dev/partial-hydration-error
+
+  TypeError: Cannot set properties of undefined (setting 'props')
+
+Of which I have not done yet, but I will work on it and update this page.
 
 </Section>
 
