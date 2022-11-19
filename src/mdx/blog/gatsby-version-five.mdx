@@ -1,0 +1,94 @@
+---
+published: true
+title: Gatsby Version Five
+path: /blog/gatsby-version-5
+description: Gatsby Version Five with partial hydration and slices.
+author: Rob Landley
+date: 2022-11-18
+featuredpost: false
+category: Tech
+imageLink: https://publiuslogic.com/assets/gatsby-version-five.jpg
+tags: [Gatsby, Hydration]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+---
+
+![Gatsby Version Five](../../../static/assets/gatsby-version-five.jpg)
+
+## Gatsby Version Five
+
+This Site uses Gatsby Version Five, with React 18.2.0 and Node 18.12.1
+
+The Gatsby 5 alpha release is here and it’s awesome! This article will teach you everything you need to know about the new Gatsby v5 and all its cool new features.
+
+⚠️ This is an Alpha, we strongly recommend trying Partial Hydration on a development branch of your site (no YOLO’s yet, please!).
+
+TLDR; check out the [showcase video] (https://www.youtube.com/watch?v=C-WrnfUm33k)
+
+## Partial Hydration
+
+<Section>
+
+Gatsby is unlocking more frontend performance capabilities for developers by introducing Partial Hydration to the framework. 
+
+This will allow teams to ship only the necessary JavaScript to the browser in order to support interactive elements, thereby eliminating bundle bloat that has historically limited the frontend speed for modern websites.
+
+Check out the Partial Hydration [RFC](https://github.com/gatsbyjs/gatsby/discussions/36608) with the instruction on how to play around with the feature today
+
+</Section>
+
+## Slices API
+
+<Section>
+
+Content Editors enjoy lightning-fast builds when making content changes in the source CMS thanks to Gatsby’s Incremental Builds. 
+
+However, when content changes on a broadly shared component in a site — like a header, footer, or shared site navigation — all pages would typically be rebuilt. 
+
+Gatsby v5 allows developers to designate specific components as highly shared throughout the site via Slices. 
+
+Gatsby builds Slices separately and then assembles them with the pages that use them, thereby dramatically reducing build times for content changes to these highly shared components. 
+
+No more waiting for a full site builds when navigation content changes! Content editors, rejoice! In our tests, this can yield up to a 90% reduction in build duration for content changes to highly shared components. 
+
+Slices API is not part of the v5 alpha as we are still making some tweaks but will be part of the Gatsby v5 Beta, coming soon.
+
+</Section>
+
+## Breaking Changes
+
+<Section>
+
+Our goal with Gatsby 5 is to have a smooth upgrade experience, especially coming from v4. 
+
+Here’s a list of the breaking changes.
+
+</Section>
+
+## Requirements
+
+<Section>
+
+* Minimum required Node.js version >= 18
+
+* Minimum required React version >= 18
+
+* Removal of StaticQuery component (use useStaticQuery)
+
+* Non-ESM browsers are not polyfilled by default
+
+* GraphQL schema: changes to sort and aggregation fields which make Gatsby more performant and lower resource usage
+ 
+</Section>
+
+<Section>
+
+As you can see, most of these items will have low to no impact on your gatsby project in most cases
+
+## Where to go from here
+
+Gatsby v5 is here! This is *the* version of Gatsby that you need to know about. It’s faster, smaller, and more performant than ever before! There are many more new improvements beyond these, but we’ll have to wait for the official release. In the meantime, you can check out the v5 alpha and try it out yourself, and we’d love to hear your thoughts about the alpha in the GitHub discussion!
+
+</Section>
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />
