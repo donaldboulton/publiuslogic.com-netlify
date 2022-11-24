@@ -52,16 +52,6 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://publiuslogic.com/blog/trinity-of-angels</loc>
-		<lastmod>2021-04-11T22:27:18+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<image:image>
-			<image:loc>https://publiuslogic.com/static/assets/trinity-of-angels.png</image:loc>
-			<image:caption>trinity-of-angels.png</image:caption>
-		</image:image>
-		<priority>0.80</priority>
-	</url>
-	<url>
 		<loc>https://publiuslogic.com/blog/trinity-of-man</loc>
 		<lastmod>2022-04-17T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>

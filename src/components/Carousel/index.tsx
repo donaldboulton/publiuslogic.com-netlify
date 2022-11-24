@@ -60,10 +60,7 @@ const Slide: FC<SlideProps> = props => {
   }
 
   return (
-    <div
-      style={slideShow}
-      className={className}
-    >
+    <div style={slideShow} className={className}>
       {children}
     </div>
   )
@@ -75,12 +72,12 @@ const Slides = ({ children, slideDirection }) => {
       style={slides}
       variants={{
         enter: slideDirection => ({
-          x: slideDirection === 'backward' ? '-100%' : '100%'
+          x: slideDirection === 'backward' ? '-100%' : '100%',
         }),
         center: { x: 0 },
         exit: slideDirection => ({
-          x: slideDirection === 'backward' ? '100%' : '-100%'
-        })
+          x: slideDirection === 'backward' ? '100%' : '-100%',
+        }),
       }}
       custom={slideDirection}
       initial="enter"
@@ -95,26 +92,13 @@ const Slides = ({ children, slideDirection }) => {
 
 const MainSettingsSlide = ({ activeSlideName, onNavigateSidebar }) => {
   return (
-    <Slide
-      slideName="main-settings"
-      activeSlideName={activeSlideName}
-      style={slideName}
-    >
+    <Slide slideName="main-settings" activeSlideName={activeSlideName} style={slideName}>
       <h2>Main Settings</h2>
-      <div
-        className='mt-20'
-      >
-        <button
-          onClick={() => onNavigateSidebar({ slideName: 'change-language' })}
-          className="mr-4"
-        >
+      <div className="mt-20">
+        <button onClick={() => onNavigateSidebar({ slideName: 'change-language' })} className="mr-4">
           Change Language
         </button>
-        <button
-          onClick={() => onNavigateSidebar({ slideName: 'blocked-sites' })}
-        >
-          See Blocked Sites
-        </button>
+        <button onClick={() => onNavigateSidebar({ slideName: 'blocked-sites' })}>See Blocked Sites</button>
       </div>
     </Slide>
   )
@@ -122,31 +106,21 @@ const MainSettingsSlide = ({ activeSlideName, onNavigateSidebar }) => {
 
 const ChangeLanguageSlide = ({ activeSlideName, onNavigateSidebar }) => {
   return (
-    <Slide
-      slideName="change-language"
-      activeSlideName={activeSlideName}
-      className="bg-slate-800 text-slate-200"
-    >
+    <Slide slideName="change-language" activeSlideName={activeSlideName} className="bg-slate-800 text-slate-200">
       <h2>Change Language</h2>
-      <div
-        className='mt-20'
-      >
+      <div className="mt-20">
         <button
           className="mr-4"
           onClick={() =>
             onNavigateSidebar({
               slideName: 'main-settings',
-              direction: 'backward'
+              direction: 'backward',
             })
-          }          
+          }
         >
           Back
         </button>
-        <button
-          onClick={() => onNavigateSidebar({ slideName: 'language-details' })}
-        >
-          See language details
-        </button>
+        <button onClick={() => onNavigateSidebar({ slideName: 'language-details' })}>See language details</button>
       </div>
     </Slide>
   )
@@ -156,14 +130,12 @@ const LanguageDetailsSlide = ({ activeSlideName, onNavigateSidebar }) => {
   return (
     <Slide slideName="language-details" activeSlideName={activeSlideName}>
       <h2>Language Details</h2>
-      <div
-        className='mt-12'
-      >
+      <div className="mt-12">
         <button
           onClick={() =>
             onNavigateSidebar({
               slideName: 'change-language',
-              direction: 'backward'
+              direction: 'backward',
             })
           }
         >
@@ -178,14 +150,12 @@ const BlockedSitesSlide = ({ activeSlideName, onNavigateSidebar }) => {
   return (
     <Slide slideName="blocked-sites" activeSlideName={activeSlideName}>
       <h2>Blocked Sites</h2>
-      <div
-        className='mt-12'
-      >
+      <div className="mt-12">
         <button
           onClick={() =>
             onNavigateSidebar({
               slideName: 'main-settings',
-              direction: 'backward'
+              direction: 'backward',
             })
           }
         >
@@ -197,41 +167,20 @@ const BlockedSitesSlide = ({ activeSlideName, onNavigateSidebar }) => {
 }
 
 export default function SlideShow() {
-  const [[activeSlideName, slideDirection], setSlide] = useState([
-    'main-settings',
-    'forward'
-  ])
+  const [[activeSlideName, slideDirection], setSlide] = useState(['main-settings', 'forward'])
 
   const onNavigateSidebar = ({ slideName, direction = 'forward' }) => {
     setSlide([slideName, direction])
   }
 
   return (
-    <div
-      style={slideMainDiv}
-    >
+    <div style={slideMainDiv}>
       <LazyMotion initial={false} custom={slideDirection} features={loadFeatures}>
-        <Slides
-          key={activeSlideName}
-          activeSlideName={activeSlideName}
-          slideDirection={slideDirection}
-        >
-          <MainSettingsSlide
-            activeSlideName={activeSlideName}
-            onNavigateSidebar={onNavigateSidebar}
-          />
-          <ChangeLanguageSlide
-            activeSlideName={activeSlideName}
-            onNavigateSidebar={onNavigateSidebar}
-          />
-          <LanguageDetailsSlide
-            activeSlideName={activeSlideName}
-            onNavigateSidebar={onNavigateSidebar}
-          />
-          <BlockedSitesSlide
-            activeSlideName={activeSlideName}
-            onNavigateSidebar={onNavigateSidebar}
-          />
+        <Slides key={activeSlideName} activeSlideName={activeSlideName} slideDirection={slideDirection}>
+          <MainSettingsSlide activeSlideName={activeSlideName} onNavigateSidebar={onNavigateSidebar} />
+          <ChangeLanguageSlide activeSlideName={activeSlideName} onNavigateSidebar={onNavigateSidebar} />
+          <LanguageDetailsSlide activeSlideName={activeSlideName} onNavigateSidebar={onNavigateSidebar} />
+          <BlockedSitesSlide activeSlideName={activeSlideName} onNavigateSidebar={onNavigateSidebar} />
         </Slides>
       </LazyMotion>
     </div>

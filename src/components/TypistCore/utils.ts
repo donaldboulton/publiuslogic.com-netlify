@@ -1,137 +1,122 @@
 import * as React from 'react'
-import Backspace from "./Backspace";
-import Delay from "./Delay";
+import Backspace from './Backspace'
+import Delay from './Delay'
 
-export const sleep = (val) => new Promise((resolve) => (
-  val != null ? setTimeout(resolve, val) : resolve()
-));
+export const sleep = val => new Promise(resolve => (val != null ? setTimeout(resolve, val) : resolve()))
 
 export function gaussianRnd(mean, std) {
-  const times = 12;
-  let sum = 0;
+  const times = 12
+  let sum = 0
   for (let idx = 0; idx < times; idx++) {
-    sum += Math.random();
+    sum += Math.random()
   }
-  sum -= (times / 2);
-  return Math.round((sum) * std) + mean;
+  sum -= times / 2
+  return Math.round(sum * std) + mean
 }
 
 export function eachPromise(arr, iterator, ...extraArgs) {
-  const promiseReducer = (prev, current, idx) => (
-    prev.then(() => iterator(current, idx, ...extraArgs))
-  );
-  return Array.from(arr).reduce(promiseReducer, Promise.resolve());
+  const promiseReducer = (prev, current, idx) => prev.then(() => iterator(current, idx, ...extraArgs))
+  return Array.from(arr).reduce(promiseReducer, Promise.resolve())
 }
 
 export function exclude(obj, keys) {
-  const res = {};
+  const res = {}
   for (const key in obj) {
     if (keys.indexOf(key) === -1) {
-      res[key] = obj[key];
+      res[key] = obj[key]
     }
   }
-  return res;
+  return res
 }
 
 export function isElementType(element, component, name) {
-  const elementType = element && element.type;
+  const elementType = element && element.type
   if (!elementType) {
-    return false;
+    return false
   }
 
-  return (
-    elementType === component ||
-    elementType.componentName === name ||
-    elementType.displayName === name
-  );
+  return elementType === component || elementType.componentName === name || elementType.displayName === name
 }
 
 export function isBackspaceElement(element) {
-  return isElementType(element, Backspace, "Backspace");
+  return isElementType(element, Backspace, 'Backspace')
 }
 
 export function isDelayElement(element) {
-  return isElementType(element, Delay, "Delay");
+  return isElementType(element, Delay, 'Delay')
 }
 
 export function extractTextFromElement(element) {
-  const stack = element ? [element] : [];
-  const lines = [];
+  const stack = element ? [element] : []
+  const lines = []
 
   while (stack.length > 0) {
-    const current = stack.pop();
+    const current = stack.pop()
     if (React.isValidElement(current)) {
       if (isBackspaceElement(current) || isDelayElement(current)) {
         /* If it is a `Backspace` or `Delay` element, we want to keep it in our */
         /* `textLines` state. These will serve as markers when updating the */
         /* state of the text */
-        lines.unshift(current);
+        lines.unshift(current)
       } else {
-        React.Children.forEach(current.props.children, (child) => {
-          stack.push(child);
-        });
+        React.Children.forEach(current.props.children, child => {
+          stack.push(child)
+        })
       }
     } else if (Array.isArray(current)) {
       for (const el of current) {
-        stack.push(el);
+        stack.push(el)
       }
     } else {
-      lines.unshift(current);
+      lines.unshift(current)
     }
   }
 
-  return lines;
+  return lines
 }
 
 export function cloneElement(element, children) {
-  const tag = element.type;
-  const props = exclude(element.props, ['children']);
-  const getMilliseconds = new Date().getUTCMilliseconds();
-  const randomStamp = getMilliseconds + Math.random() + Math.random();
+  const tag = element.type
+  const props = exclude(element.props, ['children'])
+  const getMilliseconds = new Date().getUTCMilliseconds()
+  const randomStamp = getMilliseconds + Math.random() + Math.random()
   /* eslint-disable-next-line */
-  props.key = `Typist-element-${tag}-${randomStamp}`;
-  return React.createElement(tag, props, ...children);
+  props.key = `Typist-element-${tag}-${randomStamp}`
+  return React.createElement(tag, props, ...children)
 }
 
 function cloneElementWithSpecifiedTextAtIndex(element, textLines, textIdx) {
   if (textIdx >= textLines.length) {
-    return [null, textIdx];
+    return [null, textIdx]
   }
 
-  let idx = textIdx;
-  const recurse = (el) => {
-    const [child, advIdx] = cloneElementWithSpecifiedTextAtIndex(
-      el,
-      textLines,
-      idx
-    );
-    idx = advIdx;
-    return child;
-  };
+  let idx = textIdx
+  const recurse = el => {
+    const [child, advIdx] = cloneElementWithSpecifiedTextAtIndex(el, textLines, idx)
+    idx = advIdx
+    return child
+  }
 
-  const isNonTypistElement = (
-    React.isValidElement(element) &&
-    !(isBackspaceElement(element) || isDelayElement(element))
-  );
+  const isNonTypistElement = React.isValidElement(element) && !(isBackspaceElement(element) || isDelayElement(element))
 
   if (isNonTypistElement) {
-    const clonedChildren = React.Children.map(element.props.children, recurse) || [];
-    return [cloneElement(element, clonedChildren), idx];
+    const clonedChildren = React.Children.map(element.props.children, recurse) || []
+    return [cloneElement(element, clonedChildren), idx]
   }
 
   if (Array.isArray(element)) {
-    const children = element.map(recurse);
-    return [children, idx];
+    const children = element.map(recurse)
+    return [children, idx]
   }
 
   /* Anything that isn't a React element or an Array is interpreted as text */
-  return [textLines[idx], idx + 1];
+  return [textLines[idx], idx + 1]
 }
 
 export function cloneElementWithSpecifiedText({ element, textLines }) {
   if (!element) {
-    return undefined;
+    return undefined
   }
 
-  return cloneElementWithSpecifiedTextAtIndex(element, textLines, 0)[0];
+  return cloneElementWithSpecifiedTextAtIndex(element, textLines, 0)[0]
 }

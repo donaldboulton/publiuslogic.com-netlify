@@ -102,15 +102,15 @@ const Table = () => {
                       className="whitespace-nowrap border-slate-900 py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
                     >
                       <Link
-                        to="/blog/trinity-of-angels"
+                        to="/blog/jew-who"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
-                        Trinity of Angels
+                        Jew Who
                       </Link>
                     </th>
                     <td className="py-4 px-6 text-slate-200">2021-04-11</td>
-                    <td className="py-4 px-6 text-slate-200">Creation</td>
+                    <td className="py-4 px-6 text-slate-200">Jewish</td>
                     <td className="py-4 px-6 text-slate-200">Holy Spirit</td>
                   </tr>
                   <tr className="border-b border-slate-700 bg-slate-300 dark:bg-slate-700">

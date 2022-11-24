@@ -59,7 +59,7 @@ const components = {
   Section: Section,
   Typing: Typing,
   Popper: Popper,
-  Carousel, Carousel,
+  Carousel: Carousel,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
