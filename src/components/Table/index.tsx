@@ -103,6 +103,7 @@ const Table = () => {
                     >
                       <Link
                         to="/blog/jew-who"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
@@ -120,6 +121,7 @@ const Table = () => {
                     >
                       <Link
                         to="/blog/works-of-flesh"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
@@ -137,6 +139,7 @@ const Table = () => {
                     >
                       <Link
                         to="/blog/virtue"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
@@ -154,6 +157,7 @@ const Table = () => {
                     >
                       <Link
                         to="/blog/immorality-abortion"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
@@ -171,6 +175,7 @@ const Table = () => {
                     >
                       <Link
                         to="/blog/trinity-of-man"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
                       >
