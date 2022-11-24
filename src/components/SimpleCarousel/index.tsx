@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, Component } from 'react'
 import { Carousel } from 'nuka-carousel'
 
-interface DefaultControlsConfig {
+interface SimpleCarouselConfig {
   containerClassName?: string
   nextButtonClassName?: string
   nextButtonOnClick?: (event: React.MouseEvent) => void
@@ -18,10 +18,12 @@ interface DefaultControlsConfig {
   prevButtonText?: ReactNode
 }
 
-const SimpleCarousel: FC<DefaultControlsProps> = props => {
+export default class extends Component {
+  render() {
   return (
     <div className="flex items-center justify-center">
       <Carousel
+        slidesToShow={3}
         renderTopCenterControls={({ currentSlide }) => <div>Slide: {currentSlide}</div>}
         renderCenterLeftControls={({ previousDisabled, previousSlide }) => (
           <button onClick={previousSlide} disabled={previousDisabled}>
@@ -44,6 +46,7 @@ const SimpleCarousel: FC<DefaultControlsProps> = props => {
       </Carousel>
     </div>
   )
+  }
 }
 
 export default SimpleCarousel
