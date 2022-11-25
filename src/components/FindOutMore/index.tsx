@@ -7,14 +7,14 @@ import WavyHr from '@/components/WavyHr'
 
 const callouts = [
   {
-    name: 'Gatsby v5.0.1',
+    name: 'Gatsby v5.1.0',
     description: 'Gatsby is a React-based open-source framework for creating websites and apps.',
     imageSrc: GatsbyImage,
     imageAlt: 'Gatsby drawing',
     href: 'https://gatsbyjs.com',
   },
   {
-    name: 'TailwindCSS v3.1.8',
+    name: 'TailwindCSS v3.2.4',
     description: 'A utility-first CSS framework that can be composed to build any design, directly in your markup.',
     imageSrc: TailwindImage,
     imageAlt: 'TailwindCSS drawing',

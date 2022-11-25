@@ -29,9 +29,9 @@ const posts = [
     icon: SparklesIcon,
   },
   {
-    name: 'Gatsby v4',
-    description: 'Gatsby v4 with SSR and DSG',
-    href: '/blog/gatsby-version-four',
+    name: 'Gatsby v5',
+    description: 'Gatsby v5 partial Hydration and Slices',
+    href: '/blog/gatsby-version-five',
     icon: CodeIcon,
   },
   {
