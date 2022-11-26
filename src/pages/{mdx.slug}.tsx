@@ -179,7 +179,7 @@ export function Head(props: HeadProps<DataProps>) {
         <meta name="og:updated_time" content={props.data.mdx.parent.modifiedTime} />
         <meta name="canonical" content={seo.path} />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SeoBlog>
       <script type="application/ld+json">
         {JSON.stringify({
