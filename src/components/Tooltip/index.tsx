@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from 'react'
 import { ReactNode, useEffect, useState, useRef, useCallback, FC, RefObject } from 'react'
 import * as CSS from 'csstype'

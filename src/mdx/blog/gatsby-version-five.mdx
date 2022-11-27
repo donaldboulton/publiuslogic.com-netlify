@@ -25,7 +25,7 @@ Tried `"gatsby-plugin-mdx": "5.0.0"` slug errors is all I get. Tried `remark-slu
 
 Gatsby issue's on slug errors only response was it's unfortunate.
 
-What kind of non-sense is unfortunate. It still works just fine with `"gatsby-plugin-mdx": "3.20.0"` as long as you update your queries to where Gatsby version `5.1.0`, it still works.
+What kind of non-sense is unfortunate. It still works just fine with `"gatsby-plugin-mdx": "3.20.0"` as long as you update your queries to where Gatsby version `5.2.0`, it still works.
 
 GraphQL schema: Changes to sort and aggregation fields
 
@@ -89,18 +89,28 @@ This will allow teams to ship only the necessary JavaScript to the browser in or
 
 Check out the Partial Hydration [RFC](https://github.com/gatsbyjs/gatsby/discussions/36608) with the instruction on how to play around with the feature today
 
+</Section>
+
+<Section>
+
+`video: https://www.youtube.com/watch?v=lgc6SrINnSc`
+
 Using Partial Hydration flags in gatsby-config.ts
+
+</Section>
 
 ```ts:title=Flags-for-gatsby-config.ts
 import type { GatsbyConfig } from 'gatsby'
- .....
+ ...
 const config: GatsbyConfig = {
   flags: {
     PARTIAL_HYDRATION: true
   },
   siteMetadata: {
-    ....
+    ...
 ```
+
+<Section>
 
 WOW this cut the size of my build output in about half from, Gzipped All `(645.3 KB)` to All `(387.3 KB)`.
 
@@ -108,13 +118,18 @@ Maybe it was not building the components without "use client", well see.
 
 So adding the hydration flag is really cool but you have to refactor your components to accept this change.
 
+</Section>
+
 ```ts:title=Use-Client
 /**
  * To mark a component as client side, you add the "use client" directive.
- * @see {@link https://github.com/reactjs/rfcs/blob/serverconventions-rfc2/text/0000-server-module-conventions.md}
+ * @see {@link https://github.com/reactjs/rfcs/blob/main/text/0227-server-module-conventions.md}
  */
 "use client"
 ```
+
+<Section>
+
 Without `"use client"` you get the below error so its worth the add work.
 
  `ERROR #80000` 

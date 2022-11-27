@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from 'react'
 import { useState, useCallback } from "react"
 import Carousel from "nuka-carousel"
