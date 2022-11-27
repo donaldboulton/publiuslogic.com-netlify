@@ -585,23 +585,27 @@ giscus-widget {
 
 .leaflet-popup-content-wrapper .leaflet-popup-tip {
   background: rgb(21 21 21) !important;
-  color: #ddd !important;
+  color: #ffffff !important;
   box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
 }
 
 .leaflet-touch .leaflet-bar a {
   background: rgb(21 21 21) !important;
-  color: #ddd !important;
+  color: #ffffff !important;
 }
 
 .left-bar-part a {
   background: rgb(21 21 21) !important;
-  color: #ddd !important;
+  color: #ffffff !important;
+}
+
+.leaflet-control-fullscreen-button, .leaflet-bar-part {
+  color: #ffffff !important;
 }
 
 .leaflet-control-fullscreen a {
   background: rgb(21 21 21) !important;
-  color: #ddd !important;
+  color: #ffffff !important;
 }
 
 .search-beams {
@@ -620,5 +624,6 @@ giscus-widget {
   background-image: url(../../static/beams/7-dark@tinypng.png);
   background-size: 86.125rem;
   background-repeat: no-repeat;
+  background: cover;
   z-index: 30;
 }
