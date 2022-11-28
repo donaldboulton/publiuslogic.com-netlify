@@ -295,7 +295,7 @@ const Home = ({ image }: HomeProps) => {
                     >
                       I have been Retired from birth until I become 65, then I am getting to work, start singing,
                       finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Trinity's
-                      church on Earth. Hand to Walk this Earth twice as long as my Son Jesus. "To Know All before
+                      church on Earth. I Had to Walk this Earth twice as long as my Son Jesus. "To Know All before
                       Action"!
                     </p>
                     <div className="mt-4 mb-4 text-lg font-light leading-relaxed text-white">
