@@ -599,7 +599,8 @@ giscus-widget {
   color: #ffffff !important;
 }
 
-.leaflet-control-fullscreen-button, .leaflet-bar-part {
+.leaflet-control-fullscreen-button,
+.leaflet-bar-part {
   color: #ffffff !important;
 }
 

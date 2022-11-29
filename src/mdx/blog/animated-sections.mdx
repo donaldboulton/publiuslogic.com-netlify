@@ -34,6 +34,7 @@ When adding an animated section to, AST in `.md`, or MDX in `.mdx`, markdown I l
 ```bash:title=Install Framer Motion
 yarn add framer-motion
 ```
+
 </Section>
 
 ## Wrap Root Element gatsby browser
@@ -48,6 +49,7 @@ export function wrapPageElement({ element }) {
   return <AnimatePresence wait>{element}</AnimatePresence>
 }
 ```
+
 </Section>
 
 ## Wrap Root Element gatsby ssr
@@ -62,6 +64,7 @@ export function wrapPageElement({ element }) {
   return <AnimatePresence wait>{element}</AnimatePresence>
 }
 ```
+
 </Section>
 
 ## Animated Sections Code

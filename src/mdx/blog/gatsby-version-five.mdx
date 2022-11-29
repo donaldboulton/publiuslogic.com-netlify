@@ -29,7 +29,7 @@ What kind of non-sense is unfortunate. It still works just fine with `"gatsby-pl
 
 GraphQL schema: Changes to sort and aggregation fields
 
-As per the RFC: Change to sort and aggregation fields API the sort argument and aggregation’s field argument were changed from enums to nested input objects. 
+As per the RFC: Change to sort and aggregation fields API the sort argument and aggregation’s field argument were changed from enums to nested input objects.
 
 This change enabled lower resource usage and faster “building schema” step.
 
@@ -55,7 +55,7 @@ Overall Gatsby’s version five is smoking fast and worth the upgrade.
 
 ## The fastest Gatsby Yet
 
-The Gatsby 5 is here and it’s awesome! 
+The Gatsby 5 is here and it’s awesome!
 
 This article will teach you everything you need to know about the new Gatsby v5 and all its cool new features.
 
@@ -83,7 +83,7 @@ Updates to non Gatsby NPM modules, that are using old versions of React or Graph
 
 <Section>
 
-Gatsby is unlocking more frontend performance capabilities for developers by introducing Partial Hydration to the framework. 
+Gatsby is unlocking more frontend performance capabilities for developers by introducing Partial Hydration to the framework.
 
 This will allow teams to ship only the necessary JavaScript to the browser in order to support interactive elements, thereby eliminating bundle bloat that has historically limited the frontend speed for modern websites.
 
@@ -132,19 +132,19 @@ So adding the hydration flag is really cool but you have to refactor your compon
 
 Without `"use client"` you get the below error so its worth the add work.
 
- `ERROR #80000` 
+`ERROR #80000`
 
 Building partial HTML failed for path "/offline-plugin-app-shell-fallback/"
 
 This can happen if interactive elements like "useEffect", "useState", "createContext" or event handlers are used in a component  
 without declaring the "use client" directive at the top of the file.
 
-Consider adding "use client" to the top of your file if your component is interactive, otherwise refactor your component so it   
+Consider adding "use client" to the top of your file if your component is interactive, otherwise refactor your component so it  
 can be statically rendered with React Server Components (RSC).
 
 See our docs page for more info on this error: https://gatsby.dev/partial-hydration-error
 
-  TypeError: Cannot set properties of undefined (setting 'props')
+TypeError: Cannot set properties of undefined (setting 'props')
 
 Of which I have not done yet, but I will work on it and update this page.
 
@@ -154,15 +154,15 @@ Of which I have not done yet, but I will work on it and update this page.
 
 <Section>
 
-Content Editors enjoy lightning-fast builds when making content changes in the source CMS thanks to Gatsby’s Incremental Builds. 
+Content Editors enjoy lightning-fast builds when making content changes in the source CMS thanks to Gatsby’s Incremental Builds.
 
-However, when content changes on a broadly shared component in a site — like a header, footer, or shared site navigation — all pages would typically be rebuilt. 
+However, when content changes on a broadly shared component in a site — like a header, footer, or shared site navigation — all pages would typically be rebuilt.
 
-Gatsby v5 allows developers to designate specific components as highly shared throughout the site via Slices. 
+Gatsby v5 allows developers to designate specific components as highly shared throughout the site via Slices.
 
-Gatsby builds Slices separately and then assembles them with the pages that use them, thereby dramatically reducing build times for content changes to these highly shared components. 
+Gatsby builds Slices separately and then assembles them with the pages that use them, thereby dramatically reducing build times for content changes to these highly shared components.
 
-No more waiting for a full site builds when navigation content changes! Content editors, rejoice! In our tests, this can yield up to a 90% reduction in build duration for content changes to highly shared components. 
+No more waiting for a full site builds when navigation content changes! Content editors, rejoice! In our tests, this can yield up to a 90% reduction in build duration for content changes to highly shared components.
 
 Slices API is not part of the v5 alpha as we are still making some tweaks but will be part of the Gatsby v5 Beta, coming soon.
 
@@ -172,7 +172,7 @@ Slices API is not part of the v5 alpha as we are still making some tweaks but wi
 
 <Section>
 
-Our goal with Gatsby 5 is to have a smooth upgrade experience, especially coming from v4. 
+Our goal with Gatsby 5 is to have a smooth upgrade experience, especially coming from v4.
 
 Here’s a list of the breaking changes.
 
@@ -182,27 +182,27 @@ Here’s a list of the breaking changes.
 
 <Section>
 
-* Minimum required Node.js version >= 18
+- Minimum required Node.js version >= 18
 
-* Minimum required React version >= 18
+- Minimum required React version >= 18
 
-* Removal of `<StaticQuery />` component to using, (useStaticQuery)
+- Removal of `<StaticQuery />` component to using, (useStaticQuery)
 
-* Non-ESM browsers are not polyfilled by default
+- Non-ESM browsers are not polyfilled by default
 
-* GraphQL schema: changes to sort and aggregation fields which make Gatsby more performant and lower resource usage
+- GraphQL schema: changes to sort and aggregation fields which make Gatsby more performant and lower resource usage
 
 As you can see, most of these items will have low to no impact on your gatsby project in most cases.
- 
+
 </Section>
 
 <Section>
 
 ## Where to go from here
 
-Gatsby v5 is here! This is *the* version of Gatsby that you need to know about. It’s faster, smaller, and more performant than ever before! 
+Gatsby v5 is here! This is _the_ version of Gatsby that you need to know about. It’s faster, smaller, and more performant than ever before!
 
-There are many more new improvements beyond these, but we’ll have to wait for the official release. 
+There are many more new improvements beyond these, but we’ll have to wait for the official release.
 
 In the meantime, you can check out the v5 alpha and try it out yourself, and we’d love to hear your thoughts about the alpha in the GitHub discussion!
 
