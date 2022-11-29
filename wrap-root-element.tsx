@@ -2,7 +2,6 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { Code } from './src/components/Code'
 import { preToCodeBlock } from 'mdx-utils'
-import { GoogleAuthProvider } from './src/components/GoogleAuthProvider'
 import A from './src/components/A'
 import FindOutMore from './src/components/FindOutMore'
 import Features from './src/components/Features'
@@ -67,8 +66,4 @@ const components = {
     }
   },
 }
-export const wrapRootElement = ({ element }) => (
-  <GoogleAuthProvider>
-    <MDXProvider components={components}>{element}</MDXProvider>
-  </GoogleAuthProvider>
-)
+export const wrapRootElement = ({ element }) => <MDXProvider components={components}>{element}</MDXProvider>

@@ -48,12 +48,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { data, errors } = await graphql(`
     query {
       categories: allMdx {
-        group(field: { frontmatter: { category: SELECT } }) {
+        group(field: frontmatter___category) {
           fieldValue
         }
       }
       tags: allMdx {
-        group(field: { frontmatter: { tags: SELECT } }) {
+        group(field: frontmatter___tags) {
           fieldValue
         }
       }

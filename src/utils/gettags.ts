@@ -24,7 +24,7 @@ export default GetTags
 export const tagQuery = graphql`
   query {
     allMdx(limit: 2000) {
-      group(field: { frontmatter: { tags: SELECT } }) {
+      group(field: frontmatter___tags) {
         tag: fieldValue
         count: totalCount
       }

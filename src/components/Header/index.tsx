@@ -2,15 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import {
-  SearchIcon,
-  MenuIcon,
-  XIcon,
-  UserGroupIcon,
-  PhotographIcon,
-  MapIcon,
-  HomeIcon,
-} from '@heroicons/react/outline'
+import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, HomeIcon } from '@heroicons/react/outline'
 import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
