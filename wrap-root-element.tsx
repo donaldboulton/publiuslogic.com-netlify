@@ -16,6 +16,7 @@ import List from './src/components/List'
 import ListItem from './src/components/List/ListItem'
 import ListGrid from './src/components/ListGrid'
 import Tooltip from './src/components/Tooltip'
+import VideoChildren from './src/components/CloudinaryVideo'
 import VideoOne from './src/components/CloudinaryVideo/videoOne'
 import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
 import VideoThree from './src/components/CloudinaryVideo/videoThree'
@@ -46,6 +47,8 @@ const components = {
   ListItem: ListItem,
   ListGrid: ListGrid,
   Tooltip: Tooltip,
+  VideoChildren,
+  VideoChildren,
   CloudinaryVideo: CloudinaryVideo,
   VideoOne: VideoOne,
   VideoTwo: VideoTwo,
