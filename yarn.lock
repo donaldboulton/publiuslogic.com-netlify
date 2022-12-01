@@ -1300,6 +1300,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/eb-garamond@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-4.5.10.tgz#4c75b2a0905ae9f2fdb572261a296af3a210833a"
+  integrity sha512-smk/GMWjIN6+v/d1o+2GAtUh2OceHe4R7xrPX7UD8EZ36ndOaJWJlh48mwh+Yh6MN6Mr3QIu/LYOspVcUw2Zsg==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-1.9.0.tgz#9263de16d93463974d6fe0cd960eadca184a7d9f"

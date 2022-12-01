@@ -65,12 +65,11 @@ export default function Fruition() {
                     className="fill-current text-rose-600 shadow-lg shadow-rose-500/50"
                   ></polygon>
                 </svg>
-                <h4 className="text-xl font-bold text-white">Fruition is Soon, "Nov 15 2022"!</h4>
+                <h4 className="text-xl font-bold text-white">Fruition is Over, "As of Nov 15 2022"!</h4>
                 <div className="mt-2 text-lg font-light text-white">
-                  All Time will be coming to fruition. Revelation 22:12,
+                  Fruition has come and gone. Revelation 22:12,
                   <p>
-                    And, behold, I come quickly; and my reward is with me, to give every man according as his work shall
-                    be.
+                    Whatever Horse you ride or path your on in life. You will be stuck on that path for eternity.
                   </p>
                 </div>
               </div>

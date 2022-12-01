@@ -25,6 +25,7 @@
     "@builder.io/partytown": "^0.7.2",
     "@cloudinary/react": "^1.6.0",
     "@cloudinary/url-gen": "^1.8.6",
+    "@fontsource/eb-garamond": "^4.5.10",
     "@giscus/react": "^2.2.4",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^1.0.6",

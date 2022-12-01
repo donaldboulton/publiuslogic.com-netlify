@@ -3,6 +3,7 @@ import type { GatsbyBrowser } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import './src/styles/global.css'
+import '@fontsource/eb-garamond'
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return <AnimatePresence wait>{element}</AnimatePresence>
