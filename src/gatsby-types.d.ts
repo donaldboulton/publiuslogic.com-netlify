@@ -648,7 +648,7 @@ declare namespace Queries {
     | 'childMdx.frontmatter.date'
     | 'childMdx.frontmatter.description'
     | 'childMdx.frontmatter.featured'
-    | 'childMdx.frontmatter.featuredpost'
+    | 'childMdx.frontmatter.featuredPost'
     | 'childMdx.frontmatter.imageLink'
     | 'childMdx.frontmatter.image.absolutePath'
     | 'childMdx.frontmatter.image.accessTime'
@@ -835,7 +835,7 @@ declare namespace Queries {
     | 'childrenMdx.frontmatter.date'
     | 'childrenMdx.frontmatter.description'
     | 'childrenMdx.frontmatter.featured'
-    | 'childrenMdx.frontmatter.featuredpost'
+    | 'childrenMdx.frontmatter.featuredPost'
     | 'childrenMdx.frontmatter.imageLink'
     | 'childrenMdx.frontmatter.image.absolutePath'
     | 'childrenMdx.frontmatter.image.accessTime'
@@ -1748,7 +1748,7 @@ declare namespace Queries {
     | 'frontmatter.date'
     | 'frontmatter.description'
     | 'frontmatter.featured'
-    | 'frontmatter.featuredpost'
+    | 'frontmatter.featuredPost'
     | 'frontmatter.imageLink'
     | 'frontmatter.image.absolutePath'
     | 'frontmatter.image.accessTime'
@@ -1937,7 +1937,7 @@ declare namespace Queries {
     readonly date: Maybe<Scalars['Date']>
     readonly description: Maybe<Scalars['String']>
     readonly featured: Maybe<Scalars['Boolean']>
-    readonly featuredpost: Maybe<Scalars['Boolean']>
+    readonly featuredPost: Maybe<Scalars['Boolean']>
     readonly image: Maybe<File>
     readonly imageLink: Maybe<Scalars['String']>
     readonly path: Maybe<Scalars['String']>
@@ -1964,7 +1964,7 @@ declare namespace Queries {
     readonly date: InputMaybe<DateQueryOperatorInput>
     readonly description: InputMaybe<StringQueryOperatorInput>
     readonly featured: InputMaybe<BooleanQueryOperatorInput>
-    readonly featuredpost: InputMaybe<BooleanQueryOperatorInput>
+    readonly featuredPost: InputMaybe<BooleanQueryOperatorInput>
     readonly image: InputMaybe<FileFilterInput>
     readonly imageLink: InputMaybe<StringQueryOperatorInput>
     readonly path: InputMaybe<StringQueryOperatorInput>
