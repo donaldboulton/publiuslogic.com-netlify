@@ -9,6 +9,17 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) =
   return <AnimatePresence wait>{element}</AnimatePresence>
 }
 
+export const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `This application has been updated. ` +
+      `Reload to display the latest version?`
+  )
+
+  if (answer === true) {
+    window.location.reload()
+  }
+}
+
 export const onRouteUpdate = ({ location }) => {
   if (process.env.NODE_ENV !== 'production') {
     return null
@@ -38,10 +49,3 @@ localStorage.theme = 'light'
 localStorage.theme = 'dark'
 
 localStorage.removeItem('theme')
-
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(`This application has been updated. ` + `Reload to display the latest version?`)
-  if (answer === true) {
-    window.location.reload()
-  }
-}
