@@ -617,7 +617,10 @@ giscus-widget {
 }
 
 .form-beams {
-  background-image: url(../../static/beams/7-dark@tinypng.png);
+  background-image: url(../../static/beams/docs-dark@tinypng.png);
+  background-size: 86.125rem;
+  background-repeat: no-repeat;
+  background: cover;
   z-index: 30;
 }
 

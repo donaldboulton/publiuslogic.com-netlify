@@ -87,7 +87,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
               <div className="mt-4 py-4">
                 <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
                 <div className="flex items-center">
-                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:font-garamond first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300">
+                  <p className="first-letter:font-garamond ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300">
                     {frontmatter.description}
                   </p>
                 </div>

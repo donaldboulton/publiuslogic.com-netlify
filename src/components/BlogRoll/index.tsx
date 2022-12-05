@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
-import { LazyMotion, m } from 'framer-motion'
+import { LazyMotion, m, useInView } from 'framer-motion'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
-import { useInView } from 'react-intersection-observer'
 import Tags from '@/components/Tags'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)

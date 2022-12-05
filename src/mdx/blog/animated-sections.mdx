@@ -69,8 +69,6 @@ export function wrapPageElement({ element }) {
 
 ## Animated Sections Code
 
-<Section>
-
 ```js:title=Animated Sections
 import * as React from 'react'
 import { useRef } from 'react'
@@ -98,13 +96,59 @@ function Section({ children }) {
 export default Section
 ```
 
+## Typescript with subFeatures
+
+Using only the needed sub-features of Framer Motion
+
+```tsx:title=Typescript Animated Sections
+import * as React from 'react'
+import { useRef, ReactNode } from 'react'
+import { useInView, LazyMotion, m } from 'framer-motion'
+
+/* See FramersFeatures Component Below*/
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+
+interface SectionProps {
+  children: ReactNode
+}
+
+const Section = ({ children }: SectionProps) => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  return (
+    <LazyMotion features={loadFeatures}>
+      <m.section ref={ref}>
+        <m.span
+          style={{
+            transform: isInView ? 'none' : 'translateX(-200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          {children}
+        </m.span>
+      </m.section>
+    </LazyMotion>
+  )
+}
+export default Section
+
+```
+
+## FramerFeatures Component
+
+Calling just the sub Features of FramerMotion when needed
+
+```tsx:title=sub Features when needed
+import { domMax } from 'framer-motion'
+export default domMax
+```
+
 When wrapping images or video.
 
-</Section>
-
 ## Image or Video or Text
-
-<Section>
 
 ```mdx:tile=Proper Wrapping
 <Section>
@@ -114,7 +158,5 @@ When wrapping images or video.
   /* no comment just a space */
 </Section>
 ```
-
-</Section>
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />
