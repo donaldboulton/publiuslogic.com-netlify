@@ -227,7 +227,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                 {({ open }) => (
                   <>
                     <ButtonWrapper className="flex place-content-between">
-                      <div>
+                      <m.div>
                         <Disclosure.Button ref={openButtonRef} className="ml-3 h-10 w-10" aria-label="Show Code">
                           <m.svg
                             baseProfile="tiny"
@@ -266,8 +266,8 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                             />
                           </m.svg>
                         </Disclosure.Button>
-                      </div>
-                      <div>
+                      </m.div>
+                      <m.div>
                         <Button
                           ref={buttonRef}
                           css={{
@@ -343,7 +343,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                             />
                           </m.svg>
                         </Button>
-                      </div>
+                      </m.div>
                     </ButtonWrapper>
                     <Title className="code-title p-2" text={title}>
                       {language}

@@ -15,11 +15,11 @@ videoTitle: Angelina Jordan Suspicious Minds
 
 ## Sectionize Content
 
-Animated Sections with Framer Motion for Gatsby Animated Sections.
+Animated Sections with Framer Motion for React / Gatsby Animated Sections.
 
 This is super easy but you will have to go through all your, `.md` or `.mdx` page's to Sectionize.
 
-Fade in Animation for Gatby AST, or MDX Markdown pages. For an Example this page or any page on this website is Sectionized.
+Fade in Animation for Gatsby AST, or MDX Markdown pages. For an Example this page or any page on this website is Sectionized.
 
 Or Wrap any `.tsx` or `.js` page and / or components.
 
@@ -29,7 +29,15 @@ Or Wrap any `.tsx` or `.js` page and / or components.
 
 When adding an animated section to, AST in `.md`, or MDX in `.mdx`, markdown I like to break the sections up into 4 to 5 sentences.
 
+</Section>
+
+<Section>
+
 ## Install Framer Motion
+
+</Section>
+
+<Section>
 
 ```bash:title=Install Framer Motion
 yarn add framer-motion
@@ -37,7 +45,11 @@ yarn add framer-motion
 
 </Section>
 
+<Section>
+
 ## Wrap Root Element gatsby browser
+
+</Section>
 
 <Section>
 
@@ -52,7 +64,11 @@ export function wrapPageElement({ element }) {
 
 </Section>
 
+<Section>
+
 ## Wrap Root Element gatsby ssr
+
+</Section>
 
 <Section>
 
@@ -67,9 +83,15 @@ export function wrapPageElement({ element }) {
 
 </Section>
 
+<Section>
+
 ## Animated Sections Code
 
-```js:title=Animated Sections
+</Section>
+
+<Section>
+
+```js:title=Animated-Sections
 import * as React from 'react'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
@@ -96,18 +118,26 @@ function Section({ children }) {
 export default Section
 ```
 
+</Section>
+
+<Section>
+
 ## Typescript with subFeatures
 
 Using only the needed sub-features of Framer Motion, "tree shaking", at: [Reduce bundle size](https://www.framer.com/docs/guide-reduce-bundle-size/)
 
-```tsx:title=Typescript Animated Sections
+</Section>
+
+<Section>
+
+```tsx:title=Typescript-Animated-Sections {3,7,14,15,18}
 import * as React from 'react'
 import { useRef, ReactNode } from 'react'
 import { useInView, LazyMotion, m, domAnimation } from 'framer-motion'
 
-/* See FramersFeatures Component Below*/
+/* As FramersFeatures Component Below */
 
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+/* const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default) */
 
 interface SectionProps {
   children: ReactNode
@@ -134,23 +164,44 @@ const Section = ({ children }: SectionProps) => {
   )
 }
 export default Section
-
 ```
 
-## FramerFeatures Component
+</Section>
 
-Calling just the sub Features of FramerMotion when needed
+<Section>
 
-```tsx:title=sub Features when needed
+## FramerFeatures Component 
+
+</Section>
+
+<Section>
+
+`domMax` Calling just the sub Features of FramerMotion when needed. 
+
+As in each component or page: as below
+
+`const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)`
+
+</Section>
+
+<Section>
+
+```tsx:title=subFeatures
 import { domMax } from 'framer-motion'
 export default domMax
 ```
 
-When wrapping images or video.
+</Section>
+
+<Section>
 
 ## Image or Video or Text
 
-```mdx:tile=Proper Wrapping
+</Section>
+
+<Section>
+
+```mdx:title=Proper Spacing {2,5}
 <Section>
   /* just leave a space here */
     Some Text
@@ -158,5 +209,7 @@ When wrapping images or video.
   /* no comment just a space */
 </Section>
 ```
+
+</Section>
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />
