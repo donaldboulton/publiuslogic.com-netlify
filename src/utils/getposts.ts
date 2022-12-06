@@ -3,8 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 const postQuery = graphql`
   query {
     allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { slug: { regex: "/^blog/" }, frontmatter: { published: { eq: true } } }
+      sort: {frontmatter: {date: DESC}}
+      filter: {slug: {regex: "/^blog/"}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {
         frontmatter {
