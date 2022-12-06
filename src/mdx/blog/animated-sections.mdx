@@ -98,12 +98,12 @@ export default Section
 
 ## Typescript with subFeatures
 
-Using only the needed sub-features of Framer Motion
+Using only the needed sub-features of Framer Motion, "tree shaking", at: [Reduce bundle size](https://www.framer.com/docs/guide-reduce-bundle-size/)
 
 ```tsx:title=Typescript Animated Sections
 import * as React from 'react'
 import { useRef, ReactNode } from 'react'
-import { useInView, LazyMotion, m } from 'framer-motion'
+import { useInView, LazyMotion, m, domAnimation } from 'framer-motion'
 
 /* See FramersFeatures Component Below*/
 
@@ -118,7 +118,7 @@ const Section = ({ children }: SectionProps) => {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <LazyMotion features={loadFeatures}>
+    <LazyMotion features={domAnimation}>
       <m.section ref={ref}>
         <m.span
           style={{

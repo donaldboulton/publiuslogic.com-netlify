@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { useRef, ReactNode } from 'react'
-import { useInView, LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+import { useInView, LazyMotion, m, domAnimation } from 'framer-motion'
 
 interface SectionProps {
   children: ReactNode
@@ -13,7 +11,7 @@ const Section = ({ children }: SectionProps) => {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <LazyMotion features={loadFeatures}>
+    <LazyMotion features={domAnimation}>
       <m.section ref={ref}>
         <m.span
           style={{
