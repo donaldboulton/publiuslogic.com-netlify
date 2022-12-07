@@ -1,12 +1,16 @@
 import * as React from 'react'
 import type { GatsbyBrowser } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
+import { MDXEmbedProvider } from 'mdx-embed'
 import { AnimatePresence } from 'framer-motion'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
-  return <AnimatePresence wait>{element}</AnimatePresence>
+  return 
+    <MDXEmbedProvider>
+      <AnimatePresence wait>{element}</AnimatePresence>
+    </MDXEmbedProvider>
 }
 
 export const onServiceWorkerUpdateReady = () => {

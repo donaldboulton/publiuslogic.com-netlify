@@ -2,13 +2,17 @@ import * as React from 'react'
 import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
+import { MDXEmbedProvider } from 'mdx-embed'
 import { Partytown } from '@builder.io/partytown/react'
 
 const ORIGIN = 'https://www.googletagmanager.com'
 const GATSBY_GA_MEASUREMENT_ID = 'G-LGV204F0PT'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
-  return <AnimatePresence wait>{element}</AnimatePresence>
+  return 
+    <MDXEmbedProvider>
+      <AnimatePresence wait>{element}</AnimatePresence>
+    </MDXEmbedProvider>
 }
 
 export const wrapRootElement = wrap

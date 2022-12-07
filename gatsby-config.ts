@@ -201,6 +201,7 @@ const config: GatsbyConfig = {
         skipIndexing: false,
       },
     },
+    'gatsby-plugin-mdx-embed',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
