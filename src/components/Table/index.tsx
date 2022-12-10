@@ -33,7 +33,7 @@ const Table = () => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <m.section className="font-sans center items-stretch" variants={tableContainer}>
+      <m.section className="center items-stretch font-sans" variants={tableContainer}>
         <div className="mr-auto ml-auto w-full px-4 opacity-75">
           <m.div
             ref={ref}

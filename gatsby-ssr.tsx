@@ -9,10 +9,10 @@ const ORIGIN = 'https://www.googletagmanager.com'
 const GATSBY_GA_MEASUREMENT_ID = 'G-LGV204F0PT'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
-  return 
-    <MDXEmbedProvider>
-      <AnimatePresence wait>{element}</AnimatePresence>
-    </MDXEmbedProvider>
+  return
+  ;<MDXEmbedProvider>
+    <AnimatePresence wait>{element}</AnimatePresence>
+  </MDXEmbedProvider>
 }
 
 export const wrapRootElement = wrap

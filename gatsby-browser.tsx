@@ -7,10 +7,10 @@ import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
-  return 
-    <MDXEmbedProvider>
-      <AnimatePresence wait>{element}</AnimatePresence>
-    </MDXEmbedProvider>
+  return
+  ;<MDXEmbedProvider>
+    <AnimatePresence wait>{element}</AnimatePresence>
+  </MDXEmbedProvider>
 }
 
 export const onServiceWorkerUpdateReady = () => {
