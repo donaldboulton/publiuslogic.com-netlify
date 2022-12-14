@@ -31,7 +31,6 @@
     "@heroicons/react": "^1.0.6",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@netlify/plugin-gatsby": "^3.4.8",
     "@slack/web-api": "^6.8.0",
     "@svgr/webpack": "^6.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
