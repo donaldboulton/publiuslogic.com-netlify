@@ -1,0 +1,61 @@
+.eq-container {
+  pointer-events: none;
+}
+
+.bar {
+  display: inline-block;
+  position: relative;
+  margin-right: 3px;
+  width: 10px;
+  height: 1px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #4d7c8a75, #79a9b99f);
+  color: transparent;
+  animation-name: equalizer;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform: translate(1px, 6px);
+}
+
+.b1 {
+  animation-delay: 0.5s;
+}
+.b2 {
+  animation-delay: 0.2s;
+}
+.b3 {
+  animation-delay: 1.2s;
+}
+.b4 {
+  animation-delay: 0.9s;
+}
+.b5 {
+  animation-delay: 0.7s;
+}
+
+@keyframes equalizer {
+  0% {
+    height: 1px;
+    margin-top: 0;
+  }
+  10% {
+    height: 40px;
+    margin-top: -40px;
+  }
+  50% {
+    height: 20px;
+    margin-top: -20px;
+  }
+  60% {
+    height: 30px;
+    margin-top: -30px;
+  }
+  80% {
+    height: 40px;
+    margin-top: -60px;
+  }
+  100% {
+    height: 1px;
+    margin-top: 0;
+  }
+}

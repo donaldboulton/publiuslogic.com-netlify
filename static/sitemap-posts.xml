@@ -42,6 +42,26 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
+		<loc>https://publiuslogic.com/blog/psychedelic-mushrooms</loc>
+		<lastmod>2022-12-04T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/psychedelic-mushrooms.jpg</image:loc>
+			<image:caption>psychedelic-mushrooms.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/sleeper-agent</loc>
+		<lastmod>2022-12-04T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/sleeper-agent.png</image:loc>
+			<image:caption>sleeper-agent.png</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://publiuslogic.com/blog/andrea-bocelli</loc>
 		<lastmod>2022-04-24T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>
@@ -218,6 +238,26 @@
 		<image:image>
 			<image:loc>https://publiuslogic.com/static/assets/5G-Radiation-.jpg</image:loc>
 			<image:caption>5G-Radiation-.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/hollywood-control</loc>
+		<lastmod>2022-11-11T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/Leni-Heidi-Klum-2.jpg</image:loc>
+			<image:caption>Leni-Heidi-Klum-2.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/twitter-gate</loc>
+		<lastmod>2022-12-03T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/twitter-gate.jpg</image:loc>
+			<image:caption>twitter-gate.jpg</image:caption>
 		</image:image>
 		<priority>0.80</priority>
 	</url>
@@ -518,6 +558,16 @@
 		<image:image>
 			<image:loc>https://publiuslogic.com/static/assets/works.jpg</image:loc>
 			<image:caption>works.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/obsd-licence</loc>
+		<lastmod>2013-03-13T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/BSD.jpg</image:loc>
+			<image:caption>BSD.jpg</image:caption>
 		</image:image>
 		<priority>0.80</priority>
 	</url>

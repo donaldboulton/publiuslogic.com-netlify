@@ -1,0 +1,14 @@
+{
+
+    "breadcrumbs.enabled"                       :  false       ,
+    
+    "editor.cursorSmoothCaretAnimation"         :  false       ,
+    
+    "editor.fontSize"                           :  18          ,
+    "editor.fontWeight"                         : "normal"     ,
+    "editor.fontFamily"                         : "Consolas,   'Courier New', monospace",
+    "editor.fontLigatures"                      :  true        ,  // Does this have a noticeable effect?
+    
+    "editor.lineNumbers"                        : "on"         ,
+    
+}

@@ -1,0 +1,28 @@
+query CurrentlyPlaying @netlify(id: """e4c0f425-df2b-49c7-a232-1007873f463f""", doc: """An example query to start with.""") {
+  me {
+    spotify {
+      player {
+        progressMs
+        isPlaying
+        repeatState
+        shuffleState
+        item {
+          name
+          durationMs
+          album {
+            images {
+              height
+              url
+              width
+            }
+            name
+          }
+          artists {
+            name
+          }
+          uri
+        }
+      }
+    }
+  }
+}
