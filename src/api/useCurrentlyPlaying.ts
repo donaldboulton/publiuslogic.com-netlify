@@ -46,7 +46,7 @@ export interface CurrentlyPlayingAPI {
 }
 
 const fetchSpotifyPlayer = async () => {
-  const URL = './.netlify/functions/CurrentlyPlaying'
+  const URL = '../../.netlify/functions/CurrentlyPlaying'
   const OPTIONS = {
     method: 'GET',
     headers: {

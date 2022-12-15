@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FC } from 'react'
+import './SpotifyCurrentlyPlaying.css'
 import useCurrentlyPlaying from '../../api/useCurrentlyPlaying'
 
 const SpotifyCurrentlyPlaying: FC = () => {
@@ -35,3 +36,5 @@ const SpotifyCurrentlyPlaying: FC = () => {
     <></>
   )
 }
+
+export default SpotifyCurrentlyPlaying
