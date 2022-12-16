@@ -2,7 +2,7 @@
   publish = "public"
   command = "gatsby build"
   NETLIFY_USE_YARN = "true"
-  functions = "functions-build"
+  functions = "functions"
 [build.environment]
   NODE_VERSION = "18.12.1"
 [[headers]]

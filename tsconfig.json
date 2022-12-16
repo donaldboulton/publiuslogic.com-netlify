@@ -9,6 +9,7 @@
     /* "checkJs": true, */
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "isolatedModules": true,
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,

@@ -1,3 +1,4 @@
+import { GatsbyNode } from 'gatsby'
 import path from 'path'
 const { copyLibFiles } = require('@builder.io/partytown/utils')
 
@@ -28,13 +29,24 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   })
 }
 
-exports.createSchemaCustomization = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
   const { createTypes } = actions
 
   createTypes(`
+    type Site {
+      siteMetadata: SiteMetadata!
+    }
+
+    type SiteMetadata {
+      title: String!
+      siteUrl: String!
+      description: String!
+    }
+
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
     }
+
     type MdxFrontmatter {
       image: File @fileByRelativePath
     }

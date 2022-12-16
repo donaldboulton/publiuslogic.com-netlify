@@ -16,7 +16,7 @@ export interface ISpotifyTrack {
 
 const SpotifyRecent: FC<{ tracks: Array<ISpotifyTrack> }> = ({ tracks }) => (
   <div>
-    <ol className="space-y-1 divide-y divide-solid divide-black divide-opacity-10 dark:divide-white sm:space-y-2">
+    <ol className="space-y-1 divide-y divide-solid divide-slate-900 divide-opacity-10 dark:divide-slate-300 sm:space-y-2">
       {tracks.map(({ track }, index) => (
         <li className="flex flex-row items-center px-1 pt-1 dark:border-opacity-20 sm:pt-2">
           <p className="text-lg font-bold lining-nums text-gray-400">{index + 1}</p>
