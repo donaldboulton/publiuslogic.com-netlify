@@ -14,6 +14,7 @@ import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
 import SpotifyCurrentlyPlaying from '@/components/Spotify/SpotifyCurrentlyPlaying'
 import SpotifyRecentQL from '@/components/Spotify/SpotifyRecentQL'
+import Center from '@/components/Center'
 
 const ogimage = {
   src: OGImage,
@@ -151,6 +152,9 @@ function Profile() {
               </a>
             </div>
             <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+              <Center>
+                Spotify Recently Playing
+              </Center>
               <SpotifyRecentQL />
             </div>
             <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">

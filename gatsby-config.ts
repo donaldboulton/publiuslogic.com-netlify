@@ -1,5 +1,6 @@
 import type { GatsbyConfig } from 'gatsby'
 /* eslint @typescript-eslint/no-var-requires: "off" */
+const { createProxyMiddleware } = require("http-proxy-middleware")
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
 const resolveConfig = require('tailwindcss/resolveConfig')
@@ -34,6 +35,19 @@ const config: GatsbyConfig = {
       linkedin: 'https://www.linkedin.com/donboulton',
       github: 'https://github.com/donaldboulton/',
     },
+  },
+  /* for avoiding CORS while developing Netlify Functions locally */
+  /* read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying */
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
   },
   plugins: [
     {

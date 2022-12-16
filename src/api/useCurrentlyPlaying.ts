@@ -46,7 +46,7 @@ export interface CurrentlyPlayingAPI {
 }
 
 const fetchSpotifyPlayer = async () => {
-  const URL = '../../.netlify/functions/CurrentlyPlaying'
+  const URL = '/.netlify/functions/__api'
   const OPTIONS = {
     method: 'GET',
     headers: {
@@ -89,7 +89,7 @@ const useCurrentlyPlaying = () => {
           }
         }
       } catch (e) {
-        // Gimmick
+        /* Gimmick */
       }
       setFetching(false)
       timeoutId = window.setTimeout(fetchPlayingState, refreshTimeInMs)
