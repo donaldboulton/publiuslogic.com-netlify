@@ -1,1 +1,1 @@
-module.exports = require('./netlifyGraph/fetch')
+module.exports = require('./netlifyGraph/src/fetch.ts')
