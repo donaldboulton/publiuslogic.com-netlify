@@ -8,8 +8,6 @@ import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
-import SpotifyCurrentlyPlaying from '@/components/Spotify/SpotifyCurrentlyPlaying'
-import SpotifyRecentQL from '@/components/Spotify/SpotifyRecentQL'
 import Center from '@/components/Center'
 
 const ogimage = {
@@ -143,15 +141,6 @@ function Profile() {
                   loading="Buy me a coffee"
                 />
               </a>
-            </div>
-            <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-              <Center>
-                Spotify Recently Playing
-              </Center>
-              <SpotifyRecentQL />
-            </div>
-            <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-              <SpotifyCurrentlyPlaying />
             </div>
             <div className="center container mx-auto mb-20 px-5 py-2 lg:px-32 lg:pt-12">
               <WavyHr className="text-indigo-600" />
