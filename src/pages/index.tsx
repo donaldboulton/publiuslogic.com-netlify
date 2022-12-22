@@ -4,10 +4,8 @@ import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '@/components/Seo'
-import Header from '@/components/Header'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
-import Footer from '@/components/Footer'
 import { LazyMotion, motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
@@ -16,9 +14,6 @@ import defaultImage from '../../static/images/jpg/dbbg.jpg'
 import Table from '@/components/Table'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
-import Stars from '@/components/Stars'
-import ScrollIndicator from '@/components/ScrollIndicator'
-
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface HomeProps {
@@ -51,9 +46,6 @@ const Home = ({ image }: HomeProps) => {
 
   return (
     <>
-      <Stars />
-      <ScrollIndicator />
-      <Header />
       <Layout>
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
@@ -408,7 +400,6 @@ const Home = ({ image }: HomeProps) => {
           </section>
         </main>
       </Layout>
-      <Footer />
     </>
   )
 }

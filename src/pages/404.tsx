@@ -19,7 +19,6 @@ const ogimage = {
 const NotFoundPage = () => {
   return (
     <>
-      <Header />
       <Layout>
         <PageHero
           title="404: Not Found"
@@ -47,7 +46,6 @@ const NotFoundPage = () => {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

@@ -5,9 +5,6 @@ import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 import WavyHr from '@/components/WavyHr'
@@ -21,8 +18,6 @@ const ogimage = {
 const Thanks = () => {
   return (
     <>
-      <Header />
-      <Stars />
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
@@ -65,7 +60,6 @@ const Thanks = () => {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

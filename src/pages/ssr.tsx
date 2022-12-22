@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 import PageImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
 
@@ -15,7 +13,6 @@ function refreshPage() {
 const SsrPage = ({ serverData }) => {
   return (
     <>
-      <Header />
       <Layout>
         <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
         <div className="mt-10">
@@ -54,7 +51,6 @@ const SsrPage = ({ serverData }) => {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

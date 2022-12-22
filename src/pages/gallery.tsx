@@ -5,13 +5,9 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@/components/Gallery'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import Stars from '@/components/Stars'
 import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
-import ScrollIndicator from '@/components/ScrollIndicator'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 interface ImageSharpEdge {
   node: {
@@ -64,9 +60,6 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
 
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Gallery: Images" description="My Kitty Cats Old and New!" image={Image} />
@@ -89,7 +82,6 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
           </section>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

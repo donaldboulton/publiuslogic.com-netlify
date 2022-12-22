@@ -3,6 +3,10 @@ import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
+import ScrollIndicator from '@/components/ScrollIndicator'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Stars from '@/components/Stars'
 
 interface LayoutProps {
   children: ReactNode
@@ -11,11 +15,15 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
+    <ScrollIndicator />
+    <Stars />
+    <Header />
       <div className="mx-auto max-w-screen-xl text-slate-900 antialiased dark:text-slate-200">
         <main>
           <MDXProvider>{children}</MDXProvider>
         </main>
       </div>
+      <Footer/>
       <CookieConsent
         enableDeclineButton
         flipButtons

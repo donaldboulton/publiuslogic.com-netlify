@@ -2,12 +2,9 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
-import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
 import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'
@@ -29,9 +26,7 @@ const TagPage = ({ pageContext }: TagProps) => {
   const title = `Tag: ${tag}`
   return (
     <>
-      <Header />
       <Layout>
-        <Stars />
         <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
         <Seo
           type="tags"
@@ -55,7 +50,6 @@ const TagPage = ({ pageContext }: TagProps) => {
           <BlogRoll tag={tag} />
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

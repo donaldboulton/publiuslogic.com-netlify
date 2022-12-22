@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { StaticImage } from 'gatsby-plugin-image'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import Map from '@/components/Map'
 import Email from '../../static/svg/icons/email.inline.svg'
 import Phone from '../../static/svg/icons/phone.inline.svg'
@@ -14,9 +13,6 @@ import Facebook from '../../static/svg/icons/facebook.inline.svg'
 import Instagram from '../../static/svg/icons/instagram.inline.svg'
 import Twitter from '../../static/svg/icons/twitter.inline.svg'
 import Github from '../../static/svg/icons/github.inline.svg'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Stars from '@/components/Stars'
 import ContactForm from '@/components/ContactForm'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
@@ -41,9 +37,6 @@ function ContactUs() {
   ]
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
         <div className="search-beams z-30 -mt-4">
@@ -102,7 +95,6 @@ function ContactUs() {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

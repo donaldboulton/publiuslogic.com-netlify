@@ -4,12 +4,7 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import ScrollDown from '@/components/ScrollDown'
-import Stars from '@/components/Stars'
-
 import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
 
@@ -22,9 +17,6 @@ const ogimage = {
 const BlogPage = () => {
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
@@ -38,7 +30,6 @@ const BlogPage = () => {
           />
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

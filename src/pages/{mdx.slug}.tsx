@@ -6,15 +6,11 @@ import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/outline'
-import ScrollIndicator from '@/components/ScrollIndicator'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
-import Stars from '@/components/Stars'
 import SeoBlog from '@/components/Seo/SeoBlog'
 
 const components = { Link }
@@ -76,9 +72,6 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
   const pathname = '/' + data.mdx.slug
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
         <div className="blog-beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
@@ -132,7 +125,6 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

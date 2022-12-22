@@ -2,8 +2,6 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Callout from '@/components/Callout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
@@ -19,7 +17,6 @@ const ogimage = {
 export default function DSG() {
   return (
     <>
-      <Header />
       <Layout>
         <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
         <div className="mt-10">
@@ -33,7 +30,6 @@ export default function DSG() {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

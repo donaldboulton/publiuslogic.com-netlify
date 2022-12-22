@@ -2,12 +2,8 @@ import * as React from 'react'
 import { HeadProps, Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import WavyHr from '@/components/WavyHr'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import Seo from '@/components/Seo'
 import { StaticImage } from 'gatsby-plugin-image'
-import Stars from '@/components/Stars'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
@@ -30,9 +26,6 @@ function Profile() {
   }
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
         <div className="search-beams z-30 -mt-4">
@@ -166,7 +159,6 @@ function Profile() {
           </section>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

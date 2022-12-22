@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
-import Stars from '@/components/Stars'
 import {
   jupiter,
   cutout,
@@ -50,9 +49,6 @@ import {
 } from 'hero-patterns'
 
 import GetTags from '@/utils/gettags'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
 import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
 
@@ -110,9 +106,6 @@ const Tags = () => {
 
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero
@@ -148,7 +141,6 @@ const Tags = () => {
           </div>
         </div>
       </Layout>
-      <Footer />
     </>
   )
 }

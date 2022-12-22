@@ -1,13 +1,9 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Seo from '@/components/Seo'
 import Search from '@/components/Algolia/search'
 import PageHero from '@/components/PageHero'
-import ScrollIndicator from '@/components/ScrollIndicator'
-import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
 import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
 
@@ -22,9 +18,6 @@ const ogimage = {
 const SearchPage = () => {
   return (
     <>
-      <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
@@ -36,7 +29,6 @@ const SearchPage = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </Layout>
     </>
   )

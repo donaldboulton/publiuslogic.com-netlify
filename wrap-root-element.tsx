@@ -28,6 +28,7 @@ import Modal from './src/components/Modal'
 import Section from './src/components/Section'
 import Typing from './src/components/Typing'
 import Popper from './src/components/Popper'
+import SpotifyRecentQL from './src/components/Spotify/SpotifyRecentQL'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -60,6 +61,7 @@ const components = {
   Section: Section,
   Typing: Typing,
   Popper: Popper,
+  SpotifyRecentQL: SpotifyRecentQL,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
