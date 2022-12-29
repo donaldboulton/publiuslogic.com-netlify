@@ -15,15 +15,15 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-    <ScrollIndicator />
-    <Stars />
-    <Header />
+      <ScrollIndicator />
+      <Stars />
+      <Header />
       <div className="mx-auto max-w-screen-xl text-slate-900 antialiased dark:text-slate-200">
         <main>
           <MDXProvider>{children}</MDXProvider>
         </main>
       </div>
-      <Footer/>
+      <Footer />
       <CookieConsent
         enableDeclineButton
         flipButtons

@@ -52,9 +52,9 @@ const config: GatsbyConfig = {
         defaults: {
           quality: 70,
           formats: ['auto', 'webp', 'avif'],
-          placeholder: 'blurred'
-        }
-      }
+          placeholder: 'blurred',
+        },
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

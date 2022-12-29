@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Fragment, ReactNode, useRef, useState, FC } from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
@@ -82,7 +83,17 @@ export const Modal: FC<ModalProps> = props => {
                   <div className="bg-slate-900 px-4 py-4 text-slate-200 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
                       <div className="float-none mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-purple-400 sm:mx-0 sm:h-10 sm:w-10">
-                        <ExclamationIcon className="h-6 w-6 text-purple-700" aria-hidden="true" />
+                        <StaticImage
+                          className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"
+                          layout="fixed"
+                          formats={['auto', 'webp']}
+                          src="../../../static/img/angie.jpg"
+                          width={48}
+                          height={48}
+                          quality={95}
+                          alt="Profile picture"
+                          loading="eager"
+                        />
                       </div>
                       <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
                         <div>
@@ -108,7 +119,7 @@ export const Modal: FC<ModalProps> = props => {
                     <button
                       ref={closeButtonRef}
                       type="button"
-                      className="float-right mb-4 mr-4 rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-slate-200 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:text-slate-200"
+                      className="float-right mb-4 mr-4 rounded-md border border-transparent bg-slate-900 px-4 py-2 text-sm font-medium text-slate-200 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:text-slate-200"
                       onClick={() => setIsOpen(false)}
                     >
                       Close

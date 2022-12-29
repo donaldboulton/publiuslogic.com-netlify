@@ -29,7 +29,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   })
 }
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
   const { createTypes } = actions
 
   createTypes(`
