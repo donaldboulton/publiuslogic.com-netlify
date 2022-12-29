@@ -16,7 +16,7 @@ type TagQueryType = {
 
 const GetTags = () => {
   const data: TagQueryType = useStaticQuery(tagQuery)
-  return data.allMdx.group // .map(tag => ({ tag: tag.fieldValue, count: tag.totalCount }))
+  return data.allMdx.group /* .map(tag => ({ tag: tag.fieldValue, count: tag.totalCount })) */
 }
 
 export default GetTags

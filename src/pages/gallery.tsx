@@ -33,6 +33,7 @@ const CustomWrapper = ({ children, onClick }) => (
     {children}
   </div>
 )
+
 const ogimage = {
   src: OGImage,
   width: 1400,
