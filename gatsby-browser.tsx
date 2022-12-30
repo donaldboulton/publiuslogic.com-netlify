@@ -8,7 +8,7 @@ import '@fontsource/eb-garamond'
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
-  ;<MDXEmbedProvider>
+  <MDXEmbedProvider>
     <AnimatePresence wait>{element}</AnimatePresence>
   </MDXEmbedProvider>
 }

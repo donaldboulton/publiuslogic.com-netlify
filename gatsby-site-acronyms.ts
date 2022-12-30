@@ -5,6 +5,7 @@ module.exports = {
   ASAP: 'As Soon As Possible',
   AST: 'Abstract Syntax Tree',
   AWS: 'Amazon Web Services',
+  AJ: 'Angelina Jordan',
   BLM: 'Terrorist Organization Black Lives Matter',
   BPG: 'Beggar Preacher God',
   CD: 'Continuous Deployment',
