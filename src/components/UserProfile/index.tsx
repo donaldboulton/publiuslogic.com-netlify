@@ -16,9 +16,7 @@ const UserProfile: FC<UserProfileProps> = props => {
     <>
       <div className="left-0 mb-6 mt-1 pt-4">
         <div class="mx-auto max-w-sm space-y-1 rounded-xl bg-slate-300 py-1 px-4 shadow-lg dark:bg-slate-900 sm:flex sm:items-center sm:space-y-0 sm:space-x-4 sm:py-1">
-          <div className="justify-left flex">
-            {children}
-          </div>
+          <div className="justify-left flex">{children}</div>
           <div class="space-y-2 text-center sm:text-left">
             <div class="space-y-0.5">
               <p class="text-lg font-semibold text-black">

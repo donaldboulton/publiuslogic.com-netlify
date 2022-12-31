@@ -30,6 +30,7 @@ import Typing from './src/components/Typing'
 import Popper from './src/components/Popper'
 import UserProfile from './src/components/UserProfile'
 import Left from './src/components/Left'
+import LeftText from './src/components/LeftText'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -64,6 +65,7 @@ const components = {
   Popper: Popper,
   UserProfile: UserProfile,
   Left: Left,
+  LeftText: LeftText,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
