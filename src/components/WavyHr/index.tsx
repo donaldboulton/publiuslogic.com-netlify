@@ -2,7 +2,7 @@ import * as React from 'react'
 import { FC } from 'react'
 
 interface WavyHrProps {
-  className?: string
+  className: string
 }
 
 const WavyHr: FC<WavyHrProps> = ({ className = '' }) => (
