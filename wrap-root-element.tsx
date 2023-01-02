@@ -31,7 +31,9 @@ import Popper from './src/components/Popper'
 import UserProfile from './src/components/UserProfile'
 import Left from './src/components/Left'
 import LeftText from './src/components/LeftText'
-import TwoColumnGrid from './src/components/TwoColumnGrid'
+import ColumnGridTwo from './src/components/ColumnGridTwo'
+import ColumnGridThree from './src/components/ColumnGridThree'
+import ColumnGridFour from './src/components/ColumnGridFour'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -67,7 +69,9 @@ const components = {
   UserProfile: UserProfile,
   Left: Left,
   LeftText: LeftText,
-  TwoColumnGrid: TwoColumnGrid,
+  ColumnGridTwo: ColumnGridTwo,
+  ColumnGridThree: ColumnGridThree,
+  ColumnGridFour: ColumnGridFour,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {

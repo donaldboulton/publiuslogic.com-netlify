@@ -14,10 +14,10 @@ const UserProfile: FC<UserProfileProps> = props => {
   const { children, link, buttonLink, description, title, titleLink } = props
   return (
     <>
-      <div className="left-0 mb-6 mt-1 pt-4">
+      <div className="left-0 mb-4 mt-1 pt-3">
         <div class="mx-auto max-w-sm space-y-1 rounded-xl py-1 px-4 shadow-lg sm:flex sm:items-center sm:space-y-0 sm:space-x-4 sm:py-1">
           <div className="justify-left flex">{children}</div>
-          <div class="space-y-2 text-center sm:text-left">
+          <div class="space-y-1 text-center sm:text-left">
             <div class="space-y-0.5">
               <p class="text-lg font-semibold text-black">
                 <a href={link} target="_blank" rel="noopener noreferrer" aria-describedby={description}>
