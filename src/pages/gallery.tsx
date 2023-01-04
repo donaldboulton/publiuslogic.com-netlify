@@ -89,11 +89,11 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query ImagesForGallery {
-    images: allFile(filter: { relativeDirectory: { eq: "gallery" } }, sort: { name: ASC }) {
+    images: allFile(filter: { relativeDirectory: { eq: "angie" } }, sort: { name: ASC }) {
       edges {
         node {
           childImageSharp {
-            thumb: gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)
+            thumb: gatsbyImageData(width: 400, height: 400, placeholder: BLURRED)
             full: gatsbyImageData(layout: FULL_WIDTH)
           }
           name

@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          quality: 70,
+          quality: 80,
           formats: ['auto', 'webp', 'avif'],
           placeholder: 'blurred',
         },
