@@ -29,7 +29,7 @@ interface ImageGalleryProps {
 }
 
 const CustomWrapper = ({ children, onClick }) => (
-  <div className="bg-gray-300 p-1 text-slate-900 dark:bg-slate-800 dark:text-slate-200" onClick={onClick}>
+  <div className="p-1 text-slate-900 dark:text-slate-200" onClick={onClick}>
     {children}
   </div>
 )
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: gatsbyImageData(width: 400, height: 400, placeholder: BLURRED)
+            thumb: gatsbyImageData(width: 400, height: 500, placeholder: BLURRED)
             full: gatsbyImageData(layout: FULL_WIDTH)
           }
           name
