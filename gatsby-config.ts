@@ -71,6 +71,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads",
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img/`,
@@ -89,6 +96,7 @@ const config: GatsbyConfig = {
       options: {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
+          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -183,6 +191,12 @@ const config: GatsbyConfig = {
               rel: 'noopener',
             },
           },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static/img",
+            },
+          },
         ],
         remarkPlugins: [{ resolve: 'remark-slug' }],
       },
@@ -220,6 +234,13 @@ const config: GatsbyConfig = {
           ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentityWidget: true,
+      }
     },
     {
       resolve: 'gatsby-plugin-offline',
