@@ -32,7 +32,9 @@ import UserProfile from './src/components/UserProfile'
 import Left from './src/components/Left'
 import LeftText from './src/components/LeftText'
 import ColumnGridTwo from './src/components/ColumnGridTwo'
+import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
+import Confetti from './src/components/Confetti'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -69,7 +71,9 @@ const components = {
   Left: Left,
   LeftText: LeftText,
   ColumnGridTwo: ColumnGridTwo,
+  ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
+  Confetti: Confetti,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
