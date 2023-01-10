@@ -186,6 +186,42 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Good Evil</td>
                     <td className="py-4 px-6 text-slate-200">Devil</td>
                   </tr>
+                  <tr className="border-b border-slate-700 bg-slate-300 dark:bg-slate-700">
+                    <th
+                      scope="row"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
+                    >
+                      <Link
+                        to="/blog/more-more-more"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
+                      >
+                        more More MORE
+                      </Link>
+                    </th>
+                    <td className="py-4 px-6 text-slate-200">2022-10-10</td>
+                    <td className="py-4 px-6 text-slate-200">Creation</td>
+                    <td className="py-4 px-6 text-slate-200">God</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-slate-900 dark:text-slate-100"
+                    >
+                      <Link
+                        to="/blog/the-day-the-i"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-slate-200 underline underline-offset-8 hover:text-slate-100 hover:shadow-slate-200/50"
+                      >
+                        The Day The I
+                      </Link>
+                    </th>
+                    <td className="py-4 px-6 text-slate-200">2022-12-04</td>
+                    <td className="py-4 px-6 text-slate-200">Creation</td>
+                    <td className="py-4 px-6 text-slate-200">Devil</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
