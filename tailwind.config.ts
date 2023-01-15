@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const plugin = require('tailwindcss/plugin')
-const colors = require("tailwindcss/colors")
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
@@ -111,5 +111,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require("@tailwindcss/line-clamp"), require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

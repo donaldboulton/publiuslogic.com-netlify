@@ -14,7 +14,7 @@ const UserProfile: FC<UserProfileProps> = props => {
   const { children, link, buttonLink, description, title, titleLink } = props
   return (
     <>
-      <div className="left-0 mx-1 flex-none flex-nowrap w-80">
+      <div className="left-0 mx-1 w-80 flex-none flex-nowrap">
         <div class="mx-auto max-w-sm space-y-1 rounded-xl py-1 px-2 shadow-lg sm:flex sm:items-center sm:space-y-0 sm:space-x-4 sm:py-1">
           <div className="justify-left w-24">{children}</div>
           <div class="space-y-1 text-center sm:text-left">
