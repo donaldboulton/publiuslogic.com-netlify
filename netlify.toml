@@ -4,7 +4,7 @@
   NETLIFY_USE_YARN = "true"
   functions = "functions"
 [build.environment]
-  NODE_VERSION = "18.12.1"
+  NODE_VERSION = "18.13.0"
 [[headers]]
   for = "/*"
   [headers.values]
