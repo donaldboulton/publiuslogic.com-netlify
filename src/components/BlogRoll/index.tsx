@@ -136,7 +136,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <section className="mb-64">
         <div
           className={clsx(
-            '-pt-8 pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pb-8 dark:from-slate-900',
+            '-pt-10 pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pb-2 dark:from-slate-900',
             expanded ? 'sticky -mb-48' : 'absolute',
             transition && 'transition-opacity duration-300',
             expanded && (showCollapseButton ? 'opacity-100' : 'opacity-0')
