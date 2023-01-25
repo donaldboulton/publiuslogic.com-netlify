@@ -46,8 +46,28 @@
 		<lastmod>2022-12-04T22:27:18+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<image:image>
-			<image:loc>https://publiuslogic.com/static/assets/psychedelic-mushrooms.jpg</image:loc>
+			<image:loc>https://publiuslogic.com/static/img/psychedelic-mushrooms.jpg</image:loc>
 			<image:caption>psychedelic-mushrooms.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/angelina-jordan</loc>
+		<lastmod>2023-01-10T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/assets/angelina-jordan.jpg</image:loc>
+			<image:caption>angelina-jordan.jpg</image:caption>
+		</image:image>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://publiuslogic.com/blog/homeless</loc>
+		<lastmod>2023-01-01T22:27:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<image:image>
+			<image:loc>https://publiuslogic.com/static/img/homeless.jpg</image:loc>
+			<image:caption>homeless.jpg</image:caption>
 		</image:image>
 		<priority>0.80</priority>
 	</url>
