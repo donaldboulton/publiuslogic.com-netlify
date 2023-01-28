@@ -5,8 +5,8 @@ import { AnimatePresence } from 'framer-motion'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { Partytown } from '@builder.io/partytown/react'
 
-const ORIGIN = 'https://www.googletagmanager.com'
-const GATSBY_GA_MEASUREMENT_ID = 'G-LGV204F0PT'
+const ORIGIN = 'https://www.googletagmanager.com/'
+const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
   return
@@ -35,6 +35,15 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlA
     />,
   ])
   setPreBodyComponents([
+    <noscript
+      key="gtm"
+      dangerouslySetInnerHTML={{
+        __html: `
+                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCMLLP" height="0" width="0"
+                      style="display:none;visibility:hidden"></iframe>
+                `,
+      }}
+    />,
     React.createElement('script', {
       key: 'class',
       dangerouslySetInnerHTML: {
