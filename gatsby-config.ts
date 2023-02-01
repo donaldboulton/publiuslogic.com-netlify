@@ -18,10 +18,9 @@ const config: GatsbyConfig = {
       url: 'https://donboulton.com',
       summary: 'Who Resides in OKC.',
     },
-    description:
-      'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
+    description: 'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
-    siteImage: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+    siteImage: './static/images/jpg/dbbg.jpg',
     siteRss: 'https://publiuslogic.com/rss.sml',
     siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
@@ -36,6 +35,22 @@ const config: GatsbyConfig = {
     },
   },
   plugins: [
+    {
+      resolve: 'gatsby-remark-embed-video-ext',
+      options: {
+        width: 800,
+        ratio: 1.77 /* Optional: Defaults to 16/9 = 1.77 */,
+        related: false /* Optional: Will remove related videos from the end of an embedded YouTube video. */,
+        noIframeBorder: true /* Optional: Disable insertion of <style> border: 0 */,
+        loadingStrategy:
+          'lazy' /* Optional: Enable support for lazy-load offscreen iframes. Default is disabled. */,
+        containerClass:
+          'embedVideo-container' /* Optional: Custom CSS class for iframe container, for multiple classes separate them by space */,
+        sandboxOpts: 'allow-same-origin allow-scripts allow-popups allow-presentation',
+        iframeId:
+          false /* Optional: if true, iframe's id will be set to what is provided after 'youtube:' (YouTube IFrame player API requires iframe id) */,
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -119,22 +134,6 @@ const config: GatsbyConfig = {
               removeAccents: false,
               isIconAfterHeader: true,
               elements: ['h2', 'h3'],
-            },
-          },
-          {
-            resolve: 'gatsby-remark-embed-video-ext',
-            options: {
-              width: 800,
-              ratio: 1.77 /* Optional: Defaults to 16/9 = 1.77 */,
-              related: false /* Optional: Will remove related videos from the end of an embedded YouTube video. */,
-              noIframeBorder: true /* Optional: Disable insertion of <style> border: 0 */,
-              loadingStrategy:
-                'lazy' /* Optional: Enable support for lazy-load offscreen iframes. Default is disabled. */,
-              containerClass:
-                'embedVideo-container' /* Optional: Custom CSS class for iframe container, for multiple classes separate them by space */,
-              sandboxOpts: 'allow-same-origin allow-scripts allow-popups allow-presentation',
-              iframeId:
-                false /* Optional: if true, iframe's id will be set to what is provided after 'youtube:' (YouTube IFrame player API requires iframe id) */,
             },
           },
           {

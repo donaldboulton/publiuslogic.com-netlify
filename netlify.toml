@@ -59,13 +59,13 @@
       https://connect.facebook.net, 
       https://res.cloudinary.com, 
       https://i.ytimg.com,
-      https://api.github.com
-      https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-      https://stats.g.doubleclick.net/
-      https://www.google.com/recaptcha/api.js
-      https://cdn.lr-in-prod.com/LogRocket.min.js
-      https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js
-      https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js
+      https://api.github.com,
+      https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js,
+      https://stats.g.doubleclick.net/,
+      https://www.google.com/recaptcha/api.js,
+      https://cdn.lr-in-prod.com/LogRocket.min.js,
+      https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js,
+      https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js,
       https://unpkg.com/leaflet@1.9.2/dist/leaflet.css
     '''      
     Access-Control-Allow-Methods = '''
@@ -96,7 +96,12 @@
       picture-in-picture=*,
       usb=(self)
     '''
-   
+[[headers]]
+  for = "/static/assets/*"
+  [headers.values]
+    cache-control = '''
+	  public,
+	  max-age=31536000'''   
 
 [[edge_functions]]
 function = "set-req-header"
