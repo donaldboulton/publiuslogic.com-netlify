@@ -196,7 +196,7 @@ const config: GatsbyConfig = {
         background_color: fullConfig.theme.colors.slate['900'],
         theme_color: fullConfig.theme.colors.slate['900'],
         display: 'minimal-ui',
-        icon: 'static/images/gatsby/publiuslogic-logo.png',
+        icon: 'static/img/android-chrome-512x512.png',
       },
     },
     {
