@@ -128,11 +128,11 @@ const Tags = () => {
                     >
                       <div className="absolute inset-0 bg-gray-900 bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-75"></div>
                       <div className="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
-                        <h3 className="text-center text-2xl font-bold text-white">
+                        <h3 className="text-center text-2xl font-bold text-slate-300">
                           <span className="absolute inset-0"></span>
                           {tag.tag}
                         </h3>
-                        <p className="text-center text-sm font-medium text-gray-200">&nbsp;({tag.count})</p>
+                        <p className="text-center text-sm font-medium text-slate-300">&nbsp;({tag.count})</p>
                       </div>
                     </section>
                   </Link>

@@ -54,7 +54,7 @@ const Layout = ({ children }: LayoutProps) => {
             marginLeft: '20px',
           }}
         >
-          <Link to="/blog/privacy" className="text-gray-200" alt="Privacy Page">
+          <Link to="/blog/privacy" className="text-slate-300" alt="Privacy Page">
             Privacy Page
           </Link>
         </span>

@@ -18,9 +18,9 @@ const BlogPage = () => {
   return (
     <>
       <Layout>
-        <div className="search-beams z-30 -mt-4">
+        <div className="search-beams z-30 -mt-4 mb-40">
           <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-          <div className="mt-10">
+          <div className="mt-10 mb-40">
             <BlogRoll />
           </div>
           <ScrollDown

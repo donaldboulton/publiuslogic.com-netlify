@@ -49,7 +49,7 @@ const Home = ({ image }: HomeProps) => {
       <Layout>
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
-            <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-white md:mb-0">
+            <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-slate-300 md:mb-0">
               <div className="absolute left-0 bottom-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
               <img
                 src={image ? image : defaultImage}
@@ -76,7 +76,7 @@ const Home = ({ image }: HomeProps) => {
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap">
                 <div className="w-full px-4 pt-4 text-center md:w-4/12 lg:pt-10">
-                  <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-fuchsia-700 text-slate-200 shadow-lg shadow-fuchsia-700/50 transition-all duration-200">
+                  <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-wine-300 text-slate-200 shadow-lg shadow-wine-300/50 transition-all duration-200">
                     <div className="flex-auto px-4 py-5">
                       <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 p-3 text-center shadow-lg shadow-blue-700/50">
                         <StaticImage
@@ -96,7 +96,7 @@ const Home = ({ image }: HomeProps) => {
                           Planetary Laws
                         </Link>
                       </h6>
-                      <p className="mt-2 mb-4 text-white">
+                      <p className="mt-2 mb-4 text-slate-300">
                         The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all
                         Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill
                         your, "Unborn Children"!
@@ -130,7 +130,7 @@ const Home = ({ image }: HomeProps) => {
                           Breath Of Life
                         </Link>
                       </h6>
-                      <p className="mt-2 mb-4 text-white">
+                      <p className="mt-2 mb-4 text-slate-300">
                         Creation Of All, was formed through song that started the dance of life from a blank and
                         formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                       </p>
@@ -140,7 +140,7 @@ const Home = ({ image }: HomeProps) => {
                 <div className="w-full px-4 pt-6 text-center md:w-4/12">
                   <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-purple-600 text-slate-200 shadow-lg shadow-purple-600/50">
                     <div className="flex-auto px-4 py-5">
-                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-600 p-3 text-center shadow-lg shadow-fuchsia-600/50">
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine-300 p-3 text-center shadow-lg shadow-wine-300/50">
                         <StaticImage
                           layout="fixed"
                           width={24}
@@ -279,7 +279,7 @@ const Home = ({ image }: HomeProps) => {
                     </h3>
                     <p
                       className="first-letter:float-left first-letter:mr-3
-  first-letter:text-7xl first-letter:font-bold first-letter:text-white
+  first-letter:text-7xl first-letter:font-bold first-letter:text-slate-300
   first-line:uppercase first-line:tracking-widest
 "
                     >
@@ -288,14 +288,14 @@ const Home = ({ image }: HomeProps) => {
                       church on Earth. I Had to Walk this Earth twice as long as my Son Jesus. "To Know All before
                       Action"!
                     </p>
-                    <div className="mt-4 mb-4 text-lg font-light leading-relaxed text-white">
+                    <div className="mt-4 mb-4 text-lg font-light leading-relaxed text-slate-300">
                       <div>
                         <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
                           {' '}
                           Mans Books Of Life
                         </span>
                         <p>
-                          <span className="text-white"> Will be compared to Gods Books Of Life in one years time.</span>
+                          <span className="text-slate-300"> Will be compared to Gods Books Of Life in one years time.</span>
                         </p>
                       </div>
                       <a
@@ -388,8 +388,8 @@ const Home = ({ image }: HomeProps) => {
               <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                 <div className="w-full px-4">
                   <Updates />
-                  <div className="light:bg-gray-200 light:text-gray-800 mt-10 mb-4 rounded-lg bg-gray-800 text-gray-200 lg:mt-6">
-                    <h4 className="mb-2 text-center text-2xl font-semibold text-gray-200 underline decoration-fuchsia-600 decoration-wavy underline-offset-8">
+                  <div className="light:bg-gray-200 light:text-gray-800 mt-10 mb-4 rounded-lg bg-gray-800 text-slate-300 lg:mt-6">
+                    <h4 className="mb-2 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
                       Ordered Spiritual Reading List!
                     </h4>
                     <Table />

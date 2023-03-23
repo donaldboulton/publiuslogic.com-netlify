@@ -27,7 +27,7 @@ export default function Navigation() {
               <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
-                  <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset">
+                  <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-inset">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -66,7 +66,7 @@ export default function Navigation() {
                             to={item.href}
                             activeClassName="active"
                             className={classNames(
-                              item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-white',
+                              item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-slate-300',
                               'rounded-md px-3 py-2 text-lg font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -109,7 +109,7 @@ export default function Navigation() {
                         <span className="sr-only">Open Control Menu</span>
                         <ChevronDownIcon
                           className={`${open ? 'rotate-180 transform text-slate-200' : 'text-opacity-75'}
-                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out first-letter:w-5 hover:text-gray-200 group-hover:text-opacity-75`}
+                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out first-letter:w-5 hover:text-slate-300 group-hover:text-opacity-75`}
                           aria-hidden="true"
                         />
                       </Menu.Button>
@@ -129,7 +129,7 @@ export default function Navigation() {
                               to="/profile"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
@@ -145,11 +145,11 @@ export default function Navigation() {
                               to="/gallery"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <PhotographIcon className="block h-8 w-9 pr-2 text-fuchsia-500" aria-hidden="true" />
+                                <PhotographIcon className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
                                 <span>Gallery</span>
                               </span>
                             </Link>
@@ -162,7 +162,7 @@ export default function Navigation() {
                               to="https://publiuslogic.com/sitemap.xml"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white'
+                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">

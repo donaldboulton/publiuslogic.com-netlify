@@ -84,7 +84,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <section
         ref={ref}
         tabIndex="-1"
-        className="relative mx-auto max-w-7xl px-4 pb-4 focus:outline-none sm:px-3 md:px-5"
+        className="relative mx-auto mb-40 max-w-7xl px-4 pb-4 focus:outline-none sm:px-3 md:px-5"
       >
         <ul
           ref={inViewRef}
@@ -111,21 +111,21 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                   <div className="p-6">
                     {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
                     <Link to={`/${post.slug}`}>
-                      <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400">
+                      <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-wine-100">
                         {post.frontmatter.title}
                       </h2>
                     </Link>
                     <div className="flex flex-wrap items-center ">
-                      <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-white">
+                      <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-slate-300">
                         <CalendarIcon className="mr-1 h-4 w-4" />
                         {post.frontmatter.date}
                       </span>
-                      <span className="inline-flex items-center text-xs leading-none text-black dark:text-white">
+                      <span className="inline-flex items-center text-xs leading-none text-black dark:text-slate-300">
                         <UserCircleIcon className="mr-1 h-4 w-4" />
                         {post.frontmatter.author}
                       </span>
                     </div>
-                    <p className="mt-3 text-sm italic text-black dark:text-white">{post.excerpt}</p>
+                    <p className="mt-3 text-sm italic text-black dark:text-slate-300">{post.excerpt}</p>
                   </div>
                 </m.div>
               </m.div>
@@ -145,7 +145,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
           <button
             type="button"
             className={clsx(
-              'relative flex h-12 items-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-600',
+              'relative flex h-12 items-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-slate-300 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-600',
               transition && 'transition-transform',
               expanded && !showCollapseButton && 'translate-y-4',
               (!expanded || showCollapseButton) && 'pointer-events-auto'

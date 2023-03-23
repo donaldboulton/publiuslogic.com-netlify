@@ -100,7 +100,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="mb-3 block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="mb-3 block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="firstName"
                         name="firstName"
                         type="text"
@@ -135,7 +135,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="lastName"
                         name="lastName"
                         type="text"
@@ -176,7 +176,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="userName"
                         autoComplete="off"
                         placeholder="User Name"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-fuchsia-500 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('userName', { required: true, pattern: /^[a-zA-Z]+$/, maxLength: 100 })}
                       />
                     </div>
@@ -207,7 +207,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="email"
                         autoComplete="on"
                         placeholder="Email"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-fuchsia-500 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('email', {
                           required: 'Email is required',
                           pattern: {
@@ -249,7 +249,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="phone"
                         autoComplete="on"
                         placeholder="Phone Number"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-fuchsia-500 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('phone', {
                           required: 'Phone Number is required',
                           pattern: {
@@ -293,7 +293,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         name="subject"
                         id="subject"
                         placeholder="Subject"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-fuchsia-500 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('subject', { required: true })}
                       />
                     </div>
@@ -326,7 +326,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                       <textarea
                         id="message"
                         name="message"
-                        className="mt-1 block w-full rounded-md border-slate-300 bg-slate-300 p-2.5 pl-14 text-slate-900 caret-blue-500 shadow-sm focus:border-fuchsia-500 focus:caret-indigo-500 focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-300 bg-slate-300 p-2.5 pl-14 text-slate-900 caret-blue-500 shadow-sm focus:border-wine-300 focus:caret-indigo-500 focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         rows={5}
                         name="text"
                         {...register('message', { required: true })}

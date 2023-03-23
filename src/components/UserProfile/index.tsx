@@ -31,7 +31,7 @@ const UserProfile: FC<UserProfileProps> = props => {
               </p>
             </div>
             <a href={buttonLink} target="_blank" rel="noopener noreferrer" aria-describedby="Contact">
-              <button class="rounded-full border border-purple-200 px-4 py-1 text-sm font-semibold text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+              <button class="rounded-full border border-purple-200 px-4 py-1 text-sm font-semibold text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                 Contact
               </button>
             </a>

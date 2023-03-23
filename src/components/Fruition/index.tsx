@@ -40,7 +40,7 @@ export default function Fruition() {
             animate={isVisible ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-rose-600 text-white shadow-lg">
+            <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-rose-600 text-slate-300 shadow-lg">
               <StaticImage
                 className="w-full rounded-t-lg align-middle"
                 formats={['auto', 'webp']}
@@ -65,8 +65,8 @@ export default function Fruition() {
                     className="fill-current text-rose-600 shadow-lg shadow-rose-500/50"
                   ></polygon>
                 </svg>
-                <h4 className="text-xl font-bold text-white">Fruition is Over, "As of Nov 15 2022"!</h4>
-                <div className="mt-2 text-lg font-light text-white">
+                <h4 className="text-xl font-bold text-slate-300">Fruition is Over, "As of Nov 15 2022"!</h4>
+                <div className="mt-2 text-lg font-light text-slate-300">
                   Fruition has come and gone. Revelation 22:12,
                   <p>Whatever Horse you ride or path your on in life. You will be stuck on that path for eternity.</p>
                 </div>

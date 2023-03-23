@@ -38,8 +38,8 @@ export default function Updates() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="relative flex w-full min-w-0 flex-col break-words rounded-lg shadow-lg">
-            <div className="lg:p-10t m-2 flex-auto p-5 text-white">
-              <h4 className="mb-2 text-center text-2xl font-semibold text-slate-200 underline decoration-fuchsia-600 decoration-wavy underline-offset-8">
+            <div className="lg:p-10t m-2 flex-auto p-5 text-slate-300">
+              <h4 className="mb-2 text-center text-2xl font-semibold text-slate-200 underline decoration-wine-200 decoration-wavy underline-offset-8">
                 Update's To Creation, and Virtue!
               </h4>
               <div className="mt-1 mb-4 text-center leading-relaxed text-slate-200">
@@ -48,7 +48,7 @@ export default function Updates() {
               </div>
               <p className="mt-1 mb-20 text-center leading-relaxed text-slate-200">
                 Final Trinity Works.{' '}
-                <span className="text-center underline decoration-fuchsia-600 decoration-wavy underline-offset-4">
+                <span className="text-center underline decoration-wine-200 decoration-wavy underline-offset-4">
                   <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
                     {' '}
                     The Trinity Of Man!

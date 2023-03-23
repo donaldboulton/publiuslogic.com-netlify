@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby'
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
 const resolveConfig = require('tailwindcss/resolveConfig')
-const tailwindConfig = require('./tailwind.config.ts')
+const tailwindConfig = require('./tailwind.config.js')
 
 const fullConfig = resolveConfig(tailwindConfig)
 

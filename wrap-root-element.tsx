@@ -25,7 +25,6 @@ import SingleAccordion from './src/components/SingleAccordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
-import Typing from './src/components/Typing'
 import Popper from './src/components/Popper'
 import UserProfile from './src/components/UserProfile'
 import Left from './src/components/Left'
@@ -62,7 +61,6 @@ const components = {
   Table: Table,
   Modal: Modal,
   Section: Section,
-  Typing: Typing,
   Popper: Popper,
   UserProfile: UserProfile,
   Left: Left,

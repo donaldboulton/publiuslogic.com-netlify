@@ -87,7 +87,7 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="w-48 appearance-none rounded border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-fuchsia-500 focus:outline-none focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-200"
+                    className="w-48 appearance-none rounded border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-200"
                     aria-label="Enter Email"
                     {...register('email', {
                       required: 'Email is required',

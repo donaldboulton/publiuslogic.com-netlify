@@ -125,7 +125,7 @@ const Testimonial = ({ tag, expanded }: TestimonialProps) => {
                     </div>
                     <div className="mt-0.5">
                       <Link to={`/${post.slug}`}>
-                        <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-fuchsia-400">
+                        <h2 className="title-font mt-2 text-xl font-bold text-slate-900 dark:text-slate-200 dark:hover:text-wine-300">
                           {post.frontmatter.author}
                         </h2>
                       </Link>
@@ -224,7 +224,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
         <button
           type="button"
           className={clsx(
-            'relative flex h-12 items-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-600',
+            'relative flex h-12 items-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-slate-300 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-600',
             transition && 'transition-transform',
             expanded && !showCollapseButton && 'translate-y-4',
             (!expanded || showCollapseButton) && 'pointer-events-auto'
@@ -236,7 +236,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
       </div>
       {posts.length > POSTS_PER_PAGE ? (
         <ReactPaginate
-          previousLinkClassName="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 dark:border-gray-900 bg-fuchsia-700 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-fuchsia-800"
+          previousLinkClassName="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 dark:border-gray-900 bg-wine-300 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-fuchsia-800"
           previousLabel={
             <>
               <span className="sr-only">Previous</span>
@@ -255,7 +255,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
               </svg>
             </>
           }
-          nextLinkClassName="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-800 text-gray-200 bg-fuchsia-700 hover:bg-fuchsia-800 text-sm font-medium"
+          nextLinkClassName="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-800 text-slate-300 bg-wine-300 hover:bg-fuchsia-800 text-sm font-medium"
           nextLabel={
             <>
               <span className="sr-only">Next</span>
@@ -274,7 +274,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
               </svg>
             </>
           }
-          pageLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 bg-slate-300 dark:bg-slate-800 text-sm font-medium hover:bg-fuchsia-700 text-sm font-medium"
+          pageLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 bg-slate-300 dark:bg-slate-800 text-sm font-medium hover:bg-wine-300 text-sm font-medium"
           breakLabel={'...'}
           breakLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-sm font-medium"
           pageCount={Math.ceil(posts.length / POSTS_PER_PAGE)}
@@ -282,7 +282,7 @@ const Testimonials = ({ tag, post }: TestimonialsProps) => {
           pageRangeDisplayed={3}
           onPageChange={handlePageClick}
           containerClassName="relative z-0 inline-flex shadow-sm -space-x-px border-gray-300 dark:border-gray-900"
-          activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-200 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
+          activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-200 text-sm font-medium hover:bg-wine-300 bg-wine-300"
         />
       ) : (
         ''

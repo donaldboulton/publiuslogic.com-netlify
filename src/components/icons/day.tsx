@@ -7,7 +7,7 @@ const Day: React.FC = () => {
         id="prefix__Group_143"
         data-name="Group 143"
         transform="translate(-15 -13)"
-        className="fill-current text-white"
+        className="fill-current text-slate-300"
       >
         <path
           id="prefix__Path_85"

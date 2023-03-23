@@ -10,7 +10,7 @@ const Login = () => {
     <>
       <section className="my-4 flex flex-shrink-0 items-center pr-2">
         <button
-          className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white"
+          className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300"
           onClick={() => signIn()}
         >
           <span className="flex flex-shrink-0 items-center pr-2 text-lg">
@@ -21,7 +21,7 @@ const Login = () => {
         <span className="ml-4">
           {isSignedIn && (
             <button
-              className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-white"
+              className="block rounded-md bg-slate-700 px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300"
               onClick={signOut}
             >
               <span className="flex flex-shrink-0 items-center text-lg">

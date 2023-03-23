@@ -90,7 +90,7 @@ export default function Features() {
                   {features.map(feature => (
                     <div key={feature.name} className="relative">
                       <dt>
-                        <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-fuchsia-600 text-gray-200 hover:bg-fuchsia-700">
+                        <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-wine-300 text-slate-300 hover:bg-wine-300">
                           <feature.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
                         <p className="ml-16 text-lg font-medium leading-6">{feature.name}</p>

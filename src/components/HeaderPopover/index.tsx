@@ -123,12 +123,12 @@ function HeaderPopover() {
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md px-3 py-2 text-lg text-white hover:bg-gray-800 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
+                group inline-flex items-center rounded-md px-3 py-2 text-lg text-slate-300 hover:bg-gray-800 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
             >
               <span>Featured</span>
               <ChevronDownIcon
                 className={`${open ? 'rotate-180 transform text-red-600' : 'text-opacity-75'}
-                  ml-1 h-5 w-5 text-gray-200 transition duration-150 ease-in-out group-hover:text-opacity-75`}
+                  ml-1 h-5 w-5 text-slate-300 transition duration-150 ease-in-out group-hover:text-opacity-75`}
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -166,17 +166,17 @@ function HeaderPopover() {
                       href="https://bibwoe.com/posts/enoch-preface"
                       rel="noopener noreferrer"
                       target="_blank"
-                      className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-fuchsia-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
+                      className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-wine-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
                     >
                       <span className="flex items-center">
-                        <span className="text-lg font-medium text-gray-200">
+                        <span className="text-lg font-medium text-slate-300">
                           <span className="flex items-center">
-                            <LinkIcon className="h-6 w-6 text-fuchsia-400 hover:text-fuchsia-500" />
+                            <LinkIcon className="h-6 w-6 text-wine-300 hover:text-wine-300" />
                             &nbsp; Books Of Enoch and The Last Testament
                           </span>
                         </span>
                       </span>
-                      <span className="block text-sm text-gray-200">
+                      <span className="block text-sm text-slate-300">
                         Enoch Moved to Basic Instructions Books While On Earth!
                       </span>
                     </a>

@@ -86,10 +86,10 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
             >
               <Popover.Panel className="relative h-64 w-64">
                 <div className="mt-2 ml-2 mr-2 rounded-lg bg-slate-300 opacity-75 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-800">
-                  <div className="mt-2 text-center underline decoration-fuchsia-600 decoration-wavy underline-offset-2">
+                  <div className="mt-2 text-center underline decoration-wine-200 decoration-wavy underline-offset-2">
                     Table Of Contents
                   </div>
-                  <div className="text-center text-xl text-slate-900 underline decoration-fuchsia-600 decoration-wavy underline-offset-2 dark:text-slate-200"></div>
+                  <div className="text-center text-xl text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-2 dark:text-slate-200"></div>
                   <WavyHr className="mt-1 mb-1" />
                   <nav className="nav-scroll h-96 w-auto overflow-y-auto overflow-x-hidden">
                     <ul className="flex flex-col">
@@ -101,7 +101,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         return (
                           <li className="ml-1 mb-2 mt-2 mr-1 list-none p-1" key={heading.value}>
                             <Link
-                              className="underline decoration-fuchsia-600 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
+                              className="underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
                               rel="noopener noreferrer"
                               to={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
                             >

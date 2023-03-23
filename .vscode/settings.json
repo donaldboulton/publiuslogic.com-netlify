@@ -3,9 +3,9 @@
 
   "editor.cursorSmoothCaretAnimation": "off",
 
-  "editor.fontSize": 18,
+  "editor.fontSize": 20,
   "editor.fontWeight": "normal",
-  "editor.fontFamily": "Consolas,   'Courier New', monospace",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true, // Does this have a noticeable effect?
 
   "editor.lineNumbers": "on"

@@ -13,7 +13,7 @@ export default function CTA() {
           <div className="inline-flex rounded-md shadow">
             <a
               href="https://github.com/donaldboulton/publiuslogic.com/generate"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-fuchsia-400 px-5 py-3 text-base font-medium text-gray-200 hover:bg-fuchsia-500"
+              className="inline-flex items-center justify-center rounded-md border border-transparent bg-wine-400 px-5 py-3 text-base font-medium text-slate-300 hover:bg-wine-400"
             >
               Use Template
             </a>
@@ -21,7 +21,7 @@ export default function CTA() {
           <div className="ml-3 inline-flex rounded-md shadow">
             <a
               href="https://github.com/donaldboulton/publiuslogic.com"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-fuchsia-500 px-5 py-3 text-base font-medium text-gray-200 hover:bg-fuchsia-700"
+              className="inline-flex items-center justify-center rounded-md border border-transparent bg-wine-300 px-5 py-3 text-base font-medium text-slate-300 hover:bg-wine-300"
             >
               Github Repo
             </a>

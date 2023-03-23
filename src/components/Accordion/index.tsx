@@ -49,7 +49,7 @@ const Accordion = () => {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 px-4 py-2 text-left text-sm font-medium text-slate-200 hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
                         <span className="text-lg">Lyrics Suspicious Minds</span>
                         <ChevronDownIcon
-                          className={`${open ? 'rotate-180 transform' : ''} mt-1 h-5 w-5 text-gray-200`}
+                          className={`${open ? 'rotate-180 transform' : ''} mt-1 h-5 w-5 text-slate-300`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="text-md px-4 pt-4 pb-2 text-slate-200">
@@ -113,7 +113,7 @@ const Accordion = () => {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-300 px-4 py-2 text-left text-sm font-medium text-slate-200 hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
                         <span className="text-lg">Credits</span>
                         <ChevronDownIcon
-                          className={`${open ? 'rotate-180 transform' : ''} mt-1 h-5 w-5 text-gray-200`}
+                          className={`${open ? 'rotate-180 transform' : ''} mt-1 h-5 w-5 text-slate-300`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="text-md px-4 pt-4 pb-2 text-slate-200">

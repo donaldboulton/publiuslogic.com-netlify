@@ -30,13 +30,13 @@ const NotFoundPage = () => {
             <div className="text-slate-900 dark:text-slate-200">
               <Link
                 to="/"
-                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
+                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 py-2 px-4 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
               >
                 Back to Home Page
               </Link>
               <Link
                 to="/contact"
-                className="mr-2 inline-flex justify-center rounded-md bg-fuchsia-500 py-2 px-4 text-white shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 hover:shadow-fuchsia-700/50"
+                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 py-2 px-4 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
               >
                 Notify Us of the Error
               </Link>

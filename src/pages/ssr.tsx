@@ -28,7 +28,7 @@ const SsrPage = ({ serverData }) => {
                 <div>
                   <Link
                     to="/blog/gatsby-version-four/#ssr-example"
-                    className="mt-2 block text-lg font-medium leading-tight text-fuchsia-600 hover:text-fuchsia-700 hover:underline"
+                    className="mt-2 block text-lg font-medium leading-tight text-wine-300 hover:text-wine-300 hover:underline"
                   >
                     Back to Post
                   </Link>
@@ -40,7 +40,7 @@ const SsrPage = ({ serverData }) => {
                 <div>
                   <button
                     type="button"
-                    className="rounded-md border border-transparent bg-fuchsia-500 p-2 text-sm font-medium text-gray-200 shadow-lg shadow-fuchsia-700/50 hover:bg-fuchsia-700"
+                    className="rounded-md border border-transparent bg-wine-300 p-2 text-sm font-medium text-slate-300 shadow-lg shadow-wine-300/50 hover:bg-wine-300"
                     onClick={refreshPage}
                   >
                     Refresh Component
