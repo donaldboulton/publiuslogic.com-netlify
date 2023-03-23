@@ -2,7 +2,7 @@
 
 ## Technical notes about this website
 
-Upgrade as of December 15th, 2022 to Gatsby 5.3.3
+Upgrade as of Feb 15th, 2023 to Gatsby 5.6.0
 
 🎁 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/donaldboulton/publiuslogic.com/master/LICENSE.txt)
 [![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/donaldboulton)
@@ -62,8 +62,8 @@ This is starter template for a full featured marketing and blog website based on
 - Support for code syntax highlighting
 - Manifest and offline support
 - Contact form using sendgrid email and Gatsby functions
-- Full SEO support (via Gatsby v4.22.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
-- Tailwind Css v3.0.7, for super styling
+- Full SEO support (via Gatsby v5.5.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
+- Tailwind Css v3.2.4, for super styling
 
 ## How to use the starter
 
