@@ -128,7 +128,7 @@ export default function IndexFooter() {
                     <li>
                       <Link
                         className="block pb-2 text-sm font-semibold text-gray-200 hover:text-fuchsia-500"
-                        to="/blog/obsd-licence"
+                        to="/blog/0bsd-licence"
                       >
                         BSD License
                       </Link>
