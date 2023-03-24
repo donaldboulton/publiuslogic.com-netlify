@@ -67,14 +67,16 @@ const Reactions = ({ slug }) => {
   }
 
   return (
-    <div>
-      <ReactionsWidget
-        reactions={reactions}
-        reactionsCount={reactionsCount}
-        userReactions={userReactions}
-        onSelect={debounce(reactionOnSelect, 500)}
-      />
-    </div>
+    <Section>
+      <div>
+        <ReactionsWidget
+          reactions={reactions}
+          reactionsCount={reactionsCount}
+          userReactions={userReactions}
+          onSelect={debounce(reactionOnSelect, 500)}
+        />
+      </div>
+    </Section>
   )
 }
 

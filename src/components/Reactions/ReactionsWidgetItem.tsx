@@ -16,7 +16,7 @@ const ReactionsWidgetItem = ({ reaction, reactionsCount, userReactions, onSelect
   }
 
   return (
-    <ul className='list-none'>
+    <ul className="list-none">
       <li className="p-2">
         <div className="flex flex-col items-center">
           <div
