@@ -122,7 +122,7 @@ export default function Navigation() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 mt-3 w-48 origin-top-right rounded-md bg-slate-900 py-1 text-slate-200 opacity-75 shadow-lg ring-1 ring-black ring-opacity-5 hover:opacity-100 focus:outline-none">
+                      <Menu.Items className="ring-black absolute right-0 mt-3 w-48 origin-top-right rounded-md bg-slate-900 py-1 text-slate-200 opacity-75 shadow-lg ring-1 ring-opacity-5 hover:opacity-100 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -166,7 +166,7 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <MapIcon className="block h-9 w-9 pr-2 text-green-600" aria-hidden="true" />
+                                <MapIcon className="text-green-600 block h-9 w-9 pr-2" aria-hidden="true" />
                                 <span>Sitemap</span>
                               </span>
                             </Link>

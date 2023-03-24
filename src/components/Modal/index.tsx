@@ -48,7 +48,7 @@ export const Modal: FC<ModalProps> = props => {
           onClose={() => setIsOpen(false)}
         >
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
-          <div class="fixed inset-0 bg-black/30" aria-hidden="true" />
+          <div class="bg-black/30 fixed inset-0" aria-hidden="true" />
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

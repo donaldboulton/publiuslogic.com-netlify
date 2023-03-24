@@ -18,7 +18,8 @@ const config: GatsbyConfig = {
       url: 'https://donboulton.com',
       summary: 'Who Resides in OKC.',
     },
-    description: 'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
+    description:
+      'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
     siteImage: './static/images/jpg/dbbg.jpg',
     siteRss: 'https://publiuslogic.com/rss.sml',
@@ -42,8 +43,7 @@ const config: GatsbyConfig = {
         ratio: 1.77 /* Optional: Defaults to 16/9 = 1.77 */,
         related: false /* Optional: Will remove related videos from the end of an embedded YouTube video. */,
         noIframeBorder: true /* Optional: Disable insertion of <style> border: 0 */,
-        loadingStrategy:
-          'lazy' /* Optional: Enable support for lazy-load offscreen iframes. Default is disabled. */,
+        loadingStrategy: 'lazy' /* Optional: Enable support for lazy-load offscreen iframes. Default is disabled. */,
         containerClass:
           'embedVideo-container' /* Optional: Custom CSS class for iframe container, for multiple classes separate them by space */,
         sandboxOpts: 'allow-same-origin allow-scripts allow-popups allow-presentation',

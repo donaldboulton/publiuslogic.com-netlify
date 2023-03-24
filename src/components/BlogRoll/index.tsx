@@ -116,16 +116,16 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                       </h2>
                     </Link>
                     <div className="flex flex-wrap items-center ">
-                      <span className="mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none text-black dark:text-slate-300">
+                      <span className="text-black mr-3 inline-flex items-center border-r-2 border-fuchsia-200 py-1 pr-3 text-xs leading-none dark:text-slate-300">
                         <CalendarIcon className="mr-1 h-4 w-4" />
                         {post.frontmatter.date}
                       </span>
-                      <span className="inline-flex items-center text-xs leading-none text-black dark:text-slate-300">
+                      <span className="text-black inline-flex items-center text-xs leading-none dark:text-slate-300">
                         <UserCircleIcon className="mr-1 h-4 w-4" />
                         {post.frontmatter.author}
                       </span>
                     </div>
-                    <p className="mt-3 text-sm italic text-black dark:text-slate-300">{post.excerpt}</p>
+                    <p className="text-black mt-3 text-sm italic dark:text-slate-300">{post.excerpt}</p>
                   </div>
                 </m.div>
               </m.div>

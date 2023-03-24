@@ -12,6 +12,7 @@ import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
+import Reactions from '@/components/Reactions'
 
 const components = { Link }
 
@@ -76,11 +77,11 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
         <div className="blog-beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10">
-            <section className="prose prose-text:text-slate-900 prose-text:dark:text-slate-200 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 mx-auto mt-2 mb-10 max-w-screen-lg px-4 lg:px-0">
+            <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mt-2 mb-10 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
               <div className="mt-4 py-4">
                 <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
                 <div className="flex items-center">
-                  <p className="first-letter:font-garamond ml-2 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300">
+                  <p className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:font-garamond first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300">
                     {frontmatter.description}
                   </p>
                 </div>
@@ -108,6 +109,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                 </div>
               </div>
               <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+              <Reactions slug={data.mdx.slug} />
               <GiscusComments mapping={pathname} />
               <WavyHr />
             </section>

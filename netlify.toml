@@ -2,7 +2,7 @@
   publish = "public"
   command = "gatsby build"
   NETLIFY_USE_YARN = "true"
-  functions = "functions"
+  functions = "lambda"
 [build.environment]
   NODE_VERSION = "18.13.0"
 [[headers]]
@@ -106,3 +106,13 @@
 [[edge_functions]]
 function = "set-req-header"
 path = "/development"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
+    Access-Control-Allow-Origin = "*"
+[[plugins]]
+package = "netlify-plugin-inline-functions-env"

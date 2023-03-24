@@ -295,7 +295,10 @@ const Home = ({ image }: HomeProps) => {
                           Mans Books Of Life
                         </span>
                         <p>
-                          <span className="text-slate-300"> Will be compared to Gods Books Of Life in one years time.</span>
+                          <span className="text-slate-300">
+                            {' '}
+                            Will be compared to Gods Books Of Life in one years time.
+                          </span>
                         </p>
                       </div>
                       <a
@@ -363,7 +366,7 @@ const Home = ({ image }: HomeProps) => {
               </svg>
             </div>
           </section>
-          <section className="bg-primary-dark relative block pt-10 pb-20">
+          <section className="relative block bg-primary-dark pt-10 pb-20">
             <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
               <LatestArticles />
               <div className="pointer-events-none absolute bottom-0 right-0 left-1/2 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent transition-all duration-200 md:mt-20">

@@ -10,7 +10,7 @@ const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <AnimatePresence wait>{element}</AnimatePresence>
   </MDXEmbedProvider>
 }

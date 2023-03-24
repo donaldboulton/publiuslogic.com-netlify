@@ -85,7 +85,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               <Popover.Panel className="relative h-64 w-64">
-                <div className="mt-2 ml-2 mr-2 rounded-lg bg-slate-300 opacity-75 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-800">
+                <div className="ring-black mt-2 ml-2 mr-2 rounded-lg bg-slate-300 opacity-75 shadow-lg ring-1 ring-opacity-5 dark:bg-slate-800">
                   <div className="mt-2 text-center underline decoration-wine-200 decoration-wavy underline-offset-2">
                     Table Of Contents
                   </div>

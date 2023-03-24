@@ -141,7 +141,7 @@ function HeaderPopover() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute left-1/2 z-10 mt-2 w-screen max-w-md -translate-x-1/2 transform px-4 sm:px-0 lg:ml-20 lg:max-w-4xl">
-                <div className="overflow-hidden rounded-lg bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5">
+                <div className="ring-black overflow-hidden rounded-lg bg-slate-800 shadow-lg ring-1 ring-opacity-5">
                   <nav className="nav-scroll">
                     <div className="relative grid h-96 max-h-full gap-8 bg-slate-800 p-7 md:max-h-screen lg:grid-cols-3">
                       {posts.map(item => (

@@ -49,7 +49,7 @@ export default function LatestArticles() {
             animate={isVisible5 ? 'visible' : 'hidden'}
             transition={{ duration: 0.6, ease: 'easeIn' }}
           >
-            <div className="bg-primary-dark mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl bg-primary-dark px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-2xl py-4 sm:py-8 lg:max-w-none lg:py-10">
                 <div className="flex flex-row items-center">
                   <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>

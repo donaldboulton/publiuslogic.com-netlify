@@ -19,7 +19,7 @@ const UserProfile: FC<UserProfileProps> = props => {
           <div className="justify-left w-24">{children}</div>
           <div class="space-y-1 text-center sm:text-left">
             <div class="space-y-0.5">
-              <p class="text-lg font-semibold text-black">
+              <p class="text-black text-lg font-semibold">
                 <a href={link} target="_blank" rel="noopener noreferrer" aria-describedby={description}>
                   {description}
                 </a>
