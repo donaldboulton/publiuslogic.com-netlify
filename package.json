@@ -33,6 +33,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@netlify/functions": "^1.4.0",
+    "@sentry/gatsby": "^7.45.0",
     "@sentry/node": "^7.44.2",
     "@svgr/webpack": "^6.5.1",
     "@types/react-google-recaptcha": "^2.1.5",
