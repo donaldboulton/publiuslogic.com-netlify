@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { debounce } from '../../utils/debounce'
 import ReactionsWidget from './ReactionsWidget'
+import Section from '@/components/Section'
 
 const initialReactionsCount = {
   like: 0,
