@@ -114,3 +114,5 @@ path = "/development"
   [redirects.headers]
     X-From = "Netlify"
     Access-Control-Allow-Origin = "*"
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
