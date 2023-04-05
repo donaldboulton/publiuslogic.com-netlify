@@ -63,7 +63,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
     <>
       <Layout>
         <div className="search-beams z-30 -mt-4">
-          <PageHero title="Gallery: Cats" description="My Cats!" image={Image} />
+          <PageHero title="Gallery: Angie" description="My Cats!" image={Image} />
           <section class="mb-32 overflow-hidden">
             <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
               <div class="-m-1 flex flex-wrap justify-center md:-m-2">
@@ -89,7 +89,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query ImagesForGallery {
-    images: allFile(filter: { relativeDirectory: { eq: "gallery" } }, sort: { name: ASC }) {
+    images: allFile(filter: { relativeDirectory: { eq: "angie" } }, sort: { name: ASC }) {
       edges {
         node {
           childImageSharp {
@@ -109,7 +109,7 @@ export default ImageGallery
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Gallery" description="Kitty Pictures" image={ogimage} pathname="/dsg">
+      <Seo type="page" title="Gallery" description="Angelina Pictures" image={ogimage} pathname="/dsg">
         <title>Gallery</title>
         <meta name="description" content="PubliusLogic Gallery Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -187,7 +187,7 @@ export function Head(props: HeadProps) {
               '@type': 'ListItem',
               item: {
                 '@id': 'https://publiuslogic.com/gallery',
-                name: 'Image Gallery',
+                name: 'Angie Gallery',
               },
               position: '2',
             },
