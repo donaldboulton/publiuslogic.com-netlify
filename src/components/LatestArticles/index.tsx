@@ -55,13 +55,13 @@ export default function LatestArticles() {
                   <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>
                   <Link
                     to="/blog"
-                    className="mt-2 ml-4 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:text-wine-200 md:px-6 md:py-3 md:text-lg"
+                    className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:text-wine-200 md:px-6 md:py-3 md:text-lg"
                   >
                     Articles
                   </Link>
                   <Link
                     to="/tags"
-                    className="mt-2 ml-4 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 md:px-6 md:py-3 md:text-lg"
+                    className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 md:px-6 md:py-3 md:text-lg"
                   >
                     Tags
                   </Link>
@@ -76,7 +76,7 @@ export default function LatestArticles() {
                         <Tags tags={post.frontmatter.tags} />
                       </div>
                       <Link to={`/${post.slug}`}>
-                        <h2 className="mt-2 mb-2 text-2xl font-bold leading-tight underline decoration-wine-200 decoration-wavy underline-offset-8 md:text-2xl">
+                        <h2 className="mb-2 mt-2 text-2xl font-bold leading-tight underline decoration-wine-200 decoration-wavy underline-offset-8 md:text-2xl">
                           {post.frontmatter.title}
                         </h2>
                       </Link>
@@ -91,9 +91,9 @@ export default function LatestArticles() {
                     </div>
                     <WavyHr className="mb-4" />
                     <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
-                    <div className="mt-10 mb-4 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
+                    <div className="mb-4 mt-10 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
                       <List>
-                        <div className="ml-12 mb-6 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
+                        <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           God and Creation
                         </div>
                         <List.Item>
@@ -137,7 +137,7 @@ export default function LatestArticles() {
                         </List.Item>
                       </List>
                       <List>
-                        <div className="ml-12 mb-6 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
+                        <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           Law and Logic
                         </div>
                         <List.Item>
@@ -180,7 +180,7 @@ export default function LatestArticles() {
                         </List.Item>
                       </List>
                       <List>
-                        <div className="ml-12 mb-6 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
+                        <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           Programming
                         </div>
                         <List.Item>

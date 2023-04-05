@@ -68,7 +68,7 @@ export default function Features() {
           animate={isVisible ? 'visible' : 'hidden'}
           transition={{ duration: 0.8, ease: 'easeIn' }}
         >
-          <div className="pt-8 pb-8 text-slate-200">
+          <div className="pb-8 pt-8 text-slate-200">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="lg:text-center">
                 <h2 className="text-base font-semibold uppercase tracking-wide">PubliusLogic</h2>
@@ -95,7 +95,7 @@ export default function Features() {
                         </div>
                         <p className="ml-16 text-lg font-medium leading-6">{feature.name}</p>
                       </dt>
-                      <dd className="mt-2 ml-16 text-base">{feature.description}</dd>
+                      <dd className="ml-16 mt-2 text-base">{feature.description}</dd>
                     </div>
                   ))}
                 </dl>

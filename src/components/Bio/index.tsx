@@ -21,13 +21,13 @@ const Bio = () => {
             loading="eager"
           />
         </div>
-        <div className="-mt-1 text-center sm:mt-0 sm:ml-4 sm:text-left">
+        <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left">
           <div className="text-base leading-6">
             <WavingHand /> <span className="font-medium"> Developed and Written by: </span>{' '}
             <span className="font-medium italic">Donald Boulton</span>
             <Applause />
           </div>
-          <div className="mt-1 ml-4 text-base">
+          <div className="ml-4 mt-1 text-base">
             <BioTypist />
           </div>
         </div>

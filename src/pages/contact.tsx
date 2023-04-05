@@ -73,7 +73,7 @@ function ContactUs() {
                     )
                   )}
                 </div>
-                <div className="mt-4 mb-6 flex justify-center">
+                <div className="mb-6 mt-4 flex justify-center">
                   <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                     <StaticImage
                       className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"

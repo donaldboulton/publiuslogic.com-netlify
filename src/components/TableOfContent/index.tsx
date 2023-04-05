@@ -69,7 +69,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
       <Popover as="div">
         {({ open }) => (
           <>
-            <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pr-2 pt-2 pb-0 text-slate-900 dark:bg-slate-700 dark:text-slate-200">
+            <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200">
               <span className="headings-center inline-flex">
                 <ViewListIcon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-200" />
               </span>
@@ -85,12 +85,12 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               <Popover.Panel className="relative h-64 w-64">
-                <div className="ring-black mt-2 ml-2 mr-2 rounded-lg bg-slate-300 opacity-75 shadow-lg ring-1 ring-opacity-5 dark:bg-slate-800">
+                <div className="ring-black ml-2 mr-2 mt-2 rounded-lg bg-slate-300 opacity-75 shadow-lg ring-1 ring-opacity-5 dark:bg-slate-800">
                   <div className="mt-2 text-center underline decoration-wine-200 decoration-wavy underline-offset-2">
                     Table Of Contents
                   </div>
                   <div className="text-center text-xl text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-2 dark:text-slate-200"></div>
-                  <WavyHr className="mt-1 mb-1" />
+                  <WavyHr className="mb-1 mt-1" />
                   <nav className="nav-scroll h-96 w-auto overflow-y-auto overflow-x-hidden">
                     <ul className="flex flex-col">
                       {headings.map(heading => {
@@ -99,7 +99,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         }
 
                         return (
-                          <li className="ml-1 mb-2 mt-2 mr-1 list-none p-1" key={heading.value}>
+                          <li className="mb-2 ml-1 mr-1 mt-2 list-none p-1" key={heading.value}>
                             <Link
                               className="underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
                               rel="noopener noreferrer"

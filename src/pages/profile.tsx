@@ -29,8 +29,8 @@ function Profile() {
         <div className="search-beams z-30 -mt-4">
           <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
           <section className="mb-11">
-            <div className="mt-6 mb-6 text-center">
-              <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">Github Profile</h2>
+            <div className="mb-6 mt-6 text-center">
+              <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">Github Profile</h2>
               <div className="mb-10 text-slate-200">
                 <div className="flex justify-center">
                   <StaticImage
@@ -114,7 +114,7 @@ function Profile() {
               className="absolute right-0 mb-10 mt-20 w-full overflow-hidden bg-transparent pt-10"
             ></div>
             <div className="mt-2">
-              <div className="pointer-events-none absolute top-96 right-0 left-1/2 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-10 transition-all duration-200">
+              <div className="pointer-events-none absolute left-1/2 right-0 top-96 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-10 transition-all duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2560"

@@ -7,7 +7,7 @@ exports.reactions = {
 /**
  * Key schema for storing reactions
  */
-exports.getKeySchema = ({ slug }) => `post:${slug}:reactions`;
+exports.getKeySchema = ({ id }) => `post:${id}:reactions`;
 
 /**
  * Create data for a reaction

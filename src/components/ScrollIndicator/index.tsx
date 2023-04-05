@@ -15,7 +15,7 @@ const ScrollIndicator = () => {
   return (
     <div className="fixed -right-1 top-2/4 z-10 h-20 w-20 opacity-50 md:-right-1">
       <LazyMotion features={loadFeatures}>
-        <svg className="top-2 left-1 z-30 h-20 w-20 text-wine-200 opacity-100" viewBox="0 0 60 60">
+        <svg className="left-1 top-2 z-30 h-20 w-20 text-wine-200 opacity-100" viewBox="0 0 60 60">
           <m.path
             fill="none"
             strokeWidth="5"

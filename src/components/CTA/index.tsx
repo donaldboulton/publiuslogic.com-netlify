@@ -4,7 +4,7 @@ import Section from '@/components/Section'
 export default function CTA() {
   return (
     <Section>
-      <div className="mx-auto max-w-7xl py-6 px-4 sm:px-4 lg:flex lg:items-center lg:justify-between lg:py-6 lg:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-4 lg:flex lg:items-center lg:justify-between lg:px-6 lg:py-6">
         <h2 className="text-2xl font-extrabold tracking-tight sm:text-2xl">
           <span className="block text-slate-900 dark:text-slate-200">Ready to give it a try?</span>
           <span className="block text-slate-900 dark:text-slate-200">Use the starter on Github today.</span>

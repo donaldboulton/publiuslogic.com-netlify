@@ -31,7 +31,7 @@ const DiscloserModule: FC<DiscloserModuleProps> = props => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">{body}</Disclosure.Panel>
+                <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">{body}</Disclosure.Panel>
               </Transition>
             </>
           )}
@@ -51,7 +51,7 @@ const DiscloserModule: FC<DiscloserModuleProps> = props => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">{body1}</Disclosure.Panel>
+                <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">{body1}</Disclosure.Panel>
               </Transition>
             </>
           )}

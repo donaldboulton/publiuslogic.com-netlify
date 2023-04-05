@@ -100,7 +100,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="mb-3 block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="mb-3 block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="firstName"
                         name="firstName"
                         type="text"
@@ -135,7 +135,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         </svg>
                       </div>
                       <input
-                        className="block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
+                        className="block w-full appearance-none rounded border-slate-300 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 focus:border-wine-300 focus:outline-none focus:ring-slate-500 dark:border-slate-900 dark:bg-slate-900 dark:text-slate-200 sm:text-sm"
                         id="lastName"
                         name="lastName"
                         type="text"
@@ -176,7 +176,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="userName"
                         autoComplete="off"
                         placeholder="User Name"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('userName', { required: true, pattern: /^[a-zA-Z]+$/, maxLength: 100 })}
                       />
                     </div>
@@ -207,7 +207,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="email"
                         autoComplete="on"
                         placeholder="Email"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('email', {
                           required: 'Email is required',
                           pattern: {
@@ -249,7 +249,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="phone"
                         autoComplete="on"
                         placeholder="Phone Number"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('phone', {
                           required: 'Phone Number is required',
                           pattern: {
@@ -293,7 +293,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         name="subject"
                         id="subject"
                         placeholder="Subject"
-                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 py-3 px-4 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-slate-800 bg-slate-300 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-900 shadow-sm focus:border-wine-300 focus:ring-slate-500 dark:bg-slate-900 dark:text-slate-700 sm:text-sm"
                         {...register('subject', { required: true })}
                       />
                     </div>
@@ -347,13 +347,13 @@ const ContactForm: FC<ContactFormProps> = props => {
                   <span className="group relative flex items-center text-slate-200">
                     <button
                       type="submit"
-                      className="rounded-md bg-gray-800 py-2 px-4 text-slate-200 shadow-lg hover:bg-gray-900 hover:shadow-slate-800/50"
+                      className="rounded-md bg-gray-800 px-4 py-2 text-slate-200 shadow-lg hover:bg-gray-900 hover:shadow-slate-800/50"
                     >
                       Send
                     </button>
                     <button
                       type="reset"
-                      className="ml-2 rounded-md bg-red-500 py-2 px-4 text-slate-200 shadow-lg hover:bg-red-600 hover:shadow-red-700/50"
+                      className="ml-2 rounded-md bg-red-500 px-4 py-2 text-slate-200 shadow-lg hover:bg-red-600 hover:shadow-red-700/50"
                     >
                       Reset
                     </button>
@@ -386,7 +386,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                   </span>
                 </div>
               </div>
-              <div className="float-right mt-4 mr-8">
+              <div className="float-right mr-8 mt-4">
                 <span className="md:ml-10">
                   <a
                     href="https://netlify.com/"

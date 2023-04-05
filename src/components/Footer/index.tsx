@@ -23,9 +23,9 @@ export default function IndexFooter() {
 
   return (
     <>
-      <footer className="relative bg-slate-900 pt-8 pb-6">
+      <footer className="relative bg-slate-900 pb-6 pt-8">
         <div
-          className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 w-full overflow-hidden"
+          className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 w-full overflow-hidden"
           style={{ height: '80px' }}
         >
           <svg
@@ -44,7 +44,7 @@ export default function IndexFooter() {
           <div className="flex flex-wrap">
             <div className="w-full px-4 lg:w-6/12">
               <h4 className="text-3xl font-semibold text-slate-300">Let's keep in touch!</h4>
-              <h5 className="mt-0 mb-2 text-lg text-gray-100">
+              <h5 className="mb-2 mt-0 text-lg text-gray-100">
                 Find us on any of these platforms, we respond 1-2 business days.
               </h5>
               <div className="mt-4">
@@ -63,7 +63,7 @@ export default function IndexFooter() {
               </div>
               <div className="mt-4">
                 <h4 className="text-3xl font-semibold text-slate-300">Subscriptions</h4>
-                <h5 className="mt-0 mb-2 text-lg text-slate-300">Get exclusive newsletter-only content now and then</h5>
+                <h5 className="mb-2 mt-0 text-lg text-slate-300">Get exclusive newsletter-only content now and then</h5>
                 <Subscriptions />
               </div>
             </div>

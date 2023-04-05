@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactionsWidgetItem from './ReactionsWidgetItem'
 
 const ReactionsWidget = ({ reactions, reactionsCount, userReactions, onSelect }) => {

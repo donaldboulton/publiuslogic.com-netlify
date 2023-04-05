@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 
 const ReactionsWidgetItem = ({ reaction, reactionsCount, userReactions, onSelect }) => {
   const [isHovered, setHovered] = useState(false)

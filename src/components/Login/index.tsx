@@ -48,7 +48,7 @@ const Login = () => {
                   alt="Avatar"
                 />
               </div>
-              <div className="-mt-1 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left">
                 <div className="text-base leading-6">
                   <h3>{googleUser.profileObj.name}</h3>
                   <p>{googleUser.profileObj.email}</p>

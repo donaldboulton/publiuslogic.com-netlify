@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { debounce } from '../../utils/debounce'
 import ReactionsWidget from './ReactionsWidget'
@@ -16,14 +17,14 @@ const reactions = [
   { label: 'curious', node: <span role="img">🤔</span> },
 ]
 
-const Reactions = ({ slug }) => {
-  const lsKey = `reactions:${slug}`
+const Reactions = ({ id }) => {
+  const lsKey = `reactions:${id}`
   const [reactionsCount, setReactionsCount] = useState(initialReactionsCount)
   const [userReactions, setUserReactions] = useState({})
 
   useEffect(() => {
     axios
-      .get(`${process.env.API_URL || ''}/api/reactions?slug=${slug}`)
+      .get(`${process.env.API_URL || ''}/api/reactions?id=${id}`)
       .then(function ({ data }) {
         setReactionsCount({ ...reactionsCount, ...data })
         getUserReactions()
@@ -31,7 +32,7 @@ const Reactions = ({ slug }) => {
       .catch(function () {
         // todo: log to Sentry
       })
-  }, [slug])
+  }, [id])
 
   function updateReactionCount(reaction) {
     const count = parseInt(reactionsCount[reaction], 10)
@@ -55,7 +56,7 @@ const Reactions = ({ slug }) => {
 
     axios
       .post(`${process.env.API_URL || ''}/api/react`, {
-        slug,
+        id,
         reaction,
       })
       .then(function () {

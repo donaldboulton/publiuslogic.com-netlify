@@ -20,7 +20,7 @@ const BlogPage = () => {
       <Layout>
         <div className="search-beams z-30 -mt-4 mb-40">
           <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-          <div className="mt-10 mb-40">
+          <div className="mb-40 mt-10">
             <BlogRoll />
           </div>
           <ScrollDown

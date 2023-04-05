@@ -10,7 +10,7 @@ import defaultImage from '../../../static/svg/undraw/undraw_programming_re_kg9v.
 
 const PageHero = ({ title, description, image }: PageHeroProps) => (
   <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-slate-300 md:mb-0">
-    <div className="absolute left-0 bottom-0 z-10 h-full w-full bg-gradient-to-t from-gray-700"></div>
+    <div className="absolute bottom-0 left-0 z-10 h-full w-full bg-gradient-to-t from-gray-700"></div>
     <img
       src={image ? image : defaultImage}
       alt="featured image"

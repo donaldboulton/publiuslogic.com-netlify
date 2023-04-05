@@ -1,16 +1,11 @@
-const { Redis } = require("@upstash/redis");
-const { createClient } = require('@upstash/redis');
+const { createClient } = require('redis');
 const { promisify } = require('util');
 const { catchEvents, reportEvent } = require('./sentry');
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
-
-const client = createClient ({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+var client = createClient ({
+    port: process.env.REDIS_PORT,
+    host: process.env.REDIS_HOST,
+    password: process.env.REDIS_PASSWORD,
     tls: {},
 });
 

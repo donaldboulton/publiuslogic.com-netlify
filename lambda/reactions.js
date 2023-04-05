@@ -15,7 +15,7 @@ module.exports.handler = catchEvents(async (event, _context, callback) => {
   try {
     const { id } = await schema.validateAsync(event.queryStringParameters)
     const { like = 0, insightful = 0, curious = 0 } =
-      (await hgetallAsync(getKeySchema({ slug }))) || {}
+      (await hgetallAsync(getKeySchema({ id }))) || {}
 
     return callback(null, successResponse(200, { like, insightful, curious }))
   } catch (error) {

@@ -32,7 +32,7 @@ export const Modal: FC<ModalProps> = props => {
         <button
           type="button"
           onClick={openModal}
-          className="bg-text-slate-300 -ml-1 h-auto w-auto rounded-r-md pr-2 pl-3 pt-2 pb-0 text-slate-900 dark:bg-slate-700 dark:text-slate-200"
+          className="bg-text-slate-300 -ml-1 h-auto w-auto rounded-r-md pb-0 pl-3 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200"
         >
           <span className="headings-center inline-flex">
             <Help className="mt-2 h-8 w-8 px-2 text-slate-900 dark:text-slate-200" />
@@ -62,7 +62,7 @@ export const Modal: FC<ModalProps> = props => {
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
               {/* This element is to trick the browser into centering the modal contents. */}
               <span
                 className="hidden text-slate-900 dark:text-slate-200 sm:inline-block sm:h-screen sm:align-middle"
@@ -95,7 +95,7 @@ export const Modal: FC<ModalProps> = props => {
                           loading="eager"
                         />
                       </div>
-                      <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
+                      <div className="mt-3 sm:ml-4 sm:mt-0 sm:text-left">
                         <div>
                           <Dialog.Title
                             key={dialogTitle}

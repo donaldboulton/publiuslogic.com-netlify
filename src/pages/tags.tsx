@@ -114,7 +114,7 @@ const Tags = () => {
             image={Image}
           />
           <div className="mt-10">
-            <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 gap-x-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
+            <div className="mb-24 mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-6 xl:gap-y-6">
               {tags
                 .sort((a, b) => b.count - a.count)
                 .map((tag, i) => (

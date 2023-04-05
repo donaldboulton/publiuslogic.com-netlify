@@ -39,7 +39,7 @@ const SingleAccordion: FC<SingleAccordionProps> = props => {
   return (
     <LazyMotion features={loadFeatures}>
       <m.section className="font-sans" variants={singleAccordionContainer}>
-        <div className="mr-auto ml-auto w-full px-4">
+        <div className="ml-auto mr-auto w-full px-4">
           <m.div
             ref={ref}
             variants={variants}
@@ -57,7 +57,7 @@ const SingleAccordion: FC<SingleAccordionProps> = props => {
                           className={`${open ? 'rotate-180 transform' : ''} mt-1 h-5 w-5 text-slate-300`}
                         />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="text-md px-4 pt-4 pb-2 text-slate-200">{children}</Disclosure.Panel>
+                      <Disclosure.Panel className="text-md px-4 pb-2 pt-4 text-slate-200">{children}</Disclosure.Panel>
                     </>
                   )}
                 </Disclosure>

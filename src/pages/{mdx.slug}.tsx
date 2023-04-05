@@ -69,7 +69,7 @@ interface PageProps {
 }
 
 const BlogPost = ({ data }: PageProps<DataProps>) => {
-  const { frontmatter, timeToRead } = data.mdx
+  const { frontmatter, timeToRead, id } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>
@@ -77,7 +77,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
         <div className="blog-beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10">
-            <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mt-2 mb-10 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
+            <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
               <div className="mt-4 py-4">
                 <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
                 <div className="flex items-center">
@@ -91,9 +91,9 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
               </div>
               <div>
                 <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
-                  <div className="mr-2 ml-3 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
+                  <div className="ml-3 mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                     <TagIcon className="mr-2 h-6 w-6" />
-                    <Tags className="py-1 px-2" tags={frontmatter.tags} />
+                    <Tags className="px-2 py-1" tags={frontmatter.tags} />
                   </div>
                   <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                     <CalendarIcon className="mr-1 h-6 w-6" />
@@ -109,7 +109,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                 </div>
               </div>
               <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-              <Reactions slug={data.mdx.slug} />
+              <Reactions id={data.mdx.id} />
               <GiscusComments mapping={pathname} />
               <WavyHr />
             </section>
@@ -119,7 +119,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
               css="position: fixed; color: gray; width: 40px; height: 40px;"
             />
             <Scroll
-              className="scroll right-4 bottom-4 z-20 md:right-3"
+              className="scroll bottom-4 right-4 z-20 md:right-3"
               showBelow={1500}
               size={40}
               css="position: fixed; color: gray; width: 40px; height: 40px;"
@@ -365,6 +365,7 @@ export const query = graphql`
         depth
       }
       slug
+      id
       excerpt(pruneLength: 5000)
       timeToRead
       parent {

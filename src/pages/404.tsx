@@ -26,21 +26,21 @@ const NotFoundPage = () => {
           image={Image}
         />
         <div className="mt-10">
-          <div className="mt-6 mb-16 flex flex-col items-center">
+          <div className="mb-16 mt-6 flex flex-col items-center">
             <div className="text-slate-900 dark:text-slate-200">
               <Link
                 to="/"
-                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 py-2 px-4 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
               >
                 Back to Home Page
               </Link>
               <Link
                 to="/contact"
-                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 py-2 px-4 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
               >
                 Notify Us of the Error
               </Link>
-              <h2 className="mt-2 mb-2 text-lg font-bold leading-tight">404: Not Found</h2>
+              <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">404: Not Found</h2>
               <div>You just hit a route that doesn&#39;t exist... the sadness.</div>
             </div>
           </div>

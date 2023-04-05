@@ -16,7 +16,7 @@ const SsrPage = ({ serverData }) => {
       <Layout>
         <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
         <div className="mt-10">
-          <div className="mx-auto mt-16 mb-32 max-w-md overflow-hidden rounded-xl bg-slate-300 text-slate-900 shadow-md dark:bg-slate-900 dark:text-slate-200 md:max-w-2xl">
+          <div className="mx-auto mb-32 mt-16 max-w-md overflow-hidden rounded-xl bg-slate-300 text-slate-900 shadow-md dark:bg-slate-900 dark:text-slate-200 md:max-w-2xl">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={serverData.message} />

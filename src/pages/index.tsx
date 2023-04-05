@@ -50,7 +50,7 @@ const Home = ({ image }: HomeProps) => {
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
             <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-slate-300 md:mb-0">
-              <div className="absolute left-0 bottom-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
+              <div className="absolute bottom-0 left-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
               <img
                 src={image ? image : defaultImage}
                 alt="featured image"
@@ -58,7 +58,7 @@ const Home = ({ image }: HomeProps) => {
               />
               <LazyMotion features={loadFeatures}>
                 <motion.div
-                  className="absolute top-16 left-3 z-30 p-4"
+                  className="absolute left-3 top-16 z-30 p-4"
                   initial="hidden"
                   animate={replay ? 'visible' : 'hidden'}
                   variants={headingContainer}
@@ -96,7 +96,7 @@ const Home = ({ image }: HomeProps) => {
                           Planetary Laws
                         </Link>
                       </h6>
-                      <p className="mt-2 mb-4 text-slate-300">
+                      <p className="mb-4 mt-2 text-slate-300">
                         The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all
                         Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill
                         your, "Unborn Children"!
@@ -130,7 +130,7 @@ const Home = ({ image }: HomeProps) => {
                           Breath Of Life
                         </Link>
                       </h6>
-                      <p className="mt-2 mb-4 text-slate-300">
+                      <p className="mb-4 mt-2 text-slate-300">
                         Creation Of All, was formed through song that started the dance of life from a blank and
                         formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                       </p>
@@ -165,7 +165,7 @@ const Home = ({ image }: HomeProps) => {
                           <h6>JAMStack Technology</h6>
                         </a>
                       </h6>
-                      <p className="mt-2 mb-4 text-slate-200">
+                      <p className="mb-4 mt-2 text-slate-200">
                         PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX,
                         Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                       </p>
@@ -254,7 +254,7 @@ const Home = ({ image }: HomeProps) => {
           </section>
           <section className="relative bg-slate-900 py-20">
             <div
-              className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 w-full overflow-hidden"
+              className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 w-full overflow-hidden"
               style={{ height: '80px' }}
             >
               <svg
@@ -273,7 +273,7 @@ const Home = ({ image }: HomeProps) => {
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap items-center bg-slate-900 text-slate-200">
                 <div className="mt-8 flex flex-wrap items-center">
-                  <div className="mr-auto ml-auto mb-6 w-full px-4 md:w-5/12">
+                  <div className="mb-6 ml-auto mr-auto w-full px-4 md:w-5/12">
                     <h3 className="mb-2 text-3xl font-semibold leading-normal text-slate-200">
                       Coming Out of Retirement
                     </h3>
@@ -288,7 +288,7 @@ const Home = ({ image }: HomeProps) => {
                       church on Earth. I Had to Walk this Earth twice as long as my Son Jesus. "To Know All before
                       Action"!
                     </p>
-                    <div className="mt-4 mb-4 text-lg font-light leading-relaxed text-slate-300">
+                    <div className="mb-4 mt-4 text-lg font-light leading-relaxed text-slate-300">
                       <div>
                         <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
                           {' '}
@@ -308,7 +308,7 @@ const Home = ({ image }: HomeProps) => {
                         https://mansbooks.com
                       </a>
                     </div>
-                    <p className="mt-0 mb-4 text-lg font-light leading-relaxed text-slate-200">
+                    <p className="mb-4 mt-0 text-lg font-light leading-relaxed text-slate-200">
                       <div>
                         <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
                           {' '}
@@ -324,12 +324,12 @@ const Home = ({ image }: HomeProps) => {
                       </a>
                     </p>
                   </div>
-                  <div className="mr-auto ml-auto w-full px-4 md:w-4/12">
+                  <div className="ml-auto mr-auto w-full px-4 md:w-4/12">
                     <Fruition />
                   </div>
                 </div>
                 <div
-                  className="pointer-events-none absolute top-auto bottom-0 left-0 right-0 mt-4 w-full overflow-hidden bg-slate-900 bg-transparent transition-all duration-200"
+                  className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden bg-slate-900 bg-transparent transition-all duration-200"
                   style={{ height: '70px' }}
                 >
                   <svg
@@ -351,7 +351,7 @@ const Home = ({ image }: HomeProps) => {
             <div className="container mx-auto px-4 pb-24">
               <Features />
             </div>
-            <div className="mb:mt-24 pointer-events-none absolute bottom-0 right-0 left-1/2 mt-24 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-24 transition-all duration-200">
+            <div className="mb:mt-24 pointer-events-none absolute bottom-0 left-1/2 right-0 mt-24 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-24 transition-all duration-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2560"
@@ -366,10 +366,10 @@ const Home = ({ image }: HomeProps) => {
               </svg>
             </div>
           </section>
-          <section className="relative block bg-primary-dark pt-10 pb-20">
-            <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
+          <section className="relative block bg-primary-dark pb-20 pt-10">
+            <div className="container mx-auto px-4 lg:pb-28 lg:pt-12">
               <LatestArticles />
-              <div className="pointer-events-none absolute bottom-0 right-0 left-1/2 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent transition-all duration-200 md:mt-20">
+              <div className="pointer-events-none absolute bottom-0 left-1/2 right-0 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent transition-all duration-200 md:mt-20">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xlink="http://www.w3.org/1999/xlink"
@@ -386,12 +386,12 @@ const Home = ({ image }: HomeProps) => {
               </div>
             </div>
           </section>
-          <section className="relative block pt-24 pb-20 lg:pt-0">
+          <section className="relative block pb-20 pt-24 lg:pt-0">
             <div className="container mx-auto px-4">
               <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                 <div className="w-full px-4">
                   <Updates />
-                  <div className="light:bg-gray-200 light:text-gray-800 mt-10 mb-4 rounded-lg bg-gray-800 text-slate-300 lg:mt-6">
+                  <div className="light:bg-gray-200 light:text-gray-800 mb-4 mt-10 rounded-lg bg-gray-800 text-slate-300 lg:mt-6">
                     <h4 className="mb-2 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
                       Ordered Spiritual Reading List!
                     </h4>
