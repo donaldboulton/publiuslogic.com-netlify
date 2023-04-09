@@ -2,7 +2,7 @@
 
 ## Technical notes about this website
 
-Upgrade as of December 15th, 2022 to Gatsby 5.3.3
+Upgrade as of May 1st, 2023 to Gatsby 5.8.1
 
 🎁 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/donaldboulton/publiuslogic.com/master/LICENSE.txt)
 [![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/donaldboulton)

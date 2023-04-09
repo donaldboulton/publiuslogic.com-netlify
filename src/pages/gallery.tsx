@@ -63,7 +63,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
     <>
       <Layout>
         <div className="search-beams z-30 -mt-4">
-          <PageHero title="Gallery: Angie" description="My Cats!" image={Image} />
+          <PageHero title="Gallery: Angie" description="Special Kitty, Cat!" image={Image} />
           <section class="mb-32 overflow-hidden">
             <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
               <div class="-m-1 flex flex-wrap justify-center md:-m-2">

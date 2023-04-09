@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -14,6 +14,9 @@ import defaultImage from '../../static/images/jpg/dbbg.jpg'
 import Table from '@/components/Table'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface HomeProps {
@@ -43,7 +46,31 @@ const Home = ({ image }: HomeProps) => {
       },
     },
   }
-
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        let version = localStorage.getItem('notification-version')
+        version = version ? version : 0
+        const response = await fetch(
+          'REPLACE_UPSTASH_REDIS_REST_URL/zrevrangebyscore/messages/+inf/' + version + '/WITHSCORES/LIMIT/0/1',
+          {
+            headers: {
+              Authorization: 'Bearer REPLACE_UPSTASH_REDIS_REST_TOKEN',
+            },
+          }
+        )
+        const res = await response.json()
+        const v = parseInt(res.result[1])
+        if (v) {
+          localStorage.setItem('notification-version', v + 1)
+        }
+        toast(res.result[0])
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    fetchData()
+  })
   return (
     <>
       <Layout>
@@ -401,6 +428,20 @@ const Home = ({ image }: HomeProps) => {
               </div>
             </div>
           </section>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
+          {/* Same as */}
+          <ToastContainer />
         </main>
       </Layout>
     </>
