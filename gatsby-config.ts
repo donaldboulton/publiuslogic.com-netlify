@@ -212,6 +212,27 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-mdx-embed',
     {
+      resolve: `gatsby-source-supabase`,
+      options: {
+        supabaseUrl: process.env.SUPABASE_URL,
+        supabaseKey: process.env.SUPABASE_KEY,
+        types: [
+          {
+            type: "Profile",
+            query: (client) => client.from("profiles").select("*"), //sync or async
+          },
+          {
+            type: "Todo",
+            query: (client) => client.from("todos").select("*"),
+          },
+          {
+            type: "View",
+            query: (client) => client.from("views").select("*"),
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [

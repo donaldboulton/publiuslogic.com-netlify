@@ -1,17 +1,28 @@
 import * as React from 'react'
+import { useState } from 'react'
 import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import { MDXEmbedProvider } from 'mdx-embed'
+import { createClient } from '@supabase/supabase-js'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
+import { Database } from './src/lib/schema'
+
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
+    : undefined
 
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
   return
-  ;<MDXEmbedProvider>
-    <AnimatePresence wait>{element}</AnimatePresence>
+  <MDXEmbedProvider>
+    <SessionContextProvider supabaseClient={supabase}>
+      <AnimatePresence wait>{element}</AnimatePresence>
+    </SessionContextProvider>
   </MDXEmbedProvider>
 }
 

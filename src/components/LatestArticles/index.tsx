@@ -55,7 +55,7 @@ export default function LatestArticles() {
                   <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>
                   <Link
                     to="/blog"
-                    className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:text-wine-200 md:px-6 md:py-3 md:text-lg"
+                    className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:text-slate-200 md:px-6 md:py-3 md:text-lg"
                   >
                     Articles
                   </Link>

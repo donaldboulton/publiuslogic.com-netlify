@@ -33,6 +33,7 @@ import ColumnGridTwo from './src/components/ColumnGridTwo'
 import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
 import Confetti from './src/components/Confetti'
+import TodoList from './src/components/TodoList'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -69,6 +70,7 @@ const components = {
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
   Confetti: Confetti,
+  TodoList: TodoList,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
