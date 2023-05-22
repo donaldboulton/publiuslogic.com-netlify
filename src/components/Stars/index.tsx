@@ -19,37 +19,44 @@ export default function Stars() {
     await loadOutModesUpdater(engine);
   }
 
-  return (
+   return (
     <Particles
       init={particlesInit}
       options={{
-        fpsLimit: 60,
+        fpsLimit: 120,
         background: {
-          color: "transparent"
+          color: "transparent",
         },
         particles: {
           color: {
-            value: ['#FF5A86', '#953AFE', '#FFC326', '#46C0FF'],
+            value: ["#FF5A86", "#953AFE", "#FFC326", "#46C0FF"],
           },
           move: {
             direction: "none",
             enable: true,
-            outModes: "out",
-            random: false,
-            speed: 2,
-            straight: false
+            outModes: {
+              default: "out",
+            },
+            random: true,
+            speed: 0.1,
+            straight: false,
           },
           number: { density: { enable: true, area: 800 }, value: 80 },
           opacity: {
-            value: 0.5
+            animation: {
+                enable: true,
+                speed: 1,
+                sync: false,
+            },
+            value: { min: 0, max: 1 },
           },
           shape: {
-            type: "circle"
+            type: "circle",
           },
           size: {
-            value: { min: 1, max: 5 }
-          }
-        }
+            value: { min: 1, max: 3 },
+          },
+        },
       }}
     />
   );
