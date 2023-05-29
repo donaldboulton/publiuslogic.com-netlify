@@ -19,6 +19,7 @@ import Tooltip from './src/components/Tooltip'
 import VideoOne from './src/components/CloudinaryVideo/videoOne'
 import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
 import VideoThree from './src/components/CloudinaryVideo/videoThree'
+import Love from './src/components/CloudinaryVideo/Love'
 import CloudinaryVideo from './src/components/CloudinaryVideo'
 import Accordion from './src/components/Accordion'
 import SingleAccordion from './src/components/SingleAccordion'
@@ -71,6 +72,7 @@ const components = {
   VideoWrapper: VideoWrapper,
   Confetti: Confetti,
   TodoList: TodoList,
+  Love: Love,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
