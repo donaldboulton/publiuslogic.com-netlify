@@ -12,7 +12,7 @@ import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
-import Reactions from '@/components/Reactions'
+
 
 const components = { Link }
 
@@ -109,7 +109,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                 </div>
               </div>
               <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-              <Reactions id={data.mdx.id} />
+
               <GiscusComments mapping={pathname} />
               <WavyHr />
             </section>
