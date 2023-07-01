@@ -9,10 +9,10 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
 
-const supabase_url = process.env.SUPABASE_URL
-const service_role_key = process.env.SUPABASE_KEY
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
 
-const supabase = createClient<Database>(supabase_url, service_role_key, {
+const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,

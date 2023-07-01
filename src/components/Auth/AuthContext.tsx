@@ -3,10 +3,10 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { Session, User, createClient } from '@supabase/supabase-js'
 import { Database } from '@/lib/schema'
 
-const supabase_url = process.env.SUPABASE_URL
+const supabaseUrl = process.env.supabaseUrl
 const service_role_key = process.env.SUPABASE_KEY
 
-const supabase = createClient<Database>(supabase_url, service_role_key, {
+const supabase = createClient<Database>(supabaseUrl, service_role_key, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
