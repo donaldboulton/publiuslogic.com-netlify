@@ -51,7 +51,7 @@ export default function IndexFooter() {
                 <span className="mt-4 inline-flex justify-center md:ml-auto md:mt-0 md:justify-start">
                   {socialLinks.map(s =>
                     s.link ? (
-                      <A href={s.link} key={s.link} className="ml-3" external>
+                      <A href={s.link} key={s.link} aria-label={s.name} className="ml-3" external>
                         <s.image className=" h-6 w-6" />
                         <span className="sr-only">{s.name}</span>
                       </A>
@@ -76,12 +76,17 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/about"
+                        aria-label="About Link"
                       >
                         About Us
                       </Link>
                     </li>
                     <li>
-                      <Link className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300" to="/blog">
+                      <Link 
+                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300" 
+                        to="/blog"
+                        aria-label="Blog Link"
+                      >
                         Blog
                       </Link>
                     </li>
@@ -89,6 +94,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/contact"
+                        aria-label="Contact Link"
                       >
                         Contact Us
                       </Link>
@@ -97,6 +103,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/profile"
+                        aria-label="Profile Link"
                       >
                         Profile
                       </Link>
@@ -105,6 +112,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/search"
+                        aria-label="Search Link"
                       >
                         Search Page
                       </Link>
@@ -113,6 +121,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/sitemap.xml"
+                        aria-label="Sitemap Link"
                       >
                         Sitemap XML
                       </Link>
@@ -126,6 +135,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/0bsd-licence"
+                        aria-label="BSD License Link"
                       >
                         BSD License
                       </Link>
@@ -156,6 +166,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/privacy"
+                        aria-label="Privacy Link"
                       >
                         Terms
                       </Link>
@@ -164,6 +175,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/privacy"
+                        aria-label="Terms Link"
                       >
                         Privacy Policy
                       </Link>
@@ -172,6 +184,7 @@ export default function IndexFooter() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/rss.xml"
+                        aria-label="RSS Link"
                       >
                         Site Rss
                       </Link>
@@ -190,10 +203,10 @@ export default function IndexFooter() {
                   href="https://donboulton.com"
                   rel="noopener noreferrer"
                   target="_blank"
-                  area-label="Donald Boulton Web Site"
+                  area-label="Donald Boulton Visualizer's Web Site"
                   className="text-slate-300 hover:text-wine-300"
                 >
-                  Donald W. Boulton
+                  Visualizer
                 </a>
               </div>
             </div>
