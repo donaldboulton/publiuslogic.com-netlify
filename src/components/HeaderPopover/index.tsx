@@ -146,6 +146,7 @@ function HeaderPopover() {
                     <div className="relative grid h-96 max-h-full gap-8 bg-slate-800 p-7 md:max-h-screen lg:grid-cols-3">
                       {posts.map(item => (
                         <Link
+                          aria-label={item.name}
                           key={item.name}
                           to={item.href}
                           className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
@@ -164,6 +165,7 @@ function HeaderPopover() {
                   <div className="bg-purple-800 p-4 hover:bg-purple-900">
                     <a
                       href="https://bibwoe.com/posts/enoch-preface"
+                      aria-label="Enoch Preface"
                       rel="noopener noreferrer"
                       target="_blank"
                       className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-wine-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
