@@ -7,7 +7,9 @@ import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'
 import VideoWrapper from './wrapper'
 
 const VideoTwo = () => {
-  const vid = new CloudinaryVideo('videos/Angelina_Jordan_-_Love_Dont_Let_Me_Go_-Visualizer-', { cloudName: 'mansbooks' })
+  const vid = new CloudinaryVideo('videos/Angelina_Jordan_-_Love_Dont_Let_Me_Go_-Visualizer-', {
+    cloudName: 'mansbooks',
+  })
   const videoEl = useRef()
   const sources = [
     {

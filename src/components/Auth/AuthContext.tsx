@@ -3,11 +3,15 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { Session, User, createClient } from '@supabase/supabase-js'
 import { Database } from '@/lib/schema'
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
-    : undefined
+const supabase_url = process.env.SUPABASE_URL
+const service_role_key = process.env.SUPABASE_KEY
 
+const supabase = createClient<Database>(supabase_url, service_role_key, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+})
 export const AuthContext = createContext<{ user: User | null; session: Session | null }>({
   user: null,
   session: null,

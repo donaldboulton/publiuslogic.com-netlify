@@ -218,16 +218,16 @@ const config: GatsbyConfig = {
         supabaseKey: process.env.SUPABASE_KEY,
         types: [
           {
-            type: "Profile",
-            query: (client) => client.from("profiles").select("*"), //sync or async
+            type: 'Profile',
+            query: client => client.from('profiles').select('*'), //sync or async
           },
           {
-            type: "Todo",
-            query: (client) => client.from("todos").select("*"),
+            type: 'Todo',
+            query: client => client.from('todos').select('*'),
           },
           {
-            type: "View",
-            query: (client) => client.from("views").select("*"),
+            type: 'View',
+            query: client => client.from('views').select('*'),
           },
         ],
       },

@@ -29,15 +29,15 @@ const IndexHero = ({ image }: IndexHeroProps) => {
   return (
     <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-slate-300 md:mb-0">
       <div className="absolute bottom-0 left-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
-        <StaticImage
-          className="absolute left-0 top-0 z-0 h-full w-full"
-          formats={['auto', 'webp']}
-          src="../../../static/images/jpg/dbbg.jpg"
-          quality={95}
-          alt="Home Picture"
-          area-label="Home Picture"
-          loading="eager"
-        />
+      <StaticImage
+        className="absolute left-0 top-0 z-0 h-full w-full"
+        formats={['auto', 'webp']}
+        src="../../../static/images/jpg/dbbg.jpg"
+        quality={95}
+        alt="Home Picture"
+        area-label="Home Picture"
+        loading="eager"
+      />
       <LazyMotion features={loadFeatures}>
         <m.div
           className="absolute left-3 top-16 z-20 p-4"

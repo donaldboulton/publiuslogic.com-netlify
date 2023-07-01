@@ -1,20 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useUser, createClient, Session } from '@supabase/auth-helpers-react'
+import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-react'
 import { Database } from '@lib/schema'
 import Avatar from './avatar'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
-export default function Account({ session }: { session: Session }) {
-  const supabase =
-  process.env.SUPABASE_URL &&
-  process.env.SUPABASE_SERVICE_ROLE_SECRET
-    ? createClient<Database>(
-        process.env.SUPABASE_URL,
-        process.env.SUPABASE_SERVICE_ROLE_SECRET
-      )
-    : undefined;
-
+export default function Login({ session }: { session: Session }) {
+  const supabase = useSupabaseClient<Database>()
   const user = useUser()
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState<Profiles['username']>(null)
@@ -84,6 +76,13 @@ export default function Account({ session }: { session: Session }) {
       setLoading(false)
     }
   }
+
+  async function signInWithGitHub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+    })
+  }
+  
   async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -96,27 +95,21 @@ export default function Account({ session }: { session: Session }) {
     })
   }
 
-  async function signInWithGitHub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-    })
-  }
-
   async function signInWithSlack() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'slack',
-    })
+      provider: "slack",
+    });
   }
 
   async function signInWithSpotify() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'spotify',
-    })
+      provider: "spotify",
+    });
   }
 
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithPassword({
-      email: process.env.ADMIN_EMAILS,
+      email: process.env.NEXT_PUBLIC_ADMIN_EMAILS,
       password: process.env.ADMIN_PASSWORD,
     })
   }

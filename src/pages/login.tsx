@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
 import { Auth } from '@supabase/auth-ui-react'
 import type { HeadProps } from 'gatsby'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -9,10 +8,11 @@ import Center from '../components/Center'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '../components/LeftText'
 import Seo from '../components/Seo'
+import TodoList from "../components/TodoList";
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import ColumnGridTwo from '../components/ColumnGridTwo'
-import AuthProvider from '@/components/Auth/AuthProvider'
-import { Session, useSupabaseClient, SupabaseClient } from '@supabase/auth-helpers-react'
+import { createClient } from '@supabase/supabase-js'
+import { useSession } from '@supabase/auth-helpers-react'
 import { Database } from '@/lib/schema'
 
 const ogimage = {
@@ -21,64 +21,68 @@ const ogimage = {
   height: 450,
 }
 
-export interface SessionContextProviderProps {
-  supabaseClient: SupabaseClient
-  initialSession?: Session | null
-}
+const Login = () => {
+  const session = useSession()
+  const supabase_url = process.env.SUPABASE_URL
+  const service_role_key = process.env.SUPABASE_KEY
 
-export default function Login<SessionContextProviderProps>({ initialSession = null }) {
-  const supabase = useSupabaseClient<Database>();
-  const [session, setSession] = useState<Session | null>(initialSession)
-
+  const supabase = createClient<Database>(supabase_url, service_role_key, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  })
   return (
     <Layout>
-      <AuthProvider>
-        <div className="mb-96 ml-10 mr-10 mt-10">
-          <div>
-            <Center>Login PubliusLogic</Center>
-          </div>
-          <LeftText>The Queen</LeftText>
-          <ColumnGridTwo>
-            <div className="mt-4">
-              <div className="mb-4">
-                <StaticImage
-                  layout="fixed"
-                  className="h-5 w-5 self-center rounded-lg"
-                  src="../../static/images/angie/ps-i-love-you.jpg"
-                  width={325}
-                  height={573}
-                  quality={95}
-                  alt="PS I Love You"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
-              {!session ? (
-                <Auth
-                  supabaseClient={supabase}
-                  appearance={{ theme: ThemeSupa }}
-                  providers={['github', 'google']}
-                  theme="dark"
-                />
-              ) : (
-                <>
-                  <ColumnGridTwo>
-                    <Account session={session} />
-                    <div
-                      className="flex h-full w-full flex-col items-center justify-center p-4"
-                      style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                    ></div>
-                  </ColumnGridTwo>
-                </>
-              )}
-            </div>
-          </ColumnGridTwo>
+      <div className="mb-96 ml-10 mr-10 mt-10">
+        <div>
+          <Center>Login PubliusLogic</Center>
         </div>
-      </AuthProvider>
+        <LeftText>The Queen</LeftText>
+        <ColumnGridTwo>
+          <div className="mt-4">
+            <div className="mb-4">
+              <StaticImage
+                layout="fixed"
+                className="h-5 w-5 self-center rounded-lg"
+                src="../../static/images/angie/ps-i-love-you.jpg"
+                width={325}
+                height={573}
+                quality={95}
+                alt="PS I Love You"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
+            {!session ? (
+              <Auth
+                supabaseClient={supabase}
+                appearance={{ theme: ThemeSupa }}
+                providers={["github", "google", "slack", "spotify"]}
+                theme="dark"
+              />
+            ) : (
+              <>
+                <ColumnGridTwo>
+                  <Account session={session} />
+                  <div
+                    className="flex h-full w-full flex-col items-center justify-center p-4"
+                    style={{ minWidth: 250, maxWidth: 600, margin: "auto" }}
+                  >
+                    <TodoList session={session} />
+                  </div>
+                </ColumnGridTwo>
+              </>
+            )}
+          </div>
+        </ColumnGridTwo>
+      </div>
     </Layout>
   )
 }
+
+export default Login
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
