@@ -30,9 +30,9 @@ export default function Navigation() {
                   <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-inset">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                      <XIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
                     ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                      <MenuIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
                     )}
                   </Disclosure.Button>
                 </div>
@@ -64,6 +64,7 @@ export default function Navigation() {
                           <Link
                             key={item.name}
                             to={item.href}
+                            aria-label={item.name}
                             activeClassName="active"
                             className={classNames(
                               item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-slate-300',
@@ -87,13 +88,14 @@ export default function Navigation() {
                         <SearchIcon
                           className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
                           aria-hidden="true"
+                          aria-label="Search Button"
                         />
                       </span>
                     </Link>
                   </div>
                   <div className="p-1">
                     <span className="sr-only">Dark Light Modes</span>
-                    <ThemeToggle panelClassName="mt-8" aria-hidden="true" />
+                    <ThemeToggle panelClassName="mt-8" aria-hidden="true" aria-label="Theme Button" />
                   </div>
 
                   {/* Profile dropdown */}
@@ -126,7 +128,25 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
+                              aria-label="Login"
+                              to="/login"
+                              className={classNames(
+                                active ? 'bg-slate-700' : '',
+                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
+                              )}
+                            >
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
+                                <UserGroupIcon aria-label="Login" className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
+                                <span>Login</span>
+                              </span>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
                               to="/profile"
+                              aria-label="Profile Button"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
                                 'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
@@ -142,6 +162,7 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
+                              aria-label="Gallery"
                               to="/gallery"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
@@ -149,7 +170,7 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <PhotographIcon className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
+                                <PhotographIcon aria-label="Gallery" className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
                                 <span>Gallery</span>
                               </span>
                             </Link>
@@ -158,6 +179,7 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
+                              aria-label="Sitemap"
                               target="_blank"
                               to="https://publiuslogic.com/sitemap.xml"
                               className={classNames(
@@ -183,6 +205,7 @@ export default function Navigation() {
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {navigation.map(item => (
                   <Link
+                    aria-label={item.name}
                     key={item.name}
                     to={item.href}
                     className={classNames(
