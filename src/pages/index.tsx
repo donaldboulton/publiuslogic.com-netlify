@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -10,25 +10,19 @@ import { LazyMotion, motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
-import defaultImage from '../../static/images/jpg/dbbg.jpg'
 import Table from '@/components/Table'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-interface HomeProps {
-  image?: string
-}
 const ogimage = {
   src: OGImage,
   width: 1400,
   height: 531,
 }
 
-const Home = ({ image }: HomeProps) => {
+const Home = () => {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [
@@ -46,31 +40,7 @@ const Home = ({ image }: HomeProps) => {
       },
     },
   }
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        let version = localStorage.getItem('notification-version')
-        version = version ? version : 0
-        const response = await fetch(
-          'REPLACE_UPSTASH_REDIS_REST_URL/zrevrangebyscore/messages/+inf/' + version + '/WITHSCORES/LIMIT/0/1',
-          {
-            headers: {
-              Authorization: 'Bearer REPLACE_UPSTASH_REDIS_REST_TOKEN',
-            },
-          }
-        )
-        const res = await response.json()
-        const v = parseInt(res.result[1])
-        if (v) {
-          localStorage.setItem('notification-version', v + 1)
-        }
-        toast(res.result[0])
-      } catch (e) {
-        console.error(e)
-      }
-    }
-    fetchData()
-  })
+
   return (
     <>
       <Layout>
@@ -78,10 +48,14 @@ const Home = ({ image }: HomeProps) => {
           <div className="relative flex content-center items-center justify-center">
             <div className="relative mx-auto mb-4 h-96 w-full max-w-screen-xl text-slate-300 md:mb-0">
               <div className="absolute bottom-0 left-0 z-10 h-full w-full bg-gradient-to-b from-slate-700"></div>
-              <img
-                src={image ? image : defaultImage}
-                alt="featured image"
+              <StaticImage
                 className="absolute left-0 top-0 z-0 h-full w-full"
+                formats={['auto', 'webp']}
+                src="../../static/images/jpg/dbbg.jpg"
+                quality={95}
+                alt="Home Picture"
+                area-label="Home Picture"
+                loading="eager"
               />
               <LazyMotion features={loadFeatures}>
                 <motion.div
@@ -205,7 +179,7 @@ const Home = ({ image }: HomeProps) => {
                   <StaticImage
                     className="m-auto mx-auto mb-3 h-20 w-20 max-w-xs rounded-full ring ring-indigo-500 ring-offset-4"
                     formats={['auto', 'webp']}
-                    src="../../static/img/donald-boulton.jpg"
+                    src="../../static/img/donald-boulton-80.jpg"
                     quality={95}
                     alt="Profile picture"
                     area-label="My Picture"
@@ -428,20 +402,6 @@ const Home = ({ image }: HomeProps) => {
               </div>
             </div>
           </section>
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-          />
-          {/* Same as */}
-          <ToastContainer />
         </main>
       </Layout>
     </>

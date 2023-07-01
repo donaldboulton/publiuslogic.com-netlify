@@ -13,7 +13,6 @@ import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
 
-
 const components = { Link }
 
 type DataProps = {
@@ -109,7 +108,6 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
                 </div>
               </div>
               <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-
               <GiscusComments mapping={pathname} />
               <WavyHr />
             </section>

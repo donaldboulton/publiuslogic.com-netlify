@@ -2,9 +2,8 @@
   publish = "public"
   command = "gatsby build"
   NETLIFY_USE_YARN = "true"
-  functions = "lambda"
 [build.environment]
-  NODE_VERSION = "18.13.0"
+  NODE_VERSION = "18.16.0"
 [[headers]]
   for = "/*"
   [headers.values]

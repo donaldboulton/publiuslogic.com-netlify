@@ -36,7 +36,7 @@ function Profile() {
                   <StaticImage
                     className="m-auto mx-auto mb-3 h-20 w-20 max-w-xs rounded-full ring ring-indigo-500 ring-offset-4"
                     formats={['auto', 'webp']}
-                    src="../../static/assets/donald-boulton.jpg"
+                    src="../../static/img/donald-boulton-80.jpg"
                     quality={95}
                     alt="Profile picture"
                     area-label="My Picture"

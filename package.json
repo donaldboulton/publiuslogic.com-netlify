@@ -99,20 +99,21 @@
     "react-popper-tooltip": "^4.4.2",
     "react-toastify": "^9.1.2",
     "react-tsparticles": "^2.9.3",
-    "tsparticles-move-base": "^2.9.3",
-    "tsparticles-shape-circle": "^2.9.3",
-    "tsparticles-updater-color": "^2.9.3",
-    "tsparticles-updater-opacity": "^2.9.3",
-    "tsparticles-updater-out-modes": "^2.9.3",
-    "tsparticles-updater-size": "^2.9.3",
     "react-typist": "^2.0.5",
     "react-typist-component": "^1.0.5",
     "redis": "^4.6.6",
     "remark-autolink-headings": "^7.0.1",
     "remark-slug": "^7.0.1",
+    "supabase": "^1.75.2",
     "tsparticles": "^2.9.3",
+    "tsparticles-move-base": "^2.9.3",
     "tsparticles-preset-confetti": "^2.9.3",
     "tsparticles-preset-stars": "^2.9.3",
+    "tsparticles-shape-circle": "^2.9.3",
+    "tsparticles-updater-color": "^2.9.3",
+    "tsparticles-updater-opacity": "^2.9.3",
+    "tsparticles-updater-out-modes": "^2.9.3",
+    "tsparticles-updater-size": "^2.9.3",
     "use-sound": "^4.0.1",
     "util": "^0.12.5",
     "zustand": "^4.3.6"
@@ -148,13 +149,10 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.0",
     "gatsby-plugin-eslint": "^4.0.3",
-    "http-proxy-middleware": "^2.0.6",
-    "netlify-lambda": "^2.0.16",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "supabase": "^1.51.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   },
@@ -193,9 +191,9 @@
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "engines": {
-    "node": ">=18.13.0"
+    "node": ">=18.16.0"
   },
   "AWS_LAMBDA_JS_RUNTIME": {
-    "node": ">=18.13.0"
+    "node": ">=18.16.0"
   }
 }
