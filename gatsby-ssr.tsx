@@ -9,15 +9,10 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-
-const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-});
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
+    : undefined
 
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
@@ -50,6 +45,7 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlA
       }}
     />,
   ])
+  
   setPreBodyComponents([
     <noscript
       key="gtm"
