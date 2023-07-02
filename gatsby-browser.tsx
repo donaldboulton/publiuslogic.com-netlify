@@ -10,15 +10,10 @@ import { Database } from './src/lib/schema'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-
-const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-});
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
+    : undefined
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
