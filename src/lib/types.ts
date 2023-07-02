@@ -231,13 +231,23 @@ export interface GiscusProps {
   loading?: Loading;
 }
 
-interface Views {
+export interface Views {
   count: number;
 }
 
-interface Loves {
+export interface Loves {
   count: number;
   slug: string;
+}
+
+export interface Session {
+  provider_token?: string | null
+  access_token: string
+  expires_in?: number
+  expires_at?: number
+  refresh_token: string
+  token_type: string
+  user: User
 }
 
 export type GitHubOAuthData =

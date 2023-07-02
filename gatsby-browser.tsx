@@ -10,8 +10,14 @@ import { Database } from './src/lib/schema'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
-
-
+const supabase = createClient<Database>(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+});
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
