@@ -21,16 +21,14 @@ const ogimage = {
   height: 450,
 }
 
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)      
+    : undefined
+
+
 const Login = () => {
   const session = useSession()
-  const supabase = createClient<Database>(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_KEY, {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-      },
-  });
   return (
     <Layout>
       <div className="mb-96 ml-10 mr-10 mt-10">
