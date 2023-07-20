@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useCallback } from 'react'
-import Particles from 'react-particles'
+import Particles from 'react-tsparticles'
 import type { Container, Engine } from 'tsparticles-engine'
 import { loadFull } from 'tsparticles'
 import { loadConfettiPreset } from 'tsparticles-preset-confetti'
