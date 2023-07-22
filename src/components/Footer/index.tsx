@@ -82,8 +82,8 @@ export default function IndexFooter() {
                       </Link>
                     </li>
                     <li>
-                      <Link 
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300" 
+                      <Link
+                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog"
                         aria-label="Blog Link"
                       >

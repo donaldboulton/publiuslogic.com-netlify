@@ -8,11 +8,12 @@ import { createClient } from '@supabase/supabase-js'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
+import storage from 'redux-persist/lib/storage';
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
-    : undefined
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
+
+const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
 
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'

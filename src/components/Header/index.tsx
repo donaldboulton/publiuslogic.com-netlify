@@ -136,7 +136,11 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <UserGroupIcon aria-label="Login" className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
+                                <UserGroupIcon
+                                  aria-label="Login"
+                                  className="block h-8 w-9 pr-2 text-wine-300"
+                                  aria-hidden="true"
+                                />
                                 <span>Login</span>
                               </span>
                             </Link>
@@ -170,7 +174,11 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <PhotographIcon aria-label="Gallery" className="block h-8 w-9 pr-2 text-wine-300" aria-hidden="true" />
+                                <PhotographIcon
+                                  aria-label="Gallery"
+                                  className="block h-8 w-9 pr-2 text-wine-300"
+                                  aria-hidden="true"
+                                />
                                 <span>Gallery</span>
                               </span>
                             </Link>

@@ -1,4 +1,8 @@
 import * as React from 'react'
+import storage from 'redux-persist/lib/storage';
+import { Provider } from 'react-redux';
+import { persistor, store } from '../redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Auth } from '@supabase/auth-ui-react'
 import type { HeadProps } from 'gatsby'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -8,7 +12,7 @@ import Center from '../components/Center'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '../components/LeftText'
 import Seo from '../components/Seo'
-import TodoList from "../components/TodoList";
+import TodoList from '../components/TodoList'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import ColumnGridTwo from '../components/ColumnGridTwo'
 import { createClient } from '@supabase/supabase-js'
@@ -21,16 +25,17 @@ const ogimage = {
   height: 450,
 }
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)      
-    : undefined
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
 
+const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
 
 const Login = () => {
   const session = useSession()
   return (
-    <Layout>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Layout>
       <div className="mb-96 ml-10 mr-10 mt-10">
         <div>
           <Center>Login PubliusLogic</Center>
@@ -56,7 +61,7 @@ const Login = () => {
               <Auth
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
-                providers={["github", "google", "slack", "spotify"]}
+                providers={['github', 'google', 'slack', 'spotify']}
                 theme="dark"
               />
             ) : (
@@ -65,7 +70,7 @@ const Login = () => {
                   <Account session={session} />
                   <div
                     className="flex h-full w-full flex-col items-center justify-center p-4"
-                    style={{ minWidth: 250, maxWidth: 600, margin: "auto" }}
+                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
                   >
                     <TodoList session={session} />
                   </div>
@@ -75,7 +80,9 @@ const Login = () => {
           </div>
         </ColumnGridTwo>
       </div>
-    </Layout>
+        </Layout>
+      </PersistGate>
+    </Provider>
   )
 }
 

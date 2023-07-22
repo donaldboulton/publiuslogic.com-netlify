@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react'
+import { createClient } from '@supabase/supabase-js'
+import storage from 'redux-persist/lib/storage';
 import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-react'
 import { Database } from '@lib/schema'
 import Avatar from './avatar'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
+
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
+
+const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
 
 export default function Login({ session }: { session: Session }) {
   const supabase = useSupabaseClient<Database>()
@@ -82,11 +89,12 @@ export default function Login({ session }: { session: Session }) {
       provider: 'github',
     })
   }
-  
+
   async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
+        redirectTo: 'http://localhost:9000/auth/callback',
         queryParams: {
           access_type: 'offline',
           prompt: 'consent',
@@ -97,28 +105,28 @@ export default function Login({ session }: { session: Session }) {
 
   async function signInWithSlack() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "slack",
-    });
+      provider: 'slack',
+    })
   }
 
   async function signInWithSpotify() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "spotify",
-    });
+      provider: 'spotify',
+    })
   }
 
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithPassword({
-      email: process.env.NEXT_PUBLIC_ADMIN_EMAILS,
+      email: process.env.GATSBY_PUBLIC_ADMIN_EMAILS,
       password: process.env.ADMIN_PASSWORD,
     })
   }
 
-  async function signout() {
+  async function signOut() {
     const { error } = await supabase.auth.signOut()
   }
 
-  return (
+  return (    
     <div className="form-widget ml-8">
       <div className="mb-2 p-4">
         <Avatar
