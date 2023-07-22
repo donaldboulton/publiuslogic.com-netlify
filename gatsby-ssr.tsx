@@ -8,19 +8,19 @@ import { createClient } from '@supabase/supabase-js'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage'
 
 const supabase =
   process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     : undefined
-    
+
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>
@@ -46,7 +46,7 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlA
       }}
     />,
   ])
-  
+
   setPreBodyComponents([
     <noscript
       key="gtm"

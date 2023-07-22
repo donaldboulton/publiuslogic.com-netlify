@@ -1,8 +1,8 @@
 import * as React from 'react'
-import storage from 'redux-persist/lib/storage';
-import { Provider } from 'react-redux';
-import { persistor, store } from '../redux/store';
-import { PersistGate } from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage'
+import { Provider } from 'react-redux'
+import { persistor, store } from '../redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Auth } from '@supabase/auth-ui-react'
 import type { HeadProps } from 'gatsby'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -25,61 +25,61 @@ const ogimage = {
   height: 450,
 }
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
-    : undefined
-    
-const Login = () => {
+const Login = ({ auth }) => {
+  const supabase =
+    process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+      ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, { auth: { storage: storage } })
+      : undefined
+
   const session = useSession()
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Layout>
-      <div className="mb-96 ml-10 mr-10 mt-10">
-        <div>
-          <Center>Login PubliusLogic</Center>
-        </div>
-        <LeftText>The Queen</LeftText>
-        <ColumnGridTwo>
-          <div className="mt-4">
-            <div className="mb-4">
-              <StaticImage
-                layout="fixed"
-                className="h-5 w-5 self-center rounded-lg"
-                src="../../static/images/angie/ps-i-love-you.jpg"
-                width={325}
-                height={573}
-                quality={95}
-                alt="PS I Love You"
-                loading="lazy"
-              />
+          <div className="mb-96 ml-10 mr-10 mt-10">
+            <div>
+              <Center>Login PubliusLogic</Center>
             </div>
+            <LeftText>The Queen</LeftText>
+            <ColumnGridTwo>
+              <div className="mt-4">
+                <div className="mb-4">
+                  <StaticImage
+                    layout="fixed"
+                    className="h-5 w-5 self-center rounded-lg"
+                    src="../../static/images/angie/ps-i-love-you.jpg"
+                    width={325}
+                    height={573}
+                    quality={95}
+                    alt="PS I Love You"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
+                {!session ? (
+                  <Auth
+                    supabaseClient={supabase}
+                    appearance={{ theme: ThemeSupa }}
+                    providers={['github', 'google', 'slack', 'spotify']}
+                    theme="dark"
+                  />
+                ) : (
+                  <>
+                    <ColumnGridTwo>
+                      <Account session={session} />
+                      <div
+                        className="flex h-full w-full flex-col items-center justify-center p-4"
+                        style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                      >
+                        <TodoList session={session} />
+                      </div>
+                    </ColumnGridTwo>
+                  </>
+                )}
+              </div>
+            </ColumnGridTwo>
           </div>
-          <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
-            {!session ? (
-              <Auth
-                supabaseClient={supabase}
-                appearance={{ theme: ThemeSupa }}
-                providers={['github', 'google', 'slack', 'spotify']}
-                theme="dark"
-              />
-            ) : (
-              <>
-                <ColumnGridTwo>
-                  <Account session={session} />
-                  <div
-                    className="flex h-full w-full flex-col items-center justify-center p-4"
-                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                  >
-                    <TodoList session={session} />
-                  </div>
-                </ColumnGridTwo>
-              </>
-            )}
-          </div>
-        </ColumnGridTwo>
-      </div>
         </Layout>
       </PersistGate>
     </Provider>

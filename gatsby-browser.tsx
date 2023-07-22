@@ -7,18 +7,17 @@ import { AnimatePresence } from 'framer-motion'
 import { createClient } from '@supabase/supabase-js'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Database } from './src/lib/schema'
-import storage from 'redux-persist/lib/storage';
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
 const supabase =
   process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     : undefined
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>

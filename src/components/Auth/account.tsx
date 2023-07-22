@@ -1,18 +1,12 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import storage from 'redux-persist/lib/storage';
 import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-react'
 import { Database } from '@lib/schema'
 import Avatar from './avatar'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
-    : undefined
-    
-export default function Login({ session }: { session: Session }) {
+export default function Login({ auth, session }: { session: Session }) {
   const supabase = useSupabaseClient<Database>()
   const user = useUser()
   const [loading, setLoading] = useState(true)
@@ -126,7 +120,7 @@ export default function Login({ session }: { session: Session }) {
     const { error } = await supabase.auth.signOut()
   }
 
-  return (    
+  return (
     <div className="form-widget ml-8">
       <div className="mb-2 p-4">
         <Avatar
