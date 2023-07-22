@@ -6,7 +6,7 @@ import Avatar from './avatar'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
-export default function Login({ auth, session }: { session: Session }) {
+export default function Login({ session }: { session: Session }) {
   const supabase = useSupabaseClient<Database>()
   const user = useUser()
   const [loading, setLoading] = useState(true)
