@@ -7,11 +7,11 @@ import Avatar from './avatar'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-
-const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
-
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
+    : undefined
+    
 export default function Login({ session }: { session: Session }) {
   const supabase = useSupabaseClient<Database>()
   const user = useUser()

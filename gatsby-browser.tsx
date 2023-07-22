@@ -11,10 +11,10 @@ import storage from 'redux-persist/lib/storage';
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-
-const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
+    : undefined
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return

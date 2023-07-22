@@ -10,11 +10,11 @@ import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
 import storage from 'redux-persist/lib/storage';
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-
-const supabase = createClient<Database>( supabaseUrl, supabaseKey, {auth: {storage: storage}});
-
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {auth: {storage: storage}})
+    : undefined
+    
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
