@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { ReactNode, FC } from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 type FormValues = {
   firstName: string
@@ -56,8 +57,9 @@ const ContactForm: FC<ContactFormProps> = props => {
   const onSubmit = data => netlify.handleSubmit(null, data)
 
   const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
-
   const PHONE_REGEX = /^[0-9+-]+$/
+  const [checked, setChecked] = useLocalStorage("Checkbox", false)
+
 
   return (
     <div className="-pt-2 mb-24 text-slate-900 dark:text-slate-200 lg:col-span-2 lg:mt-0">
@@ -362,6 +364,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         id="acceptTerms"
                         type="checkbox"
                         name="acceptTerms"
+                        value={checked ? email : ""}
                         aria-label="Terms Checkbox"
                         {...register('acceptTerms')}
                         className={`ml-1 h-6 w-6 rounded border-red-700 bg-slate-700 ring-offset-red-800 focus:ring-2 focus:ring-red-600 

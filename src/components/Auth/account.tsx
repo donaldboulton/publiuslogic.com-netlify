@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react'
+import { useUser, useSession } from '@supabase/auth-helpers-react'
 import { Database } from '@lib/schema'
+import useLocalStorage from '../../hooks/useLocalStorage'
 import Avatar from './avatar'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
 export default function Account() {
   const supabase = useSupabaseClient<Database>()
+  const [email, setEmail] = useLocalStorage("Email", "email")
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
+  const [value, setValue] = useLocalStorage("Username", "username")
   const session = useSession()
   const user = useUser()
   const [loading, setLoading] = useState(true)
@@ -89,7 +98,7 @@ export default function Account() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'http://localhost:9000/auth/callback',
+        redirectTo: 'https://publiuslogic.com/login',
         queryParams: {
           access_type: 'offline',
           prompt: 'consent',
@@ -153,8 +162,9 @@ export default function Account() {
           </div>
           <input
             id="email"
-            type="text"
+            type="text"            
             value={session.user.email}
+            onChange={e => setEmail(e.target.value)}
             disabled
             autoComplete="on"
             placeholder="Email"

@@ -14,6 +14,7 @@ import ColumnGridTwo from '../components/ColumnGridTwo'
 import { createClient } from '@supabase/supabase-js'
 import { useSession } from '@supabase/auth-helpers-react'
 import { Database } from '@/lib/schema'
+import { supabase } from '../supabase/supabase'
 
 const ogimage = {
   src: OGImage,
@@ -22,11 +23,6 @@ const ogimage = {
 }
 
 const Login = () => {
-  const supabase =
-    process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-      ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
-      : undefined
-
   const session = useSession()
   return (
     <Layout>
@@ -84,7 +80,7 @@ export default Login
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Login" description="Click on each Post for link." image={ogimage} pathname="/search">
+      <Seo type="page" title="Login" description="Login To PubliusLogic." image={ogimage} pathname="/search">
         <title>Login Page</title>
         <meta name="description" content="PubliusLogic Login Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

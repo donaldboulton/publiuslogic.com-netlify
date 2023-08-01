@@ -9,9 +9,18 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
 import { Database } from './src/lib/schema'
 
+const options = {
+  auth: {
+    localStorage: true,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,
+  },
+};
+
 const supabase =
   process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, options)
     : undefined
 
 const ORIGIN = 'https://www.googletagmanager.com/'

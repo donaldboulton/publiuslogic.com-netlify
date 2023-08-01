@@ -14,7 +14,21 @@ const loadingCircle = {
   display: 'block',
   width: '0.5rem',
   height: '0.5rem',
-  backgroundColor: 'transparent',
+  backgroundColor: 'blue',
+  borderRadius: '0.25rem',
+}
+const loadingCircleOne = {
+  display: 'block',
+  width: '0.5rem',
+  height: '0.5rem',
+  backgroundColor: '#620024',
+  borderRadius: '0.25rem',
+}
+const loadingCircleTwo = {
+  display: 'block',
+  width: '0.5rem',
+  height: '0.5rem',
+  backgroundColor: 'pink',
   borderRadius: '0.25rem',
 }
 
@@ -46,16 +60,18 @@ const loadingCircleTransition = {
   ease: 'easeInOut',
 }
 
-export default function ThreeDotsWave() {
+function ThreeDotsWave() {
   return (
     <>
       <LazyMotion features={loadFeatures}>
         <m.div style={loadingContainer} variants={loadingContainerVariants} initial="start" animate="end">
           <m.span style={loadingCircle} variants={loadingCircleVariants} transition={loadingCircleTransition} />
-          <m.span style={loadingCircle} variants={loadingCircleVariants} transition={loadingCircleTransition} />
-          <m.span style={loadingCircle} variants={loadingCircleVariants} transition={loadingCircleTransition} />
+          <m.span style={loadingCircleOne} variants={loadingCircleVariants} transition={loadingCircleTransition} />
+          <m.span style={loadingCircleTwo} variants={loadingCircleVariants} transition={loadingCircleTransition} />
         </m.div>
       </LazyMotion>
     </>
   )
 }
+
+export default ThreeDotsWave

@@ -29,7 +29,7 @@ const Home = () => {
     { type: 'heading1', text: 'PubliusLogic' },
     {
       type: 'heading2',
-      text: 'Publishing Logic & Gods Truth!',
+      text: 'I Publish Logic & Gods Truth!',
     },
   ]
 
