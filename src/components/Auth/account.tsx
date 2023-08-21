@@ -1,180 +1,126 @@
+import * as React from 'react'
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
-import { useUser, useSession } from '@supabase/auth-helpers-react'
-import { Database } from '@lib/schema'
-import useLocalStorage from '../../hooks/useLocalStorage'
 import Avatar from './avatar'
-import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { supabase } from '../../supabase/supabase'
 
-type Profiles = Database['public']['Tables']['profiles']['Row']
-
-export default function Account() {
-  const supabase = useSupabaseClient<Database>()
-  const [email, setEmail] = useLocalStorage("Email", "email")
-  const [passwordShown, setPasswordShown] = useState(false);
-  const togglePasswordVisiblity = () => {
-    setPasswordShown(passwordShown ? false : true);
-  };
-
-  const [value, setValue] = useLocalStorage("Username", "username")
-  const session = useSession()
-  const user = useUser()
+export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState<Profiles['username']>(null)
-  const [website, setWebsite] = useState<Profiles['website']>(null)
-  const [avatar_url, setAvatarUrl] = useState<Profiles['avatar_url']>(null)
+  const [username, setUsername] = useState(null)
+  const [website, setWebsite] = useState(null)
+  const [avatar_url, setAvatarUrl] = useState(null)
 
   useEffect(() => {
-    getProfile()
-  }, [session])
-
-  async function getProfile() {
-    try {
+    async function getProfile() {
       setLoading(true)
-      if (!user) throw new Error('No user')
+      const { user } = session
 
-      let { data, error, status } = await supabase
+      let { data, error } = await supabase
         .from('profiles')
         .select(`username, website, avatar_url`)
         .eq('id', user.id)
         .single()
 
-      if (error && status !== 406) {
-        throw error
-      }
-
-      if (data) {
+      if (error) {
+        console.warn(error)
+      } else if (data) {
         setUsername(data.username)
         setWebsite(data.website)
         setAvatarUrl(data.avatar_url)
       }
-    } catch (error) {
-      alert('Error loading user data!')
-      console.log(error)
-    } finally {
+
       setLoading(false)
     }
-  }
 
-  async function updateProfile({
-    username,
-    website,
-    avatar_url,
-  }: {
-    username: Profiles['username']
-    website: Profiles['website']
-    avatar_url: Profiles['avatar_url']
-  }) {
-    try {
-      setLoading(true)
-      if (!user) throw new Error('No user')
+    getProfile()
+  }, [session])
 
-      const updates = {
-        id: user.id,
-        username,
-        website,
-        avatar_url,
-        updated_at: new Date().toISOString(),
-      }
+  async function updateProfile(event) {
+    event.preventDefault()
 
-      let { error } = await supabase.from('profiles').upsert(updates)
-      if (error) throw error
-      alert('Profile updated!')
-    } catch (error) {
-      alert('Error updating the data!')
-      console.log(error)
-    } finally {
-      setLoading(false)
+    setLoading(true)
+    const { user } = session
+
+    const updates = {
+      id: user.id,
+      username,
+      website,
+      avatar_url,
+      updated_at: new Date(),
     }
-  }
 
-  async function signInWithGitHub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-    })
-  }
+    let { error } = await supabase.from('profiles').upsert(updates)
 
-  async function signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: 'https://publiuslogic.com/login',
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-      },
-    })
+    if (error) {
+      alert(error.message)
+    }
+    setLoading(false)
   }
-
-  async function signInWithSlack() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'slack',
-    })
-  }
-
-  async function signInWithSpotify() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'spotify',
-    })
-  }
-
-  async function signInWithEmail() {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: process.env.GATSBY_PUBLIC_ADMIN_EMAILS,
-      password: process.env.ADMIN_PASSWORD,
-    })
-  }
-
-  async function signOut() {
-    const { error } = await supabase.auth.signOut()
-  }
-
   return (
-    <div className="form-widget ml-8">
-      <div className="mb-2 p-4">
-        <Avatar
-          uid={user.id}
-          url={avatar_url}
-          size={150}
-          onUpload={url => {
-            setAvatarUrl(url)
-            updateProfile({ username, website, avatar_url: url })
-          }}
+    <form onSubmit={updateProfile} className="form-widget">
+      <Avatar
+        uid={user!.id}
+        url={avatar_url}
+        size={150}
+        onUpload={url => {
+          setAvatarUrl(url)
+          updateProfile({ fullname, username, website, avatar_url: url })
+        }}
+      />
+      <div className="col-span-6">
+        <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-300" htmlFor="email">
+          Email
+        </label>
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-l-md border border-r-0 border-slate-700 bg-slate-800 pl-3 pr-3 text-slate-300">
+          <svg
+            aria-hidden="true"
+            className="h-5 w-5 text-slate-300"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+          </svg>
+        </div>
+        <input
+          id="email"
+          type="text"
+          value={session?.user.email}
+          className="mb-3 block w-full appearance-none rounded border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 focus:border-wine-300 focus:outline-none focus:ring-wine-200 sm:text-sm"
+          disabled
         />
       </div>
       <div className="col-span-6">
-        <label htmlFor="email" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-300">
-          Email address
+        <label htmlFor="fullName" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-300">
+          Full Name
         </label>
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-l-md border border-r-0 border-slate-700 bg-slate-800 pl-3 pr-3 text-slate-300">
-            <svg
-              aria-hidden="true"
-              className="h-5 w-5 text-slate-300"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-            </svg>
-          </div>
-          <input
-            id="email"
-            type="text"            
-            value={session.user.email}
-            onChange={e => setEmail(e.target.value)}
-            disabled
-            autoComplete="on"
-            placeholder="Email"
-            className="mt-1 block w-full rounded-md border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 shadow-sm focus:border-blue-400 focus:ring-blue-300 sm:text-sm"
-          />
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-l-md border border-r-0 border-slate-700 bg-slate-800 pl-3 pr-3 text-slate-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="h-5 w-5 text-red-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+            />
+          </svg>
         </div>
+        <input
+          id="fullName"
+          type="text"
+          value={fullname || ''}
+          onChange={e => setFullname(e.target.value)}
+          className="mb-3 block w-full appearance-none rounded border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 focus:border-wine-300 focus:outline-none focus:ring-wine-200 sm:text-sm"
+        />
       </div>
-      <div className="col-span-6 mt-2">
+      <div className="col-span-6">
         <label htmlFor="username" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-300">
-          UserName
+          Username
         </label>
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-l-md border border-r-0 border-slate-700 bg-slate-800 pl-3 pr-3 text-slate-300">
@@ -184,12 +130,12 @@ export default function Account() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              className="h-5 w-5 text-slate-300"
+              className="h-5 w-5 text-red-500"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
           </div>
@@ -198,13 +144,11 @@ export default function Account() {
             type="text"
             value={username || ''}
             onChange={e => setUsername(e.target.value)}
-            disabled
-            placeholder="UserName"
-            className="mt-1 block w-full rounded-md border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 shadow-sm focus:border-blue-400 focus:ring-blue-300 sm:text-sm"
+            className="mb-3 block w-full appearance-none rounded border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 focus:border-wine-300 focus:outline-none focus:ring-wine-200 sm:text-sm"
           />
         </div>
       </div>
-      <div className="col-span-6 mt-2">
+      <div className="col-span-6">
         <label htmlFor="website" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-300">
           Website
         </label>
@@ -212,11 +156,12 @@ export default function Account() {
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center rounded-l-md border border-r-0 border-slate-700 bg-slate-800 pl-3 pr-3 text-slate-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
+              className="h-5 w-5 text-slate-300"
+              fill="currentColor"
+              aria-hidden="true"
+              viewBox="0 0 20 20"
               stroke-width="1.5"
               stroke="currentColor"
-              className="h-5 w-5 text-slate-300"
             >
               <path
                 stroke-linecap="round"
@@ -227,20 +172,18 @@ export default function Account() {
           </div>
           <input
             id="website"
-            type="website"
+            type="url"
             value={website || ''}
             onChange={e => setWebsite(e.target.value)}
-            disabled
-            placeholder="Website"
-            className="mt-1 block w-full rounded-md border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 shadow-sm focus:border-blue-400 focus:ring-blue-300 sm:text-sm"
+            className="mb-3 block w-full appearance-none rounded border-slate-800 bg-slate-900 p-2.5 px-4 py-3 pl-14 leading-tight text-slate-300 focus:border-wine-300 focus:outline-none focus:ring-wine-200 sm:text-sm"
           />
         </div>
       </div>
 
-      <div className="mb-4 mt-4">
+      <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          onClick={() => updateProfile({ fullname, username, website, avatar_url })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
@@ -252,6 +195,7 @@ export default function Account() {
           Sign Out
         </button>
       </div>
-    </div>
+    </form>
   )
 }
+

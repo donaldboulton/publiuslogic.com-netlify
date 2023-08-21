@@ -51,7 +51,7 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
 
   const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
 
-  const [checked, setChecked] = useLocalStorage("Checkbox", false)
+  const [checked, setChecked] = useLocalStorage('Checkbox', false)
 
   return (
     <>
@@ -115,7 +115,7 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
                       type="checkbox"
                       checked={checked}
                       name="acceptTerms"
-                      value={checked ? email : ""}
+                      value={checked ? email : ''}
                       aria-label="Terms Checkbox"
                       {...register('acceptTerms')}
                       className={`ml-1 h-6 w-6 rounded border-red-700 bg-slate-700 ring-offset-red-800 focus:ring-2 focus:ring-red-600 ${

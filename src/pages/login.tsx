@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react'
 import { Auth } from '@supabase/auth-ui-react'
 import type { HeadProps } from 'gatsby'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -12,8 +13,6 @@ import TodoList from '../components/TodoList'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import ColumnGridTwo from '../components/ColumnGridTwo'
 import { createClient } from '@supabase/supabase-js'
-import { useSession } from '@supabase/auth-helpers-react'
-import { Database } from '@/lib/schema'
 import { supabase } from '../supabase/supabase'
 
 const ogimage = {
@@ -22,8 +21,68 @@ const ogimage = {
   height: 450,
 }
 
-const Login = () => {
-  const session = useSession()
+const Login = ({ email }) => {
+  const [session, setSession] = useState(null)
+    useEffect(() => {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session)
+      })
+
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session)
+      })
+
+      return () => subscription.unsubscribe()
+    }, [])
+
+  const getURL = () => {
+    let url =
+      process?.env?.API_URL ?? // Set this to your site URL in production env.
+      'http://localhost:3000/'
+    // Make sure to include `https://` when not localhost.
+    url = url.includes('http') ? url : `https://${url}`
+    // Make sure to include a trailing `/`.
+    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+    return url
+  }
+
+  async function signInWithGitHub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: getURL(),
+      },
+    })
+  }
+
+  async function signInWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: getURL(),
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
+      },
+    })
+  }
+
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithOtp({
+      email: {email},
+      options: {
+        emailRedirectTo: getURL(),
+      },
+    })
+  }
+
+  async function signOut() {
+    const { error } = await supabase.auth.signOut()
+  }
+
   return (
     <Layout>
       <div className="mb-96 ml-10 mr-10 mt-10">
@@ -50,14 +109,15 @@ const Login = () => {
             {!session ? (
               <Auth
                 supabaseClient={supabase}
+                view="magic_link"
                 appearance={{ theme: ThemeSupa }}
-                providers={['github', 'google', 'slack', 'spotify']}
+                providers={['github', 'google']}
                 theme="dark"
               />
             ) : (
               <>
                 <ColumnGridTwo>
-                  <Account session={session} />
+                  <Account key={session.user.id} session={session} />
                   <div
                     className="flex h-full w-full flex-col items-center justify-center p-4"
                     style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}

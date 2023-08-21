@@ -16,7 +16,7 @@ const options = {
     persistSession: true,
     detectSessionInUrl: true,
   },
-};
+}
 
 const supabase =
   process.env.SUPABASE_URL && process.env.SUPABASE_KEY
@@ -28,7 +28,7 @@ const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>
