@@ -1,19 +1,15 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Auth } from '@supabase/auth-ui-react'
+import AuthForm from '@/components/Auth/Auth'
 import type { HeadProps } from 'gatsby'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
-import Account from '../components/Auth/account'
-import Layout from '../components/Layout'
-import Center from '../components/Center'
+import Account from '@/components/Auth/Account'
+import Layout from '@/components/Layout'
 import { StaticImage } from 'gatsby-plugin-image'
-import LeftText from '../components/LeftText'
-import Seo from '../components/Seo'
-import TodoList from '../components/TodoList'
+import LeftText from '@/components/LeftText'
+import Seo from '@/components/Seo'
+import Stars from '@/components/Stars'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
-import ColumnGridTwo from '../components/ColumnGridTwo'
-import { createClient } from '@supabase/supabase-js'
-import { supabase } from '../supabase/supabase'
+import { supabase } from '../supabase/supabaseClient'
 
 const ogimage = {
   src: OGImage,
@@ -21,116 +17,128 @@ const ogimage = {
   height: 450,
 }
 
-const Login = ({ email }) => {
+const Login = () => {
   const [session, setSession] = useState(null)
-    useEffect(() => {
-      supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session)
-      })
 
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
-      })
-
-      return () => subscription.unsubscribe()
-    }, [])
-
-  const getURL = () => {
-    let url =
-      process?.env?.API_URL ?? // Set this to your site URL in production env.
-      'http://localhost:3000/'
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`
-    // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-    return url
-  }
-
-  async function signInWithGitHub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-      options: {
-        redirectTo: getURL(),
-      },
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
     })
-  }
 
-  async function signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: getURL(),
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-      },
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
     })
-  }
-
-  async function signInWithEmail() {
-    const { data, error } = await supabase.auth.signInWithOtp({
-      email: {email},
-      options: {
-        emailRedirectTo: getURL(),
-      },
-    })
-  }
+  }, [])
 
   async function signOut() {
     const { error } = await supabase.auth.signOut()
   }
 
   return (
-    <Layout>
-      <div className="mb-96 ml-10 mr-10 mt-10">
-        <div>
-          <Center>Login PubliusLogic</Center>
-        </div>
-        <LeftText>The Queen</LeftText>
-        <ColumnGridTwo>
-          <div className="mt-4">
-            <div className="mb-4">
-              <StaticImage
-                layout="fixed"
-                className="h-5 w-5 self-center rounded-lg"
-                src="../../static/images/angie/ps-i-love-you.jpg"
-                width={325}
-                height={573}
-                quality={95}
-                alt="PS I Love You"
-                loading="lazy"
-              />
+    <>
+      <Stars />
+      <div class="form-beams min-h-full flex flex-col">      
+        <div className="">
+          <div className="bg-[#121212] text-slate-300 flex flex-1 flex-col opacity-70 bg-scale-100">
+            <div class="absolute top-0 mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
+              <nav class="relative flex items-center justify-between sm:h-10">
+                <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                  <div class="flex w-full items-center justify-between md:w-auto">
+                    <a href="/">
+                      <span className="relative inline-block overflow-hidden">
+                        <StaticImage
+                          layout="fixed"
+                          className="h-8 w-8 self-center rounded-lg"
+                          src="../../static/img/apple-touch-icon-32x32.png"
+                          width={32}
+                          height={32}
+                          quality={95}
+                          alt="Angelina Jordan"
+                          loading="lazy"
+                        />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
+                  <a target="_blank" rel="noreferrer" href="/about">
+                    <button
+                      type="button"
+                      class="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="sbui-icon "
+                      >
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>{' '}
+                      <span class="truncate">About Publiuslogic</span>{' '}
+                    </button>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div className="flex flex-1">
+              <div className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-900 px-5 pb-8 pt-16 shadow-lg">
+                <div className="flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
+                  <div className="mb-10">
+                    <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Welcome back</LeftText>
+                    <h2 className="text-scale-1100 text-sm">Sign in to your account</h2>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    {!session ? <AuthForm /> : <Account key={session.user.id} session={session} />}
+                  </div>
+                </div>
+              </div>
+              <aside className="hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
+                <div className="relative flex flex-col gap-6">
+                  <div className="absolute -left-11 -top-12 select-none">
+                    <span className="text-scale-600 text-[160px] leading-none">“</span>
+                  </div>
+                  <blockquote className="z-10 max-w-lg text-3xl">
+                    All week I was migrating my project from Regis to
+                    <a href="https://supabase.com/launch-week">@supabase</a>
+                    Because it is the best, fastest and simple!!! I like design and API for understandable.{' '}
+                    <a href="https://supabase.com/launch-week">Supabase Launch week 8.</a> Just try! 🧪
+                  </blockquote>
+                  <a
+                    href="https://twitter.com/donboulton"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4"
+                  >
+                    <StaticImage
+                      layout="fixed"
+                      className="h-8 w-8 self-center rounded-lg"
+                      src="../../static/img/donald-boulton-32x32.png"
+                      width={32}
+                      height={32}
+                      quality={95}
+                      alt="Donald Boulton"
+                      loading="lazy"
+                    />
+                    <div className="flex flex-col">
+                      <cite className="text-scale-1100 whitespace-nowrap font-medium not-italic">@donboulton</cite>
+                    </div>
+                  </a>
+                </div>
+              </aside>
             </div>
           </div>
-          <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
-            {!session ? (
-              <Auth
-                supabaseClient={supabase}
-                view="magic_link"
-                appearance={{ theme: ThemeSupa }}
-                providers={['github', 'google']}
-                theme="dark"
-              />
-            ) : (
-              <>
-                <ColumnGridTwo>
-                  <Account key={session.user.id} session={session} />
-                  <div
-                    className="flex h-full w-full flex-col items-center justify-center p-4"
-                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                  >
-                    <TodoList session={session} />
-                  </div>
-                </ColumnGridTwo>
-              </>
-            )}
-          </div>
-        </ColumnGridTwo>
+        </div>
       </div>
-    </Layout>
+    </>
   )
 }
 
