@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Marker, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'

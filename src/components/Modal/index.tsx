@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Fragment, ReactNode, useRef, useState, FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Dialog, Transition } from '@headlessui/react'

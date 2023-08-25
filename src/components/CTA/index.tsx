@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Section from '@/components/Section'
 
 export default function CTA() {

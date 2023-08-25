@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useState, useMemo } from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch } from 'react-instantsearch-dom'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'gatsby'

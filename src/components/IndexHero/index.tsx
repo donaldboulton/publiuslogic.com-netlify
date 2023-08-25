@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useState } from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedCharacters'

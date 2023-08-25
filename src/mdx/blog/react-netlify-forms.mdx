@@ -46,7 +46,7 @@ yarn add react-netlify-forms react-hook-form react-google-recaptcha @types/react
 <Section>
 
 ```tsx:title=Form Component
-import * as React from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { ReactNode, FC } from 'react'
 import { ReCAPTCHAProps } from 'react-google-recaptcha'
@@ -445,7 +445,7 @@ export default ContactForm
 /* Definitions by: Zhijiang Li <https://github.com/zhjngli> */
 /* Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped */
 
-import * as React from 'react'
+import React from 'react'
 import Recaptcha, { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 export interface NetlifyFormState {
@@ -566,7 +566,7 @@ export default ContactForm = () => (
 ## Form with React dropZone
 
 ```tsx:title=src/components/comments.tsx {5,28-33,140-147}
-import * as React from 'react'
+import React from 'react'
 import { useState, useCallback } from 'react'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import styled from 'styled-components'
@@ -747,7 +747,7 @@ export default Contact
 ### React dropZone Previews
 
 ```tsx:title=src/components/previews.tsx {5,132}
-import * as React from 'react'
+import React from 'react'
 import { useState, useCallback } from 'react'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import styled from 'styled-components'

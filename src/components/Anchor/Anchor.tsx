@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { AnchorProps } from './types'
 import { getIconString } from './utils'
 import * as CSS from 'csstype'

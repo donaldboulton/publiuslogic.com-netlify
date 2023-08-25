@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'

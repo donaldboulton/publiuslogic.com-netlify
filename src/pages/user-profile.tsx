@@ -1,13 +1,24 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
-import Layout from '@/components/Layout'
+import Account from '@/components/Auth/account'
+import AuthForm from '@/components/Auth/auth'
+import TodoList from '@/components/TodoList'
+import { StaticImage } from 'gatsby-plugin-image'
+import LeftText from '@/components/LeftText'
 import Seo from '@/components/Seo'
-import Search from '@/components/Algolia/search'
-import PageHero from '@/components/PageHero'
-import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
-import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
+import Stars from '@/components/Stars'
+import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
+import { createClient } from '@supabase/supabase-js'
+import { useInView } from 'react-intersection-observer'
+import { LazyMotion, m } from 'framer-motion'
 
-const searchIndices = [{ name: 'Posts', title: 'Posts' }]
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
+
+const supabase = createClient<Database>(supabaseUrl, supabaseKey)
 
 const ogimage = {
   src: OGImage,
@@ -15,34 +26,163 @@ const ogimage = {
   height: 450,
 }
 
-const SearchPage = () => {
+const UserProfile = () => {
+  const profileContainer = {
+    enter: {
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+  }
+
+  const [ref, isVisible] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  })
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: -200,
+    },
+  }
+  const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
+
+  async function signOut() {
+    const { error } = await supabase.auth.signOut()
+  }
+
   return (
     <>
-      <Layout>
-        <div className="form-beams z-30 -mt-4">
-          <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
-          <div className="mt-10">
-            <div className="mb-16 mt-16 p-8 sm:mt-2">
-              <div className="mb-2">
-                <Search indices={searchIndices} />
+      <Stars />
+      <div class="form-beams flex min-h-full flex-col">
+        <div className="bg-scale-100 flex flex-1 flex-col bg-[#121212] text-slate-300 opacity-70">
+          <div class="absolute top-0 mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10">
+              <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                <div class="flex w-full items-center justify-between md:w-auto">
+                  <a href="/">
+                    <span className="relative inline-block overflow-hidden">
+                      <StaticImage
+                        layout="fixed"
+                        className="h-8 w-8 self-center rounded-lg"
+                        src="../../static/img/apple-touch-icon-32x32.png"
+                        width={32}
+                        height={32}
+                        quality={95}
+                        alt="Angelina Jordan"
+                        loading="lazy"
+                      />
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
+                <a target="_blank" rel="noreferrer" href="/about">
+                  <button
+                    type="button"
+                    class="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="sbui-icon "
+                    >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>{' '}
+                    <span class="truncate">About PubliusLogic</span>{' '}
+                  </button>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div className="flex flex-1">
+            <div className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-900 px-5 pb-8 pt-16 shadow-lg">
+              <div className="flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
+                <div className="mb-10">
+                  <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Welcome back</LeftText>
+                  <h2 className="text-scale-1100 text-sm">Welcome Back</h2>
+                </div>
+                <div className="flex flex-col gap-5">
+                  {!session ? (
+                    <AuthForm />
+                  ) : (
+                    <>
+                      <AccountForm session={session} />
+                      <div className="flex flex-col items-center justify-center p-4">
+                        <TodoList session={session} />
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
+            <aside className="hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
+              <div className="relative flex flex-col gap-6">
+                <LazyMotion features={loadFeatures}>
+                  <m.section variants={profileContainer}>
+                    <m.div
+                      ref={ref}
+                      variants={variants}
+                      animate={isVisible ? 'visible' : 'hidden'}
+                      transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
+                      <StaticImage
+                        layout="fixed"
+                        className="self-center rounded-lg opacity-60"
+                        src="../../static/img/planets.jpg"
+                        width={640}
+                        height={427}
+                        quality={95}
+                        alt="Planets!"
+                        loading="eager"
+                      />
+                    </m.div>
+                  </m.section>
+                </LazyMotion>
+              </div>
+            </aside>
           </div>
         </div>
-      </Layout>
+      </div>
     </>
   )
 }
 
-export default SearchPage
+export default UserProfile
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search">
-        <title>Search Page</title>
-        <meta name="description" content="PubliusLogic Search Page." />
+      <Seo type="page" title="User Profile" description="User Profile." image={ogimage} pathname="/user-profile">
+        <title>User Profile</title>
+        <meta name="description" content="User Profile." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
@@ -93,8 +233,8 @@ export function Head(props: HeadProps) {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Search',
-          url: 'https://publiuslogic.com/search',
+          name: 'User Profile',
+          url: 'https://publiuslogic.com/user-profile',
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
@@ -125,8 +265,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/search',
-                name: 'Search',
+                '@id': 'https://publiuslogic.com/user-profile',
+                name: 'LUser Profile',
               },
               position: '2',
             },

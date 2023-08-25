@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useState } from 'react'
 import type { GatsbyBrowser } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
@@ -10,18 +10,9 @@ import { Database } from './src/lib/schema'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
-const options = {
-  auth: {
-    localStorage: true,
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: true,
-  },
-}
-
 const supabase =
   process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, options)
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     : undefined
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {

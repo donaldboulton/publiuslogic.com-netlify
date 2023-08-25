@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useRef, ReactNode, FC } from 'react'
 import { AdvancedVideo, lazyload } from '@cloudinary/react'
 import { CloudinaryVideo } from '@cloudinary/url-gen'

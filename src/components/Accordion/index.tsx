@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useInView } from 'react-intersection-observer'

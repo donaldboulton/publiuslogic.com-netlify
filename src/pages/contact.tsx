@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import type { HeadProps } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'

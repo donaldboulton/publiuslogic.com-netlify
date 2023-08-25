@@ -1,15 +1,30 @@
+import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { supabase } from '../../supabase/supabaseClient'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { Database } from '@lib/schema'
 
-function Avatar({ url, size, onUpload }) {
-  const [avatarUrl, setAvatarUrl] = useState(null)
+type Profiles = Database['public']['Tables']['profiles']['Row']
+
+export default function Avatar({
+  uid,
+  url,
+  size,
+  onUpload,
+}: {
+  uid: string
+  url: Profiles['avatar_url']
+  size: number
+  onUpload: (url: string) => void
+}) {
+  const supabase = useSupabaseClient<Database>()
+  const [avatarUrl, setAvatarUrl] = useState<Profiles['avatar_url']>(null)
   const [uploading, setUploading] = useState(false)
 
   useEffect(() => {
     if (url) downloadImage(url)
   }, [url])
 
-  async function downloadImage(path) {
+  async function downloadImage(path: string) {
     try {
       const { data, error } = await supabase.storage.from('avatars').download(path)
       if (error) {
@@ -18,11 +33,11 @@ function Avatar({ url, size, onUpload }) {
       const url = URL.createObjectURL(data)
       setAvatarUrl(url)
     } catch (error) {
-      console.log('Error downloading image: ', error.message)
+      console.log('Error downloading image: ', error)
     }
   }
 
-  async function uploadAvatar(event) {
+  const uploadAvatar: React.ChangeEventHandler<HTMLInputElement> = async event => {
     try {
       setUploading(true)
 
@@ -32,21 +47,26 @@ function Avatar({ url, size, onUpload }) {
 
       const file = event.target.files[0]
       const fileExt = file.name.split('.').pop()
-      const fileName = `${Math.random()}.${fileExt}`
+      const fileName = `${uid}.${fileExt}`
       const filePath = `${fileName}`
 
-      let { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file)
+      let { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file, { upsert: true })
 
       if (uploadError) {
         throw uploadError
       }
 
-      onUpload(event, filePath)
+      onUpload(filePath)
     } catch (error) {
-      alert(error.message)
+      alert('Error uploading avatar!')
+      console.log(error)
     } finally {
       setUploading(false)
     }
+  }
+  let width = 'w-20'
+  if (size === 'lg') {
+    width = 'w-20 md:w-20'
   }
 
   return (
@@ -97,5 +117,3 @@ function Avatar({ url, size, onUpload }) {
     </div>
   )
 }
-
-export default Avatar

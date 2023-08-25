@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FC, useState, Fragment } from 'react'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import Lightbox from 'react-18-image-lightbox'

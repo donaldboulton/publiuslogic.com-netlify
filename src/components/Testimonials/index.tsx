@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FC } from 'react'
 import { LazyMotion, m, useMotionValue } from 'framer-motion'
 

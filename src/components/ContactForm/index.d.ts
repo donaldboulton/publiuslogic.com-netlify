@@ -3,7 +3,7 @@
 /* Definitions by: Zhijiang Li <https://github.com/zhjngli> */
 /* Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped */
 
-import * as React from 'react'
+import React from 'react'
 import Recaptcha, { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 export interface NetlifyFormState {

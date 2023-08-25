@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { LazyMotion, m, useInView } from 'framer-motion'

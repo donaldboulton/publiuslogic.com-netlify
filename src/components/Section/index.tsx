@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useRef, ReactNode } from 'react'
 import { useInView, LazyMotion, m, domAnimation } from 'framer-motion'
 

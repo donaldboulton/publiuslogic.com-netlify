@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { graphql, Link, HeadProps, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
@@ -73,7 +73,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
   return (
     <>
       <Layout>
-        <div className="blog-beams z-30 -mt-4 object-cover">
+        <div className="beams z-30 -mt-4 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10">
             <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
