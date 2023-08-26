@@ -65,7 +65,10 @@
       https://cdn.lr-in-prod.com/LogRocket.min.js,
       https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js,
       https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js,
-      https://unpkg.com/leaflet@1.9.2/dist/leaflet.css
+      https://unpkg.com/leaflet@1.9.2/dist/leaflet.css,
+      https://qdqduwaqrjguuurohnlv.supabase.co,
+      https://serve.onegraph.com/oauth/spotify/receive,
+      https://usw1-certain-osprey-33919.upstash.io
     '''      
     Access-Control-Allow-Methods = '''
       POST, 
@@ -101,17 +104,3 @@
     cache-control = '''
 	  public,
 	  max-age=31536000'''   
-
-[[edge_functions]]
-function = "set-req-header"
-path = "/development"
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-  [redirects.headers]
-    X-From = "Netlify"
-    Access-Control-Allow-Origin = "*"
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
