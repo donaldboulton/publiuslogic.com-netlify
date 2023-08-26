@@ -198,4 +198,3 @@ export default function Account({ session }) {
     </form>
   )
 }
-

@@ -631,3 +631,10 @@ giscus-widget {
   background: cover;
   z-index: 30;
 }
+
+.login-beams {
+  background-image: url(../../static/beams/2-dark@tiny.png);
+  background-size: 43.125rem;
+  background-repeat: no-repeat;
+  background: cover;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, HomeIcon } from '@heroicons/react/outline'
@@ -142,6 +143,32 @@ export default function Navigation() {
                                   aria-hidden="true"
                                 />
                                 <span>Login</span>
+                              </span>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              aria-label="Old Enough"
+                              to="/old-enough"
+                              className={classNames(
+                                active ? 'bg-slate-700' : '',
+                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
+                              )}
+                            >
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
+                                <StaticImage
+                                  layout="fixed"
+                                  className="block h-8 w-8 pr-2"
+                                  src="../../../static/img/angelina-jordan-icon.png"
+                                  width={32}
+                                  height={32}
+                                  quality={95}
+                                  alt="Angelina Jordan"
+                                  loading="lazy"
+                                />
+                                <span>Old Enough</span>
                               </span>
                             </Link>
                           )}

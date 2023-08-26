@@ -1,17 +1,18 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import * as React from 'react'
+import { useRef } from 'react'
+import ReactPlayer from 'react-player/youtube'
 import type { HeadProps } from 'gatsby'
-import Account from '@/components/Auth/account'
 import { StaticImage } from 'gatsby-plugin-image'
-import LeftText from '@/components/LeftText'
-import ColumnGridTwo from '@/components/ColumnGridTwo'
+import { Link } from 'gatsby'
+import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import Stars from '@/components/Stars'
-import TodoList from '@/components/TodoList'
-import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
-import { supabase } from '../../supabase/supabaseClient'
-import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
+import LeftText from '@/components/LeftText'
+import PageHero from '@/components/PageHero'
+import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
+import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import HeaderPopover from '@/components/HeaderPopover'
+import IframeWrapper from '@/components/IframeWrapper'
+import IframeWrapperLarge from '@/components/IframeWrapperLarge'
 
 const ogimage = {
   src: OGImage,
@@ -19,74 +20,14 @@ const ogimage = {
   height: 450,
 }
 
-const Login = ({ email }) => {
-  const [session, setSession] = useState(null)
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [])
-
-  const getURL = () => {
-    let url =
-      process?.env?.API_URL ?? // Set this to your site URL in production env.
-      'http://localhost:3000/'
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`
-    // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-    return url
-  }
-
-  async function signInWithGitHub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-      options: {
-        redirectTo: getURL(),
-      },
-    })
-  }
-
-  async function signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: getURL(),
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-      },
-    })
-  }
-
-  async function signInWithEmail() {
-    const { data, error } = await supabase.auth.signInWithOtp({
-      email: { email },
-      options: {
-        emailRedirectTo: getURL(),
-      },
-    })
-  }
-
-  async function signOut() {
-    const { error } = await supabase.auth.signOut()
-  }
-
+const OldEnough = () => {
+  const ref = useRef(null)
+  const refPlayer = useRef(null)
   return (
     <>
-      <Stars />
-      <div class="login-beams flex min-h-full flex-col">
-        <div className="bg-scale-100 flex flex-1 flex-col text-slate-300 opacity-70">
-          <div class="absolute top-0 mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
+      <Layout>
+        <div className="login-beams bg-scale-100 mb-10 flex flex-1 flex-col">
+          <div class="absolute mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
             <nav class="relative flex items-center justify-between sm:h-10">
               <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                 <div class="flex w-full items-center justify-between md:w-auto">
@@ -99,7 +40,7 @@ const Login = ({ email }) => {
                         width={32}
                         height={32}
                         quality={95}
-                        alt="Home"
+                        alt="Angelina Jordan"
                         loading="lazy"
                       />
                     </span>
@@ -107,7 +48,7 @@ const Login = ({ email }) => {
                 </div>
               </div>
               <div class="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
-                <a target="_blank" rel="noreferrer" href="/about">
+                <a target="_blank" rel="noreferrer" href="https://mansbooks.com/angies-profile">
                   <button
                     type="button"
                     class="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
@@ -129,97 +70,80 @@ const Login = ({ email }) => {
                       <line x1="16" y1="17" x2="8" y2="17"></line>
                       <polyline points="10 9 9 9 8 9"></polyline>
                     </svg>{' '}
-                    <span class="truncate">About PubliusLogic</span>{' '}
+                    <span class="truncate">About Angelina</span>{' '}
                   </button>
                 </a>
               </div>
             </nav>
           </div>
-          <div className="flex flex-1">
-            <div className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-900 px-5 pb-8 pt-16 shadow-lg">
-              <div className="flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
+          <div className="mb-10 flex flex-1">
+            <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
+              <div className="flex w-[330px] mb-6 flex-1 flex-col justify-center sm:w-[384px]">
                 <div className="mb-10">
-                  <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Welcome back</LeftText>
-                  <h2 className="text-scale-1100 text-sm">Sign in to your account</h2>
+                  <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Angelina's Playlists</LeftText>
+                  <h2 className="text-scale-1100 text-sm">Old Enough</h2>
                 </div>
                 <div className="flex flex-col gap-5">
-                  {!session ? (
-                    <Auth
-                      supabaseClient={supabase}
-                      view="magic_link"
-                      appearance={{ theme: ThemeSupa }}
-                      providers={['github', 'google']}
-                      theme="dark"
+                  <IframeWrapper>
+                    <ReactPlayer
+                      ref={ref} 
+                      url='https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW'
+                      width="100%"
+                      height="100%"
+                      controls = {true}
                     />
-                  ) : (
-                    <>
-                      <ColumnGridTwo>
-                        <Account key={session.user.id} session={session} />
-                        <div
-                          className="flex h-full w-full flex-col items-center justify-center p-4"
-                          style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                        >
-                          <TodoList session={session} />
-                        </div>
-                      </ColumnGridTwo>
-                    </>
-                  )}
+                  </IframeWrapper>
                 </div>
               </div>
-            </div>
-            <aside className="hidden form-beams flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
-              <div className="relative flex flex-col gap-6">
-                <div className="absolute -left-11 -top-12 select-none">
-                  <span className="text-scale-600 text-[160px] leading-none">“</span>
-                </div>
-                <blockquote className="z-10 max-w-lg text-3xl">
-                  All week I was migrating my project from Regis to
-                  <a href="https://supabase.com/launch-week">@supabase</a>
-                  <blockquote>
-                    Because it is the best, fastest and simple!!! I like design and API for understandable.{' '}
-                  </blockquote>
-                  <blockquote>
-                    <a href="https://supabase.com/launch-week">Supabase Launch week 8.</a> Just try! 🧪
-                  </blockquote>
-                </blockquote>
-                <a
-                  href="https://twitter.com/donboulton"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4"
-                >
-                  <StaticImage
-                    layout="fixed"
-                    className="h-8 w-8 self-center rounded-lg"
-                    src="../../static/img/donald-boulton-32x32.png"
-                    width={32}
-                    height={32}
-                    quality={95}
-                    alt="Donald Boulton"
-                    loading="lazy"
+              <div className="sm:text-center">
+                <p className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+                  By continuing, you agree to Mansbooks{' '}
+                  <Link className="hover:text-scale-1100 underline" to="/terms">
+                    Terms of Service
+                  </Link>{' '}
+                  and{' '}
+                  <Link className="hover:text-scale-1100 underline" to="privacy">
+                    Privacy Policy
+                  </Link>
+                  , and to receive periodic emails with updates.
+                </p>
+              </div>
+            </main>
+            <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
+              <div className="relative mt-12 flex flex-col gap-6 opacity-70">
+                <IframeWrapperLarge>
+                  <ReactPlayer
+                    ref={refPlayer}
+                    url='https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf'
+                    height="100%"
+                    width="100%"
+                    controls = {true}
                   />
-                  <div className="flex flex-col">
-                    <cite className="text-scale-1100 whitespace-nowrap font-medium not-italic">@donboulton</cite>
-                  </div>
-                </a>
+                </IframeWrapperLarge>              
               </div>
             </aside>
           </div>
         </div>
-      </div>
+      </Layout>
     </>
   )
 }
 
-export default Login
+export default OldEnough
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Login" description="Login To PubliusLogic." image={ogimage} pathname="/search">
-        <title>Login Page</title>
-        <meta name="description" content="PubliusLogic Login Page." />
+      <Seo
+        type="page"
+        title="Old Enough"
+        description="Old Enough Playlists"
+        image={ogimage}
+        pathname="/old-enough"
+      >
+        <title>Old Enough</title>
+        <meta name="description" content="PubliusLogic Old Enough Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
@@ -239,14 +163,14 @@ export function Head(props: HeadProps) {
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
           },
-          copyrightYear: '2022',
+          copyrightYear: 2023,
           creator: {
             '@id': 'https://publiuslogic.com',
           },
           description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
-            url: ogimage,
+            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
             width: '1400',
             height: '450',
           },
@@ -256,22 +180,14 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
-          },
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Login',
-          url: 'https://publiuslogic.com/Login',
+          name: 'Old Enough',
+          url: 'https://publiuslogic.com/old-enough',
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
@@ -302,8 +218,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/login',
-                name: 'Login',
+                '@id': 'https://publiuslogic.com/old-enough',
+                name: 'Old Enough',
               },
               position: '2',
             },
@@ -362,21 +278,6 @@ export function Head(props: HeadProps) {
           url: 'https://donboulton.com',
           worksFor: {
             '@id': 'https://publiuslogic.com',
-          },
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          url: 'https://www.publiuslogic.com/',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
           },
         })}
       </script>

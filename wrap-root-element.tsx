@@ -5,6 +5,8 @@ import { preToCodeBlock } from 'mdx-utils'
 import A from './src/components/A'
 import FindOutMore from './src/components/FindOutMore'
 import Features from './src/components/Features'
+import IframeWrapper from './src/components/IframeWrapper'
+import IframeWrapperLarge from './src/components/IframeWrapperLarge'
 import Cta from './src/components/CTA'
 import Callout from './src/components/Callout'
 import CalloutDanger from './src/components/Callout/CalloutDanger'
@@ -73,6 +75,8 @@ const components = {
   Confetti: Confetti,
   TodoList: TodoList,
   Love: Love,
+  IframeWrapperLarge: IframeWrapperLarge,
+  IframeWrapper: IframeWrapper,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
