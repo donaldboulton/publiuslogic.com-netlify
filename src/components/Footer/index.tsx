@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import A from '@/components/A'

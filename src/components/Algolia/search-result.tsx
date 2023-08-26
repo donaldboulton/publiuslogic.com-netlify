@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import * as React from 'react'
 
 import { connectStateResults, Highlight, Hits, Index, Snippet, PoweredBy } from 'react-instantsearch-dom'
 

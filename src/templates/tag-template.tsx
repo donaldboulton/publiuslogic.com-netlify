@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'

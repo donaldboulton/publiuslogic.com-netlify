@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Giscus from '@/lib/Giscus'
 import Section from '@/components/Section'
 

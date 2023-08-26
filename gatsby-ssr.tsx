@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useState } from 'react'
 import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'

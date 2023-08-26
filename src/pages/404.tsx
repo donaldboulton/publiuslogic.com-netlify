@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -80,7 +80,7 @@ export function Head(props: HeadProps) {
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
           },
-          copyrightYear: 2022,
+          copyrightYear: 2023,
           creator: {
             '@id': 'https://publiuslogic.com',
           },

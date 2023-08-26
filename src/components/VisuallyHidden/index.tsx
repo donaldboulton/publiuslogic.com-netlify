@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { ReactNode, ElementType } from 'react'
 import * as CSS from 'csstype'
 

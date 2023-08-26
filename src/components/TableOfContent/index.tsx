@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useState, FC } from 'react'
 import { usePopperTooltip } from 'react-popper-tooltip'
 import './styles.css'

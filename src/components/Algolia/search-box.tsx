@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
 export default connectSearchBox(({ refine, currentRefinement, onFocus, ...rest }) => (

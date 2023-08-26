@@ -151,7 +151,7 @@ And this component with the specific meta-tags can be used, 'anywhere', not just
 </Section>
 
 ```tsx:title=src/components/withUtterances.tsx {3,9,15}
-import React from 'react'
+import * as React from 'react'
 import { Component } from 'react'
 import withUtterances from 'with-utterances'
 
@@ -171,7 +171,7 @@ export default withUtterances(Comments, 'donaldboulton/publiuslogic', 'github-da
 ### Or not using withUtterances npm module
 
 ```tsx:title=Without-Npm-Module {2,12-23}
-import React from 'react'
+import * as React from 'react'
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 

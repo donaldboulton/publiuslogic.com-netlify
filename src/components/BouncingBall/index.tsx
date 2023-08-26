@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)

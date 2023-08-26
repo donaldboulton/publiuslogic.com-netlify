@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'

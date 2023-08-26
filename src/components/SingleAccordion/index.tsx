@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { ReactNode, FC } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'

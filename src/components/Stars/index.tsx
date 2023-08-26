@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Particles from 'react-tsparticles'
 import { loadColorUpdater } from 'tsparticles-updater-color'
 import { loadCircleShape } from 'tsparticles-shape-circle'

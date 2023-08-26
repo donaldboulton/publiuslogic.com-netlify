@@ -1,92 +1,64 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import Avatar from './avatar'
-import { useUser, useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-import { Database } from '@lib/schema'
+import { supabase } from '../../supabase/supabase'
 
-type Profiles = Database['public']['Tables']['profiles']['Row']
-
-export default function Account() {
-  const supabase = useSupabaseClient<Database>()
+export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
-  const [fullname, setFullname] = useState<Profiles['full_name']>(null)
-  const [username, setUsername] = useState<Profiles['username']>(null)
-  const [website, setWebsite] = useState<Profiles['website']>(null)
-  const [avatar_url, setAvatarUrl] = useState<Profiles['avatar_url']>(null)
-  const session = useSession()
-  const user = useUser()
+  const [username, setUsername] = useState(null)
+  const [website, setWebsite] = useState(null)
+  const [avatar_url, setAvatarUrl] = useState(null)
 
   useEffect(() => {
-    getProfile()
-  }, [session])
-
-  async function getProfile() {
-    try {
+    async function getProfile() {
       setLoading(true)
-      if (!user) throw new Error('No user')
+      const { user } = session
 
-      let { data, error, status } = await supabase
+      let { data, error } = await supabase
         .from('profiles')
         .select(`username, website, avatar_url`)
         .eq('id', user.id)
         .single()
 
-      if (error && status !== 406) {
-        throw error
-      }
-
-      if (data) {
+      if (error) {
+        console.warn(error)
+      } else if (data) {
         setUsername(data.username)
-        setFullname(data.full_name)
         setWebsite(data.website)
         setAvatarUrl(data.avatar_url)
       }
-    } catch (error) {
-      alert('Error loading user data!')
-      console.log(error)
-    } finally {
+
       setLoading(false)
     }
-  }
 
-  async function updateProfile({
-    username,
-    fullname,
-    website,
-    avatar_url,
-  }: {
-    username: Profiles['username']
-    fullname: Profiles['full_name']
-    website: Profiles['website']
-    avatar_url: Profiles['avatar_url']
-  }) {
-    try {
-      setLoading(true)
-      if (!user) throw new Error('No user')
+    getProfile()
+  }, [session])
 
-      const updates = {
-        id: user.id,
-        username,
-        fullname,
-        website,
-        avatar_url,
-        updated_at: new Date().toISOString(),
-      }
+  async function updateProfile(event) {
+    event.preventDefault()
 
-      let { error } = await supabase.from('profiles').upsert(updates)
-      if (error) throw error
-      alert('Profile updated!')
-    } catch (error) {
-      alert('Error updating the data!')
-      console.log(error)
-    } finally {
-      setLoading(false)
+    setLoading(true)
+    const { user } = session
+
+    const updates = {
+      id: user.id,
+      username,
+      website,
+      avatar_url,
+      updated_at: new Date(),
     }
-  }
 
+    let { error } = await supabase.from('profiles').upsert(updates)
+
+    if (error) {
+      alert(error.message)
+    }
+    setLoading(false)
+  }
   return (
     <form onSubmit={updateProfile} className="form-widget">
       <Avatar
+        uid={user!.id}
         url={avatar_url}
         size={150}
         onUpload={url => {
@@ -226,3 +198,4 @@ export default function Account() {
     </form>
   )
 }
+

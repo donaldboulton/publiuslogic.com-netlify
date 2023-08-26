@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Section from '@/components/Section'
 import GatsbyImage from '../../../static/svg/undraw/undraw_gatsbyjs_st4g.svg'
 import TailwindImage from '../../../static/svg/undraw/undraw_tailwind_css_1egw.svg'

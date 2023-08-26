@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { FC } from 'react'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -131,7 +131,7 @@ export function Head(props: HeadProps) {
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
           },
-          copyrightYear: 2022,
+          copyrightYear: 2023,
           creator: {
             '@id': 'https://publiuslogic.com',
           },

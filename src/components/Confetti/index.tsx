@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import type { Container, Engine } from 'tsparticles-engine'

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
@@ -19,7 +19,7 @@ const SearchPage = () => {
   return (
     <>
       <Layout>
-        <div className="form-beams z-30 -mt-4">
+        <div className="search-beams z-30 -mt-4">
           <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
           <div className="mt-10">
             <div className="mb-16 mt-16 p-8 sm:mt-2">
