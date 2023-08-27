@@ -95,8 +95,6 @@
     "react-redux": "^8.1.1",
     "react-toastify": "^9.1.2",
     "react-tsparticles": "^2.10.1",
-    "react-typist": "^2.0.5",
-    "react-typist-component": "^1.0.5",
     "remark-autolink-headings": "^7.0.1",
     "remark-slug": "^7.0.1",
     "sharp": "^0.32.1",
