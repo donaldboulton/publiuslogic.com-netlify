@@ -46,7 +46,7 @@ const Home = () => {
       <Layout>
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
-            <div className="relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">
+            <div className="bg-text-slate-950 relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">
               <StaticImage
                 className="absolute left-0 top-0 z-0 h-full w-full"
                 formats={['auto', 'webp']}

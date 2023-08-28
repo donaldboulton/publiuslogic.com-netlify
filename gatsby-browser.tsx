@@ -4,16 +4,24 @@ import type { GatsbyBrowser } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AnimatePresence } from 'framer-motion'
-import { supabase } from './supabase/supabaseClient'
+import { createClient } from './supabase/supabaseClient'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { Database } from './src/lib/schema'
+import { Database } from './src/lib/database.types'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
+const options = {
+  auth: {
+    localStorage: true,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,
+  },
+}
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>

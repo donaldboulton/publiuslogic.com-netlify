@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { Component } from 'react';
-import PropTypes from 'prop-types';
-import './Cursor.css';
+'use-client'
 
+import * as React from 'react'
+import { Component } from 'react'
+import PropTypes from 'prop-types'
+import './Cursor.css'
 
 export default class Cursor extends Component {
-
   static propTypes = {
     blink: PropTypes.bool,
     show: PropTypes.bool,
@@ -25,25 +25,31 @@ export default class Cursor extends Component {
   }
 
   constructor(props) {
-    super(props);
-    this._isReRenderingCursor = false;
+    super(props)
+    this._isReRenderingCursor = false
     this.state = {
       shouldRender: this.props.show,
-    };
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    const shouldHide = !this.props.isDone && nextProps.isDone && this.props.hideWhenDone;
+    const shouldHide = !this.props.isDone && nextProps.isDone && this.props.hideWhenDone
     if (shouldHide) {
-      setTimeout(() => this.setState({ shouldRender: false }), this.props.hideWhenDoneDelay);
+      setTimeout(() => this.setState({ shouldRender: false }), this.props.hideWhenDoneDelay)
     }
   }
 
   componentDidUpdate() {
-    const { show, isDone } = this.props;
-    if (!show) { return; }
-    if (isDone) { return; }
-    if (this._isReRenderingCursor) { return; }
+    const { show, isDone } = this.props
+    if (!show) {
+      return
+    }
+    if (isDone) {
+      return
+    }
+    if (this._isReRenderingCursor) {
+      return
+    }
 
     // In webkit and blink, rendering the cursor alongside the text as it
     // animates sometimes causes the text to stop rendering when it reaches
@@ -57,28 +63,23 @@ export default class Cursor extends Component {
     // cursor every time a character is rendered, just to ensure that the text
     // is rendered correctly.
     // See #13 and #15 for more details
-    this._reRenderCursor();
+    this._reRenderCursor()
   }
 
   _reRenderCursor() {
-    this._isReRenderingCursor = true;
+    this._isReRenderingCursor = true
     this.setState({ shouldRender: false }, () => {
       this.setState({ shouldRender: true }, () => {
-        this._isReRenderingCursor = false;
-      });
-    });
+        this._isReRenderingCursor = false
+      })
+    })
   }
 
   render() {
     if (this.state.shouldRender) {
-      const className = this.props.blink ? ' Cursor--blinking' : '';
-      return (
-        <span className={`Cursor${className}`}>
-          {this.props.element}
-        </span>
-      );
+      const className = this.props.blink ? ' Cursor--blinking' : ''
+      return <span className={`Cursor${className}`}>{this.props.element}</span>
     }
-    return null;
+    return null
   }
-
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { useRef } from 'react'
 import ReactPlayer from 'react-player/youtube'
@@ -27,10 +29,10 @@ const OldEnough = () => {
     <>
       <Layout>
         <div className="login-beams bg-scale-100 mb-10 flex flex-1 flex-col">
-          <div class="absolute mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
-            <nav class="relative flex items-center justify-between sm:h-10">
-              <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
-                <div class="flex w-full items-center justify-between md:w-auto">
+          <div className="absolute mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
+            <nav className="relative flex items-center justify-between sm:h-10">
+              <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                <div className="flex w-full items-center justify-between md:w-auto">
                   <a href="/">
                     <span className="relative inline-block overflow-hidden">
                       <StaticImage
@@ -47,11 +49,11 @@ const OldEnough = () => {
                   </a>
                 </div>
               </div>
-              <div class="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
+              <div className="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
                 <a target="_blank" rel="noreferrer" href="https://mansbooks.com/angies-profile">
                   <button
                     type="button"
-                    class="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
+                    className="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +64,7 @@ const OldEnough = () => {
                       stroke="currentColor"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="sbui-icon "
+                      className="sbui-icon "
                     >
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                       <polyline points="14 2 14 8 20 8"></polyline>
@@ -70,7 +72,7 @@ const OldEnough = () => {
                       <line x1="16" y1="17" x2="8" y2="17"></line>
                       <polyline points="10 9 9 9 8 9"></polyline>
                     </svg>{' '}
-                    <span class="truncate">About Angelina</span>{' '}
+                    <span className="truncate">About Angelina</span>{' '}
                   </button>
                 </a>
               </div>
@@ -78,7 +80,7 @@ const OldEnough = () => {
           </div>
           <div className="mb-10 flex flex-1">
             <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
-              <div className="flex w-[330px] mb-6 flex-1 flex-col justify-center sm:w-[384px]">
+              <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
                 <div className="mb-10">
                   <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Angelina's Playlists</LeftText>
                   <h2 className="text-scale-1100 text-sm">Old Enough</h2>
@@ -86,11 +88,11 @@ const OldEnough = () => {
                 <div className="flex flex-col gap-5">
                   <IframeWrapper>
                     <ReactPlayer
-                      ref={ref} 
-                      url='https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW'
+                      ref={ref}
+                      url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
                       width="100%"
                       height="100%"
-                      controls = {true}
+                      controls={true}
                     />
                   </IframeWrapper>
                 </div>
@@ -114,12 +116,12 @@ const OldEnough = () => {
                 <IframeWrapperLarge>
                   <ReactPlayer
                     ref={refPlayer}
-                    url='https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf'
+                    url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
                     height="100%"
                     width="100%"
-                    controls = {true}
+                    controls={true}
                   />
-                </IframeWrapperLarge>              
+                </IframeWrapperLarge>
               </div>
             </aside>
           </div>
@@ -135,13 +137,7 @@ export default OldEnough
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo
-        type="page"
-        title="Old Enough"
-        description="Old Enough Playlists"
-        image={ogimage}
-        pathname="/old-enough"
-      >
+      <Seo type="page" title="Old Enough" description="Old Enough Playlists" image={ogimage} pathname="/old-enough">
         <title>Old Enough</title>
         <meta name="description" content="PubliusLogic Old Enough Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

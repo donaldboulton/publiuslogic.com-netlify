@@ -4,7 +4,7 @@ const IframeWrapperLarge = ({ children, ...delegated }) => {
   return (
     <>
       <div
-        className="w-[640px] h-[360px] flex-initial rounded-lg bg-[#121212] border-2 border-wine-300 p-2"
+        className="h-[360px] w-[640px] flex-initial rounded-lg border-2 border-wine-300 bg-[#121212] p-2"
         {...delegated}
       >
         {children}

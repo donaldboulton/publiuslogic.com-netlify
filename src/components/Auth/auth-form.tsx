@@ -1,8 +1,9 @@
-import * as React from 'react'
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { supabase } from '../../../supabase/supabaseClient'
+'use client'
 
+import * as React from 'react'
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { supabase } from '@/lib/supabase'
 export default function AuthForm() {
   const getURL = () => {
     let url =
@@ -18,30 +19,30 @@ export default function AuthForm() {
 
   async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
+      provider: 'google',
       options: {
         redirectTo: getURL(),
         queryParams: {
-          access_type: "offline",
-          prompt: "consent",
+          access_type: 'offline',
+          prompt: 'consent',
         },
       },
-    });
+    })
   }
 
   async function signInWithSpotify() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "spotify",
+      provider: 'spotify',
       options: {
         redirectTo: getURL(),
       },
-    });
+    })
   }
 
   async function signOut() {
-    const { error } = await supabase.auth.signOut();
+    const { error } = await supabase.auth.signOut()
   }
-  
+
   return (
     <div className="auth-widget">
       <Auth
@@ -51,8 +52,8 @@ export default function AuthForm() {
           theme: ThemeSupa,
         }}
         theme="dark"
-        providers={["google", "spotify"]}
+        providers={['google', 'spotify']}
       />
     </div>
-  );
+  )
 }

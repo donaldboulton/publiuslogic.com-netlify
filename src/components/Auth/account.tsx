@@ -1,8 +1,10 @@
+'use client'
+
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import Avatar from './avatar'
-import { supabase } from '../../lib/supabase'
-import { Database } from '../../lib/schema'
+import { supabase } from '@/lib/supabase'
+import { Database } from '@/lib/database.types'
 
 type Profile = Database['public']['Tables']['profile']['Row']
 
