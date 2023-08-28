@@ -1,13 +1,16 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import Avatar from './avatar'
-import { supabase } from '../../supabase/supabase'
+import { supabase } from '../../lib/supabase'
+import { Database } from '../../lib/schema'
+
+type Profile = Database['public']['Tables']['profile']['Row']
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [username, setUsername] = useState<Profile[]>([])
+  const [website, setWebsite] = useState<Profile[]>([])
+  const [avatarUrl, setAvatarUrl] = useState<Profile[]>([])
 
   useEffect(() => {
     async function getProfile() {
@@ -59,7 +62,7 @@ export default function Account({ session }) {
     <form onSubmit={updateProfile} className="form-widget">
       <Avatar
         uid={user!.id}
-        url={avatar_url}
+        url={avatarUrl}
         size={150}
         onUpload={url => {
           setAvatarUrl(url)

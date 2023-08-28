@@ -1,6 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
+import { Link } from 'gatsby'
+import AuthForm from '@/components/Auth/auth-form'
 import Account from '@/components/Auth/account'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '@/components/LeftText'
@@ -9,7 +11,7 @@ import Seo from '@/components/Seo'
 import Stars from '@/components/Stars'
 import TodoList from '@/components/TodoList'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
-import { supabase } from '../../supabase/supabaseClient'
+import { auth, supabase } from '../../supabase/supabaseClient'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
@@ -90,7 +92,7 @@ const Login = ({ email }) => {
             <nav class="relative flex items-center justify-between sm:h-10">
               <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                 <div class="flex w-full items-center justify-between md:w-auto">
-                  <a href="/">
+                  <Link href="/">
                     <span className="relative inline-block overflow-hidden">
                       <StaticImage
                         layout="fixed"
@@ -103,11 +105,11 @@ const Login = ({ email }) => {
                         loading="lazy"
                       />
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div class="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
-                <a target="_blank" rel="noreferrer" href="/about">
+                <Link target="_blank" rel="noreferrer" href="/about">
                   <button
                     type="button"
                     class="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
@@ -131,7 +133,7 @@ const Login = ({ email }) => {
                     </svg>{' '}
                     <span class="truncate">About PubliusLogic</span>{' '}
                   </button>
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
@@ -144,13 +146,7 @@ const Login = ({ email }) => {
                 </div>
                 <div className="flex flex-col gap-5">
                   {!session ? (
-                    <Auth
-                      supabaseClient={supabase}
-                      view="magic_link"
-                      appearance={{ theme: ThemeSupa }}
-                      providers={['github', 'google']}
-                      theme="dark"
-                    />
+                    <AuthForm />
                   ) : (
                     <>
                       <ColumnGridTwo>

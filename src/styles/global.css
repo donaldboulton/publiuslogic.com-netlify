@@ -288,6 +288,7 @@ blockquote {
   padding: 5px 15px 5px 15px;
   border-left: 3px solid #881337 !important;
   border-radius: 8px;
+  margin-bottom: 6px;
   border-top: solid 1px #881337;
   border-right: solid 1px #881337;
   border-bottom: solid 1px #881337;
