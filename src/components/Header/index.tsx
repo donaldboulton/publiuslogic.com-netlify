@@ -21,7 +21,7 @@ function classNames(...classes) {
 export default function Navigation() {
   return (
     <>
-      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-gray-900 via-transparent to-gray-900">
+      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-transparent via-transparent to-gray-950">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

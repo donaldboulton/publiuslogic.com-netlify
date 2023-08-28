@@ -18,11 +18,11 @@ const Layout = ({ children }: LayoutProps) => {
       <ScrollIndicator />
       <Stars />
       <Header />
-      <div className="mx-auto max-w-screen-xl text-slate-900 antialiased dark:text-slate-200">
-        <main>
+      <>
+        <main className="form-beams text-slate-900 antialiased dark:text-slate-300">
           <MDXProvider>{children}</MDXProvider>
         </main>
-      </div>
+      </>
       <Footer />
       <CookieConsent
         enableDeclineButton
