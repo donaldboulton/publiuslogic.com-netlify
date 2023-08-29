@@ -1,13 +1,17 @@
+'use-client'
+
 import * as React from 'react'
 import { Link } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import A from '@/components/A'
-import Subscriptions from '@/components/Subscriptions'
 import LinkedIn from '../../../static/svg/icons/linkedin.inline.svg'
 import Facebook from '../../../static/svg/icons/facebook.inline.svg'
 import Instagram from '../../../static/svg/icons/instagram.inline.svg'
 import Twitter from '../../../static/svg/icons/twitter.inline.svg'
 import Github from '../../../static/svg/icons/github.inline.svg'
+import loadable from '@loadable/component'
+
+const Subscriptions = loadable(() => import('@/components/Subscriptions'))
 
 export default function IndexFooter() {
   const metadata = SiteMetadata().siteMetadata

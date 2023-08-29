@@ -1,12 +1,14 @@
 import { GatsbyNode } from 'gatsby'
 import path from 'path'
+
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const { copyLibFiles } = require('@builder.io/partytown/utils')
 
 exports.onPreBuild = async () => {
   await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
 }
 
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, plugins, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {
     const regex = [/node_modules\/leaflet/, /node_modules\\leaflet/]
     actions.setWebpackConfig({
@@ -26,6 +28,9 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@': path.resolve(__dirname, 'src'),
       },
     },
+  })
+  actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()]
   })
 }
 
