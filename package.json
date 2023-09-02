@@ -47,6 +47,7 @@
     "clsx": "^2.0.0",
     "core-js": "3.32.1",
     "csstype": "^3.1.2",
+    "encoding": "^0.1.13",
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "gatsby-plugin-algolia": "^1.0.3",
