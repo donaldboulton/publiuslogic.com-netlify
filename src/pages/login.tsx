@@ -23,24 +23,23 @@ const ogimage = {
 
 const Login = ({ email }) => {
   const [session, setSession] = useState(null)
-    useEffect(() => {
-      supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session)
-      })
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
 
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
-      })
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
 
-      return () => subscription.unsubscribe()
-    }, [])
+    return () => subscription.unsubscribe()
+  }, [])
 
   const getURL = () => {
     let url =
-      process?.env?.API_URL ?? // Set this to your site URL in production env.
-      'http://localhost:3000/'
+      process?.env?.API_URL ?? 'http://localhost:3000/' // Set this to your site URL in production env.
     // Make sure to include `https://` when not localhost.
     url = url.includes('http') ? url : `https://${url}`
     // Make sure to include a trailing `/`.
@@ -72,7 +71,7 @@ const Login = ({ email }) => {
 
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithOtp({
-      email: {email},
+      email: { email },
       options: {
         emailRedirectTo: getURL(),
       },

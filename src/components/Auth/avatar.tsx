@@ -15,7 +15,6 @@ export default function Avatar({
   size: number
   onUpload: (url: string) => void
 }) {
-
   const [avatarUrl, setAvatarUrl] = useState(null)
   const [uploading, setUploading] = useState(false)
 

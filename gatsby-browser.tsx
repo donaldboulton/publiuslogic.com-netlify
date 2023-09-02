@@ -26,7 +26,7 @@ const supabase =
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>

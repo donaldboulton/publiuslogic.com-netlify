@@ -20,9 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <div className="mx-auto text-slate-900 antialiased dark:text-slate-200">
         <main className="form-beams text-slate-900 antialiased dark:text-slate-300">
-          <MDXProvider>
-            {children}
-          </MDXProvider>
+          <MDXProvider>{children}</MDXProvider>
         </main>
       </div>
       <Footer />
@@ -57,18 +55,18 @@ const Layout = ({ children }: LayoutProps) => {
           }}
         >
           <div className="sm:text-center">
-                <p className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
-                  By continuing, you agree to PubliusLogic{' '}
-                  <Link className="hover:text-scale-1100 underline" to="/blog/terms">
-                    Terms of Service
-                  </Link>{' '}
-                  and{' '}
-                  <Link className="hover:text-scale-1100 underline" to="/blog/privacy">
-                    Privacy Policy
-                  </Link>
-                  , and to receive periodic emails with updates.
-                </p>
-              </div>
+            <p className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+              By continuing, you agree to PubliusLogic{' '}
+              <Link className="hover:text-scale-1100 underline" to="/blog/terms">
+                Terms of Service
+              </Link>{' '}
+              and{' '}
+              <Link className="hover:text-scale-1100 underline" to="/blog/privacy">
+                Privacy Policy
+              </Link>
+              , and to receive periodic emails with updates.
+            </p>
+          </div>
         </span>
       </CookieConsent>
     </>

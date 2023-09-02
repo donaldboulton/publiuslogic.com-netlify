@@ -168,7 +168,7 @@ export default function Navigation() {
                                   alt="Angelina Jordan"
                                   loading="lazy"
                                 />
-                                <span className='pl-1'>Old Enough</span>
+                                <span className="pl-1">Old Enough</span>
                               </span>
                             </Link>
                           )}

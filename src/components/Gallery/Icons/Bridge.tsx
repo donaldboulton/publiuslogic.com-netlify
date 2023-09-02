@@ -11,23 +11,15 @@ export default function Bridge() {
       height="704"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title id="conf-city-title">
-        Line drawing of the Golden Gate Bridge in San Francisco.
-      </title>
+      <title id="conf-city-title">Line drawing of the Golden Gate Bridge in San Francisco.</title>
       <path d="M372.5 299.5L616.5 335" stroke="currentColor" />
-      <path
-        d="M370 16.5C429.833 101.833 562.9 284 616.5 330"
-        stroke="currentColor"
-      />
+      <path d="M370 16.5C429.833 101.833 562.9 284 616.5 330" stroke="currentColor" />
       <path
         d="M329.5 34.5L325 36L322 38C321.333 38.5 320 39.6 320 40C320 40.4 319.333 41.1667 319 41.5L318.5 45.5V72L322.5 73M329.5 34.5C336.667 34 351.1 33 351.5 33C351.9 33 354 33.3333 355 33.5L356.5 34.5L358 36L358.5 38L358 70L357.5 70.5L354 72L350.5 73.5H330L322.5 73M329.5 34.5L324.5 38L323.5 40.5L322.5 43.5V73"
         stroke="currentColor"
       />
       <path d="M321 315V397H356.5" stroke="currentColor" />
-      <path
-        d="M332 234L329 240L328 241V245H327V251H326.5V261.5L325.5 262V289.5"
-        stroke="currentColor"
-      />
+      <path d="M332 234L329 240L328 241V245H327V251H326.5V261.5L325.5 262V289.5" stroke="currentColor" />
       <path
         d="M-0.5 158.5L27 171.5L43.5 190L48.5 202L85 218.5L95.5 246.5C98.1667 254.333 103.7 270.6 104.5 273C105.5 276 117 291 119 294.5C121 298 125.5 307 127 310C128.5 313 142 324.5 145 328C147.4 330.8 154.333 338.833 157.5 342.5L164 358C167.5 362 174.9 370.5 176.5 372.5C178.5 375 191 386.5 193.5 390C196 393.5 200.5 403 202 405.5C203.2 407.5 205.5 415 206.5 418.5C207.833 422.833 210.7 432 211.5 434C212.3 436 216.833 451.5 219 459C221.333 464.5 226 476.6 226 481C226 486.5 223.5 497.5 223.5 500C223.5 502.5 222 503 230.5 512.5C239 522 245.5 529.5 247 532C248.2 534 255.5 546.5 259 552.5"
         stroke="currentColor"
@@ -44,10 +36,7 @@ export default function Bridge() {
         d="M352.5 14C347.333 14.6667 334.3 15.8 323.5 15C321.9 12.6 320.5 11 320 10.5V6L318.5 4.5L316.5 6V10C276.667 42 158 116.7 2 159.5"
         stroke="currentColor"
       />
-      <path
-        d="M313 14V69.5L311.5 71.5V131.5L310 133V207L309 208.5V287"
-        stroke="currentColor"
-      />
+      <path d="M313 14V69.5L311.5 71.5V131.5L310 133V207L309 208.5V287" stroke="currentColor" />
       <path
         d="M321 288.5V261.5H323V250.5H324.5V244H325.5V241L329.5 234.5L334.5 233.5H351L352 237.5L353.5 238.5L354 243L355 244.5V249L355.5 250.5L356 259.5V292.5L355.5 328.5L356.5 330.5V334V397.5"
         stroke="currentColor"
@@ -64,10 +53,7 @@ export default function Bridge() {
       <path d="M315 455L338.347 453L364 455" stroke="currentColor" />
       <path d="M449 453L464.247 451L481 453" stroke="currentColor" />
       <path d="M252 487L275.347 484L301 487" stroke="currentColor" />
-      <path
-        d="M277.5 552.5L209.5 550L109.5 571L46 584.5L9.5 604H-22"
-        stroke="currentColor"
-      />
+      <path d="M277.5 552.5L209.5 550L109.5 571L46 584.5L9.5 604H-22" stroke="currentColor" />
       <path
         d="M355.5 318.5L117.5 293M113 286.5L355.5 313.5M373 315L616.5 346.5M373 321L567.5 346.5"
         stroke="currentColor"
@@ -85,10 +71,7 @@ export default function Bridge() {
         d="M323 165.5V208L328 209C334.5 209.167 347.6 209.4 348 209C348.4 208.6 350.833 208.5 352 208.5L356.5 204.5V199.5L356 198.5V195.5L357 195V170L355.5 168.5V164.5L355 163V160.5L351.5 156.5H331.5L329 159L326.5 159.5L325.5 161.5L324 162.5V165L323 165.5Z"
         stroke="currentColor"
       />
-      <path
-        d="M329 159L327.5 162.5V166L326 166.5V171.5L325.5 172.5L326 208.5"
-        stroke="currentColor"
-      />
+      <path d="M329 159L327.5 162.5V166L326 166.5V171.5L325.5 172.5L326 208.5" stroke="currentColor" />
       <path
         d="M333.5 92.5L326 93.5L324 95L322.5 96V98V100.5H321V103L319.5 104.5V132L324 134M333.5 92.5H354.5L357 95V97.5L357.5 99V129L356.5 130L356 132L353 133L349.5 134H324M333.5 92.5L327 94.5L326 97L325.5 101.5L324.5 102.5V105.5L324 107V134"
         stroke="currentColor"
@@ -124,5 +107,5 @@ export default function Bridge() {
       <path d="M553 261L553 322" stroke="currentColor" />
       <path d="M571 282L571 325" stroke="currentColor" />
     </svg>
-  );
+  )
 }
