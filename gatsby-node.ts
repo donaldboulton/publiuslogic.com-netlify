@@ -30,7 +30,7 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, plugins, ac
     },
   })
   actions.setWebpackConfig({
-    plugins: [new LoadablePlugin()]
+    plugins: [new LoadablePlugin()],
   })
 }
 

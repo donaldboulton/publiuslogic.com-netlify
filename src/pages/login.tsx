@@ -1,11 +1,12 @@
-'use client'
-
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
-import AuthForm from '@/components/Auth/auth-form'
-import Account from '@/components/Auth/account'
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { supabase } from '@/lib/supabase'
+import getUrl from '@/lib/getUrl'
+import Account from '@/components/Account'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '@/components/LeftText'
 import ColumnGridTwo from '@/components/ColumnGridTwo'
@@ -13,7 +14,6 @@ import Seo from '@/components/Seo'
 import Stars from '@/components/Stars'
 import TodoList from '@/components/TodoList'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
-import { auth, supabase } from '../../supabase/supabaseClient'
 
 const ogimage = {
   src: OGImage,
@@ -36,17 +36,6 @@ const Login = ({ email }) => {
 
     return () => subscription.unsubscribe()
   }, [])
-
-  const getURL = () => {
-    let url =
-      process?.env?.API_URL ?? // Set this to your site URL in production env.
-      'http://localhost:3000/'
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`
-    // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-    return url
-  }
 
   async function signInWithGitHub() {
     const { data, error } = await supabase.auth.signInWithOAuth({
@@ -146,7 +135,17 @@ const Login = ({ email }) => {
                 </div>
                 <div className="flex flex-col gap-5">
                   {!session ? (
-                    <AuthForm />
+                    <div className="auth-widget">
+                      <Auth
+                        supabaseClient={supabase}
+                        view="magic_link"
+                        appearance={{
+                          theme: ThemeSupa,
+                        }}
+                        theme="dark"
+                        providers={['google', 'spotify']}
+                      />
+                    </div>
                   ) : (
                     <>
                       <ColumnGridTwo>
@@ -172,12 +171,15 @@ const Login = ({ email }) => {
                   All week I was migrating my project from Regis to
                   <a href="https://supabase.com/launch-week">@supabase</a>
                   <blockquote>
-                    Because it is the best, fastest and simple!!! I like design and API for understandable.{' '}
+                    Because it is the best, fastest and simple!!! I like design and API for it's understandability.{' '}
                   </blockquote>
                   <blockquote>
-                    <a href="https://supabase.com/launch-week">Supabase Launch week 8.</a> Just try! 🧪
+                    <a href="https://supabase.com/launch-week">Supabase Launch week 9.</a> Just try it! 🧪
                   </blockquote>
                 </blockquote>
+                <div className="absolute -right-12 -bottom-12 select-none">
+                  <span className="text-scale-600 text-[160px] leading-none">“</span>
+                </div>
                 <a
                   href="https://twitter.com/donboulton"
                   target="_blank"

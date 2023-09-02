@@ -3,9 +3,11 @@ import { LazyMotion, m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'gatsby'
 import Tags from '@/components/Tags'
-import List from '@/components/List'
 import GetPosts from '@/utils/getposts'
 import WavyHr from '@/components/WavyHr'
+import loadable from '@loadable/component'
+
+const List = loadable(() => import('@/components/List'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 

@@ -7,6 +7,8 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { supabase } from '@/lib/supabase'
 
 interface LayoutProps {
   children: ReactNode
@@ -20,7 +22,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <>
         <main className="form-beams text-slate-900 antialiased dark:text-slate-300">
-          <MDXProvider>{children}</MDXProvider>
+          <MDXProvider>
+            <SessionContextProvider supabaseClient={supabase}>{children}</SessionContextProvider>
+          </MDXProvider>
         </main>
       </>
       <Footer />

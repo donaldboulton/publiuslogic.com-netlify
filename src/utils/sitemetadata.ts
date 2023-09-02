@@ -25,35 +25,33 @@ export type SiteMetadataType = {
 }
 
 const SiteMetadata = (): SiteMetadataType => {
-  const { site } = useStaticQuery(
-    graphql`
-      query SITE_METADATA_QUERY {
-        site {
-          siteMetadata {
-            title
-            author {
-              name
-              url
-              summary
-            }
-            description
-            siteUrl
-            location
-            social {
-              email
-              phone
-              facebook
-              instagram
-              twitter
-              linkedin
-              github
-            }
+  const { site } = useStaticQuery(graphql`
+    query SITE_METADATA_QUERY {
+      site {
+        siteMetadata {
+          title
+          author {
+            name
+            url
+            summary
           }
-          buildTime
+          description
+          siteUrl
+          location
+          social {
+            email
+            phone
+            facebook
+            instagram
+            twitter
+            linkedin
+            github
+          }
         }
+        buildTime
       }
-    `
-  )
+    }
+  `)
   return site
 }
 

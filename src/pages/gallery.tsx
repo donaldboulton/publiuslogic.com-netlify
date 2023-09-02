@@ -70,7 +70,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
                 <div className="flex flex-wrap">
                   <div className="w-full p-1 md:p-2">
                     <Gallery
-                      imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-fuchsia-800"
+                      imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-slate-950"
                       images={images}
                       lightboxOptions={lightboxOptions}
                       customWrapper={CustomWrapper}

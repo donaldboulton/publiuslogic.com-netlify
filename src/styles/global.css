@@ -200,8 +200,12 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #201c29, #100e17);
   border-radius: 10px;
-  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 html::-webkit-scrollbar-track {
@@ -220,7 +224,9 @@ pre::-webkit-scrollbar {
 pre::-webkit-scrollbar-thumb {
   background: #201c29;
   border-radius: 10px;
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 pre::-webkit-scrollbar-track {
@@ -268,8 +274,12 @@ ul li > .active {
 .nav-scroll::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #201c29, #100e17);
   border-radius: 10px;
-  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .nav-scroll::-webkit-scrollbar-track {
@@ -463,7 +473,9 @@ gatsby-highlight > code[class*='language-'],
 .gatsby-highlight pre::-webkit-scrollbar-thumb {
   background: #201c29;
   border-radius: 10px;
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .gatsby-highlight pre::-webkit-scrollbar-track {
