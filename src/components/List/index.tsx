@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
 import * as CSS from 'csstype'
-import loadable from '@loadable/component'
-
-const ListItem = loadable(() => import('./ListItem'))
+import ListItem from './ListItem'
 
 interface ListProps {
   children: ReactNode

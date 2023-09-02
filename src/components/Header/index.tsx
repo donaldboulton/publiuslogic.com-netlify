@@ -1,5 +1,3 @@
-'use-client'
-
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -9,9 +7,7 @@ import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, Ho
 import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
-import loadable from '@loadable/component'
-
-const HeaderPopover = loadable(() => import('@/components/HeaderPopover'))
+import HeaderPopover from '@/components/HeaderPopover'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },
@@ -25,7 +21,7 @@ function classNames(...classes) {
 export default function Navigation() {
   return (
     <>
-      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-transparent via-transparent to-gray-950">
+      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-gray-900 via-transparent to-gray-900">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -172,7 +168,7 @@ export default function Navigation() {
                                   alt="Angelina Jordan"
                                   loading="lazy"
                                 />
-                                <span>Old Enough</span>
+                                <span className='pl-1'>Old Enough</span>
                               </span>
                             </Link>
                           )}

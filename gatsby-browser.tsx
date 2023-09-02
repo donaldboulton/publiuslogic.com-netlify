@@ -4,15 +4,33 @@ import type { GatsbyBrowser } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AnimatePresence } from 'framer-motion'
+import { createClient } from '@supabase/supabase-js'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { Database } from './src/lib/database.types'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
+const options = {
+  auth: {
+    localStorage: true,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,
+  },
+}
+
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, options)
+    : undefined
+
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
-  return (
-    <MDXEmbedProvider>
+  return
+  <MDXEmbedProvider>
+    <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
-    </MDXEmbedProvider>
-  )
+    </SessionContextProvider>
+  </MDXEmbedProvider>
 }
 
 export const onServiceWorkerUpdateReady = () => {

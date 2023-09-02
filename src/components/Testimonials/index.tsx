@@ -1,5 +1,3 @@
-'use-client'
-
 import * as React from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'

@@ -200,12 +200,8 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #201c29, #100e17);
   border-radius: 10px;
-  -webkit-box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 html::-webkit-scrollbar-track {
@@ -224,9 +220,7 @@ pre::-webkit-scrollbar {
 pre::-webkit-scrollbar-thumb {
   background: #201c29;
   border-radius: 10px;
-  box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 pre::-webkit-scrollbar-track {
@@ -274,12 +268,8 @@ ul li > .active {
 .nav-scroll::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #201c29, #100e17);
   border-radius: 10px;
-  -webkit-box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-  box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .nav-scroll::-webkit-scrollbar-track {
@@ -298,7 +288,6 @@ blockquote {
   padding: 5px 15px 5px 15px;
   border-left: 3px solid #881337 !important;
   border-radius: 8px;
-  margin-bottom: 6px;
   border-top: solid 1px #881337;
   border-right: solid 1px #881337;
   border-bottom: solid 1px #881337;
@@ -473,9 +462,7 @@ gatsby-highlight > code[class*='language-'],
 .gatsby-highlight pre::-webkit-scrollbar-thumb {
   background: #201c29;
   border-radius: 10px;
-  box-shadow:
-    inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .gatsby-highlight pre::-webkit-scrollbar-track {
@@ -643,11 +630,4 @@ giscus-widget {
   background-repeat: no-repeat;
   background: cover;
   z-index: 30;
-}
-
-.login-beams {
-  background-image: url(../../static/beams/2-dark@tiny.png);
-  background-size: 43.125rem;
-  background-repeat: no-repeat;
-  background: cover;
 }

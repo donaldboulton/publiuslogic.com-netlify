@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { ReactNode, useEffect, useState, useRef, useCallback, FC, RefObject } from 'react'
 import * as CSS from 'csstype'
+import VisuallyHidden from '../VisuallyHidden'
 import { LazyMotion, m, useAnimation } from 'framer-motion'
-import loadable from '@loadable/component'
-
-const VisuallyHidden = loadable(() => import('@/components/VisuallyHidden'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 

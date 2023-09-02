@@ -107,7 +107,7 @@ const Tags = () => {
   return (
     <>
       <Layout>
-        <div className="search-beams z-30 -mt-4">
+        <div className="search-beams z-30">
           <PageHero
             title="Blog Tags"
             description="Click on each tag to view blog posts containing tag."

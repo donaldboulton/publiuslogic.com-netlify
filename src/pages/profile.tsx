@@ -26,7 +26,7 @@ function Profile() {
     <>
       <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
-        <div className="search-beams z-30 -mt-4">
+        <div className="search-beams z-30">
           <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
           <section className="mb-11">
             <div className="mb-6 mt-6 text-center">

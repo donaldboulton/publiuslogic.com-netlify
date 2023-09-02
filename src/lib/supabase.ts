@@ -10,9 +10,10 @@ const options = {
   },
 }
 
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_KEY;
 
-const supabase = createClient<Database>(supabaseUrl, supabaseKey, options)
+console.log(supabaseUrl);
+console.log(supabaseAnonKey);
 
-export { supabase }
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, options)

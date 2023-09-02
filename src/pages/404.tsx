@@ -6,7 +6,7 @@ import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import BouncingBall from '@/components/BouncingBall'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
 
 import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
 import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
@@ -43,7 +43,7 @@ const NotFoundPage = () => {
               </Link>
               <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">404: Not Found</h2>
               <div>You just hit a route that doesn&#39;t exist... the sadness.</div>
-              <BouncingBall />
+              <ThreeDotsWave />
             </div>
           </div>
         </div>

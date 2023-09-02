@@ -89,7 +89,7 @@ const OldEnough = () => {
                   <IframeWrapper>
                     <ReactPlayer
                       ref={ref}
-                      url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
+                      url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
                       width="100%"
                       height="100%"
                       controls={true}
@@ -116,7 +116,7 @@ const OldEnough = () => {
                 <IframeWrapperLarge>
                   <ReactPlayer
                     ref={refPlayer}
-                    url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
+                    url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"                    
                     height="100%"
                     width="100%"
                     controls={true}

@@ -46,7 +46,7 @@ const Home = () => {
       <Layout>
         <main className="font-sans">
           <div className="relative flex content-center items-center justify-center">
-            <div className="bg-text-slate-950 relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">
+            <div className="bg-slate-950 relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">              
               <StaticImage
                 className="absolute left-0 top-0 z-0 h-full w-full"
                 formats={['auto', 'webp']}
@@ -71,6 +71,22 @@ const Home = () => {
                 </motion.div>
               </LazyMotion>
             </div>
+            <div
+                  className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden transition-all duration-200"
+                  style={{ height: '70px' }}
+                >
+                  <svg
+                    className="absolute bottom-0 overflow-hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                    version="1.1"
+                    viewBox="0 0 2560 100"
+                    x="0"
+                    y="0"
+                  >
+                    <polygon className="fill-current text-slate-700 opacity-90" points="2560 0 2560 100 0 100"></polygon>
+                  </svg>
+                </div>
           </div>
           <section className="-mt-10 bg-slate-700 pb-10 text-slate-200 transition-all duration-200">
             <div className="container mx-auto px-4">

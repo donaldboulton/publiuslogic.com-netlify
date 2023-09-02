@@ -19,7 +19,7 @@ const Thanks = () => {
   return (
     <>
       <Layout>
-        <div className="search-beams z-30 -mt-4">
+        <div className="search-beams z-30">
           <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
           <div className="mt-10">
             <div className="mb-16 mt-6 flex flex-col items-center">

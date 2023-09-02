@@ -39,7 +39,7 @@ function ContactUs() {
     <>
       <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
-        <div className="search-beams z-30 -mt-4">
+        <div className="search-beams z-30">
           <PageHero
             title="Contact Us"
             description="Our presence is real and digital. Contact us through the following ways."

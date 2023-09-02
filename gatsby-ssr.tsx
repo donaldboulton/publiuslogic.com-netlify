@@ -4,17 +4,35 @@ import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import { MDXEmbedProvider } from 'mdx-embed'
+import { createClient } from '@supabase/supabase-js'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
+import { Database } from './src/lib/database.types'
+
+const options = {
+  auth: {
+    localStorage: true,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,
+  },
+}
+
+const supabase =
+  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
+    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, options)
+    : undefined
 
 const ORIGIN = 'https://www.googletagmanager.com/'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
-  return (
-    <MDXEmbedProvider>
+  return
+  <MDXEmbedProvider>
+    <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
-    </MDXEmbedProvider>
-  )
+    </SessionContextProvider>
+  </MDXEmbedProvider>
 }
 
 export const wrapRootElement = wrap
