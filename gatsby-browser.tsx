@@ -20,8 +20,8 @@ const options = {
 }
 
 const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_KEY
-    ? createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, options)
+  process.env.GATSBY_SUPABASE_URL && process.env.GATSBY_SUPABASE_KEY
+    ? createClient<Database>(process.env.GATSBY_SUPABASE_URL, process.env.GATSBY_SUPABASE_KEY, options)
     : undefined
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
