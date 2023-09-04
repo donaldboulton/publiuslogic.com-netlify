@@ -2,7 +2,6 @@ import { createClient } from '@supabase/supabase-js'
 import { Database } from '@/lib/database.types'
 
 const options = {
-  global: { headers: { Authorization: req.headers.get("Authorization")! } },
   auth: {
     detectSessionInUrl: false,
     autoRefreshToken: false,
