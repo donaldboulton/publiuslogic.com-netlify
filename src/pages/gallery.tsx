@@ -5,9 +5,18 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@/components/Gallery'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
+
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 interface ImageSharpEdge {
   node: {
@@ -65,10 +74,10 @@ const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
         <div className="search-beams z-30">
           <PageHero title="Gallery: Angie" description="Special Kitty, Cat!" image={Image} />
           <section className="mb-32 overflow-hidden">
-            <div class="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-              <div class="-m-1 flex flex-wrap justify-center md:-m-2">
-                <div class="flex flex-wrap">
-                  <div class="w-full p-1 md:p-2">
+            <div className="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+              <div className="-m-1 flex flex-wrap justify-center md:-m-2">
+                <div className="flex flex-wrap">
+                  <div className="w-full p-1 md:p-2">
                     <Gallery
                       imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-slate-950"
                       images={images}

@@ -1,28 +1,27 @@
 {
   "name": "publiuslogic",
-  "private": true,
-  "description": "To Publish Logic",
-  "version": "1.1.0",
-  "author": "Donald Boulton <donaldboulton@gmail.com>",
+  "private": false,
+  "description": "To Publius Logic",
+  "version": "1.0.0",
+  "author": "Donald Boulton",
   "bugs": {
     "url": "https://github.com/donaldboulton/publiuslogic.com/issues"
   },
   "homepage": "https://publiuslogic.com",
   "keywords": [
-    "gatsby",
-    "typescript",
+    "Gatsby",
+    "Typescript",
     "MDX",
-    "Prism",
+    "Supabase",
     "TailwindCSS",
-    "blog"
+    "Blog"
   ],
-  "license": "0BSD",
+  "license": "OSBD",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.8.0",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.2",
     "@fontsource/eb-garamond": "^5.0.8",
@@ -51,6 +50,7 @@
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "gatsby-plugin-algolia": "^1.0.3",
+    "gatsby-plugin-google-gtag": "^5.12.0",
     "gatsby-plugin-image": "3.11.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-mdx": "3.20.0",
@@ -113,9 +113,12 @@
     "util": "^0.12.5",
     "zustand": "^4.4.1"
   },
+  "resolutions": {
+    "babel-plugin-lodash/@babel/types": "~7.20.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.11",
-    "@babel/plugin-transform-react-jsx": "7.22.5",
+    "@babel/plugin-transform-react-jsx": "7.22.15",
     "@babel/preset-react": "^7.22.5",
     "@loadable/babel-plugin": "^5.16.1",
     "@loadable/webpack-plugin": "^5.15.2",
@@ -193,5 +196,6 @@
   },
   "AWS_LAMBDA_JS_RUNTIME": {
     "node": ">=18.16.1"
-  }
+  },
+  "main": "index.js"
 }

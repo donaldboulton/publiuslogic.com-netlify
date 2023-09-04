@@ -115,11 +115,11 @@ const ContactForm: FC<ContactFormProps> = props => {
             <Honeypot />
 
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
-            <p className="hidden">
+            <div className="hidden">
               <label>
                 Don not fill this out if you are human: <input name="bot-field" />
               </label>
-            </p>
+            </div>
             <div className="shadow overflow-hidden sm:rounded-md">
               <div className="px-4 py-5 text-black dark:text-slate-300 sm:p-6">
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -156,7 +156,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         {...register('firstName', { required: true, maxLength: 80 })}
                       />
                     </div>
-                    {errors?.firstName && <p>{errors.firstName.message}</p>}
+                    {errors?.firstName && <div>{errors.firstName.message}</div>}
                   </div>
                   <div className="w-full md:w-1/2 px-3">
                     <label
@@ -380,16 +380,16 @@ const ContactForm: FC<ContactFormProps> = props => {
                         {...register('message', { required: true })}
                       />
                     </div>
-                    <p className="ml-12 text-red-500 text-xs italic">Message Is Required.</p>
+                    <div className="ml-12 text-red-500 text-xs italic">Message Is Required.</div>
                   </div>
                 </div>
               </div>
-              {netlify.success && <p className="text-yellow-500 ml-6 mt-6 container">Thanks for contacting us!</p>}
+              {netlify.success && <div className="text-yellow-500 ml-6 mt-6 container">Thanks for contacting us!</div>}
               {netlify.error && (
-                <p className="text-red-500 ml-6 mt-6 container">
+                <div className="text-red-500 ml-6 mt-6 container">
                   Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide a
                   response.
-                </p>
+                </div>
               )}
               <div className="px-4 py-3 inline-flex sm:px-6 bg-slate-300 dark:bg-slate-900">
                 <div className="rounded-md shadow-sm" role="group">
@@ -536,9 +536,9 @@ export default ContactForm = () => (
     {({ handleChange, success, error }) => (
       <>
         <Honeypot />
-        {success && <p>Thanks for contacting us!</p>}
+        {success && <div>Thanks for contacting us!</div>}
         {error && (
-          <p>Sorry, we could not reach our servers. Please try again later.</p>
+          <div>Sorry, we could not reach our servers. Please try again later.</div>
         )}
         <div>
           <label htmlFor='name'>Name:</label>
@@ -618,24 +618,24 @@ function Contact() {
             <Honeypot />
 
             {success && (
-              <p
+              <div
                 style={{
                   color: '#00FF00',
                   marginLeft: '2em'
                 }}
               >
                 Thanks for contacting us!
-              </p>
+              </div>
             )}
             {error && (
-              <p
+              <div
                 style={{
                   color: '#0000FF',
                   marginLeft: '2em'
                 }}
               >
                 Sorry, we could not reach servers.
-              </p>
+              </div>
             )}
             <div
               style={{
@@ -709,8 +709,8 @@ function Contact() {
                 <input {...getInputProps()} name='file' />
                 {
                   isDragActive ?
-                    <p>Drop the files here ...</p> :
-                    <p>Drag 'n' drop some files here, or click to select files</p>
+                    <div>Drop the files here ...</div> :
+                    <div>Drag 'n' drop some files here, or click to select files</div>
                 }
               </div>
             </div>
@@ -789,24 +789,24 @@ function Contact() {
             <Honeypot />
 
             {success && (
-              <p
+              <div
                 style={{
                   color: '#00FF00',
                   marginLeft: '2em'
                 }}
               >
                 Thanks for contacting us!
-              </p>
+              </div>
             )}
             {error && (
-              <p
+              <div
                 style={{
                   color: '#0000FF',
                   marginLeft: '2em'
                 }}
               >
                 Sorry, we could not reach servers.
-              </p>
+              </div>
             )}
             <input type="hidden" name="form-name" value="contact" />
             <div
@@ -979,7 +979,7 @@ export default function Previews(props) {
     <section className="container box">
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} type='file' name='file' />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <div>Drag 'n' drop some files here, or click to select files</div>
       </div>
       <aside style={thumbsContainer}>
         {thumbs}

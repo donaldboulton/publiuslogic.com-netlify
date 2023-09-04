@@ -2,11 +2,20 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
 import ScrollDown from '@/components/ScrollDown'
 import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
+
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 const ogimage = {
   src: OGImage,

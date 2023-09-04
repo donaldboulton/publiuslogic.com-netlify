@@ -91,57 +91,57 @@ const Login = ({ email }) => {
   return (
     <Layout>
       <div className="mb-20 ml-8">
-          <div className="pt-10">
-            <LeftText>PubliusLogic Login</LeftText>
-          </div>
-          <ColumnGridTwo>
-            <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
-              {!session ? (
-                <Auth
-                  supabaseClient={supabase}
-                  view="magic_link"
-                  providers={['github', 'google', 'spotify']}
-                  theme="dark"
-                  appearance={{
-                    theme: ThemeSupa,
-                    variables: {
-                      default: {
-                        colors: {
-                          brand: 'red',
-                          brandAccent: 'darkred',
-                        },
+        <div className="pt-10">
+          <LeftText>PubliusLogic Login</LeftText>
+        </div>
+        <ColumnGridTwo>
+          <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
+            {!session ? (
+              <Auth
+                supabaseClient={supabase}
+                view="magic_link"
+                providers={['github', 'google', 'spotify']}
+                theme="dark"
+                appearance={{
+                  theme: ThemeSupa,
+                  variables: {
+                    default: {
+                      colors: {
+                        brand: 'red',
+                        brandAccent: 'darkred',
                       },
                     },
-                  }}
-                />
-              ) : (
-                <>
-                  <ColumnGridTwo>
-                    <Account key={session.user.id} session={session} />
-                    <div
-                      className="flex h-full w-full flex-col items-center justify-center p-4"
-                      style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                    >
-                      <TodoList session={session} />
-                    </div>
-                  </ColumnGridTwo>
-                </>
-              )}
-            </div>
-            <div className="right-0">
-              <StaticImage
-                className="self-center rounded-lg opacity-60"
-                src="../../static/img/planets.jpg"
-                placeholder="blurred"
-                width={840}
-                height={427}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt="Planets"
-                loading="eager"
+                  },
+                }}
               />
-            </div>
-          </ColumnGridTwo>
+            ) : (
+              <>
+                <ColumnGridTwo>
+                  <Account key={session.user.id} session={session} />
+                  <div
+                    className="flex h-full w-full flex-col items-center justify-center p-4"
+                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                  >
+                    <TodoList session={session} />
+                  </div>
+                </ColumnGridTwo>
+              </>
+            )}
+          </div>
+          <div className="right-0">
+            <StaticImage
+              className="self-center rounded-lg opacity-60"
+              src="../../static/img/planets.jpg"
+              placeholder="blurred"
+              width={840}
+              height={427}
+              quality={95}
+              formats={['auto', 'webp', 'avif']}
+              alt="Planets"
+              loading="eager"
+            />
+          </div>
+        </ColumnGridTwo>
       </div>
     </Layout>
   )

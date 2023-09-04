@@ -3,7 +3,6 @@ import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
 import {
   jupiter,
@@ -47,10 +46,19 @@ import {
   signal,
   wallpaper,
 } from 'hero-patterns'
-
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
 import GetTags from '@/utils/gettags'
 import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
 import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
+
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 const patterns = [
   steelBeams('#9c92ac', 0.5),

@@ -10,9 +10,18 @@ import { LazyMotion, motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
-import Table from '@/components/Table'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
+
+const Table = loadable(() => import('@/components/Table'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 

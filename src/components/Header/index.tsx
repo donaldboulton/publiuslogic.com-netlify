@@ -7,7 +7,16 @@ import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, Ho
 import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
-import HeaderPopover from '@/components/HeaderPopover'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
+
+const HeaderPopover = loadable(() => import('@/components/HeaderPopover'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },

@@ -129,10 +129,10 @@ export default function App() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("firstName")} />
-      <p>{errors.firstName?.message}</p>
+      <div>{errors.firstName?.message}</div>
 
       <input {...register("age")} />
-      <p>{errors.age?.message}</p>
+      <div>{errors.age?.message}</div>
 
       <input type="submit" />
     </form>

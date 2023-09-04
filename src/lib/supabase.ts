@@ -6,7 +6,7 @@ const options = {
     detectSessionInUrl: false,
     autoRefreshToken: false,
     persistSession: false,
-  }
+  },
 }
 
 const supabaseUrl = process.env.GATSBY_SUPABASE_URL

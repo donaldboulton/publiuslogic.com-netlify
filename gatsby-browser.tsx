@@ -5,13 +5,13 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AnimatePresence } from 'framer-motion'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { supabase } from "./src/lib/supabase"
+import { supabase } from './src/lib/supabase'
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return
-  <MDXEmbedProvider>
+  ;<MDXEmbedProvider>
     <SessionContextProvider supabaseClient={supabase}>
       <AnimatePresence wait>{element}</AnimatePresence>
     </SessionContextProvider>
@@ -24,19 +24,6 @@ export const onServiceWorkerUpdateReady = () => {
   if (answer === true) {
     window.location.reload()
   }
-}
-
-export const onRouteUpdate = ({ location }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    return null
-  }
-
-  const pagePath = location ? location.pathname + location.search + location.hash : undefined
-  setTimeout(() => {
-    if (typeof gtag === 'function') {
-      gtag('event', 'page_view', { page_path: pagePath })
-    }
-  }, 100)
 }
 
 export const wrapRootElement = wrap

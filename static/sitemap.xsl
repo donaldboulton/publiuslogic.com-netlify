@@ -140,7 +140,7 @@
                                 </xsl:for-each>
                             </tbody>
                         </table>
-                        <p className="desc"><a href="sitemap.xml" className="back-link">&#8592; Back to index</a></p>
+                        <div className="desc"><a href="sitemap.xml" className="back-link">&#8592; Back to index</a></div>
                     </xsl:if>
                 </div>
             </body>

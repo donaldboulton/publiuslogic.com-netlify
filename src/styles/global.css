@@ -156,7 +156,7 @@ h2 {
 }
 
 .sto {
-  fill-rule: evenodd;
+  fillRule: evenodd;
   clip-rule: evenodd;
 }
 
@@ -446,19 +446,19 @@ gatsby-highlight > code[class*='language-'],
   top: 0;
 }
 
-.gatsby-highlight pre[class='language-js']::before {
+.gatsby-highlight pre[className='language-js']::before {
   content: 'js';
   background: #f7df1e;
   color: black;
 }
 
-.gatsby-highlight pre[class='language-jsx']::before {
+.gatsby-highlight pre[className='language-jsx']::before {
   content: 'jsx';
   background: #da3941;
   color: white;
 }
 
-.gatsby-highlight pre[class='language-tsx']::before {
+.gatsby-highlight pre[className='language-tsx']::before {
   content: 'tsx';
   background: #2989c0;
   color: white;

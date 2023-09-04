@@ -3,10 +3,18 @@ import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import Search from '@/components/Algolia/search'
-import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
 import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
+import loadable from '@loadable/component'
 
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 const searchIndices = [{ name: 'Posts', title: 'Posts' }]
 
 const ogimage = {
