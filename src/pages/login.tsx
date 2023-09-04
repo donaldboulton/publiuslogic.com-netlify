@@ -5,15 +5,13 @@ import type { HeadProps } from 'gatsby'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import Account from '../components/Auth/account'
 import Layout from '../components/Layout'
-import Center from '../components/Center'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '../components/LeftText'
 import Seo from '../components/Seo'
 import TodoList from '../components/TodoList'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import ColumnGridTwo from '../components/ColumnGridTwo'
-import { createClient } from '@supabase/supabase-js'
-import { supabase } from '../supabase/supabase'
+import { supabase } from '../lib/supabase'
 
 const ogimage = {
   src: OGImage,
@@ -38,8 +36,7 @@ const Login = ({ email }) => {
   }, [])
 
   const getURL = () => {
-    let url =
-      process?.env?.API_URL ?? 'http://localhost:3000/' // Set this to your site URL in production env.
+    let url = process?.env?.API_URL ?? 'http://localhost:3000/' // Set this to your site URL in production env.
     // Make sure to include `https://` when not localhost.
     url = url.includes('http') ? url : `https://${url}`
     // Make sure to include a trailing `/`.
@@ -69,6 +66,15 @@ const Login = ({ email }) => {
     })
   }
 
+  async function signInWithSpotify() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'spotify',
+      options: {
+        redirectTo: getURL(),
+      },
+    })
+  }
+
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithOtp({
       email: { email },
@@ -84,50 +90,58 @@ const Login = ({ email }) => {
 
   return (
     <Layout>
-      <div className="mb-48 ml-10 mr-10">
-        <div>
-          <Center>Login PubliusLogic</Center>
-        </div>
-        <LeftText>The Queen</LeftText>
-        <ColumnGridTwo>
-          <div className="mt-4">
-            <div className="mb-4">
+      <div className="mb-20 ml-8">
+          <div className="pt-10">
+            <LeftText>PubliusLogic Login</LeftText>
+          </div>
+          <ColumnGridTwo>
+            <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
+              {!session ? (
+                <Auth
+                  supabaseClient={supabase}
+                  view="magic_link"
+                  providers={['github', 'google', 'spotify']}
+                  theme="dark"
+                  appearance={{
+                    theme: ThemeSupa,
+                    variables: {
+                      default: {
+                        colors: {
+                          brand: 'red',
+                          brandAccent: 'darkred',
+                        },
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <>
+                  <ColumnGridTwo>
+                    <Account key={session.user.id} session={session} />
+                    <div
+                      className="flex h-full w-full flex-col items-center justify-center p-4"
+                      style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                    >
+                      <TodoList session={session} />
+                    </div>
+                  </ColumnGridTwo>
+                </>
+              )}
+            </div>
+            <div className="right-0">
               <StaticImage
-                layout="fixed"
-                className="h-5 w-5 self-center rounded-lg"
-                src="../../static/images/angie/ps-i-love-you.jpg"
-                width={325}
-                height={573}
+                className="self-center rounded-lg opacity-60"
+                src="../../static/img/planets.jpg"
+                placeholder="blurred"
+                width={840}
+                height={427}
                 quality={95}
-                alt="PS I Love You"
-                loading="lazy"
+                formats={["auto", "webp", "avif"]}
+                alt="Planets"
+                loading="eager"
               />
             </div>
-          </div>
-          <div className="-mt-2 mb-24 ml-8 text-slate-200 lg:col-span-2 lg:mt-0">
-            {!session ? (
-              <Auth
-                supabaseClient={supabase}
-                view="magic_link"
-                appearance={{ theme: ThemeSupa }}
-                providers={['github', 'google']}
-                theme="dark"
-              />
-            ) : (
-              <>
-                <ColumnGridTwo>
-                  <Account key={session.user.id} session={session} />
-                  <div
-                    className="flex h-full w-full flex-col items-center justify-center p-4"
-                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                  >
-                    <TodoList session={session} />
-                  </div>
-                </ColumnGridTwo>
-              </>
-            )}
-          </div>
-        </ColumnGridTwo>
+          </ColumnGridTwo>
       </div>
     </Layout>
   )

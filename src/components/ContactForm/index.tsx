@@ -67,11 +67,11 @@ const ContactForm: FC<ContactFormProps> = props => {
           <>
             <Honeypot />
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
-            <p className="hidden">
+            <div className="hidden">
               <label>
                 Don not fill this out if you are human: <input name="bot-field" />
               </label>
-            </p>
+            </div>
 
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="px-4 py-5 text-slate-900 dark:text-slate-200 sm:p-6">
@@ -109,7 +109,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                         {...register('firstName', { required: true, maxLength: 80 })}
                       />
                     </div>
-                    {errors?.firstName && <p>{errors.firstName.message}</p>}
+                    {errors?.firstName && <span>{errors.firstName.message}</span>}
                   </div>
                   <div className="w-full px-3 md:w-1/2">
                     <label
@@ -336,12 +336,12 @@ const ContactForm: FC<ContactFormProps> = props => {
                   </div>
                 </div>
               </div>
-              {netlify.success && <p className="container ml-6 mt-6 text-yellow-500">Thanks for contacting us!</p>}
+              {netlify.success && <div className="container ml-6 mt-6 text-yellow-500">Thanks for contacting us</div>}
               {netlify.error && (
-                <p className="container ml-6 mt-6 text-red-500">
+                <div className="container ml-6 mt-6 text-red-500">
                   Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide
                   a response.
-                </p>
+                </div>
               )}
               <div className="inline-flex px-4 py-3 sm:px-6">
                 <div className="mx-auto space-x-1 overflow-hidden p-1">
@@ -358,7 +358,7 @@ const ContactForm: FC<ContactFormProps> = props => {
                     >
                       Reset
                     </button>
-                    <div className="ml-2 block flex items-center">
+                    <div className="ml-2 flex items-center">
                       <input
                         id="acceptTerms"
                         type="checkbox"

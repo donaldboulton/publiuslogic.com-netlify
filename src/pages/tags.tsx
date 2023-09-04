@@ -132,7 +132,7 @@ const Tags = () => {
                           <span className="absolute inset-0"></span>
                           {tag.tag}
                         </h3>
-                        <p className="text-center text-sm font-medium text-slate-300">&nbsp;({tag.count})</p>
+                        <span className="text-center text-sm font-medium text-slate-300">&nbsp;({tag.count})</span>
                       </div>
                     </section>
                   </Link>

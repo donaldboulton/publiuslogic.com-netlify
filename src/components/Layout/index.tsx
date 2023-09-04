@@ -55,7 +55,7 @@ const Layout = ({ children }: LayoutProps) => {
           }}
         >
           <div className="sm:text-center">
-            <p className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+            <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
               By continuing, you agree to PubliusLogic{' '}
               <Link className="hover:text-scale-1100 underline" to="/blog/terms">
                 Terms of Service
@@ -65,7 +65,7 @@ const Layout = ({ children }: LayoutProps) => {
                 Privacy Policy
               </Link>
               , and to receive periodic emails with updates.
-            </p>
+            </div>
           </div>
         </span>
       </CookieConsent>

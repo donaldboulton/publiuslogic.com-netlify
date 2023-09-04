@@ -72,17 +72,17 @@ export default function Features() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="lg:text-center">
                 <h2 className="text-base font-semibold uppercase tracking-wide">PubliusLogic</h2>
-                <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight sm:text-2xl">
+                <div className="mt-2 text-3xl font-extrabold leading-8 tracking-tight sm:text-2xl">
                   Topics and Discussions
-                </p>
-                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
+                </div>
+                <div className="mt-2 max-w-2xl text-xl lg:mx-auto">
                   PubliusLogic has Topics on God / Creation, Law, USA and World Governments, Life Matters.
-                </p>
-                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">
+                </div>
+                <div className="mt-2 max-w-2xl text-xl lg:mx-auto">
                   Focusing on the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only
                   live in the Flesh.
-                </p>
-                <p className="mt-2 max-w-2xl text-xl lg:mx-auto">Your Soul and Spirit your deny!</p>
+                </div>
+                <div className="mt-2 max-w-2xl text-xl lg:mx-auto">Your Soul and Spirit your deny!</div>
               </div>
 
               <div className="mt-10">
@@ -93,7 +93,7 @@ export default function Features() {
                         <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-wine-300 text-slate-300 hover:bg-wine-300">
                           <feature.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
-                        <p className="ml-16 text-lg font-medium leading-6">{feature.name}</p>
+                        <div className="ml-16 text-lg font-medium leading-6">{feature.name}</div>
                       </dt>
                       <dd className="ml-16 mt-2 text-base">{feature.description}</dd>
                     </div>

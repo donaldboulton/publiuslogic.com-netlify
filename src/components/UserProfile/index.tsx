@@ -19,16 +19,16 @@ const UserProfile: FC<UserProfileProps> = props => {
           <div className="justify-left w-24">{children}</div>
           <div class="space-y-1 text-center sm:text-left">
             <div class="space-y-0.5">
-              <p class="text-black text-lg font-semibold">
+              <div class="text-black text-lg font-semibold">
                 <a href={link} target="_blank" rel="noopener noreferrer" aria-describedby={description}>
                   {description}
                 </a>
-              </p>
-              <p class="font-medium text-slate-500">
+              </div>
+              <div class="font-medium text-slate-500">
                 <a href={titleLink} target="_blank" rel="noopener noreferrer" aria-describedby={title}>
                   {title}
                 </a>
-              </p>
+              </div>
             </div>
             <a href={buttonLink} target="_blank" rel="noopener noreferrer" aria-describedby="Contact">
               <button class="rounded-full border border-purple-200 px-4 py-1 text-sm font-semibold text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">

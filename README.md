@@ -9,22 +9,21 @@ Upgrade as of May 1st, 2023 to Gatsby 5.8.1
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/?t=fa5cdbee-00bf-4ca8-be8f-f150a6f643e1)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27d2be12-eb4a-4da2-a471-aea92e199948/deploy-status)](https://app.netlify.com/sites/publiuslogic/deploys)
 
-<h2 align="center">Awesome Tailwind CSS</h2>
+<h2 className="center">Awesome Tailwind CSS</h2>
 
-<p align="center">
+<div className="center">
   <a href="https://tailwindcss.com">Tailwind CSS</a> is a utility-first CSS framework for rapidly building custom user interfaces.
-  <br />
-  <br />
   <a href="https://github.com/sindresorhus/awesome">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome badge">
   </a>
+  </div>
   &nbsp;
   <a href="https://github.com/sindresorhus/awesome-lint">
     <img src="https://github.com/aniftyco/awesome-tailwindcss/workflows/Lint/badge.svg" alt="Lint status badge">
   </a>
   <br />
   <br />
-</p>
+</div>
 
 - 🚋 Serverless Functions
 - 🔏 Authentication (with Netlify Identity)

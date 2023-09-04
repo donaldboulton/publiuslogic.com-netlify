@@ -155,8 +155,8 @@ function HeaderPopover() {
                             <item.icon aria-hidden="true" />
                           </div>
                           <div className="ml-4">
-                            <p className="text-sm font-medium text-rose-500 hover:text-rose-600">{item.name}</p>
-                            <p className="text-sm text-slate-200">{item.description}</p>
+                            <div className="text-sm font-medium text-rose-500 hover:text-rose-600">{item.name}</div>
+                            <div className="text-sm text-slate-200">{item.description}</div>
                           </div>
                         </Link>
                       ))}

@@ -33,10 +33,10 @@ const SsrPage = ({ serverData }) => {
                     Back to Post
                   </Link>
                 </div>
-                <p className="mt-2 text-gray-500">
+                <div className="mt-2 text-gray-500">
                   See the Doggies! Doggies of all kinds of shapes, sizes and colors. With many different Breeds!
-                </p>
-                <p className="mt-2 text-gray-500">SSR Refresh just, "This Component", for More Doggies! Cool!</p>
+                </div>
+                <div className="mt-2 text-gray-500">SSR Refresh just, "This Component", for More Doggies! Cool!</div>
                 <div>
                   <button
                     type="button"

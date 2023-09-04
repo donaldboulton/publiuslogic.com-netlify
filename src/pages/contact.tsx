@@ -52,7 +52,7 @@ function ContactUs() {
                 <div className="px-4 sm:px-0">
                   {contactMethods.map(method =>
                     method.link ? (
-                      <p
+                      <div
                         key={method.name}
                         className="mt-2 flex items-center text-sm text-slate-900 dark:text-slate-200"
                       >
@@ -67,7 +67,7 @@ function ContactUs() {
                         >
                           {method.link}
                         </a>
-                      </p>
+                      </div>
                     ) : (
                       ''
                     )

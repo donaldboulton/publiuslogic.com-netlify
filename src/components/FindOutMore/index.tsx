@@ -58,7 +58,7 @@ export default function FindOutMore() {
                     {callout.name}
                   </a>
                 </h3>
-                <p className="text-base">{callout.description}</p>
+                <div className="text-base">{callout.description}</div>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import Avatar from './avatar'
-import { supabase } from '../../supabase/supabase'
+import { supabase } from '../../lib/supabase'
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)

@@ -106,9 +106,9 @@ export const Modal: FC<ModalProps> = props => {
                           </Dialog.Title>
                         </div>
                         <div className="mt-2">
-                          <p key={dialogContent} className="mt-4 text-sm text-slate-900 dark:text-slate-200">
+                          <div key={dialogContent} className="mt-4 text-sm text-slate-900 dark:text-slate-200">
                             {dialogContent}
-                          </p>
+                          </div>
                         </div>
                       </div>
                       <WavyHr />

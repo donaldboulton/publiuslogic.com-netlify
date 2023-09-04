@@ -17,6 +17,14 @@ export default function AuthForm() {
     return url
   }
 
+  async function signInWithGithub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: getURL(),
+      },
+    })
+  }
   async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -50,9 +58,17 @@ export default function AuthForm() {
         view="magic_link"
         appearance={{
           theme: ThemeSupa,
+          variables: {
+            default: {
+              colors: {
+                brand: 'red',
+                brandAccent: 'darkred',
+              },
+            },
+          },
         }}
         theme="dark"
-        providers={['google', 'spotify']}
+        providers={['github', 'google', 'spotify']}
       />
     </div>
   )

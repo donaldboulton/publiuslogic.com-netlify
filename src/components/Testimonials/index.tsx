@@ -91,14 +91,14 @@ const Testimonial = ({ tag, expanded }: TestimonialProps) => {
     <>
       <div>
         <Link to={`/${post.slug}`}>
-          <p className="sr-only">{post.frontmatter.title}</p>
+          <div className="sr-only">{post.frontmatter.title}</div>
         </Link>
         {posts.slice(offset, offset + POSTS_PER_PAGE).map((post, i) => (
           <li ref={ref} className="text-sm leading-6">
             <Link to={`/${post.slug}`}>
               <figure className="dark:highlight-white/5 relative flex flex-col-reverse rounded-lg bg-slate-50 p-6 dark:bg-slate-800">
                 <blockquote className="mt-6 text-slate-700 dark:text-slate-300">
-                  <p>{post.excerpt}</p>
+                  <span>{post.excerpt}</span>
                 </blockquote>
                 <figcaption className="flex items-center space-x-4">
                   <span

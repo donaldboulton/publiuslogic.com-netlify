@@ -24,7 +24,6 @@ function Profile() {
   }
   return (
     <>
-      <script src="https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js" async></script>
       <Layout>
         <div className="search-beams z-30">
           <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
@@ -57,9 +56,9 @@ function Profile() {
                   <div className="justify-items-center text-center">
                     Left Hand of Father God since the beginning of time!{' '}
                   </div>
-                  <p className="justify-items-center text-center">
+                  <div className="justify-items-center text-center">
                     Self Taught Full Stack Developer. Gatsby, MDX, TypeScript Tailwind CSS.
-                  </p>
+                  </div>
                 </div>
                 <div className="m-auto flex max-w-xs justify-center">
                   <div className="grid auto-cols-min grid-flow-col gap-4">

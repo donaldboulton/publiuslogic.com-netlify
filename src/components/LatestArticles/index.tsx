@@ -234,7 +234,7 @@ export default function LatestArticles() {
                             <div className="mb-2 text-xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8 hover:text-wine-200 md:mt-0">
                               {post.frontmatter.title}
                             </div>
-                            <p className="block p-2 pl-0 pt-1 text-sm">{post.frontmatter.description}</p>
+                            <span className="block p-2 pl-0 pt-1 text-sm">{post.frontmatter.description}</span>
                           </div>
                         </div>
                       </Link>

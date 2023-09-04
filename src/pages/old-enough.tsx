@@ -29,55 +29,6 @@ const OldEnough = () => {
     <>
       <Layout>
         <div className="login-beams bg-scale-100 mb-10 flex flex-1 flex-col">
-          <div className="absolute mx-auto w-full px-8 pt-6 sm:px-6 lg:px-8">
-            <nav className="relative flex items-center justify-between sm:h-10">
-              <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
-                <div className="flex w-full items-center justify-between md:w-auto">
-                  <a href="/">
-                    <span className="relative inline-block overflow-hidden">
-                      <StaticImage
-                        layout="fixed"
-                        className="h-8 w-8 self-center rounded-lg"
-                        src="../../static/img/apple-touch-icon-32x32.png"
-                        width={32}
-                        height={32}
-                        quality={95}
-                        alt="Angelina Jordan"
-                        loading="lazy"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="hidden items-center space-x-3 md:ml-10 md:flex md:pr-4">
-                <a target="_blank" rel="noreferrer" href="https://mansbooks.com/angies-profile">
-                  <button
-                    type="button"
-                    className="font-regular text-scale-1200 bg-scale-100 hover:bg-scale-300 border-scale-600 hover:border-scale-700 dark:border-scale-700 hover:dark:border-scale-800 dark:bg-scale-500 dark:hover:bg-scale-600 focus-visible:outline-brand-600 relative inline-flex cursor-pointer items-center justify-center space-x-2 rounded-md border px-2.5 py-1 text-center text-xs shadow-sm outline-none outline-0 transition-all duration-200 ease-out focus-visible:outline-4 focus-visible:outline-offset-1"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="sbui-icon "
-                    >
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                      <line x1="16" y1="13" x2="8" y2="13"></line>
-                      <line x1="16" y1="17" x2="8" y2="17"></line>
-                      <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>{' '}
-                    <span className="truncate">About Angelina</span>{' '}
-                  </button>
-                </a>
-              </div>
-            </nav>
-          </div>
           <div className="mb-10 flex flex-1">
             <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
               <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
@@ -98,7 +49,7 @@ const OldEnough = () => {
                 </div>
               </div>
               <div className="sm:text-center">
-                <p className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+                <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
                   By continuing, you agree to Mansbooks{' '}
                   <Link className="hover:text-scale-1100 underline" to="/terms">
                     Terms of Service
@@ -108,7 +59,7 @@ const OldEnough = () => {
                     Privacy Policy
                   </Link>
                   , and to receive periodic emails with updates.
-                </p>
+                </div>
               </div>
             </main>
             <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">

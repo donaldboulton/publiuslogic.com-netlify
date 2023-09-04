@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { supabase } from '../../supabase/supabase'
+import { supabase } from '../../lib/supabase'
 
 type Profiles = Database['public']['Tables']['profiles']['Row']
 

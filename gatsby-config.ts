@@ -224,7 +224,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/', '/about', '/contact', '/blog/*'],
+        precachePages: ['/about', '/contact', '/blog/*'],
         workboxConfig: {
           importWorkboxFrom: 'cdn',
         },
@@ -237,7 +237,6 @@ const config: GatsbyConfig = {
           '/contact': [
             'Link: https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
           ],
-          '/profile': ['Link: https://embed.small.chat/T8PMJ5ZNYGDRA9BJEA.js; rel=javascript'],
         },
         allPageHeaders: [],
         mergeSecurityHeaders: true,

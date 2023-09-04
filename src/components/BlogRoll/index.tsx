@@ -95,7 +95,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
         >
           {posts.map(post => (
             <li ref={ref} className={clsx('space-y-8 leading-6')}>
-              <m.div className="relative flex flex-col-reverse opacity-75" initial="initial" whileHover="hover">
+              <div className="relative flex flex-col-reverse opacity-75" initial="initial" whileHover="hover">
                 <m.div
                   className="border-1 h-full overflow-hidden rounded-lg border-slate-800 bg-slate-200 p-2 text-slate-900 opacity-75 shadow-xl dark:border-slate-300 dark:bg-slate-900 dark:text-slate-200"
                   variants={cardVariants}
@@ -106,7 +106,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                   }}
                 >
                   <Link to={`/${post.slug}`}>
-                    <p className="sr-only">{post.frontmatter.title}</p>
+                    <div className="sr-only">{post.frontmatter.title}</div>
                   </Link>
                   <div className="p-6">
                     {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
@@ -125,10 +125,10 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                         {post.frontmatter.author}
                       </span>
                     </div>
-                    <p className="text-black mt-3 text-sm italic dark:text-slate-300">{post.excerpt}</p>
+                    <div className="text-black mt-3 text-sm italic dark:text-slate-300">{post.excerpt}</div>
                   </div>
                 </m.div>
-              </m.div>
+              </div>
             </li>
           ))}
         </ul>

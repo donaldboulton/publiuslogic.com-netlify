@@ -68,7 +68,9 @@ export default function Fruition() {
                 <h4 className="text-xl font-bold text-slate-300">Fruition is Over, "As of Nov 15 2022"!</h4>
                 <div className="mt-2 text-lg font-light text-slate-300">
                   Fruition has come and gone. Revelation 22:12,
-                  <p>Whatever Horse you ride or path your on in life. You will be stuck on that path for eternity.</p>
+                  <div>
+                    Whatever Horse you ride or path your on in life. You will be stuck on that path for eternity.
+                  </div>
                 </div>
               </div>
             </div>

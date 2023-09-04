@@ -43,10 +43,10 @@ export default function Updates() {
                 Update's To Creation, and Virtue!
               </h4>
               <div className="mb-4 mt-1 text-center leading-relaxed text-slate-200">
-                Before 11/15/2022: I will be a little more explanatory on the Creation of all.
-                <p>Add some input from my Angel of Love to Virtue!</p>
+                Before 11/15/2022: I will be a little more explanatory on the Creation of all. Add some input from my
+                Angel of Love to Virtue!
               </div>
-              <p className="mb-20 mt-1 text-center leading-relaxed text-slate-200">
+              <div className="mb-20 mt-1 text-center leading-relaxed text-slate-200">
                 Final Trinity Works.{' '}
                 <span className="text-center underline decoration-wine-200 decoration-wavy underline-offset-4">
                   <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
@@ -54,7 +54,7 @@ export default function Updates() {
                     The Trinity Of Man!
                   </Link>
                 </span>
-              </p>
+              </div>
             </div>
           </div>
         </m.div>

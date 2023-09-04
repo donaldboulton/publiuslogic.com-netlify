@@ -60,17 +60,17 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
           <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
             <>
               <Honeypot />
-              <p className="hidden">
+              <div className="hidden">
                 <label>
                   Don not fill this out if you are human: <input name="bot-field" />
                 </label>
-              </p>
-              {netlify.success && <p className="container ml-6 mt-6 text-yellow-500">Thanks for contacting us!</p>}
+              </div>
+              {netlify.success && <div className="container ml-6 mt-6 text-yellow-500">Thanks for contacting us!</div>}
               {netlify.error && (
-                <p className="container ml-6 mt-6 text-red-500">
+                <div className="container ml-6 mt-6 text-red-500">
                   Sorry, we could not reach servers. Because it only works on Netlify, our GitHub demo does not provide
                   a response.
-                </p>
+                </div>
               )}
               <div className="mx-auto space-x-1 overflow-hidden p-1">
                 <span className="group relative flex items-center text-slate-200">
@@ -109,7 +109,7 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
                       Subscribe
                     </button>
                   </span>
-                  <div className="block flex items-center">
+                  <div className="flex items-center">
                     <input
                       id="acceptTerms"
                       type="checkbox"
