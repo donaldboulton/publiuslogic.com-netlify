@@ -6,7 +6,6 @@ import { AnimatePresence } from 'framer-motion'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { Partytown } from '@builder.io/partytown/react'
-import { Database } from './src/lib/database.types'
 import { supabase } from "./src/lib/supabase"
 
 const ORIGIN = 'https://www.googletagmanager.com/'

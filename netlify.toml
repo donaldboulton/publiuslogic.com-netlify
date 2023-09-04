@@ -4,6 +4,8 @@
   NETLIFY_USE_YARN = "true"
 [build.environment]
   NODE_VERSION = "18.16.1"
+[[plugins]]
+  package = "./plugins/netlify-purge-cloudflare-on-deploy"
 [[headers]]
   for = "/*"
   [headers.values]
@@ -113,5 +115,3 @@ path = "/development"
   [redirects.headers]
     X-From = "Netlify"
     Access-Control-Allow-Origin = "*"
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"

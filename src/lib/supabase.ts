@@ -2,12 +2,12 @@ import { createClient } from '@supabase/supabase-js'
 import { Database } from '@/lib/database.types'
 
 const options = {
+  global: { headers: { Authorization: req.headers.get("Authorization")! } },
   auth: {
-    localStorage: true,
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: true,
-  },
+    detectSessionInUrl: false,
+    autoRefreshToken: false,
+    persistSession: false,
+  }
 }
 
 const supabaseUrl = process.env.GATSBY_SUPABASE_URL

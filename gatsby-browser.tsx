@@ -5,7 +5,6 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AnimatePresence } from 'framer-motion'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { Database } from './src/lib/database.types'
 import { supabase } from "./src/lib/supabase"
 import './src/styles/global.css'
 import '@fontsource/eb-garamond'
