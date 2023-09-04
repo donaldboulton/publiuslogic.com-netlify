@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "18.16.1"
 [[plugins]]
-  package = "./plugins/netlify-purge-cloudflare-on-deploy"
+  package = "netlify-purge-cloudflare-on-deploy"
 [[headers]]
   for = "/*"
   [headers.values]
