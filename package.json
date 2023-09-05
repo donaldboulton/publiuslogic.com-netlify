@@ -22,6 +22,7 @@
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.2",
     "@fontsource/eb-garamond": "^5.0.8",

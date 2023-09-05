@@ -200,15 +200,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ['GTM-WLCMLLP'],
-        pluginConfig: {
-          head: true,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-algolia',
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
