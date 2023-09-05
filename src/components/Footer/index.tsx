@@ -81,7 +81,7 @@ export default function Footer() {
                         </svg>
                         <a
                           className="hover:text-blue-500"
-                          href="https://youtube.com/c/donaldboulton"
+                          href="https://www.youtube.com/channel/UCHED4RFSxXXNGDDvWpgzHXg"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="YouTube Channel"
