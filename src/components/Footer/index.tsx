@@ -105,14 +105,14 @@ export default function Footer() {
                           </g>
                         </svg>
                         <a
-                          href="https://youtube.com/c/AngelinaJordanCoverChannel"
+                          href="https://www.youtube.com/watch?v=kjwD884SYRE&list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
                           className="hover:text-blue-500"
                           rel="noopener noreferrer"
                           target="_blank"
-                          aria-describedby="AJ Cover Official"
-                          area-label="AJ Cover Official"
+                          aria-describedby="AJ Playlists"
+                          area-label="AJ Playlists"
                         >
-                          <span className="pl-2">Cover Official</span>
+                          <span className="pl-2">AJ Playlists</span>
                         </a>
                       </span>
                     </div>
@@ -170,7 +170,7 @@ export default function Footer() {
                           />
                         </svg>
                         <a
-                          href="https://www.facebook.com/donboulton"
+                          href="https://www.facebook.com/don.boulton"
                           className="hover:text-blue-500"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -334,8 +334,8 @@ export default function Footer() {
                     <li>
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
-                        to="/blog/privacy"
-                        aria-label="Privacy Link"
+                        to="/blog/terms"
+                        aria-label="Terms Link"
                       >
                         Terms
                       </Link>
@@ -344,7 +344,7 @@ export default function Footer() {
                       <Link
                         className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/privacy"
-                        aria-label="Terms Link"
+                        aria-label="Privacy Link"
                       >
                         Privacy Policy
                       </Link>
@@ -367,7 +367,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center md:justify-between">
             <div className="mx-auto w-full px-4 text-center md:w-4/12">
               <div className="py-1 text-sm font-semibold text-slate-300">
-                © {new Date().getFullYear()} Publiuslogic by{' '}
+                © 2023 Publiuslogic by{' '}
                 <a
                   href="https://donboulton.com"
                   rel="noopener noreferrer"

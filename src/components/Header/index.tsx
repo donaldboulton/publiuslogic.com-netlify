@@ -5,7 +5,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, HomeIcon } from '@heroicons/react/outline'
 import ThemeToggle from '@/components/ThemeToggle'
-import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
 import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
@@ -49,22 +48,17 @@ export default function Navigation() {
                 <div className="flex flex-1 items-center justify-center text-lg sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
                     <Link to="/">
-                      <Tooltip id="logoTooltipSmall" tooltipText="Home Page">
-                        <div className="block md:hidden">
-                          <HomeIcon
-                            className="block h-8 w-8 pr-2 text-sky-500 hover:text-sky-400/20"
-                            aria-label="Logo Mobile"
-                            aria-describedby="logoTooltipSmall"
-                          />
-                        </div>
-                      </Tooltip>
+                      <div className="block md:hidden">
+                        <HomeIcon
+                          className="block h-8 w-8 pr-2 text-sky-500 hover:text-sky-400/20"
+                          aria-label="Logo Mobile"
+                        />
+                      </div>
                     </Link>
                     <Link to="/">
-                      <Tooltip id="logoTooltip" tooltipText="Home Page">
-                        <div className="flex hidden items-center md:block">
-                          <span className="text-2xl text-gray-400">PubliusLogic</span>
-                        </div>
-                      </Tooltip>
+                      <div className="flex items-center md:block">
+                        <span className="text-2xl text-gray-400">PubliusLogic</span>
+                      </div>
                     </Link>
                   </div>
                   <div className="hidden sm:ml-6 sm:block">

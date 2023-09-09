@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
+import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect';
 import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment, useEffect, useRef } from 'react'

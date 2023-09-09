@@ -43,7 +43,7 @@ function ContactUs() {
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">
                   <div className="mt-4">
-                    <div className='mb-4'>
+                    <div className="mb-4">
                       <LeftText>Social Contacts</LeftText>
                     </div>
                     <ColumnGridTwo>

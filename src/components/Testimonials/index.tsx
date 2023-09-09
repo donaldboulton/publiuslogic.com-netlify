@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
+import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect';
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'

@@ -6,7 +6,7 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
-  return 
+  return
   <SessionContextProvider supabaseClient={supabase}>
     <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
   </SessionContextProvider>

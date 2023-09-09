@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { ReactNode, FC } from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
-import useLocalStorage from '../../hooks/useLocalStorage'
+import useLocalStorage from 'use-local-storage'
 
 type FormValues = {
   firstName: string
