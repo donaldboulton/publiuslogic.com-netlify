@@ -12,7 +12,7 @@ require('dotenv').config()
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'PubliusLogic',
-    twitterUsername: '@donboulton',    
+    twitterUsername: '@donboulton',
     author: {
       name: 'Donald Boulton',
       url: 'https://donboulton.com',
@@ -26,7 +26,7 @@ const config: GatsbyConfig = {
     siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
     social: {
-      email: 'mailto:donaldboulton@gmail.com',
+      email: 'mailto:donboulton@donboulton.com',
       phone: 'tel:+405-863-2165',
       facebook: 'https://www.facebook.com/donboulton',
       instagram: 'https://www.instagram.com/boulton3662',
@@ -136,12 +136,7 @@ const config: GatsbyConfig = {
               elements: ['h2', 'h3'],
             },
           },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: {
-              wrapperStyle: 'margin-bottom: 1.0725rem',
-            },
-          },
+          'gatsby-remark-responsive-iframe',
           {
             resolve: 'gatsby-remark-acronyms',
             options: {

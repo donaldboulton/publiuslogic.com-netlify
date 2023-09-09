@@ -628,6 +628,13 @@ giscus-widget {
   z-index: 30;
 }
 
+.left-beams {
+  background-image: url(../../static/beams/2-dark@tiny.png);
+  background-size: 86.125rem;
+  background-repeat: no-repeat;
+  z-index: 30;
+}
+
 .form-beams {
   background-image: url(../../static/beams/docs-dark@tinypng.png);
   background-size: 86.125rem;
@@ -684,4 +691,10 @@ giscus-widget {
   to {
     transform: rotate(1turn);
   }
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
 }

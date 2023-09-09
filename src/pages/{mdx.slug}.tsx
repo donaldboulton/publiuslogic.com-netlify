@@ -296,12 +296,12 @@ export function Head(props: HeadProps<DataProps>) {
           address: 'OKC, Middle Earth',
           contactPoint: {
             '@type': 'ContactPoint',
-            email: 'donaldboulton@gmail.com',
+            email: 'donboulton@donboulton.com',
             telephone: '+405-863-2165',
           },
           description:
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
-          email: 'donaldboulton@gmail.com',
+          email: 'donboulton@donboulton.com',
           founder: {
             '@id': 'https://donboulton.com',
           },
@@ -318,7 +318,7 @@ export function Head(props: HeadProps<DataProps>) {
           },
           name: 'PubliusLogic',
           sameAs: [
-            'mailto:donaldboulton@gmail.com',
+            'mailto:donboulton@donboulton.com',
             'tel:+405-863-2165',
             'https://www.facebook.com/donboulton',
             'https://www.instagram.com/boulton3662',

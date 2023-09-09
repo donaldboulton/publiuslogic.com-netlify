@@ -37,8 +37,8 @@ const OldEnough = () => {
   return (
     <>
       <Layout>
-        <div className="login-beams bg-scale-100 mb-10 flex flex-1 flex-col">
-          <div className="mb-10 flex flex-1">
+        <div className="login-beams bg-scale-100 flex flex-1 flex-col">
+          <div className="left-beams mb-10 flex flex-1">
             <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
               <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
                 <div className="mb-10">
@@ -192,12 +192,12 @@ export function Head(props: HeadProps) {
           address: 'OKC, Middle Earth',
           contactPoint: {
             '@type': 'ContactPoint',
-            email: 'donaldboulton@gmail.com',
+            email: 'donboulton@donboulton.com',
             telephone: '+405-863-2165',
           },
           description:
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
-          email: 'donaldboulton@gmail.com',
+          email: 'donboulton@donboulton.com',
           founder: {
             '@id': 'https://donboulton.com',
           },
@@ -214,7 +214,7 @@ export function Head(props: HeadProps) {
           },
           name: 'PubliusLogic',
           sameAs: [
-            'mailto:donaldboulton@gmail.com',
+            'mailto:donboulton@donboulton.com',
             'tel:+405-863-2165',
             'https://www.facebook.com/donboulton',
             'https://www.instagram.com/boulton3662',

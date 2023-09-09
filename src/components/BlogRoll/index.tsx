@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { LazyMotion, m, useInView } from 'framer-motion'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
-import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect';
+import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect'
 import clsx from 'clsx'
 import Tags from '@/components/Tags'
 

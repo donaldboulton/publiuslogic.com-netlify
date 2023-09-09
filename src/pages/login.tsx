@@ -91,44 +91,46 @@ const Login = ({ email }) => {
   return (
     <Layout>
       <div className="mb-20 ml-8">
-        <div className="pt-10">
+        <div className="pt-10 mb-4">
           <LeftText>PubliusLogic Login</LeftText>
         </div>
         <ColumnGridTwo>
           <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
-            {!session ? (
-              <Auth
-                supabaseClient={supabase}
-                view="magic_link"
-                providers={['github', 'google', 'spotify']}
-                theme="dark"
-                appearance={{
-                  theme: ThemeSupa,
-                  variables: {
-                    default: {
-                      colors: {
-                        brand: 'red',
-                        brandAccent: 'darkred',
+            <div className="w-72 px-6 py-4 bg-slate-950 m-auto text-slate-400">
+              {!session ? (
+                <Auth
+                  supabaseClient={supabase}
+                  view="magic_link"
+                  providers={['github', 'google', 'spotify']}
+                  theme="dark"
+                  appearance={{
+                    theme: ThemeSupa,
+                    variables: {
+                      default: {
+                        colors: {
+                          brand: 'red',
+                          brandAccent: 'darkred',
+                        },
                       },
                     },
-                  },
-                }}
-              />
-            ) : (
-              <>
-                <ColumnGridTwo>
-                  <Account key={session.user.id} session={session} />
-                  <div
-                    className="flex h-full w-full flex-col items-center justify-center p-4"
-                    style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                  >
-                    <TodoList session={session} />
-                  </div>
-                </ColumnGridTwo>
-              </>
-            )}
+                  }}
+                />
+              ) : (
+                <>
+                  <ColumnGridTwo>
+                    <Account key={session.user.id} session={session} />
+                    <div
+                      className="flex h-full w-full flex-col items-center justify-center p-4"
+                      style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                    >
+                      <TodoList session={session} />
+                    </div>
+                  </ColumnGridTwo>
+                </>
+              )}
+            </div>
           </div>
-          <div className="right-0">
+          <div className="right-0 -mt-10">
             <StaticImage
               className="self-center rounded-lg opacity-60"
               src="../../static/img/planets.jpg"
