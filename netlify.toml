@@ -4,8 +4,6 @@
   NETLIFY_USE_YARN = "true"
 [build.environment]
   NODE_VERSION = "18.17.1"
-[[plugins]]
-  package = "netlify-purge-cloudflare-on-deploy"
 [[headers]]
   for = "/*"
   [headers.values]
