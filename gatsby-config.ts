@@ -28,7 +28,7 @@ const config: GatsbyConfig = {
     social: {
       email: 'mailto:donboulton@donboulton.com',
       phone: 'tel:+405-863-2165',
-      facebook: 'https://www.facebook.com/donboulton',
+      facebook: 'https://www.facebook.com/don.boulton',
       instagram: 'https://www.instagram.com/boulton3662',
       twitter: 'https://twitter.com/donboulton',
       linkedin: 'https://www.linkedin.com/donboulton',
