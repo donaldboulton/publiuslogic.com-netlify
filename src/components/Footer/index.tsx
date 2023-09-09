@@ -16,7 +16,7 @@ const Subscriptions = loadable(() => import('@/components/Subscriptions'), {
 export default function Footer() {
   return (
     <>
-      <footer className="relative bg-slate-950 pb-6 pt-8">
+      <footer className="relative bg-slate-950 pb-6 pt-8 w-full">
         <div
           className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 w-full overflow-hidden"
           style={{ height: '80px' }}
@@ -47,30 +47,30 @@ export default function Footer() {
                       <span className="group relative flex items-center text-slate-300">
                         <StaticImage
                           layout="fixed"
-                          className="h-5 w-5 self-center rounded-full"
+                          className="h-12 w-12 self-center rounded-full"
                           formats={['auto', 'webp']}
                           src="../../../static/img/donald-boulton-80.jpg"
-                          width={20}
-                          height={20}
+                          width={48}
+                          height={48}
                           quality={95}
                           alt="Profile picture"
                           loading="lazy"
                         />
                         <a
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           href="https://donboulton.com"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="AJ Official"
                           area-label="AJ Official"
                         >
-                          <span className="pl-2">Official Website</span>
+                          <span className="pl-2 text-3xl">DWB Website</span>
                         </a>
                       </span>
                     </div>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 self-center" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 self-center" viewBox="0 0 16 16">
                           <g fillRule="evenodd" clipRule="evenodd">
                             <path
                               fill="#F44336"
@@ -80,22 +80,22 @@ export default function Footer() {
                           </g>
                         </svg>
                         <a
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           href="https://www.youtube.com/channel/UCHED4RFSxXXNGDDvWpgzHXg"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="YouTube Channel"
                           area-label="YouTube Channel"
                         >
-                          <span className="pl-2">YouTube Channel</span>
+                          <span className="pl-2 text-3xl">YouTube Channel</span>
                         </a>
                       </span>
                     </div>
                   </ColumnGridTwo>
                   <ColumnGridTwo>
-                    <div className="mr-2">
+                    <div className="mr-2 mb-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="block h-5 w-5" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="block h-12 w-12" viewBox="0 0 16 16">
                           <g fillRule="evenodd" clipRule="evenodd">
                             <path
                               fill="#F44336"
@@ -106,19 +106,19 @@ export default function Footer() {
                         </svg>
                         <a
                           href="https://www.youtube.com/watch?v=kjwD884SYRE&list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="AJ Playlists"
                           area-label="AJ Playlists"
                         >
-                          <span className="pl-2">AJ Playlists</span>
+                          <span className="pl-2 text-3xl">AJ Playlists</span>
                         </a>
                       </span>
                     </div>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 102 102">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 102 102">
                           <defs>
                             <radialGradient id="a" cx="6.601" cy="99.766" r="129.502" gradientUnits="userSpaceOnUse">
                               <stop offset=".09" stopColor="#fa8f21" />
@@ -148,13 +148,13 @@ export default function Footer() {
                         </svg>
                         <a
                           href="https://www.instagram.com/donboulton"
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="AJ Instagram"
                           area-label="AJ Instagram"
                         >
-                          <span className="pl-2">Instagram</span>
+                          <span className="pl-2 text-3xl">Instagram</span>
                         </a>
                       </span>
                     </div>
@@ -162,7 +162,7 @@ export default function Footer() {
                   <ColumnGridTwo>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="126.445 2.281 589 589">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="126.445 2.281 589 589">
                           <circle cx="420.945" cy="296.781" r="294.5" fill="#3c5a9a" />
                           <path
                             fill="#fff"
@@ -171,13 +171,13 @@ export default function Footer() {
                         </svg>
                         <a
                           href="https://www.facebook.com/don.boulton"
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="DB Facebook"
                           area-label="DB Facebook"
                         >
-                          <span className="pl-2">Facebook</span>
+                          <span className="pl-2 text-3xl">Facebook</span>
                         </a>
                       </span>
                     </div>
@@ -185,7 +185,7 @@ export default function Footer() {
                       <span className="group relative flex items-center text-slate-300">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
+                          className="h-12 w-12"
                           fillRule="evenodd"
                           clipRule="evenodd"
                           imageRendering="optimizeQuality"
@@ -217,13 +217,13 @@ export default function Footer() {
                         </svg>
                         <a
                           href="https://www.tiktok.com/@donaldboulton"
-                          className="hover:text-blue-500"
+                          className="hover:text-wine-300"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="AJ TikTok"
                           area-label="AJ TikTok"
                         >
-                          <span className="pl-2">TikTok</span>
+                          <span className="pl-2 text-3xl">TikTok</span>
                         </a>
                       </span>
                     </div>
@@ -239,11 +239,11 @@ export default function Footer() {
             <div className="w-full px-4 lg:w-6/12">
               <div className="items-top -mb-2 flex flex-wrap">
                 <div className="ml-auto w-full px-4 lg:w-4/12">
-                  <span className="mb-2 block text-sm font-semibold uppercase text-slate-300">Useful Links</span>
+                  <span className="mb-2 block text-lg font-semibold uppercase text-slate-300">Useful Links</span>
                   <ul className="list-unstyled">
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/about"
                         aria-label="About Link"
                       >
@@ -252,7 +252,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog"
                         aria-label="Blog Link"
                       >
@@ -261,7 +261,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/contact"
                         aria-label="Contact Link"
                       >
@@ -270,7 +270,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/profile"
                         aria-label="Profile Link"
                       >
@@ -279,7 +279,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/search"
                         aria-label="Search Link"
                       >
@@ -288,7 +288,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/sitemap.xml"
                         aria-label="Sitemap Link"
                       >
@@ -298,11 +298,11 @@ export default function Footer() {
                   </ul>
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
-                  <span className="mb-2 block text-sm font-semibold uppercase text-gray-100">Other Resources</span>
+                  <span className="mb-2 block text-lg font-semibold uppercase text-gray-100">Resources</span>
                   <ul className="list-unstyled">
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/obsd-license"
                         aria-label="OBSD License Link"
                       >
@@ -311,7 +311,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         rel="noopener noreferrer"
                         target="_blank"
                         area-label="Github"
@@ -322,7 +322,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         rel="noopener noreferrer"
                         target="_blank"
                         area-label="Gatsby Starter Basic Instructions"
@@ -333,7 +333,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/terms"
                         aria-label="Terms Link"
                       >
@@ -342,7 +342,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/privacy"
                         aria-label="Privacy Link"
                       >
@@ -351,11 +351,11 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        className="block pb-2 text-sm font-semibold text-slate-300 hover:text-wine-300"
-                        to="/rss.xml"
-                        aria-label="RSS Link"
+                        className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
+                        to="/sitemap-posts.xml"
+                        aria-label="Posts XML"
                       >
-                        Site Rss
+                        Posts XML
                       </Link>
                     </li>
                   </ul>
@@ -366,7 +366,7 @@ export default function Footer() {
           <hr className="my-6 border-gray-400" />
           <div className="flex flex-wrap items-center justify-center md:justify-between">
             <div className="mx-auto w-full px-4 text-center md:w-4/12">
-              <div className="py-1 text-sm font-semibold text-slate-300">
+              <div className="py-1 text-lg font-semibold text-slate-300">
                 © 2023 Publiuslogic by{' '}
                 <a
                   href="https://donboulton.com"
