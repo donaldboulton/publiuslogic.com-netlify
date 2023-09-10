@@ -9,7 +9,7 @@ import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
   return
-  ;<SessionContextProvider supabaseClient={supabase}>
+  <SessionContextProvider supabaseClient={supabase}>
     <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
   </SessionContextProvider>
 }

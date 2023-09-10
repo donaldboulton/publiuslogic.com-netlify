@@ -180,7 +180,8 @@
     "start": "run-p start:**",
     "start:app": "npm run develop",
     "start:lambda": "netlify-lambda serve /functions",
-    "build": "gatsby build",
+    "build": "npm run partytown && gatsby build",
+    "partytown": "partytown copylib public/~partytown",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build /functions",
     "serve": "gatsby serve",
@@ -196,6 +197,5 @@
   },
   "AWS_LAMBDA_JS_RUNTIME": {
     "node": ">=18.17.1"
-  },
-  "main": "index.js"
+  }
 }
