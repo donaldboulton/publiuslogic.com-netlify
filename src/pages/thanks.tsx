@@ -219,6 +219,7 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
+      <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/498b869245855479a003e6cfe/18dc8823a080bdbbb8a69b622.js");</script>
     </>
   )
 }
