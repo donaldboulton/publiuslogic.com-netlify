@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <div className="font-inter">
+        <div className="font-sans">
           <div className="relative flex content-center items-center justify-center">
             <div className="bg-slate-950 relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">
               <StaticImage
