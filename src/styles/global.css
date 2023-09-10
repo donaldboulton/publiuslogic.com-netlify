@@ -183,7 +183,7 @@ ul {
 }
 
 html {
-  @apply overflow-x-hidden antialiased transition-all duration-200 ease-linear;
+  @apply overflow-x-hidden;
 
   background: var(--bg);
   font-family: 'DM Sans', sans-serif;

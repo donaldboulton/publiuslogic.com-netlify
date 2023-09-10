@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <main className="font-sans">
+        <div className="font-inter">
           <div className="relative flex content-center items-center justify-center">
             <div className="bg-slate-950 relative mx-auto mb-4 h-96 w-full text-slate-300 md:mb-0">
               <StaticImage
@@ -103,18 +103,21 @@ const Home = () => {
                 <div className="w-full px-4 pt-4 text-center md:w-4/12 lg:pt-10">
                   <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-wine-300 text-slate-200 shadow-lg shadow-wine-300/50 transition-all duration-200">
                     <div className="flex-auto px-4 py-5">
-                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 p-3 text-center shadow-lg shadow-blue-700/50">
-                        <StaticImage
-                          layout="fixed"
-                          width={24}
-                          height={24}
-                          className="icon"
-                          formats={['auto', 'webp']}
-                          src="../../static/img/apple-touch-icon-32x32.png"
-                          quality={95}
-                          alt="prayer"
-                          loading="eager"
-                        />
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full text-slate-200 bg-blue-700 p-3 text-center shadow-lg shadow-blue-700/50">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="fill-slate-200 text-slate-200 w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                          />
+                        </svg>
                       </div>
                       <h6 className="text-xl font-semibold">
                         <Link to="/blog/commandments" area-label="Commandments" className="text-rose-500">
@@ -132,19 +135,21 @@ const Home = () => {
                 <div className="w-full px-4 text-center md:w-4/12">
                   <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-indigo-700 text-slate-200 shadow-lg shadow-indigo-700/50">
                     <div className="flex-auto px-4 py-4">
-                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 p-3 text-center shadow-lg shadow-purple-500/50">
-                        <StaticImage
-                          layout="fixed"
-                          width={24}
-                          height={24}
-                          className="icon"
-                          area-label="Prayer"
-                          formats={['auto', 'webp']}
-                          src="../../static/img/prayer-150-150.png"
-                          quality={95}
-                          alt="prayer"
-                          loading="eager"
-                        />
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-slate-200 p-3 text-center shadow-lg shadow-purple-500/50">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="fill-slate-200 text-slate-200 w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                          />
+                        </svg>
                       </div>
                       <h6 className="text-xl font-semibold">
                         <Link
@@ -165,19 +170,21 @@ const Home = () => {
                 <div className="w-full px-4 pt-6 text-center md:w-4/12">
                   <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-purple-600 text-slate-200 shadow-lg shadow-purple-600/50">
                     <div className="flex-auto px-4 py-5">
-                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine-300 p-3 text-center shadow-lg shadow-wine-300/50">
-                        <StaticImage
-                          layout="fixed"
-                          width={24}
-                          height={24}
-                          className="icon"
-                          area-label="JAMStack"
-                          formats={['auto', 'webp']}
-                          src="../../static/img/jamstack-150-150.png"
-                          quality={95}
-                          alt="prayer"
-                          loading="eager"
-                        />
+                      <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine-300 text-slate-200 p-3 text-center shadow-lg shadow-wine-300/50">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="fill-slate-200 text-slate-200 w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+                          />
+                        </svg>
                       </div>
                       <h6 className="text-xl font-semibold">
                         <a
@@ -294,7 +301,6 @@ const Home = () => {
                 <polygon className="fill-current text-slate-900" points="2560 0 2560 100 0 100"></polygon>
               </svg>
             </div>
-
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap items-center bg-slate-900 text-slate-200">
                 <div className="mt-8 flex flex-wrap items-center">
@@ -426,7 +432,7 @@ const Home = () => {
               </div>
             </div>
           </section>
-        </main>
+        </div>
       </Layout>
     </>
   )

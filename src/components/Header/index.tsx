@@ -115,7 +115,7 @@ export default function Navigation() {
                         <span className="sr-only">Open Control Menu</span>
                         <ChevronDownIcon
                           className={`${open ? 'rotate-180 transform text-slate-200' : 'text-opacity-75'}
-                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out first-letter:w-5 hover:text-slate-300 group-hover:text-opacity-75`}
+                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out hover:text-slate-300 group-hover:text-opacity-75`}
                           aria-hidden="true"
                         />
                       </Menu.Button>
