@@ -27,7 +27,15 @@ const ogimage = {
   height: 450,
 }
 
-function ContactUs() {
+export default function Contact({
+  size,
+}: {
+  size: number;
+}) {
+  let width = "w-60";
+  if (size === "lg") {
+    width = "w-72 md:w-72";
+  }
   return (
     <>
       <Layout>
@@ -50,7 +58,7 @@ function ContactUs() {
                       <div className="mr-2">
                         <span className="group relative flex items-center text-slate-300">
                           <StaticImage
-                            className="h-5 w-5 self-center rounded-full"
+                            className="h-8 w-8 self-center rounded-full"
                             formats={['auto', 'webp']}
                             src="../../static/img/donald-boulton-80.jpg"
                             width={20}
@@ -66,13 +74,13 @@ function ContactUs() {
                             aria-describedby="DB Official"
                             area-label="DB Official"
                           >
-                            <span className="pl-2">Official Website</span>
+                            <span className="pl-2 text-lg">Official Website</span>
                           </a>
                         </span>
                       </div>
                       <div className="mr-2">
                         <span className="group relative flex items-center text-slate-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 self-center" viewBox="0 0 16 16">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 self-center" viewBox="0 0 16 16">
                             <g fillRule="evenodd" clipRule="evenodd">
                               <path
                                 fill="#F44336"
@@ -89,7 +97,7 @@ function ContactUs() {
                             aria-describedby="YouTube Channel"
                             area-label="YouTube Channel"
                           >
-                            <span className="pl-2">YouTube Channel</span>
+                            <span className="pl-2 text-lg">YouTube Channel</span>
                           </a>
                         </span>
                       </div>
@@ -97,7 +105,7 @@ function ContactUs() {
                     <ColumnGridTwo>
                       <div className="mr-2">
                         <span className="group relative flex items-center text-slate-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="block h-5 w-5" viewBox="0 0 16 16">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="block h-8 w-8" viewBox="0 0 16 16">
                             <g fillRule="evenodd" clipRule="evenodd">
                               <path
                                 fill="#F44336"
@@ -120,7 +128,7 @@ function ContactUs() {
                       </div>
                       <div className="mr-2">
                         <span className="group relative flex items-center text-slate-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 102 102">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 102 102">
                             <defs>
                               <radialGradient id="a" cx="6.601" cy="99.766" r="129.502" gradientUnits="userSpaceOnUse">
                                 <stop offset=".09" stopColor="#fa8f21" />
@@ -156,7 +164,7 @@ function ContactUs() {
                             aria-describedby="AJ Instagram"
                             area-label="AJ Instagram"
                           >
-                            <span className="pl-2">Instagram</span>
+                            <span className="pl-2 text-lg">Instagram</span>
                           </a>
                         </span>
                       </div>
@@ -164,7 +172,7 @@ function ContactUs() {
                     <ColumnGridTwo>
                       <div className="mr-2">
                         <span className="group relative flex items-center text-slate-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="126.445 2.281 589 589">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="126.445 2.281 589 589">
                             <circle cx="420.945" cy="296.781" r="294.5" fill="#3c5a9a" />
                             <path
                               fill="#fff"
@@ -179,7 +187,7 @@ function ContactUs() {
                             aria-describedby="DB Facebook"
                             area-label="DB Facebook"
                           >
-                            <span className="pl-2">Facebook</span>
+                            <span className="pl-2 text-lg">Facebook</span>
                           </a>
                         </span>
                       </div>
@@ -187,7 +195,7 @@ function ContactUs() {
                         <span className="group relative flex items-center text-slate-300">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="h-8 w-8"
                             fillRule="evenodd"
                             clipRule="evenodd"
                             imageRendering="optimizeQuality"
@@ -225,12 +233,31 @@ function ContactUs() {
                             aria-describedby="AJ TikTok"
                             area-label="AJ TikTok"
                           >
-                            <span className="pl-2">TikTok</span>
+                            <span className="pl-2 text-lg">TikTok</span>
                           </a>
                         </span>
                       </div>
                     </ColumnGridTwo>
                   </div>
+                </div>
+                <div className="mb-4 mt-4">
+                  <LeftText>
+                    My{" "}               
+                    <span role="img" aria-label="Love" className="text-red-500">
+                      ❤️
+                    </span>'s{" "} 
+                      Contacts
+                  </LeftText>
+                </div>
+                <div className="mt-4">
+                  <StaticImage
+                    className="self-center rounded-lg w-[325px] h-[573px]"
+                    src="../../static/images/angie/heidis-party.jpg"
+                    width={325}
+                    height={573}
+                    quality={95}
+                    alt="Angie Elvira"
+                  />
                 </div>
                 <div className="mb-6 mt-4 flex justify-center">
                   <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
@@ -257,8 +284,6 @@ function ContactUs() {
     </>
   )
 }
-
-export default ContactUs
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {

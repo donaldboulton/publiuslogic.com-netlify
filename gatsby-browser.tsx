@@ -1,4 +1,6 @@
 import * as React from 'react'
+import '@fontsource/sacramento'
+import '@fontsource/inter'
 import './src/styles/global.css'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'

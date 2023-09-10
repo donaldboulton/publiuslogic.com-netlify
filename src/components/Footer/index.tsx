@@ -47,11 +47,11 @@ export default function Footer() {
                       <span className="group relative flex items-center text-slate-300">
                         <StaticImage
                           layout="fixed"
-                          className="h-12 w-12 self-center rounded-full"
+                          className="h-8 w-8 self-center rounded-full"
                           formats={['auto', 'webp']}
                           src="../../../static/img/donald-boulton-80.jpg"
-                          width={48}
-                          height={48}
+                          width={32}
+                          height={32}
                           quality={95}
                           alt="Profile picture"
                           loading="lazy"
@@ -64,13 +64,13 @@ export default function Footer() {
                           aria-describedby="AJ Official"
                           area-label="AJ Official"
                         >
-                          <span className="pl-2 text-3xl">DWB Website</span>
+                          <span className="pl-2 text-xl">DWB Website</span>
                         </a>
                       </span>
                     </div>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 self-center" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 self-center" viewBox="0 0 16 16">
                           <g fillRule="evenodd" clipRule="evenodd">
                             <path
                               fill="#F44336"
@@ -87,7 +87,7 @@ export default function Footer() {
                           aria-describedby="YouTube Channel"
                           area-label="YouTube Channel"
                         >
-                          <span className="pl-2 text-3xl">YouTube Channel</span>
+                          <span className="pl-2 text-xl">YouTube Channel</span>
                         </a>
                       </span>
                     </div>
@@ -95,7 +95,7 @@ export default function Footer() {
                   <ColumnGridTwo>
                     <div className="mr-2 mb-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="block h-12 w-12" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="block h-8 w-8" viewBox="0 0 16 16">
                           <g fillRule="evenodd" clipRule="evenodd">
                             <path
                               fill="#F44336"
@@ -112,13 +112,13 @@ export default function Footer() {
                           aria-describedby="AJ Playlists"
                           area-label="AJ Playlists"
                         >
-                          <span className="pl-2 text-3xl">AJ Playlists</span>
+                          <span className="pl-2 text-xl">AJ Playlists</span>
                         </a>
                       </span>
                     </div>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 102 102">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 102 102">
                           <defs>
                             <radialGradient id="a" cx="6.601" cy="99.766" r="129.502" gradientUnits="userSpaceOnUse">
                               <stop offset=".09" stopColor="#fa8f21" />
@@ -154,7 +154,7 @@ export default function Footer() {
                           aria-describedby="AJ Instagram"
                           area-label="AJ Instagram"
                         >
-                          <span className="pl-2 text-3xl">Instagram</span>
+                          <span className="pl-2 text-xl">Instagram</span>
                         </a>
                       </span>
                     </div>
@@ -162,7 +162,7 @@ export default function Footer() {
                   <ColumnGridTwo>
                     <div className="mr-2">
                       <span className="group relative flex items-center text-slate-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="126.445 2.281 589 589">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="126.445 2.281 589 589">
                           <circle cx="420.945" cy="296.781" r="294.5" fill="#3c5a9a" />
                           <path
                             fill="#fff"
@@ -177,7 +177,7 @@ export default function Footer() {
                           aria-describedby="DB Facebook"
                           area-label="DB Facebook"
                         >
-                          <span className="pl-2 text-3xl">Facebook</span>
+                          <span className="pl-2 text-xl">Facebook</span>
                         </a>
                       </span>
                     </div>
@@ -185,7 +185,7 @@ export default function Footer() {
                       <span className="group relative flex items-center text-slate-300">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-12 w-12"
+                          className="h-8 w-8"
                           fillRule="evenodd"
                           clipRule="evenodd"
                           imageRendering="optimizeQuality"
@@ -223,7 +223,7 @@ export default function Footer() {
                           aria-describedby="AJ TikTok"
                           area-label="AJ TikTok"
                         >
-                          <span className="pl-2 text-3xl">TikTok</span>
+                          <span className="pl-2 text-xl">TikTok</span>
                         </a>
                       </span>
                     </div>
@@ -231,7 +231,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="mt-4">
-                <h4 className="text-3xl font-semibold text-slate-300">Subscriptions</h4>
+                <h4 className="text-xl font-semibold text-slate-300">Subscriptions</h4>
                 <h5 className="mb-2 mt-0 text-lg text-slate-300">Get exclusive newsletter-only content now and then</h5>
                 <Subscriptions />
               </div>

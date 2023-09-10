@@ -48,9 +48,9 @@ const NotFoundPage = () => {
               >
                 Notify Us of the Error
               </Link>
-              <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">404: Not Found</h2>
-              <div>You just hit a route that doesn&#39;t exist... the sadness.</div>
-              <ThreeDotsWave />
+            </div>
+            <div className="mb-16 mt-6 flex flex-col items-center neon-div">
+              <h1 className="neonText text-2xl items-center neon-h1">page Not Found</h1>
             </div>
           </div>
         </div>

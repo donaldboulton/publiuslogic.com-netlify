@@ -1651,6 +1651,16 @@
   resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-5.0.8.tgz#f8de289058da9a85d807243b2c575e71fbbc524c"
   integrity sha512-NhGQ6xESthNl08oeYxPJeptdm5xryQDgOIJ8AyrZtIr8r23i31p1KtWXGMfe/Deebr/zAWZ1H7sT1PWsuMXolQ==
 
+"@fontsource/inter@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.0.8.tgz#61b50cb0eb72b14ae1938d47c4a9a91546d2a50c"
+  integrity sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==
+
+"@fontsource/sacramento@^5.0.11":
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/sacramento/-/sacramento-5.0.11.tgz#726d11ebae9a34228bdf9adb40ceaf2a19b92f44"
+  integrity sha512-HXJa+xtw2S3QrkGC6qsoe1ulxM7RUeiQLtXFfJZin3C2UYkSOootgT9h5BmBZYljgcziJFROyDRFFTITotGRCA==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.12.0":
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.12.0.tgz#4bd49fb678e739624d0bc39c3376b4781bf6a0ee"
@@ -2151,13 +2161,6 @@
     "@babel/runtime" "^7.7.7"
     hoist-non-react-statics "^3.3.1"
     react-is "^16.12.0"
-
-"@loadable/server@^5.16.1":
-  version "5.16.1"
-  resolved "https://registry.yarnpkg.com/@loadable/server/-/server-5.16.1.tgz#ce5e28181b6d6c63a9415ef23bb0f7dab05988f5"
-  integrity sha512-S39FBB2ok1LTzeieUvPyXvQMlcra4dL724+9HB0tu1pWOKWzu10YChq/W3M/vn28UFB3DYBuUQVdEcTM4fAdRA==
-  dependencies:
-    lodash "^4.17.15"
 
 "@loadable/webpack-plugin@^5.15.2":
   version "5.15.2"

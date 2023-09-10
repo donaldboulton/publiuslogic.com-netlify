@@ -88,6 +88,8 @@ module.exports = {
       fontFamily: {
         sans: 'DM Sans',
         serif: 'Lora',
+        inter: 'Inter',
+        sacramento: 'Sacramento',
         garamond: 'eb-garamond',
       },
       p: {
