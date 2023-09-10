@@ -5,7 +5,6 @@ import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import ColumnGridTwo from '@/components/ColumnGridTwo'
 import { StaticImage } from 'gatsby-plugin-image'
-import Map from '@/components/Map'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 import WavyHr from '@/components/WavyHr'
@@ -20,22 +19,20 @@ const ContactForm = loadable(() => import('@/components/ContactForm'), {
     </div>
   ),
 })
-
+const Map = loadable(() => import('@/components/Map'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 const ogimage = {
   src: OGImage,
   width: 1400,
   height: 450,
 }
 
-export default function Contact({
-  size,
-}: {
-  size: number;
-}) {
-  let width = "w-60";
-  if (size === "lg") {
-    width = "w-72 md:w-72";
-  }
+export default function Contact({ size }: { size: number }) {
   return (
     <>
       <Layout>
@@ -67,7 +64,7 @@ export default function Contact({
                             alt="Profile picture"
                           />
                           <a
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             href="https://donboulton.com"
                             rel="noopener noreferrer"
                             target="_blank"
@@ -90,7 +87,7 @@ export default function Contact({
                             </g>
                           </svg>
                           <a
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             href="https://youtube.com/c/donaldboulton"
                             rel="noopener noreferrer"
                             target="_blank"
@@ -116,7 +113,7 @@ export default function Contact({
                           </svg>
                           <a
                             href="https://youtube.com/c/AngelinaJordanCoverChannel"
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             rel="noopener noreferrer"
                             target="_blank"
                             aria-describedby="AJ Cover Official"
@@ -158,7 +155,7 @@ export default function Contact({
                           </svg>
                           <a
                             href="https://www.instagram.com/donboulton"
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             rel="noopener noreferrer"
                             target="_blank"
                             aria-describedby="AJ Instagram"
@@ -181,7 +178,7 @@ export default function Contact({
                           </svg>
                           <a
                             href="https://www.facebook.com/donboulton"
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             rel="noopener noreferrer"
                             target="_blank"
                             aria-describedby="DB Facebook"
@@ -227,7 +224,7 @@ export default function Contact({
                           </svg>
                           <a
                             href="https://www.tiktok.com/@donaldboulton"
-                            className="hover:text-blue-500"
+                            className="hover:text-wine-300"
                             rel="noopener noreferrer"
                             target="_blank"
                             aria-describedby="AJ TikTok"
@@ -242,22 +239,26 @@ export default function Contact({
                 </div>
                 <div className="mb-4 mt-4">
                   <LeftText>
-                    My{" "}               
-                    <span role="img" aria-label="Love" className="text-red-500">
-                      ❤️
-                    </span>'s{" "} 
-                      Contacts
+                    <a href="https://mansbooks.com/contact" alt="Buy Me A Coffee">
+                      My{' '}
+                      <span role="img" aria-label="Love" className="text-red-500">
+                        ❤️
+                      </span>
+                      's Contacts
+                    </a>
                   </LeftText>
                 </div>
                 <div className="mt-4">
-                  <StaticImage
-                    className="self-center rounded-lg w-[325px] h-[573px]"
-                    src="../../static/images/angie/heidis-party.jpg"
-                    width={325}
-                    height={573}
-                    quality={95}
-                    alt="Angie Elvira"
-                  />
+                  <a href="https://mansbooks.com/contact" alt="Buy Me A Coffee">
+                    <StaticImage
+                      className="self-center rounded-lg w-[325px] h-[573px]"
+                      src="../../static/images/angie/heidis-party.jpg"
+                      width={325}
+                      height={573}
+                      quality={95}
+                      alt="Angie Elvira"
+                    />
+                  </a>
                 </div>
                 <div className="mb-6 mt-4 flex justify-center">
                   <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">

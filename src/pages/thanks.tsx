@@ -63,7 +63,7 @@ const Thanks = () => {
                 </a>
               </div>
               <div className="mb-20">
-                <WavyHr className="text-indigo-600" />
+                <hr className="text-wine-600 w-full mx-auto" />
               </div>
             </div>
           </div>
