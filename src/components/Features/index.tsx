@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ClockIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon } from '@heroicons/react/outline'
+import { ClockIcon, SparklesIcon, PuzzlePieceIcon, PresentationChartBarIcon } from '@heroicons/react/24/outline'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -16,7 +16,7 @@ const features = [
     name: 'Laws of this World',
     description:
       'At PubliusLogic we Publish Logic as Common Sense. Publius was taken from The Federalist Papers and my extensive studies Of the USA Books at Large = USA Congressional Reports most of my focus was on Books I and II, including a lot of Notes and Letters from our Founding Fathers as well as reading all of our Founding Fathers Publius publications and extensively studying the true intent of some. Logic part of the name came from Thomas Payne in his book, "Common Sense", = Logic',
-    icon: PuzzleIcon,
+    icon: PuzzlePieceIcon,
   },
   {
     name: 'Saving Mankind',

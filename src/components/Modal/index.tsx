@@ -2,9 +2,8 @@ import * as React from 'react'
 import { Fragment, ReactNode, useRef, useState, FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationIcon } from '@heroicons/react/outline'
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 import WavyHr from '@/components/WavyHr'
-import Help from '@/components/icons/help'
 
 export interface ModalProps {
   dialogContent: JSX.Element
@@ -32,10 +31,10 @@ export const Modal: FC<ModalProps> = props => {
         <button
           type="button"
           onClick={openModal}
-          className="bg-text-slate-300 -ml-1 h-auto w-auto rounded-r-md pb-0 pl-3 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200"
+          className="bg-slate-300 -ml-1 h-auto w-auto rounded-r-md pb-0 pl-3 pr-2 pt-2 text-slate-900 dark:bg-slate-900 dark:text-slate-200"
         >
           <span className="headings-center inline-flex">
-            <Help className="mt-2 h-8 w-8 px-2 text-slate-900 dark:text-slate-200" />
+            <QuestionMarkCircleIcon className="mt-2 h-8 w-8 px-2 text-slate-900 dark:text-slate-200" />
           </span>
         </button>
       </div>
@@ -48,7 +47,7 @@ export const Modal: FC<ModalProps> = props => {
           onClose={() => setIsOpen(false)}
         >
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
-          <div className="bg-black/30 fixed inset-0" aria-hidden="true" />
+          <div className="bg-slate-950 fixed inset-0" aria-hidden="true" />
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -58,7 +57,7 @@ export const Modal: FC<ModalProps> = props => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            <div className="fixed inset-0 bg-slate-500 dark:bg-slate-950 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -79,8 +78,8 @@ export const Modal: FC<ModalProps> = props => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative inline-block transform overflow-hidden rounded-lg bg-slate-900 text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle">
-                  <div className="bg-slate-900 px-4 py-4 text-slate-200 sm:p-6 sm:pb-4">
+                <Dialog.Panel className="relative inline-block transform overflow-hidden rounded-lg bg-slate-950 text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle">
+                  <div className="bg-slate-950 px-4 py-4 text-slate-200 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
                       <div className="float-none mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-purple-400 sm:mx-0 sm:h-10 sm:w-10">
                         <StaticImage

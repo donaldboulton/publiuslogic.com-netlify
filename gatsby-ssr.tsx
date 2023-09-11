@@ -7,7 +7,7 @@ import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
   return
-  <SessionContextProvider supabaseClient={supabase}>
+  ;<SessionContextProvider supabaseClient={supabase}>
     <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
   </SessionContextProvider>
 }
@@ -16,14 +16,14 @@ export const wrapRootElement = wrap
 const ORIGIN = 'https://www.googletagmanager.com'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
-export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
+export function onRenderBody({ setHtmlAttributes, setHeadComponents, setPreBodyComponents }) {
   if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
-
+  setHtmlAttributes({ lang: 'en' })
   setHeadComponents([
     <Partytown key="partytown" forward={['gtag']} />,
     <script key="google-analytics" type="text/partytown" src={`${ORIGIN}/gtag/js?id=${GATSBY_GA_MEASUREMENT_ID}`} />,
     <script
-      key="google-analytics-config"
+      key="gtag"
       type="text/partytown"
       dangerouslySetInnerHTML={{
         __html: `window.dataLayer = window.dataLayer || [];

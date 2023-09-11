@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
-import { ViewListIcon } from '@heroicons/react/outline'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import WavyHr from '@/components/WavyHr'
 
 interface TableOfContentProps {
@@ -71,7 +71,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
           <>
             <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200">
               <span className="headings-center inline-flex">
-                <ViewListIcon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-200" />
+                <Bars3Icon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-200" />
               </span>
             </Popover.Button>
             <Popover.Overlay className={`${open ? 'fixed inset-0 opacity-30' : 'opacity-0'} bg-black`} />

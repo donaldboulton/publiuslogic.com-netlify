@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import { ArrowCircleUpIcon } from '@heroicons/react/outline'
+import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 
 const Scroll = ({ direction = 'up', by, to, showBelow, className, size = '1.3em' }) => {
   if (!['up', 'down'].includes(direction))
@@ -35,7 +35,7 @@ const Scroll = ({ direction = 'up', by, to, showBelow, className, size = '1.3em'
   })
 
   const arrowProps = { show, direction, className, size }
-  return <ArrowCircleUpIcon className="arrow-up" onClick={handleClick} {...arrowProps} />
+  return <ArrowUpCircleIcon className="arrow-up" onClick={handleClick} {...arrowProps} />
 }
 
 export default Scroll

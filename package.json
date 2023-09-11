@@ -31,7 +31,7 @@
     "@gatsbyjs/reach-router": "^2.0.1",
     "@giscus/react": "^2.3.0",
     "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",

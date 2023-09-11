@@ -5,7 +5,7 @@ import Layout from '@/components/Layout'
 import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
-import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/outline'
+import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
@@ -73,7 +73,7 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
   return (
     <>
       <Layout>
-        <div className="blog-beams z-30 -mt-10 object-cover">
+        <div className="left-beams z-30 -mt-10 object-cover">
           <TableOfContent headings={data.mdx.headings} />
           <div className="mb-10 mt-10 font-inter">
             <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">

@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import {
   GlobeAltIcon,
-  BanIcon,
+  XMarkIcon,
   BeakerIcon,
   CakeIcon,
   ScaleIcon,
-  CodeIcon,
-  HandIcon,
+  CodeBracketIcon,
+  HandRaisedIcon,
   HeartIcon,
-  LibraryIcon,
+  BuildingLibraryIcon,
   LinkIcon,
   PresentationChartLineIcon,
   ShieldCheckIcon,
@@ -19,7 +19,7 @@ import {
   SparklesIcon,
   QuestionMarkCircleIcon,
   UserGroupIcon,
-} from '@heroicons/react/outline'
+} from '@heroicons/react/24/outline'
 
 const posts = [
   {
@@ -32,7 +32,7 @@ const posts = [
     name: 'Gatsby v5',
     description: 'Gatsby v5 partial Hydration and Slices',
     href: '/blog/gatsby-version-five',
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
   },
   {
     name: 'War Machine',
@@ -50,7 +50,7 @@ const posts = [
     name: 'Applause',
     description: 'Applause useSound Confetti',
     href: '/blog/applause-use-sound-confetti',
-    icon: HandIcon,
+    icon: HandRaisedIcon,
   },
   {
     name: 'USA Election',
@@ -62,7 +62,7 @@ const posts = [
     name: 'Jew Who',
     description: 'Who are the Jewish People',
     href: '/blog/jew-who',
-    icon: BanIcon,
+    icon: XMarkIcon,
   },
   {
     name: 'Cookie Consent',
@@ -92,7 +92,7 @@ const posts = [
     name: 'Government',
     description: 'United People of America',
     href: '/blog/government',
-    icon: LibraryIcon,
+    icon: BuildingLibraryIcon,
   },
   {
     name: 'Virtue',

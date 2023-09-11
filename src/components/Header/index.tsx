@@ -2,8 +2,16 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, MapIcon, HomeIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import {
+  MagnifyingGlassIcon,
+  Bars3Icon,
+  XMarkIcon,
+  UserGroupIcon,
+  PhotoIcon,
+  MapIcon,
+  HomeIcon,
+} from '@heroicons/react/24/outline'
 import ThemeToggle from '@/components/ThemeToggle'
 import Control from '@/components/icons/control'
 import ThreeDotsWave from '@/components/ThreeDotsWave'
@@ -39,9 +47,9 @@ export default function Navigation() {
                   <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-inset">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
                     ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
                     )}
                   </Disclosure.Button>
                 </div>
@@ -89,7 +97,7 @@ export default function Navigation() {
                     <span className="sr-only">Search</span>
                     <Link to="/search">
                       <span className="flex flex-shrink-0 items-center pr-1 text-lg">
-                        <SearchIcon
+                        <MagnifyingGlassIcon
                           className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
                           aria-hidden="true"
                           aria-label="Search Button"
@@ -129,27 +137,6 @@ export default function Navigation() {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       <Menu.Items className="ring-black absolute right-0 mt-3 w-48 origin-top-right rounded-md bg-slate-900 py-1 text-slate-200 opacity-75 shadow-lg ring-1 ring-opacity-5 hover:opacity-100 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              aria-label="Login"
-                              to="/login"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <UserGroupIcon
-                                  aria-label="Login"
-                                  className="block h-8 w-9 pr-2 text-wine-300"
-                                  aria-hidden="true"
-                                />
-                                <span>Login</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -204,7 +191,7 @@ export default function Navigation() {
                               )}
                             >
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <PhotographIcon
+                                <PhotoIcon
                                   aria-label="Gallery"
                                   className="block h-8 w-9 pr-2 text-wine-300"
                                   aria-hidden="true"
@@ -228,6 +215,27 @@ export default function Navigation() {
                               <span className="flex flex-shrink-0 items-center pr-2 text-lg">
                                 <MapIcon className="text-green-600 block h-9 w-9 pr-2" aria-hidden="true" />
                                 <span>Sitemap</span>
+                              </span>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              aria-label="Login"
+                              to="/login"
+                              className={classNames(
+                                active ? 'bg-slate-700' : '',
+                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
+                              )}
+                            >
+                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
+                                <UserGroupIcon
+                                  aria-label="Login"
+                                  className="block h-8 w-9 pr-2 text-wine-300"
+                                  aria-hidden="true"
+                                />
+                                <span>Login</span>
                               </span>
                             </Link>
                           )}

@@ -90,7 +90,7 @@ module.exports = {
         serif: 'Lora',
         inter: 'Inter',
         sacramento: 'Sacramento',
-        garamond: 'eb-garamond',
+        garamond: 'EB Garamond',
       },
       p: {
         '&::before': {

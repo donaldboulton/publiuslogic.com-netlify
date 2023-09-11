@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, FC } from 'react'
+import { useState, FC, ReactNode } from 'react'
 import { usePopperTooltip } from 'react-popper-tooltip'
 import './styles.css'
 

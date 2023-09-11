@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import { ArrowCircleDownIcon } from '@heroicons/react/outline'
+import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
 
 const ScrollDown = ({ direction = 'down', by, to, showBelow, className, size = '1.3em' }) => {
   if (!['up', 'down'].includes(direction))
@@ -35,7 +35,7 @@ const ScrollDown = ({ direction = 'down', by, to, showBelow, className, size = '
   })
 
   const arrowProps = { show, direction, className, size }
-  return <ArrowCircleDownIcon className="arrow-down" onClick={handleClick} {...arrowProps} />
+  return <ArrowDownCircleIcon className="arrow-down" onClick={handleClick} {...arrowProps} />
 }
 
 export default ScrollDown

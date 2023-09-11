@@ -41,9 +41,10 @@ const OldEnough = () => {
           <div className="left-beams mb-10 flex flex-1">
             <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
               <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
-                <div className="mb-10">
-                  <LeftText className="mb-2 mt-8 text-2xl lg:text-3xl">Angelina's Playlists</LeftText>
-                  <h2 className="text-scale-1100 text-sm">Old Enough</h2>
+                <div className='mb-4'>
+                  <div className="flex flex-col items-center neon-div">
+                    <span className='neonText neon-h1'><h1 className="text-2xl">Angelina's Playlists</h1><h2 className="text-scale-1100 items-center text-lg justify-center ml-9">Old Enough</h2></span>
+                  </div>
                 </div>
                 <div className="flex flex-col gap-5">
                   <IframeWrapper>
