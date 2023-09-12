@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { forwardRef, useMemo } from 'react'
-import { LazyMotion, m, HTMLMotionProps } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+import { motion, HTMLMotionProps } from 'framer-motion'
 
 type PageTransitionProps = HTMLMotionProps<'div'>
 type PageTransitionRef = React.ForwardedRef<HTMLDivElement>
@@ -15,8 +13,7 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
   const transition = { duration: 0.6, ease: 'easeInOut' }
 
   return (
-    <LazyMotion features={loadFeatures}>
-      <m.div
+      <motion.div
         className="max-h-[100%] overflow-y-auto"
         ref={ref}
         initial={onTheRight}
@@ -26,8 +23,7 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
         {...rest}
       >
         {children}
-      </m.div>
-    </LazyMotion>
+      </motion.div>
   )
 }
 
