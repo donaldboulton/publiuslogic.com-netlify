@@ -1,9 +1,12 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
+/** @type {import('tailwindcss').Config} */
 
-module.exports = {
+import plugin from'tailwindcss/plugin'
+import colors from 'tailwindcss/colors'
+import typography from '@tailwindcss/typography'
+import forms from '@tailwindcss/forms'
+import aspectRatio from '@tailwindcss/aspect-ratio'
+
+export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   future: {
@@ -127,8 +130,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
+    typography,
+    forms,
+    aspectRatio,
   ],
-}
+} satisfies Config

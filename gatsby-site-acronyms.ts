@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   ABAC: 'Attribute Based Access Control',
   ACID: 'Atomicity, Consistency, Isolation, Durability',
   API: 'Application Programming Interface',

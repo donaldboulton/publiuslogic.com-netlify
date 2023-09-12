@@ -7,14 +7,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    cache-control = '''
-	  public,
-	  max-age=2592000'''
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    X-Robots-Tag = "index"
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
     Access-Control-Allow-Origin = '''
       https://publiuslogic.com,
       https://graphql.fauna.com,
@@ -66,50 +58,4 @@
       https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js,
       https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js,
       https://unpkg.com/leaflet@1.9.2/dist/leaflet.css
-    '''      
-    Access-Control-Allow-Methods = '''
-      POST, 
-      GET,
-      PUT,  
-      DELETE,
-      PATCH,
-      OPTIONS,
-      HEAD
     '''
-    Access-Control-Allow-Credentials = "true"
-    Access-Control-Allow-Headers = "Content-Type, Authorization, Time-Zone"
-    Access-Control-Max-Age = "3600"
-    Vary = "Accept-Encoding"
-    Permissions-Policy = '''
-      accelerometer=(self),
-      autoplay=*,
-      camera=(self),
-      encrypted-media=(self),
-      fullscreen=*,
-      geolocation=*,
-      gyroscope=(self),
-      magnetometer=(self),
-      microphone=(self),
-      midi=(self),
-      payment=(self),
-      picture-in-picture=*,
-      usb=(self)
-    '''
-[[headers]]
-  for = "/static/assets/*"
-  [headers.values]
-    cache-control = '''
-	  public,
-	  max-age=31536000'''   
-
-[[edge_functions]]
-function = "set-req-header"
-path = "/development"
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-  [redirects.headers]
-    X-From = "Netlify"
-    Access-Control-Allow-Origin = "*"

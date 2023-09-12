@@ -1,15 +1,98 @@
 import type { GatsbyConfig } from 'gatsby'
-/* eslint @typescript-eslint/no-var-requires: "off" */
-const siteAcronyms = require('./gatsby-site-acronyms')
-const queries = require('./src/utils/algolia-queries')
-const resolveConfig = require('tailwindcss/resolveConfig')
-const tailwindConfig = require('./tailwind.config.js')
+import adapter from 'gatsby-adapter-netlify'
+import siteAcronyms from './gatsby-site-acronyms'
+import queries from './src/utils/algolia-queries'
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from './tailwind.config'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-require('dotenv').config()
-
 const config: GatsbyConfig = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+  }),
+  headers: [
+    {
+      source: `/contact`,
+      headers: [
+        {
+          key: 'Link',
+          value: 'https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
+        },
+      ],
+    },
+  ],
+  headers: [
+    {
+      source: `*`,
+      headers: [
+        {
+          key: 'Referrer-Policy',
+          value: 'origin-when-cross-origin',
+        },
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+        {
+          key: 'X-Frame-Options',
+          value: 'DENY',
+        },
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+        {
+          key: 'X-Content-Type-Options',
+          value: 'nosniff',
+        },
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
+        {
+          key: 'X-DNS-Prefetch-Control',
+          value: 'on',
+        },
+        {
+          key: 'X-XSS-Protection',
+          value: '1; mode=block',
+        },
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+        {
+          key: 'Strict-Transport-Security',
+          value: 'max-age=31536000; includeSubDomains; preload',
+        },
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+        // Opt-out of Google FLoC: https://amifloced.org/
+        {
+          key: 'Permissions-Policy',
+          value: 'camera=(), microphone=(), geolocation=()',
+        },
+        {
+          key: 'X-Robots-Tag',
+          value: 'index',
+        },
+        {
+          key: 'Vary',
+          value: 'accept-encoding',
+        },
+        {
+          key: 'Access-Control-Max-Age',
+          value: '3600',
+        },
+        {
+          key: 'Access-Control-Allow-Credentials',
+          value: 'true',
+        },
+        {
+          key: 'Access-Control-Allow-Headers',
+          value: 'Content-Type, Authorization, Time-Zone',
+        },
+        {
+          key: 'Access-Control-Allow-Methods',
+          value: 'POST, GET, PUT, DELETE, PATCH, OPTIONS, HEAD',
+        },
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=2592000',
+        },
+      ],
+    },
+  ],
   siteMetadata: {
     title: 'PubliusLogic',
     twitterUsername: '@donboulton',
@@ -219,25 +302,10 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/about', '/contact', '/blog/*'],
+        precachePages: ['/', '/about', '/contact', '/blog/*', '/privacy', '/thanks', '/gallery', '/old-enough', '/tags'],
         workboxConfig: {
           importWorkboxFrom: 'cdn',
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        headers: {
-          '/contact': [
-            'Link: https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
-          ],
-        },
-        allPageHeaders: [],
-        mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
-        generateMatchPathRewrites: true,
       },
     },
   ],

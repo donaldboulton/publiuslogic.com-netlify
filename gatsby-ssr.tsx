@@ -7,8 +7,8 @@ import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
   return
-  ;<SessionContextProvider supabaseClient={supabase}>
-    <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+  <SessionContextProvider supabaseClient={supabase}>
+    <AnimatePresence sync>{element}</AnimatePresence>
   </SessionContextProvider>
 }
 export const wrapRootElement = wrap
