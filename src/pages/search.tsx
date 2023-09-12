@@ -1,6 +1,8 @@
 import * as React from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import Search from '@/components/Algolia/search'
 import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
@@ -23,26 +25,31 @@ const ogimage = {
   height: 450,
 }
 
-const SearchPage = () => {
+type SearchPageProps = {}
+type SearchPageRef = React.ForwardedRef<HTMLDivElement>
+
+function SearchPage(props: SearchPageProps, ref: SearchPageRef) {
   return (
     <>
       <Layout>
-        <div className="search-beams z-30">
-          <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
-          <div className="mt-10">
-            <div className="mb-16 mt-16 p-8 sm:mt-2">
-              <div className="mb-2">
-                <Search indices={searchIndices} />
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30">
+            <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
+            <div className="mt-10">
+              <div className="mb-16 mt-16 p-8 sm:mt-2">
+                <div className="mb-2">
+                  <Search indices={searchIndices} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default SearchPage
+export default forwardRef(SearchPage)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -52,7 +59,6 @@ export function Head(props: HeadProps) {
         <title>Search Page</title>
         <meta name="description" content="PubliusLogic Search Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

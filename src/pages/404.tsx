@@ -28,29 +28,31 @@ const NotFoundPage = () => {
   return (
     <>
       <Layout>
-        <PageHero
-          title="404: Not Found"
-          description="You just hit a route that doesn&#39;t exist... the sadness."
-          image={Image}
-        />
-        <div className="mt-10">
-          <div className="mb-16 mt-6 flex flex-col items-center">
-            <div className="text-slate-900 dark:text-slate-200">
-              <Link
-                to="/"
-                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-              >
-                Back to Home Page
-              </Link>
-              <Link
-                to="/contact"
-                className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-              >
-                Notify Us of the Error
-              </Link>
-            </div>
-            <div className="mb-16 mt-6 flex flex-col items-center neon-div">
-              <h1 className="neonText text-2xl items-center neon-h1">page Not Found</h1>
+        <div className="left-beams z-30">
+          <PageHero
+            title="404: Not Found"
+            description="You just hit a route that doesn&#39;t exist... the sadness."
+            image={Image}
+          />
+          <div className="mt-10">
+            <div className="mb-16 mt-6 flex flex-col items-center">
+              <div className="text-slate-900 dark:text-slate-200">
+                <Link
+                  to="/"
+                  className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                >
+                  Back to Home Page
+                </Link>
+                <Link
+                  to="/contact"
+                  className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                >
+                  Notify Us of the Error
+                </Link>
+              </div>
+              <div className="mb-16 mt-6 flex flex-col items-center neon-div">
+                <h1 className="neonText text-2xl items-center neon-h1">page Not Found</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -69,7 +71,6 @@ export function Head(props: HeadProps) {
         <title>404 Not Found</title>
         <meta name="description" content="PubliusLogic 404 Not Found Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

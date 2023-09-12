@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
@@ -9,7 +11,7 @@ import BlogRoll from '@/components/BlogRoll'
 import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
 import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'
 
-interface TagProps {
+interface TagPageProps {
   pageContext: {
     tag: string
   }
@@ -21,47 +23,53 @@ const ogimage = {
   height: 450,
 }
 
-const TagPage = ({ pageContext }: TagProps) => {
+type TagPageRef = React.ForwardedRef<HTMLDivElement>
+
+function TagPage({ pageContext }, props: TagPageProps, ref: TagPageRef) {
   const tag = pageContext.tag
   const title = `Tag: ${tag}`
   return (
     <>
       <Layout>
-        <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
-        <Seo
-          type="tags"
-          title={title}
-          description={`Posts with tag [${tag}]`}
-          keywords={[tag]}
-          image={ogimage}
-          pathname={'/tags/' + tag}
-        />
-        <div className="mt-10">
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-            <div className="rounded-md shadow">
-              <Link
-                to="/tags"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-wine-300 px-8 py-3 text-base font-medium text-slate-300 hover:bg-wine-300 md:px-10 md:py-4 md:text-lg"
-              >
-                View All Tags
-              </Link>
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30">
+            <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
+            <Seo
+              type="tags"
+              title={title}
+              description={`Posts with tag [${tag}]`}
+              keywords={[tag]}
+              image={ogimage}
+              pathname={'/tags/' + tag}
+            />
+            <div className="mt-10">
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="rounded-md shadow">
+                  <Link
+                    to="/tags"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-wine-300 px-8 py-3 text-base font-medium text-slate-300 hover:bg-wine-300 md:px-10 md:py-4 md:text-lg"
+                  >
+                    View All Tags
+                  </Link>
+                </div>
+              </div>
+              <BlogRoll tag={tag} />
             </div>
           </div>
-          <BlogRoll tag={tag} />
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default TagPage
+export default forwardRef(TagPage)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
       <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

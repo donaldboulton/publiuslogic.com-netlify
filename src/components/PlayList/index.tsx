@@ -6,7 +6,7 @@ const PlayList = () => {
       href="https://open.spotify.com/playlist/2e8gSRRM6gKyOARqywHHTI"
       rel="noopener noreferrer"
       target="_blank"
-      area-label="Social Link"
+      area-label="Spotify Playlist"
     >
       <div className="flex items-center">
         <svg className="ml-auto h-5 w-5" viewBox="0 0 168 168">

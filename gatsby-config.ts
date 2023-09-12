@@ -4,10 +4,23 @@ import siteAcronyms from './gatsby-site-acronyms'
 import queries from './src/utils/algolia-queries'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from './tailwind.config'
-import dotenv from 'dotenv';
-dotenv.config();
+import dotenv from 'dotenv'
+dotenv.config()
 
 const fullConfig = resolveConfig(tailwindConfig)
+
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://apis.google.com/ https://netlify-rum.netlify.app/netlify-rum.js https://apis.google.com/js/platform.js cdn.vercel-insights.com https://youtube.com *.youtube.com *.twitter.com *.giscus.app *.apis.google.com *.googleapis.com *.googletagmanager.com *.netlify-rum.netlify.app *.gstatic.com cdn.usefathom.com;
+  child-src *.youtube.com *.google.com *.twitter.com;
+  style-src 'self' https://fonts.googleapis.com *.googleapis.com *.youtube.com 'unsafe-inline' data:;
+  frame-src https://www.youtube-nocookie.com/ https://giscus.app/ https://accounts.google.com/ youtube.com *.youtube.com *.twitter.com *.giscus.app;
+  img-src * blob: data:;
+  worker-src https://localhost:9000/static/~partytown/partytown-sw.js http://localhost:9000/~partytown/debug/partytown-sw.js https://mansbooks.com/~partytown/debug/partytown-sw.js https://mansbooks.com/_next/static/~partytown/partytown-sw.js https://my-worker.donaldboulton.workers.dev https://mansbooks.com/sw.js https://mansbooks.com/partytown-sw.js http://localhost:9000/sw.js http://localhost:9000/partytown-sw.js http://localhost:9000/static/~partytown/partytown-sw.js;
+  media-src https://my-worker.donaldboulton.workers.dev/images https://res.cloudinary.com/mansbooks/video/upload/vc_auto/v1/videos/Angelina_Jordan_-_Love_Dont_Let_Me_Go_-Visualizer-.mp4 *.res.cloudinary.com *.youtube.com *.raw.githubusercontent.com;
+  connect-src *;
+  font-src 'self' https://fonts.googleapis.com *.assets.vercel.com *.googleapis.com *.fonts.googleapis.com https://fonts.gstatic.com *.fonts.gstatic.com;
+`
 
 const config: GatsbyConfig = {
   adapter: adapter({
@@ -15,11 +28,23 @@ const config: GatsbyConfig = {
   }),
   headers: [
     {
+      source: `/(.*)`,
+      headers: [
+        {
+          source: `Content-Security-Policy`,
+          headers: ContentSecurityPolicy.replace(/\n/g, ''),
+        },
+      ],
+    },
+  ],
+  headers: [
+    {
       source: `/contact`,
       headers: [
         {
           key: 'Link',
-          value: 'https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
+          value:
+            'https://unpkg.com/leaflet@1.9.2/dist/leaflet.css; rel=stylesheet; as=stylesheet  crossorigin=anonymous integrity=sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA==',
         },
       ],
     },
@@ -30,7 +55,7 @@ const config: GatsbyConfig = {
       headers: [
         {
           key: 'Referrer-Policy',
-          value: 'origin-when-cross-origin',
+          value: 'strict-origin-when-cross-origin',
         },
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
         {
@@ -302,7 +327,17 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/', '/about', '/contact', '/blog/*', '/privacy', '/thanks', '/gallery', '/old-enough', '/tags'],
+        precachePages: [
+          '/',
+          '/about',
+          '/contact',
+          '/blog/*',
+          '/privacy',
+          '/thanks',
+          '/gallery',
+          '/old-enough',
+          '/tags',
+        ],
         workboxConfig: {
           importWorkboxFrom: 'cdn',
         },

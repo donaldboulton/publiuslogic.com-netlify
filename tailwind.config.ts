@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import plugin from'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin'
 import colors from 'tailwindcss/colors'
 import typography from '@tailwindcss/typography'
 import forms from '@tailwindcss/forms'
@@ -72,18 +72,18 @@ export default {
           900: '#0d1014',
         },
         wine: {
-          100: "#7e002f",
-          200: "#70002a",
-          300: "#620024",
-          400: "#54001f",
-          500: "#46001a",
-          600: "#380015",
-          700: "#2a0010",
-          800: "#1c000a",
-          900: "#0e0005",
+          100: '#7e002f',
+          200: '#70002a',
+          300: '#620024',
+          400: '#54001f',
+          500: '#46001a',
+          600: '#380015',
+          700: '#2a0010',
+          800: '#1c000a',
+          900: '#0e0005',
         },
-        "wine-main": "var(--wine)",
-        "wine-base": "var(--wine1)",
+        'wine-main': 'var(--wine)',
+        'wine-base': 'var(--wine1)',
       },
       fill: ({ theme }) => ({
         black: theme('colors.black'),
@@ -129,9 +129,5 @@ export default {
       },
     },
   },
-  plugins: [
-    typography,
-    forms,
-    aspectRatio,
-  ],
+  plugins: [typography, forms, aspectRatio],
 } satisfies Config

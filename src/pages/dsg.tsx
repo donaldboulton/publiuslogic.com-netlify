@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { useRef, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Callout from '@/components/Callout'
 import Seo from '@/components/Seo'
 import ThreeDotsWave from '@/components/ThreeDotsWave'
@@ -22,25 +24,34 @@ const ogimage = {
   height: 450,
 }
 
-export default function DSG() {
+type DsgProps = {}
+type DsgRef = React.ForwardedRef<HTMLDivElement>
+
+function Dsg(props: DsgProps, ref: DsgRef) {
   return (
     <>
       <Layout>
-        <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
-        <div className="mt-10">
-          <div className="mb-16 mt-6 flex flex-col items-center">
-            <div className="text-slate-900 dark:text-slate-200">
-              <Link to="/blog/gatsby-version-four">Back to Post</Link>
-              <br />
-              <h1 className="mb-2 mt-2 text-lg font-bold leading-tight">DSG: Deferred Static Generation</h1>
-              <Callout>This page was generated At Runtime!</Callout>
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30">
+            <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
+            <div className="mt-10">
+              <div className="mb-16 mt-6 flex flex-col items-center">
+                <div className="text-slate-900 dark:text-slate-200">
+                  <Link to="/blog/gatsby-version-four">Back to Post</Link>
+                  <br />
+                  <h1 className="mb-2 mt-2 text-lg font-bold leading-tight">DSG: Deferred Static Generation</h1>
+                  <Callout>This page was generated At Runtime!</Callout>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
+
+export default forwardRef(Dsg)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -50,7 +61,6 @@ export function Head(props: HeadProps) {
         <title>DSG</title>
         <meta name="description" content="PubliusLogic DSG Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

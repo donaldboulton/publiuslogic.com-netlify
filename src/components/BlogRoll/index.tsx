@@ -81,10 +81,10 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <section
+      <div
         ref={ref}
         tabIndex="-1"
-        className="relative mx-auto mb-40 max-w-7xl px-4 pb-4 focus:outline-none sm:px-3 md:px-5"
+        className="relative overflow-y-hidden mx-auto mb-40 max-w-7xl px-4 pb-4 focus:outline-none sm:px-3 md:px-5"
       >
         <ul
           ref={inViewRef}
@@ -132,8 +132,8 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             </li>
           ))}
         </ul>
-      </section>
-      <section className="mb-64">
+      </div>
+      <div className="mb-64">
         <div
           className={clsx(
             '-pt-10 pointer-events-none inset-x-0 bottom-0 -mb-[32rem] flex justify-center bg-gradient-to-t from-white pb-2 dark:from-slate-900',
@@ -155,7 +155,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             {expanded ? 'Show Less...' : 'Show more...'}
           </button>
         </div>
-      </section>
+      </div>
     </LazyMotion>
   )
 }

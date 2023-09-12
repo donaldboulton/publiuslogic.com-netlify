@@ -1,6 +1,6 @@
 import { GatsbyNode } from 'gatsby'
 import path from 'path'
-import { copyLibFiles } from'@builder.io/partytown/utils'
+import { copyLibFiles } from '@builder.io/partytown/utils'
 
 exports.onPreBuild = async () => {
   await copyLibFiles(path.join(__dirname, 'static', '~partytown'))

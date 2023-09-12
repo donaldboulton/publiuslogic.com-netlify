@@ -93,7 +93,7 @@ export default function Footer() {
                     </div>
                   </ColumnGridTwo>
                   <ColumnGridTwo>
-                  <div className="mr-2 mb-2">
+                    <div className="mr-2 mb-2">
                       <span className="group relative flex items-center text-slate-300">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 102 102">
                           <defs>

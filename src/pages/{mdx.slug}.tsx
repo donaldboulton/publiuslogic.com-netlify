@@ -1,10 +1,10 @@
 import * as React from 'react'
+import { useRef, forwardRef } from 'react'
 import { graphql, Link, HeadProps, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Bio from '@/components/Bio'
-import ScrollDown from '@/components/ScrollDown'
-import Scroll from '@/components/Scroll'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
@@ -67,69 +67,62 @@ interface PageProps {
   }
 }
 
-const BlogPost = ({ data }: PageProps<DataProps>) => {
+type BlogPostRef = React.ForwardedRef<HTMLDivElement>
+
+function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   const { frontmatter, timeToRead, id } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>
       <Layout>
-        <div className="left-beams z-30 -mt-10 object-cover">
-          <TableOfContent headings={data.mdx.headings} />
-          <div className="mb-10 mt-10 font-inter">
-            <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
-              <div className="mt-4 py-4">
-                <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
-                <div className="flex items-center">
-                  <span className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:font-garamond first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300 text-slate-900 dark:text-slate-200">
-                    {frontmatter.description}
-                  </span>
-                </div>
-              </div>
-              <div className="mb-4 ml-2 text-slate-900 dark:text-slate-200">
-                <Bio />
-              </div>
-              <div>
-                <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
-                  <div className="ml-3 mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
-                    <TagIcon className="mr-2 h-6 w-6" />
-                    <Tags className="px-2 py-1" tags={frontmatter.tags} />
-                  </div>
-                  <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
-                    <CalendarIcon className="mr-1 h-6 w-6" />
-                    {frontmatter.date}
-                  </div>
-                  <div className="mr-3 inline-flex items-center text-base leading-none text-slate-900 dark:text-slate-200">
-                    <ClockIcon className="mr-1 h-6 w-6" />
-                    {timeToRead} min read
-                  </div>
-                  <div className="mr-3 inline-flex items-center text-base leading-none">
-                    <NowPlaying />
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30 -mt-10 object-cover">
+            <TableOfContent headings={data.mdx.headings} />
+            <div className="mb-10 mt-10 font-inter">
+              <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
+                <div className="mt-4 py-4">
+                  <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
+                  <div className="flex items-center">
+                    <span className="ml-2 first-letter:float-left first-letter:mr-3 first-letter:font-garamond first-letter:text-7xl first-letter:font-bold first-letter:uppercase first-letter:text-slate-900 first-line:tracking-widest dark:first-letter:text-slate-300 text-slate-900 dark:text-slate-200">
+                      {frontmatter.description}
+                    </span>
                   </div>
                 </div>
-              </div>
-              <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-              <GiscusComments mapping={pathname} />
-              <WavyHr />
-            </section>
-            <ScrollDown
-              className="scroll right-4 top-20 z-20 md:right-3"
-              size={40}
-              css="position: fixed; color: gray; width: 40px; height: 40px;"
-            />
-            <Scroll
-              className="scroll bottom-4 right-4 z-20 md:right-3"
-              showBelow={1500}
-              size={40}
-              css="position: fixed; color: gray; width: 40px; height: 40px;"
-            />
+                <div className="mb-4 ml-2 text-slate-900 dark:text-slate-200">
+                  <Bio />
+                </div>
+                <div>
+                  <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
+                    <div className="ml-3 mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
+                      <TagIcon className="mr-2 h-6 w-6" />
+                      <Tags className="px-2 py-1" tags={frontmatter.tags} />
+                    </div>
+                    <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
+                      <CalendarIcon className="mr-1 h-6 w-6" />
+                      {frontmatter.date}
+                    </div>
+                    <div className="mr-3 inline-flex items-center text-base leading-none text-slate-900 dark:text-slate-200">
+                      <ClockIcon className="mr-1 h-6 w-6" />
+                      {timeToRead} min read
+                    </div>
+                    <div className="mr-3 inline-flex items-center text-base leading-none">
+                      <NowPlaying />
+                    </div>
+                  </div>
+                </div>
+                <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+                <GiscusComments mapping={pathname} />
+                <WavyHr />
+              </section>
+            </div>
           </div>
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default BlogPost
+export default forwardRef(BlogPost)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps<DataProps>) {

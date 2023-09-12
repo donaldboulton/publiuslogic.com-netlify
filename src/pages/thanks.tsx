@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
@@ -24,56 +26,61 @@ const ogimage = {
   height: 450,
 }
 
-const Thanks = () => {
+type ThanksProps = {}
+type ThanksRef = React.ForwardedRef<HTMLDivElement>
+
+function Thanks(props: ThanksProps, ref: ThanksRef) {
   return (
     <>
       <Layout>
-        <div className="search-beams z-30">
-          <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
-          <div className="mt-10">
-            <div className="mb-16 mt-6 flex flex-col items-center">
-              <div className="text-slate-900 dark:text-slate-200">
-                <Link
-                  to="/"
-                  className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-                >
-                  Home Page
-                </Link>
-                <Link
-                  to="/contact"
-                  replace
-                  className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-                >
-                  Return to Previous Page!
-                </Link>
-                <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
-                <div>Thank You for your Submission!</div>
-              </div>
-              <div className="flex justify-center text-2xl">
-                <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
-                  <StaticImage
-                    className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
-                    formats={['auto', 'webp']}
-                    src="../../static/img/buy-me-a-coffee.jpg"
-                    quality={95}
-                    alt="Buy me a coffee"
-                    area-label="Buy me a coffee"
-                    loading="Buy me a coffee"
-                  />
-                </a>
-              </div>
-              <div className="mb-20">
-                <hr className="text-wine-600 w-full mx-auto" />
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30">
+            <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
+            <div className="mt-10">
+              <div className="mb-16 mt-6 flex flex-col items-center">
+                <div className="text-slate-900 dark:text-slate-200">
+                  <Link
+                    to="/"
+                    className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                  >
+                    Home Page
+                  </Link>
+                  <Link
+                    to="/contact"
+                    replace
+                    className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
+                  >
+                    Return to Previous Page!
+                  </Link>
+                  <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
+                  <div>Thank You for your Submission!</div>
+                </div>
+                <div className="flex justify-center text-2xl">
+                  <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
+                    <StaticImage
+                      className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
+                      formats={['auto', 'webp']}
+                      src="../../static/img/buy-me-a-coffee.jpg"
+                      quality={95}
+                      alt="Buy me a coffee"
+                      area-label="Buy me a coffee"
+                      loading="Buy me a coffee"
+                    />
+                  </a>
+                </div>
+                <div className="mb-20">
+                  <hr className="text-wine-600 w-full mx-auto" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default Thanks
+export default forwardRef(Thanks)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -83,7 +90,6 @@ export function Head(props: HeadProps) {
         <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import { Link } from 'gatsby'
 import {
@@ -109,51 +111,56 @@ const ogimage = {
   height: 450,
 }
 
-const Tags = () => {
+type TagsProps = {}
+type TagsRef = React.ForwardedRef<HTMLDivElement>
+
+function Tags(props: TagsProps, ref: TagsRef) {
   const tags = GetTags()
 
   return (
     <>
       <Layout>
-        <div className="search-beams z-30">
-          <PageHero
-            title="Blog Tags"
-            description="Click on each tag to view blog posts containing tag."
-            image={Image}
-          />
-          <div className="mt-10">
-            <div className="mb-24 mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-6 xl:gap-y-6">
-              {tags
-                .sort((a, b) => b.count - a.count)
-                .map((tag, i) => (
-                  <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
-                    <section
-                      className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
-                      style={{
-                        backgroundColor: '#dfdbe5',
-                        backgroundImage: patterns[i % patterns.length],
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gray-900 bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-75"></div>
-                      <div className="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
-                        <h3 className="text-center text-2xl font-bold text-slate-300">
-                          <span className="absolute inset-0"></span>
-                          {tag.tag}
-                        </h3>
-                        <span className="text-center text-sm font-medium text-slate-300">&nbsp;({tag.count})</span>
-                      </div>
-                    </section>
-                  </Link>
-                ))}
+        <PageTransition ref={ref}>
+          <div className="left-beams z-30">
+            <PageHero
+              title="Blog Tags"
+              description="Click on each tag to view blog posts containing tag."
+              image={Image}
+            />
+            <div className="mt-10">
+              <div className="mb-24 mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-6 xl:gap-y-6">
+                {tags
+                  .sort((a, b) => b.count - a.count)
+                  .map((tag, i) => (
+                    <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
+                      <section
+                        className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
+                        style={{
+                          backgroundColor: '#dfdbe5',
+                          backgroundImage: patterns[i % patterns.length],
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-gray-900 bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-75"></div>
+                        <div className="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
+                          <h3 className="text-center text-2xl font-bold text-slate-300">
+                            <span className="absolute inset-0"></span>
+                            {tag.tag}
+                          </h3>
+                          <span className="text-center text-sm font-medium text-slate-300">&nbsp;({tag.count})</span>
+                        </div>
+                      </section>
+                    </Link>
+                  ))}
+              </div>
             </div>
           </div>
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default Tags
+export default forwardRef(Tags)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -163,7 +170,6 @@ export function Head(props: HeadProps) {
         <title>Tags</title>
         <meta name="description" content="PubliusLogic Tags Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

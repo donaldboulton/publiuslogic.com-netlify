@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
-import { Auth } from '@supabase/auth-ui-react'
+import { forwardRef, useState, useEffect } from 'react'
 import type { HeadProps } from 'gatsby'
+import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
+import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import Account from '../components/Auth/account'
-import Layout from '../components/Layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import LeftText from '../components/LeftText'
 import Seo from '../components/Seo'
@@ -19,7 +20,10 @@ const ogimage = {
   height: 450,
 }
 
-const Login = ({ email }) => {
+type LoginProps = {}
+type LoginRef = React.ForwardedRef<HTMLDivElement>
+
+function Login(props: LoginProps, ref: LoginRef) {
   const [session, setSession] = useState(null)
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -90,66 +94,68 @@ const Login = ({ email }) => {
 
   return (
     <Layout>
-      <div className="mb-20 ml-8">
-        <div className="pt-10 mb-4">
-          <LeftText>PubliusLogic Login</LeftText>
-        </div>
-        <ColumnGridTwo>
-          <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
-            <div className="w-72 px-6 py-4 bg-slate-950 m-auto text-slate-400">
-              {!session ? (
-                <Auth
-                  supabaseClient={supabase}
-                  view="magic_link"
-                  providers={['github', 'google', 'spotify']}
-                  theme="dark"
-                  appearance={{
-                    theme: ThemeSupa,
-                    variables: {
-                      default: {
-                        colors: {
-                          brand: 'red',
-                          brandAccent: 'darkred',
+      <PageTransition ref={ref}>
+        <div className="mb-20 ml-8">
+          <div className="pt-10 mb-4">
+            <LeftText>PubliusLogic Login</LeftText>
+          </div>
+          <ColumnGridTwo>
+            <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
+              <div className="w-72 px-6 py-4 bg-slate-950 m-auto text-slate-400">
+                {!session ? (
+                  <Auth
+                    supabaseClient={supabase}
+                    view="magic_link"
+                    providers={['github', 'google', 'spotify']}
+                    theme="dark"
+                    appearance={{
+                      theme: ThemeSupa,
+                      variables: {
+                        default: {
+                          colors: {
+                            brand: 'red',
+                            brandAccent: 'darkred',
+                          },
                         },
                       },
-                    },
-                  }}
-                />
-              ) : (
-                <>
-                  <ColumnGridTwo>
-                    <Account key={session.user.id} session={session} />
-                    <div
-                      className="flex h-full w-full flex-col items-center justify-center p-4"
-                      style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                    >
-                      <TodoList session={session} />
-                    </div>
-                  </ColumnGridTwo>
-                </>
-              )}
+                    }}
+                  />
+                ) : (
+                  <>
+                    <ColumnGridTwo>
+                      <Account key={session.user.id} session={session} />
+                      <div
+                        className="flex h-full w-full flex-col items-center justify-center p-4"
+                        style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                      >
+                        <TodoList session={session} />
+                      </div>
+                    </ColumnGridTwo>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="right-0 -mt-10">
-            <StaticImage
-              className="self-center rounded-lg opacity-60"
-              src="../../static/img/planets.jpg"
-              placeholder="blurred"
-              width={840}
-              height={427}
-              quality={95}
-              formats={['auto', 'webp', 'avif']}
-              alt="Planets"
-              loading="eager"
-            />
-          </div>
-        </ColumnGridTwo>
-      </div>
+            <div className="right-0 -mt-10">
+              <StaticImage
+                className="self-center rounded-lg opacity-60"
+                src="../../static/img/planets.jpg"
+                placeholder="blurred"
+                width={840}
+                height={427}
+                quality={95}
+                formats={['auto', 'webp', 'avif']}
+                alt="Planets"
+                loading="eager"
+              />
+            </div>
+          </ColumnGridTwo>
+        </div>
+      </PageTransition>
     </Layout>
   )
 }
 
-export default Login
+export default forwardRef(Login)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -159,7 +165,6 @@ export function Head(props: HeadProps) {
         <title>Login Page</title>
         <meta name="description" content="PubliusLogic Login Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
