@@ -9,34 +9,10 @@ dotenv.config()
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://apis.google.com/ https://netlify-rum.netlify.app/netlify-rum.js https://apis.google.com/js/platform.js cdn.vercel-insights.com https://youtube.com *.youtube.com *.twitter.com *.giscus.app *.apis.google.com *.googleapis.com *.googletagmanager.com *.netlify-rum.netlify.app *.gstatic.com cdn.usefathom.com;
-  child-src *.youtube.com *.google.com *.twitter.com;
-  style-src 'self' https://fonts.googleapis.com *.googleapis.com *.youtube.com 'unsafe-inline' data:;
-  frame-src https://www.youtube-nocookie.com/ https://giscus.app/ https://accounts.google.com/ youtube.com *.youtube.com *.twitter.com *.giscus.app;
-  img-src * blob: data:;
-  worker-src https://localhost:9000/static/~partytown/partytown-sw.js http://localhost:9000/~partytown/debug/partytown-sw.js https://mansbooks.com/~partytown/debug/partytown-sw.js https://mansbooks.com/_next/static/~partytown/partytown-sw.js https://my-worker.donaldboulton.workers.dev https://mansbooks.com/sw.js https://mansbooks.com/partytown-sw.js http://localhost:9000/sw.js http://localhost:9000/partytown-sw.js http://localhost:9000/static/~partytown/partytown-sw.js;
-  media-src https://my-worker.donaldboulton.workers.dev/images https://res.cloudinary.com/mansbooks/video/upload/vc_auto/v1/videos/Angelina_Jordan_-_Love_Dont_Let_Me_Go_-Visualizer-.mp4 *.res.cloudinary.com *.youtube.com *.raw.githubusercontent.com;
-  connect-src *;
-  font-src 'self' https://fonts.googleapis.com *.assets.vercel.com *.googleapis.com *.fonts.googleapis.com https://fonts.gstatic.com *.fonts.gstatic.com;
-`
-
 const config: GatsbyConfig = {
   adapter: adapter({
     excludeDatastoreFromEngineFunction: false,
   }),
-  headers: [
-    {
-      source: `/(.*)`,
-      headers: [
-        {
-          source: `Content-Security-Policy`,
-          headers: ContentSecurityPolicy.replace(/\n/g, ''),
-        },
-      ],
-    },
-  ],
   headers: [
     {
       source: `/contact`,
@@ -159,14 +135,6 @@ const config: GatsbyConfig = {
           false /* Optional: if true, iframe's id will be set to what is provided after 'youtube:' (YouTube IFrame player API requires iframe id) */,
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    },
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     {
@@ -207,6 +175,7 @@ const config: GatsbyConfig = {
         name: 'img',
       },
     },
+    'gatsby-plugin-babel-optional-chaining',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
