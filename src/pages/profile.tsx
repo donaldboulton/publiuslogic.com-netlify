@@ -40,7 +40,7 @@ function Profile(props: ProfileProps, ref: ProfileRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
             <section className="mb-11">
               <div className="mb-6 mt-6 text-center">

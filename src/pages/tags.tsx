@@ -121,7 +121,7 @@ function Tags(props: TagsProps, ref: TagsRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero
               title="Blog Tags"
               description="Click on each tag to view blog posts containing tag."

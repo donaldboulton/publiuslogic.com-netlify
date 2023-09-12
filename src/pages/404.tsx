@@ -28,7 +28,7 @@ const NotFoundPage = () => {
   return (
     <>
       <Layout>
-        <div className="left-beams z-30">
+        <div className="left-beams">
           <PageHero
             title="404: Not Found"
             description="You just hit a route that doesn&#39;t exist... the sadness."

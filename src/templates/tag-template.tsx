@@ -32,7 +32,7 @@ function TagPage({ pageContext }, props: TagPageProps, ref: TagPageRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
             <Seo
               type="tags"
@@ -42,12 +42,12 @@ function TagPage({ pageContext }, props: TagPageProps, ref: TagPageRef) {
               image={ogimage}
               pathname={'/tags/' + tag}
             />
-            <div className="mt-10">
+            <div className="mt-10 mb-10">
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
+                <div className="rounded-md shadow mb-4">
                   <Link
                     to="/tags"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-wine-300 px-8 py-3 text-base font-medium text-slate-300 hover:bg-wine-300 md:px-10 md:py-4 md:text-lg"
+                    className="items-center justify-center rounded-md border border-transparent bg-wine-300 px-8 py-3 text-base font-medium text-slate-300 hover:bg-wine-300 md:px-10 md:py-4 md:text-lg"
                   >
                     View All Tags
                   </Link>

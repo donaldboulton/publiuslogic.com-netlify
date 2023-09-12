@@ -43,13 +43,13 @@ function Contact(props: ContactProps, ref: ContactRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
               image={Image}
             />
-            <div className="search-beams z-30">
+            <div className="search-beams">
               <Map />
               <div className="mt-10 p-8 text-slate-900 dark:text-slate-200 sm:mt-0">
                 <div className="lg:grid lg:grid-cols-3 lg:gap-6">

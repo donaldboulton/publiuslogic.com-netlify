@@ -32,7 +32,7 @@ function Dsg(props: DsgProps, ref: DsgRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
             <div className="mt-10">
               <div className="mb-16 mt-6 flex flex-col items-center">

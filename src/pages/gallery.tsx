@@ -76,7 +76,7 @@ function ImageGallery({ data }, props: ImageGalleryProps, ref: ImageGalleryRef) 
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero title="Gallery: Angie" description="Special Kitty, Cat!" image={Image} />
             <div className="search-beams mb-32 mt-6 z-30">
               <div className="center container mx-auto px-5 py-2 lg:px-32 lg:pt-12">

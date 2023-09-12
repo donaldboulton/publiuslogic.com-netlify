@@ -55,15 +55,15 @@ export default function Navigation() {
                 </div>
                 <div className="flex flex-1 items-center justify-center text-lg sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
-                    <Link to="/">
+                    <Link to="/" aria-label="Home link">
                       <div className="block md:hidden">
                         <HomeIcon
                           className="block h-8 w-8 pr-2 text-sky-500 hover:text-sky-400/20"
-                          aria-label="Logo Mobile"
+                          aria-label="Home Link"
                         />
                       </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/" aria-label="Home Link">
                       <div className="flex items-center md:block">
                         <span className="text-2xl text-gray-400">PubliusLogic</span>
                       </div>
@@ -95,7 +95,7 @@ export default function Navigation() {
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <div className="p-1">
                     <span className="sr-only">Search</span>
-                    <Link to="/search">
+                    <Link to="/search" aria-label="Search Page Link">
                       <span className="flex flex-shrink-0 items-center pr-1 text-lg">
                         <MagnifyingGlassIcon
                           className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"

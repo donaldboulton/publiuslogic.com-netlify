@@ -33,7 +33,7 @@ function SearchPage(props: SearchPageProps, ref: SearchPageRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams z-30">
+          <div className="left-beams">
             <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
             <div className="mt-10">
               <div className="mb-16 mt-16 p-8 sm:mt-2">

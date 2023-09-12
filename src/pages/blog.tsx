@@ -27,7 +27,7 @@ const BlogPage = () => {
   return (
     <>
       <Layout>
-        <div className="left-beams z-30 mb-40">
+        <div className="left-beams mb-40">
           <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
           <div className="mb-40 mt-10">
             <BlogRoll />

@@ -173,10 +173,10 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
     <Listbox value={setting} onChange={setSetting}>
       <Listbox.Button name="themes" type="button" className="mt-1">
         <span className="dark:hidden">
-          <SunIcon className="h-8 w-8" selected={setting !== 'system'} />
+          <SunIcon className="h-8 w-8" selected={setting !== 'system'} aria-label="Light Mode" />
         </span>
         <span className="hidden dark:inline">
-          <MoonIcon className="h-8 w-8" selected={setting !== 'system'} />
+          <MoonIcon className="h-8 w-8" selected={setting !== 'system'} aria-label="Dark Mode" />
         </span>
       </Listbox.Button>
       <Listbox.Options
@@ -195,7 +195,7 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
                   active && 'bg-slate-50 dark:bg-slate-600/30'
                 )}
               >
-                <Icon selected={selected} className="mr-2 h-6 w-6" />
+                <Icon selected={selected} className="mr-2 h-6 w-6"aria-label="System Mode" />
                 {label}
               </li>
             )}

@@ -22,7 +22,7 @@ const SsrPage = ({ serverData }) => {
   return (
     <>
       <Layout>
-        <div className="left-beams z-30">
+        <div className="left-beams">
           <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
           <div>
             <div className="mx-auto mb-32 mt-16 max-w-md overflow-hidden rounded-xl bg-slate-300 text-slate-900 shadow-md dark:bg-slate-900 dark:text-slate-200 md:max-w-2xl">
