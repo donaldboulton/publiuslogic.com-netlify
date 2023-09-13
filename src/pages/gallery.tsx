@@ -9,16 +9,9 @@ import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 interface ImageSharpEdge {
   node: {
@@ -128,7 +121,6 @@ export function Head(props: HeadProps) {
         <title>Gallery</title>
         <meta name="description" content="PubliusLogic Gallery Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({

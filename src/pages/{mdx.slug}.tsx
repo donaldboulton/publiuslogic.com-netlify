@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useRef, forwardRef } from 'react'
-import { graphql, Link, HeadProps, PageProps } from 'gatsby'
+import type { HeadProps } from 'gatsby'
+import { graphql, Link, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -164,7 +165,6 @@ export function Head(props: HeadProps<DataProps>) {
         <meta name="og:updated_time" content={props.data.mdx.parent.modifiedTime} />
         <meta name="canonical" content={seo.path} />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="alternate" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SeoBlog>
       <script type="application/ld+json">
         {JSON.stringify({

@@ -13,17 +13,17 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
   const transition = { duration: 0.6, ease: 'easeInOut' }
 
   return (
-      <motion.div
-        className="max-h-[100%] overflow-y-auto"
-        ref={ref}
-        initial={onTheRight}
-        animate={inTheCenter}
-        exit={onTheLeft}
-        transition={transition}
-        {...rest}
-      >
-        {children}
-      </motion.div>
+    <motion.div
+      className="max-h-[100%] overflow-y-auto"
+      ref={ref}
+      initial={onTheRight}
+      animate={inTheCenter}
+      exit={onTheLeft}
+      transition={transition}
+      {...rest}
+    >
+      {children}
+    </motion.div>
   )
 }
 

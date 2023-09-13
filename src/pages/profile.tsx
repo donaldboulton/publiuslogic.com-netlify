@@ -11,16 +11,10 @@ import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
 import Center from '@/components/Center'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
+
 const ogimage = {
   src: OGImage,
   width: 1400,

@@ -195,7 +195,7 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
                   active && 'bg-slate-50 dark:bg-slate-600/30'
                 )}
               >
-                <Icon selected={selected} className="mr-2 h-6 w-6"aria-label="System Mode" />
+                <Icon selected={selected} className="mr-2 h-6 w-6" aria-label="System Mode" />
                 {label}
               </li>
             )}

@@ -9,16 +9,9 @@ import Seo from '@/components/Seo'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 import WavyHr from '@/components/WavyHr'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 const ogimage = {
   src: OGImage,

@@ -13,21 +13,9 @@ import WavyHr from '@/components/WavyHr'
 import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 import LeftText from '@/components/LeftText'
+import Map from '@/components/Map'
 
-const ContactForm = loadable(() => import('@/components/ContactForm'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
-const Map = loadable(() => import('@/components/Map'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const ContactForm = loadable(() => import('@/components/ContactForm'))
 
 const ogimage = {
   src: OGImage,

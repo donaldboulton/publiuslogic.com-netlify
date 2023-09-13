@@ -11,13 +11,8 @@ import loadable from '@loadable/component'
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
+
 const ogimage = {
   src: OGImage,
   width: 1400,

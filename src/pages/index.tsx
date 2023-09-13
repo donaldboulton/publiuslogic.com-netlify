@@ -16,13 +16,7 @@ import Updates from '@/components/Updates'
 import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const Table = loadable(() => import('@/components/Table'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const Table = loadable(() => import('@/components/Table'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 

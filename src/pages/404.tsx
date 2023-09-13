@@ -7,16 +7,9 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
 import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 const ogimage = {
   src: OGImage,

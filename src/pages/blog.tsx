@@ -1,21 +1,15 @@
 import * as React from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
+import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import BlogRoll from '@/components/BlogRoll'
-import ScrollDown from '@/components/ScrollDown'
 import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 const ogimage = {
   src: OGImage,
@@ -23,27 +17,27 @@ const ogimage = {
   height: 450,
 }
 
-const BlogPage = () => {
+type BlogPageProps = {}
+type BlogPageRef = React.ForwardedRef<HTMLDivElement>
+
+function BlogPage(props: BlogPageProps, ref: BlogPageRef) {
   return (
     <>
       <Layout>
-        <div className="left-beams mb-40">
-          <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-          <div className="mb-40 mt-10">
-            <BlogRoll />
+        <PageTransition ref={ref}>
+          <div className="left-beams mb-20">
+            <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
+            <div className="mb-2">
+              <BlogRoll />
+            </div>
           </div>
-          <ScrollDown
-            className="scroll right-4 top-20 z-20 md:right-3"
-            size={40}
-            css="position: fixed; color: gray; width: 40px; height: 40px;"
-          />
-        </div>
+        </PageTransition>
       </Layout>
     </>
   )
 }
 
-export default BlogPage
+export default forwardRef(BlogPage)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
@@ -59,7 +53,6 @@ export function Head(props: HeadProps) {
         <title>Blog Page</title>
         <meta name="description" content="PubliusLogic Home Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Seo>
       <script type="application/ld+json">
         {JSON.stringify({
@@ -149,7 +142,7 @@ export function Head(props: HeadProps) {
           '@type': 'Organization',
           address: 'OKC, Middle Earth',
           contactPoint: {
-            '@type': 'ContactPoint',
+            '@type': 'BlogPagePoint',
             email: 'donboulton@donboulton.com',
             telephone: '+405-863-2165',
           },
