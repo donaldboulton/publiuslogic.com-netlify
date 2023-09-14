@@ -37,7 +37,7 @@ function Contact(props: ContactProps, ref: ContactRef) {
               description="Our presence is real and digital. Contact us through the following ways."
               image={Image}
             />
-            <div className="search-beams">
+            <div className="form-beams">
               <Map />
               <div className="mt-10 p-8 text-slate-900 dark:text-slate-200 sm:mt-0">
                 <div className="lg:grid lg:grid-cols-3 lg:gap-6">
