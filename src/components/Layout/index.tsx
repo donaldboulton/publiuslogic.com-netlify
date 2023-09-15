@@ -6,11 +6,10 @@ import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
+import Footer from '@/components/Footer'
 import loadable from '@loadable/component'
 
 const Header = loadable(() => import('@/components/Header'))
-
-const Footer = loadable(() => import('@/components/Footer'))
 
 interface LayoutProps {
   children: ReactNode
