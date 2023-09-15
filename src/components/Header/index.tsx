@@ -16,54 +16,49 @@ import {
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline'
 
-const godNavigation = [  
-  { name: 'Creation', href: '/blog/creation-of-all', current: false },
+const godNavigation = [
+  { name: 'Creation', href: '/blog/creation-of-all/', current: false },
   { name: 'Commandments', href: '/blog/commandments/', current: false },
   { name: 'Jew Who', href: 'blog/jew-who/', current: false },
   { name: 'Immorality', href: '/blog/immorality-abortion/', current: false },
-  { name: 'more More MORE', href: '/blog/more-more-more', current: false },
+  { name: 'more More MORE', href: '/blog/more-more-more/', current: false },
   { name: 'Playtime', href: '/blog/playtime/', current: false },
-  { name: 'Virtue', href: '/blog/virtue', current: false },
+  { name: 'Virtue', href: '/blog/virtue/', current: false },
   { name: 'The Day The I', href: '/blog/the-day-the-i/', current: false },
   { name: 'Trinity of Man', href: '/blog/trinity-of-man/', current: false },
   { name: 'Works of Flesh', href: '/blog/works-of-flesh/', current: false },
 ]
 
-const logicNavigation = [  
-    { name: 'Homeless', href: '/blog/homeless', current: false },
-    { name: 'Earth Magnetism', href: '/blog/earths-magnetic-flux/', current: false },
-    { name: 'EMF EMP', href: '/blog/emf-emp/', current: false },
-    { name: 'Shrumers Man', href: '/blog/psychedelic-mushrooms/', current: false },
-    { name: 'Sleeper Agent', href: '/blog/sleeper-agent/', current: false },
-    { name: 'War Machine', href: '/blog/war-machine/', current: false },
+const logicNavigation = [
+  { name: 'Bullshit', href: '/blog/bullshit/', current: false },
+  { name: 'Homeless', href: '/blog/homeless/', current: false },
+  { name: 'Earth Magnetism', href: '/blog/earths-magnetic-flux/', current: false },
+  { name: 'EMF EMP', href: '/blog/emf-emp/', current: false },
+  { name: 'Shrumers Man', href: '/blog/psychedelic-mushrooms/', current: false },
+  { name: 'Sleeper Agent', href: '/blog/sleeper-agent/', current: false },
+  { name: 'Vaccination', href: '/blog/vaccination/', current: false },
+  { name: 'War Machine', href: '/blog/war-machine/', current: false },
 ]
 
-const angieNavigation = [  
-    { name: 'Gallery', href: '/gallery', current: false },
-    { name: 'Old Enough', href: '/old-enough', current: false },
-    { name: 'Angelina', href: '/blog/angelina-jordan', current: false },
-    { name: 'Trinity', href: '/blog/trinity-of-angels', current: false },
+const angieNavigation = [
+  { name: 'Gallery', href: '/gallery', current: false },
+  { name: 'Old Enough', href: '/old-enough', current: false },
+  { name: 'Angelina', href: '/blog/angelina-jordan/', current: false },
+  { name: 'Trinity', href: '/blog/trinity-of-angels/', current: false },
 ]
 
 const programmingNavigation = [
-  { name: 'Applause', href: '/blog//applause-use-sound-confetti/', current: false },    
-  { name: 'Sectionize', href: '/blog/animated-sections/', current: false },    
-  { name: 'Gatsby V5', href: '/blog/creation-of-all', current: false },
+  { name: 'Applause', href: '/blog//applause-use-sound-confetti/', current: false },
+  { name: 'Sectionize', href: '/blog/animated-sections/', current: false },
+  { name: 'Gatsby V5', href: '/blog/gatsby-version-five/', current: false },
   { name: 'Cookies Gdpr', href: '/blog/cookies/', current: false },
   { name: 'Netlify Forms', href: '/blog/react-netlify-forms/', current: false },
   { name: 'Hook Forms', href: '/blog/react-hook-form/', current: false },
-  { name: 'Immorality', href: '/blog/immorality-abortion/', current: false },
-  { name: 'Trinity of Man', href: '/blog/trinity-of-man/', current: false },
 ]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Header() {
   const [isDark, setDark] = React.useState(true)
   const refLeft = useRef(null)
-  const refRight = useRef(null)
   return (
     <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">
       <div className="relative flex justify-between h-16 items-center">
@@ -111,9 +106,9 @@ export default function Header() {
             }
           >
             <MenuItem>
-            <Link to="/blog" aria-label="AllPosts">
-              All Blog Posts
-            </Link>
+              <Link to="/blog" aria-label="AllPosts">
+                All Blog Posts
+              </Link>
             </MenuItem>
             <MenuDivider />
             <SubMenu label="God Works">
@@ -127,13 +122,13 @@ export default function Header() {
             </SubMenu>
             <MenuDivider />
             <SubMenu label="Programming">
-            {programmingNavigation.map(item => (
-              <MenuItem>
-                <Link aria-label={item.name} key={item.name} to={item.href}>
-                  {item.name}
-                </Link>
-              </MenuItem>
-            ))}
+              {programmingNavigation.map(item => (
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
+                </MenuItem>
+              ))}
             </SubMenu>
             <MenuDivider />
             <SubMenu label="Common Sense">
@@ -156,10 +151,13 @@ export default function Header() {
               ))}
             </SubMenu>
             <MenuDivider />
-            <MenuItem>           
+            <MenuItem>
               <a href="https://bibwoe.com/posts/enoch-preface" aria-label="Enoch">
-                 <span className='flex items-center'>Book Of Enoch <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500" /></span>
-              </a>              
+                <span className="flex items-center">
+                  Book Of Enoch{' '}
+                  <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500" />
+                </span>
+              </a>
             </MenuItem>
           </SubMenu>
           <MenuItem>
