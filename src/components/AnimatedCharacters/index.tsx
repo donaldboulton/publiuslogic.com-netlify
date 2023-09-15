@@ -11,7 +11,6 @@ const tagMap = {
   heading2: 'h2',
 }
 
-
 const AnimatedCharacters = props => {
   const item = {
     hidden: {

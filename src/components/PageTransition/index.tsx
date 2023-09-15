@@ -1,3 +1,4 @@
+/* https://maxschmitt.me/posts/nextjs-page-transitions-framer-motion */
 import * as React from 'react'
 import { forwardRef, useMemo } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'

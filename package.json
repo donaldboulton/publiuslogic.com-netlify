@@ -42,6 +42,7 @@
     "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/supabase-js": "^2.33.1",
     "@svgr/webpack": "^8.1.0",
+    "@szhsin/react-menu": "^4.0.3",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-netlify-form": "^2.1.2",
     "algoliasearch": "^4.19.1",

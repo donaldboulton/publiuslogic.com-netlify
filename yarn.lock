@@ -2765,6 +2765,14 @@
     legacy-swc-helpers "npm:@swc/helpers@=0.4.14"
     tslib "^2.4.0"
 
+"@szhsin/react-menu@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-4.0.3.tgz#c7adc0ec4a7019dafccb56bbda5609fddfcfc9a1"
+  integrity sha512-TPsOKLEkesE79802evnLt2Mbv/+zwRJdX8776/vxK5ST9SK8SO0A8kRrus6JuxijLxZxFpmY/3VMdoyeCWQHKA==
+  dependencies:
+    prop-types "^15.7.2"
+    react-transition-state "^2.1.0"
+
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-4.0.6.tgz#b4a914bb62e7c272d4e5989fe4440f812ab1d807"
@@ -12837,6 +12845,11 @@ react-toastify@^9.1.3:
   integrity sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg==
   dependencies:
     clsx "^1.1.1"
+
+react-transition-state@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-2.1.1.tgz#1601a6177926b647041b7d598bf124321ab8d25b"
+  integrity sha512-kQx5g1FVu9knoz1T1WkapjUgFz08qQ/g1OmuWGi3/AoEFfS0kStxrPlZx81urjCXdz2d+1DqLpU6TyLW/Ro04Q==
 
 react-tsparticles@^2.10.1:
   version "2.12.2"

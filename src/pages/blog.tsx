@@ -51,7 +51,7 @@ export function Head(props: HeadProps) {
         pathname="/blog"
       >
         <title>Blog Page</title>
-        <meta name="description" content="PubliusLogic Home Page." />
+        <meta name="description" content="PubliusLogic blog Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       </Seo>
       <script type="application/ld+json">

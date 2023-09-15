@@ -20,9 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Stars />
       <Header />
       <div className="mx-auto text-slate-900 dark:text-slate-200">
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <ScrollDown
           className="scroll right-4 top-20 z-20 md:right-3"
           size={40}

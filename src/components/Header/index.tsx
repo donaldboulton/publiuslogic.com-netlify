@@ -1,275 +1,211 @@
 import * as React from 'react'
+import { useRef } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
-import {
-  MagnifyingGlassIcon,
-  Bars3Icon,
-  XMarkIcon,
-  UserGroupIcon,
-  PhotoIcon,
-  MapIcon,
-  HomeIcon,
-} from '@heroicons/react/24/outline'
 import ThemeToggle from '@/components/ThemeToggle'
-import Control from '@/components/icons/control'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
-import loadable from '@loadable/component'
+import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider } from '@szhsin/react-menu'
+import '@szhsin/react-menu/dist/index.css'
+import '@szhsin/react-menu/dist/theme-dark.css'
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  HomeIcon,
+  DeviceTabletIcon,
+  UserIcon,
+  TableCellsIcon,
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/react/24/outline'
 
-const HeaderPopover = loadable(() => import('@/components/HeaderPopover'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const godNavigation = [  
+  { name: 'Creation', href: '/blog/creation-of-all', current: false },
+  { name: 'Commandments', href: '/blog/commandments/', current: false },
+  { name: 'Jew Who', href: 'blog/jew-who/', current: false },
+  { name: 'Immorality', href: '/blog/immorality-abortion/', current: false },
+  { name: 'more More MORE', href: '/blog/more-more-more', current: false },
+  { name: 'Playtime', href: '/blog/playtime/', current: false },
+  { name: 'Virtue', href: '/blog/virtue', current: false },
+  { name: 'The Day The I', href: '/blog/the-day-the-i/', current: false },
+  { name: 'Trinity of Man', href: '/blog/trinity-of-man/', current: false },
+  { name: 'Works of Flesh', href: '/blog/works-of-flesh/', current: false },
+]
 
-const navigation = [
-  { name: 'About', href: '/blog/about', current: false },
-  { name: 'Blog', href: '/blog', current: false },
+const logicNavigation = [  
+    { name: 'Homeless', href: '/blog/homeless', current: false },
+    { name: 'Earth Magnetism', href: '/blog/earths-magnetic-flux/', current: false },
+    { name: 'EMF EMP', href: '/blog/emf-emp/', current: false },
+    { name: 'Shrumers Man', href: '/blog/psychedelic-mushrooms/', current: false },
+    { name: 'Sleeper Agent', href: '/blog/sleeper-agent/', current: false },
+    { name: 'War Machine', href: '/blog/war-machine/', current: false },
+]
+
+const angieNavigation = [  
+    { name: 'Gallery', href: '/gallery', current: false },
+    { name: 'Old Enough', href: '/old-enough', current: false },
+    { name: 'Angelina', href: '/blog/angelina-jordan', current: false },
+    { name: 'Trinity', href: '/blog/trinity-of-angels', current: false },
+]
+
+const programmingNavigation = [
+  { name: 'Applause', href: '/blog//applause-use-sound-confetti/', current: false },    
+  { name: 'Sectionize', href: '/blog/animated-sections/', current: false },    
+  { name: 'Gatsby V5', href: '/blog/creation-of-all', current: false },
+  { name: 'Cookies Gdpr', href: '/blog/cookies/', current: false },
+  { name: 'Netlify Forms', href: '/blog/react-netlify-forms/', current: false },
+  { name: 'Hook Forms', href: '/blog/react-hook-form/', current: false },
+  { name: 'Immorality', href: '/blog/immorality-abortion/', current: false },
+  { name: 'Trinity of Man', href: '/blog/trinity-of-man/', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navigation() {
+export default function Header() {
+  const [isDark, setDark] = React.useState(true)
+  const refLeft = useRef(null)
+  const refRight = useRef(null)
   return (
-    <>
-      <Disclosure as="nav" className="sticky top-0 z-40 bg-gradient-to-r from-gray-900 via-transparent to-gray-900">
-        {({ open }) => (
-          <>
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-              <div className="relative flex h-16 items-center justify-between">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  {/* Mobile menu button*/}
-                  <Disclosure.Button className="focus:ring-purple inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-inset">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
-                    ) : (
-                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" aria-label="Menu Icon" />
-                    )}
-                  </Disclosure.Button>
-                </div>
-                <div className="flex flex-1 items-center justify-center text-lg sm:items-stretch sm:justify-start">
-                  <div className="flex flex-shrink-0 items-center">
-                    <Link to="/" aria-label="Home link">
-                      <div className="block md:hidden">
-                        <HomeIcon
-                          className="block h-8 w-8 pr-2 text-sky-500 hover:text-sky-400/20"
-                          aria-label="Home Link"
-                        />
-                      </div>
-                    </Link>
-                    <Link to="/" aria-label="Home Link">
-                      <div className="flex items-center md:block">
-                        <span className="text-2xl text-gray-400">PubliusLogic</span>
-                      </div>
-                    </Link>
-                  </div>
-                  <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex space-x-4">
-                      <>
-                        {navigation.map(item => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            aria-label={item.name}
-                            activeClassName="active"
-                            className={classNames(
-                              item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-slate-300',
-                              'rounded-md px-3 py-2 text-lg font-medium'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                        <HeaderPopover />
-                      </>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <div className="p-1">
-                    <span className="sr-only">Search</span>
-                    <Link to="/search" aria-label="Search Page Link">
-                      <span className="flex flex-shrink-0 items-center pr-1 text-lg">
-                        <MagnifyingGlassIcon
-                          className="h-7 w-8 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
-                          aria-hidden="true"
-                          aria-label="Search Button"
-                        />
-                      </span>
-                    </Link>
-                  </div>
-                  <div className="p-1">
-                    <span className="sr-only">Dark Light Modes</span>
-                    <ThemeToggle panelClassName="mt-8" aria-hidden="true" aria-label="Theme Button" />
-                  </div>
-
-                  {/* Profile dropdown */}
-                  <Menu as="div" className="relative ml-1">
-                    <div>
-                      <Menu.Button className="flex rounded-full text-sm focus:outline-none">
-                        <span className="sr-only">Open Control Menu</span>
-                        <Control
-                          className="text-slate-900 text-opacity-75 hover:text-slate-700 dark:text-slate-200"
-                          aria-hidden="true"
-                          aria-label="DarkMode"
-                        />
-                        <span className="sr-only">Open Control Menu</span>
-                        <ChevronDownIcon
-                          className={`${open ? 'rotate-180 transform text-slate-200' : 'text-opacity-75'}
-                          -mr-1 mt-1 h-5 text-gray-300 transition duration-150 ease-in-out hover:text-slate-300 group-hover:text-opacity-75`}
-                          aria-hidden="true"
-                        />
-                      </Menu.Button>
-                    </div>
-                    <Transition
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="ring-black absolute right-0 mt-3 w-48 origin-top-right rounded-md bg-slate-900 py-1 text-slate-200 opacity-75 shadow-lg ring-1 ring-opacity-5 hover:opacity-100 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              aria-label="Old Enough"
-                              to="/old-enough"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <StaticImage
-                                  layout="fixed"
-                                  className="block h-8 w-8 pr-2"
-                                  src="../../../static/img/angelina-jordan-icon.png"
-                                  width={32}
-                                  height={32}
-                                  quality={95}
-                                  alt="Angelina Jordan"
-                                  loading="lazy"
-                                />
-                                <span className="pl-1">Old Enough</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/profile"
-                              aria-label="Profile Button"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <UserGroupIcon className="block h-8 w-8 pr-2 text-purple-500" aria-hidden="true" />
-                                <span>Profile</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              aria-label="Gallery"
-                              to="/gallery"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <PhotoIcon
-                                  aria-label="Gallery"
-                                  className="block h-8 w-9 pr-2 text-wine-300"
-                                  aria-hidden="true"
-                                />
-                                <span>Gallery</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              aria-label="Sitemap"
-                              target="_blank"
-                              to="https://publiuslogic.com/sitemap.xml"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block items-center justify-center rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <MapIcon className="text-green-600 block h-9 w-9 pr-2" aria-hidden="true" />
-                                <span>Sitemap</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              aria-label="Login"
-                              to="/login"
-                              className={classNames(
-                                active ? 'bg-slate-700' : '',
-                                'ml-2 mr-2 block rounded-md px-3 py-2 text-lg font-medium hover:bg-slate-600/30 hover:text-slate-300'
-                              )}
-                            >
-                              <span className="flex flex-shrink-0 items-center pr-2 text-lg">
-                                <UserGroupIcon
-                                  aria-label="Login"
-                                  className="block h-8 w-9 pr-2 text-wine-300"
-                                  aria-hidden="true"
-                                />
-                                <span>Login</span>
-                              </span>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
-                </div>
-              </div>
-            </div>
-
-            <Disclosure.Panel className="lg:hidden">
-              <div className="space-y-1 px-2 pb-3 pt-2">
-                {navigation.map(item => (
-                  <Link
-                    aria-label={item.name}
-                    key={item.name}
-                    to={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-200 text-slate-200'
-                        : 'text-slate-200 hover:bg-slate-600/30 hover:text-slate-200',
-                      'block rounded-md px-3 py-2 text-base font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
+    <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">
+      <div className="relative flex justify-between h-16 items-center">
+        <Menu
+          className="ml-7"
+          arrow
+          ref={refLeft}
+          menuButton={
+            <MenuButton>
+              <Bars3Icon className="h-8 w-8 text-slate-300 ml-6" aria-hidden="true" aria-label="Open Menu" />
+            </MenuButton>
+          }
+          theming={isDark ? 'dark' : undefined}
+        >
+          <MenuItem>
+            <HomeIcon
+              className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
+              aria-label="Home Link"
+              role="presentation"
+            />{' '}
+            <Link to="/" aria-label="Home">
+              Home
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <UserIcon
+              className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
+              aria-label="About"
+              role="presentation"
+            />{' '}
+            <Link to="/about" aria-label="Home">
+              About
+            </Link>
+          </MenuItem>
+          <SubMenu
+            label={
+              <>
+                <TableCellsIcon
+                  className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
+                  aria-label="About"
+                  role="presentation"
+                />{' '}
+                Blog
+              </>
+            }
+          >
+            <MenuItem>
+            <Link to="/blog" aria-label="AllPosts">
+              All Blog Posts
+            </Link>
+            </MenuItem>
+            <MenuDivider />
+            <SubMenu label="God Works">
+              {godNavigation.map(item => (
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
                     {item.name}
                   </Link>
-                ))}
-              </div>
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-    </>
+                </MenuItem>
+              ))}
+            </SubMenu>
+            <MenuDivider />
+            <SubMenu label="Programming">
+            {programmingNavigation.map(item => (
+              <MenuItem>
+                <Link aria-label={item.name} key={item.name} to={item.href}>
+                  {item.name}
+                </Link>
+              </MenuItem>
+            ))}
+            </SubMenu>
+            <MenuDivider />
+            <SubMenu label="Common Sense">
+              {logicNavigation.map(item => (
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
+                </MenuItem>
+              ))}
+            </SubMenu>
+            <MenuDivider />
+            <SubMenu label="My Angels">
+              {angieNavigation.map(item => (
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
+                </MenuItem>
+              ))}
+            </SubMenu>
+            <MenuDivider />
+            <MenuItem>           
+              <a href="https://bibwoe.com/posts/enoch-preface" aria-label="Enoch">
+                 <span className='flex items-center'>Book Of Enoch <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500" /></span>
+              </a>              
+            </MenuItem>
+          </SubMenu>
+          <MenuItem>
+            <DeviceTabletIcon
+              className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
+              aria-label="Contact"
+              role="presentation"
+            />{' '}
+            <Link to="/contact" aria-label="Contact">
+              Contact
+            </Link>
+          </MenuItem>
+          <MenuDivider />
+          <MenuItem>
+            <MagnifyingGlassIcon
+              className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
+              aria-hidden="true"
+              aria-label="Search Button"
+              role="presentation"
+            />{' '}
+            <Link to="/search" aria-label="Contact">
+              Search
+            </Link>
+          </MenuItem>
+        </Menu>
+        <div className="flex items-center">
+          <Link to="/" aria-label="Home Link">
+            <div className="flex items-center ">
+              <span>
+                <StaticImage
+                  className="h-8 w-8"
+                  formats={['auto', 'webp']}
+                  src="../../../static/img/apple-touch-icon-32x32.png"
+                  quality={95}
+                  alt="Home Logo"
+                  area-label="Home Logo"
+                  loading="eager"
+                />
+              </span>
+            </div>
+          </Link>
+        </div>
+        <div className="mr-7">
+          <ThemeToggle panelClassName="mt-8" aria-hidden="true" aria-label="Theme Button" />
+        </div>
+      </div>
+    </div>
   )
 }
