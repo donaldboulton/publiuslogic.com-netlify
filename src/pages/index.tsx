@@ -13,7 +13,6 @@ import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
 const Table = loadable(() => import('@/components/Table'))

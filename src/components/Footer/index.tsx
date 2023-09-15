@@ -2,16 +2,9 @@ import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import ColumnGridTwo from '@/components/ColumnGridTwo'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const Subscriptions = loadable(() => import('@/components/Subscriptions'), {
-  fallback: (
-    <div>
-      <ThreeDotsWave />
-    </div>
-  ),
-})
+const Subscriptions = loadable(() => import('@/components/Subscriptions'))
 
 export default function Footer() {
   return (

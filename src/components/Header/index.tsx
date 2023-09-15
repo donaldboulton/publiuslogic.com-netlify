@@ -31,6 +31,7 @@ const godNavigation = [
 
 const logicNavigation = [
   { name: 'Bullshit', href: '/blog/bullshit/', current: false },
+  { name: 'Government', href: '/blog/government', current: false },
   { name: 'Homeless', href: '/blog/homeless/', current: false },
   { name: 'Earth Magnetism', href: '/blog/earths-magnetic-flux/', current: false },
   { name: 'EMF EMP', href: '/blog/emf-emp/', current: false },
@@ -48,19 +49,21 @@ const angieNavigation = [
 ]
 
 const programmingNavigation = [
-  { name: 'Applause', href: '/blog//applause-use-sound-confetti/', current: false },
-  { name: 'Sectionize', href: '/blog/animated-sections/', current: false },
-  { name: 'Gatsby V5', href: '/blog/gatsby-version-five/', current: false },
+  { name: 'Applause', href: '/blog/applause-use-sound-confetti/', current: false },
   { name: 'Cookies Gdpr', href: '/blog/cookies/', current: false },
+  { name: 'Gatsby V5', href: '/blog/gatsby-version-five/', current: false },
+  { name: 'JsonLD MDX', href: '/blog/json-ld-mdx/', current: false },
   { name: 'Netlify Forms', href: '/blog/react-netlify-forms/', current: false },
   { name: 'Hook Forms', href: '/blog/react-hook-form/', current: false },
+  { name: 'Party Town', href: '/blog/gatsby-party-town/', current: false },
+  { name: 'Sectionize', href: '/blog/animated-sections/', current: false },
 ]
 
 export default function Header() {
   const [isDark, setDark] = React.useState(true)
   const refLeft = useRef(null)
   return (
-    <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">
+    <header className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">
       <div className="relative flex justify-between h-16 items-center">
         <Menu
           className="ml-7"
@@ -89,7 +92,7 @@ export default function Header() {
               aria-label="About"
               role="presentation"
             />{' '}
-            <Link to="/about" aria-label="Home">
+            <Link to="/blog/about" aria-label="Home">
               About
             </Link>
           </MenuItem>
@@ -204,6 +207,6 @@ export default function Header() {
           <ThemeToggle panelClassName="mt-8" aria-hidden="true" aria-label="Theme Button" />
         </div>
       </div>
-    </div>
+    </header>
   )
 }

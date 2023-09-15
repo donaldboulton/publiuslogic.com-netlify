@@ -5,9 +5,10 @@ import { CookieConsent } from 'react-cookie-consent'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
 import ScrollIndicator from '@/components/ScrollIndicator'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
+
+const Header = loadable(() => import('@/components/Header'))
 
 interface LayoutProps {
   children: ReactNode
@@ -64,7 +65,7 @@ const Layout = ({ children }: LayoutProps) => {
             marginLeft: '20px',
           }}
         >
-          <div className="sm:text-center">
+          <div className="sm:text-center flex">
             <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
               By continuing, you agree to PubliusLogic{' '}
               <Link className="hover:text-scale-1100 underline" to="/blog/terms">
