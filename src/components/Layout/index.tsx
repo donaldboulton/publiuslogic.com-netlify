@@ -5,10 +5,12 @@ import { CookieConsent } from 'react-cookie-consent'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
 import ScrollIndicator from '@/components/ScrollIndicator'
-import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
+import loadable from '@loadable/component'
 
 const Header = loadable(() => import('@/components/Header'))
+
+const Footer = loadable(() => import('@/components/Footer'))
 
 interface LayoutProps {
   children: ReactNode

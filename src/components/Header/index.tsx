@@ -37,6 +37,7 @@ const logicNavigation = [
   { name: 'EMF EMP', href: '/blog/emf-emp/', current: false },
   { name: 'Shrumers Man', href: '/blog/psychedelic-mushrooms/', current: false },
   { name: 'Sleeper Agent', href: '/blog/sleeper-agent/', current: false },
+  { name: 'USA Elections', href: '/blog/usa-election/', current: false },
   { name: 'Vaccination', href: '/blog/vaccination/', current: false },
   { name: 'War Machine', href: '/blog/war-machine/', current: false },
 ]
