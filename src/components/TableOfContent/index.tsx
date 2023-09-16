@@ -69,9 +69,9 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
       <Popover as="div">
         {({ open }) => (
           <>
-            <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200">
+            <Popover.Button className="bg-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-950 dark:text-slate-300">
               <span className="headings-center inline-flex">
-                <TableCellsIcon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-200" />
+                <TableCellsIcon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-300" />
               </span>
             </Popover.Button>
             <Popover.Overlay className={`${open ? 'fixed inset-0 opacity-30' : 'opacity-0'} bg-black`} />
@@ -89,7 +89,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                   <div className="mt-2 text-center underline decoration-wine-200 decoration-wavy underline-offset-2">
                     Table Of Contents
                   </div>
-                  <div className="text-center text-xl text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-2 dark:text-slate-200"></div>
+                  <div className="text-center text-xl text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-2 dark:text-slate-300"></div>
                   <WavyHr className="mb-1 mt-1" />
                   <nav className="nav-scroll h-96 w-auto overflow-y-auto overflow-x-hidden">
                     <ul className="flex flex-col">

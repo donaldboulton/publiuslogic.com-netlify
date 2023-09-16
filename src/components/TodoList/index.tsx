@@ -24,7 +24,7 @@ export default function TodoList({ session }: { session: Session }) {
   }, [supabase])
 
   const addTodo = async (taskText: string) => {
-    let task = taskText.trim()
+    const task = taskText.trim()
     if (task.length) {
       const { data: todo, error } = await supabase.from('todos').insert({ task, user_id: user.id }).select().single()
 

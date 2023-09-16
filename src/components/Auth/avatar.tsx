@@ -48,7 +48,7 @@ export default function Avatar({
       const fileName = `${uid}.${fileExt}`
       const filePath = `${fileName}`
 
-      let { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file, { upsert: true })
+      const { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file, { upsert: true })
 
       if (uploadError) {
         throw uploadError

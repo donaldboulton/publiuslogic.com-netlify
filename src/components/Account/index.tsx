@@ -17,9 +17,9 @@ export default function Account({ session }) {
       setLoading(true)
       const { user } = session
 
-      let { data, error } = await supabase
+      const { data, error } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select('username, website, avatar_url')
         .eq('id', user.id)
         .single()
 
@@ -51,7 +51,7 @@ export default function Account({ session }) {
       updated_at: new Date(),
     }
 
-    let { error } = await supabase.from('profiles').upsert(updates)
+    const { error } = await supabase.from('profiles').upsert(updates)
 
     if (error) {
       alert(error.message)

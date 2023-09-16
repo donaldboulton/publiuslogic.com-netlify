@@ -1,10 +1,11 @@
-/* https://maxschmitt.me/posts/nextjs-page-transitions-framer-motion */
 import * as React from 'react'
 import { forwardRef, useMemo } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 
 type PageTransitionProps = HTMLMotionProps<'div'>
 type PageTransitionRef = React.ForwardedRef<HTMLDivElement>
+
+/* https://maxschmitt.me/posts/nextjs-page-transitions-framer-motion */
 
 function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTransitionRef) {
   const onTheRight = { x: '100%' }

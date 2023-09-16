@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
   }),
   headers: [
     {
-      source: `/contact`,
+      source: '/contact',
       headers: [
         {
           key: 'Link',
@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
   ],
   headers: [
     {
-      source: `*`,
+      source: '*',
       headers: [
         {
           key: 'Referrer-Policy',
@@ -138,7 +138,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
           quality: 80,
@@ -271,16 +271,16 @@ const config: GatsbyConfig = {
         icon: 'static/img/android-chrome-512x512.png',
         icons: [
           {
-            src: `static/img/maskable_icon_x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-            purpose: `any maskable`,
+            src: 'static/img/maskable_icon_x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
           {
-            src: `static/img/maskable_icon_x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-            purpose: `any maskable`,
+            src: 'static/img/maskable_icon_x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },
@@ -297,10 +297,10 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
-        jsxPragma: `jsx`,
+        jsxPragma: 'jsx',
         allExtensions: true,
       },
     },
