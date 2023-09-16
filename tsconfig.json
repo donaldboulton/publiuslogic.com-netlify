@@ -2,22 +2,29 @@
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "public", ".cache"],
   "compilerOptions": {
+    "plugins": [
+      {
+        "transform": "typescript-loadable-components-plugin"
+      }
+    ],
     "target": "esnext",
     "module": "esnext",
     "lib": ["dom", "esnext"],
-    /* "allowJs": true, */
+    "allowJs": true,
     /* "checkJs": true, */
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "strict": true,
+    "sourceMap": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "outDir": "./build",
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]

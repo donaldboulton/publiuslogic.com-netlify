@@ -296,6 +296,14 @@ const config: GatsbyConfig = {
         skipIndexing: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: `jsx`,
+        allExtensions: true,
+      },
+    },
     'gatsby-plugin-mdx-embed',
     'gatsby-plugin-netlify',
     {
