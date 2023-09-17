@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider } from '@szhsin/react-menu'
+import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider, MenuHeader } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
 import {
@@ -113,7 +113,8 @@ export default function Header() {
               All Blog Posts
             </MenuItem>
             <MenuDivider />
-            <SubMenu label="God Works">
+            <MenuHeader>God</MenuHeader>
+            <SubMenu label="Bibwoe / Bible">
               {godNavigation.map(item => (
                 <MenuItem aria-label={item.name} key={item.name} href={item.href}>
                   {item.name}
@@ -121,6 +122,7 @@ export default function Header() {
               ))}
             </SubMenu>
             <MenuDivider />
+            <MenuHeader>Internet</MenuHeader>
             <SubMenu label="Programming">
               {programmingNavigation.map(item => (
                 <MenuItem aria-label={item.name} key={item.name} href={item.href}>
@@ -129,6 +131,7 @@ export default function Header() {
               ))}
             </SubMenu>
             <MenuDivider />
+            <MenuHeader>Logic</MenuHeader>
             <SubMenu label="Common Sense">
               {logicNavigation.map(item => (
                 <MenuItem aria-label={item.name} key={item.name} href={item.href}>
@@ -137,7 +140,8 @@ export default function Header() {
               ))}
             </SubMenu>
             <MenuDivider />
-            <SubMenu label="My Angels">
+            <MenuHeader>Trinity</MenuHeader>
+            <SubMenu label="Of Angels">
               {angieNavigation.map(item => (
                 <MenuItem aria-label={item.name} key={item.name} href={item.href}>
                   {item.name}
@@ -145,6 +149,7 @@ export default function Header() {
               ))}
             </SubMenu>
             <MenuDivider />
+            <MenuHeader>Gods Truths</MenuHeader>
             <MenuItem href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
               <span className="flex items-center">
                  Book Of Enoch{' '}

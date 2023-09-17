@@ -153,7 +153,6 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.3",
-    "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
     "typescript-loadable-components-plugin": "^1.0.3"
   },
