@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import ThemeToggle from '@/components/ThemeToggle'
 import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
@@ -15,6 +14,9 @@ import {
   TableCellsIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline'
+import loadable from '@loadable/component'
+
+const ThemeToggle = loadable(() => import('@/components/ThemeToggle'))
 
 const godNavigation = [
   { name: 'Creation', href: '/blog/creation-of-all', current: false },
@@ -62,20 +64,22 @@ const programmingNavigation = [
 
 export default function Header() {
   const [isDark, setDark] = useState(true)
-  const refLeft = useRef(null)
+  const ref = useRef(null)
+  const [target, setTarget] = useState(null)
   return (
     <header className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">
       <div className="relative flex justify-between h-16 items-center">
         <Menu
           className="ml-7"
           arrow
-          ref={refLeft}
+          ref={ref}
           menuButton={
             <MenuButton>
               <Bars3Icon className="h-8 w-8 text-slate-300 ml-6" aria-hidden="true" aria-label="Open Menu" />
             </MenuButton>
           }
           theming={isDark ? 'dark' : undefined}
+          portal={{ target }}
         >
           <MenuItem>
             <HomeIcon
@@ -156,10 +160,10 @@ export default function Header() {
             </SubMenu>
             <MenuDivider />
             <MenuItem>
-              <a href="https://bibwoe.com/posts/enoch-preface" aria-label="Enoch">
+              <a href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
                 <span className="flex items-center">
                   Book Of Enoch{' '}
-                  <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500" />
+                  <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600" />
                 </span>
               </a>
             </MenuItem>

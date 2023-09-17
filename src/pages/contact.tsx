@@ -267,14 +267,14 @@ function Contact(ref: ContactRef) {
                         <StaticImage
                           className="self-center rounded-lg w-[325px] h-[573px]"
                           src="../../static/images/angie/heidis-party.jpg"
-                          width={325}
-                          height={573}
+                          width={350}
+                          height={598}
                           quality={95}
                           alt="Angie Elvira"
                         />
                       </a>
                     </div>
-                    <div className="mb-6 mt-4 flex justify-center">
+                    <div className="mb-6 mt-4 flex ml-12">
                       <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                         <StaticImage
                           className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
@@ -288,7 +288,7 @@ function Contact(ref: ContactRef) {
                       </a>
                     </div>
                   </div>
-                  <ContactForm />
+                    <ContactForm />                
                 </div>
               </div>
               <div className="mb-20">

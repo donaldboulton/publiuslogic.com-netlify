@@ -1,24 +1,25 @@
 import * as React from 'react'
 import { useRef, useState, ReactNode } from 'react'
-import { ControlledMenu, MenuItem, useHover, useMenuState } from '@szhsin/react-menu';
+import { ControlledMenu, useHover, useMenuState } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
 
-interface HoverMenuWithTransitionProps {
+interface ToolTipMenuProps {
   title: string
   children: ReactNode
 }
 
-export default function HoverMenuWithTransition({ title, children }: HoverMenuWithTransitionProps) {
+export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps) {
   const [isDark, setDark] = useState(true)
-  const ref = useRef(null)
-  const [target, setTarget] = useState(null)
+  const boundingBoxRef = useRef(null)
+  const anchorRef = useRef(null);
   const [menuState, toggle] = useMenuState({ transition: true })
+  const [target, setTarget] = useState(null)
   const { anchorProps, hoverProps } = useHover(menuState.state, toggle)
 
-
   const tooltipProps = {
+    state,
     captureFocus: false,
     arrow: true,
     role: 'tooltip',
@@ -33,16 +34,20 @@ export default function HoverMenuWithTransition({ title, children }: HoverMenuWi
       <span className="text-slate-400 items-center" ref={ref} {...anchorProps} portal={{ target }}>
         {title}
       </span>
-      <ControlledMenu
-        {...tooltipProps}
-        {...hoverProps}
-        {...menuState}
-        anchorRef={ref}
-        onClose={() => toggle(false)}
-        theming={isDark ? 'dark' : undefined}
-      >
-        <MenuItem className="text-slate-300 px-2 py-1 mx-3 items-center">{children}</MenuItem>
-      </ControlledMenu>
+      <div ref={boundingBoxRef} className="overflow-auto relative">
+        <ControlledMenu
+          {...tooltipProps}
+          {...hoverProps}
+          {...menuState}
+          align="center"
+          direction="top"
+          onClose={() => toggle(false)}          
+          anchorRef={anchorRef} 
+          theming={isDark ? 'dark' : undefined}
+        >
+          {children}
+        </ControlledMenu>
+      </div>
     </>
   );
 };
