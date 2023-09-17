@@ -60,7 +60,7 @@ const Table = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-slate-500 border-slate-700 bg-slate-900 dark:bg-slate-900">
+                  <tr className="border-b border-slate-700 bg-slate-900 dark:bg-slate-900">
                     <th
                       scope="row"
                       className="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-slate-200"

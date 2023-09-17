@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Fragment, ReactNode, useRef, useState, FC } from 'react'
+import { Fragment, ReactNode, useRef, useState } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Dialog, Transition } from '@headlessui/react'
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
@@ -11,10 +11,8 @@ export interface ModalProps {
   children: ReactNode
 }
 
-export const Modal: FC<ModalProps> = props => {
-  const { dialogTitle, dialogContent, children, ...rest } = props
+export default function Modal({ dialogTitle, dialogContent, children, ...rest }: ModalProps) {
   const [isOpen, setIsOpen] = useState(true)
-
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   function closeModal() {
     setIsOpen(false)
@@ -133,5 +131,3 @@ export const Modal: FC<ModalProps> = props => {
     </>
   )
 }
-
-export default Modal

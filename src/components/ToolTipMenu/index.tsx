@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useRef, useState, ReactNode } from 'react'
-import { ControlledMenu, useHover, useMenuState } from '@szhsin/react-menu';
+import { ControlledMenu, useHover, useMenuState } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
@@ -11,10 +11,12 @@ interface ToolTipMenuProps {
 }
 
 export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps) {
+  /* @typescript-eslint/no-unused-vars */
   const [isDark, setDark] = useState(true)
   const boundingBoxRef = useRef(null)
-  const anchorRef = useRef(null);
+  const anchorRef = useRef(null)
   const [menuState, toggle] = useMenuState({ transition: true })
+  /* @typescript-eslint/no-unused-vars */
   const [target, setTarget] = useState(null)
   const { anchorProps, hoverProps } = useHover(menuState.state, toggle)
 
@@ -26,9 +28,9 @@ export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps
     align: 'center',
     viewScroll: 'auto',
     position: 'anchor',
-    boundingBoxPadding: '1 8 1 1'
+    boundingBoxPadding: '1 8 1 1',
   }
-  
+
   return (
     <>
       <span className="text-slate-400 items-center" ref={ref} {...anchorProps} portal={{ target }}>
@@ -41,13 +43,13 @@ export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps
           {...menuState}
           align="center"
           direction="top"
-          onClose={() => toggle(false)}          
-          anchorRef={anchorRef} 
+          onClose={() => toggle(false)}
+          anchorRef={anchorRef}
           theming={isDark ? 'dark' : undefined}
         >
           {children}
         </ControlledMenu>
       </div>
     </>
-  );
-};
+  )
+}

@@ -5,6 +5,7 @@ import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import useConfigureLeaflet from '@/hooks/useConfigureLeaflet'
 
 const isBrowser = typeof window !== 'undefined'
+/* @typescript-eslint/no-unused-vars */
 let leaflet
 if (isBrowser) {
   leaflet = require('leaflet')

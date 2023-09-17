@@ -1,7 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import { ReactNode, FC } from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
 
@@ -21,12 +19,12 @@ const resolver: Resolver<FormValues> = async values => {
     values: values.firstName ? values : {},
     errors: !values.firstName
       ? {
-          firstName: {
-            type: 'required',
-            message: 'This is required.',
-          },
-        }
-      : {},
+        firstName: {
+          type: 'required',
+          message: 'This is required.',
+        },
+      }
+    : {},
   }
 }
 
@@ -34,11 +32,9 @@ interface ContactFormProps {
   name: string
   action?: string | undefined
   honeypotName?: string | undefined
-  children: ReactNode
 }
 
-const ContactForm: FC<ContactFormProps> = props => {
-  const { name, action, honeypotName, recaptcha, children } = props
+export default function ContactForm({ name, action, honeypotName, recaptcha }: ContactFormProps) {
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
   const {
     register,
@@ -49,6 +45,7 @@ const ContactForm: FC<ContactFormProps> = props => {
   const netlify = useNetlifyForm({
     name: 'contact',
     action: '/thanks',
+    /* @typescript-eslint/no-unused-vars */
     onSuccess: (response, context) => {
       console.log('Successfully sent form data to Netlify Server')
     },
@@ -368,7 +365,12 @@ const ContactForm: FC<ContactFormProps> = props => {
                     rel="noopener noreferrer"
                     aria-describedby="Netlify"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" className="inline-flex text-[#008080]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40px"
+                      height="40px"
+                      className="inline-flex text-[#008080]"
+                    >
                       <defs>
                         <radialGradient
                           id="a"
@@ -419,5 +421,3 @@ const ContactForm: FC<ContactFormProps> = props => {
     </div>
   )
 }
-
-export default ContactForm

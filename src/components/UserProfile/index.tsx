@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 
 interface UserProfileProps {
   children: ReactNode
@@ -10,8 +10,7 @@ interface UserProfileProps {
   titleLink: string
 }
 
-const UserProfile: FC<UserProfileProps> = props => {
-  const { children, link, buttonLink, description, title, titleLink } = props
+export default function UserProfile({ children, link, buttonLink, description, title, titleLink }: UserProfileProps) {
   return (
     <>
       <div className="left-0 mx-1 w-80 flex-none flex-nowrap">
@@ -41,5 +40,3 @@ const UserProfile: FC<UserProfileProps> = props => {
     </>
   )
 }
-
-export default UserProfile

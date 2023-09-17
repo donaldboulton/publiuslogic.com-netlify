@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import { AdvancedVideo, lazyload } from '@cloudinary/react'
 import { videoCodec } from '@cloudinary/url-gen/actions/transcode'
 import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'
@@ -16,8 +16,7 @@ const cld = new Cloudinary({
   },
 })
 
-const VideoChildren: FC<VideoChildrenProps> = props => {
-  const { video } = props
+export default function VideoChildren({ children, video }: VideoChildrenProps) {
   const sources = [
     {
       type: 'mp4',
@@ -50,5 +49,3 @@ const VideoChildren: FC<VideoChildrenProps> = props => {
     </>
   )
 }
-
-export default VideoChildren

@@ -61,6 +61,7 @@ const components = {
   Section: Section,
   HoverMenuWithTransition: HoverMenuWithTransition,
   Left: Left,
+  Love: Love,
   LeftText: LeftText,
   ColumnGridTwo: ColumnGridTwo,
   ColumnGridThree: ColumnGridThree,

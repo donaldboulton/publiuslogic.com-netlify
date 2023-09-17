@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { FC } from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
+
+interface SubscriptionsProps {
+  email: string
+}
 
 type FormValues = {
   email: string
@@ -12,16 +15,16 @@ const resolver: Resolver<FormValues> = async values => {
     values: values.email ? values : {},
     errors: !values.email
     ? {
-       email: {
-        type: 'required',
-        message: 'This is required.',
-      },
-    }
+     email: {
+      type: 'required',
+       message: 'This is required.',
+    },
+  }
   : {},
   }
 }
 
-const Subscriptions: FC<SubscriptionsFormProps> = props => {
+export default function Subscriptions({ email }: SubscriptionsProps) {
   const {
     register,
     handleSubmit,
@@ -105,5 +108,3 @@ const Subscriptions: FC<SubscriptionsFormProps> = props => {
     </>
   )
 }
-
-export default Subscriptions

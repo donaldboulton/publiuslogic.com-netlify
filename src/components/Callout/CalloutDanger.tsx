@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import * as CSS from 'csstype'
-import Alert from '@/components/icons/alert'
+import { BellAlertIcon } from '@heroicons/react/24/outline'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 
@@ -40,9 +40,7 @@ const calloutDanger: CSS.Properties = {
   boxShadow: '6px 5px 5px #dc2626',
 }
 
-const CalloutDanger: FC<CalloutDangerProps> = props => {
-  const { children, ...rest } = props
-
+export default function CalloutDanger({ children, ...rest }: CalloutDangerProps) {
   const [ref7, isVisible7] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
@@ -70,12 +68,10 @@ const CalloutDanger: FC<CalloutDangerProps> = props => {
         {...rest}
       >
         <aside style={callOutDangerWrapper}>
-          <Alert className="h-6 w-6 text-red-600" />
+          <BellAlertIcon className="h-6 w-6 text-red-600" />
         </aside>
         {children}
       </m.div>
     </LazyMotion>
   )
 }
-
-export default CalloutDanger

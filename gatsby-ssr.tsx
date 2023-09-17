@@ -9,7 +9,7 @@ export function wrapPageElement({ element }) {
   }
   return (
     <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
-        {element}
+      {element}
     </AnimatePresence>
   )
 }

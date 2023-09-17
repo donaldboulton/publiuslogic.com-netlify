@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import * as CSS from 'csstype'
 
 interface ListItemProps {
@@ -36,8 +36,7 @@ const listItem: CSS.Properties = {
   },
 }
 
-const ListItem: FC<ListItemProps> = props => {
-  const { children, ...rest } = props
+export default function ListItem({ children, ...rest }: ListItemProps) {
   return (
     <>
       <div>
@@ -50,7 +49,6 @@ const ListItem: FC<ListItemProps> = props => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="currentColor"
-                {...props}
               >
                 <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path
@@ -70,5 +68,3 @@ const ListItem: FC<ListItemProps> = props => {
 }
 
 ListItem.displayName = 'ListItem'
-
-export default ListItem

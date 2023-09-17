@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useInView } from 'react-intersection-observer'
@@ -12,8 +12,7 @@ interface SingleAccordionProps {
   label: string
 }
 
-const SingleAccordion: FC<SingleAccordionProps> = props => {
-  const { children, label } = props
+export default function SingleAccordion({ children, label }: SingleAccordionProps) {
   const singleAccordionContainer = {
     enter: {
       transition: {
@@ -70,4 +69,3 @@ const SingleAccordion: FC<SingleAccordionProps> = props => {
   )
 }
 
-export default SingleAccordion

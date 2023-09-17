@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import * as CSS from 'csstype'
 import Info from '@/components/icons/info'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
+import { InformationCircleIcon } from '@heroicons/react/24/solid'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -41,9 +42,7 @@ const callout: CSS.Properties = {
   opacity: '0.6',
 }
 
-const Callout: FC<CalloutProps> = props => {
-  const { children, ...rest } = props
-
+export default function Callout({ children, ...rest }: CalloutProps) {
   const [ref6, isVisible6] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
@@ -70,12 +69,10 @@ const Callout: FC<CalloutProps> = props => {
         {...rest}
       >
         <aside style={callOutWrapper}>
-          <Info className="h-6 w-6" />
+          <InformationCircleIcon className="h-6 w-6" />
         </aside>
         {children}
       </m.div>
     </LazyMotion>
   )
 }
-
-export default Callout

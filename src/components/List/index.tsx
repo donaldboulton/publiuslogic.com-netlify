@@ -15,9 +15,8 @@ const listStyle: CSS.Properties = {
   listStyleImage: 'none',
   listStyle: 'none',
 }
-const List = (props: ListProps) => {
-  const { children, ...rest } = props
 
+export default function List({ children, ...rest }: ListProps) {
   return (
     <div style={listStyle} {...rest}>
       {children}
@@ -26,5 +25,3 @@ const List = (props: ListProps) => {
 }
 
 List.Item = ListItem
-
-export default List

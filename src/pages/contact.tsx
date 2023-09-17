@@ -29,7 +29,7 @@ function Contact(ref: ContactRef) {
     <>
       <Layout>
         <PageTransition ref={ref}>
-          <div className="left-beams">
+          <div className="left-beams overflow-x-hidden">
             <PageHero
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
@@ -37,7 +37,7 @@ function Contact(ref: ContactRef) {
             />
             <div className="form-beams">
               <Map />
-              <div className="mt-10 p-8 text-slate-900 dark:text-slate-200 sm:mt-0">
+              <div className="mt-10 p-8 overflow-x-hidden mb-10 text-slate-900 dark:text-slate-200 sm:mt-0">
                 <div className="lg:grid lg:grid-cols-3 lg:gap-6">
                   <div className="lg:col-span-1">
                     <div className="px-4 sm:px-0">
@@ -288,7 +288,7 @@ function Contact(ref: ContactRef) {
                       </a>
                     </div>
                   </div>
-                    <ContactForm />                
+                  <ContactForm />
                 </div>
               </div>
               <div className="mb-20">

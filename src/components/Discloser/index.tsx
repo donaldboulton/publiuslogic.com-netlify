@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/24/solid'
 
-interface DiscloserModuleProps {
+interface DiscloserProps {
   children: ReactNode
   title: string
   title1: string
@@ -11,8 +11,7 @@ interface DiscloserModuleProps {
   body1: string
 }
 
-const DiscloserModule: FC<DiscloserModuleProps> = props => {
-  const { body, body1, title, title1 } = props
+export default function Discloser({ body, body1, title, title1 }: DiscloserProps) {
   return (
     <div className="w-full px-4 pt-16">
       <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
@@ -65,5 +64,3 @@ DiscloserPanel.Title = props => <div className="title">{props.children}</div>
 DiscloserPanel.Body = props => <div className="body">{props.children}</div>
 DiscloserPanel.Title1 = props => <div className="title1">{props.children}</div>
 DiscloserPanel.Body1 = props => <div className="body1">{props.children}</div>
-
-export default DiscloserModule

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FC, useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import Lightbox from 'react-18-image-lightbox'
 
@@ -20,26 +20,21 @@ interface GalleryProps {
   imgClass?: string
   lightboxOptions?: object
   onClose?: () => void
-  customWrapper?: FC
+  customWrapper?: Fragment
 }
 
-const Gallery: FC<GalleryProps> = ({
+export default function Gallery({
   images = [],
   imgClass = '',
   lightboxOptions = {},
   onClose = {},
   customWrapper = ImageColWrapper,
-}) => {
+}: GalleryProps) {
   const [index, setIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
-
   const prevIndex = (index + images.length - 1) % images.length
   const nextIndex = (index + images.length + 1) % images.length
   const ImgColWrapper = customWrapper
-
-  {
-    /* URLs for full width images*/
-  }
   const mainSrc = images[index]?.full?.images?.fallback?.src
   const nextSrc = images[nextIndex]?.full?.images?.fallback?.src
   const prevSrc = images[prevIndex]?.full?.images?.fallback?.src
@@ -86,5 +81,3 @@ const Gallery: FC<GalleryProps> = ({
     </Fragment>
   )
 }
-
-export default Gallery
