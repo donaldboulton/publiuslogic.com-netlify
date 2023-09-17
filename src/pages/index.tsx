@@ -19,7 +19,6 @@ const Table = loadable(() => import('@/components/Table'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-type HomeProps = {}
 type HomeRef = React.ForwardedRef<HTMLDivElement>
 
 const ogimage = {

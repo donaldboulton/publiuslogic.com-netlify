@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-import plugin from 'tailwindcss/plugin'
-import colors from 'tailwindcss/colors'
 import typography from '@tailwindcss/typography'
 import forms from '@tailwindcss/forms'
 import aspectRatio from '@tailwindcss/aspect-ratio'

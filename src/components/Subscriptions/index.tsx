@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, FC } from 'react'
+import { FC } from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
 
@@ -11,35 +11,26 @@ const resolver: Resolver<FormValues> = async values => {
   return {
     values: values.email ? values : {},
     errors: !values.email
-      ? {
-          email: {
-            type: 'required',
-            message: 'This is required.',
-          },
-        }
-      : {},
+    ? {
+       email: {
+        type: 'required',
+        message: 'This is required.',
+      },
+    }
+  : {},
   }
 }
 
-interface SubscriptionsProps {
-  email: string
-  action?: string | undefined
-  honeypotName?: string | undefined
-  children: ReactNode
-}
-
 const Subscriptions: FC<SubscriptionsFormProps> = props => {
-  const { email, action, honeypotName, children } = props
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<FormValues>({ resolver })
   const netlify = useNetlifyForm({
     name: 'subscriptions',
     action: '/thanks',
-    onSuccess: (response, context) => {
+    onSuccess: () => {
       console.log('Successfully sent form data to Netlify Server')
     },
   })

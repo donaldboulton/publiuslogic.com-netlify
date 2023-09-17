@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { graphql, Link, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -71,7 +71,7 @@ interface PageProps {
 type BlogPostRef = React.ForwardedRef<HTMLDivElement>
 
 function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
-  const { frontmatter, timeToRead, id } = data.mdx
+  const { frontmatter, timeToRead } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>

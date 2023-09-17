@@ -2,20 +2,15 @@ import * as React from 'react'
 import { useRef, forwardRef } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import type { HeadProps } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import PageTransition from '@/components/PageTransition'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import LeftText from '@/components/LeftText'
-import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
-import HeaderPopover from '@/components/HeaderPopover'
 import IframeWrapper from '@/components/IframeWrapper'
-import IframeWrapperLarge from '@/components/IframeWrapperLarge'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
+const IframeWrapperLarge = loadable(() => import('@/components/IframeWrapperLarge'))
 
 const ogimage = {
   src: OGImage,
@@ -23,10 +18,9 @@ const ogimage = {
   height: 450,
 }
 
-type OldEnoughProps = {}
 type OldEnoughRef = React.ForwardedRef<HTMLDivElement>
 
-function OldEnough(props: OldEnoughProps, ref: OldEnoughRef) {
+function OldEnough(ref: OldEnoughRef) {
   const refSmall = useRef(null)
   const refPlayer = useRef(null)
   return (

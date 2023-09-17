@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { forwardRef, useMemo } from 'react'
+import { forwardRef } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 
 type PageTransitionProps = HTMLMotionProps<'div'>

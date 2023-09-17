@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FC } from 'react'
 import { LazyMotion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedCharacters'
 
@@ -9,7 +9,7 @@ interface IndexHeroProps {
   image?: string
 }
 
-const IndexHero = ({ image }: IndexHeroProps) => {
+const IndexHero: FC<IndexHeroProps> = props => {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [

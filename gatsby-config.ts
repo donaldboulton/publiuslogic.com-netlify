@@ -310,8 +310,11 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
+          /* @typescript-eslint/no-var-requires */
           require('tailwindcss')(tailwindConfig),
+          /* @typescript-eslint/no-var-requires */
           require('autoprefixer'),
+          /* @typescript-eslint/no-var-requires */
           ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
         ],
       },

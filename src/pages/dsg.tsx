@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -18,10 +18,9 @@ const ogimage = {
   height: 450,
 }
 
-type DsgProps = {}
 type DsgRef = React.ForwardedRef<HTMLDivElement>
 
-function Dsg(props: DsgProps, ref: DsgRef) {
+function Dsg(ref: DsgRef) {
   return (
     <>
       <Layout>

@@ -4,14 +4,11 @@
 /* Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped */
 
 import * as React from 'react'
-import Recaptcha, { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 export interface NetlifyFormState {
   loading: boolean
   error: boolean
   success: boolean
-  recaptchaError?: boolean | undefined
-  recaptcha?: React.ReactElement | undefined
 }
 
 export interface NetlifyFormProps {

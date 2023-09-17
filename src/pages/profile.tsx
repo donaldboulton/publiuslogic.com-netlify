@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { forwardRef } from 'react'
-import { Link } from 'gatsby'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -10,7 +9,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
-import Center from '@/components/Center'
 import loadable from '@loadable/component'
 
 const PageHero = loadable(() => import('@/components/PageHero'))
@@ -21,10 +19,9 @@ const ogimage = {
   height: 450,
 }
 
-type ProfileProps = {}
 type ProfileRef = React.ForwardedRef<HTMLDivElement>
 
-function Profile(props: ProfileProps, ref: ProfileRef) {
+function Profile(ref: ProfileRef) {
   const spacer200 = {
     src: Spacer200,
     width: 1400,

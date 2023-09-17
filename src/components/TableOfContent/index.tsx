@@ -51,16 +51,6 @@ function useActiveId(headingIds) {
   return activeId
 }
 
-const virtualReference = {
-  getBoundingClientRect() {
-    return {
-      top: 10,
-      bottom: 20,
-      left: 0,
-      height: 50,
-    }
-  },
-}
 const TableOfContent = ({ headings }: TableOfContentProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)

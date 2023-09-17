@@ -25,15 +25,12 @@ import SingleAccordion from './src/components/SingleAccordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
-import Popper from './src/components/Popper'
-import UserProfile from './src/components/UserProfile'
+import HoverMenuWithTransition from './src/components/HoverMenuWithTransition'
 import Left from './src/components/Left'
 import LeftText from './src/components/LeftText'
 import ColumnGridTwo from './src/components/ColumnGridTwo'
 import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
-import Confetti from './src/components/Confetti'
-import TodoList from './src/components/TodoList'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -61,16 +58,12 @@ const components = {
   Table: Table,
   Modal: Modal,
   Section: Section,
-  Popper: Popper,
-  UserProfile: UserProfile,
+  HoverMenuWithTransition: HoverMenuWithTransition,
   Left: Left,
   LeftText: LeftText,
   ColumnGridTwo: ColumnGridTwo,
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
-  Confetti: Confetti,
-  TodoList: TodoList,
-  Love: Love,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {

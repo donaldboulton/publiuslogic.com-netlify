@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ThemeToggle from '@/components/ThemeToggle'
@@ -61,7 +61,7 @@ const programmingNavigation = [
 ]
 
 export default function Header() {
-  const [isDark, setDark] = React.useState(true)
+  const [isDark, setDark] = useState(true)
   const refLeft = useRef(null)
   return (
     <header className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">

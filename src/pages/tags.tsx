@@ -104,10 +104,9 @@ const ogimage = {
   height: 450,
 }
 
-type TagsProps = {}
 type TagsRef = React.ForwardedRef<HTMLDivElement>
 
-function Tags(props: TagsProps, ref: TagsRef) {
+function Tags(ref: TagsRef) {
   const tags = GetTags()
 
   return (

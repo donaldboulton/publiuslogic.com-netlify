@@ -22,10 +22,9 @@ const ogimage = {
   height: 450,
 }
 
-type ContactProps = {}
 type ContactRef = React.ForwardedRef<HTMLDivElement>
 
-function Contact(props: ContactProps, ref: ContactRef) {
+function Contact(ref: ContactRef) {
   return (
     <>
       <Layout>

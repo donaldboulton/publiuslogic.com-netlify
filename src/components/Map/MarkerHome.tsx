@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import { useMap, Marker, Tooltip, Popup } from 'react-leaflet'
+import { Marker, Tooltip, Popup } from 'react-leaflet'
 
-export default function MarkerHome(props) {
-  const map = useMap()
+export default function MarkerHome() {
   const markerRefHome = useRef(null)
 
   return (

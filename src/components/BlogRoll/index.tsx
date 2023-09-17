@@ -2,10 +2,12 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'gatsby'
 import ReactPaginate from 'react-paginate'
-import { LazyMotion, m, useInView } from 'framer-motion'
+import { LazyMotion, m } from 'framer-motion'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 import GetPosts from '@/utils/getposts'
-import Tags from '@/components/Tags'
+import loadable from '@loadable/component'
+
+const Tags = loadable(() => import('@/components/Tags'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -23,7 +25,7 @@ interface BlogRollProps {
 
 const POSTS_PER_PAGE = 12
 
-const BlogRoll = ({ tag, excerpt }: BlogRollProps) => {
+const BlogRoll = ({ tag }: BlogRollProps) => {
   const posts = GetPosts(tag)
   const [offset, setOffset] = useState(0)
 

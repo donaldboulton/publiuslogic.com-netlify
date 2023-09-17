@@ -61,55 +61,6 @@ export interface Database {
       Todos: {
         [_ in never]: never
       }
-      views: {
-        Row: {
-          count: number | null
-          created_at: string | null
-          id: number
-          slug: string
-        }
-        Insert: {
-          count?: number | null
-          created_at?: string | null
-          id?: number
-          slug?: string
-        }
-        Update: {
-          count?: number | null
-          created_at?: string | null
-          id?: number
-          slug?: string
-        }
-      }
-      Views: {
-        [_ in never]: never
-      }
-      loves: {
-        Row: {
-          count: number | null
-          created_at: string | null
-          id: number
-          slug: string
-          user_id: string | null
-        }
-        Insert: {
-          count?: number | null
-          created_at?: string | null
-          id?: number
-          slug?: string
-          user_id: string | null
-        }
-        Update: {
-          count?: number | null
-          created_at?: string | null
-          id?: number
-          slug?: string
-          user_id: string | null
-        }
-      }
-    }
-    Loves: {
-      [_ in never]: never
     }
     Functions: {
       delete_avatar: {
@@ -141,12 +92,4 @@ export interface Database {
       [_ in never]: never
     }
   }
-}
-
-interface Views {
-  count: number
-}
-
-interface Loves {
-  count: number
 }

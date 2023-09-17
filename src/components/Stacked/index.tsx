@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import clsx from 'clsx'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Menu, Transition } from '@headlessui/react'
 import { MusicalNoteIcon } from '@heroicons/react/24/outline'
 
 const Stacked = () => {

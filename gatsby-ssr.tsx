@@ -2,19 +2,15 @@ import * as React from 'react'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import { Partytown } from '@builder.io/partytown/react'
-import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
   const onExitComplete = () => {
     window.scrollTo({ top: 0 })
   }
   return (
-    <SessionContextProvider supabaseClient={supabase}>
-      <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
+    <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
         {element}
-      </AnimatePresence>
-    </SessionContextProvider>
+    </AnimatePresence>
   )
 }
 export const wrapRootElement = wrap
