@@ -10,11 +10,8 @@ import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
-import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
-
-const components = { Link }
 
 type DataProps = {
   data: {
@@ -111,8 +108,7 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                     </div>
                   </div>
                 </div>
-                <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
-                <GiscusComments mapping={pathname} />
+                <MDXRenderer>{data.mdx.body}</MDXRenderer>
                 <WavyHr />
               </section>
             </div>

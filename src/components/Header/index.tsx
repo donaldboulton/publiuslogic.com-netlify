@@ -81,25 +81,21 @@ export default function Header() {
           theming={isDark ? 'dark' : undefined}
           portal={{ target }}
         >
-          <MenuItem>
+          <MenuItem href="/" aria-label="Home">
             <HomeIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="Home Link"
               role="presentation"
             />{' '}
-            <Link to="/" aria-label="Home">
-              Home
-            </Link>
+            Home
           </MenuItem>
-          <MenuItem>
+          <MenuItem href="/blog/about" aria-label="Home">
             <UserIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="About"
               role="presentation"
             />{' '}
-            <Link to="/blog/about" aria-label="Home">
-              About
-            </Link>
+            About
           </MenuItem>
           <SubMenu
             label={
@@ -113,86 +109,70 @@ export default function Header() {
               </>
             }
           >
-            <MenuItem>
-              <Link to="/blog" aria-label="AllPosts">
-                All Blog Posts
-              </Link>
+            <MenuItem href="/blog" aria-label="AllPosts">
+              All Blog Posts
             </MenuItem>
             <MenuDivider />
             <SubMenu label="God Works">
               {godNavigation.map(item => (
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
+                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
+                  {item.name}
                 </MenuItem>
               ))}
             </SubMenu>
             <MenuDivider />
             <SubMenu label="Programming">
               {programmingNavigation.map(item => (
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
+                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
+                  {item.name}
                 </MenuItem>
               ))}
             </SubMenu>
             <MenuDivider />
             <SubMenu label="Common Sense">
               {logicNavigation.map(item => (
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
+                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
+                  {item.name}
                 </MenuItem>
               ))}
             </SubMenu>
             <MenuDivider />
             <SubMenu label="My Angels">
               {angieNavigation.map(item => (
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
+                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
+                  {item.name}
                 </MenuItem>
               ))}
             </SubMenu>
             <MenuDivider />
-            <MenuItem>
-              <a href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
-                <span className="flex items-center">
-                  Book Of Enoch{' '}
-                  <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600" />
-                </span>
-              </a>
+            <MenuItem href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
+              <span className="flex items-center">
+                 Book Of Enoch{' '}
+                <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600" />
+              </span>
             </MenuItem>
           </SubMenu>
-          <MenuItem>
+          <MenuItem href="/contact" aria-label="Contact">
             <DeviceTabletIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="Contact"
               role="presentation"
             />{' '}
-            <Link to="/contact" aria-label="Contact">
               Contact
-            </Link>
           </MenuItem>
           <MenuDivider />
-          <MenuItem>
+          <MenuItem href="/search" aria-label="Contact">
             <MagnifyingGlassIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-hidden="true"
               aria-label="Search Button"
               role="presentation"
             />{' '}
-            <Link to="/search" aria-label="Contact">
               Search
-            </Link>
           </MenuItem>
         </Menu>
         <div className="flex items-center">
-          <Link to="/" aria-label="Home Link">
+          <Link href="/" aria-label="Home Link">
             <div className="flex items-center ">
               <span>
                 <StaticImage
