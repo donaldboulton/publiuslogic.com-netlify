@@ -81,21 +81,25 @@ export default function Header() {
           theming={isDark ? 'dark' : undefined}
           portal={{ target }}
         >
-          <MenuItem href="/" aria-label="Home">
+          <MenuItem>
             <HomeIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="Home Link"
               role="presentation"
             />{' '}
-            Home
+            <Link to="/" aria-label="Home">
+              Home
+            </Link>
           </MenuItem>
-          <MenuItem href="/blog/about" aria-label="Home">
+          <MenuItem>
             <UserIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="About"
               role="presentation"
             />{' '}
-            About
+            <Link to="/blog/about" aria-label="Home">
+              About
+            </Link>
           </MenuItem>
           <SubMenu
             label={
@@ -104,20 +108,24 @@ export default function Header() {
                   className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
                   aria-label="About"
                   role="presentation"
-                />{' '}
+                />
                 Blog
               </>
             }
           >
-            <MenuItem href="/blog" aria-label="AllPosts">
-              All Blog Posts
+            <MenuItem>
+              <Link to="/blog" aria-label="AllPosts">
+                All Blog Posts
+              </Link>
             </MenuItem>
             <MenuDivider />
             <MenuHeader>God</MenuHeader>
-            <SubMenu label="Bibwoe / Bible">
+            <SubMenu label="Bible / Bibwoe">
               {godNavigation.map(item => (
-                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
-                  {item.name}
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
                 </MenuItem>
               ))}
             </SubMenu>
@@ -125,8 +133,10 @@ export default function Header() {
             <MenuHeader>Internet</MenuHeader>
             <SubMenu label="Programming">
               {programmingNavigation.map(item => (
-                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
-                  {item.name}
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
                 </MenuItem>
               ))}
             </SubMenu>
@@ -134,8 +144,10 @@ export default function Header() {
             <MenuHeader>Logic</MenuHeader>
             <SubMenu label="Common Sense">
               {logicNavigation.map(item => (
-                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
-                  {item.name}
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
                 </MenuItem>
               ))}
             </SubMenu>
@@ -143,41 +155,48 @@ export default function Header() {
             <MenuHeader>Trinity</MenuHeader>
             <SubMenu label="Of Angels">
               {angieNavigation.map(item => (
-                <MenuItem aria-label={item.name} key={item.name} href={item.href}>
-                  {item.name}
+                <MenuItem>
+                  <Link aria-label={item.name} key={item.name} to={item.href}>
+                    {item.name}
+                  </Link>
                 </MenuItem>
               ))}
             </SubMenu>
             <MenuDivider />
-            <MenuHeader>Gods Truths</MenuHeader>
-            <MenuItem href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
-              <span className="flex items-center">
-                 Book Of Enoch{' '}
-                <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600" />
-              </span>
+            <MenuItem>
+              <a href="https://bibwoe.com/posts/enoch-preface" target="_blank" aria-label="Enoch">
+                <span className="flex items-center">
+                  Book Of Enoch{' '}
+                  <ArrowTopRightOnSquareIcon className="h-7 w-8 pl-2 text-blue-500 text-opacity-75 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600" />
+                </span>
+              </a>
             </MenuItem>
           </SubMenu>
-          <MenuItem href="/contact" aria-label="Contact">
+          <MenuItem>
             <DeviceTabletIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-label="Contact"
               role="presentation"
             />{' '}
+            <Link to="/contact" aria-label="Contact">
               Contact
+            </Link>
           </MenuItem>
           <MenuDivider />
-          <MenuItem href="/search" aria-label="Contact">
+          <MenuItem>
             <MagnifyingGlassIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
               aria-hidden="true"
               aria-label="Search Button"
               role="presentation"
             />{' '}
+            <Link to="/search" aria-label="Contact">
               Search
+            </Link>
           </MenuItem>
         </Menu>
         <div className="flex items-center">
-          <Link href="/" aria-label="Home Link">
+          <Link to="/" aria-label="Home Link">
             <div className="flex items-center ">
               <span>
                 <StaticImage
