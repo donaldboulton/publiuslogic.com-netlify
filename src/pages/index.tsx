@@ -27,7 +27,7 @@ const ogimage = {
   height: 531,
 }
 
-function Home(props: HomeProps, ref: HomeRef) {
+function Home(ref: HomeRef) {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [

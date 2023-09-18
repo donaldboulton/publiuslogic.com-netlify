@@ -9,6 +9,7 @@ import Seo from '@/components/Seo'
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 import loadable from '@loadable/component'
+import Stacked from '@/components/Stacked'
 
 const PageHero = loadable(() => import('@/components/PageHero'))
 
@@ -18,9 +19,9 @@ const ogimage = {
   height: 450,
 }
 
-type ThanksRef = React.ForwardedRef<HTMLDivElement>
+type ThankYouRef = React.ForwardedRef<HTMLDivElement>
 
-function Thanks(props: ThanksProps, ref: ThanksRef) {
+function ThankYou(ref: ThankYouRef) {
   return (
     <>
       <Layout>
@@ -59,6 +60,7 @@ function Thanks(props: ThanksProps, ref: ThanksRef) {
                     />
                   </a>
                 </div>
+                <Stacked />
                 <div className="mb-20">
                   <hr className="text-wine-600 w-full mx-auto" />
                 </div>
@@ -71,13 +73,13 @@ function Thanks(props: ThanksProps, ref: ThanksRef) {
   )
 }
 
-export default forwardRef(Thanks)
+export default forwardRef(ThankYou)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Thanks" description="Thank You for your submission" image={ogimage} pathname="/thanks">
+      <Seo type="page" title="Thank You" description="Thank You for your submission" image={ogimage} pathname="/thank-you">
         <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -122,7 +124,7 @@ export function Head(props: HeadProps) {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Thank You',
-          url: 'https://publiuslogic.com/thanks',
+          url: 'https://publiuslogic.com/thank-you',
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
@@ -153,7 +155,7 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/thanks',
+                '@id': 'https://publiuslogic.com/thank-you',
                 name: 'Thanks',
               },
               position: '2',

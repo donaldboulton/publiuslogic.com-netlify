@@ -20,7 +20,7 @@ import loadable from '@loadable/component'
 const godNavigation = [
   { name: 'Creation', href: '/blog/creation-of-all', current: false },
   { name: 'Commandments', href: '/blog/commandments', current: false },
-  { name: 'Jew Who', href: 'blog/jew-who', current: false },
+  { name: 'Jew Who', href: '/blog/jew-who', current: false },
   { name: 'Immorality', href: '/blog/immorality-abortion', current: false },
   { name: 'more More MORE', href: '/blog/more-more-more', current: false },
   { name: 'Playtime', href: '/blog/playtime', current: false },

@@ -2,10 +2,6 @@ import * as React from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot } from 'react-netlify-forms'
 import { useForm, Resolver } from 'react-hook-form'
 
-interface SubscriptionsProps {
-  email: string
-}
-
 type FormValues = {
   email: string
 }
@@ -24,7 +20,7 @@ const resolver: Resolver<FormValues> = async values => {
   }
 }
 
-export default function Subscriptions({ errors }: SubscriptionsProps) {
+export default function Subscriptions() {
   const {
     register,
     handleSubmit,

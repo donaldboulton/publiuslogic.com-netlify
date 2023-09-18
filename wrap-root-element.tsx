@@ -68,7 +68,7 @@ const components = {
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
   UserProfile: UserProfile,
-  Stacked: Stacked
+  Stacked: Stacked,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {
