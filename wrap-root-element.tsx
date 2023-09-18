@@ -32,6 +32,7 @@ import ColumnGridTwo from './src/components/ColumnGridTwo'
 import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
 import UserProfile from './src/components/UserProfile'
+import Stacked from './src/components/Stacked'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -67,6 +68,7 @@ const components = {
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
   UserProfile: UserProfile,
+  Stacked: Stacked
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {

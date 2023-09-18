@@ -16,8 +16,6 @@ export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps
   const boundingBoxRef = useRef(null)
   const anchorRef = useRef(null)
   const [menuState, toggle] = useMenuState({ transition: true })
-  /* @typescript-eslint/no-unused-vars */
-  const [target, setTarget] = useState(null)
   const { anchorProps, hoverProps } = useHover(menuState.state, toggle)
 
   const tooltipProps = {

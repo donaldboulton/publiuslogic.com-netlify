@@ -15,16 +15,16 @@ const resolver: Resolver<FormValues> = async values => {
     values: values.email ? values : {},
     errors: !values.email
     ? {
-     email: {
-      type: 'required',
-       message: 'This is required.',
-    },
-  }
-  : {},
+      email: {
+        type: 'required',
+        message: 'This is required.',
+        },
+      }
+    : {},
   }
 }
 
-export default function Subscriptions({ email }: SubscriptionsProps) {
+export default function Subscriptions({ errors }: SubscriptionsProps) {
   const {
     register,
     handleSubmit,

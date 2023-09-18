@@ -18,12 +18,12 @@ const resolver: Resolver<FormValues> = async values => {
   return {
     values: values.firstName ? values : {},
     errors: !values.firstName
-      ? {
-        firstName: {
-          type: 'required',
-          message: 'This is required.',
-        },
-      }
+    ? {
+      firstName: {
+        type: 'required',
+        message: 'This is required.',
+      },
+    }
     : {},
   }
 }

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import ThemeToggle from '@/components/ThemeToggle'
 import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider, MenuHeader } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
@@ -15,8 +16,6 @@ import {
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline'
 import loadable from '@loadable/component'
-
-const ThemeToggle = loadable(() => import('@/components/ThemeToggle'))
 
 const godNavigation = [
   { name: 'Creation', href: '/blog/creation-of-all', current: false },

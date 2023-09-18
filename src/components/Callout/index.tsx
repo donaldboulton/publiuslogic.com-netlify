@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
 import * as CSS from 'csstype'
-import Info from '@/components/icons/info'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'

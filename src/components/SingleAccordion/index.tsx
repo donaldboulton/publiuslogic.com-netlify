@@ -68,4 +68,3 @@ export default function SingleAccordion({ children, label }: SingleAccordionProp
     </LazyMotion>
   )
 }
-

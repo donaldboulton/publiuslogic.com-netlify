@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
-import { graphql, Link, PageProps } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -10,7 +10,6 @@ import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
-import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
 
 type DataProps = {
