@@ -7,7 +7,7 @@ import Seo from '@/components/Seo'
 import PageTransition from '@/components/PageTransition'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
-import { LazyMotion, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
@@ -16,8 +16,6 @@ import Updates from '@/components/Updates'
 import loadable from '@loadable/component'
 
 const Table = loadable(() => import('@/components/Table'))
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 type HomeRef = React.ForwardedRef<HTMLDivElement>
 
@@ -62,7 +60,6 @@ function Home(ref: HomeRef) {
                   area-label="Home Picture"
                   loading="eager"
                 />
-                <LazyMotion features={loadFeatures}>
                   <motion.div
                     className="absolute left-3 text-2xl top-16 z-30 p-4 font-sacramento"
                     initial="hidden"
@@ -75,7 +72,6 @@ function Home(ref: HomeRef) {
                       })}
                     </div>
                   </motion.div>
-                </LazyMotion>
               </div>
               <div
                 className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden transition-all duration-200"

@@ -18,34 +18,28 @@ const resolver: Resolver<FormValues> = async values => {
   return {
     values: values.firstName ? values : {},
     errors: !values.firstName
-    ? {
-      firstName: {
-        type: 'required',
-        message: 'This is required.',
-      },
-    }
-    : {},
+      ? {
+        firstName: {
+          type: 'required',
+          message: 'This is required.',
+          },
+      }
+      : {},
   }
 }
 
-interface ContactFormProps {
-  name: string
-  action?: string | undefined
-  honeypotName?: string | undefined
-}
-
-export default function ContactForm({ name, action, honeypotName, recaptcha }: ContactFormProps) {
+export default function ContactForm() {
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
   const {
     register,
     handleSubmit,
-    reset,
+
     formState: { errors },
   } = useForm<FormValues>({ resolver })
   const netlify = useNetlifyForm({
     name: 'contact',
     action: '/thanks',
-    /* @typescript-eslint/no-unused-vars */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     onSuccess: (response, context) => {
       console.log('Successfully sent form data to Netlify Server')
     },

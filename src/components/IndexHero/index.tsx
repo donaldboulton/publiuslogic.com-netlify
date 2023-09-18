@@ -5,11 +5,7 @@ import AnimatedText from '@/components/AnimatedCharacters'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-interface IndexHeroProps {
-  image?: string
-}
-
-export default function IndexHero({ image }: IndexHeroProps) {
+export default function IndexHero() {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [

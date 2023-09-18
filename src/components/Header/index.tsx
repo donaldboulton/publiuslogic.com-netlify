@@ -15,7 +15,6 @@ import {
   TableCellsIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline'
-import loadable from '@loadable/component'
 
 const godNavigation = [
   { name: 'Creation', href: '/blog/creation-of-all', current: false },
@@ -62,8 +61,10 @@ const programmingNavigation = [
 ]
 
 export default function Header() {
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [isDark, setDark] = useState(true)
   const ref = useRef(null)
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [target, setTarget] = useState(null)
   return (
     <header className="sticky top-0 z-40 bg-gradient-to-r from-slate-950 via-transparent to-slate-950">

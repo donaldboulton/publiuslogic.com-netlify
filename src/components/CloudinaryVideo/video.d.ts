@@ -17,13 +17,13 @@ declare module '@cloudinary/react' {
     getChildContext() {}
 
     render() {}
-    /* @typescript-eslint/no-unused-vars */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     getChildTransformations(children) {}
 
     getTransformations() {}
-    /* @typescript-eslint/no-unused-vars */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     normalizeOptions(...options) {}
-    /* @typescript-eslint/no-unused-vars */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     getURL(extendedProps) {}
   }
 

@@ -68,7 +68,6 @@ type BlogPostRef = React.ForwardedRef<HTMLDivElement>
 
 function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   const { frontmatter, timeToRead } = data.mdx
-  const pathname = '/' + data.mdx.slug
   return (
     <>
       <Layout>

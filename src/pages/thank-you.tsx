@@ -79,7 +79,13 @@ export default forwardRef(ThankYou)
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Thank You" description="Thank You for your submission" image={ogimage} pathname="/thank-you">
+      <Seo
+        type="page"
+        title="Thank You"
+        description="Thank You for your submission"
+        image={ogimage}
+        pathname="/thank-you"
+      >
         <title>Thanks</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

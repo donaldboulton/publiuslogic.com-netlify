@@ -11,7 +11,7 @@ interface ToolTipMenuProps {
 }
 
 export default function ToolTipMenu({ title, children, state }: ToolTipMenuProps) {
-  /* @typescript-eslint/no-unused-vars */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [isDark, setDark] = useState(true)
   const boundingBoxRef = useRef(null)
   const anchorRef = useRef(null)

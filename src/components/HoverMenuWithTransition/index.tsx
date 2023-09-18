@@ -11,10 +11,10 @@ interface HoverMenuWithTransitionProps {
 }
 
 export default function HoverMenuWithTransition({ title, children }: HoverMenuWithTransitionProps) {
-  /* @typescript-eslint/no-unused-vars */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [isDark, setDark] = useState(true)
   const ref = useRef(null)
-  /* @typescript-eslint/no-unused-vars */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [target, setTarget] = useState(null)
   const [menuState, toggle] = useMenuState({ transition: true })
   const { anchorProps, hoverProps } = useHover(menuState.state, toggle)

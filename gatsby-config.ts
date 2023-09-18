@@ -95,14 +95,13 @@ const config: GatsbyConfig = {
     },
   ],
   siteMetadata: {
-    title: 'PubliusLogic',
+    siteTitle: 'PubliusLogic',
+    siteTitleAlt: 'To Publius Logic',
+    siteHeadline: 'To Publius Logic',
     twitterUsername: '@donboulton',
-    author: {
-      name: 'Donald Boulton',
-      url: 'https://donboulton.com',
-      summary: 'Who Resides in OKC.',
-    },
-    description:
+    author: 'Donald Boulton',
+    siteLanguage: 'en',
+    siteDescription:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
     siteImage: './static/images/jpg/dbbg.jpg',
