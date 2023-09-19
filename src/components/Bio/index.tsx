@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { useState } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'

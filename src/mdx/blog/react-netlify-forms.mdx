@@ -563,6 +563,8 @@ export default ContactForm = () => (
 ## Form with React dropZone
 
 ```tsx:title=src/components/comments.tsx {5,28-33,140-147}
+"use client"
+
 import * as React from 'react'
 import { useState, useCallback } from 'react'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'

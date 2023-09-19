@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from 'react'
 import { useRef, useState, ReactNode } from 'react'
 import { ControlledMenu, useHover, useMenuState } from '@szhsin/react-menu'

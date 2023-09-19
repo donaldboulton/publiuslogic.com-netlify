@@ -5,7 +5,7 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["dom", "esnext"],
-    "allowJs": true,
+    /* "allowJs": true, */
     /* "checkJs": true, */
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,

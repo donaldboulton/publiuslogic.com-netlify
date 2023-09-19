@@ -24,6 +24,8 @@ For those unfamiliar with “masonry” on the web, the goal is to create a layo
 The new implementation uses only 36 lines of codes and is about as plug-and-play as components get.
 
 ```jsx:title=src/components/masonry.jsx {21-27}
+"use client"
+
 import React, { useEffect, useRef, useState } from 'react'
 import { useEventListener } from 'hooks'
 import { Col, MasonryDiv } from './styles'

@@ -4,11 +4,8 @@ import { AnimatePresence } from 'framer-motion'
 import { Partytown } from '@builder.io/partytown/react'
 
 export function wrapPageElement({ element }) {
-  const onExitComplete = () => {
-    window.scrollTo({ top: 0 })
-  }
   return (
-    <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={false}>
       {element}
     </AnimatePresence>
   )
