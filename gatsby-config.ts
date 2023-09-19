@@ -11,7 +11,7 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 const config: GatsbyConfig = {
   adapter: adapter({
-    excludeDatastoreFromEngineFunction: false,
+    excludeDatastoreFromEngineFunction: true,
   }),
   headers: [
     {

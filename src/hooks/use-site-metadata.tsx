@@ -1,3 +1,5 @@
+"use client"
+
 import { graphql, useStaticQuery } from 'gatsby'
 
 type UseSiteMetadataProps = {

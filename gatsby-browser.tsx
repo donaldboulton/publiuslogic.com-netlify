@@ -4,6 +4,8 @@ import '@fontsource/inter'
 import './src/styles/global.css'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
+import LogRocket from 'logrocket'; 
+LogRocket.init('mcjbg9/publiuslogic');
 
 export function wrapPageElement({ element }) {
   const onExitComplete = () => {

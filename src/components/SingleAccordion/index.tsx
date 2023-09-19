@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from 'react'
 import { ReactNode } from 'react'
 import { Disclosure } from '@headlessui/react'

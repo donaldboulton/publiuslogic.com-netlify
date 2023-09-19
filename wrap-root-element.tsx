@@ -25,7 +25,7 @@ import SingleAccordion from './src/components/SingleAccordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
-import HoverMenuWithTransition from './src/components/HoverMenuWithTransition'
+import HoverMenu from './src/components/HoverMenu'
 import Left from './src/components/Left'
 import LeftText from './src/components/LeftText'
 import ColumnGridTwo from './src/components/ColumnGridTwo'
@@ -60,7 +60,7 @@ const components = {
   Table: Table,
   Modal: Modal,
   Section: Section,
-  HoverMenuWithTransition: HoverMenuWithTransition,
+  HoverMenu: HoverMenu,
   Left: Left,
   Love: Love,
   LeftText: LeftText,

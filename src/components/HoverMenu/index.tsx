@@ -7,12 +7,12 @@ import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
 
-interface HoverMenuWithTransitionProps {
+interface HoverMenuProps {
   title: string
   children: ReactNode
 }
 
-export default function HoverMenuWithTransition({ title, children }: HoverMenuWithTransitionProps) {
+export default function HoverMenu({ title, children }: HoverMenuProps) {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [isDark, setDark] = useState(true)
   const ref = useRef(null)
