@@ -1,5 +1,3 @@
-"use client"
-
 import { graphql, useStaticQuery } from 'gatsby'
 
 export type TagType = {

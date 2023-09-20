@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useState, useRef, useEffect } from 'react'
@@ -229,9 +229,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                 {({ open }) => (
                   <>
                     <ButtonWrapper className="flex place-content-between">
-                      <m.div
-                        key="buttonWrapper"
-                      >
+                      <m.div key="buttonWrapper">
                         <Disclosure.Button ref={openButtonRef} className="ml-3 h-10 w-10" aria-label="Show Code">
                           <m.svg
                             baseProfile="tiny"

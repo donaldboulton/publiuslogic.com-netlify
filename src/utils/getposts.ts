@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { graphql, useStaticQuery } from 'gatsby'
 

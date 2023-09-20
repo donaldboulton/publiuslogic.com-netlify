@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { Fragment, useState } from 'react'
@@ -52,45 +52,45 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
         <div className="space-y-12 lg:space-y-0 flex flex-wrap mb-4">
           {posts.slice(offset, offset + POSTS_PER_PAGE).map(post => (
             <Fragment key={post.slug}>
-            <section className="p-4 md:w-1/2 lg:w-1/3">
-              <m.div key="blogRoleWrapper" className="relative opacity-75" initial="initial" whileHover="hover">
-                <div>
-                  <m.div
-                    key="blogRole"
-                    className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
-                    variants={cardVariants}
-                    transition={{
-                      ease: 'easeOut',
-                      delay: 0.15,
-                      duration: 0.5,
-                    }}
-                  >
-                    <Link to={`/${post.slug}`}>
-                      <p className="sr-only">{post.frontmatter.title}</p>
-                    </Link>
-                    <div className="p-6">
-                      {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
+              <section className="p-4 md:w-1/2 lg:w-1/3">
+                <m.div key="blogRoleWrapper" className="relative opacity-75" initial="initial" whileHover="hover">
+                  <div>
+                    <m.div
+                      key="blogRole"
+                      className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
+                      variants={cardVariants}
+                      transition={{
+                        ease: 'easeOut',
+                        delay: 0.15,
+                        duration: 0.5,
+                      }}
+                    >
                       <Link to={`/${post.slug}`}>
-                        <h2 className="title-font text-xl font-bold text-slate-900 dark:text-slate-300 dark:hover:text-slate-300 mt-2">
-                          {post.frontmatter.title}
-                        </h2>
+                        <p className="sr-only">{post.frontmatter.title}</p>
                       </Link>
-                      <div className="flex items-center flex-wrap ">
-                        <span className="text-slate-900 dark:text-slate-300 mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-wine-300">
-                          <CalendarIcon className="w-4 h-4 mr-1" />
-                          {post.frontmatter.date}
-                        </span>
-                        <span className="text-black dark:text-white inline-flex items-center leading-none text-xs">
-                          <UserCircleIcon className="w-4 h-4 mr-1" />
-                          {post.frontmatter.author}
-                        </span>
+                      <div className="p-6">
+                        {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
+                        <Link to={`/${post.slug}`}>
+                          <h2 className="title-font text-xl font-bold text-slate-900 dark:text-slate-300 dark:hover:text-slate-300 mt-2">
+                            {post.frontmatter.title}
+                          </h2>
+                        </Link>
+                        <div className="flex items-center flex-wrap ">
+                          <span className="text-slate-900 dark:text-slate-300 mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-wine-300">
+                            <CalendarIcon className="w-4 h-4 mr-1" />
+                            {post.frontmatter.date}
+                          </span>
+                          <span className="text-black dark:text-white inline-flex items-center leading-none text-xs">
+                            <UserCircleIcon className="w-4 h-4 mr-1" />
+                            {post.frontmatter.author}
+                          </span>
+                        </div>
+                        <p className="mt-3 italic text-sm text-black dark:text-white">{post.excerpt}</p>
                       </div>
-                      <p className="mt-3 italic text-sm text-black dark:text-white">{post.excerpt}</p>
-                    </div>
-                  </m.div>
-                </div>
-              </m.div>
-            </section>
+                    </m.div>
+                  </div>
+                </m.div>
+              </section>
             </Fragment>
           ))}
         </div>

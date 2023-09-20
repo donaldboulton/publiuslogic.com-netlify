@@ -2,7 +2,7 @@
 /* Project: https://github.com/escaladesports/react-netlify-form#readme */
 /* Definitions by: Zhijiang Li <https://github.com/zhjngli> */
 /* Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped */
-"use client"
+'use client'
 
 import * as React from 'react'
 

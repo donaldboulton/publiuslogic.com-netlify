@@ -63,7 +63,7 @@ export default function CalloutLabel({ children, label, ...rest }: CalloutLabelP
   return (
     <LazyMotion features={loadFeatures}>
       <m.div
-      key="calloutLabel"
+        key="calloutLabel"
         ref={ref8}
         animate={isVisible8 ? 'visible' : 'hidden'}
         variants={variants8}

@@ -22,11 +22,11 @@ const ogimage = {
 type ThankYouRef = React.ForwardedRef<HTMLDivElement>
 
 function ThankYou(ref: ThankYouRef) {
-  const refPage = useRef()
+  const refThankyou = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref} key={refThankyou}>
           <div className="left-beams">
             <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
             <div className="mt-10">

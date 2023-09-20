@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useState, useEffect } from 'react'
@@ -34,7 +34,7 @@ const HEADERS = {
 }
 
 const ApplauseButton = ({ props }) => {
-  const location = useLocation();
+  const location = useLocation()
   const url = location.pathname
   const [count, setCount] = useState(0)
   const [isClapped, setIsClapped] = useState(false)
@@ -47,7 +47,7 @@ const ApplauseButton = ({ props }) => {
       headers: HEADERS,
     })
   }
-  
+
   const updateClaps = async (url, claps = 1) => {
     console.log(claps)
     const query = url ? `?url=${url}` : ''
@@ -77,7 +77,7 @@ const ApplauseButton = ({ props }) => {
     }
     fetchData()
   }, [])
-  const { key } = useIsClient();
+  const { key } = useIsClient()
   return (
     <Wrapper key={key}>
       <span

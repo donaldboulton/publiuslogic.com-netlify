@@ -109,13 +109,12 @@ const ogimage = {
 type TagsRef = React.ForwardedRef<HTMLDivElement>
 
 function Tags(ref: TagsRef) {
-  const refPage = useRef()
   const tags = GetTags()
-
+  const refTags = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref} key={refTags}>
           <div className="left-beams">
             <PageHero
               title="Blog Tags"
@@ -243,7 +242,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

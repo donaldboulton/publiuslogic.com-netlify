@@ -5,7 +5,6 @@ import { CookieConsent } from 'react-cookie-consent'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
 import Footer from '@/components/Footer'
-import loadable from '@loadable/component'
 import Header from '@/components/Header'
 
 interface LayoutProps {

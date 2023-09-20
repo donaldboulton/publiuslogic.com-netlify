@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useState, useRef, ref, forwardRef } from 'react'
@@ -62,19 +62,19 @@ function Home(ref: HomeRef) {
                   area-label="Home Picture"
                   loading="eager"
                 />
-                  <motion.div
-                    key="heading"
-                    className="absolute left-3 text-2xl top-16 z-30 p-4 font-sacramento"
-                    initial="hidden"
-                    animate={replay ? 'visible' : 'hidden'}
-                    variants={headingContainer}
-                  >
-                    <div className="container">
-                      {placeholderText.map((item, index) => {
-                        return <AnimatedCharacters {...item} key={index} />
-                      })}
-                    </div>
-                  </motion.div>
+                <motion.div
+                  key="heading"
+                  className="absolute left-3 text-2xl top-16 z-30 p-4 font-sacramento"
+                  initial="hidden"
+                  animate={replay ? 'visible' : 'hidden'}
+                  variants={headingContainer}
+                >
+                  <div className="container">
+                    {placeholderText.map((item, index) => {
+                      return <AnimatedCharacters {...item} key={index} />
+                    })}
+                  </div>
+                </motion.div>
               </div>
               <div
                 className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden transition-all duration-200"

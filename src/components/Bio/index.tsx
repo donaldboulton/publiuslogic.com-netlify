@@ -1,7 +1,6 @@
-"use client"
+'use client'
 
 import React from 'react'
-import { useState } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import WavingHand from '@/components/WavingHand'
 import loadable from '@loadable/component'
@@ -31,10 +30,8 @@ const Bio = () => {
             <span className="font-medium italic">Donald Boulton</span>
             <Applause />
           </div>
-          <div
-            className="-mt-2 z-30 p-4 text-sm items-center"
-          >
-            I Build Websites with React and Love{" "}
+          <div className="-mt-2 z-30 p-4 text-sm items-center">
+            I Build Websites with React and Love{' '}
             <span role="img" aria-label="Love">
               ❤️
             </span>

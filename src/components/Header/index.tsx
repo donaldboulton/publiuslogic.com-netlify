@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useRef, useState, Fragment } from 'react'
@@ -125,11 +125,11 @@ export default function Header() {
             <SubMenu label="Bible / Bibwoe">
               {godNavigation.map(item => (
                 <Fragment key={item.name}>
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
-                </MenuItem>
+                  <MenuItem>
+                    <Link aria-label={item.name} key={item.name} to={item.href}>
+                      {item.name}
+                    </Link>
+                  </MenuItem>
                 </Fragment>
               ))}
             </SubMenu>
@@ -138,11 +138,11 @@ export default function Header() {
             <SubMenu label="Programming">
               {programmingNavigation.map(item => (
                 <Fragment key={item.name}>
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
-                </MenuItem>
+                  <MenuItem>
+                    <Link aria-label={item.name} key={item.name} to={item.href}>
+                      {item.name}
+                    </Link>
+                  </MenuItem>
                 </Fragment>
               ))}
             </SubMenu>
@@ -151,11 +151,11 @@ export default function Header() {
             <SubMenu label="Common Sense">
               {logicNavigation.map(item => (
                 <Fragment key={item.name}>
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
-                </MenuItem>
+                  <MenuItem>
+                    <Link aria-label={item.name} key={item.name} to={item.href}>
+                      {item.name}
+                    </Link>
+                  </MenuItem>
                 </Fragment>
               ))}
             </SubMenu>
@@ -164,11 +164,11 @@ export default function Header() {
             <SubMenu label="Of Angels">
               {angieNavigation.map(item => (
                 <Fragment key={item.name}>
-                <MenuItem>
-                  <Link aria-label={item.name} key={item.name} to={item.href}>
-                    {item.name}
-                  </Link>
-                </MenuItem>
+                  <MenuItem>
+                    <Link aria-label={item.name} key={item.name} to={item.href}>
+                      {item.name}
+                    </Link>
+                  </MenuItem>
                 </Fragment>
               ))}
             </SubMenu>

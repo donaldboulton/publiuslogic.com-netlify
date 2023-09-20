@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useNetlifyForm, NetlifyFormProvider, NetlifyFormComponent, Honeypot } from 'react-netlify-forms'
@@ -13,11 +13,11 @@ const resolver: Resolver<FormValues> = async values => {
     values: values.email ? values : {},
     errors: !values.email
     ? {
-        email: {
-          type: 'required',
-          message: 'This is required.',
-        },
-      }
+      email: {
+        type: 'required',
+        message: 'This is required.',
+      },
+    }
     : {},
   }
 }

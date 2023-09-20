@@ -4,7 +4,6 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 import Center from '@/components/Center'
-import List from '@/components/List'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
