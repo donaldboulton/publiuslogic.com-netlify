@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Link } from 'gatsby'
 import ReactPaginate from 'react-paginate'
 import { LazyMotion, m } from 'framer-motion'
@@ -51,10 +51,12 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <div className="mt-6 flex flex-col items-center mb-10">
         <div className="space-y-12 lg:space-y-0 flex flex-wrap mb-4">
           {posts.slice(offset, offset + POSTS_PER_PAGE).map(post => (
+            <Fragment key={post.slug}>
             <section className="p-4 md:w-1/2 lg:w-1/3">
-              <m.div className="relative opacity-75" initial="initial" whileHover="hover">
+              <m.div key="blogRoleWrapper" className="relative opacity-75" initial="initial" whileHover="hover">
                 <div>
                   <m.div
+                    key="blogRole"
                     className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
                     variants={cardVariants}
                     transition={{
@@ -89,6 +91,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                 </div>
               </m.div>
             </section>
+            </Fragment>
           ))}
         </div>
         {posts.length > POSTS_PER_PAGE ? (

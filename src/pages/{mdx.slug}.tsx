@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { graphql, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -68,10 +68,11 @@ type BlogPostRef = React.ForwardedRef<HTMLDivElement>
 
 function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   const { frontmatter, timeToRead } = data.mdx
+  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="left-beams -mt-10 object-cover">
             <TableOfContent headings={data.mdx.headings} />
             <div className="mb-20 mt-10 font-inter">
@@ -210,7 +211,7 @@ export function Head(props: HeadProps<DataProps>) {
             '@type': 'Organization',
             name: 'Mansbooks.com',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

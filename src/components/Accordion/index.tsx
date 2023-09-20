@@ -117,38 +117,38 @@ const Accordion = () => {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="text-md px-4 pb-2 pt-4 text-slate-200">
-                        <List>
-                          <List.Item>
+                        <div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Vocals: Angelina Jordan
                             </span>
-                          </List.Item>
-                          <List.Item>
+                          </div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Produced By: Mery Zamani
                             </span>
-                          </List.Item>
-                          <List.Item>
+                          </div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Written By: Mark James
                             </span>
-                          </List.Item>
-                          <List.Item>
+                          </div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Piano: Rob Christie
                             </span>
-                          </List.Item>
-                          <List.Item>
+                          </div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Release Date: June 22, 2022
                             </span>
-                          </List.Item>
-                          <List.Item>
+                          </div>
+                          <div>
                             <span className="mb-1" variant="secondary">
                               Suspicious Minds Is A Cover Of, Suspicious Minds by Elvis Presley
                             </span>
-                          </List.Item>
-                        </List>
+                          </div>
+                        </div>
                       </Disclosure.Panel>
                     </>
                   )}

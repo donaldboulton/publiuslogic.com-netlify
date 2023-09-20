@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -30,12 +30,13 @@ const ogimage = {
 type TagPageRef = React.ForwardedRef<HTMLDivElement>
 
 function TagPage({ pageContext }, props: TagPageProps, ref: TagPageRef) {
+  const refPage = useRef()
   const tag = pageContext.tag
   const title = `Tag: ${tag}`
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="left-beams">
             <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
             <Seo
@@ -126,7 +127,7 @@ export function Head(props: HeadProps) {
             '@type': 'PubliusLogic',
             name: 'Donald Boulton',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

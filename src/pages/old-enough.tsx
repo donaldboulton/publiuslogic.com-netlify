@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
@@ -23,10 +23,11 @@ type OldEnoughRef = React.ForwardedRef<HTMLDivElement>
 function OldEnough(ref: OldEnoughRef) {
   const refSmall = useRef(null)
   const refPlayer = useRef(null)
+  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="login-beams bg-scale-100 flex flex-1 flex-col">
             <div className="left-beams mb-10 flex flex-1">
               <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
@@ -148,7 +149,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

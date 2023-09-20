@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 
 type PageTransitionProps = HTMLMotionProps<'div'>
@@ -13,11 +13,11 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
   const onTheLeft = { x: '-100%' }
 
   const transition = { duration: 0.6, ease: 'easeInOut' }
-
+  const refComp = useRef()
   return (
     <motion.div
       className="max-h-[100%] overflow-y-auto"
-      ref={ref}
+      key={refComp}
       initial={onTheRight}
       animate={inTheCenter}
       exit={onTheLeft}

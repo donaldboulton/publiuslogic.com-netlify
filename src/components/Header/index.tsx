@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { useRef, useState } from 'react'
+import { useRef, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ThemeToggle from '@/components/ThemeToggle'
@@ -124,44 +124,52 @@ export default function Header() {
             <MenuHeader>God</MenuHeader>
             <SubMenu label="Bible / Bibwoe">
               {godNavigation.map(item => (
+                <Fragment key={item.name}>
                 <MenuItem>
                   <Link aria-label={item.name} key={item.name} to={item.href}>
                     {item.name}
                   </Link>
                 </MenuItem>
+                </Fragment>
               ))}
             </SubMenu>
             <MenuDivider />
             <MenuHeader>Internet</MenuHeader>
             <SubMenu label="Programming">
               {programmingNavigation.map(item => (
+                <Fragment key={item.name}>
                 <MenuItem>
                   <Link aria-label={item.name} key={item.name} to={item.href}>
                     {item.name}
                   </Link>
                 </MenuItem>
+                </Fragment>
               ))}
             </SubMenu>
             <MenuDivider />
             <MenuHeader>Logic</MenuHeader>
             <SubMenu label="Common Sense">
               {logicNavigation.map(item => (
+                <Fragment key={item.name}>
                 <MenuItem>
                   <Link aria-label={item.name} key={item.name} to={item.href}>
                     {item.name}
                   </Link>
                 </MenuItem>
+                </Fragment>
               ))}
             </SubMenu>
             <MenuDivider />
             <MenuHeader>Trinity</MenuHeader>
             <SubMenu label="Of Angels">
               {angieNavigation.map(item => (
+                <Fragment key={item.name}>
                 <MenuItem>
                   <Link aria-label={item.name} key={item.name} to={item.href}>
                     {item.name}
                   </Link>
                 </MenuItem>
+                </Fragment>
               ))}
             </SubMenu>
             <MenuDivider />

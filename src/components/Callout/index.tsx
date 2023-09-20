@@ -60,6 +60,7 @@ export default function Callout({ children, ...rest }: CalloutProps) {
   return (
     <LazyMotion features={loadFeatures}>
       <m.div
+        key="callout"
         ref={ref6}
         animate={isVisible6 ? 'visible' : 'hidden'}
         variants={variants6}

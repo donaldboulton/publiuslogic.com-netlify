@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { useState, forwardRef } from 'react'
+import { useState, useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -45,11 +45,11 @@ function Home(ref: HomeRef) {
       },
     },
   }
-
+  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="font-inter">
             <div className="relative flex content-center items-center justify-center">
               <div className="relative mb-4 h-96 md:h-60 lg:h-72 w-full md:mb-0">
@@ -63,6 +63,7 @@ function Home(ref: HomeRef) {
                   loading="eager"
                 />
                   <motion.div
+                    key="heading"
                     className="absolute left-3 text-2xl top-16 z-30 p-4 font-sacramento"
                     initial="hidden"
                     animate={replay ? 'visible' : 'hidden'}
@@ -103,13 +104,13 @@ function Home(ref: HomeRef) {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
                             />
                           </svg>
@@ -170,13 +171,13 @@ function Home(ref: HomeRef) {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
                             />
                           </svg>
@@ -528,7 +529,7 @@ export function Head(props: HeadProps) {
             '@type': 'PubliusLogic',
             name: 'Publius Logic Home',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

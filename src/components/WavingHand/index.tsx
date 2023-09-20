@@ -6,6 +6,7 @@ const loadFeatures = () => import('@/components/FramerFeatures').then(res => res
 const WavingHand = () => (
   <LazyMotion features={loadFeatures}>
     <m.div
+      key="wavingHand"
       style={{
         marginBottom: '-20px',
         marginRight: '-45px',

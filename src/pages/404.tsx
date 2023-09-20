@@ -114,7 +114,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

@@ -1,53 +1,19 @@
 import * as React from 'react'
-import { LazyMotion, m } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { useRef, Fragment } from 'react'
 import { Link } from 'gatsby'
 import Tags from '@/components/Tags'
-import List from '@/components/List'
 import GetPosts from '@/utils/getposts'
 import WavyHr from '@/components/WavyHr'
 
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
 export default function LatestArticles() {
+  const articleRef = useRef()
   const posts = GetPosts()
   const post = posts[0]
   const otherPosts = posts.slice(1, 6)
-  const latestArticlesContainer = {
-    enter: {
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.3,
-      },
-    },
-  }
-  const [ref5, isVisible5] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  })
-  const variants5 = {
-    hidden: {
-      opacity: 0,
-      y: -5,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        delay: 0.8,
-      },
-    },
-  }
   return (
     <>
-      <LazyMotion features={loadFeatures}>
-        <m.section variants={latestArticlesContainer}>
-          <m.div
-            ref={ref5}
-            variants={variants5}
-            animate={isVisible5 ? 'visible' : 'hidden'}
-            transition={{ duration: 0.6, ease: 'easeIn' }}
+        <section>
+          <div
           >
             <div className="mx-auto max-w-7xl bg-primary-dark px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-2xl py-4 sm:py-8 lg:max-w-none lg:py-10">
@@ -92,11 +58,11 @@ export default function LatestArticles() {
                     <WavyHr className="mb-4" />
                     <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
                     <div className="mb-4 mt-10 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
-                      <List>
+                      <div>
                         <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           God and Creation
                         </div>
-                        <List.Item>
+                        <div>
                           <div>
                             <Link to="/blog/creation-of-all">
                               <h4>
@@ -108,8 +74,8 @@ export default function LatestArticles() {
                               The Holy Trinity
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/virtue">
                               <h4>
@@ -121,8 +87,8 @@ export default function LatestArticles() {
                               as Tasawwuf
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/trinity-of-man">
                               <h4>
@@ -134,13 +100,13 @@ export default function LatestArticles() {
                               purity can cleanse the
                             </span>
                           </div>
-                        </List.Item>
-                      </List>
-                      <List>
+                        </div>
+                      </div>
+                      <div>
                         <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           Law and Logic
                         </div>
-                        <List.Item>
+                        <div>
                           <div>
                             <Link to="/blog/cyber-attack">
                               <h4>
@@ -151,8 +117,8 @@ export default function LatestArticles() {
                               Warning Attack! Shelter Your Minds! Kind of like last years playtime post, it's not very
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/usa-election">
                               <h4>
@@ -164,8 +130,8 @@ export default function LatestArticles() {
                               foreigners
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/philosophy">
                               <h4>
@@ -177,13 +143,13 @@ export default function LatestArticles() {
                               real clear what
                             </span>
                           </div>
-                        </List.Item>
-                      </List>
-                      <List>
+                        </div>
+                      </div>
+                      <div>
                         <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                           Programming
                         </div>
-                        <List.Item>
+                        <div>
                           <div>
                             <Link to="/blog/applause-use-sound-confetti">
                               <h4>
@@ -195,8 +161,8 @@ export default function LatestArticles() {
                               the Magic. 🤟
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/cookies">
                               <h4>
@@ -208,8 +174,8 @@ export default function LatestArticles() {
                               cookie-consent
                             </span>
                           </div>
-                        </List.Item>
-                        <List.Item>
+                        </div>
+                        <div>
                           <div>
                             <Link to="/blog/react-netlify-forms">
                               <h4>
@@ -221,12 +187,13 @@ export default function LatestArticles() {
                               for image upload
                             </span>
                           </div>
-                        </List.Item>
-                      </List>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="w-full">
                     {otherPosts.map(post => (
+                      <Fragment key={post.slug}>
                       <Link to={`/${post.slug}`}>
                         <div className="mb-10 w-full rounded-lg bg-gray-800 p-2 text-slate-300 md:grid md:grid-cols-2">
                           <div className="rounded px-4 text-slate-300 md:col-span-2">
@@ -238,14 +205,14 @@ export default function LatestArticles() {
                           </div>
                         </div>
                       </Link>
+                      </Fragment>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
-          </m.div>
-        </m.section>
-      </LazyMotion>
+          </div>
+        </section>
     </>
   )
 }

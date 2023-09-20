@@ -60,6 +60,7 @@ export default function CalloutDanger({ children, ...rest }: CalloutDangerProps)
     <LazyMotion features={loadFeatures}>
       <m.div
         className="opacity-75"
+        key="calloutDanger"
         ref={ref7}
         animate={isVisible7 ? 'visible' : 'hidden'}
         variants={variants7}

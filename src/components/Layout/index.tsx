@@ -2,14 +2,11 @@ import * as React from 'react'
 import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import ScrollDown from '@/components/ScrollDown'
-import Scroll from '@/components/Scroll'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
 import Footer from '@/components/Footer'
 import loadable from '@loadable/component'
-
-const Header = loadable(() => import('@/components/Header'))
+import Header from '@/components/Header'
 
 interface LayoutProps {
   children: ReactNode
@@ -23,17 +20,6 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
-        <ScrollDown
-          className="scroll right-4 top-20 z-20 md:right-3"
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
-        />
-        <Scroll
-          className="scroll bottom-2 right-4 z-20 md:right-3"
-          showBelow={1500}
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
-        />
       </div>
       <Footer />
       <CookieConsent

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -21,10 +21,11 @@ const ogimage = {
 type DsgRef = React.ForwardedRef<HTMLDivElement>
 
 function Dsg(ref: DsgRef) {
+  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="left-beams">
             <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
             <div className="mt-10">
@@ -106,7 +107,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

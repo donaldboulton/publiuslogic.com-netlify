@@ -36,6 +36,7 @@ const Table = () => {
       <m.section className="center items-stretch font-sans" variants={tableContainer}>
         <div className="ml-auto mr-auto w-full px-4 opacity-75">
           <m.div
+            key="title"
             ref={ref}
             variants={variants}
             animate={isVisible ? 'visible' : 'hidden'}

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
@@ -109,12 +109,13 @@ const ogimage = {
 type TagsRef = React.ForwardedRef<HTMLDivElement>
 
 function Tags(ref: TagsRef) {
+  const refPage = useRef()
   const tags = GetTags()
 
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="left-beams">
             <PageHero
               title="Blog Tags"
@@ -242,7 +243,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

@@ -38,6 +38,7 @@ export default function IndexHero() {
       />
       <LazyMotion features={loadFeatures}>
         <m.div
+          key="animatedText"
           className="absolute left-3 top-16 z-20 p-4"
           initial="hidden"
           animate={replay ? 'visible' : 'hidden'}

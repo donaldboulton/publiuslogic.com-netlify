@@ -42,6 +42,7 @@ export default function SingleAccordion({ children, label }: SingleAccordionProp
       <m.section className="font-sans" variants={singleAccordionContainer}>
         <div className="ml-auto mr-auto w-full px-4">
           <m.div
+            key="singleAccordion"
             ref={ref}
             variants={variants}
             animate={isVisible ? 'visible' : 'hidden'}

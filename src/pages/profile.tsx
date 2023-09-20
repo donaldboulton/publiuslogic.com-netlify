@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { forwardRef } from 'react'
+import { useRef, ref, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -27,10 +27,11 @@ function Profile(ref: ProfileRef) {
     width: 1400,
     height: 200,
   }
+  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref}>
+        <PageTransition ref={ref} key={refPage}>
           <div className="left-beams">
             <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
             <section className="mb-11">
@@ -246,7 +247,7 @@ export function Head(props: HeadProps) {
             '@type': 'PubliusLogic',
             name: 'Github User Profile',
           },
-          license: 'http://publiuslogic.com/blog/0bsd-licence',
+          license: 'http://publiuslogic.com/blog/osbd-license',
         })}
       </script>
       <script type="application/ld+json">

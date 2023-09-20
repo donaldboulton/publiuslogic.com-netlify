@@ -4,8 +4,6 @@ import '@fontsource/inter'
 import './src/styles/global.css'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
-import LogRocket from 'logrocket'; 
-LogRocket.init('mcjbg9/publiuslogic');
 
 export function wrapPageElement({ element }) {
   const onExitComplete = () => {
@@ -19,14 +17,6 @@ export function wrapPageElement({ element }) {
 }
 
 export const wrapRootElement = wrap
-
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm('This application has been updated. ' + 'Reload to display the latest version?')
-
-  if (answer === true) {
-    window.location.reload()
-  }
-}
 
 if (
   localStorage.theme === 'dark' ||
@@ -45,16 +35,3 @@ localStorage.theme = 'dark'
 
 // Whenever the user explicitly chooses to respect the OS preference
 localStorage.removeItem('theme')
-
-export const onRouteUpdate = ({ location }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    return null
-  }
-
-  const pagePath = location ? location.pathname + location.search + location.hash : undefined
-  setTimeout(() => {
-    if (typeof gtag === 'function') {
-      gtag('event', 'page_view', { page_path: pagePath })
-    }
-  }, 100)
-}

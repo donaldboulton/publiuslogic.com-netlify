@@ -186,6 +186,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        remarkPlugins: [require('remark-unwrap-images')],
         gatsbyRemarkPlugins: [
           'gatsby-remark-relative-images',
           {
@@ -193,7 +194,7 @@ const config: GatsbyConfig = {
             options: {
               maxWidth: 2048,
               showCaptions: true,
-              linkImagesToOriginal: true,
+              linkImagesToOriginal: false,
               backgroundColor: 'none',
               disableBgImage: true,
               withWebp: true,
