@@ -213,6 +213,7 @@ const config: GatsbyConfig = {
             },
           },
           'gatsby-remark-responsive-iframe',
+          'gatsby-plugin-netlify',
           {
             resolve: 'gatsby-remark-acronyms',
             options: {

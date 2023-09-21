@@ -22,15 +22,15 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
         <ScrollDown
-          className="scroll z-20 right-4 md:right-4 top-20"
-          size={40}
+          className="scroll z-20 right-6 md:right-5 top-20"
+          size={30}
           css="position: fixed; color: gray; width: 40px; height: 40px;"
         />
         <Scroll
-          className="scroll z-20 right-4 md:right-4 bottom-4"
+          className="scroll z-20 right-6 md:right-5 bottom-8"
           showBelow={1500}
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
+          size={30}
+          css="position: fixed; color: gray; width: 30px; height: 30px;"
         />
       </div>
       <Footer />
