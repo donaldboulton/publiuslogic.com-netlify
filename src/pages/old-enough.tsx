@@ -4,8 +4,10 @@ import ReactPlayer from 'react-player/youtube'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import PageTransition from '@/components/PageTransition'
-import Layout from '@/components/Layout'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Seo from '@/components/Seo'
+import Stars from '@/components/Stars'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 import IframeWrapper from '@/components/IframeWrapper'
 import loadable from '@loadable/component'
@@ -26,7 +28,8 @@ function OldEnough(ref: OldEnoughRef) {
   const refPage = useRef()
   return (
     <>
-      <Layout>
+      <Stars />
+      <Header />
         <PageTransition ref={ref} key={refPage}>
           <div className="login-beams bg-scale-100 flex flex-1 flex-col">
             <div className="left-beams mb-10 flex flex-1">
@@ -82,7 +85,7 @@ function OldEnough(ref: OldEnoughRef) {
             </div>
           </div>
         </PageTransition>
-      </Layout>
+      <Footer />
     </>
   )
 }

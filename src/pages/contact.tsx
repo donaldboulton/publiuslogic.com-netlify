@@ -317,7 +317,7 @@ export function Head(props: HeadProps) {
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
           integrity="sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA=="
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
       </Seo>
       <script type="application/ld+json">

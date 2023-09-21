@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import WavingHand from '@/components/WavingHand'
 import loadable from '@loadable/component'

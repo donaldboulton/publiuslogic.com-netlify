@@ -5,7 +5,7 @@ import { useRef, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import ThemeToggle from '@/components/ThemeToggle'
-import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider, MenuHeader } from '@szhsin/react-menu'
+import { Menu, MenuItem, MenuButton, SubMenu, MenuDivider, MenuHeader, FocusableItem } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/theme-dark.css'
 import {
@@ -126,9 +126,13 @@ export default function Header() {
               {godNavigation.map(item => (
                 <Fragment key={item.name}>
                   <MenuItem>
-                    <Link aria-label={item.name} key={item.name} to={item.href}>
-                      {item.name}
-                    </Link>
+                    <FocusableItem>
+                      {({ ref }) => (
+                        <Link ref={ref} aria-label={item.name} key={item.name} to={item.href}>
+                          {item.name}
+                        </Link>
+                      )}
+                    </FocusableItem>
                   </MenuItem>
                 </Fragment>
               ))}
@@ -139,9 +143,13 @@ export default function Header() {
               {programmingNavigation.map(item => (
                 <Fragment key={item.name}>
                   <MenuItem>
-                    <Link aria-label={item.name} key={item.name} to={item.href}>
-                      {item.name}
-                    </Link>
+                    <FocusableItem>
+                      {({ ref }) => (
+                        <Link ref={ref} aria-label={item.name} key={item.name} to={item.href}>
+                          {item.name}
+                        </Link>
+                      )}
+                    </FocusableItem>
                   </MenuItem>
                 </Fragment>
               ))}
@@ -152,9 +160,13 @@ export default function Header() {
               {logicNavigation.map(item => (
                 <Fragment key={item.name}>
                   <MenuItem>
-                    <Link aria-label={item.name} key={item.name} to={item.href}>
-                      {item.name}
-                    </Link>
+                    <FocusableItem>
+                      {({ ref }) => (
+                        <Link ref={ref} aria-label={item.name} key={item.name} to={item.href}>
+                          {item.name}
+                        </Link>
+                      )}
+                    </FocusableItem>
                   </MenuItem>
                 </Fragment>
               ))}
@@ -165,9 +177,13 @@ export default function Header() {
               {angieNavigation.map(item => (
                 <Fragment key={item.name}>
                   <MenuItem>
-                    <Link aria-label={item.name} key={item.name} to={item.href}>
-                      {item.name}
-                    </Link>
+                    <FocusableItem>
+                      {({ ref }) => (
+                        <Link ref={ref} aria-label={item.name} key={item.name} to={item.href}>
+                          {item.name}
+                        </Link>
+                      )}
+                    </FocusableItem>
                   </MenuItem>
                 </Fragment>
               ))}

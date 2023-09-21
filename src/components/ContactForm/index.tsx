@@ -52,7 +52,7 @@ export default function ContactForm() {
   return (
     <div className="-pt-2 mb-24 text-slate-900 dark:text-slate-200 lg:col-span-2 lg:mt-0 max-w-[700px]">
       <NetlifyFormProvider {...netlify}>
-        <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)} enableRecaptcha>
+        <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
           <>
             <Honeypot />
             <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
