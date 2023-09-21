@@ -30,61 +30,61 @@ function OldEnough(ref: OldEnoughRef) {
     <>
       <Stars />
       <Header />
-        <PageTransition ref={ref} key={refPage}>
-          <div className="login-beams bg-scale-100 flex flex-1 flex-col">
-            <div className="left-beams mb-10 flex flex-1">
-              <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
-                <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
-                  <div className="mb-4">
-                    <div className="flex flex-col items-center neon-div">
-                      <span className="neonText neon-h1">
-                        <h1 className="text-2xl">Angelina's Playlists</h1>
-                        <h2 className="text-scale-1100 items-center text-lg justify-center ml-9">Old Enough</h2>
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <IframeWrapper>
-                      <ReactPlayer
-                        ref={refSmall}
-                        url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
-                        width="100%"
-                        height="100%"
-                        controls={true}
-                      />
-                    </IframeWrapper>
+      <PageTransition ref={ref} key={refPage}>
+        <div className="login-beams bg-scale-100 flex flex-1 flex-col">
+          <div className="left-beams mb-10 flex flex-1">
+            <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
+              <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
+                <div className="mb-4">
+                  <div className="flex flex-col items-center neon-div">
+                    <span className="neonText neon-h1">
+                      <h1 className="text-2xl">Angelina's Playlists</h1>
+                      <h2 className="text-scale-1100 items-center text-lg justify-center ml-9">Old Enough</h2>
+                    </span>
                   </div>
                 </div>
-                <div className="sm:text-center">
-                  <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
-                    By continuing, you agree to Mansbooks{' '}
-                    <Link className="hover:text-scale-1100 underline" to="/terms">
-                      Terms of Service
-                    </Link>{' '}
-                    and{' '}
-                    <Link className="hover:text-scale-1100 underline" to="privacy">
-                      Privacy Policy
-                    </Link>
-                    , and to receive periodic emails with updates.
-                  </div>
-                </div>
-              </main>
-              <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
-                <div className="relative mt-12 flex flex-col gap-6 opacity-70">
-                  <IframeWrapperLarge>
+                <div className="flex flex-col gap-5">
+                  <IframeWrapper>
                     <ReactPlayer
-                      ref={refPlayer}
-                      url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
-                      height="100%"
+                      ref={refSmall}
+                      url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
                       width="100%"
+                      height="100%"
                       controls={true}
                     />
-                  </IframeWrapperLarge>
+                  </IframeWrapper>
                 </div>
-              </aside>
-            </div>
+              </div>
+              <div className="sm:text-center text-slate-900 dark:text-slate-300">
+                <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+                  By continuing, you agree to Mansbooks{' '}
+                  <Link className="hover:text-scale-1100 underline" to="/terms">
+                    Terms of Service
+                  </Link>{' '}
+                  and{' '}
+                  <Link className="hover:text-scale-1100 underline" to="privacy">
+                    Privacy Policy
+                  </Link>
+                  , and to receive periodic emails with updates.
+                </div>
+              </div>
+            </main>
+            <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
+              <div className="relative mt-12 flex flex-col gap-6 opacity-70">
+                <IframeWrapperLarge>
+                  <ReactPlayer
+                    ref={refPlayer}
+                    url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
+                    height="100%"
+                    width="100%"
+                    controls={true}
+                  />
+                </IframeWrapperLarge>
+              </div>
+            </aside>
           </div>
-        </PageTransition>
+        </div>
+      </PageTransition>
       <Footer />
     </>
   )

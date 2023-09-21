@@ -6,6 +6,8 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import ScrollDown from '@/components/ScrollDown'
+import Scroll from '@/components/Scroll'
 
 interface LayoutProps {
   children: ReactNode
@@ -19,6 +21,17 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
+        <ScrollDown
+          className="scroll z-20 right-4 md:right-4 top-20"
+          size={40}
+          css="position: fixed; color: gray; width: 40px; height: 40px;"
+        />
+        <Scroll
+          className="scroll z-20 right-4 md:right-4 bottom-4"
+          showBelow={1500}
+          size={40}
+          css="position: fixed; color: gray; width: 40px; height: 40px;"
+        />
       </div>
       <Footer />
       <CookieConsent
@@ -45,20 +58,16 @@ const Layout = ({ children }: LayoutProps) => {
       >
         PubliusLogic uses cookies for user experience.{' '}
         <span
-          style={{
-            fontSize: '14px',
-            textAlign: 'center',
-            marginLeft: '20px',
-          }}
+          className='text-center ml-8'
         >
           <div className="sm:text-center flex">
-            <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+            <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm text-slate-300">
               By continuing, you agree to PubliusLogic{' '}
-              <Link className="hover:text-scale-1100 underline" to="/blog/terms">
+              <Link className="hover:text-scale-1100 underline text-red-500" aria-label="Terms Of Service" to="/blog/terms">
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link className="hover:text-scale-1100 underline" to="/blog/privacy">
+              <Link className="hover:text-scale-1100 underline text-red-500" aria-label="Privacy Policy" to="/blog/privacy">
                 Privacy Policy
               </Link>
               , and to receive periodic emails with updates.

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
-import * as CSS from 'csstype'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
@@ -9,36 +8,6 @@ const loadFeatures = () => import('@/components/FramerFeatures').then(res => res
 
 interface CalloutProps {
   children: ReactNode
-}
-
-export const callOutWrapper: CSS.Properties = {
-  position: 'absolute',
-  display: 'flex',
-  top: '-24px',
-  right: '-20px',
-  borderRadius: '50%',
-  padding: '6px',
-  color: '#9333ea',
-  border: '6px solid transparent',
-  background: '#0d1014',
-}
-
-const callout: CSS.Properties = {
-  '*:last-child': {
-    marginBottom: '0px',
-  },
-
-  position: 'relative',
-  padding: '10px 25px',
-  marginBottom: '2.25rem',
-  marginTop: '2.25rem',
-  borderRadius: '12px',
-  fontSize: '1.25em',
-  color: '#fff',
-  border: '2px solid rgb(147, 51, 234, 0.5)',
-  background: 'rgb(55, 65, 81, 0.5)',
-  boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
-  opacity: '0.6',
 }
 
 export default function Callout({ children, ...rest }: CalloutProps) {
@@ -65,10 +34,10 @@ export default function Callout({ children, ...rest }: CalloutProps) {
         animate={isVisible6 ? 'visible' : 'hidden'}
         variants={variants6}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        style={callout}
+        className="relative bg-slate-950 t-4 mb-4 px-6 py-2 rounded-lg font-medium border-l-2 border-t-2 border-violet-500 border-r-8 border-b-8 opacity-70"
         {...rest}
       >
-        <aside style={callOutWrapper}>
+        <aside className="absolute flex -top-9 -right-7 bg-slate-950 rounded-full p-2 mt-4 mb-4 border-4 border-violet-500 text-violet-500">
           <InformationCircleIcon className="h-6 w-6" />
         </aside>
         {children}

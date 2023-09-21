@@ -255,7 +255,7 @@ const config: GatsbyConfig = {
             },
           },
         ],
-        remarkPlugins: [{ resolve: 'remark-slug' }],
+        remarkPlugins: [{ resolve: 'remark-slug' }, { resolve: 'remark-unwrap-images' }],
       },
     },
     {
@@ -298,7 +298,6 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-mdx-embed',
-    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {

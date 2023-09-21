@@ -75,7 +75,7 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
         <PageTransition ref={ref} key={refPage}>
           <div className="left-beams -mt-10 object-cover">
             <TableOfContent headings={data.mdx.headings} />
-            <div className="mb-20 mt-10 font-inter">
+            <div className="mb-20 mt-10 font-inter form-beams">
               <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-wine-300 hover:prose-a:text-wine-200 lg:px-0">
                 <div className="mt-4 py-4">
                   <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>

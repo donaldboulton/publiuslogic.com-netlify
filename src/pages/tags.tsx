@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from 'react'
 import { useRef, ref, forwardRef } from 'react'
@@ -126,7 +126,7 @@ function Tags(ref: TagsRef) {
                 {tags
                   .sort((a, b) => b.count - a.count)
                   .map((tag, i) => (
-                    <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
+                    <Link to={`/tags/${kebabCase(tag.tag)}/`} className="group">
                       <section
                         className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
                         style={{

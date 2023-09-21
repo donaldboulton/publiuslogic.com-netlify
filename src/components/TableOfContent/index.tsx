@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
@@ -91,7 +89,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         }
 
                         return (
-                          <li className="mb-2 ml-1 mr-1 mt-2 list-none p-1" key={heading.value}>
+                          <li component="div" className="mb-2 ml-1 mr-1 mt-2 list-none p-1" key={heading.value}>
                             <Link
                               className="underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
                               rel="noopener noreferrer"

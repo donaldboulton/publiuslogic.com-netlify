@@ -12,8 +12,7 @@ export default function LatestArticles() {
   return (
     <>
       <section>
-        <div>
-          <div className="mx-auto max-w-7xl bg-primary-dark px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl py-4 m-4 bg-primary-dark px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl py-4 sm:py-8 lg:max-w-none lg:py-10">
               <div className="flex flex-row items-center">
                 <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>
@@ -55,48 +54,42 @@ export default function LatestArticles() {
                   </div>
                   <WavyHr className="mb-4" />
                   <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
-                  <div className="mb-4 mt-10 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
+                  <div className="mb-4 mt-10 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-950 dark:text-slate-300 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
                     <div>
                       <div className="mb-6 ml-12 mt-4 text-lg underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300">
                         God and Creation
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/creation-of-all">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Creation Of All</span>
-                            </h4>
+                          <Link to="/blog/creation-of-all" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 italic hover:text-wine-200">
+                            Creation Of All
                           </Link>
-                          <span>
+                          <div>
                             Last Testament to the Holy Bible. Intro Enclosed is the creation of all, how To Pray to The
                             Holy Trinity
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/virtue">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Virtue</span>
-                            </h4>
+                          <Link to="/blog/virtue" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Virtue
                           </Link>
-                          <span>
+                          <div>
                             For My Children Since 2000 Here I am going to reflect on what The Christian Bible, Sufism as
                             Tasawwuf
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/trinity-of-man">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Trinity of Man</span>
-                            </h4>
+                          <Link to="/blog/trinity-of-man" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Trinity of Man
                           </Link>
-                          <span>
+                          <div>
                             Prelude As in all my writings are written for my Children born since 2000. Only there purity
                             can cleanse the
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -106,39 +99,33 @@ export default function LatestArticles() {
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/cyber-attack">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Cyber Attack</span>
-                            </h4>
+                          <Link to="/blog/cyber-attack" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Cyber Attack
                           </Link>
-                          <span>
+                          <div>
                             Warning Attack! Shelter Your Minds! Kind of like last years playtime post, it's not very
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/usa-election">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">USA Election</span>
-                            </h4>
+                          <Link to="/blog/usa-election" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            USA Election
                           </Link>
-                          <span>
+                          <div>
                             USA Election Our 2020 election was the most major Racketeering scheme ever, using foreigners
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/philosophy">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Philosophy</span>
-                            </h4>
+                          <Link to="/blog/philosophy" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Philosophy
                           </Link>
-                          <span>
+                          <div>
                             To Sophistry My writing of God in the past got interpreted as philosophy. I will make it
                             real clear what
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -148,40 +135,34 @@ export default function LatestArticles() {
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/applause-use-sound-confetti">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Applause useSound</span>
-                            </h4>
+                          <Link to="/blog/applause-use-sound-confetti" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Applause useSound
                           </Link>
-                          <span>
+                          <div>
                             Applause Button Click the flowers 🎉 for claps in the Bio Section above and see an hear the
                             Magic. 🤟
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/cookies">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Cookies GDPR</span>
-                            </h4>
+                          <Link to="/blog/cookies" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Cookies GDPR
                           </Link>
-                          <span>
+                          <div>
                             GDPR cookie consent with Gatsby using modules gatsby-plugin-gdpr-cookies and cookie-consent
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div>
                         <div>
-                          <Link to="/blog/react-netlify-forms">
-                            <h4>
-                              <span className="text-slate-300 hover:text-wine-200">Netlify Forms</span>
-                            </h4>
+                          <Link to="/blog/react-netlify-forms" className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200">
+                            Netlify Forms
                           </Link>
-                          <span>
+                          <div>
                             React Netlify Forms, is easy with Bot fields and invisible reCaptcha including dropZone for
                             image upload
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -191,7 +172,7 @@ export default function LatestArticles() {
                   {otherPosts.map(post => (
                     <Fragment key={post.slug}>
                       <Link to={`/${post.slug}`}>
-                        <div className="mb-10 w-full rounded-lg bg-gray-800 p-2 text-slate-300 md:grid md:grid-cols-2">
+                        <div className="mb-10 w-full rounded-lg bg-slate-950 p-2 text-slate-300 md:grid md:grid-cols-2">
                           <div className="rounded px-4 text-slate-300 md:col-span-2">
                             <Tags tags={post.frontmatter.tags} />
                             <div className="mb-2 text-xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8 hover:text-wine-200 md:mt-0">
@@ -207,7 +188,6 @@ export default function LatestArticles() {
               </div>
             </div>
           </div>
-        </div>
       </section>
     </>
   )

@@ -355,7 +355,7 @@ function Home(props, ref: HomeRef) {
                     style={{ height: '70px' }}
                   >
                     <svg
-                      className="absolute bottom-0 overflow-hidden"
+                      className="absolute bottom-0 overflow-hidden fill-current text-slate-800"
                       xmlns="http://www.w3.org/2000/svg"
                       preserveAspectRatio="none"
                       version="1.1"
@@ -363,13 +363,13 @@ function Home(props, ref: HomeRef) {
                       x="0"
                       y="0"
                     >
-                      <polygon className="fill-current text-slate-700" points="2560 0 2560 100 0 100"></polygon>
+                      <polygon points="2560 0 2560 100 0 100"></polygon>
                     </svg>
                   </div>
                 </div>
               </div>
             </section>
-            <section className="relative block bg-slate-700 py-20">
+            <section className="relative block bg-slate-800 py-20">
               <div className="container mx-auto px-4 pb-24">
                 <Features />
               </div>
@@ -413,8 +413,8 @@ function Home(props, ref: HomeRef) {
                 <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                   <div className="w-full px-4">
                     <Updates />
-                    <div className="light:bg-gray-200 light:text-gray-800 mb-4 mt-10 rounded-lg bg-gray-800 text-slate-300 lg:mt-6">
-                      <h4 className="mb-2 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
+                    <div className="bg-gray-200 text-gray-800 mb-4 mt-10 rounded-lg dark:bg-slate-950 dark:text-slate-300 lg:mt-6">
+                      <h4 className="mb-4 mt-4 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
                         Ordered Spiritual Reading List!
                       </h4>
                       <Table />
