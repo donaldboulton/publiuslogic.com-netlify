@@ -85,7 +85,8 @@ interface ContactFormProps {
   children: ReactNode
 }
 
-export default function ContactForm({ name, action, honeypotName, recaptcha }: ContactFormProps) {
+const ContactForm: FC<ContactFormProps> = props => {
+  const { name, action, honeypotName, recaptcha, children } = props
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
   const {
     register,
@@ -428,6 +429,8 @@ export default function ContactForm({ name, action, honeypotName, recaptcha }: C
   )
 }
 
+export default ContactForm
+
 ```
 
 </Section>
@@ -563,8 +566,6 @@ export default ContactForm = () => (
 ## Form with React dropZone
 
 ```tsx:title=src/components/comments.tsx {5,28-33,140-147}
-"use client"
-
 import * as React from 'react'
 import { useState, useCallback } from 'react'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'

@@ -82,15 +82,12 @@ If you are using the below code give a Applause or use any social link or github
 ## Applause Code
 
 ```tsx:title=src/components/applause.tsx {4-6,22-26,96-98}
-"use client"
-
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import useSound from 'use-sound'
-import clapping from '../../../static/audio/clapping.mp3'
-import Confetti from '@/components/DomConfetti'
 import axios from 'axios'
-import { useLocation } from "@reach/router"
+import useSound from 'use-sound'
+import Confetti from 'react-dom-confetti'
+import clapping from '../../../static/audio/clapping.mp3'
 
 const confettiConfig = {
   angle: 90,
@@ -108,38 +105,42 @@ const confettiConfig = {
 
 const Wrapper = props => <span style={{ position: 'relative' }} {...props} />
 
-const ConfettiWrapper = props => <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
+const ConfettiWrapper = props => (
+  <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
+)
 const API = 'https://api.applause-button.com'
 const VERSION = '3.0.0'
+const mainUrl = typeof window !== 'undefined' ? window.location.href : ''
 
 const HEADERS = {
   'Content-Type': 'text/plain',
 }
 
-const ApplauseButton = ({ props }) => {
-  const location = useLocation();
-  const url = location.pathname
+const getClaps = async url => {
+  const query = url ? `?url=${url}` : ''
+  // eslint-disable-next-line no-return-await
+  return await axios.get(`${API}/get-claps${query}`, {
+    headers: HEADERS,
+  })
+}
+
+const updateClaps = async (url, claps = 1) => {
+  console.log(claps)
+  const query = url ? `?url=${url}` : ''
+  // eslint-disable-next-line no-return-await
+  return await axios.post(
+    `${API}/update-claps${query}`,
+    JSON.stringify(`${claps},${VERSION}`),
+    {
+      headers: HEADERS,
+    }
+  )
+}
+
+const ApplauseButton = ({ url = mainUrl, props }) => {
   const [count, setCount] = useState(0)
   const [isClapped, setIsClapped] = useState(false)
   const [play] = useSound(clapping)
-
-  const getClaps = async url => {
-    const query = url ? `?url=${url}` : ''
-    /* eslint-disable-next-line no-return-await */
-    return await axios.get(`${API}/get-claps${query}`, {
-      headers: HEADERS,
-    })
-  }
-  
-  const updateClaps = async (url, claps = 1) => {
-    console.log(claps)
-    const query = url ? `?url=${url}` : ''
-    /* eslint-disable-next-line no-return-await */
-    return await axios.post(`${API}/update-claps${query}`, JSON.stringify(`${claps},${VERSION}`), {
-      headers: HEADERS,
-    })
-  }
-
   const doApplause = () => {
     if (!isClapped) {
       console.log('do clapping')
@@ -173,7 +174,7 @@ const ApplauseButton = ({ props }) => {
           play()
         }}
       >
-        {isClapped ? '🤟🎉' : '🎉'}
+        {isClapped ? '🤟🎉' : '👋'}
         {` ${count}`}
       </span>
       <ConfettiWrapper>

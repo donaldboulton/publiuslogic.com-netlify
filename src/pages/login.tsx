@@ -1,17 +1,18 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef, useState, useEffect } from 'react'
 import type { HeadProps } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
-import Seo from '@/components/Seo'
-import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
-import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
-import loadable from '@loadable/component'
-import Stacked from '@/components/Stacked'
-
-const PageHero = loadable(() => import('@/components/PageHero'))
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import Account from '../components/Auth/account'
+import { StaticImage } from 'gatsby-plugin-image'
+import LeftText from '../components/LeftText'
+import Seo from '../components/Seo'
+import TodoList from '../components/TodoList'
+import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
+import ColumnGridTwo from '../components/ColumnGridTwo'
+import { supabase } from '../lib/supabase'
 
 const ogimage = {
   src: OGImage,
@@ -19,76 +20,150 @@ const ogimage = {
   height: 450,
 }
 
-type ThankYouRef = React.ForwardedRef<HTMLDivElement>
+type LoginProps = {}
+type LoginRef = React.ForwardedRef<HTMLDivElement>
 
-function ThankYou(ref: ThankYouRef) {
-  const refThankyou = useRef()
+function Login(props: LoginProps, ref: LoginRef) {
+  const [session, setSession] = useState(null)
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const getURL = () => {
+    let url = process?.env?.API_URL ?? 'http://localhost:3000/' // Set this to your site URL in production env.
+    // Make sure to include `https://` when not localhost.
+    url = url.includes('http') ? url : `https://${url}`
+    // Make sure to include a trailing `/`.
+    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+    return url
+  }
+
+  async function signInWithGitHub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: getURL(),
+      },
+    })
+  }
+
+  async function signInWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: getURL(),
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
+      },
+    })
+  }
+
+  async function signInWithSpotify() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'spotify',
+      options: {
+        redirectTo: getURL(),
+      },
+    })
+  }
+
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithOtp({
+      email: { email },
+      options: {
+        emailRedirectTo: getURL(),
+      },
+    })
+  }
+
+  async function signOut() {
+    const { error } = await supabase.auth.signOut()
+  }
+
   return (
-    <>
-      <Layout>
-        <PageTransition ref={ref} key={refThankyou}>
-          <div className="left-beams">
-            <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
-            <div className="mt-10">
-              <div className="mb-16 mt-6 flex flex-col items-center">
-                <div className="text-slate-900 dark:text-slate-200">
-                  <Link
-                    to="/"
-                    className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-                  >
-                    Home Page
-                  </Link>
-                  <Link
-                    to="/contact"
-                    replace
-                    className="mr-2 inline-flex justify-center rounded-md bg-wine-300 px-4 py-2 text-slate-300 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:shadow-wine-300/50"
-                  >
-                    Return to Previous Page!
-                  </Link>
-                  <h2 className="mb-2 mt-2 text-lg font-bold leading-tight">Your Content Has Been Added.</h2>
-                  <div>Thank You for your Submission!</div>
-                </div>
-                <div className="flex justify-center text-2xl">
-                  <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
-                    <StaticImage
-                      className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
-                      formats={['auto', 'webp']}
-                      src="../../static/img/buy-me-a-coffee.jpg"
-                      quality={95}
-                      alt="Buy me a coffee"
-                      area-label="Buy me a coffee"
-                      loading="Buy me a coffee"
-                    />
-                  </a>
-                </div>
-                <Stacked />
-                <div className="mb-20">
-                  <hr className="text-wine-600 w-full mx-auto" />
-                </div>
+    <Layout>
+      <PageTransition ref={ref}>
+        <div className="mb-20 ml-8">
+          <div className="pt-10 mb-4">
+            <LeftText>PubliusLogic Login</LeftText>
+          </div>
+          <ColumnGridTwo>
+            <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
+              <div className="w-72 px-6 py-4 bg-slate-950 m-auto text-slate-400">
+                {!session ? (
+                  <Auth
+                    supabaseClient={supabase}
+                    view="magic_link"
+                    providers={['github', 'google', 'spotify']}
+                    theme="dark"
+                    appearance={{
+                      theme: ThemeSupa,
+                      variables: {
+                        default: {
+                          colors: {
+                            brand: 'red',
+                            brandAccent: 'darkred',
+                          },
+                        },
+                      },
+                    }}
+                  />
+                ) : (
+                  <>
+                    <ColumnGridTwo>
+                      <Account key={session.user.id} session={session} />
+                      <div
+                        className="flex h-full w-full flex-col items-center justify-center p-4"
+                        style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
+                      >
+                        <TodoList session={session} />
+                      </div>
+                    </ColumnGridTwo>
+                  </>
+                )}
               </div>
             </div>
-          </div>
-        </PageTransition>
-      </Layout>
-    </>
+            <div className="right-0 -mt-10">
+              <StaticImage
+                className="self-center rounded-lg opacity-60"
+                src="../../static/img/planets.jpg"
+                placeholder="blurred"
+                width={840}
+                height={427}
+                quality={95}
+                formats={['auto', 'webp', 'avif']}
+                alt="Planets"
+                loading="eager"
+              />
+            </div>
+          </ColumnGridTwo>
+        </div>
+      </PageTransition>
+    </Layout>
   )
 }
 
-export default forwardRef(ThankYou)
+export default forwardRef(Login)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo
-        type="page"
-        title="Thank You"
-        description="Thank You for your submission"
-        image={ogimage}
-        pathname="/thank-you"
-      >
-        <title>Thanks</title>
-        <meta name="description" content="PubliusLogic Thank You Page." />
+      <Seo type="page" title="Login" description="Login To PubliusLogic." image={ogimage} pathname="/search">
+        <title>Login Page</title>
+        <meta name="description" content="PubliusLogic Login Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       </Seo>
       <script type="application/ld+json">
@@ -107,14 +182,14 @@ export function Head(props: HeadProps) {
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
           },
-          copyrightYear: 2023,
+          copyrightYear: '2022',
           creator: {
             '@id': 'https://publiuslogic.com',
           },
           description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -124,14 +199,22 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
+            },
+            'query-input': 'required name=search_term_string',
+          },
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Thank You',
-          url: 'https://publiuslogic.com/thank-you',
+          name: 'Login',
+          url: 'https://publiuslogic.com/Login',
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
@@ -142,7 +225,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">
@@ -162,8 +245,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/thank-you',
-                name: 'Thanks',
+                '@id': 'https://publiuslogic.com/login',
+                name: 'Login',
               },
               position: '2',
             },
@@ -180,12 +263,12 @@ export function Head(props: HeadProps) {
           address: 'OKC, Middle Earth',
           contactPoint: {
             '@type': 'ContactPoint',
-            email: 'donboulton@donboulton.com',
+            email: 'donaldboulton@gmail.com',
             telephone: '+405-863-2165',
           },
           description:
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
-          email: 'donboulton@donboulton.com',
+          email: 'donaldboulton@gmail.com',
           founder: {
             '@id': 'https://donboulton.com',
           },
@@ -202,7 +285,7 @@ export function Head(props: HeadProps) {
           },
           name: 'PubliusLogic',
           sameAs: [
-            'mailto:donboulton@donboulton.com',
+            'mailto:donaldboulton@gmail.com',
             'tel:+405-863-2165',
             'https://www.facebook.com/donboulton',
             'https://www.instagram.com/boulton3662',
@@ -222,6 +305,21 @@ export function Head(props: HeadProps) {
           url: 'https://donboulton.com',
           worksFor: {
             '@id': 'https://publiuslogic.com',
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          url: 'https://www.publiuslogic.com/',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
+            },
+            'query-input': 'required name=search_term_string',
           },
         })}
       </script>

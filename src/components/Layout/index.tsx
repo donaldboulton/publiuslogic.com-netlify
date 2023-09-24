@@ -2,12 +2,12 @@ import * as React from 'react'
 import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import ScrollIndicator from '@/components/ScrollIndicator'
-import Stars from '@/components/Stars'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
+import ScrollIndicator from '@/components/ScrollIndicator'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Stars from '@/components/Stars'
 
 interface LayoutProps {
   children: ReactNode
@@ -22,15 +22,15 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
         <ScrollDown
-          className="scroll z-20 right-6 md:right-5 top-20"
-          size={30}
+          className="scroll right-4 top-20 z-20 md:right-3"
+          size={40}
           css="position: fixed; color: gray; width: 40px; height: 40px;"
         />
         <Scroll
-          className="scroll z-20 right-6 md:right-5 bottom-8"
+          className="scroll bottom-2 right-4 z-20 md:right-3"
           showBelow={1500}
-          size={30}
-          css="position: fixed; color: gray; width: 30px; height: 30px;"
+          size={40}
+          css="position: fixed; color: gray; width: 40px; height: 40px;"
         />
       </div>
       <Footer />
@@ -58,16 +58,20 @@ const Layout = ({ children }: LayoutProps) => {
       >
         PubliusLogic uses cookies for user experience.{' '}
         <span
-          className='text-center ml-8'
+          style={{
+            fontSize: '14px',
+            textAlign: 'center',
+            marginLeft: '20px',
+          }}
         >
-          <div className="sm:text-center flex">
-            <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm text-slate-300">
+          <div className="sm:text-center">
+            <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
               By continuing, you agree to PubliusLogic{' '}
-              <Link className="hover:text-scale-1100 underline text-red-500" aria-label="Terms Of Service" to="/blog/terms">
+              <Link className="hover:text-scale-1100 underline" to="/blog/terms">
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link className="hover:text-scale-1100 underline text-red-500" aria-label="Privacy Policy" to="/blog/privacy">
+              <Link className="hover:text-scale-1100 underline" to="/blog/privacy">
                 Privacy Policy
               </Link>
               , and to receive periodic emails with updates.

@@ -58,7 +58,7 @@ export default function ThreeDotsWave() {
           justifyContent: 'center',
         }}
       >
-        <m.div key="dots" style={LoadingContainer} variants={ContainerVariants} initial="initial" animate="animate">
+        <m.div style={LoadingContainer} variants={ContainerVariants} initial="initial" animate="animate">
           <m.span style={LoadingDot} variants={DotVariants} transition={DotTransition} />
           <m.span style={LoadingDot} variants={DotVariants} transition={DotTransition} />
           <m.span style={LoadingDot} variants={DotVariants} transition={DotTransition} />

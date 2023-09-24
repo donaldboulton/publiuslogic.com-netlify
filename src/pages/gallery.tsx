@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -64,11 +64,11 @@ function ImageGallery({ data }, props: ImageGalleryProps, ref: ImageGalleryRef) 
   const onClose = () => {
     console.log('Lightbox was closed')
   }
-  const refPage = useRef()
+
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams">
             <PageHero title="Gallery: Angie" description="Special Kitty, Cat!" image={Image} />
             <div className="search-beams mb-32 mt-6 z-30">
@@ -173,7 +173,7 @@ export function Head(props: HeadProps) {
             '@type': 'PubliusLogic',
             name: 'Image Gallery',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

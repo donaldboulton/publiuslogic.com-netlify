@@ -14,17 +14,21 @@ interface TransformationProps {
 
 declare module '@cloudinary/react' {
   class CloudinaryComponent {
+    constructor(props, context) {}
+
     getChildContext() {}
 
     render() {}
-    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+
     getChildTransformations(children) {}
 
     getTransformations() {}
-    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+
     normalizeOptions(...options) {}
-    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+
     getURL(extendedProps) {}
+
+    typesFrom(configParams) {}
   }
 
   export const CloudinaryContext: React.FC<CloudinaryContextProps>

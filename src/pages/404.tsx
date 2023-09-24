@@ -3,6 +3,8 @@ import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
 import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
 import loadable from '@loadable/component'
@@ -114,7 +116,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

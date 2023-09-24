@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -17,14 +17,14 @@ const ogimage = {
   height: 450,
 }
 
+type BlogPageProps = {}
 type BlogPageRef = React.ForwardedRef<HTMLDivElement>
 
-function BlogPage(ref: BlogPageRef) {
-  const refPage = useRef()
+function BlogPage(props: BlogPageProps, ref: BlogPageRef) {
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams mb-20">
             <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
             <div className="mb-2">
@@ -105,7 +105,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

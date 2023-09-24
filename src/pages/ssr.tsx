@@ -5,6 +5,11 @@ import PageImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_
 import loadable from '@loadable/component'
 
 const PageHero = loadable(() => import('@/components/PageHero'))
+function refreshPage() {
+  if (typeof window !== undefined) {
+    window.location.reload(false)
+  }
+}
 
 const SsrPage = ({ serverData }) => {
   return (
@@ -34,6 +39,15 @@ const SsrPage = ({ serverData }) => {
                     See the Doggies! Doggies of all kinds of shapes, sizes and colors. With many different Breeds!
                   </div>
                   <div className="mt-2 text-gray-500">SSR Refresh just, "This Component", for More Doggies! Cool!</div>
+                  <div>
+                    <button
+                      type="button"
+                      className="rounded-md border border-transparent bg-wine-300 p-2 text-sm font-medium text-slate-300 shadow-lg shadow-wine-300/50 hover:bg-wine-300"
+                      onClick={refreshPage}
+                    >
+                      Refresh Component
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

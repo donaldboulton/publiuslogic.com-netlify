@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect'
 import { Listbox } from '@headlessui/react'
@@ -191,7 +189,6 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
           <Listbox.Option key={value} value={value} as={Fragment}>
             {({ active, selected }) => (
               <li
-                component="div"
                 className={clsx(
                   'flex cursor-pointer items-center px-2 py-1',
                   selected && 'text-sky-500',

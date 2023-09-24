@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
+import { Link } from 'gatsby'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -9,6 +10,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Image from '../../static/svg/undraw/undraw_account_re_o7id.svg'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
 import Spacer200 from '../../static/img/spacer-200.jpg'
+import Center from '@/components/Center'
 import loadable from '@loadable/component'
 
 const PageHero = loadable(() => import('@/components/PageHero'))
@@ -19,19 +21,19 @@ const ogimage = {
   height: 450,
 }
 
+type ProfileProps = {}
 type ProfileRef = React.ForwardedRef<HTMLDivElement>
 
-function Profile(ref: ProfileRef) {
+function Profile(props: ProfileProps, ref: ProfileRef) {
   const spacer200 = {
     src: Spacer200,
     width: 1400,
     height: 200,
   }
-  const refPage = useRef()
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams">
             <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
             <section className="mb-11">
@@ -247,7 +249,7 @@ export function Head(props: HeadProps) {
             '@type': 'PubliusLogic',
             name: 'Github User Profile',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

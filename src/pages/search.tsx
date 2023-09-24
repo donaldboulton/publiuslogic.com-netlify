@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -19,14 +19,14 @@ const ogimage = {
   height: 450,
 }
 
+type SearchPageProps = {}
 type SearchPageRef = React.ForwardedRef<HTMLDivElement>
 
-function SearchPage(ref: SearchPageRef) {
-  const refPage = useRef()
+function SearchPage(props: SearchPageProps, ref: SearchPageRef) {
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams">
             <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
             <div className="mt-10">
@@ -113,7 +113,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

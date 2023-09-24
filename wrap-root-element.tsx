@@ -12,6 +12,8 @@ import CalloutLabel from './src/components/Callout/CalloutLabel'
 import WavyHr from './src/components/WavyHr'
 import Center from './src/components/Center'
 import CenterItem from './src/components/CenterItem'
+import List from './src/components/List'
+import ListItem from './src/components/List/ListItem'
 import ListGrid from './src/components/ListGrid'
 import VideoOne from './src/components/CloudinaryVideo/videoOne'
 import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
@@ -23,14 +25,15 @@ import SingleAccordion from './src/components/SingleAccordion'
 import Table from './src/components/Table'
 import Modal from './src/components/Modal'
 import Section from './src/components/Section'
-import HoverMenu from './src/components/HoverMenu'
+import Popper from './src/components/Popper'
+import UserProfile from './src/components/UserProfile'
 import Left from './src/components/Left'
 import LeftText from './src/components/LeftText'
 import ColumnGridTwo from './src/components/ColumnGridTwo'
 import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
-import UserProfile from './src/components/UserProfile'
-import Stacked from './src/components/Stacked'
+import Confetti from './src/components/Confetti'
+import TodoList from './src/components/TodoList'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -46,6 +49,8 @@ const components = {
   Callout: Callout,
   CalloutDanger: CalloutDanger,
   CalloutLabel: CalloutLabel,
+  List: List,
+  ListItem: ListItem,
   ListGrid: ListGrid,
   CloudinaryVideo: CloudinaryVideo,
   VideoOne: VideoOne,
@@ -56,15 +61,16 @@ const components = {
   Table: Table,
   Modal: Modal,
   Section: Section,
-  HoverMenu: HoverMenu,
+  Popper: Popper,
+  UserProfile: UserProfile,
   Left: Left,
-  Love: Love,
   LeftText: LeftText,
   ColumnGridTwo: ColumnGridTwo,
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
-  UserProfile: UserProfile,
-  Stacked: Stacked,
+  Confetti: Confetti,
+  TodoList: TodoList,
+  Love: Love,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     if (props) {

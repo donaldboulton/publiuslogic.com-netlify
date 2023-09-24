@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { useRef, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import Callout from '@/components/Callout'
 import Seo from '@/components/Seo'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
@@ -18,14 +19,14 @@ const ogimage = {
   height: 450,
 }
 
+type DsgProps = {}
 type DsgRef = React.ForwardedRef<HTMLDivElement>
 
-function Dsg(ref: DsgRef) {
-  const refPage = useRef()
+function Dsg(props: DsgProps, ref: DsgRef) {
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams">
             <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
             <div className="mt-10">
@@ -107,7 +108,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

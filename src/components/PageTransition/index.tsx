@@ -1,11 +1,10 @@
+/* https://maxschmitt.me/posts/nextjs-page-transitions-framer-motion */
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef, useMemo } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 
 type PageTransitionProps = HTMLMotionProps<'div'>
 type PageTransitionRef = React.ForwardedRef<HTMLDivElement>
-
-/* https://maxschmitt.me/posts/nextjs-page-transitions-framer-motion */
 
 function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTransitionRef) {
   const onTheRight = { x: '100%' }
@@ -13,11 +12,11 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
   const onTheLeft = { x: '-100%' }
 
   const transition = { duration: 0.6, ease: 'easeInOut' }
-  const refComp = useRef()
+
   return (
     <motion.div
       className="max-h-[100%] overflow-y-auto"
-      key={refComp}
+      ref={ref}
       initial={onTheRight}
       animate={inTheCenter}
       exit={onTheLeft}

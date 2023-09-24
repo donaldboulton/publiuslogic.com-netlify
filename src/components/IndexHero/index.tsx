@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { useState } from 'react'
 import { LazyMotion, m } from 'framer-motion'
@@ -7,7 +5,11 @@ import AnimatedText from '@/components/AnimatedCharacters'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-export default function IndexHero() {
+interface IndexHeroProps {
+  image?: string
+}
+
+const IndexHero = ({ image }: IndexHeroProps) => {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [
@@ -38,7 +40,6 @@ export default function IndexHero() {
       />
       <LazyMotion features={loadFeatures}>
         <m.div
-          key="animatedText"
           className="absolute left-3 top-16 z-20 p-4"
           initial="hidden"
           animate={replay ? 'visible' : 'hidden'}
@@ -54,3 +55,4 @@ export default function IndexHero() {
     </div>
   )
 }
+export default IndexHero

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import clsx from 'clsx'
-import { Menu, Transition } from '@headlessui/react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MusicalNoteIcon } from '@heroicons/react/24/outline'
 
 const Stacked = () => {
@@ -50,9 +50,8 @@ const Stacked = () => {
             className="inline-flex items-center justify-center h-12 w-12 rounded-full border-2 border-white font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-300 focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-800 dark:text-gray-400 dark:hover:text-white dark:focus:bg-blue-100 dark:focus:text-blue-600 dark:focus:ring-offset-gray-800"
             aria-hidden="true"
             aria-label="Old Enough"
-          >
-            <span className="font-medium text-slate-300 leading-none ml-4 mb-4">9+</span>
-          </span>
+          />
+          <span className="font-medium leading-none">9+</span>
         </Menu.Button>
         <Transition
           enter="transition ease-out duration-100"

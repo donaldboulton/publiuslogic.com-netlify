@@ -1,5 +1,3 @@
-'use client'
-
 import { graphql, useStaticQuery } from 'gatsby'
 
 const postQuery = graphql`

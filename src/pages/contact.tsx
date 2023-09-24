@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -10,6 +10,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 import WavyHr from '@/components/WavyHr'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 import LeftText from '@/components/LeftText'
 import Map from '@/components/Map'
@@ -22,15 +23,15 @@ const ogimage = {
   height: 450,
 }
 
+type ContactProps = {}
 type ContactRef = React.ForwardedRef<HTMLDivElement>
 
-function Contact(ref: ContactRef) {
-  const refPage = useRef()
+function Contact(props: ContactProps, ref: ContactRef) {
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
-          <div className="left-beams overflow-x-hidden">
+        <PageTransition ref={ref}>
+          <div className="left-beams">
             <PageHero
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
@@ -38,7 +39,7 @@ function Contact(ref: ContactRef) {
             />
             <div className="form-beams">
               <Map />
-              <div className="mt-10 p-8 overflow-x-hidden mb-10 text-slate-900 dark:text-slate-200 sm:mt-0">
+              <div className="mt-10 p-8 text-slate-900 dark:text-slate-200 sm:mt-0">
                 <div className="lg:grid lg:grid-cols-3 lg:gap-6">
                   <div className="lg:col-span-1">
                     <div className="px-4 sm:px-0">
@@ -268,14 +269,14 @@ function Contact(ref: ContactRef) {
                         <StaticImage
                           className="self-center rounded-lg w-[325px] h-[573px]"
                           src="../../static/images/angie/heidis-party.jpg"
-                          width={350}
-                          height={598}
+                          width={325}
+                          height={573}
                           quality={95}
                           alt="Angie Elvira"
                         />
                       </a>
                     </div>
-                    <div className="mb-6 mt-4 flex ml-12">
+                    <div className="mb-6 mt-4 flex justify-center">
                       <a href="https://www.buymeacoffee.com/donaldboulton/w/3913" alt="Buy Me A Coffee">
                         <StaticImage
                           className="m-auto mx-auto mb-3 h-16 w-48 rounded-md"
@@ -317,7 +318,7 @@ export function Head(props: HeadProps) {
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
           integrity="sha512-UkezATkM8unVC0R/Z9Kmq4gorjNoFwLMAWR/1yZpINW08I79jEKx/c8NlLSvvimcu7SL8pgeOnynxfRpe+5QpA=="
-          crossOrigin="anonymous"
+          crossorigin="anonymous"
         />
       </Seo>
       <script type="application/ld+json">
@@ -371,7 +372,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

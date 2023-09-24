@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { useRef, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
-import { graphql, PageProps } from 'gatsby'
+import { graphql, Link, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -10,7 +10,11 @@ import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
+import GiscusComments from '@/components/GiscusComments'
+import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
+
+const components = { Link }
 
 type DataProps = {
   data: {
@@ -67,16 +71,16 @@ interface PageProps {
 type BlogPostRef = React.ForwardedRef<HTMLDivElement>
 
 function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
-  const { frontmatter, timeToRead } = data.mdx
-  const refPage = useRef()
+  const { frontmatter, timeToRead, id } = data.mdx
+  const pathname = '/' + data.mdx.slug
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refPage}>
+        <PageTransition ref={ref}>
           <div className="left-beams -mt-10 object-cover">
             <TableOfContent headings={data.mdx.headings} />
-            <div className="mb-20 mt-10 font-inter form-beams">
-              <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-wine-300 hover:prose-a:text-wine-200 lg:px-0">
+            <div className="mb-20 mt-10 font-inter">
+              <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
                 <div className="mt-4 py-4">
                   <h1 className="mb-2 text-lg font-semibold leading-normal">{frontmatter.title}</h1>
                   <div className="flex items-center">
@@ -107,7 +111,9 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                     </div>
                   </div>
                 </div>
-                <MDXRenderer>{data.mdx.body}</MDXRenderer>
+                <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+                <GiscusComments mapping={pathname} />
+                <WavyHr />
               </section>
             </div>
           </div>
@@ -211,7 +217,7 @@ export function Head(props: HeadProps<DataProps>) {
             '@type': 'Organization',
             name: 'Mansbooks.com',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

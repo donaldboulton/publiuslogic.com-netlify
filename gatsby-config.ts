@@ -11,11 +11,11 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 const config: GatsbyConfig = {
   adapter: adapter({
-    excludeDatastoreFromEngineFunction: true,
+    excludeDatastoreFromEngineFunction: false,
   }),
   headers: [
     {
-      source: '/contact',
+      source: `/contact`,
       headers: [
         {
           key: 'Link',
@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
   ],
   headers: [
     {
-      source: '*',
+      source: `*`,
       headers: [
         {
           key: 'Referrer-Policy',
@@ -95,13 +95,14 @@ const config: GatsbyConfig = {
     },
   ],
   siteMetadata: {
-    siteTitle: 'PubliusLogic',
-    siteTitleAlt: 'To Publius Logic',
-    siteHeadline: 'To Publius Logic',
+    title: 'PubliusLogic',
     twitterUsername: '@donboulton',
-    author: 'Donald Boulton',
-    siteLanguage: 'en',
-    siteDescription:
+    author: {
+      name: 'Donald Boulton',
+      url: 'https://donboulton.com',
+      summary: 'Who Resides in OKC.',
+    },
+    description:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
     siteImage: './static/images/jpg/dbbg.jpg',
@@ -137,7 +138,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-sharp',
+      resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
           quality: 80,
@@ -213,7 +214,6 @@ const config: GatsbyConfig = {
             },
           },
           'gatsby-remark-responsive-iframe',
-          'gatsby-plugin-netlify',
           {
             resolve: 'gatsby-remark-acronyms',
             options: {
@@ -256,7 +256,7 @@ const config: GatsbyConfig = {
             },
           },
         ],
-        remarkPlugins: [{ resolve: 'remark-slug' }, { resolve: 'remark-unwrap-images' }],
+        remarkPlugins: [{ resolve: 'remark-slug' }],
       },
     },
     {
@@ -271,10 +271,16 @@ const config: GatsbyConfig = {
         icon: 'static/img/android-chrome-512x512.png',
         icons: [
           {
-            src: 'static/img/maskable_icon_x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable',
+            src: `static/img/maskable_icon_x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+            purpose: `any maskable`,
+          },
+          {
+            src: `static/img/maskable_icon_x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: `any maskable`,
           },
         ],
       },
@@ -290,24 +296,14 @@ const config: GatsbyConfig = {
         skipIndexing: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        jsxPragma: 'jsx',
-        allExtensions: true,
-      },
-    },
     'gatsby-plugin-mdx-embed',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
-          /* @typescript-eslint/no-var-requires */
           require('tailwindcss')(tailwindConfig),
-          /* @typescript-eslint/no-var-requires */
           require('autoprefixer'),
-          /* @typescript-eslint/no-var-requires */
           ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
         ],
       },

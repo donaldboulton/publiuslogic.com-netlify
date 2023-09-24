@@ -1,13 +1,9 @@
-'use client'
-
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 import clapping from '../../../static/audio/clapping.mp3'
 import Confetti from '@/components/DomConfetti'
 import axios from 'axios'
-import { useLocation } from '@reach/router'
-import useIsClient from '../../hooks/useIsClient'
 
 const confettiConfig = {
   angle: 90,
@@ -28,35 +24,33 @@ const Wrapper = props => <span style={{ position: 'relative' }} {...props} />
 const ConfettiWrapper = props => <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
 const API = 'https://api.applause-button.com'
 const VERSION = '3.0.0'
+const url = typeof window !== 'undefined' ? window.location.href : ''
 
 const HEADERS = {
   'Content-Type': 'text/plain',
 }
 
+const getClaps = async url => {
+  const query = url ? `?url=${url}` : ''
+  /* eslint-disable-next-line no-return-await */
+  return await axios.get(`${API}/get-claps${query}`, {
+    headers: HEADERS,
+  })
+}
+
+const updateClaps = async (url, claps = 1) => {
+  console.log(claps)
+  const query = url ? `?url=${url}` : ''
+  /* eslint-disable-next-line no-return-await */
+  return await axios.post(`${API}/update-claps${query}`, JSON.stringify(`${claps},${VERSION}`), {
+    headers: HEADERS,
+  })
+}
+
 const ApplauseButton = ({ props }) => {
-  const location = useLocation()
-  const url = location.pathname
   const [count, setCount] = useState(0)
   const [isClapped, setIsClapped] = useState(false)
   const [play] = useSound(clapping)
-
-  const getClaps = async url => {
-    const query = url ? `?url=${url}` : ''
-    /* eslint-disable-next-line no-return-await */
-    return await axios.get(`${API}/get-claps${query}`, {
-      headers: HEADERS,
-    })
-  }
-
-  const updateClaps = async (url, claps = 1) => {
-    console.log(claps)
-    const query = url ? `?url=${url}` : ''
-    /* eslint-disable-next-line no-return-await */
-    return await axios.post(`${API}/update-claps${query}`, JSON.stringify(`${claps},${VERSION}`), {
-      headers: HEADERS,
-    })
-  }
-
   const doApplause = () => {
     if (!isClapped) {
       console.log('do clapping')
@@ -77,9 +71,9 @@ const ApplauseButton = ({ props }) => {
     }
     fetchData()
   }, [])
-  const { key } = useIsClient()
+
   return (
-    <Wrapper key={key}>
+    <Wrapper>
       <span
         style={{
           cursor: 'pointer',

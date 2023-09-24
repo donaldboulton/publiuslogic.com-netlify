@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { useMDXScope } from 'gatsby-plugin-mdx/context'
@@ -229,7 +227,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                 {({ open }) => (
                   <>
                     <ButtonWrapper className="flex place-content-between">
-                      <m.div key="buttonWrapper">
+                      <m.div>
                         <Disclosure.Button ref={openButtonRef} className="ml-3 h-10 w-10" aria-label="Show Code">
                           <m.svg
                             baseProfile="tiny"

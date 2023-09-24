@@ -1,7 +1,5 @@
-'use client'
-
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
@@ -106,15 +104,16 @@ const ogimage = {
   height: 450,
 }
 
+type TagsProps = {}
 type TagsRef = React.ForwardedRef<HTMLDivElement>
 
-function Tags(ref: TagsRef) {
+function Tags(props: TagsProps, ref: TagsRef) {
   const tags = GetTags()
-  const refTags = useRef()
+
   return (
     <>
       <Layout>
-        <PageTransition ref={ref} key={refTags}>
+        <PageTransition ref={ref}>
           <div className="left-beams">
             <PageHero
               title="Blog Tags"
@@ -126,7 +125,7 @@ function Tags(ref: TagsRef) {
                 {tags
                   .sort((a, b) => b.count - a.count)
                   .map((tag, i) => (
-                    <Link to={`/tags/${kebabCase(tag.tag)}/`} className="group">
+                    <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
                       <section
                         className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
                         style={{

@@ -30,7 +30,7 @@ export default function A({ href, external = false, className, children }: AProp
         to={href}
         rel="me"
         target="_blank"
-        className={`text-slate-900 hover:text-wine-300 dark:text-slate-200 ${className}`}
+        className={`text-slate-200 hover:text-wine-300 dark:text-slate-200 ${className}`}
         activeClassName="active"
       >
         {children}

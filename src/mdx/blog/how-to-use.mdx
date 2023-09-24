@@ -1,0 +1,37 @@
+---
+published: true
+featuredPost: false
+author: Donald Boulton
+path: /blog/how-to-use
+title: How to Use
+description: Some suggestions for how to use this starter.
+date: 2020-10-16
+category: Tech
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+imageLink: https://publiuslogic.com/images/undraw/undraw_building_websites_i78t.png
+tags:
+  - Instructions
+---
+
+## How To Use
+
+1. Clone your own version of the starter template or fork the repository. Run `yarn` then `yarn build` or `yarn develop`.
+2. The default colour scheme is purple to match the Gatsby logo. Change to your preferred hue by doing a global search and replace of '-gray-' to your favourite colour.
+3. The home (landing) page consists of a number of components (Hero, Feature, CTA, ...) - edit these components in `src/components` to customise.
+4. The `/contact` page displays an OpenStreetMaps map via Leaflet - customise by changing to your preferred set of coordinates.
+5. `gatsby-config.js` has all the site parameters - edit site metadata to suit.
+6. Create new MDX pages in `src/mdx` (using either `.md` or `.mdx` extension). Add React components to MDX in the `src/pages/{mdx.slug}.tsx` file.
+7. Any content created in the `src/mdx/blog` subdirectory will automatically be a blog post. Use `src/mdx/blog/2000-01-01-template.md` as a base for creating a new blog post.
+8. If you create a new tag (eg. `newtag`) a new tag page will be created ie. `/tags/newtag`. The `/tags` page will enumerate all tags.
+9. If you want to change the navigation menu, edit `src/components/header.tsx`. Similarly, edit `src/components/footer.tsx` to customise the footer.
+10. If you make a lot of changes, use `yarn lint` and `yarn type-check` to check everything is okay.
+
+## SendGrid configuration (for contact form)
+
+Insert the following environment variables (either in .env or on deployment host):
+
+- `SENDGRID_API_KEY`
+- `SENDGRID_AUTHORIZED_EMAIL`
+
+<WavyHr className="mt-1 mb-1 text-wine-300" />

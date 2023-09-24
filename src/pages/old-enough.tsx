@@ -1,18 +1,21 @@
 import * as React from 'react'
-import { useRef, ref, forwardRef } from 'react'
+import { useRef, forwardRef } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import type { HeadProps } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import PageTransition from '@/components/PageTransition'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import Stars from '@/components/Stars'
+import LeftText from '@/components/LeftText'
+import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import HeaderPopover from '@/components/HeaderPopover'
 import IframeWrapper from '@/components/IframeWrapper'
+import IframeWrapperLarge from '@/components/IframeWrapperLarge'
 import loadable from '@loadable/component'
 
-const IframeWrapperLarge = loadable(() => import('@/components/IframeWrapperLarge'))
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 const ogimage = {
   src: OGImage,
@@ -20,72 +23,71 @@ const ogimage = {
   height: 450,
 }
 
+type OldEnoughProps = {}
 type OldEnoughRef = React.ForwardedRef<HTMLDivElement>
 
-function OldEnough(ref: OldEnoughRef) {
+function OldEnough(props: OldEnoughProps, ref: OldEnoughRef) {
   const refSmall = useRef(null)
   const refPlayer = useRef(null)
-  const refPage = useRef()
   return (
     <>
-      <Stars />
-      <Header />
-      <PageTransition ref={ref} key={refPage}>
-        <div className="login-beams bg-scale-100 flex flex-1 flex-col">
-          <div className="left-beams mb-10 flex flex-1">
-            <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
-              <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
-                <div className="mb-4">
-                  <div className="flex flex-col items-center neon-div">
-                    <span className="neonText neon-h1">
-                      <h1 className="text-2xl">Angelina's Playlists</h1>
-                      <h2 className="text-scale-1100 items-center text-lg justify-center ml-9">Old Enough</h2>
-                    </span>
+      <Layout>
+        <PageTransition ref={ref}>
+          <div className="login-beams bg-scale-100 flex flex-1 flex-col">
+            <div className="left-beams mb-10 flex flex-1">
+              <main className="bg-scale-200 border-scale-500 flex flex-1 flex-shrink-0 flex-col items-center border-r border-slate-700 px-5 pb-8 pt-16 shadow-lg">
+                <div className="mb-6 flex w-[330px] flex-1 flex-col justify-center sm:w-[384px]">
+                  <div className="mb-4">
+                    <div className="flex flex-col items-center neon-div">
+                      <span className="neonText neon-h1">
+                        <h1 className="text-2xl">Angelina's Playlists</h1>
+                        <h2 className="text-scale-1100 items-center text-lg justify-center ml-9">Old Enough</h2>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <IframeWrapper>
+                      <ReactPlayer
+                        ref={refSmall}
+                        url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
+                        width="100%"
+                        height="100%"
+                        controls={true}
+                      />
+                    </IframeWrapper>
                   </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                  <IframeWrapper>
+                <div className="sm:text-center">
+                  <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
+                    By continuing, you agree to Mansbooks{' '}
+                    <Link className="hover:text-scale-1100 underline" to="/terms">
+                      Terms of Service
+                    </Link>{' '}
+                    and{' '}
+                    <Link className="hover:text-scale-1100 underline" to="privacy">
+                      Privacy Policy
+                    </Link>
+                    , and to receive periodic emails with updates.
+                  </div>
+                </div>
+              </main>
+              <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
+                <div className="relative mt-12 flex flex-col gap-6 opacity-70">
+                  <IframeWrapperLarge>
                     <ReactPlayer
-                      ref={refSmall}
-                      url="https://www.youtube.com/embed/videoseries?si=3WDvhcx37RPUqyZC&amp;list=PLTa09znYPWvKpWlZAAF3v2KEa4b7_tMBf"
-                      width="100%"
+                      ref={refPlayer}
+                      url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
                       height="100%"
+                      width="100%"
                       controls={true}
                     />
-                  </IframeWrapper>
+                  </IframeWrapperLarge>
                 </div>
-              </div>
-              <div className="sm:text-center text-slate-900 dark:text-slate-300">
-                <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
-                  By continuing, you agree to Mansbooks{' '}
-                  <Link className="hover:text-scale-1100 underline" to="/terms">
-                    Terms of Service
-                  </Link>{' '}
-                  and{' '}
-                  <Link className="hover:text-scale-1100 underline" to="privacy">
-                    Privacy Policy
-                  </Link>
-                  , and to receive periodic emails with updates.
-                </div>
-              </div>
-            </main>
-            <aside className="form-beams hidden flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
-              <div className="relative mt-12 flex flex-col gap-6 opacity-70">
-                <IframeWrapperLarge>
-                  <ReactPlayer
-                    ref={refPlayer}
-                    url="https://www.youtube.com/embed/W99gdQlbv3I?si=6U_TIqIiju_nRimW"
-                    height="100%"
-                    width="100%"
-                    controls={true}
-                  />
-                </IframeWrapperLarge>
-              </div>
-            </aside>
+              </aside>
+            </div>
           </div>
-        </div>
-      </PageTransition>
-      <Footer />
+        </PageTransition>
+      </Layout>
     </>
   )
 }
@@ -152,7 +154,7 @@ export function Head(props: HeadProps) {
             '@type': 'Organization',
             name: 'Mansbooks',
           },
-          license: 'http://publiuslogic.com/blog/osbd-license',
+          license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
       </script>
       <script type="application/ld+json">

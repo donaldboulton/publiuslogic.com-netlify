@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'

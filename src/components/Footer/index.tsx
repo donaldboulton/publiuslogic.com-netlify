@@ -1,12 +1,17 @@
-'use client'
-
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import ColumnGridTwo from '@/components/ColumnGridTwo'
+import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
-const Subscriptions = loadable(() => import('@/components/Subscriptions'))
+const Subscriptions = loadable(() => import('@/components/Subscriptions'), {
+  fallback: (
+    <div>
+      <ThreeDotsWave />
+    </div>
+  ),
+})
 
 export default function Footer() {
   return (
@@ -236,7 +241,7 @@ export default function Footer() {
                 <div className="ml-auto w-full px-4 lg:w-4/12">
                   <span className="mb-2 block text-lg font-semibold uppercase text-slate-300">Useful Links</span>
                   <ul className="list-unstyled">
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/about"
@@ -245,7 +250,7 @@ export default function Footer() {
                         About Us
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog"
@@ -254,7 +259,7 @@ export default function Footer() {
                         Blog
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/contact"
@@ -263,7 +268,7 @@ export default function Footer() {
                         Contact Us
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/profile"
@@ -272,7 +277,7 @@ export default function Footer() {
                         Profile
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/search"
@@ -281,7 +286,7 @@ export default function Footer() {
                         Search Page
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/sitemap.xml"
@@ -295,7 +300,7 @@ export default function Footer() {
                 <div className="w-full px-4 lg:w-4/12">
                   <span className="mb-2 block text-lg font-semibold uppercase text-gray-100">Resources</span>
                   <ul className="list-unstyled">
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/obsd-license"
@@ -304,7 +309,7 @@ export default function Footer() {
                         BSD License
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <a
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         rel="noopener noreferrer"
@@ -315,7 +320,7 @@ export default function Footer() {
                         Github
                       </a>
                     </li>
-                    <li component="div">
+                    <li>
                       <a
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         rel="noopener noreferrer"
@@ -326,7 +331,7 @@ export default function Footer() {
                         Free Starters
                       </a>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/terms"
@@ -335,7 +340,7 @@ export default function Footer() {
                         Terms
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/blog/privacy"
@@ -344,7 +349,7 @@ export default function Footer() {
                         Privacy Policy
                       </Link>
                     </li>
-                    <li component="div">
+                    <li>
                       <Link
                         className="block pb-2 text-lg font-semibold text-slate-300 hover:text-wine-300"
                         to="/sitemap-posts.xml"
