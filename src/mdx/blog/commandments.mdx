@@ -7,11 +7,16 @@ path: /blog/commandments
 tags: [God, Law, Commandments]
 category: Creation
 date: 2021-04-30 01:25
-imageLink: https://publiuslogic.com/assets/commandments.png
+embeddedImagesLocal:
+  - '../../../static/assets/commandments.png'
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 description: These laws were set way before Moses and were a World standard way of belief in all cultures! Abide by them or your life is a lie!
 ---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="Law" image={getImage(props.localImages[0])} />
 
 ## The Law
 

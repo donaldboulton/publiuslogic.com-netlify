@@ -19,10 +19,9 @@ const ogimage = {
   height: 450,
 }
 
-type SearchPageProps = {}
 type SearchPageRef = React.ForwardedRef<HTMLDivElement>
 
-function SearchPage(props: SearchPageProps, ref: SearchPageRef) {
+function SearchPage(props, ref: SearchPageRef) {
   return (
     <>
       <Layout>

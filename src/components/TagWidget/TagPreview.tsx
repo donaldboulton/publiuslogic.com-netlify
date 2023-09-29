@@ -1,3 +1,5 @@
+'use client'
+
 import { Component, createElement } from 'react'
 
 import './style.module.css'

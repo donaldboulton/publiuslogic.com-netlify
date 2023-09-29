@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { Component } from 'react'
 import { confetti } from './main'

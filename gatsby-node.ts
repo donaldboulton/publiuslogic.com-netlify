@@ -30,7 +30,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 }
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = ({ actions }) => {
-  const { createTypes } = actions
+  const { createTypes, printTypeDefinitions } = actions
 
   createTypes(`
     type Site {
@@ -47,10 +47,16 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       frontmatter: MdxFrontmatter!
     }
 
+    type Frontmatter @dontInfer {
+      title: String!
+      embeddedImagesLocal: File @fileByRelativePath
+    }
+
     type MdxFrontmatter {
       image: File @fileByRelativePath
     }
   `)
+  printTypeDefinitions({ path: './typeDefs.txt' })
 }
 
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
@@ -85,4 +91,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   )
+}
+
+exports.createPages = async ({ actions }) => {
+  actions.createSlice({
+    id: `footer`,
+    component: path.resolve(`src/components/Footer/footer.tsx`),
+  })
 }

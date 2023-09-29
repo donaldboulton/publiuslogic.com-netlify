@@ -1,8 +1,10 @@
-import React from 'react'
-import Applause from '@/components/Applause'
+'use client'
+
+import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import BioTypist from '@/components/BioTypist'
-import WavingHand from '@/components/WavingHand'
+import loadable from '@loadable/component'
+
+const WavingHand = loadable(() => import('@/components/WavingHand'))
 
 const Bio = () => {
   return (
@@ -21,14 +23,16 @@ const Bio = () => {
             loading="eager"
           />
         </div>
-        <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left">
+        <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left items-center">
           <div className="text-base leading-6">
             <WavingHand /> <span className="font-medium"> Developed and Written by: </span>{' '}
             <span className="font-medium italic">Donald Boulton</span>
-            <Applause />
           </div>
-          <div className="ml-4 mt-1 text-base">
-            <BioTypist />
+          <div className="-mt-2 z-30 p-4 text-sm items-center">
+            I Build Websites with React and Love{' '}
+            <span role="img" aria-label="Love">
+              ❤️
+            </span>
           </div>
         </div>
       </div>

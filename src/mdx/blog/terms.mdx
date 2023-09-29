@@ -9,10 +9,13 @@ category: Tech
 tags: [Terms]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Visualizer Suspicious Minds
-imageLink: https://publiuslogic.com/assets/about.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/about.jpg'
 ---
 
-![Terms](../../../static/assets/about.jpg)
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="about" image={getImage(props.localImages[0])} />
 
 These Terms of Use are a legally binding contract
 between you and Visualizer Official regarding your use of

@@ -175,7 +175,6 @@ const config: GatsbyConfig = {
         name: 'img',
       },
     },
-    'gatsby-plugin-babel-optional-chaining',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

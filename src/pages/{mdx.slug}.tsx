@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useRef, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
-import { graphql, Link, PageProps } from 'gatsby'
+import { graphql, Link, PageProps, FC } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
@@ -14,7 +14,18 @@ import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
 
-const components = { Link }
+import ImageColWrapperPage from '@/components/image-col-wrapper-page'
+
+interface ImageProp {
+  image: GatsbyImageData
+  full: IGatsbyImageData
+  thumb: IGatsbyImageData
+  imgClass?: string
+  thumbAlt?: string
+  title?: string
+  caption?: string
+  customWrapper?: FC
+}
 
 type DataProps = {
   data: {
@@ -25,7 +36,7 @@ type DataProps = {
         author: string
         path: string
         date: string
-        imageLink: string
+        embeddedImagesLocal: ImageProp[]
         tags: string[]
         publicId: string
         videoTitle: string
@@ -51,7 +62,7 @@ interface PageProps {
         path: string
         author: string
         date: string
-        imageLink: string
+        embeddedImagesLocal: ImageProp[]
         tags: string[]
         publicId: string
         videoTitle: string
@@ -71,7 +82,7 @@ interface PageProps {
 type BlogPostRef = React.ForwardedRef<HTMLDivElement>
 
 function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
-  const { frontmatter, timeToRead, id } = data.mdx
+  const { frontmatter, timeToRead, id, customWrapper = ImageColWrapperPage, imgClass = '' } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>
@@ -111,7 +122,7 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                     </div>
                   </div>
                 </div>
-                <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+                <MDXRenderer localImages={frontmatter.embeddedImagesLocal}>{data.mdx.body}</MDXRenderer>
                 <GiscusComments mapping={pathname} />
                 <WavyHr />
               </section>
@@ -347,7 +358,11 @@ export const query = graphql`
         author
         path
         publicId
-        imageLink
+        embeddedImagesLocal {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         date(formatString: "YYYY-MM-DD")
         tags
       }

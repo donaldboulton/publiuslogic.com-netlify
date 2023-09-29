@@ -19,10 +19,9 @@ const ogimage = {
   height: 450,
 }
 
-type ThanksProps = {}
 type ThanksRef = React.ForwardedRef<HTMLDivElement>
 
-function Thanks(props: ThanksProps, ref: ThanksRef) {
+function Thanks(props, ref: ThanksRef) {
   return (
     <>
       <Layout>

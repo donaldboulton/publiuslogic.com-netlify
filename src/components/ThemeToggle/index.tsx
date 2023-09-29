@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect'
 import { Listbox } from '@headlessui/react'

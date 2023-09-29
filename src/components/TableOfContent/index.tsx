@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
 import { Link } from 'gatsby'
@@ -69,7 +71,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
       <Popover as="div">
         {({ open }) => (
           <>
-            <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-700 dark:text-slate-200">
+            <Popover.Button className="bg-text-slate-400 -ml-1 h-auto w-auto rounded-r-md pb-0 pr-2 pt-2 text-slate-900 dark:bg-slate-950 dark:text-slate-200">
               <span className="headings-center inline-flex">
                 <TableCellsIcon className="ml-2 h-8 w-8 text-slate-900 dark:text-slate-200" />
               </span>

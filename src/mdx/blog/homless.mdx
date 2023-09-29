@@ -7,15 +7,18 @@ author: Donald Boulton
 date: 2023-01-01
 featuredPost: false
 category: Tech
-imageLink: https://publiuslogic.com/static/img/homeless.jpg
+embeddedImagesLocal:
+  - '../../../static/img/homeless.jpg'
 tags: [Poor, Homeless]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 ---
 
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
 <Center>Hard Times</Center>
 
-![Hard Times](../../../static/img/homeless.jpg)
+<GatsbyImage alt="Hard Times" image={getImage(props.localImages[0])} />
 
 I am the worlds top expert on Homelessness, I will prove it. I am extremely pissed at the people in the homeless industry with their thieving ways.
 

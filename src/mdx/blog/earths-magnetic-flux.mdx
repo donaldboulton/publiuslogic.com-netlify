@@ -6,7 +6,8 @@ path: /blog/earths-magnetic-flux
 date: 2022-12-02
 author: Donald Boulton
 category: Logic
-imageLink: https://publiuslogic.com/assets/earths-magnetic-flux.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/earths-magnetic-flux.jpg'
 tags: [Earth, Magnetic Flux, Oil]
 description: Earths Magnetic Flux and Common Sense on Planetary Issues
 videoUrl: https://www.youtube.com/watch?v=HEj4p8Ax3b4
@@ -14,7 +15,9 @@ videoTitle: Magnetic Flux
 videoPoster: https://www.youtube.com/watch?v=HEj4p8Ax3b4
 ---
 
-![Earths Magnetic Flux](../../../static/assets/earths-magnetic-flux.jpg)
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="green doggo" image={getImage(props.localImages[0])} />
 
 ## Common Sense on Planetary Issues
 

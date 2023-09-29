@@ -23,10 +23,9 @@ const ogimage = {
   height: 450,
 }
 
-type OldEnoughProps = {}
 type OldEnoughRef = React.ForwardedRef<HTMLDivElement>
 
-function OldEnough(props: OldEnoughProps, ref: OldEnoughRef) {
+function OldEnough(props, ref: OldEnoughRef) {
   const refSmall = useRef(null)
   const refPlayer = useRef(null)
   return (

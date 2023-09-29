@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
-import loadable from '@loadable/component'
 
 const PageHero = loadable(() => import('@/components/PageHero'))
 function refreshPage() {

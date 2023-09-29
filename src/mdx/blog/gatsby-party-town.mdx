@@ -6,14 +6,17 @@ title: Gatsby Partytown
 path: /blog/gatsby-party-town
 date: 2022-08-06
 category: Tech
-imageLink: https://publiuslogic.com/assets/partytown.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/partytown.jpg'
 tags: [Play, Party, WebWorker]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 description: Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker.
 ---
 
-![Partytown WebWorker](../../../static/assets/partytown.jpg)
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="Partytown WebWorker" image={getImage(props.localImages[0])} />
 
 <Center>Gatbsy Partytown WebWorker!</Center>
 

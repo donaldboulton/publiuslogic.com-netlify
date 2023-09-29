@@ -9,9 +9,13 @@ category: Creation
 date: 2021-04-04
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
-imageLink: https://publiuslogic.com/assets/creation.jpg
+embeddedImagesLocal:
+  - '../../../static/img/trinity-page.png'
+  - '../../../static/img/trinity-math.png'
 description: Life is comprised of 95% Dark Matter and 5% Matter. Which should you seek? The lesser fleshly life or your spiritual existence with a connection to the Trinity. Or Both being 100%!
 ---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 <Center>Creation Of All</Center>
 
@@ -25,17 +29,29 @@ And so is it truth in our relative mathematics that all is controlled and is bui
 
 So -1 and +1 live there lives to -2 and +2 respectively; that really makes, "0 Zero", = "3 Three", as it is itself and all the way to -1 and +1; the trinity is the trinary mathematical foundational subset of all, as Trinary Mathematics.
 
-Even all our color's are derived from a trinity subset of 3; Blue -1, Red 0, and Yellow +1.
-
 <Section>
 
-![A Trinity Subset in All Colors](../../../static/img/trinity-page.png 'trinity subset in all colors')
+<ImageColWrapperPage>
+
+<GatsbyImage alt="A Trinity Subset in All Colors" imgClass="object-cover object-center w-full h-full" image={getImage(props.localImages[0])} />
+
+</ImageColWrapperPage>
 
 </Section>
 
 <Section>
 
-![A Trinity in All Substance](../../../static/img/trinity-math.png 'trinity in all substance')
+Even all our color's are derived from a trinity subset of 3; Blue -1, Red 0, and Yellow +1.
+
+</Section>
+
+<Section>
+
+<ImageColWrapperPage>
+
+<GatsbyImage alt="A Trinity in All Substance" imgClass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[1])} />
+
+</ImageColWrapperPage>
 
 </Section>
 

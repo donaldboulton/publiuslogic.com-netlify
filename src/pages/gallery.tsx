@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
@@ -95,6 +97,8 @@ function ImageGallery({ data }, props: ImageGalleryProps, ref: ImageGalleryRef) 
   )
 }
 
+export default forwardRef(ImageGallery)
+
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(filter: { relativeDirectory: { eq: "angie" } }, sort: { name: ASC }) {
@@ -110,8 +114,6 @@ export const pageQuery = graphql`
     }
   }
 `
-
-export default forwardRef(ImageGallery)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {

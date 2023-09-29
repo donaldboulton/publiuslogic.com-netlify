@@ -17,10 +17,9 @@ const ogimage = {
   height: 450,
 }
 
-type BlogPageProps = {}
 type BlogPageRef = React.ForwardedRef<HTMLDivElement>
 
-function BlogPage(props: BlogPageProps, ref: BlogPageRef) {
+function BlogPage(props, ref: BlogPageRef) {
   return (
     <>
       <Layout>

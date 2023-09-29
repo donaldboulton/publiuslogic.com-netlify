@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 const postQuery = graphql`
   query {
@@ -11,7 +12,11 @@ const postQuery = graphql`
           title
           description
           author
-          imageLink
+          embeddedImagesLocal {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           date(formatString: "YYYY-MM-DD")
           tags
           category
@@ -22,6 +27,13 @@ const postQuery = graphql`
     }
   }
 `
+interface ImageProp {
+  embeddedImagesLocal: ImageProp[]
+  imgClass?: string
+  thumbAlt?: string
+  title?: string
+  caption?: string
+}
 
 export type PostType = {
   frontmatter: {
@@ -31,7 +43,7 @@ export type PostType = {
     date: string
     category: string
     tags: string[]
-    imageLink: string
+    embeddedImagesLocal: ImageProp[]
   }
   slug: string
   excerpt: string

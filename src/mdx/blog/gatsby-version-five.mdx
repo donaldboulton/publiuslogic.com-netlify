@@ -7,13 +7,17 @@ author: Donald Boulton
 date: 2022-11-18
 featuredPost: false
 category: Tech
-imageLink: https://publiuslogic.com/assets/gatsby-version-five.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/gatsby-version-five.jpg'
+  - '../../../static/img/Node-and-React-18.png'
 tags: [Gatsby, Hydration, Slices]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 ---
 
-![Gatsby Version Five](../../../static/assets/gatsby-version-five.jpg)
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="Gatsby Version Five" image={getImage(props.localImages[0])} />
 
 ## Gatsby Version Five v5.12.4
 
@@ -23,7 +27,7 @@ Now I can use Gatsby 5.12.4, with MDX version 3.20.0
 
 Do you really think everyone who Uses Gatsby wants to completely rebuild there site when you decide, there could be workaround to upgrades that are effortless but none of the Gatsby community can figure it out. Mr Artsy!
 
-![Node and React 18](../../../static/img/Node-and-React-18.png)
+<GatsbyImage alt="node" image={getImage(props.localImages[1])} />
 
 Tried `"gatsby-plugin-mdx": "5.0.0"` slug errors is all I get. Tried `remark-slug`, `rehype-slug` and Gatsby’s external modules Gatsby recommends.
 

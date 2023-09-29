@@ -357,34 +357,26 @@ figure {
 
 .scroll-down {
   background: transparent;
-  color: #777;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   transition: 0.3s;
   position: fixed;
-  right: calc(1.8vw - 1em / 1);
-  top: 10vh;
 }
 
 .scroll-down:hover {
   transform: scale(1.15);
+  transition: 0.3s;
   background: transparent;
 }
 
 .scroll {
   background: transparent;
-  color: #777;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   transition: 0.3s;
   position: fixed;
-  bottom: 12vh;
-  right: calc(1.8vw - 1em / 1);
 }
 
 .scroll:hover {
+  transform: scale(1.15);
   transition: 0.3s;
   background: transparent;
 }

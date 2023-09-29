@@ -8,13 +8,22 @@ category: Tech
 tags: [About, Gatsby, Starter]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
-imageLink: https://publiuslogic.com/static/assets/about.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/about.jpg' 
+  - '../../../static/img/speed-test.jpg'
+  - '../../../static/img/security-report.jpg'
+  - '../../../static/img/site-driven1.png'
+  - '../../../static/img/buy-me-a-coffee.jpg'
 description: PubliusLogic Purpose and Technologies, A little about the Author and some Internet programming tidbits.
 ---
 
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="about" imgClass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[0])} />
+
 ## To Convey My Knowledge
 
-I employ <Popper tooltipText="Wisdom Is the key to knowledge">Feynman / Wisdom</Popper> in explications of Code, Government, Law and God with a little <Popper tooltipText="Wisdom according to"> Sufi / Sufism Wisdom</Popper> for kindness and brevity.
+I employ <HoverMenu title="Feynman">Feynman / Wisdom</HoverMenu> in explications of Code, Government, Law and God with a little Wisdom according to <HoverMenu title="Sufi">Sufi / Sufism Wisdom</HoverMenu> for kindness and brevity.
 
 The 🔗 [Feynman Learning Technique](https://fs.blog/feynman-learning-technique/) is a simple way of approaching anything new you want to learn. ... When you really learn something, you give yourself a tool to use for the rest of your life. The more you know, the fewer surprises you will encounter, because most new things will connect to something you already understand.
 
@@ -54,13 +63,21 @@ PubliusLogic security is top notch using the latest Content-Security-Policy dire
 
 <Section>
 
-![Content-Security-Policy Speed Test](../../../static/img/speed-test.jpg)
+<ImageColWrapperPage>
+
+<GatsbyImage alt="Content Security Policy" imgClass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[1])} />
+
+</ImageColWrapperPage>
 
 </Section>
 
 <Section>
 
-![Headers test Content-Security-Policy](../../../static/img/security-report.jpg)
+<ImageColWrapperPage>
+
+<GatsbyImage alt="Headers test Content-Security-Policy" imgClass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[2])} />
+
+</ImageColWrapperPage>
 
 </Section>
 
@@ -83,7 +100,11 @@ with GraphQL, Built with WebPack. Including a user data, todo's backend. The dat
 
 <Section>
 
-![Site Structure](../../../static/img/site-driven1.png)
+<ImageColWrapperPage>
+
+<GatsbyImage alt="Site Structure" imgClass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[3])} />
+
+</ImageColWrapperPage>
 
 </Section>
 
@@ -202,7 +223,11 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 </Section>
 
-[![Buy me a coffee](../../../static/img/buy-me-a-coffee.jpg)](https://www.buymeacoffee.com/donaldboulton/w/3913)
+<ImageColWrapperPage>
+
+<GatsbyImage alt="Buy Me A Coffee" imgClass="object-cover w-full h-full object-center rounded-lg" image={getImage(props.localImages[4])} />
+
+</ImageColWrapperPage>
 
 <Cta />
 

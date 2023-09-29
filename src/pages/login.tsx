@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { forwardRef, useState, useEffect } from 'react'
 import type { HeadProps } from 'gatsby'
@@ -20,10 +22,9 @@ const ogimage = {
   height: 450,
 }
 
-type LoginProps = {}
 type LoginRef = React.ForwardedRef<HTMLDivElement>
 
-function Login(props: LoginProps, ref: LoginRef) {
+function Login(props, ref: LoginRef) {
   const [session, setSession] = useState(null)
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {

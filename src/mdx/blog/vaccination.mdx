@@ -6,14 +6,17 @@ title: Vaccination
 path: /blog/vaccination
 date: 2022-05-04
 category: Logic
-imageLink: https://publiuslogic.com/assets/vaccination.jpg
+embeddedImagesLocal:
+  - '../../../static/assets/vaccination.jpg'
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 tags: [Government, Vaccination, Truth]
 description: Vaccinations are for Pansies. Never have had a one and do not need it. God gave me all I need! Through Faith and Spirit I overcome!
 ---
 
-![No Don't Do It!](../../../static/assets/vaccination.jpg)
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="green doggo" image={getImage(props.localImages[0])} />
 
 ## Rated Raw!
 

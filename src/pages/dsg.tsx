@@ -19,10 +19,9 @@ const ogimage = {
   height: 450,
 }
 
-type DsgProps = {}
 type DsgRef = React.ForwardedRef<HTMLDivElement>
 
-function Dsg(props: DsgProps, ref: DsgRef) {
+function Dsg(props, ref: DsgRef) {
   return (
     <>
       <Layout>

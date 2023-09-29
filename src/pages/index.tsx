@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { useState, forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
@@ -13,14 +15,12 @@ import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
 import loadable from '@loadable/component'
 
 const Table = loadable(() => import('@/components/Table'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-type HomeProps = {}
 type HomeRef = React.ForwardedRef<HTMLDivElement>
 
 const ogimage = {
@@ -29,7 +29,7 @@ const ogimage = {
   height: 531,
 }
 
-function Home(props: HomeProps, ref: HomeRef) {
+function Home(props, ref: HomeRef) {
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [replay, setReplay] = useState(true)
   const placeholderText = [
@@ -107,13 +107,13 @@ function Home(props: HomeProps, ref: HomeRef) {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
                             />
                           </svg>
@@ -174,7 +174,7 @@ function Home(props: HomeProps, ref: HomeRef) {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
@@ -366,13 +366,13 @@ function Home(props: HomeProps, ref: HomeRef) {
                       x="0"
                       y="0"
                     >
-                      <polygon className="fill-current text-slate-700" points="2560 0 2560 100 0 100"></polygon>
+                      <polygon className="fill-current text-slate-950" points="2560 0 2560 100 0 100"></polygon>
                     </svg>
                   </div>
                 </div>
               </div>
             </section>
-            <section className="relative block bg-slate-700 py-20">
+            <section className="relative block bg-slate-950 py-20">
               <div className="container mx-auto px-4 pb-24">
                 <Features />
               </div>
@@ -416,7 +416,7 @@ function Home(props: HomeProps, ref: HomeRef) {
                 <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                   <div className="w-full px-4">
                     <Updates />
-                    <div className="light:bg-gray-200 light:text-gray-800 mb-4 mt-10 rounded-lg bg-gray-800 text-slate-300 lg:mt-6">
+                    <div className="light:bg-gray-200 light:text-gray-800 mb-4 mt-10 rounded-lg bg-gray-950 text-slate-300 lg:mt-6">
                       <h4 className="mb-2 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
                         Ordered Spiritual Reading List!
                       </h4>

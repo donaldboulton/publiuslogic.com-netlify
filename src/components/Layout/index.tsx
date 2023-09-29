@@ -1,19 +1,20 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
-import { Link } from 'gatsby'
+import { Link, Slice } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import ScrollDown from '@/components/ScrollDown'
-import Scroll from '@/components/Scroll'
+import ToBottom from '@/components/ToBottom'
+import ToTop from '@/components/ToTop'
 import ScrollIndicator from '@/components/ScrollIndicator'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
+import loadable from '@loadable/component'
+
+const Header = loadable(() => import('@/components/Header'))
 
 interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, footerClassName }: LayoutProps) => {
   return (
     <>
       <ScrollIndicator />
@@ -21,19 +22,10 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
-        <ScrollDown
-          className="scroll right-4 top-20 z-20 md:right-3"
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
-        />
-        <Scroll
-          className="scroll bottom-2 right-4 z-20 md:right-3"
-          showBelow={1500}
-          size={40}
-          css="position: fixed; color: gray; width: 40px; height: 40px;"
-        />
+        <ToBottom />
+        <ToTop />
       </div>
-      <Footer />
+      <Slice alias="footer" className={footerClassName} />
       <CookieConsent
         enableDeclineButton
         flipButtons

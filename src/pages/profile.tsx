@@ -21,10 +21,9 @@ const ogimage = {
   height: 450,
 }
 
-type ProfileProps = {}
 type ProfileRef = React.ForwardedRef<HTMLDivElement>
 
-function Profile(props: ProfileProps, ref: ProfileRef) {
+function Profile(props, ref: ProfileRef) {
   const spacer200 = {
     src: Spacer200,
     width: 1400,
