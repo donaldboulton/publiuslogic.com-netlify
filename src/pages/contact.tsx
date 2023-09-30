@@ -28,7 +28,7 @@ function Contact(props, ref: ContactRef) {
     <>
       <Layout>
         <PageTransition ref={ref} key={refPage}>
-          <div className="left-beams overflow-x-hidden mb-10">
+          <div className="left-beams overflow-x-hidden overscroll-contain mb-10">
             <PageHero
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
@@ -215,7 +215,7 @@ function Contact(props, ref: ContactRef) {
                               >
                                 <defs>
                                   <linearGradient
-                                    id="a"
+                                    id="b"
                                     x1="67.83"
                                     x2="474.19"
                                     y1="82.42"

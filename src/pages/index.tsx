@@ -109,6 +109,8 @@ function Home(props, ref: HomeRef) {
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
+                            width='24px'
+                            height='24px'
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
@@ -134,12 +136,14 @@ function Home(props, ref: HomeRef) {
                   <div className="w-full px-4 text-center md:w-4/12">
                     <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-indigo-700 text-slate-200 shadow-lg shadow-indigo-700/50">
                       <div className="flex-auto px-4 py-4">
-                        <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-slate-200 p-3 text-center shadow-lg shadow-purple-500/50">
+                        <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-slate-200 p-3 text-center shadow-lg shadow-purple-700/50">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
+                            width='24px'
+                            height='24px'
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
@@ -175,12 +179,14 @@ function Home(props, ref: HomeRef) {
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
+                            width='24px'
+                            height='24px'
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
                             />
                           </svg>
@@ -211,6 +217,8 @@ function Home(props, ref: HomeRef) {
                       formats={['auto', 'webp']}
                       src="../../static/img/donald-boulton-80.jpg"
                       quality={95}
+                      width={80}
+                      height={80}
                       alt="Profile picture"
                       area-label="My Picture"
                       loading="eager"
@@ -218,7 +226,7 @@ function Home(props, ref: HomeRef) {
                   </div>
                   <h2 className="m-auto flex max-w-xs justify-center text-2xl font-bold">Donald W. Boulton</h2>
                   <a
-                    className="m-auto flex max-w-xs justify-center text-rose-500 hover:text-rose-400"
+                    className="m-auto flex max-w-xs justify-center text-blue-500 hover:text-blue-400"
                     href="https://donboulton.com"
                     target="_blank"
                     rel="noreferrer"
@@ -315,7 +323,7 @@ function Home(props, ref: HomeRef) {
                       </div>
                       <div className="mb-4 mt-4 text-lg font-light leading-relaxed text-slate-300">
                         <div>
-                          <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
+                          <span className="mt-4 text-blue-500 hover:text-blue-700 hover:shadow-blue-700/50">
                             {' '}
                             Mans Books Of Life
                           </span>
@@ -328,14 +336,14 @@ function Home(props, ref: HomeRef) {
                         </div>
                         <a
                           href="https://mansbooks.com"
-                          className="mt-4 font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50"
+                          className="mt-4 font-bold text-blue-600 hover:text-blue-500 hover:shadow-blue-500/50"
                         >
                           https://mansbooks.com
                         </a>
                       </div>
                       <div className="mb-4 mt-0 text-lg font-light leading-relaxed text-slate-200">
                         <div>
-                          <span className="mt-4 text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50">
+                          <span className="mt-4 text-blue-500 hover:text-blue-700 hover:shadow-blue-700/50">
                             {' '}
                             Basic Instructions Books While On Earth
                           </span>
@@ -343,7 +351,7 @@ function Home(props, ref: HomeRef) {
                         </div>
                         <a
                           href="https://bibwoe.com"
-                          className="mt-4 font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50"
+                          className="mt-4 font-bold text-blue-600 hover:text-blue-500 hover:shadow-blue-500/50"
                         >
                           https://bibwoe.com.
                         </a>

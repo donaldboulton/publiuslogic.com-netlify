@@ -17,12 +17,14 @@ export default function LatestArticles() {
             <div className="flex flex-row items-center">
               <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>
               <Link
+                id="blog"
                 to="/blog"
                 className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 hover:text-slate-200 md:px-6 md:py-3 md:text-lg"
               >
                 Articles
               </Link>
               <Link
+                id="tags"
                 to="/tags"
                 className="ml-4 mt-2 inline-block rounded-md bg-wine-300 px-2 py-2 text-base font-bold text-slate-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-wine-300 md:px-6 md:py-3 md:text-lg"
               >
@@ -62,6 +64,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="creation"
                           to="/blog/creation-of-all"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 italic hover:text-wine-200"
                         >
@@ -76,6 +79,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="virtue"
                           to="/blog/virtue"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -90,6 +94,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="man"
                           to="/blog/trinity-of-man"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -109,6 +114,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="cyber"
                           to="/blog/cyber-attack"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -122,6 +128,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="election"
                           to="/blog/usa-election"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -135,6 +142,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="philosophy"
                           to="/blog/philosophy"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -154,6 +162,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="applause"
                           to="/blog/applause-use-sound-confetti"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -168,6 +177,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="cookies"
                           to="/blog/cookies"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >
@@ -181,6 +191,7 @@ export default function LatestArticles() {
                     <div>
                       <div>
                         <Link
+                          id="forms"
                           to="/blog/react-netlify-forms"
                           className="text-xl font-semibold text-slate-300 underline mb-2 mt-4 hover:text-wine-200"
                         >

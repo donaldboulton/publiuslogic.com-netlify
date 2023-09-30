@@ -195,7 +195,7 @@ export default function Footer() {
                         >
                           <defs>
                             <linearGradient
-                              id="a"
+                              id="b"
                               x1="67.83"
                               x2="474.19"
                               y1="82.42"

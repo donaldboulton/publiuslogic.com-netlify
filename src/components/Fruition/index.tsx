@@ -40,7 +40,7 @@ export default function Fruition() {
             animate={isVisible ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-rose-600 text-slate-300 shadow-lg">
+            <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-wine-300 text-slate-300 shadow-lg">
               <StaticImage
                 className="w-full rounded-t-lg align-middle"
                 formats={['auto', 'webp']}
@@ -62,7 +62,7 @@ export default function Fruition() {
                 >
                   <polygon
                     points="-30,95 583,95 583,65"
-                    className="fill-current text-rose-600 shadow-lg shadow-rose-500/50"
+                    className="fill-current text-wine-300 shadow-lg shadow-blue-700/50"
                   ></polygon>
                 </svg>
                 <h4 className="text-xl font-bold text-slate-300">Fruition is Over, "As of Nov 15 2022"!</h4>

@@ -76,7 +76,7 @@ export default function Header() {
           arrow
           ref={ref}
           menuButton={
-            <MenuButton>
+            <MenuButton aria-label="Menu">
               <Bars3Icon className="h-8 w-8 text-slate-300 ml-6" aria-hidden="true" aria-label="Open Menu" />
             </MenuButton>
           }
@@ -86,7 +86,7 @@ export default function Header() {
           <MenuItem>
             <HomeIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
-              aria-label="Home Link"
+              aria-label="Home Icon"
               role="presentation"
             />{' '}
             <Link to="/" aria-label="Home">
@@ -96,10 +96,10 @@ export default function Header() {
           <MenuItem>
             <UserIcon
               className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
-              aria-label="About"
+              aria-label="About Icon"
               role="presentation"
             />{' '}
-            <Link to="/blog/about" aria-label="Home">
+            <Link to="/blog/about" aria-label="About">
               About
             </Link>
           </MenuItem>
@@ -108,7 +108,7 @@ export default function Header() {
               <>
                 <TableCellsIcon
                   className="h-7 w-8 pr-2 text-slate-900 text-opacity-75 hover:text-slate-300 dark:text-slate-600"
-                  aria-label="About"
+                  aria-label="Blog Icon"
                   role="presentation"
                 />
                 Blog
@@ -116,7 +116,7 @@ export default function Header() {
             }
           >
             <MenuItem>
-              <Link to="/blog" aria-label="AllPosts">
+              <Link to="/blog" aria-label="All Blog Posts">
                 All Blog Posts
               </Link>
             </MenuItem>

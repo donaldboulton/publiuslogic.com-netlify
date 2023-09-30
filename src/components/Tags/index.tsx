@@ -15,4 +15,5 @@ const Tags = ({ tags }: { tags: string[] }) => (
     ))}
   </div>
 )
+
 export default Tags
