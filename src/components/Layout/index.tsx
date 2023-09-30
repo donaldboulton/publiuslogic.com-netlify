@@ -6,6 +6,7 @@ import ToBottom from '@/components/ToBottom'
 import ToTop from '@/components/ToTop'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
+import Footer from '@/components/Footer'
 import loadable from '@loadable/component'
 
 const Header = loadable(() => import('@/components/Header'))
@@ -25,7 +26,7 @@ const Layout = ({ children, footerClassName }: LayoutProps) => {
         <ToBottom />
         <ToTop />
       </div>
-      <Slice alias="footer" className={footerClassName} />
+      <Footer />
       <CookieConsent
         enableDeclineButton
         flipButtons

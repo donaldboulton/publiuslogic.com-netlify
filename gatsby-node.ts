@@ -92,10 +92,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   )
 }
-
-exports.createPages = async ({ actions }) => {
-  actions.createSlice({
-    id: `footer`,
-    component: path.resolve(`src/components/Footer/footer.tsx`),
-  })
-}
