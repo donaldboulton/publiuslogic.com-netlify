@@ -9,7 +9,13 @@ import Stars from '@/components/Stars'
 import Footer from '@/components/Footer'
 import loadable from '@loadable/component'
 
-const Header = loadable(() => import('@/components/Header'))
+const Header = loadable(() => import('@/components/Header'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 
 interface LayoutProps {
   children: ReactNode

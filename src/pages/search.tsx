@@ -9,8 +9,13 @@ import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
 import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
-
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 const searchIndices = [{ name: 'Posts', title: 'Posts' }]
 
 const ogimage = {

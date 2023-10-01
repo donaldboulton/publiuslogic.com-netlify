@@ -4,8 +4,13 @@ import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import loadable from '@loadable/component'
 
-const WavingHand = loadable(() => import('@/components/WavingHand'))
-
+const WavingHand = loadable(() => import('@/components/WavingHand'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 const Bio = () => {
   return (
     <>

@@ -13,8 +13,13 @@ import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
-
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 interface ImageSharpEdge {
   node: {
     childImageSharp: {

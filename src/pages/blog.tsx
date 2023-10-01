@@ -9,7 +9,13 @@ import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 
 const ogimage = {
   src: OGImage,

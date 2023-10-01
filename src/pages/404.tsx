@@ -9,8 +9,13 @@ import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
 import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
-
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 const ogimage = {
   src: OGImage,
   width: 1400,

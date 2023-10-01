@@ -8,7 +8,13 @@ import Seo from '@/components/Seo'
 import BlogRoll from '@/components/BlogRoll'
 import loadable from '@loadable/component'
 
-const PageHero = loadable(() => import('@/components/PageHero'))
+const PageHero = loadable(() => import('@/components/PageHero'), {
+  fallback: (
+    <div>
+      Loading...
+    </div>
+  ),
+})
 
 import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
 import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'

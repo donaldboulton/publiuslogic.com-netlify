@@ -13,9 +13,6 @@ import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.p
 import HeaderPopover from '@/components/HeaderPopover'
 import IframeWrapper from '@/components/IframeWrapper'
 import IframeWrapperLarge from '@/components/IframeWrapperLarge'
-import loadable from '@loadable/component'
-
-const PageHero = loadable(() => import('@/components/PageHero'))
 
 const ogimage = {
   src: OGImage,
