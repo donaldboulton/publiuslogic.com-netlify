@@ -7,15 +7,7 @@ import Seo from '@/components/Seo'
 import BlogRoll from '@/components/BlogRoll'
 import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
-import loadable from '@loadable/component'
-
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
+import PageHero from '@/components/PageHero'
 
 const ogimage = {
   src: OGImage,

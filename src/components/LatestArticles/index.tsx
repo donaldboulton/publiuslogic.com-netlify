@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Fragment } from 'react'
 import { Link } from 'gatsby'
-import Tags from '@/components/Tags'
+import Tags from '@/components/SiteTags'
 import GetPosts from '@/utils/getposts'
 import WavyHr from '@/components/WavyHr'
 

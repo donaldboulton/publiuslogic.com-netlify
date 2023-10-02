@@ -15,9 +15,7 @@ import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Fruition from '@/components/Fruition'
 import Updates from '@/components/Updates'
-import loadable from '@loadable/component'
-
-const Table = loadable(() => import('@/components/Table'))
+import Table from '@/components/Table'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -109,8 +107,8 @@ function Home(props, ref: HomeRef) {
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            width='24px'
-                            height='24px'
+                            width="24px"
+                            height="24px"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
                             <path
@@ -142,8 +140,8 @@ function Home(props, ref: HomeRef) {
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
-                            width='24px'
-                            height='24px'
+                            width="24px"
+                            height="24px"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >
@@ -179,8 +177,8 @@ function Home(props, ref: HomeRef) {
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
-                            width='24px'
-                            height='24px'
+                            width="24px"
+                            height="24px"
                             stroke="currentColor"
                             className="fill-slate-200 text-slate-200 w-6 h-6"
                           >

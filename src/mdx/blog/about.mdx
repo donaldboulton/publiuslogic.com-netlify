@@ -5,7 +5,6 @@ path: /blog/about
 title: About
 date: 2020-12-05
 category: Tech
-tags: [About, Gatsby, Starter]
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 embeddedImagesLocal:
@@ -14,12 +13,16 @@ embeddedImagesLocal:
   - '../../../static/img/security-report.jpg'
   - '../../../static/img/site-driven1.png'
   - '../../../static/img/buy-me-a-coffee.jpg'
+tags: 
+  - 'About' 
+  - 'Gatsby' 
+  - 'Starter'
 description: PubliusLogic Purpose and Technologies, A little about the Author and some Internet programming tidbits.
 ---
 
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
-<GatsbyImage alt="about" imgClass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[0])} />
+<GatsbyImage alt="about" imgclass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[0])} />
 
 ## To Convey My Knowledge
 
@@ -65,7 +68,7 @@ PubliusLogic security is top notch using the latest Content-Security-Policy dire
 
 <ImageColWrapperPage>
 
-<GatsbyImage alt="Content Security Policy" imgClass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[1])} />
+<GatsbyImage alt="Content Security Policy" imgclass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[1])} />
 
 </ImageColWrapperPage>
 
@@ -75,7 +78,7 @@ PubliusLogic security is top notch using the latest Content-Security-Policy dire
 
 <ImageColWrapperPage>
 
-<GatsbyImage alt="Headers test Content-Security-Policy" imgClass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[2])} />
+<GatsbyImage alt="Headers test Content-Security-Policy" imgclass="object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[2])} />
 
 </ImageColWrapperPage>
 
@@ -102,7 +105,7 @@ with GraphQL, Built with WebPack. Including a user data, todo's backend. The dat
 
 <ImageColWrapperPage>
 
-<GatsbyImage alt="Site Structure" imgClass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[3])} />
+<GatsbyImage alt="Site Structure" imgclass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[3])} />
 
 </ImageColWrapperPage>
 
@@ -225,7 +228,7 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 <ImageColWrapperPage>
 
-<GatsbyImage alt="Buy Me A Coffee" imgClass="object-cover w-full h-full object-center rounded-lg" image={getImage(props.localImages[4])} />
+<GatsbyImage alt="Buy Me A Coffee" imgclass="object-cover w-full h-full object-center rounded-lg" image={getImage(props.localImages[4])} />
 
 </ImageColWrapperPage>
 

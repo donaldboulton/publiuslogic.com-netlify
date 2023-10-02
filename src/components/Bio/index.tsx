@@ -2,15 +2,8 @@
 
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import loadable from '@loadable/component'
+import WavingHand from '@/components/WavingHand'
 
-const WavingHand = loadable(() => import('@/components/WavingHand'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
 const Bio = () => {
   return (
     <>
@@ -30,7 +23,8 @@ const Bio = () => {
         </div>
         <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left items-center">
           <div className="text-base leading-6">
-            <WavingHand /> <span className="font-medium"> Developed and Written by: </span>{' '}
+              <WavingHand />
+            <span className="font-medium"> Developed and Written by: </span>{' '}
             <span className="font-medium italic">Donald Boulton</span>
           </div>
           <div className="-mt-2 z-30 p-4 text-sm items-center">

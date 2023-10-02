@@ -2,15 +2,7 @@ import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import ColumnGridTwo from '@/components/ColumnGridTwo'
-import loadable from '@loadable/component'
-
-const Subscriptions = loadable(() => import('@/components/Subscriptions'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
+import Subscriptions from '@/components/Subscriptions'
 
 export default function Footer() {
   return (

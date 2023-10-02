@@ -3,13 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
+const PageHero = loadable(() => import('@/components/PageHero'))
 
 function refreshPage() {
   if (typeof window !== undefined) {

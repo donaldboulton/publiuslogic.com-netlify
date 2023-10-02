@@ -1,4 +1,4 @@
-### Type definitions saved at 2023-09-27T16:04:39.060Z ###
+### Type definitions saved at 2023-10-01T16:32:38.966Z ###
 
 enum RemoteFileFit {
   COVER
@@ -689,8 +689,8 @@ type MdxFrontmatter {
   tags: [String]
   publicId: String
   videoTitle: String
-  description: String
   embeddedImagesLocal: [File] @fileByRelativePath
+  description: String
   featured: Boolean
   videoUrl: String
   videoPoster: String
@@ -730,11 +730,9 @@ type Mdx implements Node @childOf(mimeTypes: ["text/markdown", "text/x-markdown"
   tableOfContents(maxDepth: Int): JSON
   timeToRead: Int
   wordCount: MdxWordCount
-  embeddedImagesRemote: [File] @link(by: "id", from: "fields.embeddedImagesRemote")
 }
 
 type Frontmatter {
   title: String!
-  embeddedImagesLocal: [File] @fileByRelativePath
-  embeddedImagesRemote: [String]
+  embeddedImagesLocal: File @fileByRelativePath
 }

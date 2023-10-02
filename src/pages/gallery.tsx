@@ -11,15 +11,8 @@ import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
-import loadable from '@loadable/component'
+import PageHero from '@/components/PageHero'
 
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
 interface ImageSharpEdge {
   node: {
     childImageSharp: {
@@ -84,7 +77,7 @@ function ImageGallery({ data }, props: ImageGalleryProps, ref: ImageGalleryRef) 
                   <div className="flex flex-wrap">
                     <div className="w-full p-1 md:p-2">
                       <Gallery
-                        imgClass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-slate-950"
+                        imgclass="block object-cover object-center w-full h-full rounded-lg border-double border-4 border-slate-950"
                         images={images}
                         lightboxOptions={lightboxOptions}
                         customWrapper={CustomWrapper}

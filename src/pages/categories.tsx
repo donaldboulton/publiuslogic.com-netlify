@@ -1,15 +1,100 @@
 import * as React from 'react'
 import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
-import Search from '@/components/Algolia/search'
-import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
-import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
+import { Link } from 'gatsby'
+import GetCategories from '@/utils/getCategories'
+import {
+  jupiter,
+  cutout,
+  pianoMan,
+  pieFactory,
+  graphPaper,
+  charlieBrown,
+  autumn,
+  temple,
+  deathStar,
+  churchOnSunday,
+  overlappingHexagons,
+  bamboo,
+  bathroomFloor,
+  corkScrew,
+  happyIntersection,
+  kiwi,
+  lips,
+  lisbon,
+  steelBeams,
+  tinyCheckers,
+  fancyRectangles,
+  heavyRain,
+  cage,
+  connections,
+  flippedDiamonds,
+  houndstooth,
+  morphingDiamonds,
+  zigZag,
+  aztec,
+  bankNote,
+  boxes,
+  diagonalLines,
+  endlessClouds,
+  eyes,
+  groovy,
+  melt,
+  parkayFloor,
+  pixelDots,
+  signal,
+  wallpaper,
+} from 'hero-patterns'
 import PageHero from '@/components/PageHero'
+import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
+import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
 
-const searchIndices = [{ name: 'Posts', title: 'Posts' }]
+const patterns = [
+  steelBeams('#9c92ac', 0.5),
+  jupiter('#9c92ac', 0.5),
+  cutout('#9c92ac', 0.5),
+  pianoMan('#9c92ac', 0.5),
+  pieFactory('#9c92ac', 0.5),
+  graphPaper('#9c92ac', 0.5),
+  charlieBrown('#9c92ac', 0.5),
+  autumn('#9c92ac', 0.5),
+  temple('#9c92ac', 0.5),
+  deathStar('#9c92ac', 0.5),
+  churchOnSunday('#9c92ac', 0.5),
+  overlappingHexagons('#9c92ac', 0.5),
+  bamboo('#9c92ac', 0.5),
+  bathroomFloor('#9c92ac', 0.5),
+  corkScrew('#9c92ac', 0.5),
+  happyIntersection('#9c92ac', 0.5),
+  kiwi('#9c92ac', 0.5),
+  lips('#9c92ac', 0.5),
+  lisbon('#9c92ac', 0.5),
+  tinyCheckers('#9c92ac', 0.5),
+  fancyRectangles('#9c92ac', 0.5),
+  heavyRain('#9c92ac', 0.5),
+  cage('#9c92ac', 0.5),
+  connections('#9c92ac', 0.5),
+  flippedDiamonds('#9c92ac', 0.5),
+  houndstooth('#9c92ac', 0.5),
+  morphingDiamonds('#9c92ac', 0.5),
+  zigZag('#9c92ac', 0.5),
+  aztec('#9c92ac', 0.5),
+  bankNote('#9c92ac', 0.5),
+  boxes('#9c92ac', 0.5),
+  diagonalLines('#9c92ac', 0.5),
+  endlessClouds('#9c92ac', 0.5),
+  eyes('#9c92ac', 0.5),
+  groovy('#9c92ac', 0.5),
+  melt('#9c92ac', 0.5),
+  parkayFloor('#9c92ac', 0.5),
+  pixelDots('#9c92ac', 0.5),
+  signal('#9c92ac', 0.5),
+  wallpaper('#9c92ac', 0.5),
+]
 
 const ogimage = {
   src: OGImage,
@@ -17,20 +102,46 @@ const ogimage = {
   height: 450,
 }
 
-type SearchPageRef = React.ForwardedRef<HTMLDivElement>
+type CategoriesPageRef = React.ForwardedRef<HTMLDivElement>
 
-function SearchPage(props, ref: SearchPageRef) {
+function CategoriesPage(props, ref: CategoriesPageRef) {
+  const category = GetCategories()
   return (
     <>
       <Layout>
         <PageTransition ref={ref}>
           <div className="left-beams">
-            <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
+            <PageHero
+              title="Blog Categories"
+              description="Click on each category to view blog posts containing category."
+              image={Image}
+            />
             <div className="mt-10">
-              <div className="mb-16 mt-16 p-8 sm:mt-2">
-                <div className="mb-2">
-                  <Search indices={searchIndices} />
-                </div>
+              <div className="mb-24 mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-6 xl:gap-y-6">
+                {category
+                  .sort((a, b) => b.count - a.count)
+                  .map((category, i) => (
+                    <Link key={category.category} to={`/category/${kebabCase(category.category)}/`} className="group">
+                      <section
+                        className="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
+                        style={{
+                          backgroundColor: '#dfdbe5',
+                          backgroundImage: patterns[i % patterns.length],
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-gray-900 bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-75"></div>
+                        <div className="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
+                          <h3 className="text-center text-2xl font-bold text-slate-300">
+                            <span className="absolute inset-0"></span>
+                            {category.category}
+                          </h3>
+                          <span className="text-center text-sm font-medium text-slate-300">
+                            &nbsp;({category.count})
+                          </span>
+                        </div>
+                      </section>
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>
@@ -40,17 +151,43 @@ function SearchPage(props, ref: SearchPageRef) {
   )
 }
 
-export default forwardRef(SearchPage)
+export default forwardRef(CategoriesPage)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
       <Seo type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search">
-        <title>Search Page</title>
-        <meta name="description" content="PubliusLogic Search Page." />
+        <title>Categories</title>
+        <meta name="description" content="PubliusLogic Categories Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       </Seo>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: 'Categories',
+          alternativeHeadline: 'Site Categories',
+          image: ogimage,
+          award: 'Best Categories page ever built',
+          editor: 'Donald Boulton',
+          genre: 'search engine optimization',
+          keywords: 'publiuslogic categorys site',
+          wordCount: '1120',
+          publisher: 'PubliusLogic',
+          url: 'https://publiuslogic.com/categorys',
+          datePublished: '2020-09-20',
+          dateCreated: '2020-08-20',
+          dateModified: '2022-08-16',
+          description: 'We love to Tag and do stuff to help people and stuff',
+          articleBody: 'You can paste your entire post in here, and yes it can get really really long.',
+          author: {
+            '@type': 'Person',
+            name: 'Donald W. Boulton',
+            url: 'https://donboulton.com',
+          },
+        })}
+      </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -84,25 +221,17 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
-          },
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Search',
+          name: 'Categories',
           url: 'https://publiuslogic.com/search',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -130,8 +259,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/search',
-                name: 'Search',
+                '@id': 'https://publiuslogic.com/categorys',
+                name: 'Site Categories',
               },
               position: '2',
             },
@@ -173,7 +302,7 @@ export function Head(props: HeadProps) {
             'mailto:donboulton@donboulton.com',
             'tel:+405-863-2165',
             'https://www.facebook.com/donboulton',
-            'https://www.instagram.com/boulton3662',
+            'https://www.inscategoryram.com/boulton3662',
             'https://twitter.com/donboulton',
             'https://www.linkedin.com/donboulton',
             'https://github.com/donaldboulton/',
@@ -190,21 +319,6 @@ export function Head(props: HeadProps) {
           url: 'https://donboulton.com',
           worksFor: {
             '@id': 'https://publiuslogic.com',
-          },
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          url: 'https://www.publiuslogic.com/',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
           },
         })}
       </script>

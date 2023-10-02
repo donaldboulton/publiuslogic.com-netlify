@@ -1,15 +1,21 @@
 import * as React from 'react'
 import { forwardRef } from 'react'
 import type { HeadProps } from 'gatsby'
+import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
-import Search from '@/components/Algolia/search'
-import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
-import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
+import BlogRoll from '@/components/BlogRoll'
 import PageHero from '@/components/PageHero'
 
-const searchIndices = [{ name: 'Posts', title: 'Posts' }]
+import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
+import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'
+
+interface CategoryPageProps {
+  pageContext: {
+    category: string
+  }
+}
 
 const ogimage = {
   src: OGImage,
@@ -17,21 +23,37 @@ const ogimage = {
   height: 450,
 }
 
-type SearchPageRef = React.ForwardedRef<HTMLDivElement>
+type CategoryPageRef = React.ForwardedRef<HTMLDivElement>
 
-function SearchPage(props, ref: SearchPageRef) {
+function CategoryPage({ pageContext }, props: CategoryPageProps, ref: CategoryPageRef) {
+  const category = pageContext.category
+  const title = `Category: ${category}`
   return (
     <>
       <Layout>
         <PageTransition ref={ref}>
           <div className="left-beams">
-            <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
-            <div className="mt-10">
-              <div className="mb-16 mt-16 p-8 sm:mt-2">
-                <div className="mb-2">
-                  <Search indices={searchIndices} />
+            <PageHero title={title} description={`Posts with category [${category}]`} image={Image} />
+            <Seo
+              type="categories"
+              title={title}
+              description={`Posts with Category [${category}]`}
+              keywords={[category]}
+              image={ogimage}
+              pathname={'/categories/' + category}
+            />
+            <div className="mt-10 mb-10">
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="rounded-md shadow mb-4">
+                  <Link
+                    to="/categories"
+                    className="items-center justify-center rounded-md border border-transparent bg-wine-300 px-8 py-3 text-base font-medium text-slate-300 hover:bg-wine-300 md:px-10 md:py-4 md:text-lg"
+                  >
+                    View All Categories
+                  </Link>
                 </div>
               </div>
+              <BlogRoll tag={category} />
             </div>
           </div>
         </PageTransition>
@@ -40,17 +62,14 @@ function SearchPage(props, ref: SearchPageRef) {
   )
 }
 
-export default forwardRef(SearchPage)
+export default forwardRef(CategoryPage)
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 export function Head(props: HeadProps) {
   return (
     <>
-      <Seo type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search">
-        <title>Search Page</title>
-        <meta name="description" content="PubliusLogic Search Page." />
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      </Seo>
+      <title>Categories</title>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -71,7 +90,8 @@ export function Head(props: HeadProps) {
           creator: {
             '@id': 'https://publiuslogic.com',
           },
-          description: 'PubliusLogic name means to Publish Logic',
+          description:
+            'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           image: {
             '@type': 'ImageObject',
             url: ogimage,
@@ -84,31 +104,23 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
-          },
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Search',
+          name: 'Tags',
           url: 'https://publiuslogic.com/search',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
+            url: 'https://publiuslogic.com/static/images/undraw/undraw_Windows_re_uo4w.png',
             width: '1400',
             height: '450',
           },
           publisher: {
-            '@type': 'Organization',
-            name: 'Mansbooks',
+            '@type': 'PubliusLogic',
+            name: 'Donald Boulton',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
@@ -130,8 +142,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/search',
-                name: 'Search',
+                '@id': 'https://publiuslogic.com/tags',
+                name: 'Tags',
               },
               position: '2',
             },
@@ -190,21 +202,6 @@ export function Head(props: HeadProps) {
           url: 'https://donboulton.com',
           worksFor: {
             '@id': 'https://publiuslogic.com',
-          },
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          url: 'https://www.publiuslogic.com/',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://query.publiuslogic.com/search?q={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
           },
         })}
       </script>

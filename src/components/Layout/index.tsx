@@ -2,20 +2,13 @@ import * as React from 'react'
 import { ReactNode } from 'react'
 import { Link, Slice } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
 import ToBottom from '@/components/ToBottom'
 import ToTop from '@/components/ToTop'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
 import Footer from '@/components/Footer'
-import loadable from '@loadable/component'
-
-const Header = loadable(() => import('@/components/Header'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
+import Header from '@/components/Header'
 
 interface LayoutProps {
   children: ReactNode
@@ -26,7 +19,9 @@ const Layout = ({ children, footerClassName }: LayoutProps) => {
     <>
       <ScrollIndicator />
       <Stars />
-      <Header />
+      <SuspenseHelper fallback={<div>Loading...</div>}>
+        <Header />
+      </SuspenseHelper>
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
         <ToBottom />

@@ -16,14 +16,12 @@
     "TailwindCSS",
     "Blog"
   ],
-  "license": "OSBD",
+  "license": "0BSD",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"
   },
   "dependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-    "@babel/plugin-transform-optional-chaining": "^7.22.15",
     "@builder.io/partytown": "^0.8.0",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.2",
@@ -34,7 +32,6 @@
     "@giscus/react": "^2.3.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
-    "@loadable/component": "^5.15.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@supabase/auth-helpers-react": "^0.4.2",
@@ -120,11 +117,6 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.17",
-    "@babel/plugin-transform-react-jsx": "7.22.15",
-    "@babel/preset-react": "^7.22.5",
-    "@loadable/babel-plugin": "^5.16.1",
-    "@loadable/webpack-plugin": "^5.15.2",
     "@octokit/types": "^9.2.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.6",

@@ -6,18 +6,9 @@ import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import Callout from '@/components/Callout'
 import Seo from '@/components/Seo'
-import ThreeDotsWave from '@/components/ThreeDotsWave'
-import loadable from '@loadable/component'
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
-
-const PageHero = loadable(() => import('@/components/PageHero'), {
-  fallback: (
-    <div>
-      Loading...
-    </div>
-  ),
-})
+import PageHero from '@/components/PageHero'
 
 const ogimage = {
   src: OGImage,
