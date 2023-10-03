@@ -12,8 +12,6 @@ import CalloutLabel from './src/components/Callout/CalloutLabel'
 import WavyHr from './src/components/WavyHr'
 import Center from './src/components/Center'
 import CenterItem from './src/components/CenterItem'
-import List from './src/components/List'
-import ListItem from './src/components/List/ListItem'
 import ListGrid from './src/components/ListGrid'
 import VideoOne from './src/components/CloudinaryVideo/videoOne'
 import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
@@ -51,8 +49,6 @@ const components = {
   Callout: Callout,
   CalloutDanger: CalloutDanger,
   CalloutLabel: CalloutLabel,
-  List: List,
-  ListItem: ListItem,
   ListGrid: ListGrid,
   CloudinaryVideo: CloudinaryVideo,
   VideoOne: VideoOne,

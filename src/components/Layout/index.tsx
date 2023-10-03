@@ -1,20 +1,21 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
-import { Link, Slice } from 'gatsby'
+import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
 import ToBottom from '@/components/ToBottom'
 import ToTop from '@/components/ToTop'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
+
+const Header = React.lazy(() => import ('@/components/Header'));
+const Footer = React.lazy(() => import ('@/components/Footer'));
 
 interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({ children, footerClassName }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <ScrollIndicator />
@@ -27,7 +28,9 @@ const Layout = ({ children, footerClassName }: LayoutProps) => {
         <ToBottom />
         <ToTop />
       </div>
-      <Footer />
+      <SuspenseHelper fallback={<div>Loading...</div>}>
+        <Footer />
+      </SuspenseHelper>
       <CookieConsent
         enableDeclineButton
         flipButtons
