@@ -1,5 +1,6 @@
 import type { GatsbyConfig } from 'gatsby'
 import siteAcronyms from './gatsby-site-acronyms'
+import adapter from 'gatsby-adapter-netlify'
 import queries from './src/utils/algolia-queries'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from './tailwind.config'
@@ -9,6 +10,9 @@ dotenv.config()
 const fullConfig = resolveConfig(tailwindConfig)
 
 const config: GatsbyConfig = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: true,
+  }),
   headers: [
     {
       source: `/contact`,
