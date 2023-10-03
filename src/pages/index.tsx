@@ -7,15 +7,17 @@ import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '@/components/Seo'
 import PageTransition from '@/components/PageTransition'
-import Features from '@/components/Features'
-import LatestArticles from '@/components/LatestArticles'
 import { LazyMotion, motion } from 'framer-motion'
 import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
-import Fruition from '@/components/Fruition'
-import Updates from '@/components/Updates'
-import Table from '@/components/Table'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
+
+const LatestArticles = React.lazy(() => import('@/components/LatestArticles'))
+const Features = React.lazy(() => import('@/components/Features'))
+const Fruition = React.lazy(() => import('@/components/Fruition'))
+const Updates = React.lazy(() => import('@/components/Updates'))
+const Table = React.lazy(() => import('@/components/Table'))
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -77,10 +79,7 @@ function Home(props, ref: HomeRef) {
                   </motion.div>
                 </LazyMotion>
               </div>
-              <div
-                className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden transition-all duration-200"
-                style={{ height: '70px' }}
-              >
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[70px] top-auto mt-4 w-full overflow-hidden transition-all duration-200">
                 <svg
                   className="absolute bottom-0 overflow-hidden"
                   xmlns="http://www.w3.org/2000/svg"
@@ -290,10 +289,7 @@ function Home(props, ref: HomeRef) {
               </div>
             </section>
             <section className="relative bg-slate-900 py-20">
-              <div
-                className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 w-full overflow-hidden"
-                style={{ height: '80px' }}
-              >
+              <div className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-[80px] w-full overflow-hidden">
                 <svg
                   className="absolute bottom-0 overflow-hidden"
                   xmlns="http://www.w3.org/2000/svg"
@@ -356,13 +352,12 @@ function Home(props, ref: HomeRef) {
                       </div>
                     </div>
                     <div className="ml-auto mr-auto w-full px-4 md:w-4/12">
-                      <Fruition />
+                      <SuspenseHelper fallback={<div>Loading...</div>}>
+                        <Fruition />
+                      </SuspenseHelper>
                     </div>
                   </div>
-                  <div
-                    className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto mt-4 w-full overflow-hidden bg-slate-900 bg-transparent transition-all duration-200"
-                    style={{ height: '70px' }}
-                  >
+                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[70px] top-auto mt-4 w-full overflow-hidden bg-slate-900 bg-transparent transition-all duration-200">
                     <svg
                       className="absolute bottom-0 overflow-hidden"
                       xmlns="http://www.w3.org/2000/svg"
@@ -380,7 +375,9 @@ function Home(props, ref: HomeRef) {
             </section>
             <section className="relative block bg-slate-950 py-20">
               <div className="container mx-auto px-4 pb-24">
-                <Features />
+                <SuspenseHelper fallback={<div>Loading...</div>}>
+                  <Features />
+                </SuspenseHelper>
               </div>
               <div className="mb:mt-24 pointer-events-none absolute bottom-0 left-1/2 right-0 mt-24 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent pt-24 transition-all duration-200">
                 <svg
@@ -399,7 +396,9 @@ function Home(props, ref: HomeRef) {
             </section>
             <section className="relative block bg-primary-dark pb-20 pt-10">
               <div className="container mx-auto px-4 lg:pb-28 lg:pt-12">
-                <LatestArticles />
+                <SuspenseHelper fallback={<div>Loading...</div>}>
+                  <LatestArticles />
+                </SuspenseHelper>
                 <div className="pointer-events-none absolute bottom-0 left-1/2 right-0 mt-10 w-full -translate-x-1/2 scale-x-[-1] transform overflow-hidden bg-transparent transition-all duration-200 md:mt-20">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -421,12 +420,16 @@ function Home(props, ref: HomeRef) {
               <div className="container mx-auto px-4">
                 <div className="-mt-40 flex flex-wrap justify-center lg:-mt-48">
                   <div className="w-full px-4">
-                    <Updates />
+                    <SuspenseHelper fallback={<div>Loading...</div>}>
+                      <Updates />
+                    </SuspenseHelper>
                     <div className="light:bg-gray-200 light:text-gray-800 mb-4 mt-10 rounded-lg bg-gray-950 text-slate-300 lg:mt-6">
                       <h4 className="mb-2 text-center text-2xl font-semibold text-slate-300 underline decoration-wine-200 decoration-wavy underline-offset-8">
                         Ordered Spiritual Reading List!
                       </h4>
-                      <Table />
+                      <SuspenseHelper fallback={<div>Loading...</div>}>
+                        <Table />
+                      </SuspenseHelper>
                     </div>
                   </div>
                 </div>

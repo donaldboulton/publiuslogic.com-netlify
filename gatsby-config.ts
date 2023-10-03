@@ -61,7 +61,7 @@ const config: GatsbyConfig = {
         // Opt-out of Google FLoC: https://amifloced.org/
         {
           key: 'Permissions-Policy',
-          value: 'camera=(), microphone=(), geolocation=()',
+          value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
         },
         {
           key: 'X-Robots-Tag',
@@ -225,37 +225,14 @@ const config: GatsbyConfig = {
               dashes: 'oldschool',
             },
           },
-          {
-            resolve: 'gatsby-remark-custom-blocks',
-            options: {
-              blocks: {
-                danger: {
-                  classes: 'danger',
-                },
-                success: {
-                  classes: 'success',
-                },
-                sunny: {
-                  classes: 'sunny',
-                },
-                dark: {
-                  classes: 'dark',
-                },
-                code: {
-                  classes: 'code',
-                },
-                summary: {
-                  classes: 'summary',
-                },
-                info: {
-                  title: 'optional',
-                  details: 'true',
-                },
-              },
-            },
-          },
         ],
         remarkPlugins: [{ resolve: 'remark-slug' }],
+        rehypePlugins: [
+          { resolve: 'rehype-slug' },
+          // To pass options, use a 2-element array with the
+          // configuration in an object in the second element
+          { resolve: 'rehype-autolink-headings' },
+        ],
       },
     },
     {
@@ -296,6 +273,7 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-mdx-embed',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',

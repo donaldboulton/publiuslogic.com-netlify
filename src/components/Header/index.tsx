@@ -34,9 +34,10 @@ const godNavigation = [
 const logicNavigation = [
   { name: 'Bullshit', href: '/blog/bullshit', current: false },
   { name: 'Government', href: '/blog/government', current: false },
-  { name: 'Homeless', href: '/blog/homless', current: false },
+  { name: 'Homeless', href: '/blog/homeless', current: false },
   { name: 'Earth Magnetism', href: '/blog/earths-magnetic-flux', current: false },
   { name: 'EMF EMP', href: '/blog/emf-emp', current: false },
+  { name: 'Philosophy', href: '/blog/philosophy', current: false },
   { name: 'USA Elections', href: '/blog/usa-election', current: false },
   { name: 'Vaccination', href: '/blog/vaccination', current: false },
   { name: 'War Machine', href: '/blog/war-machine', current: false },

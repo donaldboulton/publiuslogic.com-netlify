@@ -5,16 +5,17 @@ import { graphql, Link, PageProps, FC } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
-import Bio from '@/components/Bio'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
-import Tags from '@/components/SiteTags'
-import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
-import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
-
 import ImageColWrapperPage from '@/components/image-col-wrapper-page'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
+
+const Bio = React.lazy(() => import('@/components/Bio'))
+const Tags = React.lazy(() => import('@/components/SiteTags'))
+const GiscusComments = React.lazy(() => import('@/components/GiscusComments'))
+const TableOfContents = React.lazy(() => import('@/components/TableOfContents'))
 
 interface ImageProp {
   image: GatsbyImageData
@@ -47,6 +48,7 @@ type DataProps = {
         modifiedTime: string
       }
       body: string
+      tableOfContents: JSON
       pathname: string
       timeToRead: string
     }
@@ -73,6 +75,7 @@ interface PageProps {
         modifiedTime: string
       }
       body: string
+      tableOfContents: JSON
       pathname: string
       timeToRead: string
     }
@@ -89,7 +92,9 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
       <Layout>
         <PageTransition ref={ref}>
           <div className="left-beams -mt-10 object-cover">
-            <TableOfContent headings={data.mdx.headings} />
+            <SuspenseHelper fallback={<div>Loading...</div>}>
+              <TableOfContents headings={data.mdx.headings} />
+            </SuspenseHelper>
             <div className="mb-20 mt-10 font-inter">
               <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
                 <div className="mt-4 py-4">
@@ -101,13 +106,17 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                   </div>
                 </div>
                 <div className="mb-4 ml-2 text-slate-900 dark:text-slate-200">
-                  <Bio />
+                  <SuspenseHelper fallback={<div>Loading...</div>}>
+                    <Bio />
+                  </SuspenseHelper>
                 </div>
                 <div>
                   <div className="mb-10 flex flex-wrap items-center sm:place-content-center md:place-content-center lg:place-content-start">
                     <div className="ml-3 mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                       <TagIcon className="mr-2 h-6 w-6" />
-                      <Tags className="px-2 py-1" tags={frontmatter.tags} />
+                      <SuspenseHelper fallback={<div>Loading...</div>}>
+                        <Tags className="px-2 py-1" tags={frontmatter.tags} />
+                      </SuspenseHelper>
                     </div>
                     <div className="mr-2 inline-flex items-center py-1 text-base leading-none text-slate-900 dark:text-slate-200">
                       <CalendarIcon className="mr-1 h-6 w-6" />
@@ -123,7 +132,9 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                   </div>
                 </div>
                 <MDXRenderer localImages={frontmatter.embeddedImagesLocal}>{data.mdx.body}</MDXRenderer>
-                <GiscusComments mapping={pathname} />
+                <SuspenseHelper fallback={<div>Loading...</div>}>
+                  <GiscusComments mapping={pathname} />
+                </SuspenseHelper>
                 <WavyHr />
               </section>
             </div>

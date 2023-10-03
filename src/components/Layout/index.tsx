@@ -3,13 +3,13 @@ import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
-import ToBottom from '@/components/ToBottom'
-import ToTop from '@/components/ToTop'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
 
-const Header = React.lazy(() => import ('@/components/Header'));
-const Footer = React.lazy(() => import ('@/components/Footer'));
+const Header = React.lazy(() => import('@/components/Header'))
+const Footer = React.lazy(() => import('@/components/Footer'))
+const ToTop = React.lazy(() => import('@/components/ToTop'))
+const ToBottom = React.lazy(() => import('@/components/ToBottom'))
+const ScrollIndicator = React.lazy(() => import('@/components/ScrollIndicator'))
 
 interface LayoutProps {
   children: ReactNode
@@ -18,15 +18,21 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <ScrollIndicator />
       <Stars />
+      <SuspenseHelper fallback={<div>Loading...</div>}>
+        <ScrollIndicator />
+      </SuspenseHelper>
       <SuspenseHelper fallback={<div>Loading...</div>}>
         <Header />
       </SuspenseHelper>
       <div className="mx-auto text-slate-900 dark:text-slate-200">
         <main>{children}</main>
-        <ToBottom />
-        <ToTop />
+        <SuspenseHelper fallback={<div>Loading...</div>}>
+          <ToBottom />
+        </SuspenseHelper>
+        <SuspenseHelper fallback={<div>Loading...</div>}>
+          <ToTop />
+        </SuspenseHelper>
       </div>
       <SuspenseHelper fallback={<div>Loading...</div>}>
         <Footer />
@@ -54,13 +60,7 @@ const Layout = ({ children }: LayoutProps) => {
         }}
       >
         PubliusLogic uses cookies for user experience.{' '}
-        <span
-          style={{
-            fontSize: '14px',
-            textAlign: 'center',
-            marginLeft: '20px',
-          }}
-        >
+        <span className="text-center items-center ml-5 text-lg">
           <div className="sm:text-center">
             <div className="text-scale-900 text-xs sm:mx-auto sm:max-w-sm">
               By continuing, you agree to PubliusLogic{' '}

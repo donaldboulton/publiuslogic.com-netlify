@@ -22,6 +22,7 @@ const postQuery = graphql`
           category
         }
         slug
+        tableOfContents
         excerpt(pruneLength: 200, truncate: true)
       }
     }
@@ -46,6 +47,7 @@ export type PostType = {
     embeddedImagesLocal: ImageProp[]
   }
   slug: string
+  tableOfContents: JSON
   excerpt: string
 }
 type PostQueryType = {

@@ -7,14 +7,16 @@ import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
-import Account from '../components/Auth/account'
+import Account from '@/components/Auth/account'
 import { StaticImage } from 'gatsby-plugin-image'
-import LeftText from '../components/LeftText'
-import Seo from '../components/Seo'
-import TodoList from '../components/TodoList'
+import Seo from '@/components/Seo'
 import OGImage from '../../static/images/undraw/undraw_Account_re_o7id.png'
-import ColumnGridTwo from '../components/ColumnGridTwo'
-import { supabase } from '../lib/supabase'
+import ColumnGridTwo from '@/components/ColumnGridTwo'
+import { supabase } from '@/lib/supabase'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
+
+const TodoList = React.lazy(() => import('@/components/TodoList'))
+const LeftText = React.lazy(() => import('@/components/LeftText'))
 
 const ogimage = {
   src: OGImage,
@@ -98,7 +100,9 @@ function Login(props, ref: LoginRef) {
       <PageTransition ref={ref}>
         <div className="mb-20 ml-8">
           <div className="pt-10 mb-4">
-            <LeftText>PubliusLogic Login</LeftText>
+            <SuspenseHelper fallback={<div>Loading...</div>}>
+              <LeftText>PubliusLogic Login</LeftText>
+            </SuspenseHelper>
           </div>
           <ColumnGridTwo>
             <div className="glow mt-10 mb-24 mr-20 text-slate-200 lg:col-span-2 lg:mt-0">
@@ -125,11 +129,10 @@ function Login(props, ref: LoginRef) {
                   <>
                     <ColumnGridTwo>
                       <Account key={session.user.id} session={session} />
-                      <div
-                        className="flex h-full w-full flex-col items-center justify-center p-4"
-                        style={{ minWidth: 250, maxWidth: 600, margin: 'auto' }}
-                      >
-                        <TodoList session={session} />
+                      <div className="flex mx-auto h-full flex-col items-center min-w-[250px] max-w-[600px] justify-center p-4">
+                        <SuspenseHelper fallback={<div>Loading...</div>}>
+                          <TodoList session={session} />
+                        </SuspenseHelper>
                       </div>
                     </ColumnGridTwo>
                   </>

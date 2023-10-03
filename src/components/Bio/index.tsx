@@ -23,7 +23,7 @@ const Bio = () => {
         </div>
         <div className="-mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left items-center">
           <div className="text-base leading-6">
-              <WavingHand />
+            <WavingHand />
             <span className="font-medium"> Developed and Written by: </span>{' '}
             <span className="font-medium italic">Donald Boulton</span>
           </div>

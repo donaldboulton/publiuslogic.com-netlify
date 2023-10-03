@@ -4,10 +4,12 @@ import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import Seo from '@/components/Seo'
-import BlogRoll from '@/components/BlogRoll'
 import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
 import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
-import PageHero from '@/components/PageHero'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
+
+const PageHero = React.lazy(() => import('@/components/PageHero'))
+const BlogRoll = React.lazy(() => import('@/components/BlogRoll'))
 
 const ogimage = {
   src: OGImage,
@@ -23,9 +25,13 @@ function BlogPage(props, ref: BlogPageRef) {
       <Layout>
         <PageTransition ref={ref}>
           <div className="left-beams mb-20">
-            <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
+            <SuspenseHelper fallback={<div>Loading...</div>}>
+              <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
+            </SuspenseHelper>
             <div className="mb-2">
-              <BlogRoll />
+              <SuspenseHelper fallback={<div>Loading...</div>}>
+                <BlogRoll />
+              </SuspenseHelper>
             </div>
           </div>
         </PageTransition>

@@ -102,56 +102,9 @@ h2 {
   margin-left: 10px !important;
 }
 
-.custom-block {
-  padding: 3px;
-  border-radius: 12px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.custom-block-body {
-  padding-left: 20px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 15px;
-  border-radius: 12px;
-}
-
-.custom-block-heading {
-  color: #a855f7;
-}
-
 .code {
   background: rgb(54, 54, 40);
   border: 2px solid rgb(53, 59, 69, 0.25);
-  color: rgb(214, 222, 235);
-}
-
-.sunny {
-  background: rgb(230, 226, 8);
-  border: 2px solid rgb(230, 226, 8, 0.25);
-  box-shadow: 6px 5px 5px rgb(145, 142, 5);
-  color: #000000 !important;
-}
-
-.success {
-  background: rgb(67, 56, 202);
-  border: 2px solid rgb(67, 56, 202, 0.25);
-  box-shadow: 6px 5px 5px rgb(67, 56, 202, 0.75);
-  color: rgb(214, 222, 235);
-}
-
-.summary {
-  background: rgb(147, 51, 234);
-  border: 2px solid rgb(147, 51, 234, 0.25);
-  box-shadow: rgb(147, 51, 234, 0.75);
-  color: rgb(214, 222, 235);
-}
-
-.danger {
-  background: rgb(150, 2, 2, 0.5);
-  border: 2px solid rgb(158, 11, 11, 0.25);
-  box-shadow: 6px 5px 5px rgb(150, 2, 2, 0.5);
   color: rgb(214, 222, 235);
 }
 

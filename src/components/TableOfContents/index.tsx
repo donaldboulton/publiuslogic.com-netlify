@@ -7,7 +7,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { TableCellsIcon } from '@heroicons/react/24/outline'
 import WavyHr from '@/components/WavyHr'
 
-interface TableOfContentProps {
+interface TableOfContentsProps {
   headings: Array<{ heading: string; title: string; depth: number; activeId: string }>
 }
 
@@ -63,7 +63,8 @@ const virtualReference = {
     }
   },
 }
-const TableOfContent = ({ headings }: TableOfContentProps) => {
+
+const TableOfContents = ({ headings }: TableOfContentsProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
   return (
@@ -124,4 +125,4 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
   )
 }
 
-export default TableOfContent
+export default TableOfContents
