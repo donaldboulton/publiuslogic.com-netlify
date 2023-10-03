@@ -266,7 +266,6 @@ const config: GatsbyConfig = {
         skipIndexing: false,
       },
     },
-    'gatsby-plugin-mdx-embed',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',
