@@ -7,7 +7,6 @@ import Layout from '@/components/Layout'
 import PageTransition from '@/components/PageTransition'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import NowPlaying from '@/components/PlayList'
-import WavyHr from '@/components/WavyHr'
 import SeoBlog from '@/components/Seo/SeoBlog'
 import ImageColWrapperPage from '@/components/image-col-wrapper-page'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
@@ -16,6 +15,7 @@ const Bio = React.lazy(() => import('@/components/Bio'))
 const Tags = React.lazy(() => import('@/components/SiteTags'))
 const GiscusComments = React.lazy(() => import('@/components/GiscusComments'))
 const TableOfContents = React.lazy(() => import('@/components/TableOfContents'))
+const WavyHr = React.lazy(() => import('@/components/WavyHr'))
 
 interface ImageProp {
   image: GatsbyImageData
@@ -135,7 +135,9 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
                 <SuspenseHelper fallback={<div>Loading...</div>}>
                   <GiscusComments mapping={pathname} />
                 </SuspenseHelper>
-                <WavyHr />
+                <SuspenseHelper fallback={<div>Loading...</div>}>
+                  <WavyHr />
+                </SuspenseHelper>
               </section>
             </div>
           </div>
@@ -155,7 +157,7 @@ export function Head(props: HeadProps<DataProps>) {
   const seo = {
     path: `${siteUrl}${pathname || ''}`,
   }
-  const Image = props.data.mdx.frontmatter.imageLink
+  const Image = props.data.mdx.frontmatter.embeddedImagesLocal[0]
   return (
     <>
       <SeoBlog

@@ -25,15 +25,13 @@ const Layout = ({ children }: LayoutProps) => {
       <SuspenseHelper fallback={<div>Loading...</div>}>
         <Header />
       </SuspenseHelper>
-      <div className="mx-auto text-slate-900 dark:text-slate-200">
-        <main>{children}</main>
-        <SuspenseHelper fallback={<div>Loading...</div>}>
-          <ToBottom />
-        </SuspenseHelper>
-        <SuspenseHelper fallback={<div>Loading...</div>}>
-          <ToTop />
-        </SuspenseHelper>
-      </div>
+      {children}
+      <SuspenseHelper fallback={<div>Loading...</div>}>
+        <ToBottom />
+      </SuspenseHelper>
+      <SuspenseHelper fallback={<div>Loading...</div>}>
+        <ToTop />
+      </SuspenseHelper>
       <SuspenseHelper fallback={<div>Loading...</div>}>
         <Footer />
       </SuspenseHelper>

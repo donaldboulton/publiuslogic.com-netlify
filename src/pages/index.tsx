@@ -394,7 +394,7 @@ function Home(props, ref: HomeRef) {
                 </svg>
               </div>
             </section>
-            <section className="relative block bg-primary-dark pb-20 pt-10">
+            <section className="relative block bg-slate-900 pb-20 pt-10">
               <div className="container mx-auto px-4 lg:pb-28 lg:pt-12">
                 <SuspenseHelper fallback={<div>Loading...</div>}>
                   <LatestArticles />

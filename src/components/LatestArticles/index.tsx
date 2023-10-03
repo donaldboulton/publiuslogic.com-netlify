@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { Fragment } from 'react'
 import { Link } from 'gatsby'
-import Tags from '@/components/SiteTags'
 import GetPosts from '@/utils/getposts'
-import WavyHr from '@/components/WavyHr'
+import { SuspenseHelper } from '@/components/SuspenseHelper'
+import Section from '@/components/Section'
+
+const Tags = React.lazy(() => import('@/components/SiteTags'))
+const WavyHr = React.lazy(() => import('@/components/WavyHr'))
 
 export default function LatestArticles() {
   const posts = GetPosts()
@@ -11,8 +14,8 @@ export default function LatestArticles() {
   const otherPosts = posts.slice(1, 6)
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-7xl py-4 m-4 bg-primary-dark px-4 sm:px-6 lg:px-8">
+      <Section>
+        <div className="mx-auto max-w-7xl py-4 m-4 bg-slate-900 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-4 sm:py-8 lg:max-w-none lg:py-10">
             <div className="flex flex-row items-center">
               <h2 className="text-2xl font-extrabold text-slate-300 md:text-2xl">Latest Articles</h2>
@@ -38,7 +41,9 @@ export default function LatestArticles() {
                     <span className="sr-only">{post.frontmatter.title}</span>
                   </Link>
                   <div className="mt-4">
-                    <Tags tags={post.frontmatter.tags} />
+                    <SuspenseHelper fallback={<div>Loading...</div>}>
+                      <Tags tags={post.frontmatter.tags} />
+                    </SuspenseHelper>
                   </div>
                   <Link to={`/${post.slug}`}>
                     <h2 className="mb-2 mt-2 text-2xl font-bold leading-tight underline decoration-wine-200 decoration-wavy underline-offset-8 md:text-2xl">
@@ -54,7 +59,9 @@ export default function LatestArticles() {
                     <span className="sr-only">{post.frontmatter.title}</span>
                   </Link>
                 </div>
-                <WavyHr className="mb-4" />
+                <SuspenseHelper fallback={<div>Loading...</div>}>
+                  <WavyHr className="mb-4" />
+                </SuspenseHelper>
                 <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
                 <div className="mb-4 mt-10 space-y-12 rounded-lg bg-slate-300 text-slate-900 dark:bg-slate-950 dark:text-slate-300 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 xl:grid-cols-3">
                   <div>
@@ -226,7 +233,7 @@ export default function LatestArticles() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </>
   )
 }

@@ -15,7 +15,7 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
 
   return (
     <motion.div
-      className="max-h-[100%] overflow-y-auto"
+      className="max-h-max"
       ref={ref}
       initial={onTheRight}
       animate={inTheCenter}

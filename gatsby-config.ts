@@ -227,12 +227,6 @@ const config: GatsbyConfig = {
           },
         ],
         remarkPlugins: [{ resolve: 'remark-slug' }],
-        rehypePlugins: [
-          { resolve: 'rehype-slug' },
-          // To pass options, use a 2-element array with the
-          // configuration in an object in the second element
-          { resolve: 'rehype-autolink-headings' },
-        ],
       },
     },
     {
@@ -273,7 +267,6 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-mdx-embed',
-    'gatsby-plugin-webpack-bundle-analyser-v2',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',
