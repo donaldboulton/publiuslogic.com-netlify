@@ -1,33 +1,34 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 export type TagType = {
-  tag: string
-  count: number
+    tag: string
+    count: number
 }
 
 type TagQueryType = {
-  allMdx: {
-    group: {
-      tag: string
-      count: number
-    }[]
-  }
+    allMdx: {
+        group: {
+            tag: string
+            count: number
+        }[]
+    }
 }
 
 const GetTags = () => {
-  const data: TagQueryType = useStaticQuery(tagQuery)
-  return data.allMdx.group /* .map(tag => ({ tag: tag.fieldValue, count: tag.totalCount })) */
+    const data: TagQueryType = useStaticQuery(tagQuery)
+    return data.allMdx
+        .group /* .map(tag => ({ tag: tag.fieldValue, count: tag.totalCount })) */
 }
 
 export default GetTags
 
 export const tagQuery = graphql`
-  query {
-    allMdx(limit: 2000) {
-      group(field: { frontmatter: { tags: SELECT } }) {
-        tag: fieldValue
-        count: totalCount
-      }
+    query {
+        allMdx(limit: 2000) {
+            group(field: { frontmatter: { tags: SELECT } }) {
+                tag: fieldValue
+                count: totalCount
+            }
+        }
     }
-  }
 `

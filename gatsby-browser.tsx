@@ -8,35 +8,43 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
-  const onExitComplete = () => {
-    window.scrollTo({ top: 0 })
-  }
-  return (
-    <SessionContextProvider supabaseClient={supabase}>
-      <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
-        {element}
-      </AnimatePresence>
-    </SessionContextProvider>
-  )
+    const onExitComplete = () => {
+        window.scrollTo({ top: 0 })
+    }
+    return (
+        <SessionContextProvider supabaseClient={supabase}>
+            <AnimatePresence
+                onExitComplete={onExitComplete}
+                mode="wait"
+                initial={false}
+            >
+                {element}
+            </AnimatePresence>
+        </SessionContextProvider>
+    )
 }
 
 export const wrapRootElement = wrap
 
 export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm('This application has been updated. ' + 'Reload to display the latest version?')
+    const answer = window.confirm(
+        'This application has been updated. ' +
+            'Reload to display the latest version?'
+    )
 
-  if (answer === true) {
-    window.location.reload()
-  }
+    if (answer === true) {
+        window.location.reload()
+    }
 }
 
 if (
-  localStorage.theme === 'dark' ||
-  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
-  document.documentElement.classList.add('dark')
+    document.documentElement.classList.add('dark')
 } else {
-  document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove('dark')
 }
 
 // Whenever the user explicitly chooses light mode
@@ -49,14 +57,16 @@ localStorage.theme = 'dark'
 localStorage.removeItem('theme')
 
 export const onRouteUpdate = ({ location }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    return null
-  }
-
-  const pagePath = location ? location.pathname + location.search + location.hash : undefined
-  setTimeout(() => {
-    if (typeof gtag === 'function') {
-      gtag('event', 'page_view', { page_path: pagePath })
+    if (process.env.NODE_ENV !== 'production') {
+        return null
     }
-  }, 100)
+
+    const pagePath = location
+        ? location.pathname + location.search + location.hash
+        : undefined
+    setTimeout(() => {
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', { page_path: pagePath })
+        }
+    }, 100)
 }

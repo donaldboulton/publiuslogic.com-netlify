@@ -21,19 +21,19 @@ const postQuery = `{
 }`
 
 function postToAlgoliaRecord({ node: { id, frontmatter, ...rest } }) {
-  return {
-    objectID: id,
-    ...frontmatter,
-    ...rest,
-  }
+    return {
+        objectID: id,
+        ...frontmatter,
+        ...rest,
+    }
 }
 const queries = [
-  {
-    query: postQuery,
-    transformer: ({ data }) => data.posts.edges.map(postToAlgoliaRecord),
-    indexName,
-    settings: { attributesToSnippet: ['excerpt:20'] },
-  },
+    {
+        query: postQuery,
+        transformer: ({ data }) => data.posts.edges.map(postToAlgoliaRecord),
+        indexName,
+        settings: { attributesToSnippet: ['excerpt:20'] },
+    },
 ]
 
 module.exports = queries

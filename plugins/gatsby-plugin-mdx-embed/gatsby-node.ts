@@ -1,9 +1,5 @@
-import { GatsbyNode } from 'gatsby'
-
-export const sourceNodes: GatsbyNode['sourceNodes'] = async ({
-  actions,
-  createContentDigest,
-  createNodeId,
-}, pluginOptions) => {
-  console.log("sourceNodes")
-}
+export const sourceNodes =
+    () =>
+    ({ actions, createContentDigest, createNodeId }, pluginOptions) => {
+        console.log('sourceNodes')
+    }
