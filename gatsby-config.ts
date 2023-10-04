@@ -239,20 +239,7 @@ const config: GatsbyConfig = {
         theme_color: fullConfig.theme.colors.slate['900'],
         display: 'minimal-ui',
         icon: 'static/img/android-chrome-512x512.png',
-        icons: [
-          {
-            src: `static/img/maskable_icon_x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-            purpose: `any maskable`,
-          },
-          {
-            src: `static/img/maskable_icon_x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-            purpose: `any maskable`,
-          },
-        ],
+        cache_busting_mode: 'none'
       },
     },
     {
@@ -266,6 +253,7 @@ const config: GatsbyConfig = {
         skipIndexing: false,
       },
     },
+    'gatsby-plugin-mdx-embed',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-postcss',
@@ -290,10 +278,8 @@ const config: GatsbyConfig = {
           '/gallery',
           '/old-enough',
           '/tags',
+          '/login',
         ],
-        workboxConfig: {
-          importWorkboxFrom: 'cdn',
-        },
       },
     },
   ],

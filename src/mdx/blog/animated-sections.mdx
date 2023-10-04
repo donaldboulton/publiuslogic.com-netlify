@@ -9,10 +9,17 @@ featuredPost: false
 category: Tech
 embeddedImagesLocal:
   - '../../../static/img/animated.jpg' 
-tags: [Framer Motion, Sectionize]
+tags: 
+  - 'Framer'
+  - 'Motion' 
+  - 'Sectionize'
 publicId: videos/angelina_jordan_suspicious_minds
 videoTitle: Angelina Jordan Suspicious Minds
 ---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+<GatsbyImage alt="about" imgclass="block object-cover object-center w-full h-full rounded-lg" image={getImage(props.localImages[0])} />
 
 ## Sectionize Content
 
