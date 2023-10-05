@@ -7,53 +7,53 @@ import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'
 import VideoWrapper from './wrapper'
 
 interface VideoChildrenProps {
-    children: ReactNode
-    video: string
+  children: ReactNode
+  video: string
 }
 
 const cld = new Cloudinary({
-    cloud: {
-        cloudName: 'mansbooks',
-    },
+  cloud: {
+    cloudName: 'mansbooks',
+  },
 })
 
 const VideoChildren: FC<VideoChildrenProps> = (props) => {
-    const { children, video, cloudName } = props
-    const myVideo = cld.video({ video })
+  const { children, video, cloudName } = props
+  const myVideo = cld.video({ video })
 
-    const myURL = myVideo.toURL()
-    const videoEl = useRef()
-    const sources = [
-        {
-            type: 'mp4',
-            codecs: ['avc1.4d002a'],
-            transcode: videoCodec(auto()),
-        },
-        {
-            type: 'webm',
-            codecs: ['vp8', 'vorbis'],
-            transcode: videoCodec(vp9()),
-        },
-    ]
+  const myURL = myVideo.toURL()
+  const videoEl = useRef()
+  const sources = [
+    {
+      type: 'mp4',
+      codecs: ['avc1.4d002a'],
+      transcode: videoCodec(auto()),
+    },
+    {
+      type: 'webm',
+      codecs: ['vp8', 'vorbis'],
+      transcode: videoCodec(vp9()),
+    },
+  ]
 
-    return (
-        <>
-            <VideoWrapper>
-                <AdvancedVideo
-                    cldVid={cld}
-                    sources={sources}
-                    className="w-full opacity-75"
-                    ref={videoEl}
-                    controls
-                    autoPlay
-                    loop
-                    plugins={[lazyload()]}
-                >
-                    {video}
-                </AdvancedVideo>
-            </VideoWrapper>
-        </>
-    )
+  return (
+    <>
+      <VideoWrapper>
+        <AdvancedVideo
+          cldVid={cld}
+          sources={sources}
+          className="w-full opacity-75"
+          ref={videoEl}
+          controls
+          autoPlay
+          loop
+          plugins={[lazyload()]}
+        >
+          {video}
+        </AdvancedVideo>
+      </VideoWrapper>
+    </>
+  )
 }
 
 export default VideoChildren

@@ -694,7 +694,6 @@ type MdxFrontmatter {
   featured: Boolean
   videoUrl: String
   videoPoster: String
-  tpublished: Boolean
 }
 
 type MdxHeadingMdx {

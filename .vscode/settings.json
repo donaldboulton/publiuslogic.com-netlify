@@ -1,12 +1,12 @@
 {
-    "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": false,
 
-    "editor.cursorSmoothCaretAnimation": "off",
+  "editor.cursorSmoothCaretAnimation": "off",
 
-    "editor.fontSize": 20,
-    "editor.fontWeight": "normal",
-    "editor.fontFamily": "Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true, // Does this have a noticeable effect?
+  "editor.fontSize": 20,
+  "editor.fontWeight": "normal",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true, // Does this have a noticeable effect?
 
-    "editor.lineNumbers": "on"
+  "editor.lineNumbers": "on"
 }

@@ -1,39 +1,39 @@
 import * as React from 'react'
 
 interface CloudinaryContextProps {
-    cloudName: string
+  cloudName: string
 }
 
 interface VideoProps extends JSX.IntrinsicElements.video {
-    publicId: string
+  publicId: string
 }
 
 interface TransformationProps {
-    quality: string
+  quality: string
 }
 
 declare module '@cloudinary/react' {
-    class CloudinaryComponent {
-        constructor(props, context) {}
+  class CloudinaryComponent {
+    constructor(props, context) {}
 
-        getChildContext() {}
+    getChildContext() {}
 
-        render() {}
+    render() {}
 
-        getChildTransformations(children) {}
+    getChildTransformations(children) {}
 
-        getTransformations() {}
+    getTransformations() {}
 
-        normalizeOptions(...options) {}
+    normalizeOptions(...options) {}
 
-        getURL(extendedProps) {}
+    getURL(extendedProps) {}
 
-        typesFrom(configParams) {}
-    }
+    typesFrom(configParams) {}
+  }
 
-    export const CloudinaryContext: React.FC<CloudinaryContextProps>
+  export const CloudinaryContext: React.FC<CloudinaryContextProps>
 
-    export const Video: React.FC<PropsWithChildren<VideoProps>>
+  export const Video: React.FC<PropsWithChildren<VideoProps>>
 
-    export const Transformation: React.FC<TransformationProps>
+  export const Transformation: React.FC<TransformationProps>
 }

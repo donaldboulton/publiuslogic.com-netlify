@@ -1,3 +1,3 @@
 export interface CloudinaryVideoPlayer {
-    on: Function
+  on: Function
 }

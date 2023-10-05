@@ -38,48 +38,46 @@ import ImageColWrapperPage from './src/components/image-col-wrapper-page'
 const Acronym = (props) => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
 const components = {
-    abbr: Acronym,
-    A: A,
-    FindOutMore: FindOutMore,
-    Center: Center,
-    CenterItem: CenterItem,
-    Cta: Cta,
-    Features: Features,
-    WavyHr: WavyHr,
-    Callout: Callout,
-    CalloutDanger: CalloutDanger,
-    CalloutLabel: CalloutLabel,
-    ListGrid: ListGrid,
-    CloudinaryVideo: CloudinaryVideo,
-    VideoOne: VideoOne,
-    VideoTwo: VideoTwo,
-    VideoThree: VideoThree,
-    Accordion: Accordion,
-    SingleAccordion: SingleAccordion,
-    Table: Table,
-    Modal: Modal,
-    Section: Section,
-    Popper: Popper,
-    UserProfile: UserProfile,
-    Left: Left,
-    LeftText: LeftText,
-    ColumnGridTwo: ColumnGridTwo,
-    ColumnGridThree: ColumnGridThree,
-    VideoWrapper: VideoWrapper,
-    Confetti: Confetti,
-    TodoList: TodoList,
-    Love: Love,
-    HoverMenu: HoverMenu,
-    ImageColWrapperPage: ImageColWrapperPage,
-    pre: (preProps) => {
-        const props = preToCodeBlock(preProps)
-        if (props) {
-            return <Code {...props} />
-        } else {
-            return <pre className="gatsby-highlight" {...preProps} />
-        }
-    },
+  abbr: Acronym,
+  A: A,
+  FindOutMore: FindOutMore,
+  Center: Center,
+  CenterItem: CenterItem,
+  Cta: Cta,
+  Features: Features,
+  WavyHr: WavyHr,
+  Callout: Callout,
+  CalloutDanger: CalloutDanger,
+  CalloutLabel: CalloutLabel,
+  ListGrid: ListGrid,
+  CloudinaryVideo: CloudinaryVideo,
+  VideoOne: VideoOne,
+  VideoTwo: VideoTwo,
+  VideoThree: VideoThree,
+  Accordion: Accordion,
+  SingleAccordion: SingleAccordion,
+  Table: Table,
+  Modal: Modal,
+  Section: Section,
+  Popper: Popper,
+  UserProfile: UserProfile,
+  Left: Left,
+  LeftText: LeftText,
+  ColumnGridTwo: ColumnGridTwo,
+  ColumnGridThree: ColumnGridThree,
+  VideoWrapper: VideoWrapper,
+  Confetti: Confetti,
+  TodoList: TodoList,
+  Love: Love,
+  HoverMenu: HoverMenu,
+  ImageColWrapperPage: ImageColWrapperPage,
+  pre: (preProps) => {
+    const props = preToCodeBlock(preProps)
+    if (props) {
+      return <Code {...props} />
+    } else {
+      return <pre className="gatsby-highlight" {...preProps} />
+    }
+  },
 }
-export const wrapRootElement = ({ element }) => (
-    <MDXProvider components={components}>{element}</MDXProvider>
-)
+export const wrapRootElement = ({ element }) => <MDXProvider components={components}>{element}</MDXProvider>

@@ -6,60 +6,44 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
-    const onExitComplete = () => {
-        window.scrollTo({ top: 0 })
-    }
-    return (
-        <SessionContextProvider supabaseClient={supabase}>
-            <AnimatePresence
-                onExitComplete={onExitComplete}
-                mode="wait"
-                initial={false}
-            >
-                {element}
-            </AnimatePresence>
-        </SessionContextProvider>
-    )
+  const onExitComplete = () => {
+    window.scrollTo({ top: 0 })
+  }
+  return (
+    <SessionContextProvider supabaseClient={supabase}>
+      <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
+        {element}
+      </AnimatePresence>
+    </SessionContextProvider>
+  )
 }
 export const wrapRootElement = wrap
 
 const ORIGIN = 'https://www.googletagmanager.com'
 const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
-export function onRenderBody({
-    setHtmlAttributes,
-    setHeadComponents,
-    setPreBodyComponents,
-}) {
-    if (
-        process.env.NODE_ENV !== 'production' &&
-        process.env.NODE_ENV !== 'test'
-    )
-        return null
-    setHtmlAttributes({ lang: 'en' })
-    setHeadComponents([
-        <Partytown key="partytown" forward={['gtag']} />,
-        <script
-            key="google-analytics"
-            type="text/partytown"
-            src={`${ORIGIN}/gtag/js?id=${GATSBY_GA_MEASUREMENT_ID}`}
-        />,
-        <script
-            key="gtag"
-            type="text/partytown"
-            dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || [];
+export function onRenderBody({ setHtmlAttributes, setHeadComponents, setPreBodyComponents }) {
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
+  setHtmlAttributes({ lang: 'en' })
+  setHeadComponents([
+    <Partytown key="partytown" forward={['gtag']} />,
+    <script key="google-analytics" type="text/partytown" src={`${ORIGIN}/gtag/js?id=${GATSBY_GA_MEASUREMENT_ID}`} />,
+    <script
+      key="gtag"
+      type="text/partytown"
+      dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag(){ window.dataLayer.push(arguments);}
         gtag('js', new Date()); 
         gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
-            }}
-        />,
-    ])
-    setPreBodyComponents([
-        React.createElement('script', {
-            key: 'gatsby-dark-mode',
-            dangerouslySetInnerHTML: {
-                __html: `
+      }}
+    />,
+  ])
+  setPreBodyComponents([
+    React.createElement('script', {
+      key: 'gatsby-dark-mode',
+      dangerouslySetInnerHTML: {
+        __html: `
 void function() {
   window.__onThemeChange = function() {}
   var preferredTheme
@@ -89,16 +73,16 @@ void function() {
   setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
 }()
     `,
-            },
-        }),
-        <noscript
-            key="gtm"
-            dangerouslySetInnerHTML={{
-                __html: `
+      },
+    }),
+    <noscript
+      key="gtm"
+      dangerouslySetInnerHTML={{
+        __html: `
                   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCMLLP" height="0" width="0"
                       style="display:none;visibility:hidden"></iframe>
                 `,
-            }}
-        />,
-    ])
+      }}
+    />,
+  ])
 }
