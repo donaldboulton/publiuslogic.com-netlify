@@ -5,18 +5,13 @@ import { Popover, Transition } from '@headlessui/react'
 import { TableCellsIcon } from '@heroicons/react/24/outline'
 import WavyHr from '@/components/WavyHr'
 
-interface TableOfContentsProps {
-  headings: Array<{
-    heading: string
-    title: string
-    depth: number
-    activeId: string
-  }>
-}
-
 export type HeadingType = {
   value: string
   depth: number
+}
+
+interface TableOfContentsProps {
+  headings: HeadingType[]
 }
 
 function getIds(headings) {
