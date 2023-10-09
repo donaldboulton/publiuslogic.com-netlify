@@ -10,7 +10,10 @@ import { supabase } from './src/lib/supabase'
 export function wrapPageElement({ element }) {
   return (
     <SessionContextProvider supabaseClient={supabase}>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence
+        mode="wait" 
+        initial={false}
+      >
         {element}
       </AnimatePresence>
     </SessionContextProvider>

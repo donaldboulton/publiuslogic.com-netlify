@@ -11,6 +11,7 @@ dotenv.config()
 const fullConfig = resolveConfig(tailwindConfig)
 
 const config: GatsbyConfig = {
+  trailingSlash: "never",
   adapter: adapter({
     excludeDatastoreFromEngineFunction: true,
   }),
@@ -177,7 +178,7 @@ const config: GatsbyConfig = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 2048,
+              maxWidth: 1024,
               showCaptions: true,
               linkImagesToOriginal: true,
               backgroundColor: 'none',
@@ -195,9 +196,9 @@ const config: GatsbyConfig = {
               enableCustomId: true,
               removeAccents: false,
               isIconAfterHeader: true,
-              elements: ['h2', 'h3'],
+              elements: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
             },
-          },
+          },          
           'gatsby-remark-responsive-iframe',
           {
             resolve: 'gatsby-remark-acronyms',

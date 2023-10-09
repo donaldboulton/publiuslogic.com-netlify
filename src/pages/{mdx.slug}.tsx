@@ -8,7 +8,7 @@ import PageTransition from '@/components/PageTransition'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import NowPlaying from '@/components/PlayList'
 import SeoBlog from '@/components/Seo/SeoBlog'
-import ImageColWrapperPage from '@/components/image-col-wrapper-page'
+import ImageColWrapperPage from '@/components/ImageColWrapper/image-col-wrapper-page'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
 
 const Bio = React.lazy(() => import('@/components/Bio'))
@@ -90,11 +90,11 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   return (
     <>
       <Layout>
+        <SuspenseHelper fallback={<div>Loading...</div>}>
+          <TableOfContents headings={data.mdx.headings} />
+        </SuspenseHelper>
         <PageTransition ref={ref}>
           <div className="left-beams -mt-10 object-cover">
-            <SuspenseHelper fallback={<div>Loading...</div>}>
-              <TableOfContents headings={data.mdx.headings} />
-            </SuspenseHelper>
             <div className="mb-20 mt-10 font-inter">
               <section className="prose-text:text-slate-900 prose-text:dark:text-slate-200 prose mx-auto mb-10 mt-2 max-w-screen-lg px-4 md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500 lg:px-0">
                 <div className="mt-4 py-4">

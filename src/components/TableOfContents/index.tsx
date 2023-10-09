@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useEffect, useState, Fragment } from 'react'
-import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
 import { TableCellsIcon } from '@heroicons/react/24/outline'
 import WavyHr from '@/components/WavyHr'
@@ -51,17 +50,6 @@ function useActiveId(headingIds) {
   return activeId
 }
 
-const virtualReference = {
-  getBoundingClientRect() {
-    return {
-      top: 10,
-      bottom: 20,
-      left: 0,
-      height: 50,
-    }
-  },
-}
-
 const TableOfContents = ({ headings }: TableOfContentsProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
@@ -100,15 +88,14 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
                         }
 
                         return (
-                          <li className="mb-2 ml-1 mr-1 mt-2 list-none p-1">
-                            <Link
-                              key={heading.value}
+                          <li key={heading.value} className="mb-2 ml-1 mr-1 mt-2 list-none p-1">
+                            <a                              
                               className="text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:text-slate-300 dark:hover:text-slate-300"
                               rel="noopener noreferrer"
-                              to={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
+                              href={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
                             >
                               {heading.value} {activeId}
-                            </Link>
+                            </a>
                           </li>
                         )
                       })}
