@@ -8,13 +8,13 @@ import PageTransition from '@/components/PageTransition'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
 import NowPlaying from '@/components/PlayList'
 import SeoBlog from '@/components/Seo/SeoBlog'
-import ImageColWrapperPage from '@/components/ImageColWrapper/image-col-wrapper-page'
+import ImageColWrapperPage from '@/components/ImageColWrapper'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
+import TableOfContents from '@/components/TableOfContents'
 
 const Bio = React.lazy(() => import('@/components/Bio'))
 const Tags = React.lazy(() => import('@/components/SiteTags'))
 const GiscusComments = React.lazy(() => import('@/components/GiscusComments'))
-const TableOfContents = React.lazy(() => import('@/components/TableOfContents'))
 const WavyHr = React.lazy(() => import('@/components/WavyHr'))
 
 interface ImageProp {
@@ -90,9 +90,7 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   return (
     <>
       <Layout>
-        <SuspenseHelper fallback={<div>Loading...</div>}>
-          <TableOfContents headings={data.mdx.headings} />
-        </SuspenseHelper>
+        <TableOfContents headings={data.mdx.headings} />
         <PageTransition ref={ref}>
           <div className="left-beams -mt-10 object-cover">
             <div className="mb-20 mt-10 font-inter">

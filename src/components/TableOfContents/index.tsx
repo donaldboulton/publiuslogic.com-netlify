@@ -54,7 +54,7 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
   return (
-    <div className="fixed left-1 top-1/4 z-10 mb-4 w-32 pb-4 md:left-1">
+    <div className="fixed left-1 top-1/2 z-10 mb-4 w-32 pb-4 md:left-1">
       <Popover as="div">
         {({ open }) => (
           <>
@@ -83,11 +83,6 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
                   <nav className="nav-scroll h-96 w-auto overflow-y-auto overflow-x-hidden">
                     <ul className="flex flex-col">
                       {headings.map((heading) => {
-                        if (heading.depth > 4) {
-                          return <div />
-                        }
-
-                        return (
                           <li key={heading.value} className="mb-2 ml-1 mr-1 mt-2 list-none p-1">
                             <a                              
                               className="text-slate-900 underline decoration-wine-200 decoration-wavy underline-offset-8 transition duration-300 hover:text-slate-800 dark:text-slate-300 dark:hover:text-slate-300"
@@ -97,7 +92,6 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
                               {heading.value} {activeId}
                             </a>
                           </li>
-                        )
                       })}
                     </ul>
                   </nav>

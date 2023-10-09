@@ -33,7 +33,7 @@ import VideoWrapper from './src/components/VideoWrapper'
 import Confetti from './src/components/Confetti'
 import TodoList from './src/components/TodoList'
 import HoverMenu from './src/components/HoverMenu'
-import ImageColWrapperPage from './src/components/image-col-wrapper-page'
+import ImageColWrapperPage from './src/components/ImageColWrapper'
 
 const Acronym = (props) => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
