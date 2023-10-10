@@ -22,7 +22,10 @@
     "url": "git+https://github.com/donaldboulton/publiuslogic.com-netlify.git"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.8.0",
+    "@builder.io/gatsby": "^3.0.3",
+    "@builder.io/react": "^3.0.14",
+    "@builder.io/widgets": "^1.2.24",
+    "@builder.io/partytown": "^0.8.1",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.2",
     "@fontsource/eb-garamond": "^5.0.8",
@@ -34,10 +37,6 @@
     "@heroicons/react": "^2.0.18",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@supabase/auth-helpers-react": "^0.4.2",
-    "@supabase/auth-ui-react": "^0.4.3",
-    "@supabase/auth-ui-shared": "^0.1.6",
-    "@supabase/supabase-js": "^2.33.1",
     "@svgr/webpack": "^8.1.0",
     "@szhsin/react-menu": "^4.0.3",
     "@types/react-google-recaptcha": "^2.1.5",

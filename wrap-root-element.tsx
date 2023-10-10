@@ -31,7 +31,6 @@ import ColumnGridTwo from './src/components/ColumnGridTwo'
 import ColumnGridThree from './src/components/ColumnGridThree'
 import VideoWrapper from './src/components/VideoWrapper'
 import Confetti from './src/components/Confetti'
-import TodoList from './src/components/TodoList'
 import HoverMenu from './src/components/HoverMenu'
 import ImageColWrapperPage from './src/components/ImageColWrapper'
 
@@ -67,7 +66,6 @@ const components = {
   ColumnGridThree: ColumnGridThree,
   VideoWrapper: VideoWrapper,
   Confetti: Confetti,
-  TodoList: TodoList,
   Love: Love,
   HoverMenu: HoverMenu,
   ImageColWrapperPage: ImageColWrapperPage,

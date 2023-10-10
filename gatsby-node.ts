@@ -45,6 +45,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
 
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
+      slug: String!
     }
 
     type Frontmatter @dontInfer {

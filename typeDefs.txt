@@ -1,4 +1,4 @@
-### Type definitions saved at 2023-10-01T16:32:38.966Z ###
+### Type definitions saved at 2023-10-10T18:44:20.623Z ###
 
 enum RemoteFileFit {
   COVER
@@ -259,12 +259,12 @@ type Site implements Node @derivedTypes @dontInfer {
   siteMetadata: SiteMetadata!
   port: Int
   host: String
+  trailingSlash: String
   adapter: SiteAdapter
   headers: [SiteHeaders]
   polyfill: Boolean
   pathPrefix: String
   jsxRuntime: String
-  trailingSlash: String
   graphqlTypegen: Boolean
 }
 
@@ -680,13 +680,13 @@ type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
 type MdxFrontmatter {
   title: String!
   image: File @fileByRelativePath
+  tags: String!
+  category: String!
   published: Boolean
   featuredPost: Boolean
   author: String
   path: String
   date: Date @dateformat
-  category: String
-  tags: [String]
   publicId: String
   videoTitle: String
   embeddedImagesLocal: [File] @fileByRelativePath
@@ -720,7 +720,7 @@ type Mdx implements Node @childOf(mimeTypes: ["text/markdown", "text/x-markdown"
   rawBody: String!
   fileAbsolutePath: String!
   frontmatter: MdxFrontmatter!
-  slug: String
+  slug: String!
   body: String!
   excerpt(pruneLength: Int = 140, truncate: Boolean): String!
   headings(depth: HeadingsMdx): [MdxHeadingMdx]

@@ -4,19 +4,15 @@ import '@fontsource/inter'
 import './src/styles/global.css'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
-import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { supabase } from './src/lib/supabase'
 
 export function wrapPageElement({ element }) {
   return (
-    <SessionContextProvider supabaseClient={supabase}>
-      <AnimatePresence
-        mode="wait" 
-        initial={false}
-      >
-        {element}
-      </AnimatePresence>
-    </SessionContextProvider>
+    <AnimatePresence
+      mode="wait" 
+      initial={false}
+    >
+      {element}
+    </AnimatePresence>
   )
 }
 
