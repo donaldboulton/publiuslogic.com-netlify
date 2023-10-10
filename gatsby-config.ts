@@ -265,7 +265,6 @@ const config: GatsbyConfig = {
           '/gallery',
           '/old-enough',
           '/tags',
-          '/login',
         ],
       },
     },
