@@ -10,7 +10,6 @@ import NowPlaying from '@/components/PlayList'
 import SeoBlog from '@/components/Seo/SeoBlog'
 import ImageColWrapperPage from '@/components/ImageColWrapper'
 import { SuspenseHelper } from '@/components/SuspenseHelper'
-import TableOfContents from '@/components/TableOfContents'
 
 const Bio = React.lazy(() => import('@/components/Bio'))
 const Tags = React.lazy(() => import('@/components/SiteTags'))
@@ -90,7 +89,6 @@ function BlogPost({ data }: PageProps<DataProps>, ref: BlogPostRef) {
   return (
     <>
       <Layout>
-        <TableOfContents headings={data.mdx.headings} />
         <PageTransition ref={ref}>
           <div className="left-beams -mt-10 object-cover">
             <div className="mb-20 mt-10 font-inter">
