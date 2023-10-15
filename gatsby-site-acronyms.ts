@@ -61,6 +61,7 @@ export default {
   PDF: 'Portable Document Format',
   PG: 'Preacher God',
   PGP: 'Pretty Good Privacy',
+  PLO: 'Palestine Liberation Organization',
   PNG: 'Portable Network Graphics',
   PR: 'Pull Request',
   RSS: 'Really Simple Syndication',

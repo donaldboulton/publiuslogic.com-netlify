@@ -33,6 +33,7 @@ import VideoWrapper from './src/components/VideoWrapper'
 import Confetti from './src/components/Confetti'
 import HoverMenu from './src/components/HoverMenu'
 import ImageColWrapperPage from './src/components/ImageColWrapper'
+import IframeWrapperLarge from './src/components/IframeWrapperLarge'
 
 const Acronym = (props) => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -69,6 +70,7 @@ const components = {
   Love: Love,
   HoverMenu: HoverMenu,
   ImageColWrapperPage: ImageColWrapperPage,
+  IframeWrapperLarge: IframeWrapperLarge,
   pre: (preProps) => {
     const props = preToCodeBlock(preProps)
     if (props) {
