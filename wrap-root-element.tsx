@@ -16,6 +16,7 @@ import ListGrid from './src/components/ListGrid'
 import VideoOne from './src/components/CloudinaryVideo/videoOne'
 import VideoTwo from './src/components/CloudinaryVideo/videoTwo'
 import VideoThree from './src/components/CloudinaryVideo/videoThree'
+import VideoFive from './src/components/CloudinaryVideo/videoFive'
 import Love from './src/components/CloudinaryVideo/love'
 import CloudinaryVideo from './src/components/CloudinaryVideo'
 import Accordion from './src/components/Accordion'
@@ -54,6 +55,7 @@ const components = {
   VideoOne: VideoOne,
   VideoTwo: VideoTwo,
   VideoThree: VideoThree,
+  VideoFive: VideoFive,
   Accordion: Accordion,
   SingleAccordion: SingleAccordion,
   Table: Table,
