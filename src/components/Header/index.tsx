@@ -32,6 +32,7 @@ const godNavigation = [
 ]
 
 const logicNavigation = [
+  { name: 'Intelligence Failure', href: '/blog/intelligence-failure', current: false },
   { name: 'Bullshit', href: '/blog/bullshit', current: false },
   { name: 'Government', href: '/blog/government', current: false },
   { name: 'Homeless', href: '/blog/homeless', current: false },
