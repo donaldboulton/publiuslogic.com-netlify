@@ -133,7 +133,7 @@ export function Head(props: HeadProps) {
           abstract:
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           author: {
-            '@id': 'https://donboulton.com',
+            '@id': 'https://donwboulton-com.pages.dev/',
           },
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
@@ -218,7 +218,7 @@ export function Head(props: HeadProps) {
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           email: 'donboulton@donboulton.com',
           founder: {
-            '@id': 'https://donboulton.com',
+            '@id': 'https://donwboulton-com.pages.dev/',
           },
           location: 'OKC, Middle Earth',
           image: {
@@ -248,9 +248,9 @@ export function Head(props: HeadProps) {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
-          '@id': 'https://donboulton.com',
+          '@id': 'https://donwboulton-com.pages.dev/',
           name: 'Donald Boulton',
-          url: 'https://donboulton.com',
+          url: 'https://donwboulton-com.pages.dev/',
           worksFor: {
             '@id': 'https://publiuslogic.com',
           },
