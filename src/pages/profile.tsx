@@ -51,12 +51,12 @@ function Profile(props, ref: ProfileRef) {
                   <h2 className="m-auto flex max-w-xs justify-center text-2xl font-bold">Donald W. Boulton</h2>
                   <a
                     className="m-auto flex max-w-xs justify-center text-rose-500 hover:text-rose-400"
-                    href="https://donwboulton-com.pages.dev/"
+                    href="https://donwboulton.com"
                     target="_blank"
                     rel="noreferrer"
                     area-label="Don Boulton Home"
                   >
-                    https://donwboulton-com.pages.dev/
+                    https://donwboulton.com
                   </a>
                   <div className="m-auto my-2 mb-6 max-w-xl  justify-center text-slate-200 hover:text-slate-300">
                     <div className="justify-items-center text-center">
@@ -191,7 +191,7 @@ export function Head(props: HeadProps) {
           author: {
             '@type': 'Person',
             name: 'Donald W. Boulton',
-            url: 'https://donwboulton-com.pages.dev/',
+            url: 'https://donwboulton.com',
           },
         })}
       </script>
@@ -206,7 +206,7 @@ export function Head(props: HeadProps) {
           abstract:
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           author: {
-            '@id': 'https://donwboulton-com.pages.dev/',
+            '@id': 'https://donwboulton.com',
           },
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
@@ -291,7 +291,7 @@ export function Head(props: HeadProps) {
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           email: 'donboulton@donboulton.com',
           founder: {
-            '@id': 'https://donwboulton-com.pages.dev/',
+            '@id': 'https://donwboulton.com',
           },
           location: 'OKC, Middle Earth',
           image: {
@@ -321,9 +321,9 @@ export function Head(props: HeadProps) {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
-          '@id': 'https://donwboulton-com.pages.dev/',
+          '@id': 'https://donwboulton.com',
           name: 'Donald Boulton',
-          url: 'https://donwboulton-com.pages.dev/',
+          url: 'https://donwboulton.com',
           worksFor: {
             '@id': 'https://publiuslogic.com',
           },

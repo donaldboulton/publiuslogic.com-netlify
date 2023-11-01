@@ -101,7 +101,7 @@ const config: GatsbyConfig = {
     twitterUsername: '@donboulton',
     author: {
       name: 'Donald Boulton',
-      url: 'https://donwboulton-com.pages.dev/',
+      url: 'https://donwboulton.com',
       summary: 'Who Resides in OKC.',
     },
     description:

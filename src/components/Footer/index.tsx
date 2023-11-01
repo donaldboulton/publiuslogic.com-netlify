@@ -46,7 +46,7 @@ export default function Footer() {
                         />
                         <a
                           className="hover:text-wine-300"
-                          href="https://donwboulton-com.pages.dev/"
+                          href="https://donwboulton.com"
                           rel="noopener noreferrer"
                           target="_blank"
                           aria-describedby="AJ Official"
@@ -357,7 +357,7 @@ export default function Footer() {
               <div className="py-1 text-lg font-semibold text-slate-300">
                 © 2023 Publiuslogic by{' '}
                 <a
-                  href="https://donwboulton-com.pages.dev/"
+                  href="https://donwboulton.com"
                   rel="noopener noreferrer"
                   target="_blank"
                   area-label="Donald Boulton Visualizer's Web Site"
