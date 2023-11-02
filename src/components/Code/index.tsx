@@ -4,7 +4,7 @@ import * as React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { useMDXScope } from 'gatsby-plugin-mdx/context'
 import { Disclosure } from '@headlessui/react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import { Highlight, themes } from "prism-react-renderer"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { LazyMotion, m, useMotionValue, useTransform } from 'framer-motion'
 import dracula from 'prism-react-renderer/themes/dracula'
@@ -370,7 +370,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                     <Title className="code-title p-2" text={title}>
                       {language}
                     </Title>
-                    <Highlight {...defaultProps} code={codeString} language={language} theme={dracula}>
+                    <Highlight code={codeString} language={language} theme={themes.dracula}>
                       {({ className, style, tokens, getLineProps, getTokenProps }) => (
                         <Disclosure.Panel className="gatsby-highlight nav-scroll" data-language={language}>
                           <pre
