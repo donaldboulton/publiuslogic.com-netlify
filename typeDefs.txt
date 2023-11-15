@@ -1,4 +1,4 @@
-### Type definitions saved at 2023-10-10T18:44:20.623Z ###
+### Type definitions saved at 2023-11-15T22:58:31.256Z ###
 
 enum RemoteFileFit {
   COVER
@@ -680,13 +680,13 @@ type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
 type MdxFrontmatter {
   title: String!
   image: File @fileByRelativePath
-  tags: String!
-  category: String!
   published: Boolean
   featuredPost: Boolean
   author: String
   path: String
   date: Date @dateformat
+  category: String
+  tags: [String]
   publicId: String
   videoTitle: String
   embeddedImagesLocal: [File] @fileByRelativePath
