@@ -32,6 +32,12 @@ const config: GatsbyConfig = {
       source: `*`,
       headers: [
         {
+          key: 'Netlify-Vary',
+          value: 'query',
+        },
+        // https://www.netlify.com/blog/netlify-cache-key-variations/?utm_source=in-app-notification&utm_medium=referral
+        // https://github.com/netlify-labs/cache-key-variations/blob/main/README.md
+        {
           key: 'Referrer-Policy',
           value: 'strict-origin-when-cross-origin',
         },
