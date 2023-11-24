@@ -32,7 +32,6 @@ const godNavigation = [
 ]
 
 const logicNavigation = [
-  { name: 'Intelligence Failure', href: '/blog/intelligence-failure', current: false },
   { name: 'Bullshit', href: '/blog/bullshit', current: false },
   { name: 'Government', href: '/blog/government', current: false },
   { name: 'Homeless', href: '/blog/homeless', current: false },
@@ -42,6 +41,8 @@ const logicNavigation = [
     current: false,
   },
   { name: 'EMF EMP', href: '/blog/emf-emp', current: false },
+  { name: 'Intelligence Failure', href: '/blog/intelligence-failure', current: false },
+  { name: 'NATO Disarmed', href: '/blog/nato-disarmed', current: false },
   { name: 'Philosophy', href: '/blog/philosophy', current: false },
   { name: 'USA Elections', href: '/blog/usa-election', current: false },
   { name: 'Vaccination', href: '/blog/vaccination', current: false },
